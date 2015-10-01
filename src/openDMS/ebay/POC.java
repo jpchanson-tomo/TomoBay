@@ -17,6 +17,7 @@ import com.ebay.sdk.call.GetOrdersCall;
 import com.ebay.sdk.call.GetUserCall;
 import com.ebay.soap.eBLBaseComponents.DetailLevelCodeType;
 import com.ebay.soap.eBLBaseComponents.GetItemRequestType;
+import com.ebay.soap.eBLBaseComponents.GetOrdersRequestType;
 import com.ebay.soap.eBLBaseComponents.NameValueListType;
 import com.ebay.soap.eBLBaseComponents.OrderType;
 import com.ebay.soap.eBLBaseComponents.TransactionType;
@@ -49,10 +50,17 @@ public class POC {
 	        
 	        // [Step 2] Create call object and execute the call
 	        GetOrdersCall order = new GetOrdersCall(apiContext);
-	        order.setNumberOfDays(5);
+	        GetOrdersRequestType ordreq = new GetOrdersRequestType();
+	        
 	        GetUserCall user = new GetUserCall(apiContext);
 	        GetItemRequestType itreq = new GetItemRequestType();
 	        GetItemCall item = new GetItemCall(apiContext);
+	        
+	        
+	        
+	        ordreq.setNumberOfDays(5);
+	        order.executeByApiName("GetOrders", ordreq);
+	        order.setNumberOfDays(5);
 	        
 	        
 	        
@@ -85,7 +93,7 @@ public class POC {
 	       
 	        
 	        System.out.println(ord[0].getOrderID());
-//	        System.out.println(ord[0].getMonetaryDetails().);
+	        System.out.println(order.getReturnedHasMoreOrders());
 //	        System.out.println(ord[0].get);
 	        System.out.println(result);
 	        

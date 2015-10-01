@@ -24,7 +24,7 @@ import openDMS.ebay.query.helpers.ApiCallData;
  * @author Jan P.C. Hanson
  *
  */
-public class AbstractAPIcall
+public abstract class AbstractAPIcall
 {
 	/**holder for the user token string provided in the construction of this object**/
 	private String usrToken_M;
@@ -48,8 +48,6 @@ public class AbstractAPIcall
 	 * this executes a call or series of calls to the eBay API.
 	 * @return
 	 */
-	protected ApiCallData call()
-	{
-		return null;
-	}
+	protected abstract ApiCallData call();
+
 }
