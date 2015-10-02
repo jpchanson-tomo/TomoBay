@@ -1,4 +1,6 @@
 package openDMS.ebay.query.commands;
+
+import openDMS.ebay.query.data.ApiCallData;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -24,11 +26,21 @@ package openDMS.ebay.query.commands;
  */
 public abstract class AbstractEbayQuery
 {
-	
+	/**holder fo te ApiCallData**/
+	protected ApiCallData callData_M;
 	
 	/**
 	 * This provides the actual guts of the query.
+	 * @param callData the calldata object from the previous query
+	 * @param index an integer parameter that may or may not be used by commands
+	 * @param string a string parameter that may or may not be used by commands.
 	 * @return String representing the results of this query.
 	 */
-	public abstract String execute();
+	public abstract String execute(ApiCallData callData, int index, String string);
+	
+	/**
+	 * retrieve the call data object associated with this object
+	 * @return
+	 */
+	public abstract ApiCallData getCallData();
 }

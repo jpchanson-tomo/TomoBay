@@ -1,10 +1,8 @@
 package openDMS.ebay;
 
-import openDMS.ebay.query.data.ApiItemData;
-import openDMS.ebay.query.data.ApiOrderData;
-import openDMS.ebay.query.data.ApiTransactionData;
-import openDMS.ebay.query.recievers.ItemCall;
-import openDMS.ebay.query.recievers.OrdersCall;
+import openDMS.ebay.query.commands.GetOrderListCommand;
+import openDMS.ebay.query.commands.GetTransactionListCommand;
+import openDMS.ebay.query.data.ApiCallData;
 
 /**
  * The entry point into the program
@@ -19,23 +17,35 @@ public class MAIN
 	
 	public static void main(String[] args)
 	{
+		System.out.println("starting program");
 		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
+		ApiCallData callData = new ApiCallData(userToken, server);
 		
-		ApiOrderData oData = new ApiOrderData();
-		ApiItemData iData = new ApiItemData();
-		ApiTransactionData tData = new ApiTransactionData();
+//		ApiOrderData oData = new ApiOrderData();
+//		ApiItemData iData = new ApiItemData();
+//		ApiTransactionData tData = new ApiTransactionData();
+//		
+//		
+//		OrdersCall orders = new OrdersCall(userToken, server);
+//		ItemCall item = new ItemCall(userToken, server);
+//		
+//		
+//		orders.call(oData, 5);
+//		tData.addData(oData.accessData(0).getTransactionArray().getTransaction()[0]);
+//		item.call(iData, tData.accessData(0).getItem().getItemID());
+//		
+//		System.out.println(oData.accessData(0).getBuyerUserID());
+//		System.out.println(iData.accessData(0).getDescription());
+//		
+		GetOrderListCommand tmp = new GetOrderListCommand();
+		GetTransactionListCommand tmp2 = new GetTransactionListCommand();
 		
+		System.out.println(tmp.execute(callData, 0, ""));
+		System.out.println(tmp2.execute(tmp.getCallData(), 0, ""));
+		System.out.println(tmp2.execute(tmp2.getCallData(), 1, ""));
+		System.out.println(tmp2.execute(tmp2.getCallData(), 2, ""));
+
 		
-		OrdersCall orders = new OrdersCall(userToken, server);
-		ItemCall item = new ItemCall(userToken, server);
-		
-		
-		orders.call(oData, 5);
-		tData.addData(oData.accessData(0).getTransactionArray().getTransaction()[0]);
-		item.call(iData, tData.accessData(0).getItem().getItemID());
-		
-		System.out.println(oData.accessData(0).getBuyerUserID());
-		System.out.println(iData.accessData(0).getDescription());
-		
+		System.out.println("end of program");
 	}
 }

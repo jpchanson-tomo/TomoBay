@@ -60,4 +60,11 @@ public class ApiTransactionData
 	 */
 	public void clearData()
 	{this.transactions_M.clear();}
+	
+	/**
+	 * return the number of entries in the ApiOrderData
+	 * @return int representing the number of entries.
+	 */
+	public int size()
+	{return this.transactions_M.size();}
 }

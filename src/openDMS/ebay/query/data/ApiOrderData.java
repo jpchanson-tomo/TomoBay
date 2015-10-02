@@ -62,4 +62,11 @@ public class ApiOrderData
 	 */
 	public void clearData()
 	{this.orders_M.clear();}
+	
+	/**
+	 * return the number of entries in the ApiOrderData
+	 * @return int representing the number of entries.
+	 */
+	public int size()
+	{return this.orders_M.size();}
 }
