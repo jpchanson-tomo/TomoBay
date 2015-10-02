@@ -15,6 +15,7 @@ package openDMS.ebay.query.data;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ebay.soap.eBLBaseComponents.ItemType;
@@ -28,12 +29,17 @@ public class ApiItemData
 	/**holder for ItemTypes**/
 	private List<ItemType> items_M;
 	
+	public ApiItemData()
+	{
+		this.items_M = new ArrayList<ItemType>();
+	}
+	
 	/**
 	 * add ItemType data to the ApiCallData
 	 * @param transaction the TransactionType to add
 	 */
-	public void addData(ItemType transaction)
-	{this.items_M.add(transaction);}
+	public void addData(ItemType item)
+	{this.items_M.add(item);}
 	
 	/**
 	 * access ItemType data of the ApiCallData

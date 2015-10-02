@@ -1,5 +1,6 @@
 package openDMS.ebay.query.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ebay.soap.eBLBaseComponents.TransactionType;
@@ -28,6 +29,9 @@ public class ApiTransactionData
 {
 	/**holder for TransactionTypes**/
 	private List<TransactionType> transactions_M;
+	
+	public ApiTransactionData()
+	{this.transactions_M = new ArrayList<TransactionType>();}
 	
 	/**
 	 * add TransactionType data to the ApiCallData

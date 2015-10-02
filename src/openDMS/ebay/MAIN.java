@@ -1,6 +1,9 @@
 package openDMS.ebay;
 
+import openDMS.ebay.query.data.ApiItemData;
 import openDMS.ebay.query.data.ApiOrderData;
+import openDMS.ebay.query.data.ApiTransactionData;
+import openDMS.ebay.query.recievers.ItemCall;
 import openDMS.ebay.query.recievers.OrdersCall;
 
 /**
@@ -18,12 +21,21 @@ public class MAIN
 	{
 		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
 		
-		ApiOrderData data = new ApiOrderData();
+		ApiOrderData oData = new ApiOrderData();
+		ApiItemData iData = new ApiItemData();
+		ApiTransactionData tData = new ApiTransactionData();
+		
+		
 		OrdersCall orders = new OrdersCall(userToken, server);
+		ItemCall item = new ItemCall(userToken, server);
 		
-		orders.call(data, 5);
 		
-		System.out.println(data.accessData(0).getBuyerUserID());
+		orders.call(oData, 5);
+		tData.addData(oData.accessData(0).getTransactionArray().getTransaction()[0]);
+		item.call(iData, tData.accessData(0).getItem().getItemID());
+		
+		System.out.println(oData.accessData(0).getBuyerUserID());
+		System.out.println(iData.accessData(0).getDescription());
 		
 	}
 }
