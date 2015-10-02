@@ -16,7 +16,6 @@ package openDMS.ebay.query.recievers;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import openDMS.ebay.query.helpers.ApiCallData;
 
 /**
  * This is the abstract base class for all the recievers in this command pattern, it provides
@@ -27,15 +26,16 @@ import openDMS.ebay.query.helpers.ApiCallData;
 public abstract class AbstractAPIcall
 {
 	/**holder for the user token string provided in the construction of this object**/
-	private String usrToken_M;
+	protected String usrToken_M;
 	/**holder for the server string provided in the construction of this object**/
-	private String server_M;
+	protected String server_M;
+	
 		
 	/**
 	 * this constructor initialises the Abstract query with a usr token and server string,
 	 * these are needed so that it can properly assign an ApiContext to the call.
 	 * @param usrToken very long string of digit obtained from ebay
-	 * @param server string representing the server that the api Calls should be submitted to.
+	 * @param server string representing the server that the API Calls should be submitted to.
 	 */
 	protected AbstractAPIcall(String usrToken, String server)
 	{
@@ -43,11 +43,5 @@ public abstract class AbstractAPIcall
 		this.usrToken_M = usrToken;
 		this.server_M = server;
 	}
-	
-	/**
-	 * this executes a call or series of calls to the eBay API.
-	 * @return
-	 */
-	protected abstract ApiCallData call();
 
 }
