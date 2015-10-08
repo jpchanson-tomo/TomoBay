@@ -1,8 +1,4 @@
 package openDMS.ebay.query.commands;
-
-import openDMS.ebay.query.data.ApiCallData;
-import openDMS.ebay.query.recievers.OrdersCall;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +14,8 @@ import openDMS.ebay.query.recievers.OrdersCall;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import openDMS.ebay.query.data.ApiCallData;
+import openDMS.ebay.query.recievers.OrdersCall;
 /**
  * This is a concrete command that returns a list of orders from the last day.
  * @author Jan P.C. Hanson
@@ -37,7 +34,7 @@ public class GetOrderListCommand extends AbstractEbayQuery
 		super.callData_M.accessOrderData().clearData();
 		
 		OrdersCall orders = new OrdersCall(super.callData_M.getUserToken(), super.callData_M.getServerString());
-		orders.call(super.callData_M.accessOrderData(), 5);
+		orders.call(super.callData_M.accessOrderData(), 1);
 		String result="\n<orders>\n";
 		
 		for (int x = 0; x < super.callData_M.accessOrderData().size(); ++x)

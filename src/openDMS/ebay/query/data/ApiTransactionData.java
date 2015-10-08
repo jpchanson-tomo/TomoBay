@@ -1,9 +1,4 @@
 package openDMS.ebay.query.data;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import com.ebay.soap.eBLBaseComponents.TransactionType;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -19,7 +14,10 @@ import com.ebay.soap.eBLBaseComponents.TransactionType;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.ArrayList;
+import java.util.List;
 
+import com.ebay.soap.eBLBaseComponents.TransactionType;
 /**
  *
  * @author Jan P.C. Hanson

@@ -1,4 +1,4 @@
-package openDMS.ebay.query;
+package openDMS.view.views;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,13 +14,21 @@ package openDMS.ebay.query;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import openDMS.helpers.NoImports;
 /**
- *
+ * Interface that all concrete views shoulde subscribe to.
+ * 
  * @author Jan P.C. Hanson
  *
  */
-public class QueryCommandInvoker
+@SuppressWarnings("unused")
+public interface AbstractView
 {
-
+	/**
+	 * This method constructs the part of the view that is requested in the parameters. 
+	 * @param part should be taken from the internal Enum defined within this class. Each enum
+	 * constant refers to a specific part of the view.
+	 * @return String containing the HTML for the part of the view that has been requested.
+	 */
+	public String make(AbstractViewPart part);
 }

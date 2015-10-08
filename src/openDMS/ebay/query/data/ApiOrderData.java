@@ -1,5 +1,4 @@
 package openDMS.ebay.query.data;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify

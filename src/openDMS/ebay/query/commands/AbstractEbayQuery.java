@@ -1,6 +1,4 @@
 package openDMS.ebay.query.commands;
-
-import openDMS.ebay.query.data.ApiCallData;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +14,7 @@ import openDMS.ebay.query.data.ApiCallData;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import openDMS.ebay.query.data.ApiCallData;
 /**
  * The purpose of this class is to define a common interface that all eBay API calls should
  * subscribe to. It is the abstract base class of all derived eBay API calls. 

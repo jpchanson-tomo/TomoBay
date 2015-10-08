@@ -59,10 +59,10 @@ public class OrdersCall extends AbstractAPIcall
         try
         {
         	this.ordreq_M.setNumberOfDays(numOfDays);
-        	this.ordreq_M.setSortingOrder(SortOrderCodeType.DESCENDING);
+//        	this.ordreq_M.setSortingOrder(SortOrderCodeType.DESCENDING);
         	this.order_M.executeByApiName("GetOrders", this.ordreq_M);
         	this.order_M.setNumberOfDays(numOfDays);
-        	this.order_M.setSortingOrder(SortOrderCodeType.DESCENDING);
+//        	this.order_M.setSortingOrder(SortOrderCodeType.DESCENDING);
         	OrderType[] ord = this.order_M.getOrders();
 
         	for (OrderType o: ord){data.addData(o);}

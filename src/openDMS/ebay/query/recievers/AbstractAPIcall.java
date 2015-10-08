@@ -19,7 +19,8 @@ package openDMS.ebay.query.recievers;
 
 /**
  * This is the abstract base class for all the recievers in this command pattern, it provides
- * a common way to initialise ebay API calls
+ * a common way to initialise ebay API calls.
+ * 
  * @author Jan P.C. Hanson
  *
  */
