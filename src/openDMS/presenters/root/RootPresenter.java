@@ -24,6 +24,11 @@ import openDMS.view.views.RootView;
  */
 public class RootPresenter implements AbstractPresenter
 {
+	/**
+	 * default constructor
+	 */
+	public RootPresenter()
+	{super();}
 	
 	/* (non-Javadoc)
 	 * @see openDMS.presenters.AbstractPresenter#present(openDMS.view.views.AbstractView)

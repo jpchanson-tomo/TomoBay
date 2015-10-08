@@ -24,6 +24,11 @@ import openDMS.view.views.EbayView;
  */
 public class EbayPresenter implements AbstractPresenter
 {
+	/**
+	 * default constructor
+	 */
+	public EbayPresenter()
+	{super();}
 	
 	/* (non-Javadoc)
 	 * @see openDMS.presenters.AbstractPresenter#present(openDMS.view.views.AbstractView)
