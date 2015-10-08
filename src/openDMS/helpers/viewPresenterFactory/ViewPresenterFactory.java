@@ -14,7 +14,8 @@ package openDMS.helpers.viewPresenterFactory;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import java.util.HashMap;
+import java.util.Map;
 /**
  *
  * @author Jan P.C. Hanson
@@ -22,5 +23,57 @@ package openDMS.helpers.viewPresenterFactory;
  */
 public class ViewPresenterFactory
 {
-
+	/**Singleton instance variable**/
+	private static final ViewPresenterFactory instance_M = new ViewPresenterFactory();
+	/**enum to use for factory creation options**/
+	public enum Select {ROOT, EBAY}
+	/**map of enum constants to concrete factories**/
+	Map<Select, AbstractViewPresenterFactory> factory_M;
+	
+	/**
+	 * default constructor
+	 */
+	private ViewPresenterFactory()
+	{
+		super();
+		factory_M = new HashMap<Select, AbstractViewPresenterFactory>();
+		this.populateMap();
+	}
+	
+	/**
+	 * singleton instance method, returns an instance of this object.
+	 * @return ViewPresenterFactory the singleton instance.
+	 */
+	public static ViewPresenterFactory instance()
+	{return ViewPresenterFactory.instance_M;}
+	
+	/**
+	 * creates a specific factory based on the string provided.
+	 * @param factory string that is compared to enum values.
+	 * @return AbstractViewPresenterFactory a concrete viewPresenterFactory
+	 */
+	public AbstractViewPresenterFactory getFactory(String factory)
+	{return this.factory_M.get(ViewPresenterFactory.Select.valueOf(factory));}
+	
+	/**
+	 * check to see if a factory type exists by comparing the string provided to the
+	 * internal enum 'Select'
+	 * @param factory the string to compare to the internal enum
+	 * @return boolean true if the factory is a valid type, false otherwise.
+	 */
+	public boolean hasFactory(String factory)
+	{
+		if (factory == null) {return false;}
+		else if (Select.valueOf(factory) != null) {return true;}
+		else {return false;}
+	}
+	
+	/**
+	 * populate the internal map with viewPresenterFactories.
+	 */
+	private void populateMap()
+	{
+		this.factory_M.put(ViewPresenterFactory.Select.ROOT, new RootFactory());
+		this.factory_M.put(ViewPresenterFactory.Select.EBAY, new EbayFactory());
+	}
 }

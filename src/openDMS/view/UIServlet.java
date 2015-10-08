@@ -24,6 +24,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import openDMS.helpers.viewPresenterFactory.AbstractViewPresenterFactory;
+import openDMS.helpers.viewPresenterFactory.ViewPresenterFactory;
 import openDMS.presenters.root.RootPresenter;
 import openDMS.view.views.RootView;
 
@@ -38,12 +40,8 @@ public class UIServlet extends HttpServlet
 	private static final String server = "https://api.sandbox.ebay.com/wsapi";
 	private static final String productionToken = "AgAAAA**AQAAAA**aAAAAA**4tcTVg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFkoujC5mDqAqdj6x9nY+seQ**kQQDAA**AAMAAA**ilVcADfxf7JwysgfZrD35zyh0fs4LpTwAGFfiOIv7Bka9ztFrnmfhHaYVHJmNvmf63bF1fkz1gjdTE3Uq6cGnyQiLJw/v6850sx/O61iOiC6jzDR2Z+a6euBFkoepDu76cFdyYsNSftTuaEe901/EJFsD1zLszVwgJRtGmC1fw4TqmqOH8rncBjWpq16DWNJpzdISwgiEEPy9FZ7zErE8Ss84tu7RGO/uQtOiSglq6pXaGtnjOY7McNE8gtxIavzL6veZbC+7GjdaF3jp1ib5U1bUYrW4vfF+uXDRRmJzU4qP8/GGSy5ZpwUGt1E/5Od1rvgQXp/baEuwFtzUXI/A0jmMlA6weVGaTD+KS2eH8GsVSSJtl8nVTqRV4HBI57d1ASV5DVgok0uvSAaGaMn4Mmka5ps8EgyhbECl0S29CpdOeXL/O+bcEL0dp1ETUerkq7wWyoMC1bvhw2cMjBEBDyTf59IioXxYzNsxu6vk7ZaZLVkzlhxh3dCL7mOm1ptDjXeqtqEQrJ4zGclHEP0DGPnnu8Ch0JUc40V78Ee6qDo9aB8V5/3nqY2JjXjbIaeVwiSaJZb93H/SNxeZnVMU4gIt6yd9l3VA3sv8ZthnJ5EclNHBV4oqZ+LHD3uSDgt8a+/j4018l21Jbf8d0cDA9TBqBkgQNcKSSI3RUfIZtK3P/gQ0tAxSREU5Y7rWgsH24LdVYb/1v27c8nR7BmIc5TfGMY4if5R/lhtJtM9HBMuWp+bbtj5OQCW32mH7myz";
 	private static final String productionServer = "https://api.ebay.com/wsapi";
-	/**!!!WARNING DO NOT MODIFY.... EVER .... NOT THREAD SAFE !!!**/
-	private static Map<String, String> views_M;
 	
-	/**
-	 * needed to avoid warnings
-	 */
+	/**needed to avoid warnings**/
 	private static final long serialVersionUID = -417534770555839323L;
 	
 	/**
@@ -51,10 +49,7 @@ public class UIServlet extends HttpServlet
 	 * @param views
 	 */
 	public UIServlet(Map<String, String> views)
-	{
-		super();
-		UIServlet.views_M = views;
-	}
+	{super();}
 
 	/**
 	 * service method, this controls how the servlet responds to particular URL query strings
@@ -66,55 +61,22 @@ public class UIServlet extends HttpServlet
 	{
 		PrintWriter out = response.getWriter();
 		
-		RootView test = new RootView();
+		ViewPresenterFactory viewPresenterFactory = ViewPresenterFactory.instance();
+		AbstractViewPresenterFactory factory;
+		
 		String viewParam = request.getParameter("view");
 
-		if (UIServlet.views_M.containsKey(viewParam))
+		if (viewPresenterFactory.hasFactory(viewParam)==true)
 		{
-			out.write(UIServlet.views_M.get(viewParam));
+			factory = viewPresenterFactory.getFactory(viewParam);
+			out.print(factory.makePresenter().present(factory.makeView()));
 		}
-
 		else
 		{
-			out.write(new RootPresenter().present(test));
-//			out.write(UIServlet.views_M.get("root"));
+			factory = viewPresenterFactory.getFactory("ROOT");
+			out.print(factory.makePresenter().present(factory.makeView()));
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		String command = request.getParameter("command");
-//		String parameter = request.getParameter("param");
-//		
-//		ApiCallData callData = new ApiCallData(productionToken, productionServer);
-//		GetOrderListCommand orders = new GetOrderListCommand();
-//		GetTransactionListCommand transactions = new GetTransactionListCommand();
-//		GetItemCommand item = new GetItemCommand();
-//		
-//		if(command.equals("getOrders"))
-//		{
-//			orders.execute(callData, 0, "");
-//			transactions.execute(orders.getCallData(), 0, "");
-//			for (int i = 0; i < orders.getCallData().accessOrderData().size(); ++i)
-//			{
-//				out.print(transactions.execute(orders.getCallData(), i, ""));
-//			}
-//			
-//		}
-//		
-//		else if (command.equals("getItem"))
-//		{
-//			out.print(item.execute(callData, 0, parameter));
-//		}
-//		
-//		else
-//		{out.print("no valid command specified.....sorry");}		
+		out.close();
 	}
 }

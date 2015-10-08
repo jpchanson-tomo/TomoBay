@@ -19403,3 +19403,243 @@ Started ServerConnector@12fdb5{HTTP/1.1}{0.0.0.0:1337}
 [INFO ] 2015-10-08 15:09:09,540
 Started @503ms
 
+[INFO ] 2015-10-08 16:14:13,468
+Logging initialized @451ms
+
+[INFO ] 2015-10-08 16:14:13,638
+jetty-9.2.11.v20150529
+
+[INFO ] 2015-10-08 16:14:13,687
+Started o.e.j.s.ServletContextHandler@39f790{/,null,AVAILABLE}
+
+[INFO ] 2015-10-08 16:14:13,714
+Started ServerConnector@1dff8e4{HTTP/1.1}{0.0.0.0:1337}
+
+[INFO ] 2015-10-08 16:14:13,719
+Started @722ms
+
+[WARN ] 2015-10-08 16:14:29,610
+/
+
+java.lang.IllegalArgumentException: No enum constant openDMS.helpers.viewPresenterFactory.ViewPresenterFactory.Select.root
+	at java.lang.Enum.valueOf(Enum.java:238)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory$Select.valueOf(ViewPresenterFactory.java:1)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory.hasFactory(ViewPresenterFactory.java:54)
+	at openDMS.view.UIServlet.doGet(UIServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:808)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2015-10-08 16:15:14,208
+Logging initialized @251ms
+
+[INFO ] 2015-10-08 16:15:14,305
+jetty-9.2.11.v20150529
+
+[INFO ] 2015-10-08 16:15:14,377
+Started o.e.j.s.ServletContextHandler@39f790{/,null,AVAILABLE}
+
+[INFO ] 2015-10-08 16:15:14,401
+Started ServerConnector@1fd17e3{HTTP/1.1}{0.0.0.0:1337}
+
+[INFO ] 2015-10-08 16:15:14,401
+Started @457ms
+
+[WARN ] 2015-10-08 16:15:19,658
+/
+
+java.lang.NullPointerException: Name is null
+	at java.lang.Enum.valueOf(Enum.java:236)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory$Select.valueOf(ViewPresenterFactory.java:1)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory.hasFactory(ViewPresenterFactory.java:54)
+	at openDMS.view.UIServlet.doGet(UIServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:808)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2015-10-08 16:15:57,578
+Logging initialized @253ms
+
+[INFO ] 2015-10-08 16:15:57,701
+jetty-9.2.11.v20150529
+
+[INFO ] 2015-10-08 16:15:57,774
+Started o.e.j.s.ServletContextHandler@39f790{/,null,AVAILABLE}
+
+[INFO ] 2015-10-08 16:15:57,806
+Started ServerConnector@1b3164a{HTTP/1.1}{0.0.0.0:1337}
+
+[INFO ] 2015-10-08 16:15:57,806
+Started @494ms
+
+[WARN ] 2015-10-08 16:16:02,388
+/
+
+java.lang.NullPointerException: Name is null
+	at java.lang.Enum.valueOf(Enum.java:236)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory$Select.valueOf(ViewPresenterFactory.java:1)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory.hasFactory(ViewPresenterFactory.java:54)
+	at openDMS.view.UIServlet.doGet(UIServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:808)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2015-10-08 16:18:27,296
+Logging initialized @344ms
+
+[INFO ] 2015-10-08 16:18:27,435
+jetty-9.2.11.v20150529
+
+[INFO ] 2015-10-08 16:18:27,494
+Started o.e.j.s.ServletContextHandler@39f790{/,null,AVAILABLE}
+
+[INFO ] 2015-10-08 16:18:27,527
+Started ServerConnector@1fd17e3{HTTP/1.1}{0.0.0.0:1337}
+
+[INFO ] 2015-10-08 16:18:27,528
+Started @591ms
+
+[WARN ] 2015-10-08 16:18:30,681
+/
+
+java.lang.NullPointerException: Name is null
+	at java.lang.Enum.valueOf(Enum.java:236)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory$Select.valueOf(ViewPresenterFactory.java:1)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory.hasFactory(ViewPresenterFactory.java:54)
+	at openDMS.view.UIServlet.doGet(UIServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:808)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2015-10-08 16:20:18,986
+Logging initialized @263ms
+
+[INFO ] 2015-10-08 16:20:19,096
+jetty-9.2.11.v20150529
+
+[INFO ] 2015-10-08 16:20:19,142
+Started o.e.j.s.ServletContextHandler@39f790{/,null,AVAILABLE}
+
+[INFO ] 2015-10-08 16:20:19,161
+Started ServerConnector@1b3164a{HTTP/1.1}{0.0.0.0:1337}
+
+[INFO ] 2015-10-08 16:20:19,161
+Started @453ms
+
+[WARN ] 2015-10-08 16:20:21,558
+/
+
+java.lang.NullPointerException: Name is null
+	at java.lang.Enum.valueOf(Enum.java:236)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory$Select.valueOf(ViewPresenterFactory.java:1)
+	at openDMS.helpers.viewPresenterFactory.ViewPresenterFactory.hasFactory(ViewPresenterFactory.java:54)
+	at openDMS.view.UIServlet.doGet(UIServlet.java:75)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:808)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ] 2015-10-08 16:21:11,240
+Logging initialized @248ms
+
+[INFO ] 2015-10-08 16:21:11,336
+jetty-9.2.11.v20150529
+
+[INFO ] 2015-10-08 16:21:11,392
+Started o.e.j.s.ServletContextHandler@39f790{/,null,AVAILABLE}
+
+[INFO ] 2015-10-08 16:21:11,413
+Started ServerConnector@1374260{HTTP/1.1}{0.0.0.0:1337}
+
+[INFO ] 2015-10-08 16:21:11,414
+Started @434ms
+
+[INFO ] 2015-10-08 16:24:40,641
+Logging initialized @507ms
+
+[INFO ] 2015-10-08 16:24:40,849
+jetty-9.2.11.v20150529
+
+[INFO ] 2015-10-08 16:24:40,931
+Started o.e.j.s.ServletContextHandler@39f790{/,null,AVAILABLE}
+
+[INFO ] 2015-10-08 16:24:40,951
+Started ServerConnector@70fe1f{HTTP/1.1}{0.0.0.0:1337}
+
+[INFO ] 2015-10-08 16:24:40,951
+Started @830ms
+
+[INFO ] 2015-10-08 16:36:42,113
+Logging initialized @388ms
+
+[INFO ] 2015-10-08 16:36:42,252
+jetty-9.2.11.v20150529
+
+[INFO ] 2015-10-08 16:36:42,310
+Started o.e.j.s.ServletContextHandler@39f790{/,null,AVAILABLE}
+
+[INFO ] 2015-10-08 16:36:42,336
+Started ServerConnector@1f6d1f8{HTTP/1.1}{0.0.0.0:1337}
+
+[INFO ] 2015-10-08 16:36:42,336
+Started @624ms
+

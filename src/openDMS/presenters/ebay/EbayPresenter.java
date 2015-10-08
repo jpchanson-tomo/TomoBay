@@ -40,5 +40,8 @@ public class EbayPresenter implements AbstractPresenter
 		return output;
 	}
 
-	private String doStuff() {return "stuff";}
+	private String doStuff() 
+	{
+		return "stuff";
+	}
 }
