@@ -26,9 +26,20 @@ import org.eclipse.jetty.servlet.ServletHolder;
  */
 public class HttpServer
 {
-	public static void main( String[] args ) throws Exception
+	/**
+	 * default ctor
+	 */
+	public HttpServer()
+	{super();}
+	
+	/**
+	 * 
+	 * @param port
+	 * @return
+	 */
+	public void start(int port)
     {
-        Server server = new Server(Integer.parseInt(args[0]));
+        Server server = new Server(port);
  
         ServletContextHandler context = new ServletContextHandler();
         server.setHandler(context);
@@ -39,8 +50,21 @@ public class HttpServer
         
         // Add default servlet
         context.addServlet(new ServletHolder(dataServlet), "/*");
-
-        server.start();
-        server.join();
+		
+        try
+        {
+        	server.start();
+        	server.join();
+        }
+        catch(InterruptedException ie)
+        {
+        	ie.printStackTrace();
+        }
+        
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        }
+        
     }
 }

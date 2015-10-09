@@ -1,0 +1,4 @@
+<map id="openDMS.helpers.viewPresenterFactory.AbstractViewPresenterFactory" name="openDMS.helpers.viewPresenterFactory.AbstractViewPresenterFactory">
+<area shape="rect" id="node2" href="$classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1EbayFactory.html" title="{openDMS.helpers.viewPresenter\lFactory.EbayFactory\n||+ makeView()\l+ makePresenter()\l}" alt="" coords="5,160,233,267"/>
+<area shape="rect" id="node3" href="$classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1RootFactory.html" title="{openDMS.helpers.viewPresenter\lFactory.RootFactory\n||+ makeView()\l+ makePresenter()\l}" alt="" coords="257,160,485,267"/>
+</map>

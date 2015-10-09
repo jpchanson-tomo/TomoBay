@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['instance',['instance',['../classopenDMS_1_1ebay_1_1query_1_1helpers_1_1APIcontext.html#a0952db8da299efcb788800306d248a5f',1,'openDMS::ebay::query::helpers::APIcontext']]]
+  ['filetostring',['FileToString',['../classopenDMS_1_1helpers_1_1FileToString.html#aa0e9a8d60fb9efff98b6235e5ca8d5fa',1,'openDMS::helpers::FileToString']]]
 ];

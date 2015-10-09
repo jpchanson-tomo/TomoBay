@@ -100,7 +100,7 @@ Inheritance diagram for openDMS.ebay.query.recievers.AbstractAPIcall:</div>
 <div class="dyncontent">
 <div class="center"><img src="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall__inherit__graph.png" border="0" usemap="#openDMS_8ebay_8query_8recievers_8AbstractAPIcall_inherit__map" alt="Inheritance graph"/></div>
 <map name="openDMS_8ebay_8query_8recievers_8AbstractAPIcall_inherit__map" id="openDMS_8ebay_8query_8recievers_8AbstractAPIcall_inherit__map">
-<area shape="rect" id="node2" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1Orders.html" title="{openDMS.ebay.query.recievers.\lOrders\n||# Orders()\l# call()\l}" alt="" coords="5,175,231,281"/></map>
+<area shape="rect" id="node2" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1ItemCall.html" title="{openDMS.ebay.query.recievers.\lItemCall\n|~ item_M\l~ itemreq_M\l|+ ItemCall()\l+ call()\l}" alt="" coords="5,160,231,281"/><area shape="rect" id="node3" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1OrdersCall.html" title="{openDMS.ebay.query.recievers.\lOrdersCall\n|~ order_M\l~ ordreq_M\l|+ OrdersCall()\l+ call()\l}" alt="" coords="255,160,480,281"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for openDMS.ebay.query.recievers.AbstractAPIcall:</div>
@@ -114,8 +114,6 @@ Collaboration diagram for openDMS.ebay.query.recievers.AbstractAPIcall:</div>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad228578ec981adc19dd8dd8b03ea89cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#ad228578ec981adc19dd8dd8b03ea89cb">AbstractAPIcall</a> (String usrToken, String server)</td></tr>
 <tr class="separator:ad228578ec981adc19dd8dd8b03ea89cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af06a032498be7f965cc99a187f6a95f0"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="classopenDMS_1_1ebay_1_1query_1_1helpers_1_1ApiCallData.html">ApiCallData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#af06a032498be7f965cc99a187f6a95f0">call</a> (<a class="el" href="classopenDMS_1_1ebay_1_1query_1_1helpers_1_1ApiCallData.html">ApiCallData</a> data)</td></tr>
-<tr class="separator:af06a032498be7f965cc99a187f6a95f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -125,7 +123,11 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a965b7562a9f76787af76085a3a246145"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This is the abstract base class for all the recievers in this command pattern, it provides a common way to initialise ebay API calls </p><dl class="section author"><dt>Author</dt><dd>Jan P.C. Hanson </dd></dl>
+<div class="textblock"><p>Copyright(C) 2015 Jan P.C. Hanson &amp; Tomo Motor Parts Limited</p>
+<p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. This is the abstract base class for all the recievers in this command pattern, it provides a common way to initialise ebay API calls.</p>
+<dl class="section author"><dt>Author</dt><dd>Jan P.C. Hanson </dd></dl>
 
 <p>Definition at line <a class="el" href="AbstractAPIcall_8java_source.html#l00027">27</a> of file <a class="el" href="AbstractAPIcall_8java_source.html">AbstractAPIcall.java</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -168,33 +170,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="AbstractAPIcall_8java_source.html#l00040">40</a> of file <a class="el" href="AbstractAPIcall_8java_source.html">AbstractAPIcall.java</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="af06a032498be7f965cc99a187f6a95f0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract <a class="el" href="classopenDMS_1_1ebay_1_1query_1_1helpers_1_1ApiCallData.html">ApiCallData</a> openDMS.ebay.query.recievers.AbstractAPIcall.call </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1helpers_1_1ApiCallData.html">ApiCallData</a>&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">abstract</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>this executes a call or series of calls to the eBay API. </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Definition at line <a class="el" href="AbstractAPIcall_8java_source.html#l00041">41</a> of file <a class="el" href="AbstractAPIcall_8java_source.html">AbstractAPIcall.java</a>.</p>
 
 </div>
 </div>
@@ -251,7 +227,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 1 2015 14:54:42 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

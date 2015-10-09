@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main',['MAIN',['../classopenDMS_1_1ebay_1_1MAIN.html',1,'openDMS::ebay']]]
+  ['filetostring',['FileToString',['../classopenDMS_1_1helpers_1_1FileToString.html',1,'openDMS::helpers']]]
 ];

@@ -1,4 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html" title="openDMS.ebay.query.commands.\lAbstractEbayQuery" alt="" coords="5,5,244,47"/>
-<area shape="rect" id="node2" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetOrders.html" title="openDMS.ebay.query.commands.\lGetOrders" alt="" coords="292,5,531,47"/>
+<area shape="rect" id="node1" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html" title="openDMS.ebay.query.commands.\lAbstractEbayQuery" alt="" coords="5,71,244,112"/>
+<area shape="rect" id="node2" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetItemCommand.html" title="openDMS.ebay.query.commands.\lGetItemCommand" alt="" coords="292,5,531,47"/>
+<area shape="rect" id="node3" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetOrderListCommand.html" title="openDMS.ebay.query.commands.\lGetOrderListCommand" alt="" coords="292,71,531,112"/>
+<area shape="rect" id="node4" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetTransactionListCommand.html" title="openDMS.ebay.query.commands.\lGetTransactionListCommand" alt="" coords="292,136,531,177"/>
 </map>

@@ -18,7 +18,7 @@ import openDMS.presenters.AbstractPresenter;
 import openDMS.view.views.AbstractView;
 import openDMS.view.views.RootView;
 /**
- *
+ * this is the presenter for the root of the webApp.
  * @author Jan P.C. Hanson
  *
  */
@@ -39,6 +39,8 @@ public class RootPresenter implements AbstractPresenter
 		String output = "";
 		
 		output += view.make(RootView.Part.INDEX);
+		
+		System.out.println("Root page loaded");
 		
 		return output;
 	}

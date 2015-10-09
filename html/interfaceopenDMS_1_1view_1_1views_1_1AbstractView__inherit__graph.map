@@ -1,0 +1,4 @@
+<map id="openDMS.view.views.AbstractView" name="openDMS.view.views.AbstractView">
+<area shape="rect" id="node2" href="$classopenDMS_1_1view_1_1views_1_1EbayView.html" title="{openDMS.view.views.EbayView\n|&#45; viewPart_M\l|+ EbayView()\l+ make()\l# populateMap()\l}" alt="" coords="5,131,223,237"/>
+<area shape="rect" id="node3" href="$classopenDMS_1_1view_1_1views_1_1RootView.html" title="{openDMS.view.views.RootView\n|&#45; viewPart_M\l|+ RootView()\l+ make()\l&#45; populateMap()\l}" alt="" coords="247,131,461,237"/>
+</map>

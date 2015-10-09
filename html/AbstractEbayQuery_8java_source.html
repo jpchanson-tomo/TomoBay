@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bd6abdbb854c4567f8eea0a5980c559f.html">src</a></li><li class="navelem"><a class="el" href="dir_8bc327c4b4c9cca7b7c987af1e7c988d.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_2fc2cbf919fd3e6002db88bd452c53bc.html">ebay</a></li><li class="navelem"><a class="el" href="dir_e501385a8dd439752312b221f99eb9fd.html">query</a></li><li class="navelem"><a class="el" href="dir_3ce1fb6d1b60223673a4c53580c84fe7.html">commands</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_8a945f06a8a4c83ca9c55c55422bd7ba.html">ebay</a></li><li class="navelem"><a class="el" href="dir_1bb867ce2ecc6373345403f4b66e4e22.html">query</a></li><li class="navelem"><a class="el" href="dir_8a264249f4d328902a206ce1a2a82cf2.html">commands</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -89,18 +89,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="AbstractEbayQuery_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceopenDMS_1_1ebay_1_1query_1_1commands.html">    1</a></span>&#160;<span class="keyword">package </span>openDMS.ebay.query.commands;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceopenDMS.html">openDMS</a>.<a class="code" href="namespaceopenDMS_1_1ebay.html">ebay</a>.<a class="code" href="namespaceopenDMS_1_1ebay_1_1query.html">query</a>.<a class="code" href="namespaceopenDMS_1_1ebay_1_1query_1_1data.html">data</a>.<a class="code" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html">   25</a></span>&#160;<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html">AbstractEbayQuery</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">public</span> <span class="keyword">abstract</span> String <a class="code" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#aa15a7143db41d7c52b67bbeff2950286">execute</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_html_aa15a7143db41d7c52b67bbeff2950286"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#aa15a7143db41d7c52b67bbeff2950286">openDMS.ebay.query.commands.AbstractEbayQuery.execute</a></div><div class="ttdeci">abstract String execute()</div></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#a97c60f724ff75b6e98fd8164557bc026">   28</a></span>&#160;    <span class="keyword">protected</span> <a class="code" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a> <a class="code" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#a97c60f724ff75b6e98fd8164557bc026">callData_M</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span> <span class="keyword">abstract</span> String <a class="code" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#a090d09d88f23a845bd5b1b6e8a674338">execute</a>(<a class="code" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a> callData, <span class="keywordtype">int</span> index, String <span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">public</span> <span class="keyword">abstract</span> <a class="code" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a> <a class="code" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#aad8047a96b727c392096900afd3a34a8">getCallData</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_html_aad8047a96b727c392096900afd3a34a8"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#aad8047a96b727c392096900afd3a34a8">openDMS.ebay.query.commands.AbstractEbayQuery.getCallData</a></div><div class="ttdeci">abstract ApiCallData getCallData()</div></div>
+<div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_html_a090d09d88f23a845bd5b1b6e8a674338"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#a090d09d88f23a845bd5b1b6e8a674338">openDMS.ebay.query.commands.AbstractEbayQuery.execute</a></div><div class="ttdeci">abstract String execute(ApiCallData callData, int index, String string)</div></div>
+<div class="ttc" id="namespaceopenDMS_html"><div class="ttname"><a href="namespaceopenDMS.html">openDMS</a></div></div>
+<div class="ttc" id="namespaceopenDMS_1_1ebay_html"><div class="ttname"><a href="namespaceopenDMS_1_1ebay.html">openDMS.ebay</a></div><div class="ttdef"><b>Definition:</b> <a href="MAIN_8java_source.html#l00001">MAIN.java:1</a></div></div>
+<div class="ttc" id="namespaceopenDMS_1_1ebay_1_1query_html"><div class="ttname"><a href="namespaceopenDMS_1_1ebay_1_1query.html">openDMS.ebay.query</a></div></div>
+<div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData_html"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">openDMS.ebay.query.data.ApiCallData</a></div><div class="ttdef"><b>Definition:</b> <a href="ApiCallData_8java_source.html#l00023">ApiCallData.java:23</a></div></div>
+<div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_html_a97c60f724ff75b6e98fd8164557bc026"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#a97c60f724ff75b6e98fd8164557bc026">openDMS.ebay.query.commands.AbstractEbayQuery.callData_M</a></div><div class="ttdeci">ApiCallData callData_M</div><div class="ttdef"><b>Definition:</b> <a href="AbstractEbayQuery_8java_source.html#l00028">AbstractEbayQuery.java:28</a></div></div>
+<div class="ttc" id="namespaceopenDMS_1_1ebay_1_1query_1_1data_html"><div class="ttname"><a href="namespaceopenDMS_1_1ebay_1_1query_1_1data.html">openDMS.ebay.query.data</a></div><div class="ttdef"><b>Definition:</b> <a href="ApiCallData_8java_source.html#l00001">ApiCallData.java:1</a></div></div>
 <div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_html"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html">openDMS.ebay.query.commands.AbstractEbayQuery</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractEbayQuery_8java_source.html#l00025">AbstractEbayQuery.java:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 1 2015 14:54:42 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 14:12:13 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

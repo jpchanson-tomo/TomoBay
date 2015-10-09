@@ -57,6 +57,7 @@ public class ItemCall extends AbstractAPIcall
 	public ApiItemData call(ApiItemData data, String itemId)
 	{     
 		DetailLevelCodeType[] detail = {DetailLevelCodeType.RETURN_ALL};
+		ApiItemData itemdata = data;
         try
         {
         	this.itemreq_M.setItemID(itemId);
@@ -67,10 +68,10 @@ public class ItemCall extends AbstractAPIcall
 	        this.item_M.setIncludeItemSpecifics(true);
 	        this.item_M.setDetailLevel(detail);
 	        
-	        data.addData(this.item_M.getItem());
+	        itemdata.addData(this.item_M.getItem());
         }
         catch (Exception e){e.printStackTrace();}
        
-        return data;
+        return itemdata;
 	}
 }

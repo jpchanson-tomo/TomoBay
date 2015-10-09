@@ -89,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">openDMS.ebay.query.commands.AbstractEbayQuery Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -99,31 +100,35 @@ Inheritance diagram for openDMS.ebay.query.commands.AbstractEbayQuery:</div>
 <div class="dyncontent">
 <div class="center"><img src="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery__inherit__graph.png" border="0" usemap="#openDMS_8ebay_8query_8commands_8AbstractEbayQuery_inherit__map" alt="Inheritance graph"/></div>
 <map name="openDMS_8ebay_8query_8commands_8AbstractEbayQuery_inherit__map" id="openDMS_8ebay_8query_8commands_8AbstractEbayQuery_inherit__map">
-<area shape="rect" id="node2" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetOrders.html" title="{openDMS.ebay.query.commands.\lGetOrders\n||+ execute()\l}" alt="" coords="5,145,244,237"/></map>
+<area shape="rect" id="node2" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetItemCommand.html" title="{openDMS.ebay.query.commands.\lGetItemCommand\n||+ execute()\l+ getCallData()\l}" alt="" coords="5,175,244,281"/><area shape="rect" id="node3" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetOrderListCommand.html" title="{openDMS.ebay.query.commands.\lGetOrderListCommand\n||+ execute()\l+ getCallData()\l}" alt="" coords="268,175,507,281"/><area shape="rect" id="node4" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetTransactionListCommand.html" title="{openDMS.ebay.query.commands.\lGetTransactionListCommand\n|~ transactionArrayList\l|+ GetTransactionListCommand()\l+ execute()\l+ getCallData()\l&#45; printResults()\l}" alt="" coords="531,160,769,296"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for openDMS.ebay.query.commands.AbstractEbayQuery:</div>
 <div class="dyncontent">
 <div class="center"><img src="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery__coll__graph.png" border="0" usemap="#openDMS_8ebay_8query_8commands_8AbstractEbayQuery_coll__map" alt="Collaboration graph"/></div>
 <map name="openDMS_8ebay_8query_8commands_8AbstractEbayQuery_coll__map" id="openDMS_8ebay_8query_8commands_8AbstractEbayQuery_coll__map">
-</map>
+<area shape="rect" id="node2" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html" title="{openDMS.ebay.query.data.\lApiCallData\n|&#45; userToken_M\l&#45; server_M\l|+ ApiCallData()\l+ addOrderData()\l+ addItemData()\l+ addTransactionData()\l+ accessOrderData()\l+ accessItemData()\l+ accessTransactionData()\l+ getUserToken()\l+ getServerString()\l}" alt="" coords="225,373,421,597"/><area shape="rect" id="node3" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiItemData.html" title="{openDMS.ebay.query.data.\lApiItemData\n||+ ApiItemData()\l+ addData()\l+ accessData()\l+ removeData()\l+ clearData()\l}" alt="" coords="5,153,201,303"/><area shape="rect" id="node5" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiTransactionData.html" title="{openDMS.ebay.query.data.\lApiTransactionData\n||+ ApiTransactionData()\l+ addData()\l+ accessData()\l+ removeData()\l+ clearData()\l+ size()\l}" alt="" coords="225,145,421,311"/><area shape="rect" id="node7" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiOrderData.html" title="{openDMS.ebay.query.data.\lApiOrderData\n||+ ApiOrderData()\l+ addData()\l+ accessData()\l+ removeData()\l+ clearData()\l+ size()\l}" alt="" coords="445,145,641,311"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa15a7143db41d7c52b67bbeff2950286"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#aa15a7143db41d7c52b67bbeff2950286">execute</a> ()</td></tr>
-<tr class="separator:aa15a7143db41d7c52b67bbeff2950286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090d09d88f23a845bd5b1b6e8a674338"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#a090d09d88f23a845bd5b1b6e8a674338">execute</a> (<a class="el" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a> callData, int index, String string)</td></tr>
+<tr class="separator:a090d09d88f23a845bd5b1b6e8a674338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad8047a96b727c392096900afd3a34a8"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#aad8047a96b727c392096900afd3a34a8">getCallData</a> ()</td></tr>
+<tr class="separator:aad8047a96b727c392096900afd3a34a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a97c60f724ff75b6e98fd8164557bc026"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#a97c60f724ff75b6e98fd8164557bc026">callData_M</a></td></tr>
+<tr class="separator:a97c60f724ff75b6e98fd8164557bc026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Copyright(C) 2015 Jan P.C. Hanson &amp; Tomo Motor Parts Limited</p>
-<p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
-<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
-<p>You should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. The purpose of this class is to define a common interface that all eBay API calls should subscribe to. It is the abstract base class of all derived eBay API calls.</p>
+<div class="textblock"><p>The purpose of this class is to define a common interface that all eBay API calls should subscribe to. It is the abstract base class of all derived eBay API calls.</p>
 <dl class="section author"><dt>Author</dt><dd>Jan P.C. Hanson </dd></dl>
 
 <p>Definition at line <a class="el" href="AbstractEbayQuery_8java_source.html#l00025">25</a> of file <a class="el" href="AbstractEbayQuery_8java_source.html">AbstractEbayQuery.java</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa15a7143db41d7c52b67bbeff2950286"></a>
+<a class="anchor" id="a090d09d88f23a845bd5b1b6e8a674338"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -132,6 +137,66 @@ Public Member Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">abstract String openDMS.ebay.query.commands.AbstractEbayQuery.execute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a>&#160;</td>
+          <td class="paramname"><em>callData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This provides the actual guts of the query. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callData</td><td>the calldata object from the previous query </td></tr>
+    <tr><td class="paramname">index</td><td>an integer parameter that may or may not be used by commands </td></tr>
+    <tr><td class="paramname">string</td><td>a string parameter that may or may not be used by commands. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representing the results of this query. </dd></dl>
+
+<p>Referenced by <a class="el" href="QueryInvoker_8java_source.html#l00054">openDMS.ebay.query.QueryInvoker.execute()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_a090d09d88f23a845bd5b1b6e8a674338_icgraph.png" border="0" usemap="#classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_a090d09d88f23a845bd5b1b6e8a674338_icgraph" alt=""/></div>
+<map name="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_a090d09d88f23a845bd5b1b6e8a674338_icgraph" id="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_a090d09d88f23a845bd5b1b6e8a674338_icgraph">
+<area shape="rect" id="node2" href="classopenDMS_1_1ebay_1_1query_1_1QueryInvoker.html#ac84e6a4ba682a480ae55ca6b89b5970f" title="openDMS.ebay.query.Query\lInvoker.execute" alt="" coords="292,5,493,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aad8047a96b727c392096900afd3a34a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract <a class="el" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a> openDMS.ebay.query.commands.AbstractEbayQuery.getCallData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -143,7 +208,42 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This provides the actual guts of the query. </p><dl class="section return"><dt>Returns</dt><dd>String representing the results of this query. </dd></dl>
+<p>retrieve the call data object associated with this object </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Referenced by <a class="el" href="QueryInvoker_8java_source.html#l00054">openDMS.ebay.query.QueryInvoker.execute()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_aad8047a96b727c392096900afd3a34a8_icgraph.png" border="0" usemap="#classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_aad8047a96b727c392096900afd3a34a8_icgraph" alt=""/></div>
+<map name="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_aad8047a96b727c392096900afd3a34a8_icgraph" id="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery_aad8047a96b727c392096900afd3a34a8_icgraph">
+<area shape="rect" id="node2" href="classopenDMS_1_1ebay_1_1query_1_1QueryInvoker.html#ac84e6a4ba682a480ae55ca6b89b5970f" title="openDMS.ebay.query.Query\lInvoker.execute" alt="" coords="292,5,493,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a97c60f724ff75b6e98fd8164557bc026"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html">ApiCallData</a> openDMS.ebay.query.commands.AbstractEbayQuery.callData_M</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>holder fo te ApiCallData </p>
+
+<p>Definition at line <a class="el" href="AbstractEbayQuery_8java_source.html#l00028">28</a> of file <a class="el" href="AbstractEbayQuery_8java_source.html">AbstractEbayQuery.java</a>.</p>
 
 </div>
 </div>
@@ -153,7 +253,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 1 2015 14:54:42 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

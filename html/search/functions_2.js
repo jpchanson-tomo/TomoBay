@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['execute',['execute',['../classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html#aa15a7143db41d7c52b67bbeff2950286',1,'openDMS.ebay.query.commands.AbstractEbayQuery.execute()'],['../classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetOrders.html#a6114a51e1cd395988c072e05392e8020',1,'openDMS.ebay.query.commands.GetOrders.execute()']]]
+  ['doget',['doGet',['../classopenDMS_1_1view_1_1UIServlet.html#add830bd278a0d69a096c709bd87a2295',1,'openDMS::view::UIServlet']]],
+  ['dostuff',['doStuff',['../classopenDMS_1_1presenters_1_1ebay_1_1EbayPresenter.html#af9223ca293ad7f3b7850be264688e691',1,'openDMS::presenters::ebay::EbayPresenter']]]
 ];

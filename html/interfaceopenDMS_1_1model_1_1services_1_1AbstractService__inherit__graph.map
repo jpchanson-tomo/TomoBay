@@ -1,0 +1,4 @@
+<map id="openDMS.model.services.AbstractService" name="openDMS.model.services.AbstractService">
+<area shape="rect" id="node3" href="$classopenDMS_1_1model_1_1services_1_1EbayService.html" title="{openDMS.model.services.Ebay\lService\n|&#45; productionToken\l&#45; productionServer\l|+ run()\l}" alt="" coords="5,271,224,377"/>
+<area shape="rect" id="node4" href="$classopenDMS_1_1model_1_1services_1_1TestService.html" title="{openDMS.model.services.Test\lService\n|~ i\l|+ run()\l}" alt="" coords="249,278,463,370"/>
+</map>

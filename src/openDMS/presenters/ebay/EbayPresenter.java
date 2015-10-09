@@ -47,6 +47,8 @@ public class EbayPresenter implements AbstractPresenter
 
 	private String doStuff() 
 	{
-		return "stuff";
+		
+		
+		return "<h1> eBay </h1> \n <a class='btn btn-default' href='/'>Root</a>";
 	}
 }

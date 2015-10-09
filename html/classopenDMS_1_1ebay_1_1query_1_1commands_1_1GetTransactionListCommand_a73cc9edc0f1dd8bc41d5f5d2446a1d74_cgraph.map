@@ -1,0 +1,6 @@
+<map id="openDMS.ebay.query.commands.GetTransactionListCommand.execute" name="openDMS.ebay.query.commands.GetTransactionListCommand.execute">
+<area shape="rect" id="node2" href="$classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#a06584391374faccf2a015eb009480470" title="openDMS.ebay.query.data.\lApiCallData.accessTransactionData" alt="" coords="605,5,855,47"/>
+<area shape="rect" id="node3" href="$classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiTransactionData.html#af010db6048074387127037c7849e442c" title="openDMS.ebay.query.data.\lApiTransactionData.clearData" alt="" coords="330,31,543,72"/>
+<area shape="rect" id="node4" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetTransactionListCommand.html#af970fc4b28e99fed516c66d63b32bf9e" title="openDMS.ebay.query.commands.\lGetTransactionListCommand.print\lResults" alt="" coords="316,95,557,151"/>
+<area shape="rect" id="node5" href="$classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiTransactionData.html#a93938551b379d93cf16b564e5dfe4ed3" title="openDMS.ebay.query.data.\lApiTransactionData.size" alt="" coords="632,103,828,144"/>
+</map>

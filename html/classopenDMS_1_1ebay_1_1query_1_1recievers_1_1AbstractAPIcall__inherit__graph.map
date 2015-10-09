@@ -1,3 +1,4 @@
 <map id="openDMS.ebay.query.recievers.AbstractAPIcall" name="openDMS.ebay.query.recievers.AbstractAPIcall">
-<area shape="rect" id="node2" href="$classopenDMS_1_1ebay_1_1query_1_1recievers_1_1Orders.html" title="{openDMS.ebay.query.recievers.\lOrders\n||# Orders()\l# call()\l}" alt="" coords="5,175,231,281"/>
+<area shape="rect" id="node2" href="$classopenDMS_1_1ebay_1_1query_1_1recievers_1_1ItemCall.html" title="{openDMS.ebay.query.recievers.\lItemCall\n|~ item_M\l~ itemreq_M\l|+ ItemCall()\l+ call()\l}" alt="" coords="5,160,231,281"/>
+<area shape="rect" id="node3" href="$classopenDMS_1_1ebay_1_1query_1_1recievers_1_1OrdersCall.html" title="{openDMS.ebay.query.recievers.\lOrdersCall\n|~ order_M\l~ ordreq_M\l|+ OrdersCall()\l+ call()\l}" alt="" coords="255,160,480,281"/>
 </map>
