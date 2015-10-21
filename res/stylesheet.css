@@ -1,0 +1,16 @@
+body
+{
+	background-color:lightblue;
+}
+#myNavbar
+{
+	float:right;
+}
+.logo
+{
+	height:50px;
+}
+.panel
+{
+	opacity:0.8;
+}

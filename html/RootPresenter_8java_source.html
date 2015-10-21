@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -64,6 +72,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('RootPresenter_8java_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_7ead6909c3469753b980d41a9de60ae5.html">presenters</a></li><li class="navelem"><a class="el" href="dir_af6522fabfa8c7dc3ce83a62a5d1a371.html">root</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">RootPresenter.java</div>  </div>
@@ -107,9 +125,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        output += view.<a class="code" href="interfaceopenDMS_1_1view_1_1views_1_1AbstractView.html#afd370c13ce4954c5cfb98eebecc35225">make</a>(<a class="code" href="classopenDMS_1_1view_1_1views_1_1RootView.html">RootView</a>.<a class="code" href="enumopenDMS_1_1view_1_1views_1_1RootView_1_1Part.html">Part</a>.<a class="code" href="enumopenDMS_1_1view_1_1views_1_1RootView_1_1Part.html#a1453b8b66807fd1428107b03c334ec14">INDEX</a>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> output;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        System.out.println(<span class="stringliteral">&quot;Root page loaded&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> output;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="ttc" id="enumopenDMS_1_1view_1_1views_1_1RootView_1_1Part_html"><div class="ttname"><a href="enumopenDMS_1_1view_1_1views_1_1RootView_1_1Part.html">openDMS.view.views.RootView.Part</a></div><div class="ttdef"><b>Definition:</b> <a href="RootView_8java_source.html#l00031">RootView.java:31</a></div></div>
 <div class="ttc" id="namespaceopenDMS_1_1view_1_1views_html"><div class="ttname"><a href="namespaceopenDMS_1_1view_1_1views.html">openDMS.view.views</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractView_8java_source.html#l00001">AbstractView.java:1</a></div></div>
 <div class="ttc" id="classopenDMS_1_1presenters_1_1root_1_1RootPresenter_html_a78bc73a32edabbc0f803897504d4c306"><div class="ttname"><a href="classopenDMS_1_1presenters_1_1root_1_1RootPresenter.html#a78bc73a32edabbc0f803897504d4c306">openDMS.presenters.root.RootPresenter.RootPresenter</a></div><div class="ttdeci">RootPresenter()</div><div class="ttdef"><b>Definition:</b> <a href="RootPresenter_8java_source.html#l00030">RootPresenter.java:30</a></div></div>
@@ -124,11 +144,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="interfaceopenDMS_1_1view_1_1views_1_1AbstractView_html"><div class="ttname"><a href="interfaceopenDMS_1_1view_1_1views_1_1AbstractView.html">openDMS.view.views.AbstractView</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractView_8java_source.html#l00025">AbstractView.java:25</a></div></div>
 <div class="ttc" id="interfaceopenDMS_1_1view_1_1views_1_1AbstractView_html_afd370c13ce4954c5cfb98eebecc35225"><div class="ttname"><a href="interfaceopenDMS_1_1view_1_1views_1_1AbstractView.html#afd370c13ce4954c5cfb98eebecc35225">openDMS.view.views.AbstractView.make</a></div><div class="ttdeci">String make(AbstractViewPart part)</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_7ead6909c3469753b980d41a9de60ae5.html">presenters</a></li><li class="navelem"><a class="el" href="dir_af6522fabfa8c7dc3ce83a62a5d1a371.html">root</a></li><li class="navelem"><a class="el" href="RootPresenter_8java.html">RootPresenter.java</a></li>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:26 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

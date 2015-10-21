@@ -1,0 +1,4 @@
+<map id="openDMS.model.eBayAPI.AbstractAPIcall" name="openDMS.model.eBayAPI.AbstractAPIcall">
+<area shape="rect" id="node2" href="$classopenDMS_1_1model_1_1eBayAPI_1_1ItemCall.html" title="{openDMS.model.eBayAPI.ItemCall\n|~ item_M\l~ itemreq_M\l|+ ItemCall()\l+ call()\l}" alt="" coords="5,160,233,267"/>
+<area shape="rect" id="node3" href="$classopenDMS_1_1model_1_1eBayAPI_1_1OrdersCall.html" title="{openDMS.model.eBayAPI.OrdersCall\n|~ order_M\l~ ordreq_M\l|+ OrdersCall()\l+ call()\l}" alt="" coords="257,160,499,267"/>
+</map>

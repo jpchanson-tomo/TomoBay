@@ -1,0 +1,5 @@
+<map id="openDMS.model.services.basicEbayUpdate.BuyersTable.populate" name="openDMS.model.services.basicEbayUpdate.BuyersTable.populate">
+<area shape="rect" id="node2" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#a86e1691b13dbe78af3b211760e751ea9" title="openDMS.model.sql.queries.\lQueryInvoker.execute" alt="" coords="277,39,468,80"/>
+<area shape="rect" id="node3" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#a96694e3eea759b2f314936c5284cbe63" title="openDMS.model.sql.queries.\lQueryInvoker.make" alt="" coords="516,5,707,47"/>
+<area shape="rect" id="node4" href="$interfaceopenDMS_1_1model_1_1sql_1_1queries_1_1AbstractDBQuery.html#a25b12fdcf4ebc57f91a9b45d2ed1ceaf" title="openDMS.model.sql.queries.\lAbstractDBQuery.execute" alt="" coords="516,71,707,112"/>
+</map>

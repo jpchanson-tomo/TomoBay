@@ -50,7 +50,7 @@ public class FileToString
 		{
 			String line = null;
 			while((line = reader.readLine()) != null)
-			{result += line + "\n";}
+			{result += "\n" +line;}
 		}
 		
 		catch (IOException ioe)

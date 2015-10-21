@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfaceopenDMS_1_1view_1_1views_1_1AbstractViewPart.html" title="openDMS.view.views.Abstract\lViewPart" alt="" coords="5,23,208,65"/>
+<area shape="rect" id="node2" href="$enumopenDMS_1_1view_1_1views_1_1EbayView_1_1Part.html" title="openDMS.view.views.EbayView.Part" alt="" coords="256,5,496,32"/>
+<area shape="rect" id="node3" href="$enumopenDMS_1_1view_1_1views_1_1RootView_1_1Part.html" title="openDMS.view.views.RootView.Part" alt="" coords="257,56,495,83"/>
+</map>

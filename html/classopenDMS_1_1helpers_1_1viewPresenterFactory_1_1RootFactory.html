@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1RootFactory.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespaceopenDMS.html">openDMS</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1helpers.html">helpers</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1helpers_1_1viewPresenterFactory.html">viewPresenterFactory</a></li><li class="navelem"><a class="el" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1RootFactory.html">RootFactory</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -133,7 +151,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>factory method that creates a presenter </p><dl class="section return"><dt>Returns</dt><dd>AbstractPresenter the presenter than has been requested. </dd></dl>
+<p>factory method that creates specific a presenter </p><dl class="section return"><dt>Returns</dt><dd>AbstractPresenter the presenter than has been requested. </dd></dl>
 
 <p>Implements <a class="el" href="interfaceopenDMS_1_1helpers_1_1viewPresenterFactory_1_1AbstractViewPresenterFactory.html#aede7a1290cc043bff173812edc114bd2">openDMS.helpers.viewPresenterFactory.AbstractViewPresenterFactory</a>.</p>
 
@@ -153,7 +171,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>factory method that creates a view </p><dl class="section return"><dt>Returns</dt><dd>AbstractView the view that has been requested </dd></dl>
+<p>factory method that creates specific a view </p><dl class="section return"><dt>Returns</dt><dd>AbstractView the view that has been requested </dd></dl>
 
 <p>Implements <a class="el" href="interfaceopenDMS_1_1helpers_1_1viewPresenterFactory_1_1AbstractViewPresenterFactory.html#a6c78a36ce5af200de64f0c20218ba4c2">openDMS.helpers.viewPresenterFactory.AbstractViewPresenterFactory</a>.</p>
 
@@ -165,11 +183,15 @@ Public Member Functions</h2></td></tr>
 <li>src/openDMS/helpers/viewPresenterFactory/<a class="el" href="RootFactory_8java_source.html">RootFactory.java</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceopenDMS.html">openDMS</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1helpers.html">helpers</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1helpers_1_1viewPresenterFactory.html">viewPresenterFactory</a></li><li class="navelem"><a class="el" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1RootFactory.html">RootFactory</a></li>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:26 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

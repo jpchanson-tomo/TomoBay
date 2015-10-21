@@ -24,13 +24,13 @@ import openDMS.view.views.AbstractView;
 public interface AbstractViewPresenterFactory
 {
 	/**
-	 * factory method that creates a view
+	 * factory method that creates specific a view
 	 * @return AbstractView the view that has been requested
 	 */
 	public AbstractView makeView();
 	
 	/**
-	 * factory method that creates a presenter
+	 * factory method that creates specific a presenter
 	 * @return AbstractPresenter the presenter than has been requested.
 	 */
 	public AbstractPresenter makePresenter();

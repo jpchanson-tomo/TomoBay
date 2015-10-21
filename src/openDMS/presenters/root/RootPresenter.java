@@ -14,6 +14,9 @@ package openDMS.presenters.root;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import openDMS.model.services.ServiceFactory;
+import openDMS.model.services.ServiceFactory.ServiceType;
+import openDMS.model.services.TriggerService;
 import openDMS.presenters.AbstractPresenter;
 import openDMS.view.views.AbstractView;
 import openDMS.view.views.RootView;
@@ -40,6 +43,7 @@ public class RootPresenter implements AbstractPresenter
 		
 		output += view.make(RootView.Part.INDEX);
 		
+		TriggerService.start(ServiceFactory.make(ServiceType.TEST_SERVICE));
 		System.out.println("Root page loaded");
 		
 		return output;

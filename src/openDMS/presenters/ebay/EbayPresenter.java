@@ -14,6 +14,10 @@ package openDMS.presenters.ebay;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.sql.SQLException;
+import java.util.List;
+
+import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.presenters.AbstractPresenter;
 import openDMS.view.views.AbstractView;
 import openDMS.view.views.EbayView;
@@ -47,8 +51,33 @@ public class EbayPresenter implements AbstractPresenter
 
 	private String doStuff() 
 	{
+		String result = "";
+		try
+		{
+			List<String[]> rows = QueryInvoker.execute
+					(QueryInvoker.QueryType.SELECT_EBAY_ORDERS,new String[] {""});
+			
+			result+= "<table class='table table-bordered'> \n";
+			result+= "<thead>\n<tr>\n"
+					+ "<th>ID</th>\n"
+					+ "<th>name</th>\n"
+					+ "<th>Shipping Address</th>\n"
+					+ "</tr>\n</thead>\n <tbody>";
+			for (String[] cols : rows)
+			{
+				result+="<tr>\n";
+				result+="<td>"+ cols[0].trim() + "</td>\n";
+				result+="<td>"+ cols[1].trim() + "</td>\n";
+				result+="<td>"+ cols[2].trim() + "</td>\n";
+				result+="</tr>\n";
+			}
+			
+			result+="</tbody>\n</table>";
+			
+		}
+		catch(SQLException e)
+		{e.printStackTrace();}
 		
-		
-		return "<h1> eBay </h1> \n <a class='btn btn-default' href='/'>Root</a>";
+		return  result;
 	}
 }

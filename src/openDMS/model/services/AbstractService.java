@@ -23,5 +23,5 @@ package openDMS.model.services;
  */
 public interface AbstractService extends Runnable
 {
-
+	public void run();
 }

@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -68,6 +76,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('hierarchy.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -90,113 +112,132 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock">
 <p><a href="hierarchy.html">Go to the textual class hierarchy</a></p>
 </div><table border="0" cellspacing="10" cellpadding="0">
-<tr><td><img src="inherit_graph_0.png" border="0" alt="" usemap="#openDMS_8ebay_8MAIN"/>
-<map name="openDMS_8ebay_8MAIN" id="openDMS_8ebay_8MAIN">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1MAIN.html" title="openDMS.ebay.MAIN" alt="" coords="5,5,161,32"/></map>
+<tr><td><img src="inherit_graph_0.png" border="0" alt="" usemap="#openDMS_8helpers_8ConfigReader"/>
+<map name="openDMS_8helpers_8ConfigReader" id="openDMS_8helpers_8ConfigReader">
+<area shape="rect" id="node1" href="classopenDMS_1_1helpers_1_1ConfigReader.html" title="openDMS.helpers.ConfigReader" alt="" coords="5,5,216,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" alt="" usemap="#openDMS_8ebay_8POC"/>
-<map name="openDMS_8ebay_8POC" id="openDMS_8ebay_8POC">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1POC.html" title="openDMS.ebay.POC" alt="" coords="5,5,156,32"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" alt="" usemap="#openDMS_8ebay_8query_8commands_8AbstractEbayQuery"/>
-<map name="openDMS_8ebay_8query_8commands_8AbstractEbayQuery" id="openDMS_8ebay_8query_8commands_8AbstractEbayQuery">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1AbstractEbayQuery.html" title="openDMS.ebay.query.commands.\lAbstractEbayQuery" alt="" coords="5,71,244,112"/><area shape="rect" id="node2" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetItemCommand.html" title="openDMS.ebay.query.commands.\lGetItemCommand" alt="" coords="292,5,531,47"/><area shape="rect" id="node3" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetOrderListCommand.html" title="openDMS.ebay.query.commands.\lGetOrderListCommand" alt="" coords="292,71,531,112"/><area shape="rect" id="node4" href="classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetTransactionListCommand.html" title="openDMS.ebay.query.commands.\lGetTransactionListCommand" alt="" coords="292,136,531,177"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" alt="" usemap="#openDMS_8ebay_8query_8data_8ApiCallData"/>
-<map name="openDMS_8ebay_8query_8data_8ApiCallData" id="openDMS_8ebay_8query_8data_8ApiCallData">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html" title="openDMS.ebay.query.data.\lApiCallData" alt="" coords="5,5,201,47"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" alt="" usemap="#openDMS_8ebay_8query_8data_8ApiCallData_8Data__Type"/>
-<map name="openDMS_8ebay_8query_8data_8ApiCallData_8Data__Type" id="openDMS_8ebay_8query_8data_8ApiCallData_8Data__Type">
-<area shape="rect" id="node1" href="enumopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData_1_1Data__Type.html" title="openDMS.ebay.query.data.\lApiCallData.Data_Type" alt="" coords="5,5,201,47"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_5.png" border="0" alt="" usemap="#openDMS_8ebay_8query_8data_8APIcontext"/>
-<map name="openDMS_8ebay_8query_8data_8APIcontext" id="openDMS_8ebay_8query_8data_8APIcontext">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1APIcontext.html" title="openDMS.ebay.query.data.\lAPIcontext" alt="" coords="5,5,201,47"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_6.png" border="0" alt="" usemap="#openDMS_8ebay_8query_8data_8ApiItemData"/>
-<map name="openDMS_8ebay_8query_8data_8ApiItemData" id="openDMS_8ebay_8query_8data_8ApiItemData">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiItemData.html" title="openDMS.ebay.query.data.\lApiItemData" alt="" coords="5,5,201,47"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_7.png" border="0" alt="" usemap="#openDMS_8ebay_8query_8data_8ApiOrderData"/>
-<map name="openDMS_8ebay_8query_8data_8ApiOrderData" id="openDMS_8ebay_8query_8data_8ApiOrderData">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiOrderData.html" title="openDMS.ebay.query.data.\lApiOrderData" alt="" coords="5,5,201,47"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_8.png" border="0" alt="" usemap="#openDMS_8ebay_8query_8data_8ApiTransactionData"/>
-<map name="openDMS_8ebay_8query_8data_8ApiTransactionData" id="openDMS_8ebay_8query_8data_8ApiTransactionData">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiTransactionData.html" title="openDMS.ebay.query.data.\lApiTransactionData" alt="" coords="5,5,201,47"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_9.png" border="0" alt="" usemap="#openDMS_8ebay_8query_8QueryInvoker"/>
-<map name="openDMS_8ebay_8query_8QueryInvoker" id="openDMS_8ebay_8query_8QueryInvoker">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1query_1_1QueryInvoker.html" title="openDMS.ebay.query.Query\lInvoker" alt="" coords="5,5,207,47"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_10.png" border="0" alt="" usemap="#openDMS_8ebay_8query_8recievers_8AbstractAPIcall"/>
-<map name="openDMS_8ebay_8query_8recievers_8AbstractAPIcall" id="openDMS_8ebay_8query_8recievers_8AbstractAPIcall">
-<area shape="rect" id="node1" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html" title="openDMS.ebay.query.recievers.\lAbstractAPIcall" alt="" coords="5,39,231,80"/><area shape="rect" id="node2" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1ItemCall.html" title="openDMS.ebay.query.recievers.\lItemCall" alt="" coords="279,5,504,47"/><area shape="rect" id="node3" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1OrdersCall.html" title="openDMS.ebay.query.recievers.\lOrdersCall" alt="" coords="279,71,504,112"/></map>
-</td></tr>
-<tr><td><img src="inherit_graph_11.png" border="0" alt="" usemap="#openDMS_8helpers_8FileToString"/>
+<tr><td><img src="inherit_graph_1.png" border="0" alt="" usemap="#openDMS_8helpers_8FileToString"/>
 <map name="openDMS_8helpers_8FileToString" id="openDMS_8helpers_8FileToString">
-<area shape="rect" id="node1" href="classopenDMS_1_1helpers_1_1FileToString.html" title="openDMS.helpers.FileToString" alt="" coords="5,5,219,32"/></map>
+<area shape="rect" id="node1" href="classopenDMS_1_1helpers_1_1FileToString.html" title="openDMS.helpers.FileToString" alt="" coords="5,5,205,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_12.png" border="0" alt="" usemap="#openDMS_8helpers_8NoImports"/>
+<tr><td><img src="inherit_graph_2.png" border="0" alt="" usemap="#openDMS_8helpers_8NoImports"/>
 <map name="openDMS_8helpers_8NoImports" id="openDMS_8helpers_8NoImports">
-<area shape="rect" id="node1" href="classopenDMS_1_1helpers_1_1NoImports.html" title="openDMS.helpers.NoImports" alt="" coords="5,5,212,32"/></map>
+<area shape="rect" id="node1" href="classopenDMS_1_1helpers_1_1NoImports.html" title="openDMS.helpers.NoImports" alt="" coords="5,5,196,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_13.png" border="0" alt="" usemap="#openDMS_8helpers_8viewPresenterFactory_8AbstractViewPresenterFactory"/>
+<tr><td><img src="inherit_graph_3.png" border="0" alt="" usemap="#openDMS_8helpers_8viewPresenterFactory_8AbstractViewPresenterFactory"/>
 <map name="openDMS_8helpers_8viewPresenterFactory_8AbstractViewPresenterFactory" id="openDMS_8helpers_8viewPresenterFactory_8AbstractViewPresenterFactory">
-<area shape="rect" id="node1" href="interfaceopenDMS_1_1helpers_1_1viewPresenterFactory_1_1AbstractViewPresenterFactory.html" title="openDMS.helpers.viewPresenter\lFactory.AbstractViewPresenterFactory" alt="" coords="5,39,271,80"/><area shape="rect" id="node2" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1EbayFactory.html" title="openDMS.helpers.viewPresenter\lFactory.EbayFactory" alt="" coords="319,5,547,47"/><area shape="rect" id="node3" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1RootFactory.html" title="openDMS.helpers.viewPresenter\lFactory.RootFactory" alt="" coords="319,71,547,112"/></map>
+<area shape="rect" id="node1" href="interfaceopenDMS_1_1helpers_1_1viewPresenterFactory_1_1AbstractViewPresenterFactory.html" title="openDMS.helpers.viewPresenter\lFactory.AbstractViewPresenterFactory" alt="" coords="5,39,253,80"/><area shape="rect" id="node2" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1EbayFactory.html" title="openDMS.helpers.viewPresenter\lFactory.EbayFactory" alt="" coords="301,5,515,47"/><area shape="rect" id="node3" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1RootFactory.html" title="openDMS.helpers.viewPresenter\lFactory.RootFactory" alt="" coords="301,71,515,112"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_14.png" border="0" alt="" usemap="#openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory"/>
+<tr><td><img src="inherit_graph_4.png" border="0" alt="" usemap="#openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory"/>
 <map name="openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory" id="openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory">
-<area shape="rect" id="node1" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html" title="openDMS.helpers.viewPresenter\lFactory.ViewPresenterFactory" alt="" coords="5,5,233,47"/></map>
+<area shape="rect" id="node1" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html" title="openDMS.helpers.viewPresenter\lFactory.ViewPresenterFactory" alt="" coords="5,5,219,47"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_15.png" border="0" alt="" usemap="#openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory_8Select"/>
+<tr><td><img src="inherit_graph_5.png" border="0" alt="" usemap="#openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory_8Select"/>
 <map name="openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory_8Select" id="openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory_8Select">
-<area shape="rect" id="node1" href="enumopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory_1_1Select.html" title="openDMS.helpers.viewPresenter\lFactory.ViewPresenterFactory.Select" alt="" coords="5,5,260,47"/></map>
+<area shape="rect" id="node1" href="enumopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory_1_1Select.html" title="openDMS.helpers.viewPresenter\lFactory.ViewPresenterFactory.Select" alt="" coords="5,5,245,47"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_16.png" border="0" alt="" usemap="#openDMS_8model_8services_8AbstractService"/>
+<tr><td><img src="inherit_graph_6.png" border="0" alt="" usemap="#openDMS_8MAIN"/>
+<map name="openDMS_8MAIN" id="openDMS_8MAIN">
+<area shape="rect" id="node1" href="classopenDMS_1_1MAIN.html" title="openDMS.MAIN" alt="" coords="5,5,124,32"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_7.png" border="0" alt="" usemap="#openDMS_8model_8eBayAPI_8AbstractAPIcall"/>
+<map name="openDMS_8model_8eBayAPI_8AbstractAPIcall" id="openDMS_8model_8eBayAPI_8AbstractAPIcall">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html" title="openDMS.model.eBayAPI.Abstract\lAPIcall" alt="" coords="5,23,233,65"/><area shape="rect" id="node2" href="classopenDMS_1_1model_1_1eBayAPI_1_1ItemCall.html" title="openDMS.model.eBayAPI.ItemCall" alt="" coords="288,5,516,32"/><area shape="rect" id="node3" href="classopenDMS_1_1model_1_1eBayAPI_1_1OrdersCall.html" title="openDMS.model.eBayAPI.OrdersCall" alt="" coords="281,56,523,83"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_8.png" border="0" alt="" usemap="#openDMS_8model_8eBayAPI_8APIcontext"/>
+<map name="openDMS_8model_8eBayAPI_8APIcontext" id="openDMS_8model_8eBayAPI_8APIcontext">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1eBayAPI_1_1APIcontext.html" title="openDMS.model.eBayAPI.APIcontext" alt="" coords="5,5,249,32"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_9.png" border="0" alt="" usemap="#openDMS_8model_8services_8AbstractService"/>
 <map name="openDMS_8model_8services_8AbstractService" id="openDMS_8model_8services_8AbstractService">
-<area shape="rect" id="node2" href="interfaceopenDMS_1_1model_1_1services_1_1AbstractService.html" title="openDMS.model.services.Abstract\lService" alt="" coords="135,39,377,80"/><area shape="rect" id="node3" href="classopenDMS_1_1model_1_1services_1_1EbayService.html" title="openDMS.model.services.Ebay\lService" alt="" coords="425,5,644,47"/><area shape="rect" id="node4" href="classopenDMS_1_1model_1_1services_1_1TestService.html" title="openDMS.model.services.Test\lService" alt="" coords="427,71,642,112"/></map>
+<area shape="rect" id="node2" href="interfaceopenDMS_1_1model_1_1services_1_1AbstractService.html" title="openDMS.model.services.Abstract\lService" alt="" coords="131,39,356,80"/><area shape="rect" id="node3" href="classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1BasicEbayUpdateService.html" title="openDMS.model.services.basic\lEbayUpdate.BasicEbayUpdateService" alt="" coords="404,5,651,47"/><area shape="rect" id="node4" href="classopenDMS_1_1model_1_1services_1_1testService_1_1TestService.html" title="openDMS.model.services.test\lService.TestService" alt="" coords="428,71,627,112"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_17.png" border="0" alt="" usemap="#openDMS_8model_8services_8ServicesScheduler"/>
-<map name="openDMS_8model_8services_8ServicesScheduler" id="openDMS_8model_8services_8ServicesScheduler">
-<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html" title="openDMS.model.services.Services\lScheduler" alt="" coords="5,5,248,47"/></map>
+<tr><td><img src="inherit_graph_10.png" border="0" alt="" usemap="#openDMS_8model_8services_8basicEbayUpdate_8BuyersTable"/>
+<map name="openDMS_8model_8services_8basicEbayUpdate_8BuyersTable" id="openDMS_8model_8services_8basicEbayUpdate_8BuyersTable">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1BuyersTable.html" title="openDMS.model.services.basic\lEbayUpdate.BuyersTable" alt="" coords="5,5,212,47"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_18.png" border="0" alt="" usemap="#openDMS_8presenters_8AbstractPresenter"/>
+<tr><td><img src="inherit_graph_11.png" border="0" alt="" usemap="#openDMS_8model_8services_8basicEbayUpdate_8ItemsTable"/>
+<map name="openDMS_8model_8services_8basicEbayUpdate_8ItemsTable" id="openDMS_8model_8services_8basicEbayUpdate_8ItemsTable">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1ItemsTable.html" title="openDMS.model.services.basic\lEbayUpdate.ItemsTable" alt="" coords="5,5,212,47"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_12.png" border="0" alt="" usemap="#openDMS_8model_8services_8basicEbayUpdate_8OrdersTable"/>
+<map name="openDMS_8model_8services_8basicEbayUpdate_8OrdersTable" id="openDMS_8model_8services_8basicEbayUpdate_8OrdersTable">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1OrdersTable.html" title="openDMS.model.services.basic\lEbayUpdate.OrdersTable" alt="" coords="5,5,212,47"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_13.png" border="0" alt="" usemap="#openDMS_8model_8services_8basicEbayUpdate_8TransactionsTable"/>
+<map name="openDMS_8model_8services_8basicEbayUpdate_8TransactionsTable" id="openDMS_8model_8services_8basicEbayUpdate_8TransactionsTable">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1TransactionsTable.html" title="openDMS.model.services.basic\lEbayUpdate.TransactionsTable" alt="" coords="5,5,212,47"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_14.png" border="0" alt="" usemap="#openDMS_8model_8services_8ServiceScheduler"/>
+<map name="openDMS_8model_8services_8ServiceScheduler" id="openDMS_8model_8services_8ServiceScheduler">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html" title="openDMS.model.services.Service\lScheduler" alt="" coords="5,5,225,47"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_15.png" border="0" alt="" usemap="#openDMS_8model_8services_8TriggerService"/>
+<map name="openDMS_8model_8services_8TriggerService" id="openDMS_8model_8services_8TriggerService">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1services_1_1TriggerService.html" title="openDMS.model.services.Trigger\lService" alt="" coords="5,5,221,47"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_16.png" border="0" alt="" usemap="#openDMS_8model_8sql_8ConnectionManager"/>
+<map name="openDMS_8model_8sql_8ConnectionManager" id="openDMS_8model_8sql_8ConnectionManager">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1sql_1_1ConnectionManager.html" title="openDMS.model.sql.Connection\lManager" alt="" coords="5,5,216,47"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_17.png" border="0" alt="" usemap="#openDMS_8model_8sql_8queries_8AbstractDBQuery"/>
+<map name="openDMS_8model_8sql_8queries_8AbstractDBQuery" id="openDMS_8model_8sql_8queries_8AbstractDBQuery">
+<area shape="rect" id="node1" href="interfaceopenDMS_1_1model_1_1sql_1_1queries_1_1AbstractDBQuery.html" title="openDMS.model.sql.queries.\lAbstractDBQuery" alt="" coords="5,235,196,276"/><area shape="rect" id="node2" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayBuyers.html" title="openDMS.model.sql.queries.concrete\lQueries.InsertEbayBuyers" alt="" coords="244,5,484,47"/><area shape="rect" id="node3" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayItems.html" title="openDMS.model.sql.queries.concrete\lQueries.InsertEbayItems" alt="" coords="244,71,484,112"/><area shape="rect" id="node4" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayOrders.html" title="openDMS.model.sql.queries.concrete\lQueries.InsertEbayOrders" alt="" coords="244,136,484,177"/><area shape="rect" id="node5" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayTransactions.html" title="openDMS.model.sql.queries.concrete\lQueries.InsertEbayTransactions" alt="" coords="244,201,484,243"/><area shape="rect" id="node6" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectEbayItems.html" title="openDMS.model.sql.queries.concrete\lQueries.SelectEbayItems" alt="" coords="244,267,484,308"/><area shape="rect" id="node7" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectEbayOrders.html" title="openDMS.model.sql.queries.concrete\lQueries.SelectEbayOrders" alt="" coords="244,332,484,373"/><area shape="rect" id="node8" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectItemsWithBlankFields.html" title="openDMS.model.sql.queries.concrete\lQueries.SelectItemsWithBlankFields" alt="" coords="244,397,484,439"/><area shape="rect" id="node9" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1UpdateItemBrandAndPartNo.html" title="openDMS.model.sql.queries.concrete\lQueries.UpdateItemBrandAndPartNo" alt="" coords="244,463,484,504"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_18.png" border="0" alt="" usemap="#openDMS_8model_8sql_8queries_8AbstractQueryFactory"/>
+<map name="openDMS_8model_8sql_8queries_8AbstractQueryFactory" id="openDMS_8model_8sql_8queries_8AbstractQueryFactory">
+<area shape="rect" id="node1" href="interfaceopenDMS_1_1model_1_1sql_1_1queries_1_1AbstractQueryFactory.html" title="openDMS.model.sql.queries.\lAbstractQueryFactory" alt="" coords="5,235,196,276"/><area shape="rect" id="node2" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1InsertEbayBuyersFactory.html" title="openDMS.model.sql.queries.factories.\lInsertEbayBuyersFactory" alt="" coords="244,5,488,47"/><area shape="rect" id="node3" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1InsertEbayItemsFactory.html" title="openDMS.model.sql.queries.factories.\lInsertEbayItemsFactory" alt="" coords="244,71,488,112"/><area shape="rect" id="node4" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1InsertEbayOrdersFactory.html" title="openDMS.model.sql.queries.factories.\lInsertEbayOrdersFactory" alt="" coords="244,136,488,177"/><area shape="rect" id="node5" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1InsertEbayTransactionsFactory.html" title="openDMS.model.sql.queries.factories.\lInsertEbayTransactionsFactory" alt="" coords="244,201,488,243"/><area shape="rect" id="node6" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1SelectEbayItemsFactory.html" title="openDMS.model.sql.queries.factories.\lSelectEbayItemsFactory" alt="" coords="244,267,488,308"/><area shape="rect" id="node7" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1SelectEbayOrdersFactory.html" title="openDMS.model.sql.queries.factories.\lSelectEbayOrdersFactory" alt="" coords="244,332,488,373"/><area shape="rect" id="node8" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1SelectItemsWithBlankFieldsFactory.html" title="openDMS.model.sql.queries.factories.\lSelectItemsWithBlankFieldsFactory" alt="" coords="244,397,488,439"/><area shape="rect" id="node9" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1UpdateItemBrandAndPartNoFactory.html" title="openDMS.model.sql.queries.factories.\lUpdateItemBrandAndPartNoFactory" alt="" coords="244,463,488,504"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_19.png" border="0" alt="" usemap="#openDMS_8model_8sql_8queries_8QueryInvoker"/>
+<map name="openDMS_8model_8sql_8queries_8QueryInvoker" id="openDMS_8model_8sql_8queries_8QueryInvoker">
+<area shape="rect" id="node1" href="classopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html" title="openDMS.model.sql.queries.\lQueryInvoker" alt="" coords="5,5,196,47"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_20.png" border="0" alt="" usemap="#openDMS_8model_8sql_8queries_8QueryInvoker_8QueryType"/>
+<map name="openDMS_8model_8sql_8queries_8QueryInvoker_8QueryType" id="openDMS_8model_8sql_8queries_8QueryInvoker_8QueryType">
+<area shape="rect" id="node1" href="enumopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker_1_1QueryType.html" title="openDMS.model.sql.queries.\lQueryInvoker.QueryType" alt="" coords="5,5,196,47"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_21.png" border="0" alt="" usemap="#openDMS_8POC"/>
+<map name="openDMS_8POC" id="openDMS_8POC">
+<area shape="rect" id="node1" href="classopenDMS_1_1POC.html" title="openDMS.POC" alt="" coords="5,5,119,32"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_22.png" border="0" alt="" usemap="#openDMS_8presenters_8AbstractPresenter"/>
 <map name="openDMS_8presenters_8AbstractPresenter" id="openDMS_8presenters_8AbstractPresenter">
-<area shape="rect" id="node1" href="interfaceopenDMS_1_1presenters_1_1AbstractPresenter.html" title="openDMS.presenters.Abstract\lPresenter" alt="" coords="5,39,220,80"/><area shape="rect" id="node2" href="classopenDMS_1_1presenters_1_1ebay_1_1EbayPresenter.html" title="openDMS.presenters.ebay.\lEbayPresenter" alt="" coords="268,5,464,47"/><area shape="rect" id="node3" href="classopenDMS_1_1presenters_1_1root_1_1RootPresenter.html" title="openDMS.presenters.root.\lRootPresenter" alt="" coords="271,71,461,112"/></map>
+<area shape="rect" id="node1" href="interfaceopenDMS_1_1presenters_1_1AbstractPresenter.html" title="openDMS.presenters.Abstract\lPresenter" alt="" coords="5,39,204,80"/><area shape="rect" id="node2" href="classopenDMS_1_1presenters_1_1ebay_1_1EbayPresenter.html" title="openDMS.presenters.ebay.\lEbayPresenter" alt="" coords="252,5,433,47"/><area shape="rect" id="node3" href="classopenDMS_1_1presenters_1_1root_1_1RootPresenter.html" title="openDMS.presenters.root.\lRootPresenter" alt="" coords="255,71,430,112"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_19.png" border="0" alt="" usemap="#openDMS_8view_8HttpServer"/>
+<tr><td><img src="inherit_graph_23.png" border="0" alt="" usemap="#openDMS_8view_8HttpServer"/>
 <map name="openDMS_8view_8HttpServer" id="openDMS_8view_8HttpServer">
-<area shape="rect" id="node1" href="classopenDMS_1_1view_1_1HttpServer.html" title="openDMS.view.HttpServer" alt="" coords="5,5,195,32"/></map>
+<area shape="rect" id="node1" href="classopenDMS_1_1view_1_1HttpServer.html" title="openDMS.view.HttpServer" alt="" coords="5,5,184,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_20.png" border="0" alt="" usemap="#openDMS_8view_8UIServlet"/>
+<tr><td><img src="inherit_graph_24.png" border="0" alt="" usemap="#openDMS_8view_8UIServlet"/>
 <map name="openDMS_8view_8UIServlet" id="openDMS_8view_8UIServlet">
-<area shape="rect" id="node2" href="classopenDMS_1_1view_1_1UIServlet.html" title="openDMS.view.UIServlet" alt="" coords="148,5,325,32"/></map>
+<area shape="rect" id="node2" href="classopenDMS_1_1view_1_1UIServlet.html" title="openDMS.view.UIServlet" alt="" coords="141,5,312,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_21.png" border="0" alt="" usemap="#openDMS_8view_8UIViews"/>
+<tr><td><img src="inherit_graph_25.png" border="0" alt="" usemap="#openDMS_8view_8UIViews"/>
 <map name="openDMS_8view_8UIViews" id="openDMS_8view_8UIViews">
-<area shape="rect" id="node1" href="classopenDMS_1_1view_1_1UIViews.html" title="openDMS.view.UIViews" alt="" coords="5,5,173,32"/></map>
+<area shape="rect" id="node1" href="classopenDMS_1_1view_1_1UIViews.html" title="openDMS.view.UIViews" alt="" coords="5,5,171,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_22.png" border="0" alt="" usemap="#openDMS_8view_8views_8AbstractView"/>
+<tr><td><img src="inherit_graph_26.png" border="0" alt="" usemap="#openDMS_8view_8views_8AbstractView"/>
 <map name="openDMS_8view_8views_8AbstractView" id="openDMS_8view_8views_8AbstractView">
-<area shape="rect" id="node1" href="interfaceopenDMS_1_1view_1_1views_1_1AbstractView.html" title="openDMS.view.views.AbstractView" alt="" coords="5,31,245,57"/><area shape="rect" id="node2" href="classopenDMS_1_1view_1_1views_1_1EbayView.html" title="openDMS.view.views.EbayView" alt="" coords="293,5,511,32"/><area shape="rect" id="node3" href="classopenDMS_1_1view_1_1views_1_1RootView.html" title="openDMS.view.views.RootView" alt="" coords="295,56,509,83"/></map>
+<area shape="rect" id="node1" href="interfaceopenDMS_1_1view_1_1views_1_1AbstractView.html" title="openDMS.view.views.AbstractView" alt="" coords="5,31,236,57"/><area shape="rect" id="node2" href="classopenDMS_1_1view_1_1views_1_1EbayView.html" title="openDMS.view.views.EbayView" alt="" coords="284,5,496,32"/><area shape="rect" id="node3" href="classopenDMS_1_1view_1_1views_1_1RootView.html" title="openDMS.view.views.RootView" alt="" coords="285,56,495,83"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_23.png" border="0" alt="" usemap="#openDMS_8view_8views_8AbstractViewPart"/>
+<tr><td><img src="inherit_graph_27.png" border="0" alt="" usemap="#openDMS_8view_8views_8AbstractViewPart"/>
 <map name="openDMS_8view_8views_8AbstractViewPart" id="openDMS_8view_8views_8AbstractViewPart">
-<area shape="rect" id="node1" href="interfaceopenDMS_1_1view_1_1views_1_1AbstractViewPart.html" title="openDMS.view.views.Abstract\lViewPart" alt="" coords="5,23,216,65"/><area shape="rect" id="node2" href="enumopenDMS_1_1view_1_1views_1_1EbayView_1_1Part.html" title="openDMS.view.views.EbayView.Part" alt="" coords="264,5,511,32"/><area shape="rect" id="node3" href="enumopenDMS_1_1view_1_1views_1_1RootView_1_1Part.html" title="openDMS.view.views.RootView.Part" alt="" coords="265,56,510,83"/></map>
+<area shape="rect" id="node1" href="interfaceopenDMS_1_1view_1_1views_1_1AbstractViewPart.html" title="openDMS.view.views.Abstract\lViewPart" alt="" coords="5,23,208,65"/><area shape="rect" id="node2" href="enumopenDMS_1_1view_1_1views_1_1EbayView_1_1Part.html" title="openDMS.view.views.EbayView.Part" alt="" coords="256,5,496,32"/><area shape="rect" id="node3" href="enumopenDMS_1_1view_1_1views_1_1RootView_1_1Part.html" title="openDMS.view.views.RootView.Part" alt="" coords="257,56,495,83"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_24.png" border="0" alt="" usemap="#openDMS_8view_8views_8AbstractViewPart_8Part"/>
+<tr><td><img src="inherit_graph_28.png" border="0" alt="" usemap="#openDMS_8view_8views_8AbstractViewPart_8Part"/>
 <map name="openDMS_8view_8views_8AbstractViewPart_8Part" id="openDMS_8view_8views_8AbstractViewPart_8Part">
-<area shape="rect" id="node1" href="enumopenDMS_1_1view_1_1views_1_1AbstractViewPart_1_1Part.html" title="openDMS.view.views.Abstract\lViewPart.Part" alt="" coords="5,5,216,47"/></map>
+<area shape="rect" id="node1" href="enumopenDMS_1_1view_1_1views_1_1AbstractViewPart_1_1Part.html" title="openDMS.view.views.Abstract\lViewPart.Part" alt="" coords="5,5,208,47"/></map>
 </td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:27 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

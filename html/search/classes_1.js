@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['data_5ftype',['Data_Type',['../enumopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData_1_1Data__Type.html',1,'openDMS::ebay::query::data::ApiCallData']]]
+  ['basicebayupdateservice',['BasicEbayUpdateService',['../classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1BasicEbayUpdateService.html',1,'openDMS::model::services::basicEbayUpdate']]],
+  ['buyerstable',['BuyersTable',['../classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1BuyersTable.html',1,'openDMS::model::services::basicEbayUpdate']]]
 ];

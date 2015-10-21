@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classopenDMS_1_1view_1_1UIViews.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespaceopenDMS.html">openDMS</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1view.html">view</a></li><li class="navelem"><a class="el" href="classopenDMS_1_1view_1_1UIViews.html">UIViews</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -100,8 +118,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Collaboration diagram for openDMS.view.UIViews:</div>
 <div class="dyncontent">
 <div class="center"><img src="classopenDMS_1_1view_1_1UIViews__coll__graph.png" border="0" usemap="#openDMS_8view_8UIViews_coll__map" alt="Collaboration graph"/></div>
-<map name="openDMS_8view_8UIViews_coll__map" id="openDMS_8view_8UIViews_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -166,23 +182,12 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="UIViews_8java_source.html#l00065">openDMS.view.UIViews.populateEbayView()</a>, <a class="el" href="UIViews_8java_source.html#l00057">openDMS.view.UIViews.populateRootView()</a>, and <a class="el" href="UIViews_8java_source.html#l00031">openDMS.view.UIViews.views_M</a>.</p>
 
-<p>Referenced by <a class="el" href="HttpServer_8java_source.html#l00040">openDMS.view.HttpServer.start()</a>.</p>
-
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classopenDMS_1_1view_1_1UIViews_addead35d25d218b63e22eabe4ef9a34b_cgraph.png" border="0" usemap="#classopenDMS_1_1view_1_1UIViews_addead35d25d218b63e22eabe4ef9a34b_cgraph" alt=""/></div>
 <map name="classopenDMS_1_1view_1_1UIViews_addead35d25d218b63e22eabe4ef9a34b_cgraph" id="classopenDMS_1_1view_1_1UIViews_addead35d25d218b63e22eabe4ef9a34b_cgraph">
 <area shape="rect" id="node2" href="classopenDMS_1_1view_1_1UIViews.html#a399eb73d7e7110dca7f2deac4de972f3" title="openDMS.view.UIViews.populate\lEbayView" alt="" coords="267,5,495,47"/><area shape="rect" id="node4" href="classopenDMS_1_1view_1_1UIViews.html#a410858265de0256e54d423f0cc806357" title="openDMS.view.UIViews.populate\lRootView" alt="" coords="267,71,495,112"/><area shape="rect" id="node3" href="classopenDMS_1_1helpers_1_1FileToString.html#ae625ebfbc382c8aa079e2a577fd4ee15" title="openDMS.helpers.FileToString.convert" alt="" coords="543,46,808,73"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classopenDMS_1_1view_1_1UIViews_addead35d25d218b63e22eabe4ef9a34b_icgraph.png" border="0" usemap="#classopenDMS_1_1view_1_1UIViews_addead35d25d218b63e22eabe4ef9a34b_icgraph" alt=""/></div>
-<map name="classopenDMS_1_1view_1_1UIViews_addead35d25d218b63e22eabe4ef9a34b_icgraph" id="classopenDMS_1_1view_1_1UIViews_addead35d25d218b63e22eabe4ef9a34b_icgraph">
-<area shape="rect" id="node2" href="classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f" title="openDMS.view.HttpServer.start" alt="" coords="267,13,489,39"/><area shape="rect" id="node3" href="classopenDMS_1_1ebay_1_1MAIN.html#a6db74465e549f85bbc6eb86bcb7f2691" title="openDMS.ebay.MAIN.main" alt="" coords="537,13,729,39"/></map>
 </div>
 </p>
 
@@ -230,7 +235,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classopenDMS_1_1view_1_1UIViews_a399eb73d7e7110dca7f2deac4de972f3_icgraph.png" border="0" usemap="#classopenDMS_1_1view_1_1UIViews_a399eb73d7e7110dca7f2deac4de972f3_icgraph" alt=""/></div>
 <map name="classopenDMS_1_1view_1_1UIViews_a399eb73d7e7110dca7f2deac4de972f3_icgraph" id="classopenDMS_1_1view_1_1UIViews_a399eb73d7e7110dca7f2deac4de972f3_icgraph">
-<area shape="rect" id="node2" href="classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b" title="openDMS.view.UIViews.create\lViews" alt="" coords="281,5,495,47"/><area shape="rect" id="node3" href="classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f" title="openDMS.view.HttpServer.start" alt="" coords="543,13,765,39"/><area shape="rect" id="node4" href="classopenDMS_1_1ebay_1_1MAIN.html#a6db74465e549f85bbc6eb86bcb7f2691" title="openDMS.ebay.MAIN.main" alt="" coords="813,13,1005,39"/></map>
+<area shape="rect" id="node2" href="classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b" title="openDMS.view.UIViews.create\lViews" alt="" coords="272,5,477,47"/></map>
 </div>
 </p>
 
@@ -278,7 +283,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classopenDMS_1_1view_1_1UIViews_a410858265de0256e54d423f0cc806357_icgraph.png" border="0" usemap="#classopenDMS_1_1view_1_1UIViews_a410858265de0256e54d423f0cc806357_icgraph" alt=""/></div>
 <map name="classopenDMS_1_1view_1_1UIViews_a410858265de0256e54d423f0cc806357_icgraph" id="classopenDMS_1_1view_1_1UIViews_a410858265de0256e54d423f0cc806357_icgraph">
-<area shape="rect" id="node2" href="classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b" title="openDMS.view.UIViews.create\lViews" alt="" coords="281,5,495,47"/><area shape="rect" id="node3" href="classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f" title="openDMS.view.HttpServer.start" alt="" coords="543,13,765,39"/><area shape="rect" id="node4" href="classopenDMS_1_1ebay_1_1MAIN.html#a6db74465e549f85bbc6eb86bcb7f2691" title="openDMS.ebay.MAIN.main" alt="" coords="813,13,1005,39"/></map>
+<area shape="rect" id="node2" href="classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b" title="openDMS.view.UIViews.create\lViews" alt="" coords="272,5,477,47"/></map>
 </div>
 </p>
 
@@ -314,11 +319,15 @@ Here is the caller graph for this function:</div>
 <li>src/openDMS/view/<a class="el" href="UIViews_8java_source.html">UIViews.java</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceopenDMS.html">openDMS</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1view.html">view</a></li><li class="navelem"><a class="el" href="classopenDMS_1_1view_1_1UIViews.html">UIViews</a></li>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:27 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

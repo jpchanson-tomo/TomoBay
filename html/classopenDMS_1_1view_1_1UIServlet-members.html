@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classopenDMS_1_1view_1_1UIServlet.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespaceopenDMS.html">openDMS</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1view.html">view</a></li><li class="navelem"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">UIServlet</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">openDMS.view.UIServlet Member List</div>  </div>
@@ -95,18 +113,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This is the complete list of members for <a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html#add830bd278a0d69a096c709bd87a2295">doGet</a>(HttpServletRequest request, HttpServletResponse response)</td><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html#ac0ac9f06f4a2946fa1c017503b72a6ae">productionServer</a></td><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html#a490645a6d996dcd50a77ce4e06450424">productionToken</a></td><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html#a1a5cb5a39de3370048a96d5f7e298a91">serialVersionUID</a></td><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html#a8729cf6547e5f84918a908d9791179e8">server</a></td><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html#a3db3956a1f5c073d6a5e2fe9eb16765a">UIServlet</a>(Map&lt; String, String &gt; views)</td><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html#af7dbd9e311ea261806f1908d4b0075a5">userToken</a></td><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html#a56c9cab401c7297bae10d1aa7cef6d15">UIServlet</a>()</td><td class="entry"><a class="el" href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:27 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

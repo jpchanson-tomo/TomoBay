@@ -4,10 +4,18 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>My Project: src/openDMS/ebay/MAIN.java Source File</title>
+<title>My Project: src/openDMS/MAIN.java Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -64,6 +72,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('MAIN_8java_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,80 +101,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_8a945f06a8a4c83ca9c55c55422bd7ba.html">ebay</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">MAIN.java</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="MAIN_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceopenDMS_1_1ebay.html">    1</a></span>&#160;<span class="keyword">package </span>openDMS.ebay;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceopenDMS.html">openDMS</a>.<a class="code" href="namespaceopenDMS_1_1model.html">model</a>.<a class="code" href="namespaceopenDMS_1_1model_1_1services.html">services</a>.<a class="code" href="classopenDMS_1_1model_1_1services_1_1EbayService.html">EbayService</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceopenDMS.html">openDMS</a>.<a class="code" href="namespaceopenDMS_1_1model.html">model</a>.<a class="code" href="namespaceopenDMS_1_1model_1_1services.html">services</a>.<a class="code" href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html">ServicesScheduler</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceopenDMS.html">openDMS</a>.<a class="code" href="namespaceopenDMS_1_1model.html">model</a>.<a class="code" href="namespaceopenDMS_1_1model_1_1services.html">services</a>.<a class="code" href="classopenDMS_1_1model_1_1services_1_1TestService.html">TestService</a>;</div>
+<a href="MAIN_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>openDMS;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceopenDMS.html">openDMS</a>.<a class="code" href="namespaceopenDMS_1_1model.html">model</a>.<a class="code" href="namespaceopenDMS_1_1model_1_1services.html">services</a>.<a class="code" href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html">ServiceScheduler</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceopenDMS.html">openDMS</a>.<a class="code" href="namespaceopenDMS_1_1model.html">model</a>.<a class="code" href="namespaceopenDMS_1_1model_1_1services.html">services</a>.<a class="code" href="namespaceopenDMS_1_1model_1_1services_1_1basicEbayUpdate.html">basicEbayUpdate</a>.<a class="code" href="classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1BasicEbayUpdateService.html">BasicEbayUpdateService</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceopenDMS.html">openDMS</a>.<a class="code" href="namespaceopenDMS_1_1model.html">model</a>.<a class="code" href="namespaceopenDMS_1_1model_1_1services.html">services</a>.<a class="code" href="namespaceopenDMS_1_1model_1_1services_1_1testService.html">testService</a>.<a class="code" href="classopenDMS_1_1model_1_1services_1_1testService_1_1TestService.html">TestService</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceopenDMS.html">openDMS</a>.<a class="code" href="namespaceopenDMS_1_1view.html">view</a>.<a class="code" href="classopenDMS_1_1view_1_1HttpServer.html">HttpServer</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1MAIN.html">   28</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classopenDMS_1_1ebay_1_1MAIN.html">MAIN</a></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1MAIN.html#a8f8055e09cb93124a71f99cfc97f4f30">   30</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code" href="classopenDMS_1_1ebay_1_1MAIN.html#a8f8055e09cb93124a71f99cfc97f4f30">userToken</a> = <span class="stringliteral">&quot;AgAAAA**AQAAAA**aAAAAA**s6cKVg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4GhDpGFoAidj6x9nY+seQ**MpQDAA**AAMAAA**4Aqt9SemYN6DehoPdEsoWuFqCELKvJyBaHL5q1gdWL40la/sjo+abdJSSvNmW8aGcgrgiEXsXJdO+C8RV4lVLvjLnZM0Sadri0BUqP1EK4OTdZWMh8DqaqAqiCi/RhzB+OvHmUd7g5aztZn+wTAIDdglX1cBsJNWnDo4Y9CmK0Et0tbiEiMabvPyO8zwR/Touug6qWkQK488NxJtdo+ZrNZKQ33XXOIoC+nwj8py85vXzxq029DvF31Wmk6ZZcnAuBnpWu8l6h1V+nEPy5V4f1lCIiJdSs++wKP0Dw8FkIXsiTOO4c4LF67gU35LNlaiE/GunY/yJuDeXQ6AJB0RLoFQck+LaEJ2OGH6ZPyzITTWTkf8qY6PBTRE7tCe8okI/Qnbcc6Y6Rol80uJtDQ27Jf7H1XoHoVOgQtTWcZa0BYP7Vbqo54lGyOsVnAHGZ4so+T9WvhZ/MJOacbou9YUptwPYfZwQsTnl0BvVgd6bt5XPsao54A+9ujPhZM5gk0/l9CnG4g47P+jiUtVyw4Gp4cD4fUzRMGK5hQ2jwm+/zK+kokExZbhpIiJBozA7n+5UPRwlmxh8fg1YBW0J0S7/BXBk4zNmpkYOwVQR4kj56/t5fcI9cYfzonRpnn7VUonD21KE6/1lZVsF0/OKoi8OU+xEJZlc8f1E3gv5MYN/qkcjDIn0lq6Fp+1fx6Yod2x1cUfIIXLsdQhqhcZ82LhdfWY/5QdoYGNN2M30yq+6tp4krIx5xBZvBzE8I1sqaRM&quot;</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1MAIN.html#a39c7b33d277579c303d63e8400a8b8c0">   31</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code" href="classopenDMS_1_1ebay_1_1MAIN.html#a39c7b33d277579c303d63e8400a8b8c0">server</a> = <span class="stringliteral">&quot;https://api.sandbox.ebay.com/wsapi&quot;</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1MAIN.html#a6db74465e549f85bbc6eb86bcb7f2691">   33</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classopenDMS_1_1ebay_1_1MAIN.html#a6db74465e549f85bbc6eb86bcb7f2691">main</a>(String[] args) <span class="keywordflow">throws</span> Exception</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        System.out.println(<span class="stringliteral">&quot;starting program&quot;</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        System.setProperty(<span class="stringliteral">&quot;Log4jContextSelector&quot;</span>, <span class="stringliteral">&quot;org.apache.logging.log4j.core.async.AsyncLoggerContextSelector&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classopenDMS_1_1MAIN.html">   27</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classopenDMS_1_1MAIN.html">MAIN</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classopenDMS_1_1MAIN.html#a668e4e0c864890342f28a62998dede7c">   29</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classopenDMS_1_1MAIN.html#a668e4e0c864890342f28a62998dede7c">main</a>(String[] args) <span class="keywordflow">throws</span> Exception</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        System.setProperty(<span class="stringliteral">&quot;Log4jContextSelector&quot;</span>, <span class="stringliteral">&quot;org.apache.logging.log4j.core.async.AsyncLoggerContextSelector&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html">ServiceScheduler</a> services = <span class="keyword">new</span> <a class="code" href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html">ServiceScheduler</a>(2);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html">HttpServer</a> uiServer = <span class="keyword">new</span> <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html">HttpServer</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        services.<a class="code" href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html#a1bf5cd2540c4fbdc48ec5b51b8ce36e4">add</a>(<span class="keyword">new</span> <a class="code" href="classopenDMS_1_1model_1_1services_1_1testService_1_1TestService.html">TestService</a>(),0,1);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        services.<a class="code" href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html#a1bf5cd2540c4fbdc48ec5b51b8ce36e4">add</a>(<span class="keyword">new</span> <a class="code" href="classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1BasicEbayUpdateService.html">BasicEbayUpdateService</a>(), 0, 10);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html">ServicesScheduler</a> services = <span class="keyword">new</span> <a class="code" href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html">ServicesScheduler</a>(2);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html">HttpServer</a> uiServer = <span class="keyword">new</span> <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html">HttpServer</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        services.<a class="code" href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html#a57e7874d182a49a1685d6e4c78501b3c">add</a>(<span class="keyword">new</span> <a class="code" href="classopenDMS_1_1model_1_1services_1_1EbayService.html">EbayService</a>(), 2, 2);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        services.<a class="code" href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html#a57e7874d182a49a1685d6e4c78501b3c">add</a>(<span class="keyword">new</span> <a class="code" href="classopenDMS_1_1model_1_1services_1_1TestService.html">TestService</a>(),4,4);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        uiServer.<a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f">start</a>(1337);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        services.<a class="code" href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html#aecf3f47dd4362c7d2a5e55ab4a82cd50">start</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//      ApiCallData callData = new ApiCallData(userToken, server);</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//      </span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span><span class="comment">//      GetOrderListCommand tmp = new GetOrderListCommand();</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">//      GetTransactionListCommand tmp2 = new GetTransactionListCommand();</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//      GetItemCommand tmp3 = new GetItemCommand();</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//      </span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">//      System.out.println(tmp.execute(callData, 0, &quot;&quot;));</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">//      System.out.println(tmp2.execute(tmp.getCallData(), 0, &quot;&quot;));</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//      System.out.println(tmp2.execute(tmp.getCallData(), 1, &quot;&quot;));</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">//      System.out.println(tmp2.execute(tmp.getCallData(), 2, &quot;&quot;));</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">//      System.out.println(tmp3.execute(callData, 0, &quot;110169881252&quot;));</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//      System.out.println(tmp3.execute(callData, 0, &quot;110169823130&quot;));</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">//      </span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"></span>        </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        System.out.println(<span class="stringliteral">&quot;end of program&quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html">openDMS.view.HttpServer</a></div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00027">HttpServer.java:27</a></div></div>
-<div class="ttc" id="classopenDMS_1_1ebay_1_1MAIN_html_a6db74465e549f85bbc6eb86bcb7f2691"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1MAIN.html#a6db74465e549f85bbc6eb86bcb7f2691">openDMS.ebay.MAIN.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition:</b> <a href="MAIN_8java_source.html#l00033">MAIN.java:33</a></div></div>
-<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1TestService_html"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1TestService.html">openDMS.model.services.TestService</a></div><div class="ttdef"><b>Definition:</b> <a href="TestService_8java_source.html#l00023">TestService.java:23</a></div></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        uiServer.<a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#aefdaac648c61996ead72fd541d830926">start</a>(1337);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        services.<a class="code" href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html#a8a6cfc742b2105dbb1713a56fd9b0522">start</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1ServiceScheduler_html_a1bf5cd2540c4fbdc48ec5b51b8ce36e4"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html#a1bf5cd2540c4fbdc48ec5b51b8ce36e4">openDMS.model.services.ServiceScheduler.add</a></div><div class="ttdeci">void add(AbstractService service, long delay, long rate)</div><div class="ttdef"><b>Definition:</b> <a href="ServiceScheduler_8java_source.html#l00050">ServiceScheduler.java:50</a></div></div>
+<div class="ttc" id="namespaceopenDMS_1_1model_1_1services_1_1testService_html"><div class="ttname"><a href="namespaceopenDMS_1_1model_1_1services_1_1testService.html">openDMS.model.services.testService</a></div><div class="ttdef"><b>Definition:</b> <a href="model_2services_2testService_2package-info_8java_source.html#l00021">package-info.java:21</a></div></div>
+<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1BasicEbayUpdateService_html"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1BasicEbayUpdateService.html">openDMS.model.services.basicEbayUpdate.BasicEbayUpdateService</a></div><div class="ttdef"><b>Definition:</b> <a href="BasicEbayUpdateService_8java_source.html#l00028">BasicEbayUpdateService.java:28</a></div></div>
+<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1ServiceScheduler_html_a8a6cfc742b2105dbb1713a56fd9b0522"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html#a8a6cfc742b2105dbb1713a56fd9b0522">openDMS.model.services.ServiceScheduler.start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="ServiceScheduler_8java_source.html#l00058">ServiceScheduler.java:58</a></div></div>
+<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1ServiceScheduler_html"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html">openDMS.model.services.ServiceScheduler</a></div><div class="ttdef"><b>Definition:</b> <a href="ServiceScheduler_8java_source.html#l00028">ServiceScheduler.java:28</a></div></div>
+<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html">openDMS.view.HttpServer</a></div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00033">HttpServer.java:33</a></div></div>
 <div class="ttc" id="namespaceopenDMS_html"><div class="ttname"><a href="namespaceopenDMS.html">openDMS</a></div></div>
+<div class="ttc" id="classopenDMS_1_1MAIN_html_a668e4e0c864890342f28a62998dede7c"><div class="ttname"><a href="classopenDMS_1_1MAIN.html#a668e4e0c864890342f28a62998dede7c">openDMS.MAIN.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition:</b> <a href="MAIN_8java_source.html#l00029">MAIN.java:29</a></div></div>
 <div class="ttc" id="namespaceopenDMS_1_1view_html"><div class="ttname"><a href="namespaceopenDMS_1_1view.html">openDMS.view</a></div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00001">HttpServer.java:1</a></div></div>
 <div class="ttc" id="namespaceopenDMS_1_1model_html"><div class="ttname"><a href="namespaceopenDMS_1_1model.html">openDMS.model</a></div></div>
-<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1ServicesScheduler_html"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html">openDMS.model.services.ServicesScheduler</a></div><div class="ttdef"><b>Definition:</b> <a href="ServicesScheduler_8java_source.html#l00028">ServicesScheduler.java:28</a></div></div>
-<div class="ttc" id="classopenDMS_1_1ebay_1_1MAIN_html_a8f8055e09cb93124a71f99cfc97f4f30"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1MAIN.html#a8f8055e09cb93124a71f99cfc97f4f30">openDMS.ebay.MAIN.userToken</a></div><div class="ttdeci">static final String userToken</div><div class="ttdef"><b>Definition:</b> <a href="MAIN_8java_source.html#l00030">MAIN.java:30</a></div></div>
-<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1ServicesScheduler_html_aecf3f47dd4362c7d2a5e55ab4a82cd50"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html#aecf3f47dd4362c7d2a5e55ab4a82cd50">openDMS.model.services.ServicesScheduler.start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="ServicesScheduler_8java_source.html#l00057">ServicesScheduler.java:57</a></div></div>
-<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1EbayService_html"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1EbayService.html">openDMS.model.services.EbayService</a></div><div class="ttdef"><b>Definition:</b> <a href="EbayService_8java_source.html#l00026">EbayService.java:26</a></div></div>
+<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1testService_1_1TestService_html"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1testService_1_1TestService.html">openDMS.model.services.testService.TestService</a></div><div class="ttdef"><b>Definition:</b> <a href="TestService_8java_source.html#l00025">TestService.java:25</a></div></div>
+<div class="ttc" id="classopenDMS_1_1MAIN_html"><div class="ttname"><a href="classopenDMS_1_1MAIN.html">openDMS.MAIN</a></div><div class="ttdef"><b>Definition:</b> <a href="MAIN_8java_source.html#l00027">MAIN.java:27</a></div></div>
+<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html_aefdaac648c61996ead72fd541d830926"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html#aefdaac648c61996ead72fd541d830926">openDMS.view.HttpServer.start</a></div><div class="ttdeci">void start(int port)</div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00047">HttpServer.java:47</a></div></div>
 <div class="ttc" id="namespaceopenDMS_1_1model_1_1services_html"><div class="ttname"><a href="namespaceopenDMS_1_1model_1_1services.html">openDMS.model.services</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractService_8java_source.html#l00001">AbstractService.java:1</a></div></div>
-<div class="ttc" id="classopenDMS_1_1ebay_1_1MAIN_html"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1MAIN.html">openDMS.ebay.MAIN</a></div><div class="ttdef"><b>Definition:</b> <a href="MAIN_8java_source.html#l00028">MAIN.java:28</a></div></div>
-<div class="ttc" id="classopenDMS_1_1model_1_1services_1_1ServicesScheduler_html_a57e7874d182a49a1685d6e4c78501b3c"><div class="ttname"><a href="classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html#a57e7874d182a49a1685d6e4c78501b3c">openDMS.model.services.ServicesScheduler.add</a></div><div class="ttdeci">void add(AbstractService service, long delay, long rate)</div><div class="ttdef"><b>Definition:</b> <a href="ServicesScheduler_8java_source.html#l00049">ServicesScheduler.java:49</a></div></div>
-<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html_a2102cfb2d15bd9262205e9bd67e01f2f"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f">openDMS.view.HttpServer.start</a></div><div class="ttdeci">boolean start(int port)</div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00040">HttpServer.java:40</a></div></div>
-<div class="ttc" id="classopenDMS_1_1ebay_1_1MAIN_html_a39c7b33d277579c303d63e8400a8b8c0"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1MAIN.html#a39c7b33d277579c303d63e8400a8b8c0">openDMS.ebay.MAIN.server</a></div><div class="ttdeci">static final String server</div><div class="ttdef"><b>Definition:</b> <a href="MAIN_8java_source.html#l00031">MAIN.java:31</a></div></div>
+<div class="ttc" id="namespaceopenDMS_1_1model_1_1services_1_1basicEbayUpdate_html"><div class="ttname"><a href="namespaceopenDMS_1_1model_1_1services_1_1basicEbayUpdate.html">openDMS.model.services.basicEbayUpdate</a></div><div class="ttdef"><b>Definition:</b> <a href="BasicEbayUpdateService_8java_source.html#l00001">BasicEbayUpdateService.java:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:13 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="MAIN_8java.html">MAIN.java</a></li>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:26 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

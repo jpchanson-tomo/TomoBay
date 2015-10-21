@@ -1,14 +1,7 @@
 var searchData=
 [
-  ['removedata',['removeData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiItemData.html#a7f37ab53737825b3e4154aa40bec136a',1,'openDMS.ebay.query.data.ApiItemData.removeData()'],['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiOrderData.html#a8dd065ebfb2686d3c5663dd59976ef51',1,'openDMS.ebay.query.data.ApiOrderData.removeData()'],['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiTransactionData.html#ad53917fd663402ec994fe1d885b57bbe',1,'openDMS.ebay.query.data.ApiTransactionData.removeData()']]],
-  ['root',['ROOT',['../enumopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory_1_1Select.html#a34e55909d023a366474574c10d29ba06',1,'openDMS::helpers::viewPresenterFactory::ViewPresenterFactory::Select']]],
-  ['rootfactory',['RootFactory',['../classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1RootFactory.html',1,'openDMS::helpers::viewPresenterFactory']]],
-  ['rootfactory_2ejava',['RootFactory.java',['../RootFactory_8java.html',1,'']]],
-  ['rootpresenter',['RootPresenter',['../classopenDMS_1_1presenters_1_1root_1_1RootPresenter.html#a78bc73a32edabbc0f803897504d4c306',1,'openDMS::presenters::root::RootPresenter']]],
-  ['rootpresenter',['RootPresenter',['../classopenDMS_1_1presenters_1_1root_1_1RootPresenter.html',1,'openDMS::presenters::root']]],
-  ['rootpresenter_2ejava',['RootPresenter.java',['../RootPresenter_8java.html',1,'']]],
-  ['rootview',['RootView',['../classopenDMS_1_1view_1_1views_1_1RootView.html',1,'openDMS::view::views']]],
-  ['rootview',['RootView',['../classopenDMS_1_1view_1_1views_1_1RootView.html#aa9a0a4b76b4e3cc05c5a36ed7b9b44af',1,'openDMS::view::views::RootView']]],
-  ['rootview_2ejava',['RootView.java',['../RootView_8java.html',1,'']]],
-  ['run',['run',['../classopenDMS_1_1model_1_1services_1_1EbayService.html#a54dc956e03873b1a4926afc2cfcb114c',1,'openDMS.model.services.EbayService.run()'],['../classopenDMS_1_1model_1_1services_1_1TestService.html#a1dbb3edd5fa5ac7f45de6ca46aa6d996',1,'openDMS.model.services.TestService.run()']]]
+  ['query',['query',['../classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayBuyers.html#a19430b74c6d010d1c1614354a944687e',1,'openDMS.model.sql.queries.concreteQueries.InsertEbayBuyers.query()'],['../classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayItems.html#affc6578358338e6399f84765d7c7b81b',1,'openDMS.model.sql.queries.concreteQueries.InsertEbayItems.query()'],['../classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayOrders.html#a9a6d2c08c6bbb14ef5e85cdc153cfb90',1,'openDMS.model.sql.queries.concreteQueries.InsertEbayOrders.query()'],['../classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayTransactions.html#a50aa5ca2c9f6970f585a916f1d4ea5b4',1,'openDMS.model.sql.queries.concreteQueries.InsertEbayTransactions.query()'],['../classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectEbayItems.html#a4318244ae91dc5e2b4bd6191ba29930d',1,'openDMS.model.sql.queries.concreteQueries.SelectEbayItems.query()'],['../classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectEbayOrders.html#a219d6e46d35fa6a40877025d9af7f7d5',1,'openDMS.model.sql.queries.concreteQueries.SelectEbayOrders.query()']]],
+  ['queryinvoker',['QueryInvoker',['../classopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html',1,'openDMS::model::sql::queries']]],
+  ['queryinvoker_2ejava',['QueryInvoker.java',['../QueryInvoker_8java.html',1,'']]],
+  ['querytype',['QueryType',['../enumopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker_1_1QueryType.html',1,'openDMS::model::sql::queries::QueryInvoker']]]
 ];

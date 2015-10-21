@@ -1,5 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfaceopenDMS_1_1presenters_1_1AbstractPresenter.html" title="openDMS.presenters.Abstract\lPresenter" alt="" coords="5,39,220,80"/>
-<area shape="rect" id="node2" href="$classopenDMS_1_1presenters_1_1ebay_1_1EbayPresenter.html" title="openDMS.presenters.ebay.\lEbayPresenter" alt="" coords="268,5,464,47"/>
-<area shape="rect" id="node3" href="$classopenDMS_1_1presenters_1_1root_1_1RootPresenter.html" title="openDMS.presenters.root.\lRootPresenter" alt="" coords="271,71,461,112"/>
+<area shape="rect" id="node1" href="$interfaceopenDMS_1_1model_1_1sql_1_1queries_1_1AbstractQueryFactory.html" title="openDMS.model.sql.queries.\lAbstractQueryFactory" alt="" coords="5,235,196,276"/>
+<area shape="rect" id="node2" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1InsertEbayBuyersFactory.html" title="openDMS.model.sql.queries.factories.\lInsertEbayBuyersFactory" alt="" coords="244,5,488,47"/>
+<area shape="rect" id="node3" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1InsertEbayItemsFactory.html" title="openDMS.model.sql.queries.factories.\lInsertEbayItemsFactory" alt="" coords="244,71,488,112"/>
+<area shape="rect" id="node4" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1InsertEbayOrdersFactory.html" title="openDMS.model.sql.queries.factories.\lInsertEbayOrdersFactory" alt="" coords="244,136,488,177"/>
+<area shape="rect" id="node5" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1InsertEbayTransactionsFactory.html" title="openDMS.model.sql.queries.factories.\lInsertEbayTransactionsFactory" alt="" coords="244,201,488,243"/>
+<area shape="rect" id="node6" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1SelectEbayItemsFactory.html" title="openDMS.model.sql.queries.factories.\lSelectEbayItemsFactory" alt="" coords="244,267,488,308"/>
+<area shape="rect" id="node7" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1SelectEbayOrdersFactory.html" title="openDMS.model.sql.queries.factories.\lSelectEbayOrdersFactory" alt="" coords="244,332,488,373"/>
+<area shape="rect" id="node8" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1SelectItemsWithBlankFieldsFactory.html" title="openDMS.model.sql.queries.factories.\lSelectItemsWithBlankFieldsFactory" alt="" coords="244,397,488,439"/>
+<area shape="rect" id="node9" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1factories_1_1UpdateItemBrandAndPartNoFactory.html" title="openDMS.model.sql.queries.factories.\lUpdateItemBrandAndPartNoFactory" alt="" coords="244,463,488,504"/>
 </map>

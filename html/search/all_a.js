@@ -1,24 +1,5 @@
 var searchData=
 [
-  ['commands',['commands',['../namespaceopenDMS_1_1ebay_1_1query_1_1commands.html',1,'openDMS::ebay::query']]],
-  ['data',['data',['../namespaceopenDMS_1_1ebay_1_1query_1_1data.html',1,'openDMS::ebay::query']]],
-  ['ebay',['ebay',['../namespaceopenDMS_1_1ebay.html',1,'openDMS']]],
-  ['ebay',['ebay',['../namespaceopenDMS_1_1presenters_1_1ebay.html',1,'openDMS::presenters']]],
-  ['helpers',['helpers',['../namespaceopenDMS_1_1helpers.html',1,'openDMS']]],
-  ['model',['model',['../namespaceopenDMS_1_1model.html',1,'openDMS']]],
-  ['opendms',['openDMS',['../namespaceopenDMS.html',1,'']]],
-  ['order',['ORDER',['../enumopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData_1_1Data__Type.html#a65ffd50bf33045446113cde8d69a3077',1,'openDMS::ebay::query::data::ApiCallData::Data_Type']]],
-  ['orderdata_5fm',['orderData_M',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#ae9af662338d0aacac0607a31b67a91eb',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['orders_5fm',['orders_M',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiOrderData.html#aa525141fd1469e246f77e875a90f59da',1,'openDMS::ebay::query::data::ApiOrderData']]],
-  ['orderscall',['OrdersCall',['../classopenDMS_1_1ebay_1_1query_1_1recievers_1_1OrdersCall.html',1,'openDMS::ebay::query::recievers']]],
-  ['orderscall',['OrdersCall',['../classopenDMS_1_1ebay_1_1query_1_1recievers_1_1OrdersCall.html#af8c4febc808d56e8150003457f3a4c63',1,'openDMS::ebay::query::recievers::OrdersCall']]],
-  ['orderscall_2ejava',['OrdersCall.java',['../OrdersCall_8java.html',1,'']]],
-  ['presenters',['presenters',['../namespaceopenDMS_1_1presenters.html',1,'openDMS']]],
-  ['query',['query',['../namespaceopenDMS_1_1ebay_1_1query.html',1,'openDMS::ebay']]],
-  ['recievers',['recievers',['../namespaceopenDMS_1_1ebay_1_1query_1_1recievers.html',1,'openDMS::ebay::query']]],
-  ['root',['root',['../namespaceopenDMS_1_1presenters_1_1root.html',1,'openDMS::presenters']]],
-  ['services',['services',['../namespaceopenDMS_1_1model_1_1services.html',1,'openDMS::model']]],
-  ['view',['view',['../namespaceopenDMS_1_1view.html',1,'openDMS']]],
-  ['viewpresenterfactory',['viewPresenterFactory',['../namespaceopenDMS_1_1helpers_1_1viewPresenterFactory.html',1,'openDMS::helpers']]],
-  ['views',['views',['../namespaceopenDMS_1_1view_1_1views.html',1,'openDMS::view']]]
+  ['noimports',['NoImports',['../classopenDMS_1_1helpers_1_1NoImports.html',1,'openDMS::helpers']]],
+  ['noimports_2ejava',['NoImports.java',['../NoImports_8java.html',1,'']]]
 ];

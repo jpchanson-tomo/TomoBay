@@ -1,18 +1,6 @@
 var searchData=
 [
-  ['abstractapicall',['AbstractAPIcall',['../classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#ad228578ec981adc19dd8dd8b03ea89cb',1,'openDMS::ebay::query::recievers::AbstractAPIcall']]],
-  ['accessdata',['accessData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiItemData.html#a32142e926c9fd5460c0911b654274680',1,'openDMS.ebay.query.data.ApiItemData.accessData()'],['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiOrderData.html#a48384301f23ce964135ad0ea138aabf0',1,'openDMS.ebay.query.data.ApiOrderData.accessData()'],['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiTransactionData.html#a418500d97b9f58b39c2e376709c1213c',1,'openDMS.ebay.query.data.ApiTransactionData.accessData()']]],
-  ['accessitemdata',['accessItemData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#ac371dbc5fd6129437343b22dca08ca88',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['accessorderdata',['accessOrderData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#aacbf58aa7671058129e46712d9fd6868',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['accesstransactiondata',['accessTransactionData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#a06584391374faccf2a015eb009480470',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['add',['add',['../classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html#a57e7874d182a49a1685d6e4c78501b3c',1,'openDMS::model::services::ServicesScheduler']]],
-  ['adddata',['addData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiItemData.html#ab2e04c3ae8b475a73693c1ea2862a182',1,'openDMS.ebay.query.data.ApiItemData.addData()'],['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiOrderData.html#ad386c01c612d570bc214ed512dfc1109',1,'openDMS.ebay.query.data.ApiOrderData.addData()'],['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiTransactionData.html#a1b4bf81f334857c51d589f42ddfa5521',1,'openDMS.ebay.query.data.ApiTransactionData.addData()']]],
-  ['additemdata',['addItemData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#abcdd985589212fe4a35fea4ae9903a6a',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['addorderdata',['addOrderData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#aa4e7a3d5449b94050aac7beb896a4882',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['addtransactiondata',['addTransactionData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#ae8d8483574075cecb2f7e0a5edf36d73',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['apicalldata',['ApiCallData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#a867ee3c233d7eabdb8e2af4f6ace2363',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['apicontext',['APIcontext',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1APIcontext.html#a2a2a01d623ce076344f37c7de5f06a32',1,'openDMS.ebay.query.data.APIcontext.APIcontext()'],['../classopenDMS_1_1ebay_1_1query_1_1data_1_1APIcontext.html#aa14f35b989fb6f3b0a3fa922deddfcfc',1,'openDMS.ebay.query.data.APIcontext.apiContext(String usrToken, String server)']]],
-  ['apiitemdata',['ApiItemData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiItemData.html#a0cb970012c2d3eed19547e191b19be96',1,'openDMS::ebay::query::data::ApiItemData']]],
-  ['apiorderdata',['ApiOrderData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiOrderData.html#a43200d8a012b29ed92452402c0650c25',1,'openDMS::ebay::query::data::ApiOrderData']]],
-  ['apitransactiondata',['ApiTransactionData',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiTransactionData.html#a8bb95f4eea9c8def393675d97a717c1b',1,'openDMS::ebay::query::data::ApiTransactionData']]]
+  ['abstractapicall',['AbstractAPIcall',['../classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#a85e6deed5d47c403dec252a5a08f8ef0',1,'openDMS::model::eBayAPI::AbstractAPIcall']]],
+  ['add',['add',['../classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html#a1bf5cd2540c4fbdc48ec5b51b8ce36e4',1,'openDMS::model::services::ServiceScheduler']]],
+  ['apicontext',['APIcontext',['../classopenDMS_1_1model_1_1eBayAPI_1_1APIcontext.html#afda397ae8f4b2c70d301b352fa253db0',1,'openDMS.model.eBayAPI.APIcontext.APIcontext()'],['../classopenDMS_1_1model_1_1eBayAPI_1_1APIcontext.html#a50e0f03c2cce9bfcd02edab4fb19497c',1,'openDMS.model.eBayAPI.APIcontext.apiContext(String usrToken, String server)']]]
 ];

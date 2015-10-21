@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -64,6 +72,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('HttpServer_8java_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,73 +101,95 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_f5423b495aa46d1101696a11cd81a7dc.html">view</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">HttpServer.java</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="HttpServer_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceopenDMS_1_1view.html">    1</a></span>&#160;<span class="keyword">package </span>openDMS.view;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> java.util.Map;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> java.net.MalformedURLException;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.server.Server;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.servlet.ServletContextHandler;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.servlet.ServletHolder;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classopenDMS_1_1view_1_1HttpServer.html">   27</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classopenDMS_1_1view_1_1HttpServer.html">HttpServer</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classopenDMS_1_1view_1_1HttpServer.html#a16895b4816b4d020b03b628447cbddb3">   32</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#a16895b4816b4d020b03b628447cbddb3">HttpServer</a>()</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {super();}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f">   40</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f">start</a>(<span class="keywordtype">int</span> port)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Server server = <span class="keyword">new</span> Server(port);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        ServletContextHandler context = <span class="keyword">new</span> ServletContextHandler();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        server.setHandler(context);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classopenDMS_1_1view_1_1UIViews.html">UIViews</a> uiViews = <span class="keyword">new</span> <a class="code" href="classopenDMS_1_1view_1_1UIViews.html">UIViews</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        Map&lt;String, String&gt; views = uiViews.<a class="code" href="classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b">createViews</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classopenDMS_1_1view_1_1UIServlet.html">UIServlet</a> dataServlet = <span class="keyword">new</span> <a class="code" href="classopenDMS_1_1view_1_1UIServlet.html">UIServlet</a>(views);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// Add default servlet</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        context.addServlet(<span class="keyword">new</span> ServletHolder(dataServlet), <span class="stringliteral">&quot;/*&quot;</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            server.start();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            server.join();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">catch</span>(InterruptedException ie)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            ie.printStackTrace();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">catch</span>(Exception e)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            e.printStackTrace();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.server.Connector;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.server.Handler;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.server.Server;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.server.ServerConnector;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.server.handler.ContextHandler;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.server.handler.ContextHandlerCollection;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.server.handler.ResourceHandler;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.servlet.ServletContextHandler;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">import</span> org.eclipse.jetty.util.resource.Resource;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classopenDMS_1_1view_1_1HttpServer.html">   33</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classopenDMS_1_1view_1_1HttpServer.html">HttpServer</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classopenDMS_1_1view_1_1HttpServer.html#a16895b4816b4d020b03b628447cbddb3">   38</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#a16895b4816b4d020b03b628447cbddb3">HttpServer</a>()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {super();}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classopenDMS_1_1view_1_1HttpServer.html#aefdaac648c61996ead72fd541d830926">   47</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#aefdaac648c61996ead72fd541d830926">start</a>(<span class="keywordtype">int</span> port) <span class="keywordflow">throws</span> MalformedURLException</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        Server server = <span class="keyword">new</span> Server();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ServerConnector connector = <span class="keyword">new</span> ServerConnector(server);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        connector.setPort(port);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">//set up context handlers</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ContextHandler context0 = <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#a66a9cee336968d76ca512760d712e7e3">setUpServletHandler</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        ContextHandler context1 = <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#a8c2657ae699bb1c60905645c1eb38612">setUpGuiHandler</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//add handlers to collection</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        ContextHandlerCollection contexts = <span class="keyword">new</span> ContextHandlerCollection();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        contexts.setHandlers(<span class="keyword">new</span> Handler[] { context1, context0});</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">//give handler collection to server</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        server.setHandler(contexts);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        server.setConnectors(<span class="keyword">new</span> Connector[] {connector});</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            server.start();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            server.join();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">catch</span>(InterruptedException ie)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            ie.printStackTrace();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
-<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html_a16895b4816b4d020b03b628447cbddb3"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html#a16895b4816b4d020b03b628447cbddb3">openDMS.view.HttpServer.HttpServer</a></div><div class="ttdeci">HttpServer()</div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00032">HttpServer.java:32</a></div></div>
-<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html">openDMS.view.HttpServer</a></div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00027">HttpServer.java:27</a></div></div>
-<div class="ttc" id="classopenDMS_1_1view_1_1UIViews_html_addead35d25d218b63e22eabe4ef9a34b"><div class="ttname"><a href="classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b">openDMS.view.UIViews.createViews</a></div><div class="ttdeci">Map&lt; String, String &gt; createViews()</div><div class="ttdef"><b>Definition:</b> <a href="UIViews_8java_source.html#l00047">UIViews.java:47</a></div></div>
-<div class="ttc" id="classopenDMS_1_1view_1_1UIServlet_html"><div class="ttname"><a href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></div><div class="ttdef"><b>Definition:</b> <a href="UIServlet_8java_source.html#l00037">UIServlet.java:37</a></div></div>
-<div class="ttc" id="classopenDMS_1_1view_1_1UIViews_html"><div class="ttname"><a href="classopenDMS_1_1view_1_1UIViews.html">openDMS.view.UIViews</a></div><div class="ttdef"><b>Definition:</b> <a href="UIViews_8java_source.html#l00028">UIViews.java:28</a></div></div>
-<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html_a2102cfb2d15bd9262205e9bd67e01f2f"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f">openDMS.view.HttpServer.start</a></div><div class="ttdeci">boolean start(int port)</div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00040">HttpServer.java:40</a></div></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">catch</span>(Exception e)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            e.printStackTrace();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classopenDMS_1_1view_1_1HttpServer.html#a66a9cee336968d76ca512760d712e7e3">   82</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> ContextHandler <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#a66a9cee336968d76ca512760d712e7e3">setUpServletHandler</a>()</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        ContextHandler context0 = <span class="keyword">new</span> ContextHandler();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        context0.setContextPath(<span class="stringliteral">&quot;/&quot;</span>);        </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        ServletContextHandler serv = <span class="keyword">new</span> ServletContextHandler();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        serv.addServlet(<a class="code" href="classopenDMS_1_1view_1_1UIServlet.html">UIServlet</a>.class, <span class="stringliteral">&quot;/*&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        context0.setHandler(serv);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> context0;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classopenDMS_1_1view_1_1HttpServer.html#a8c2657ae699bb1c60905645c1eb38612">   96</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> ContextHandler <a class="code" href="classopenDMS_1_1view_1_1HttpServer.html#a8c2657ae699bb1c60905645c1eb38612">setUpGuiHandler</a>() throws MalformedURLException</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ContextHandler context1 = <span class="keyword">new</span> ContextHandler();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        context1.setContextPath(<span class="stringliteral">&quot;/res&quot;</span>);        </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        ResourceHandler res = <span class="keyword">new</span> ResourceHandler();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        res.setBaseResource(Resource.newResource(<span class="stringliteral">&quot;./res/&quot;</span>));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        context1.setHandler(res);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> context1;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html_a16895b4816b4d020b03b628447cbddb3"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html#a16895b4816b4d020b03b628447cbddb3">openDMS.view.HttpServer.HttpServer</a></div><div class="ttdeci">HttpServer()</div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00038">HttpServer.java:38</a></div></div>
+<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html">openDMS.view.HttpServer</a></div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00033">HttpServer.java:33</a></div></div>
+<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html_a66a9cee336968d76ca512760d712e7e3"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html#a66a9cee336968d76ca512760d712e7e3">openDMS.view.HttpServer.setUpServletHandler</a></div><div class="ttdeci">static ContextHandler setUpServletHandler()</div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00082">HttpServer.java:82</a></div></div>
+<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html_aefdaac648c61996ead72fd541d830926"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html#aefdaac648c61996ead72fd541d830926">openDMS.view.HttpServer.start</a></div><div class="ttdeci">void start(int port)</div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00047">HttpServer.java:47</a></div></div>
+<div class="ttc" id="classopenDMS_1_1view_1_1HttpServer_html_a8c2657ae699bb1c60905645c1eb38612"><div class="ttname"><a href="classopenDMS_1_1view_1_1HttpServer.html#a8c2657ae699bb1c60905645c1eb38612">openDMS.view.HttpServer.setUpGuiHandler</a></div><div class="ttdeci">static ContextHandler setUpGuiHandler()</div><div class="ttdef"><b>Definition:</b> <a href="HttpServer_8java_source.html#l00096">HttpServer.java:96</a></div></div>
+<div class="ttc" id="classopenDMS_1_1view_1_1UIServlet_html"><div class="ttname"><a href="classopenDMS_1_1view_1_1UIServlet.html">openDMS.view.UIServlet</a></div><div class="ttdef"><b>Definition:</b> <a href="UIServlet_8java_source.html#l00034">UIServlet.java:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_f5423b495aa46d1101696a11cd81a7dc.html">view</a></li><li class="navelem"><a class="el" href="HttpServer_8java.html">HttpServer.java</a></li>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:26 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

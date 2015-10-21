@@ -1,5 +1,3 @@
 <map id="openDMS.view.UIViews.populateEbayView" name="openDMS.view.UIViews.populateEbayView">
-<area shape="rect" id="node2" href="$classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b" title="openDMS.view.UIViews.create\lViews" alt="" coords="281,5,495,47"/>
-<area shape="rect" id="node3" href="$classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f" title="openDMS.view.HttpServer.start" alt="" coords="543,13,765,39"/>
-<area shape="rect" id="node4" href="$classopenDMS_1_1ebay_1_1MAIN.html#a6db74465e549f85bbc6eb86bcb7f2691" title="openDMS.ebay.MAIN.main" alt="" coords="813,13,1005,39"/>
+<area shape="rect" id="node2" href="$classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b" title="openDMS.view.UIViews.create\lViews" alt="" coords="272,5,477,47"/>
 </map>

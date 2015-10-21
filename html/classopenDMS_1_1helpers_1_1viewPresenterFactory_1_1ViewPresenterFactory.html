@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,6 +75,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,11 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespaceopenDMS.html">openDMS</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1helpers.html">helpers</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1helpers_1_1viewPresenterFactory.html">viewPresenterFactory</a></li><li class="navelem"><a class="el" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html">ViewPresenterFactory</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -102,8 +120,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Collaboration diagram for openDMS.helpers.viewPresenterFactory.ViewPresenterFactory:</div>
 <div class="dyncontent">
 <div class="center"><img src="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory__coll__graph.png" border="0" usemap="#openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory_coll__map" alt="Collaboration graph"/></div>
-<map name="openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory_coll__map" id="openDMS_8helpers_8viewPresenterFactory_8ViewPresenterFactory_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -201,7 +217,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="ViewPresenterFactory_8java_source.html#l00055">55</a> of file <a class="el" href="ViewPresenterFactory_8java_source.html">ViewPresenterFactory.java</a>.</p>
 
-<p>Referenced by <a class="el" href="UIServlet_8java_source.html#l00059">openDMS.view.UIServlet.doGet()</a>.</p>
+<p>Referenced by <a class="el" href="UIServlet_8java_source.html#l00051">openDMS.view.UIServlet.doGet()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -237,7 +253,7 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="ViewPresenterFactory_8java_source.html#l00064">64</a> of file <a class="el" href="ViewPresenterFactory_8java_source.html">ViewPresenterFactory.java</a>.</p>
 
-<p>Referenced by <a class="el" href="UIServlet_8java_source.html#l00059">openDMS.view.UIServlet.doGet()</a>.</p>
+<p>Referenced by <a class="el" href="UIServlet_8java_source.html#l00051">openDMS.view.UIServlet.doGet()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -276,7 +292,7 @@ Here is the caller graph for this function:</div>
 
 <p>References <a class="el" href="ViewPresenterFactory_8java_source.html#l00027">openDMS.helpers.viewPresenterFactory.ViewPresenterFactory.instance_M</a>.</p>
 
-<p>Referenced by <a class="el" href="UIServlet_8java_source.html#l00059">openDMS.view.UIServlet.doGet()</a>.</p>
+<p>Referenced by <a class="el" href="UIServlet_8java_source.html#l00051">openDMS.view.UIServlet.doGet()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -358,11 +374,15 @@ Here is the caller graph for this function:</div>
 <li>src/openDMS/helpers/viewPresenterFactory/<a class="el" href="ViewPresenterFactory_8java_source.html">ViewPresenterFactory.java</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceopenDMS.html">openDMS</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1helpers.html">helpers</a></li><li class="navelem"><a class="el" href="namespaceopenDMS_1_1helpers_1_1viewPresenterFactory.html">viewPresenterFactory</a></li><li class="navelem"><a class="el" href="classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html">ViewPresenterFactory</a></li>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:26 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

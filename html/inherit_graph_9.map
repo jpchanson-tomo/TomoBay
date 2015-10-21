@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classopenDMS_1_1ebay_1_1query_1_1QueryInvoker.html" title="openDMS.ebay.query.Query\lInvoker" alt="" coords="5,5,207,47"/>
+<area shape="rect" id="node2" href="$interfaceopenDMS_1_1model_1_1services_1_1AbstractService.html" title="openDMS.model.services.Abstract\lService" alt="" coords="131,39,356,80"/>
+<area shape="rect" id="node3" href="$classopenDMS_1_1model_1_1services_1_1basicEbayUpdate_1_1BasicEbayUpdateService.html" title="openDMS.model.services.basic\lEbayUpdate.BasicEbayUpdateService" alt="" coords="404,5,651,47"/>
+<area shape="rect" id="node4" href="$classopenDMS_1_1model_1_1services_1_1testService_1_1TestService.html" title="openDMS.model.services.test\lService.TestService" alt="" coords="428,71,627,112"/>
 </map>

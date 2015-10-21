@@ -4,10 +4,18 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>My Project: src/openDMS/ebay/query/recievers/AbstractAPIcall.java Source File</title>
+<title>My Project: src/openDMS/model/eBayAPI/AbstractAPIcall.java Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -64,6 +72,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('AbstractAPIcall_8java_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,25 +101,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_8a945f06a8a4c83ca9c55c55422bd7ba.html">ebay</a></li><li class="navelem"><a class="el" href="dir_1bb867ce2ecc6373345403f4b66e4e22.html">query</a></li><li class="navelem"><a class="el" href="dir_82b3c07ab35909442d972bdef03d8bf6.html">recievers</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">AbstractAPIcall.java</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="AbstractAPIcall_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceopenDMS_1_1ebay_1_1query_1_1recievers.html">    1</a></span>&#160;<span class="keyword">package </span>openDMS.ebay.query.recievers;</div>
+<a href="AbstractAPIcall_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceopenDMS_1_1model_1_1eBayAPI.html">    1</a></span>&#160;<span class="keyword">package </span>openDMS.model.eBayAPI;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html">   27</a></span>&#160;<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html">AbstractAPIcall</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html">   27</a></span>&#160;<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html">AbstractAPIcall</a></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#aa94064b57f05cb6538c8f69475fc0236">   30</a></span>&#160;    <span class="keyword">protected</span> String <a class="code" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#aa94064b57f05cb6538c8f69475fc0236">usrToken_M</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#a965b7562a9f76787af76085a3a246145">   32</a></span>&#160;    <span class="keyword">protected</span> String <a class="code" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#a965b7562a9f76787af76085a3a246145">server_M</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#ad619a1b200fa09fa41c74aafdacc9a18">   30</a></span>&#160;    <span class="keyword">protected</span> String <a class="code" href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#ad619a1b200fa09fa41c74aafdacc9a18">usrToken_M</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#a274f68506198ba2e4e0cc0934c334a33">   32</a></span>&#160;    <span class="keyword">protected</span> String <a class="code" href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#a274f68506198ba2e4e0cc0934c334a33">server_M</a>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#ad228578ec981adc19dd8dd8b03ea89cb">   41</a></span>&#160;    <span class="keyword">protected</span> <a class="code" href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#ad228578ec981adc19dd8dd8b03ea89cb">AbstractAPIcall</a>(String usrToken, String server)</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#a85e6deed5d47c403dec252a5a08f8ef0">   41</a></span>&#160;    <span class="keyword">protected</span> <a class="code" href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#a85e6deed5d47c403dec252a5a08f8ef0">AbstractAPIcall</a>(String usrToken, String server)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        super();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        this.usrToken_M = usrToken;</div>
@@ -104,16 +122,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall_html_a965b7562a9f76787af76085a3a246145"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#a965b7562a9f76787af76085a3a246145">openDMS.ebay.query.recievers.AbstractAPIcall.server_M</a></div><div class="ttdeci">String server_M</div><div class="ttdef"><b>Definition:</b> <a href="AbstractAPIcall_8java_source.html#l00032">AbstractAPIcall.java:32</a></div></div>
-<div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall_html"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html">openDMS.ebay.query.recievers.AbstractAPIcall</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractAPIcall_8java_source.html#l00027">AbstractAPIcall.java:27</a></div></div>
-<div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall_html_aa94064b57f05cb6538c8f69475fc0236"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#aa94064b57f05cb6538c8f69475fc0236">openDMS.ebay.query.recievers.AbstractAPIcall.usrToken_M</a></div><div class="ttdeci">String usrToken_M</div><div class="ttdef"><b>Definition:</b> <a href="AbstractAPIcall_8java_source.html#l00030">AbstractAPIcall.java:30</a></div></div>
-<div class="ttc" id="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall_html_ad228578ec981adc19dd8dd8b03ea89cb"><div class="ttname"><a href="classopenDMS_1_1ebay_1_1query_1_1recievers_1_1AbstractAPIcall.html#ad228578ec981adc19dd8dd8b03ea89cb">openDMS.ebay.query.recievers.AbstractAPIcall.AbstractAPIcall</a></div><div class="ttdeci">AbstractAPIcall(String usrToken, String server)</div><div class="ttdef"><b>Definition:</b> <a href="AbstractAPIcall_8java_source.html#l00041">AbstractAPIcall.java:41</a></div></div>
+<div class="ttc" id="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall_html_a274f68506198ba2e4e0cc0934c334a33"><div class="ttname"><a href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#a274f68506198ba2e4e0cc0934c334a33">openDMS.model.eBayAPI.AbstractAPIcall.server_M</a></div><div class="ttdeci">String server_M</div><div class="ttdef"><b>Definition:</b> <a href="AbstractAPIcall_8java_source.html#l00032">AbstractAPIcall.java:32</a></div></div>
+<div class="ttc" id="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall_html_ad619a1b200fa09fa41c74aafdacc9a18"><div class="ttname"><a href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#ad619a1b200fa09fa41c74aafdacc9a18">openDMS.model.eBayAPI.AbstractAPIcall.usrToken_M</a></div><div class="ttdeci">String usrToken_M</div><div class="ttdef"><b>Definition:</b> <a href="AbstractAPIcall_8java_source.html#l00030">AbstractAPIcall.java:30</a></div></div>
+<div class="ttc" id="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall_html_a85e6deed5d47c403dec252a5a08f8ef0"><div class="ttname"><a href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#a85e6deed5d47c403dec252a5a08f8ef0">openDMS.model.eBayAPI.AbstractAPIcall.AbstractAPIcall</a></div><div class="ttdeci">AbstractAPIcall(String usrToken, String server)</div><div class="ttdef"><b>Definition:</b> <a href="AbstractAPIcall_8java_source.html#l00041">AbstractAPIcall.java:41</a></div></div>
+<div class="ttc" id="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall_html"><div class="ttname"><a href="classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html">openDMS.model.eBayAPI.AbstractAPIcall</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractAPIcall_8java_source.html#l00027">AbstractAPIcall.java:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:13 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_f6fbd8dd248f8eac2b7aaba3171c9569.html">model</a></li><li class="navelem"><a class="el" href="dir_20e80548224c5d2c5fdced5ee23f5569.html">eBayAPI</a></li><li class="navelem"><a class="el" href="AbstractAPIcall_8java.html">AbstractAPIcall.java</a></li>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:26 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

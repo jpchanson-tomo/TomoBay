@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -64,6 +72,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="files.html"><span>File&#160;List</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('UIViews_8java_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_f5423b495aa46d1101696a11cd81a7dc.html">view</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UIViews.java</div>  </div>
@@ -128,15 +146,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classopenDMS_1_1helpers_1_1FileToString_html_ae625ebfbc382c8aa079e2a577fd4ee15"><div class="ttname"><a href="classopenDMS_1_1helpers_1_1FileToString.html#ae625ebfbc382c8aa079e2a577fd4ee15">openDMS.helpers.FileToString.convert</a></div><div class="ttdeci">static String convert(String filePath, String fileName, String charSet)</div><div class="ttdef"><b>Definition:</b> <a href="FileToString_8java_source.html#l00043">FileToString.java:43</a></div></div>
 <div class="ttc" id="classopenDMS_1_1helpers_1_1FileToString_html"><div class="ttname"><a href="classopenDMS_1_1helpers_1_1FileToString.html">openDMS.helpers.FileToString</a></div><div class="ttdef"><b>Definition:</b> <a href="FileToString_8java_source.html#l00028">FileToString.java:28</a></div></div>
 <div class="ttc" id="classopenDMS_1_1view_1_1UIViews_html_aafec201ddddcb50c79069416a69e6733"><div class="ttname"><a href="classopenDMS_1_1view_1_1UIViews.html#aafec201ddddcb50c79069416a69e6733">openDMS.view.UIViews.UIViews</a></div><div class="ttdeci">UIViews()</div><div class="ttdef"><b>Definition:</b> <a href="UIViews_8java_source.html#l00036">UIViews.java:36</a></div></div>
-<div class="ttc" id="namespaceopenDMS_1_1helpers_html"><div class="ttname"><a href="namespaceopenDMS_1_1helpers.html">openDMS.helpers</a></div><div class="ttdef"><b>Definition:</b> <a href="FileToString_8java_source.html#l00001">FileToString.java:1</a></div></div>
+<div class="ttc" id="namespaceopenDMS_1_1helpers_html"><div class="ttname"><a href="namespaceopenDMS_1_1helpers.html">openDMS.helpers</a></div><div class="ttdef"><b>Definition:</b> <a href="ConfigReader_8java_source.html#l00001">ConfigReader.java:1</a></div></div>
 <div class="ttc" id="classopenDMS_1_1view_1_1UIViews_html"><div class="ttname"><a href="classopenDMS_1_1view_1_1UIViews.html">openDMS.view.UIViews</a></div><div class="ttdef"><b>Definition:</b> <a href="UIViews_8java_source.html#l00028">UIViews.java:28</a></div></div>
 <div class="ttc" id="classopenDMS_1_1view_1_1UIViews_html_a410858265de0256e54d423f0cc806357"><div class="ttname"><a href="classopenDMS_1_1view_1_1UIViews.html#a410858265de0256e54d423f0cc806357">openDMS.view.UIViews.populateRootView</a></div><div class="ttdeci">void populateRootView()</div><div class="ttdef"><b>Definition:</b> <a href="UIViews_8java_source.html#l00057">UIViews.java:57</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 14:12:14 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a59d72c9ef5158ba68b3bc5b3bf3f986.html">openDMS</a></li><li class="navelem"><a class="el" href="dir_f5423b495aa46d1101696a11cd81a7dc.html">view</a></li><li class="navelem"><a class="el" href="UIViews_8java.html">UIViews.java</a></li>
+    <li class="footer">Generated on Tue Oct 20 2015 15:49:26 for My Project by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

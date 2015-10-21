@@ -1,4 +1,6 @@
 <map id="src/openDMS/model/services" name="src/openDMS/model/services">
-<area shape="rect" id="node1" href="dir_0fd48be28f6068e2c309e0f457509791.html" title="services" alt="" coords="27,52,101,100"/>
-<area shape="rect" id="clust1" href="dir_f6fbd8dd248f8eac2b7aaba3171c9569.html" title="model" alt="" coords="16,16,112,111"/>
+<area shape="rect" id="node2" href="dir_bb21ef17b20dd6a63d2c730a18f28c62.html" title="basicEbayUpdate" alt="" coords="149,63,275,111"/>
+<area shape="rect" id="node3" href="dir_51ab7b80ca08aa919f2f71a9b85b4200.html" title="testService" alt="" coords="37,63,125,111"/>
+<area shape="rect" id="clust2" href="dir_0fd48be28f6068e2c309e0f457509791.html" alt="" coords="27,52,381,121"/>
+<area shape="rect" id="clust1" href="dir_f6fbd8dd248f8eac2b7aaba3171c9569.html" title="model" alt="" coords="16,16,392,132"/>
 </map>

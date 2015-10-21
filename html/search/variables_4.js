@@ -1,8 +1,9 @@
 var searchData=
 [
   ['index',['INDEX',['../enumopenDMS_1_1view_1_1views_1_1RootView_1_1Part.html#a1453b8b66807fd1428107b03c334ec14',1,'openDMS::view::views::RootView::Part']]],
-  ['instance_5fm',['instance_M',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1APIcontext.html#ae3f1a905865af98708424d454e9d2b44',1,'openDMS.ebay.query.data.APIcontext.instance_M()'],['../classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html#ace95c1a3c2db5cf6d4dd528f297bf61a',1,'openDMS.helpers.viewPresenterFactory.ViewPresenterFactory.instance_M()']]],
-  ['item',['ITEM',['../enumopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData_1_1Data__Type.html#a415882965dc3e6a835eb9060f3c37551',1,'openDMS::ebay::query::data::ApiCallData::Data_Type']]],
-  ['itemdata_5fm',['itemData_M',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#a27306575b1ff0864630a46a88537a282',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['items_5fm',['items_M',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiItemData.html#a1da7662c75ab508c3188309695f9a0a2',1,'openDMS::ebay::query::data::ApiItemData']]]
+  ['insert_5febay_5fbuyers',['INSERT_EBAY_BUYERS',['../enumopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker_1_1QueryType.html#a638d17dc628ef49955a753504c023f72',1,'openDMS::model::sql::queries::QueryInvoker::QueryType']]],
+  ['insert_5febay_5fitems',['INSERT_EBAY_ITEMS',['../enumopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker_1_1QueryType.html#a25760b428e6c5d76f5294d39fadfd7d7',1,'openDMS::model::sql::queries::QueryInvoker::QueryType']]],
+  ['insert_5febay_5forders',['INSERT_EBAY_ORDERS',['../enumopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker_1_1QueryType.html#ad8f862a647ed78ac8225875266482ea7',1,'openDMS::model::sql::queries::QueryInvoker::QueryType']]],
+  ['insert_5febay_5ftransactions',['INSERT_EBAY_TRANSACTIONS',['../enumopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker_1_1QueryType.html#a0a451302b089345f40670e16b47eeffb',1,'openDMS::model::sql::queries::QueryInvoker::QueryType']]],
+  ['instance_5fm',['instance_M',['../classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html#ace95c1a3c2db5cf6d4dd528f297bf61a',1,'openDMS.helpers.viewPresenterFactory.ViewPresenterFactory.instance_M()'],['../classopenDMS_1_1model_1_1eBayAPI_1_1APIcontext.html#a8129f15bdf78dd72bc0391d2819d2533',1,'openDMS.model.eBayAPI.APIcontext.instance_M()']]]
 ];

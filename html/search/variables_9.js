@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['transaction',['TRANSACTION',['../enumopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData_1_1Data__Type.html#a0ea6f452e53c3b0eab8d09c97907ad1f',1,'openDMS::ebay::query::data::ApiCallData::Data_Type']]],
-  ['transactiondata_5fm',['transactionData_M',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiCallData.html#ae12d4ae3a766070fab07eec5eb3f4573',1,'openDMS::ebay::query::data::ApiCallData']]],
-  ['transactions_5fm',['transactions_M',['../classopenDMS_1_1ebay_1_1query_1_1data_1_1ApiTransactionData.html#a963d732f43c972a6a41b73573c344d19',1,'openDMS::ebay::query::data::ApiTransactionData']]]
+  ['update_5fitem_5fbrand_5fand_5fpartno',['UPDATE_ITEM_BRAND_AND_PARTNO',['../enumopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker_1_1QueryType.html#aab0dbb0201a61085b575d4705fb3eb1d',1,'openDMS::model::sql::queries::QueryInvoker::QueryType']]],
+  ['usrtoken_5fm',['usrToken_M',['../classopenDMS_1_1model_1_1eBayAPI_1_1AbstractAPIcall.html#ad619a1b200fa09fa41c74aafdacc9a18',1,'openDMS::model::eBayAPI::AbstractAPIcall']]]
 ];
