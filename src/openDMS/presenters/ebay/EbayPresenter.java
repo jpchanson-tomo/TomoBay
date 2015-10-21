@@ -42,9 +42,9 @@ public class EbayPresenter implements AbstractPresenter
 	{
 		String output = "";
 		
-		output += view.make(EbayView.Part.HEADER);
+//		output += view.make(EbayView.Part.HEADER);
 		output += this.doStuff();
-		output += view.make(EbayView.Part.FOOTER);
+//		output += view.make(EbayView.Part.FOOTER);
 		
 		return output;
 	}

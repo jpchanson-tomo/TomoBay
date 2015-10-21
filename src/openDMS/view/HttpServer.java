@@ -84,7 +84,7 @@ public class HttpServer
     	ContextHandler context0 = new ContextHandler();
 		context0.setContextPath("/");        
 		ServletContextHandler serv = new ServletContextHandler();
-		serv.addServlet(UIServlet.class, "/*");
+		serv.addServlet(UIServlet.class, "/res/*");
 		context0.setHandler(serv);
 		return context0;
     }
@@ -96,7 +96,7 @@ public class HttpServer
     private static ContextHandler setUpGuiHandler() throws MalformedURLException
     {
     	ContextHandler context1 = new ContextHandler();
-		context1.setContextPath("/res");        
+		context1.setContextPath("/");        
 		ResourceHandler res = new ResourceHandler();
 		res.setBaseResource(Resource.newResource("./res/"));
 		context1.setHandler(res);

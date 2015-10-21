@@ -23,8 +23,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import openDMS.helpers.viewPresenterFactory.AbstractViewPresenterFactory;
-import openDMS.helpers.viewPresenterFactory.ViewPresenterFactory;
+import openDMS.presenters.ebay.EbayPresenter;
+import openDMS.view.views.AbstractView;
+import openDMS.view.views.EbayView;
 
 /**
  *
@@ -53,9 +54,10 @@ public class UIServlet extends HttpServlet
 	{
 		PrintWriter out = response.getWriter();
 		
+		AbstractView ev = new EbayView();
+		EbayPresenter ep = new EbayPresenter();
 		
-		
-		
+		out.print(ep.present(ev));
 		
 		
 //		AbstractViewPresenterFactory factory;
