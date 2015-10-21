@@ -1,8 +1,0 @@
-<map id="openDMS.view.UIServlet.doGet" name="openDMS.view.UIServlet.doGet">
-<area shape="rect" id="node2" href="$classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html#a1631d1e2e99e69fb6a6461919bf2c573" title="openDMS.helpers.viewPresenter\lFactory.ViewPresenterFactory.get\lFactory" alt="" coords="323,5,559,61"/>
-<area shape="rect" id="node3" href="$classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html#abe612089a34d9e23f37427e802f3909e" title="openDMS.helpers.viewPresenter\lFactory.ViewPresenterFactory.has\lFactory" alt="" coords="321,85,560,141"/>
-<area shape="rect" id="node4" href="$classopenDMS_1_1helpers_1_1viewPresenterFactory_1_1ViewPresenterFactory.html#a780d9fe57657c6e6d5f1f37be52162e6" title="openDMS.helpers.viewPresenter\lFactory.ViewPresenterFactory.instance" alt="" coords="306,165,575,206"/>
-<area shape="rect" id="node5" href="$interfaceopenDMS_1_1helpers_1_1viewPresenterFactory_1_1AbstractViewPresenterFactory.html#aede7a1290cc043bff173812edc114bd2" title="openDMS.helpers.viewPresenter\lFactory.AbstractViewPresenterFactory.make\lPresenter" alt="" coords="288,229,593,285"/>
-<area shape="rect" id="node6" href="$interfaceopenDMS_1_1helpers_1_1viewPresenterFactory_1_1AbstractViewPresenterFactory.html#a6c78a36ce5af200de64f0c20218ba4c2" title="openDMS.helpers.viewPresenter\lFactory.AbstractViewPresenterFactory.makeView" alt="" coords="273,309,608,350"/>
-<area shape="rect" id="node7" href="$interfaceopenDMS_1_1presenters_1_1AbstractPresenter.html#a0a5e3f88411733ef352e47363dd3267d" title="openDMS.presenters.Abstract\lPresenter.present" alt="" coords="333,374,548,415"/>
-</map>

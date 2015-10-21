@@ -1,9 +1,0 @@
-<map id="openDMS.ebay.MAIN.main" name="openDMS.ebay.MAIN.main">
-<area shape="rect" id="node2" href="$classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html#a57e7874d182a49a1685d6e4c78501b3c" title="openDMS.model.services.Services\lScheduler.add" alt="" coords="245,5,488,47"/>
-<area shape="rect" id="node3" href="$classopenDMS_1_1view_1_1HttpServer.html#a2102cfb2d15bd9262205e9bd67e01f2f" title="openDMS.view.HttpServer.start" alt="" coords="255,71,478,98"/>
-<area shape="rect" id="node8" href="$classopenDMS_1_1model_1_1services_1_1ServicesScheduler.html#aecf3f47dd4362c7d2a5e55ab4a82cd50" title="openDMS.model.services.Services\lScheduler.start" alt="" coords="245,123,488,164"/>
-<area shape="rect" id="node4" href="$classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b" title="openDMS.view.UIViews.create\lViews" alt="" coords="536,64,749,105"/>
-<area shape="rect" id="node5" href="$classopenDMS_1_1view_1_1UIViews.html#a410858265de0256e54d423f0cc806357" title="openDMS.view.UIViews.populate\lRootView" alt="" coords="797,31,1025,72"/>
-<area shape="rect" id="node7" href="$classopenDMS_1_1view_1_1UIViews.html#a399eb73d7e7110dca7f2deac4de972f3" title="openDMS.view.UIViews.populate\lEbayView" alt="" coords="797,96,1025,137"/>
-<area shape="rect" id="node6" href="$classopenDMS_1_1helpers_1_1FileToString.html#ae625ebfbc382c8aa079e2a577fd4ee15" title="openDMS.helpers.FileToString.convert" alt="" coords="1073,71,1339,98"/>
-</map>

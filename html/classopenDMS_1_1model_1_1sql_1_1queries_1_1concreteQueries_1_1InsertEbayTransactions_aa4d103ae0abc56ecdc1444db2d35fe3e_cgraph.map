@@ -1,6 +1,0 @@
-<map id="openDMS.model.sql.queries.concreteQueries.InsertEbayTransactions.execute" name="openDMS.model.sql.queries.concreteQueries.InsertEbayTransactions.execute">
-<area shape="rect" id="node2" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayTransactions.html#a087b632bf7d7f408f5987246443d3bed" title="openDMS.model.sql.queries.concrete\lQueries.InsertEbayTransactions.cleanup" alt="" coords="315,5,574,47"/>
-<area shape="rect" id="node3" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayTransactions.html#a520061b080c26c1a8971ab9fa1c8f994" title="openDMS.model.sql.queries.concrete\lQueries.InsertEbayTransactions.initQuery" alt="" coords="312,71,577,112"/>
-<area shape="rect" id="node4" href="$classopenDMS_1_1model_1_1sql_1_1ConnectionManager.html#a4ae820408bc1df5870013c44250fe552" title="openDMS.model.sql.Connection\lManager.instance" alt="" coords="625,37,836,79"/>
-<area shape="rect" id="node5" href="$classopenDMS_1_1model_1_1sql_1_1ConnectionManager.html#aa36af5d5cff2312623aee0be499ba500" title="openDMS.model.sql.Connection\lManager.getConnection" alt="" coords="625,103,836,144"/>
-</map>

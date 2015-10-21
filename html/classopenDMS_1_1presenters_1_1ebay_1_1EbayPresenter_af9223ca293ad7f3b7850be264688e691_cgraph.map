@@ -1,5 +1,0 @@
-<map id="openDMS.presenters.ebay.EbayPresenter.doStuff" name="openDMS.presenters.ebay.EbayPresenter.doStuff">
-<area shape="rect" id="node2" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#a86e1691b13dbe78af3b211760e751ea9" title="openDMS.model.sql.queries.\lQueryInvoker.execute" alt="" coords="235,39,425,80"/>
-<area shape="rect" id="node3" href="$interfaceopenDMS_1_1model_1_1sql_1_1queries_1_1AbstractDBQuery.html#a25b12fdcf4ebc57f91a9b45d2ed1ceaf" title="openDMS.model.sql.queries.\lAbstractDBQuery.execute" alt="" coords="473,5,664,47"/>
-<area shape="rect" id="node4" href="$classopenDMS_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#a96694e3eea759b2f314936c5284cbe63" title="openDMS.model.sql.queries.\lQueryInvoker.make" alt="" coords="473,71,664,112"/>
-</map>

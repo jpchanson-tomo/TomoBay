@@ -1,5 +1,0 @@
-<map id="openDMS.ebay.query.commands.AbstractEbayQuery" name="openDMS.ebay.query.commands.AbstractEbayQuery">
-<area shape="rect" id="node2" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetItemCommand.html" title="{openDMS.ebay.query.commands.\lGetItemCommand\n||+ execute()\l+ getCallData()\l}" alt="" coords="5,175,244,281"/>
-<area shape="rect" id="node3" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetOrderListCommand.html" title="{openDMS.ebay.query.commands.\lGetOrderListCommand\n||+ execute()\l+ getCallData()\l}" alt="" coords="268,175,507,281"/>
-<area shape="rect" id="node4" href="$classopenDMS_1_1ebay_1_1query_1_1commands_1_1GetTransactionListCommand.html" title="{openDMS.ebay.query.commands.\lGetTransactionListCommand\n|~ transactionArrayList\l|+ GetTransactionListCommand()\l+ execute()\l+ getCallData()\l&#45; printResults()\l}" alt="" coords="531,160,769,296"/>
-</map>

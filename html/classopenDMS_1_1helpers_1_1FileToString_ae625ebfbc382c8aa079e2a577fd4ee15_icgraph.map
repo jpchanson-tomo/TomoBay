@@ -1,9 +1,0 @@
-<map id="openDMS.helpers.FileToString.convert" name="openDMS.helpers.FileToString.convert">
-<area shape="rect" id="node2" href="$classopenDMS_1_1view_1_1UIViews.html#a399eb73d7e7110dca7f2deac4de972f3" title="openDMS.view.UIViews.populate\lEbayView" alt="" coords="336,5,555,47"/>
-<area shape="rect" id="node4" href="$classopenDMS_1_1view_1_1views_1_1RootView.html#a595442cc47568ac112bdcc0b39efa567" title="openDMS.view.views.RootView.populateMap" alt="" coords="301,137,589,163"/>
-<area shape="rect" id="node6" href="$classopenDMS_1_1view_1_1views_1_1EbayView.html#afe4e032248dcda2a80f842bb8c51ee4a" title="openDMS.view.views.EbayView.populateMap" alt="" coords="300,191,591,218"/>
-<area shape="rect" id="node8" href="$classopenDMS_1_1view_1_1UIViews.html#a410858265de0256e54d423f0cc806357" title="openDMS.view.UIViews.populate\lRootView" alt="" coords="336,71,555,112"/>
-<area shape="rect" id="node3" href="$classopenDMS_1_1view_1_1UIViews.html#addead35d25d218b63e22eabe4ef9a34b" title="openDMS.view.UIViews.create\lViews" alt="" coords="644,33,849,75"/>
-<area shape="rect" id="node5" href="$classopenDMS_1_1view_1_1views_1_1RootView.html#aa9a0a4b76b4e3cc05c5a36ed7b9b44af" title="openDMS.view.views.RootView.\lRootView" alt="" coords="639,125,854,167"/>
-<area shape="rect" id="node7" href="$classopenDMS_1_1view_1_1views_1_1EbayView.html#a054d8a2f1986ff721d7804bee5b9f287" title="openDMS.view.views.EbayView.\lEbayView" alt="" coords="639,191,855,232"/>
-</map>

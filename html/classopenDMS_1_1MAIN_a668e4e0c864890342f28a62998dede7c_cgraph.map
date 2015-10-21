@@ -1,7 +1,0 @@
-<map id="openDMS.MAIN.main" name="openDMS.MAIN.main">
-<area shape="rect" id="node2" href="$classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html#a1bf5cd2540c4fbdc48ec5b51b8ce36e4" title="openDMS.model.services.Service\lScheduler.add" alt="" coords="204,5,424,47"/>
-<area shape="rect" id="node3" href="$classopenDMS_1_1view_1_1HttpServer.html#aefdaac648c61996ead72fd541d830926" title="openDMS.view.HttpServer.start" alt="" coords="210,71,418,98"/>
-<area shape="rect" id="node6" href="$classopenDMS_1_1model_1_1services_1_1ServiceScheduler.html#a8a6cfc742b2105dbb1713a56fd9b0522" title="openDMS.model.services.Service\lScheduler.start" alt="" coords="204,123,424,164"/>
-<area shape="rect" id="node4" href="$classopenDMS_1_1view_1_1HttpServer.html#a66a9cee336968d76ca512760d712e7e3" title="openDMS.view.HttpServer.set\lUpServletHandler" alt="" coords="472,31,672,72"/>
-<area shape="rect" id="node5" href="$classopenDMS_1_1view_1_1HttpServer.html#a8c2657ae699bb1c60905645c1eb38612" title="openDMS.view.HttpServer.set\lUpGuiHandler" alt="" coords="472,96,672,137"/>
-</map>
