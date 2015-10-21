@@ -1,4 +1,3 @@
-package openDMS.view.views;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,14 +13,9 @@ package openDMS.view.views;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 /**
- *	This interface provides a root for all enums needed for the AbstractView derived objects
+ *
  * @author Jan P.C. Hanson
  *
  */
-public interface AbstractViewPart
-{
-	/**root enum, to be implemented by the enums inside the Abstract view derived classes**/
-	public enum Part {};
-}
+package openDMS.presenters.sales;

@@ -1,4 +1,4 @@
-package openDMS.helpers.viewPresenterFactory;
+package openDMS.presenters.factories;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -15,23 +15,23 @@ package openDMS.helpers.viewPresenterFactory;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import openDMS.presenters.AbstractPresenter;
-import openDMS.view.views.AbstractView;
+import openDMS.presenters.sales.SalesPresenter;
 /**
- * the interface that all concrete factories should subscribe to.
+ *
  * @author Jan P.C. Hanson
  *
  */
-public interface AbstractViewPresenterFactory
+public class SalesPresenterFactory implements AbstractPresenterFactory
 {
 	/**
-	 * factory method that creates specific a view
-	 * @return AbstractView the view that has been requested
+	 * default constructor
 	 */
-	public AbstractView makeView();
-	
-	/**
-	 * factory method that creates specific a presenter
-	 * @return AbstractPresenter the presenter than has been requested.
+	public SalesPresenterFactory()
+	{super();}
+	/* (non-Javadoc)
+	 * @see openDMS.presenters.factories.AbstractEbayPresenterFactory#make()
 	 */
-	public AbstractPresenter makePresenter();
+	@Override
+	public AbstractPresenter make()
+	{return new SalesPresenter();}
 }

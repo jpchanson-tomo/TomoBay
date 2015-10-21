@@ -31,11 +31,12 @@ public class MAIN
 		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
 		
 		ServiceScheduler services = new ServiceScheduler(2);
-		HttpServer uiServer = new HttpServer();
 		services.add(ServiceFactory.make(ServiceType.TEST_SERVICE), 0, 1);
 		services.add(ServiceFactory.make(ServiceType.EBAY_SERVICE), 0, 10);
 		
-		uiServer.start(1337);
+		HttpServer uiServer = new HttpServer();
+		uiServer.start(Integer.parseInt(args[0]));
+		
 		services.start();
 	}
 }

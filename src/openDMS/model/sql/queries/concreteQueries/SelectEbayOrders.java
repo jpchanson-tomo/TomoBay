@@ -101,7 +101,7 @@ public class SelectEbayOrders implements AbstractDBQuery
 	 */
 	private void cleanup() throws SQLException
 	{
-		if (statement_M != null) {statement_M.close();System.out.println("closing statement");}
-		if (connection_M != null) {connection_M.close();System.out.println("closing connection");}
+		if (statement_M != null) {statement_M.close();}
+		if (connection_M != null) {connection_M.close();}
 	}
 }

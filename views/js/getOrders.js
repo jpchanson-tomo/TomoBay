@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-	$.get("/res/", function(data, textStatus)
+	$.get("/res/?data=SALES_PRESENTER", function(data, textStatus)
         {
                 $(".panel-body").append(data);
         });

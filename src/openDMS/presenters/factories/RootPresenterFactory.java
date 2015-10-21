@@ -1,5 +1,4 @@
-package openDMS.view.views;
-import java.util.HashMap;
+package openDMS.presenters.factories;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -15,38 +14,24 @@ import java.util.HashMap;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.Map;
-
-import openDMS.helpers.FileToString;
+import openDMS.presenters.AbstractPresenter;
+import openDMS.presenters.root.RootPresenter;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class RootView implements AbstractView
+public class RootPresenterFactory implements AbstractPresenterFactory
 {
-	/**mapping of enum constant keys to html strings**/
-	private Map<Part, String> viewPart_M;
-	/**enum containing constants relating to the view parts**/
-	public enum Part implements AbstractViewPart{INDEX}
-	
-	public RootView()
-	{
-		super();
-		viewPart_M = new HashMap<Part, String>();
-		this.populateMap();
-	}
-	
+	/**
+	 * default constructor
+	 */
+	public RootPresenterFactory()
+	{super();}
 	/* (non-Javadoc)
-	 * @see openDMS.view.AbstractView#make(openDMS.view.AbstractViewPart)
+	 * @see openDMS.presenters.factories.AbstractEbayPresenterFactory#make()
 	 */
 	@Override
-	public String make(AbstractViewPart part)
-	{return this.viewPart_M.get(part);}
-	
-	private void populateMap()
-	{
-		this.viewPart_M.put(RootView.Part.INDEX, FileToString.convert("./res/", "index.html", "utf-8"));
-	}
-
+	public AbstractPresenter make()
+	{return new RootPresenter();}
 }

@@ -1,3 +1,4 @@
+package openDMS.presenters.factories;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -13,9 +14,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import openDMS.presenters.error.ErrorPresenter;
+import openDMS.presenters.AbstractPresenter;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-package openDMS.presenters.ebay;
+public class ErrorPresenterFactory implements AbstractPresenterFactory
+{
+	/**
+	 * default constructor
+	 */
+	public ErrorPresenterFactory()
+	{super();}
+	/* (non-Javadoc)
+	 * @see openDMS.presenters.factories.AbstractPresenterFactory#make()
+	 */
+	@Override
+	public AbstractPresenter make()
+	{
+		return new ErrorPresenter();
+	}
+
+}

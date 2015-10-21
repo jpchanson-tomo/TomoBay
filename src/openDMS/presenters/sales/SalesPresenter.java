@@ -1,4 +1,4 @@
-package openDMS.presenters.ebay;
+package openDMS.presenters.sales;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -19,32 +19,28 @@ import java.util.List;
 
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.presenters.AbstractPresenter;
-import openDMS.view.views.AbstractView;
-import openDMS.view.views.EbayView;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class EbayPresenter implements AbstractPresenter
+public class SalesPresenter implements AbstractPresenter
 {
 	/**
 	 * default constructor
 	 */
-	public EbayPresenter()
+	public SalesPresenter()
 	{super();}
 	
 	/* (non-Javadoc)
 	 * @see openDMS.presenters.AbstractPresenter#present(openDMS.view.views.AbstractView)
 	 */
 	@Override
-	public String present(AbstractView view)
+	public String present()
 	{
 		String output = "";
 		
-//		output += view.make(EbayView.Part.HEADER);
 		output += this.doStuff();
-//		output += view.make(EbayView.Part.FOOTER);
 		
 		return output;
 	}

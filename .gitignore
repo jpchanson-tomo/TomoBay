@@ -2,3 +2,4 @@
 /bin/
 /config/db.cfg
 /config/ebay.cfg
+/logs/*.*

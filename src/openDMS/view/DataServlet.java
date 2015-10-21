@@ -23,16 +23,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import openDMS.presenters.ebay.EbayPresenter;
-import openDMS.view.views.AbstractView;
-import openDMS.view.views.EbayView;
+import openDMS.presenters.AbstractPresenter;
+import openDMS.presenters.PresenterFactory;
+import openDMS.presenters.PresenterFactory.PresenterType;
+import openDMS.presenters.sales.SalesPresenter;
 
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class UIServlet extends HttpServlet
+public class DataServlet extends HttpServlet
 {	
 	/**needed to avoid warnings**/
 	private static final long serialVersionUID = -417534770555839323L;
@@ -41,7 +42,7 @@ public class UIServlet extends HttpServlet
 	 * instantiates a servlet using the views provided.
 	 * @param views
 	 */
-	public UIServlet()
+	public DataServlet()
 	{super();}
 
 	/**
@@ -53,27 +54,11 @@ public class UIServlet extends HttpServlet
 			throws ServletException, IOException
 	{
 		PrintWriter out = response.getWriter();
+		String data = request.getParameter("data");
+		AbstractPresenter presenter = PresenterFactory.make(data);
 		
-		AbstractView ev = new EbayView();
-		EbayPresenter ep = new EbayPresenter();
+		out.print(presenter.present());
 		
-		out.print(ep.present(ev));
-		
-		
-//		AbstractViewPresenterFactory factory;
-//		
-//		String viewParam = request.getParameter("view");
-//
-//		if (ViewPresenterFactory.instance().hasFactory(viewParam)==true)
-//		{
-//			factory = ViewPresenterFactory.instance().getFactory(viewParam);
-//			out.print(factory.makePresenter().present(factory.makeView()));
-//		}
-//		else
-//		{
-//			factory = ViewPresenterFactory.instance().getFactory("ROOT");
-//			out.print(factory.makePresenter().present(factory.makeView()));
-//		}
 		
 		out.close();
 	}

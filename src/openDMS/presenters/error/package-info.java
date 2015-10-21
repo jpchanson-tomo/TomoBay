@@ -18,4 +18,4 @@
  * @author Jan P.C. Hanson
  *
  */
-package openDMS.helpers.viewPresenterFactory;
+package openDMS.presenters.error;

@@ -14,13 +14,14 @@ package openDMS.presenters;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import openDMS.view.views.AbstractView;
+import openDMS.helpers.NoImports;
 /**
  * provides an interface that all presenters should subscribe to.
  * 
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public interface AbstractPresenter
 {
 	/**
@@ -29,5 +30,5 @@ public interface AbstractPresenter
 	 * @param view the view to be rpesented
 	 * @return String representing the html contained in the view/presenter
 	 */
-	public String present(AbstractView view);
+	public String present();
 }

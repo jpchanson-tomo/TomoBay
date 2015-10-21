@@ -1,4 +1,6 @@
-package openDMS.helpers.viewPresenterFactory;
+package openDMS.presenters.error;
+
+import openDMS.presenters.AbstractPresenter;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,28 +16,23 @@ package openDMS.helpers.viewPresenterFactory;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import openDMS.presenters.AbstractPresenter;
-import openDMS.presenters.root.RootPresenter;
-import openDMS.view.views.AbstractView;
-import openDMS.view.views.RootView;
+
 /**
- * RootAbstractFactory creates the presenter and view for the root view.
+ *
  * @author Jan P.C. Hanson
  *
  */
-public class RootFactory implements AbstractViewPresenterFactory
+public class ErrorPresenter implements AbstractPresenter
 {
-	/* (non-Javadoc)
-	 * @see openDMS.helpers.viewPresenterFactory.AbstractViewPresenterFactory#makeView()
-	 */
-	@Override
-	public AbstractView makeView()
-	{return new RootView();}
 
 	/* (non-Javadoc)
-	 * @see openDMS.helpers.viewPresenterFactory.AbstractViewPresenterFactory#makePresenter()
+	 * @see openDMS.presenters.AbstractPresenter#present()
 	 */
 	@Override
-	public AbstractPresenter makePresenter()
-	{return new RootPresenter();}
+	public String present()
+	{
+		return "<h1>You have requested data that doesnt exist</h1>"
+				+ "<p>check the spelling of your query string parameter</p>";
+	}
+
 }

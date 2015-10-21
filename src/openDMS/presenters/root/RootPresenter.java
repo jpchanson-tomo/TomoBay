@@ -18,8 +18,6 @@ import openDMS.model.services.ServiceFactory;
 import openDMS.model.services.ServiceFactory.ServiceType;
 import openDMS.model.services.TriggerService;
 import openDMS.presenters.AbstractPresenter;
-import openDMS.view.views.AbstractView;
-import openDMS.view.views.RootView;
 /**
  * this is the presenter for the root of the webApp.
  * @author Jan P.C. Hanson
@@ -37,11 +35,10 @@ public class RootPresenter implements AbstractPresenter
 	 * @see openDMS.presenters.AbstractPresenter#present(openDMS.view.views.AbstractView)
 	 */
 	@Override
-	public String present(AbstractView view)
+	public String present()
 	{
 		String output = "";
 		
-		output += view.make(RootView.Part.INDEX);
 		
 		TriggerService.start(ServiceFactory.make(ServiceType.TEST_SERVICE));
 		System.out.println("Root page loaded");

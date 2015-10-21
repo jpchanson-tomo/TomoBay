@@ -50,11 +50,11 @@ public class HttpServer
 		ServerConnector connector = new ServerConnector(server);
 		connector.setPort(port);
 		//set up context handlers
-		ContextHandler context0 = setUpServletHandler();
-		ContextHandler context1 = setUpGuiHandler();
+		ContextHandler dataServlet = setUpDataServletHandler();
+		ContextHandler guiHandler = setUpGuiHandler();
 		//add handlers to collection
 		ContextHandlerCollection contexts = new ContextHandlerCollection();
-		contexts.setHandlers(new Handler[] { context1, context0});
+		contexts.setHandlers(new Handler[] { guiHandler, dataServlet});
 		//give handler collection to server
 		server.setHandler(contexts);
 		server.setConnectors(new Connector[] {connector});
@@ -79,12 +79,12 @@ public class HttpServer
      * do setup for the servlet handler
      * @return ContextHandler for the servlet
      */
-    private static ContextHandler setUpServletHandler()
+    private static ContextHandler setUpDataServletHandler()
     {
     	ContextHandler context0 = new ContextHandler();
 		context0.setContextPath("/");        
 		ServletContextHandler serv = new ServletContextHandler();
-		serv.addServlet(UIServlet.class, "/res/*");
+		serv.addServlet(DataServlet.class, "/res/*");
 		context0.setHandler(serv);
 		return context0;
     }
@@ -98,7 +98,7 @@ public class HttpServer
     	ContextHandler context1 = new ContextHandler();
 		context1.setContextPath("/");        
 		ResourceHandler res = new ResourceHandler();
-		res.setBaseResource(Resource.newResource("./res/"));
+		res.setBaseResource(Resource.newResource("./views/"));
 		context1.setHandler(res);
 		return context1;
     }
