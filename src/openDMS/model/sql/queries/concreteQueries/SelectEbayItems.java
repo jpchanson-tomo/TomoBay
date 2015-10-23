@@ -1,4 +1,14 @@
 package openDMS.model.sql.queries.concreteQueries;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import openDMS.model.sql.ConnectionManager;
+import openDMS.model.sql.queries.AbstractDBQuery;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,15 +24,7 @@ package openDMS.model.sql.queries.concreteQueries;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import openDMS.model.sql.ConnectionManager;
-import openDMS.model.sql.queries.AbstractDBQuery;
 /**
  *
  * @author Jan P.C. Hanson
@@ -35,11 +37,7 @@ public class SelectEbayItems implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="SELECT DISTINCT ebay_transactions.itemID "
-			+ "FROM ebay_transactions "
-			+ "WHERE ebay_transactions.itemID "
-			+ "NOT IN (SELECT DISTINCT ebay_items.itemID FROM ebay_items);";
-	
+	private String query ="SELECT * FROM ebay_items;";
 	//
 	/**
 	 * default constructor
@@ -51,7 +49,7 @@ public class SelectEbayItems implements AbstractDBQuery
 	 * execute the query
 	 * @param NOT USED
 	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * column the itemID, so each list element contains a String[1] which contains 
+	 * column the itemID, so each list element contains a String[1] which contains an itemID.
 	 * @throws SQLException
 	 */
 	public List<String[]> execute(String[] parameter) throws SQLException
@@ -80,8 +78,14 @@ public class SelectEbayItems implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[1];
+			String[] cols = new String[7];
 			cols[0] = results.getString("itemID");
+			cols[1] = results.getString("title");
+			cols[2] = results.getString("sellCondition");
+			cols[3] = results.getString("brand");
+			cols[4] = results.getString("partNo");
+			cols[5] = results.getString("noRequired");
+			cols[6] = results.getString("noAvailable");
 			rows.add(cols);
 		}
 		return rows;

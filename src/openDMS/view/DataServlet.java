@@ -59,7 +59,6 @@ public class DataServlet extends HttpServlet
 		
 		out.print(presenter.present());
 		
-		
 		out.close();
 	}
 }

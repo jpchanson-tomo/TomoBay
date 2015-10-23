@@ -1,20 +1,4 @@
 package openDMS.model.services.basicEbayUpdate;
-
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import openDMS.model.eBayAPI.ItemCall;
-import openDMS.model.sql.queries.QueryInvoker;
-import openDMS.model.sql.queries.QueryInvoker.QueryType;
-
-import com.ebay.sdk.ApiException;
-import com.ebay.sdk.SdkException;
-import com.ebay.soap.eBLBaseComponents.ItemType;
-import com.ebay.soap.eBLBaseComponents.NameValueListType;
-import com.ebay.soap.eBLBaseComponents.OrderType;
-import com.ebay.soap.eBLBaseComponents.TransactionType;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -30,7 +14,20 @@ import com.ebay.soap.eBLBaseComponents.TransactionType;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+import openDMS.model.eBayAPI.ItemCall;
+import openDMS.model.sql.queries.QueryInvoker;
+import openDMS.model.sql.queries.QueryInvoker.QueryType;
+
+import com.ebay.sdk.ApiException;
+import com.ebay.sdk.SdkException;
+import com.ebay.soap.eBLBaseComponents.ItemType;
+import com.ebay.soap.eBLBaseComponents.NameValueListType;
+import com.ebay.soap.eBLBaseComponents.OrderType;
 /**
  *
  * @author Jan P.C. Hanson
@@ -54,7 +51,7 @@ public class ItemsTable
 	 */
 	public static void populate(String[] credentials, OrderType[] orders) throws ApiException, SdkException, Exception
 	{
-		List<String[]> items = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS,new String[] {});
+		List<String[]> items = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS,new String[] {});
 		
 		for (String[] item : items)
 		{
@@ -73,6 +70,7 @@ public class ItemsTable
 					};
 			QueryInvoker.execute(QueryType.INSERT_EBAY_ITEMS,result);
 		}
+		ItemsTable.requiredQty();
 	}
 	
 	/**
@@ -101,5 +99,21 @@ public class ItemsTable
 			itemSpecifics.put("Manufacturer Part Number", "not available");
 		}
 		return itemSpecifics;
+	}
+
+	/**
+	 * add up all the distinct items and update with the total number of those items on order
+	 * taken from the transactions table.
+	 * @param items
+	 * @throws SQLException
+	 */
+	private static void requiredQty() throws SQLException
+	{
+		List<String[]> items = QueryInvoker.execute(QueryInvoker.QueryType.SELECT_EBAY_ITEMS, new String[] {});
+		
+		for (String[] item : items)
+		{
+			QueryInvoker.execute(QueryInvoker.QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, item);
+		}
 	}
 }

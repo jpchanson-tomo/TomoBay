@@ -25,9 +25,11 @@ import openDMS.model.sql.queries.factories.InsertEbayItemsFactory;
 import openDMS.model.sql.queries.factories.InsertEbayOrdersFactory;
 import openDMS.model.sql.queries.factories.InsertEbayTransactionsFactory;
 import openDMS.model.sql.queries.factories.SelectEbayItemsFactory;
+import openDMS.model.sql.queries.factories.SelectEbayItemsNotInTransactionsFactory;
 import openDMS.model.sql.queries.factories.SelectEbayOrdersFactory;
 import openDMS.model.sql.queries.factories.SelectItemsWithBlankFieldsFactory;
 import openDMS.model.sql.queries.factories.UpdateItemBrandAndPartNoFactory;
+import openDMS.model.sql.queries.factories.UpdateTotalItemsRequiredFactory;
 /**
  *
  * @author Jan P.C. Hanson
@@ -39,8 +41,11 @@ public class QueryInvoker
 	public enum QueryType 
 		{
 			INSERT_EBAY_BUYERS, INSERT_EBAY_ITEMS, INSERT_EBAY_ORDERS, INSERT_EBAY_TRANSACTIONS,
-			SELECT_EBAY_ITEMS, SELECT_EBAY_ORDERS, SELECT_ITEMS_WITH_BLANK_FIELDS,
-			UPDATE_ITEM_BRAND_AND_PARTNO
+			
+			SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS, SELECT_EBAY_ORDERS, SELECT_ITEMS_WITH_BLANK_FIELDS,
+			SELECT_EBAY_ITEMS,
+			
+			UPDATE_ITEM_BRAND_AND_PARTNO, UPDATE_TOTAL_ITEMS_REQUIRED
 		}
 	/**internal map holds factory objects created static final to make threadsafe**/
 	@SuppressWarnings("serial")
@@ -51,10 +56,12 @@ public class QueryInvoker
 			put(QueryType.INSERT_EBAY_ITEMS, new InsertEbayItemsFactory());
 			put(QueryType.INSERT_EBAY_ORDERS, new InsertEbayOrdersFactory());
 			put(QueryType.INSERT_EBAY_TRANSACTIONS, new InsertEbayTransactionsFactory());
-			put(QueryType.SELECT_EBAY_ITEMS, new SelectEbayItemsFactory());
+			put(QueryType.SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS, new SelectEbayItemsNotInTransactionsFactory());
 			put(QueryType.SELECT_EBAY_ORDERS, new SelectEbayOrdersFactory());
+			put(QueryType.SELECT_EBAY_ITEMS, new SelectEbayItemsFactory());
 			put(QueryType.SELECT_ITEMS_WITH_BLANK_FIELDS, new SelectItemsWithBlankFieldsFactory());
 			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
+			put(QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, new UpdateTotalItemsRequiredFactory());
 		}};
 	
 	/**

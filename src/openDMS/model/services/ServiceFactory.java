@@ -19,6 +19,7 @@ import java.util.Map;
 
 import openDMS.model.services.factories.AbstractServiceFactory;
 import openDMS.model.services.factories.BasicEbayServiceFactory;
+import openDMS.model.services.factories.StockUpdateServiceFactory;
 import openDMS.model.services.factories.TestServiceFactory;
 /**
  *
@@ -30,7 +31,7 @@ public class ServiceFactory
 	/**defensive enum to limit the inputs to the make method**/
 	public enum ServiceType 
 			{
-				EBAY_SERVICE, TEST_SERVICE
+				EBAY_SERVICE, TEST_SERVICE, STOCK_UPDATE_SERVICE
 			}
 	/**internal map holds service factories**/
 	@SuppressWarnings("serial")
@@ -39,6 +40,7 @@ public class ServiceFactory
 			{{
 				put(ServiceType.EBAY_SERVICE, new BasicEbayServiceFactory());
 				put(ServiceType.TEST_SERVICE, new TestServiceFactory());
+				put(ServiceType.STOCK_UPDATE_SERVICE, new StockUpdateServiceFactory());
 			}};
 	
 	/**

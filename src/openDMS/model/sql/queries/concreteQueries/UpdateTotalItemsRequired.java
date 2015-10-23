@@ -1,11 +1,4 @@
 package openDMS.model.sql.queries.concreteQueries;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -21,56 +14,58 @@ import java.util.List;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import openDMS.model.sql.ConnectionManager;
 import openDMS.model.sql.queries.AbstractDBQuery;
-
 /**
- *
+ * 
  * @author Jan P.C. Hanson
  *
  */
-public class InsertEbayItems implements AbstractDBQuery
+public class UpdateTotalItemsRequired implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
 	private PreparedStatement statement_M = null;
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay.ebay_items "
-			+ "(itemID, title, sellCondition, brand, partNo)"
-			+ "VALUES (?,?,?,?,?);";
+	private String query ="UPDATE ebay.ebay_items "
+					+ "SET noRequired=(SELECT SUM(ebay_transactions.quantity) AS required "
+					+ "FROM ebay.ebay_transactions WHERE ebay_transactions.itemID=?) "
+					+ "WHERE ebay_items.itemID=?;";
 	
 	/**
 	 * default constructor
 	 */
-	public InsertEbayItems()
+	public UpdateTotalItemsRequired()
 	{super();}
 	
 	/**
 	 * execute the query
-	 * @param parameter an array of strings where the 0th element is the parameter for the 
-	 * first column, the 1st element is the parameter for the 2nd column and so on. The Ebay
-	 * Orders Table only has 5 columns so any element above the 5th element will be ignored.
-	 * col1 =itemID:varchar(11), col2=title:varchar(83), col3=sellCondition:varchar(15),
-	 * col4=brand:varchar(45), col5=partNo:varchar(100) col6=noRequired:int(6)
+	 * @param NOT USED
 	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
+	 * column the itemID, so each list element contains a String[1] which contains 
 	 * @throws SQLException
 	 */
 	public List<String[]> execute(String[] parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
 		this.initQuery();
-		this.statement_M.setLong(1, Long.parseLong(parameter[0]));//itemID
-		this.statement_M.setString(2, parameter[1]);//title
-		this.statement_M.setString(3, parameter[2]);//sellCondition
-		this.statement_M.setString(4, parameter[3]);//brand
-		this.statement_M.setString(5, parameter[4]);//partNo
-		int resultCode = statement_M.executeUpdate();
+		this.connection_M.prepareStatement(query);
+		
+		this.statement_M.setLong(1, Long.parseLong(parameter[0]));//ebay_transactions.itemID
+		this.statement_M.setLong(2, Long.parseLong(parameter[0]));//ebay_items.itemID
+		
+		int resultCode = this.statement_M.executeUpdate();
+		List<String[]> res = new ArrayList<String[]>();
+		res.add(new String[] {resultCode+""});
+
 		this.connection_M.commit();
 		this.cleanup();
-		
-		res.add(new String[] {resultCode+""});
 		
 		return res;
 	}
@@ -83,7 +78,7 @@ public class InsertEbayItems implements AbstractDBQuery
 	{
 		this.connection_M = ConnectionManager.instance().getConnection();
 		this.connection_M.setAutoCommit(false);
-		statement_M = connection_M.prepareStatement(query);
+		this.statement_M = this.connection_M.prepareStatement(query);
 	}
 	
 	/**
@@ -92,7 +87,7 @@ public class InsertEbayItems implements AbstractDBQuery
 	 */
 	private void cleanup() throws SQLException
 	{
-		if (statement_M != null) {statement_M.close();}
+		if (this.statement_M != null) {this.statement_M.close();}
 		if (connection_M != null) {connection_M.close();}
 	}
 }

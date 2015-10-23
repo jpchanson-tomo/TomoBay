@@ -1,8 +1,4 @@
 package openDMS.model.sql.queries.factories;
-
-import openDMS.model.sql.queries.AbstractDBQuery;
-import openDMS.model.sql.queries.AbstractQueryFactory;
-import openDMS.model.sql.queries.concreteQueries.SelectEbayItems;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -18,18 +14,20 @@ import openDMS.model.sql.queries.concreteQueries.SelectEbayItems;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import openDMS.model.sql.queries.AbstractDBQuery;
+import openDMS.model.sql.queries.AbstractQueryFactory;
+import openDMS.model.sql.queries.concreteQueries.UpdateTotalItemsRequired;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class SelectEbayItemsFactory implements AbstractQueryFactory
+public class UpdateTotalItemsRequiredFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor
 	 */
-	public SelectEbayItemsFactory()
+	public UpdateTotalItemsRequiredFactory()
 	{super();}
 	
 	/**
@@ -37,5 +35,5 @@ public class SelectEbayItemsFactory implements AbstractQueryFactory
 	 * @return the query
 	 */
 	public AbstractDBQuery make()
-	{return new SelectEbayItems();}
+	{return new UpdateTotalItemsRequired();}
 }

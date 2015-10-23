@@ -53,18 +53,24 @@ public class SalesPresenter implements AbstractPresenter
 			List<String[]> rows = QueryInvoker.execute
 					(QueryInvoker.QueryType.SELECT_EBAY_ORDERS,new String[] {""});
 			
-			result+= "<table class='table table-bordered'> \n";
+			result+= "<table class='table table-condensed'> \n";
 			result+= "<thead>\n<tr>\n"
+					+ "<th>"+ "<input type='checkbox' class = 'chcktbl' />"  + "</th>\n"
 					+ "<th>ID</th>\n"
 					+ "<th>name</th>\n"
-					+ "<th>Shipping Address</th>\n"
+					+ "<th>Address</th>\n"
+					+ "<th>Telephone</th>\n"
+					+ "<th>Email</th>\n"
 					+ "</tr>\n</thead>\n <tbody>";
 			for (String[] cols : rows)
 			{
 				result+="<tr>\n";
+				result+="<td>"+ "<input type='checkbox' class = 'chcktbl' />"  + "</td>\n";
 				result+="<td>"+ cols[0].trim() + "</td>\n";
 				result+="<td>"+ cols[1].trim() + "</td>\n";
 				result+="<td>"+ cols[2].trim() + "</td>\n";
+				result+="<td>"+ "07354463849" + "</td>\n";
+				result+="<td>"+ "<a href='mailto:someone@example.com'>test.user.name@email.com</a>" + "</td>\n";
 				result+="</tr>\n";
 			}
 			
