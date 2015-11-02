@@ -91,6 +91,7 @@ public class ItemsTable
 				for(String itemSpecific : tmp[i].getValue())
 				{res+= itemSpecific;}
 				itemSpecifics.put(tmp[i].getName(), res);
+				item.getBuyItNowPrice().getValue();
 			}
 		}
 		catch (NullPointerException e)

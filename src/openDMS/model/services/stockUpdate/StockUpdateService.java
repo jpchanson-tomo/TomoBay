@@ -15,8 +15,10 @@ package openDMS.model.services.stockUpdate;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.List;
 
+import openDMS.helpers.BrandToCode;
 import openDMS.model.services.AbstractService;
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.model.winstock.Stock;
@@ -28,9 +30,20 @@ import openDMS.model.winstock.Stock;
 public class StockUpdateService implements AbstractService
 {
 	/**
-	 * 1) get list of items
-	 * 2) for each item in list query winstockDB for item stock level
-	 * 3) insert stock level into TomoBayDB
+	 *  1) get list of items
+	 *  2) FOR each item
+	 *  3)	store part numbers in array
+	 *  4)	store quantities in array
+	 *  5) 	FOR each element of array (i)
+	 *  6)		add quantity[i] of partNumber[i] to relevant brand database
+	 *  7)	ENDFOR
+	 *  8) ENDFOR
+	 *  9)
+	 * 10) FOR each record[i] of brand DB
+	 * 11) 	check stock level on winstock
+	 * 12)	update record[i] with stock level returned from (11)
+	 * 13) ENDFOR
+	 * 14) REPEAT (10)-(13) for each brand DB
 	 */
 	
 	/**
@@ -47,10 +60,13 @@ public class StockUpdateService implements AbstractService
 	{
 		try
 		{
-			List<String[]> items = this.getItemList();	
+			List<String[]> items = this.getItemList();	//get list of items
 			for(String[] item : items)
 			{
-				System.out.println(this.getStockLevel(item[4], this.convertBrandToCode(item[3])));
+				PartList parts = new PartList(item[4]);
+				System.out.println(item[1]);
+				System.out.println(item[4] + ", " +BrandToCode.convert(item[3]));
+				System.out.println(Arrays.deepToString(parts.getPartNumbers())+Arrays.toString(parts.getPartQtys())+"\n");
 			}
 		} 
 		catch (SQLException e)
@@ -62,23 +78,21 @@ public class StockUpdateService implements AbstractService
 	private List<String[]> getItemList() throws SQLException
 	{return QueryInvoker.execute(QueryInvoker.QueryType.SELECT_EBAY_ITEMS, new String[] {});}
 	
+	
+	
 	private int getStockLevel(String partNo, char brandCode)
-	{return new Stock().requestStockLevel(partNo, brandCode);}
+	{
+		return new Stock().requestStockLevel(partNo, brandCode);
+	}
+	
+	private String splitPartNo(String partNo)
+	{
+		
+		return null;
+	}
 	
 	private void insertStockIntoDB()
 	{
 		
-	}
-	
-	private char convertBrandToCode(String brand)
-	{
-		if (brand.toLowerCase().contains("citroen")
-			|| brand.toLowerCase().contains("peugeot")
-			|| brand.toLowerCase().contains("psa"))
-		{return 'C';}
-		else if (brand.toLowerCase().contains("ford"))
-		{return 'F';}
-		else
-		{return 'P';}
 	}
 }

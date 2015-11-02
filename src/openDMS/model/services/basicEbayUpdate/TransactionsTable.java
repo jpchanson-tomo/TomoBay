@@ -15,13 +15,13 @@ package openDMS.model.services.basicEbayUpdate;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import com.ebay.soap.eBLBaseComponents.TransactionType;
 import java.sql.SQLException;
 
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.model.sql.queries.QueryInvoker.QueryType;
 
 import com.ebay.soap.eBLBaseComponents.OrderType;
+import com.ebay.soap.eBLBaseComponents.TransactionType;
 /**
  *
  * @author Jan P.C. Hanson
@@ -53,9 +53,11 @@ public class TransactionsTable
 						transaction.getTransactionID(),
 						order.getOrderID(),
 						transaction.getItem().getItemID(),
-						String.valueOf(transaction.getQuantityPurchased())
+						String.valueOf(transaction.getQuantityPurchased()),
+						String.valueOf(transaction.getTransactionPrice().getValue())
 					};
 				QueryInvoker.execute(QueryType.INSERT_EBAY_TRANSACTIONS,insertVals);
+				
 			}
 		}
 	}

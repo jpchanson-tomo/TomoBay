@@ -49,7 +49,6 @@ public class Stock
 		HttpResponse response = get.request(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo);
 		System.out.println(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo);
 		result = this.postFormatXMLString(response);
-		System.out.println(result);
 		result = XMLParser.parse("QTY_EXIST", result);
 
 		return Integer.parseInt(result);//need to split up kit part numbers

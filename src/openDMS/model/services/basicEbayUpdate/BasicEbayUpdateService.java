@@ -41,7 +41,7 @@ public class BasicEbayUpdateService implements AbstractService
 			String[] credentials = ConfigReader.read("./config/", "ebay.cfg");
 			OrdersCall oCall = new OrdersCall(credentials[4], credentials[3]);
 			OrderType[] orders = oCall.call(1);
-
+			
 			OrdersTable.populate(credentials, orders);
 			TransactionsTable.populate(credentials, orders);
 			BuyersTable.populate(credentials, orders);
