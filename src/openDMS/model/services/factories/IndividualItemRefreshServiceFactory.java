@@ -1,4 +1,4 @@
-package openDMS.model.services.testService;
+package openDMS.model.services.factories;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -15,22 +15,22 @@ package openDMS.model.services.testService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import openDMS.model.services.AbstractService;
+import openDMS.model.services.individualItemRefresh.IndividualItemRefreshService;
+
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class TestService implements AbstractService
+public class IndividualItemRefreshServiceFactory implements
+		AbstractServiceFactory
 {
-	int i = 0;
+
 	/* (non-Javadoc)
-	 * @see java.lang.Runnable#run()
+	 * @see openDMS.model.services.factories.AbstractServiceFactory#make()
 	 */
 	@Override
-	public void run()
-	{
-		System.out.println("another sheduled task" +i);
-		++i;
-	}
+	public AbstractService make()
+	{return new IndividualItemRefreshService();}
 
 }
