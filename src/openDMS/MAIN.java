@@ -15,6 +15,7 @@ package openDMS;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,6 +23,11 @@ import openDMS.model.services.ServiceFactory;
 import openDMS.model.services.ServiceScheduler;
 import openDMS.model.services.TriggerService;
 import openDMS.model.services.stockUpdate.PartList;
+import openDMS.model.services.stockUpdate.StockRequiredQueryFactory;
+import openDMS.model.services.stockUpdate.StockRequiredQueryFactory.BrandCode;
+import openDMS.model.services.stockUpdate.StockRequiredQueryFactory.StockQueryType;
+import openDMS.model.sql.queries.QueryInvoker;
+import openDMS.model.sql.queries.QueryInvoker.QueryType;
 import openDMS.view.HttpServer;
 /**
  * The entry point into the program

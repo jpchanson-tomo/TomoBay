@@ -14,7 +14,6 @@ package openDMS.presenters.sales;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.sql.SQLException;
 import java.util.List;
 
 import openDMS.model.sql.queries.QueryInvoker;
@@ -48,8 +47,6 @@ public class SalesPresenter implements AbstractPresenter
 	private String doStuff() 
 	{
 		String result = "";
-		try
-		{
 			List<String[]> rows = QueryInvoker.execute
 					(QueryInvoker.QueryType.SELECT_EBAY_ORDERS,new String[] {""});
 			
@@ -76,10 +73,6 @@ public class SalesPresenter implements AbstractPresenter
 			
 			result+="</tbody>\n</table>";
 			
-		}
-		catch(SQLException e)
-		{e.printStackTrace();}
-		
 		return  result;
 	}
 }

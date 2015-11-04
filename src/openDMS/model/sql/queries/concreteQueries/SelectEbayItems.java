@@ -78,14 +78,15 @@ public class SelectEbayItems implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[7];
-			cols[0] = results.getString("itemID");
+			String[] cols = new String[8];
+			cols[0] = String.valueOf(results.getLong("itemID"));
 			cols[1] = results.getString("title");
 			cols[2] = results.getString("sellCondition");
 			cols[3] = results.getString("brand");
 			cols[4] = results.getString("partNo");
-			cols[5] = results.getString("noRequired");
-			cols[6] = results.getString("noAvailable");
+			cols[5] = String.valueOf(results.getInt("noRequired"));
+			cols[6] = String.valueOf(results.getFloat("cost"));
+			cols[7] = results.getString("notes");
 			rows.add(cols);
 		}
 		return rows;

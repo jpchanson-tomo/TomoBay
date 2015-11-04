@@ -25,9 +25,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import openDMS.presenters.AbstractPresenter;
 import openDMS.presenters.PresenterFactory;
-import openDMS.presenters.PresenterFactory.PresenterType;
-import openDMS.presenters.sales.SalesPresenter;
-
 /**
  *
  * @author Jan P.C. Hanson

@@ -34,15 +34,15 @@ public class BrandToCode
 	 * @return char brand identifier, C for peugeot/citroen/psa, F for ford, P for everything 
 	 * else.
 	 */
-	public static char convert(String brand)
+	public static String convert(String brand)
 	{
 		if (brand.toLowerCase().contains("citroen")
 			|| brand.toLowerCase().contains("peugeot")
 			|| brand.toLowerCase().contains("psa"))
-		{return 'C';}
+		{return "C";}
 		else if (brand.toLowerCase().contains("ford"))
-		{return 'F';}
+		{return "F";}
 		else
-		{return 'P';}
+		{return "P";}
 	}
 }

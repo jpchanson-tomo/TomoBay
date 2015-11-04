@@ -43,7 +43,7 @@ public class Stock
 	 * @param brandCode 'C'=citroen/peugeot/psa, 'F'=ford, 'P'=everything else
 	 * @return int the number of the requested part in stock
 	 */
-	public int requestStockLevel(String partNo, char brandCode)
+	public int requestStockLevel(String partNo, String brandCode)
 	{
 		HttpGET get = new HttpGET();
 		HttpResponse response = get.request(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo);
@@ -51,7 +51,8 @@ public class Stock
 		result = this.postFormatXMLString(response);
 		result = XMLParser.parse("QTY_EXIST", result);
 
-		return Integer.parseInt(result);//need to split up kit part numbers
+		try{return Integer.parseInt(result);}
+		catch(NumberFormatException nfe) {return -8008135;}
 	}
 	
 	/**

@@ -14,13 +14,12 @@ package openDMS.model.services.stockUpdate;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.List;
 
 import openDMS.helpers.BrandToCode;
 import openDMS.model.services.AbstractService;
 import openDMS.model.sql.queries.QueryInvoker;
+import openDMS.model.sql.queries.QueryInvoker.QueryType;
 import openDMS.model.winstock.Stock;
 /**
  *
@@ -29,22 +28,6 @@ import openDMS.model.winstock.Stock;
  */
 public class StockUpdateService implements AbstractService
 {
-	/**
-	 *  1) get list of items
-	 *  2) FOR each item
-	 *  3)	store part numbers in array
-	 *  4)	store quantities in array
-	 *  5) 	FOR each element of array (i)
-	 *  6)		add quantity[i] of partNumber[i] to relevant brand database
-	 *  7)	ENDFOR
-	 *  8) ENDFOR
-	 *  9)
-	 * 10) FOR each record[i] of brand DB
-	 * 11) 	check stock level on winstock
-	 * 12)	update record[i] with stock level returned from (11)
-	 * 13) ENDFOR
-	 * 14) REPEAT (10)-(13) for each brand DB
-	 */
 	
 	/**
 	 * default ctor
@@ -58,41 +41,68 @@ public class StockUpdateService implements AbstractService
 	@Override
 	public void run()
 	{
-		try
+		StockRequired req = new StockRequired();
+		req.calculate();
+			
+		List<String[]> tmp = QueryInvoker.execute(QueryInvoker.QueryType.SELECT_EBAY_ITEMS, new String[] {});
+		for(String[] t : tmp)
 		{
-			List<String[]> items = this.getItemList();	//get list of items
-			for(String[] item : items)
+			PartList parts = new PartList(t[4]);
+			for(int i = 0 ; i < parts.size() ; ++i)
 			{
-				PartList parts = new PartList(item[4]);
-				System.out.println(item[1]);
-				System.out.println(item[4] + ", " +BrandToCode.convert(item[3]));
-				System.out.println(Arrays.deepToString(parts.getPartNumbers())+Arrays.toString(parts.getPartQtys())+"\n");
+				int stockLevel = this.getStockLevel(String.valueOf(parts.getPartNumber(i)), BrandToCode.convert(t[3]));
+				
+				if(stockLevel==-8008135)
+				{
+					this.insertStockIntoDB
+					(BrandToCode.convert(t[3]), parts.getPartNumber(i), stockLevel,
+							"ERROR(PartNo or Brand): " + t[4] + " : " + t[3], t[0]);
+				}
+				else
+				{
+					this.insertStockIntoDB
+					(BrandToCode.convert(t[3]), parts.getPartNumber(i), stockLevel, "", t[0]);
+				}
 			}
-		} 
-		catch (SQLException e)
-		{e.printStackTrace();}
-		
-		
+			parts.destroy();
+		}
 	}
 
-	private List<String[]> getItemList() throws SQLException
-	{return QueryInvoker.execute(QueryInvoker.QueryType.SELECT_EBAY_ITEMS, new String[] {});}
 	
+
+	private int getStockLevel(String partNo, String brandCode)
+	{return new Stock().requestStockLevel(partNo.toUpperCase(), brandCode);}
 	
-	
-	private int getStockLevel(String partNo, char brandCode)
+	/**
+	 * 
+	 * @param brandCode
+	 * @param partNo
+	 * @param available
+	 * @param notes
+	 * @param itemID
+	 */
+	private void insertStockIntoDB
+	(String brandCode, String partNo, int available, String notes, String itemID)
 	{
-		return new Stock().requestStockLevel(partNo, brandCode);
-	}
-	
-	private String splitPartNo(String partNo)
-	{
+		String[] queryPayload = {String.valueOf(available), partNo, notes, itemID};
+		QueryType query;
 		
-		return null;
-	}
-	
-	private void insertStockIntoDB()
-	{
+		switch (brandCode)
+		{
+			case "C":
+				query = QueryInvoker.QueryType.UPDATE_AVAILABLE_STOCK_PSA;
+			break;
+			case "F":
+				query = QueryInvoker.QueryType.UPDATE_AVAILABLE_STOCK_FORD;
+			break;
+			case "P":
+				query = QueryInvoker.QueryType.UPDATE_AVAILABLE_STOCK_PRESTIGE;
+			break;
+			default:
+				query = null;
+				throw new NullPointerException("brandCode not recognised");
+		}
 		
+		QueryInvoker.execute(query, queryPayload);
 	}
 }

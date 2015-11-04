@@ -1,12 +1,4 @@
 package openDMS.model.services.basicEbayUpdate;
-
-import java.sql.SQLException;
-
-import openDMS.model.sql.queries.QueryInvoker;
-import openDMS.model.sql.queries.QueryInvoker.QueryType;
-
-import com.ebay.soap.eBLBaseComponents.OrderType;
-import com.ebay.soap.eBLBaseComponents.TransactionType;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -22,7 +14,12 @@ import com.ebay.soap.eBLBaseComponents.TransactionType;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.sql.SQLException;
 
+import openDMS.model.sql.queries.QueryInvoker;
+import openDMS.model.sql.queries.QueryInvoker.QueryType;
+
+import com.ebay.soap.eBLBaseComponents.OrderType;
 /**
  *
  * @author Jan P.C. Hanson
