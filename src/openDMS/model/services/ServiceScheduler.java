@@ -28,9 +28,9 @@ import java.util.concurrent.TimeUnit;
 public class ServiceScheduler
 {
 	/**Scheduled thread pool**/
-	ScheduledThreadPoolExecutor serviceScheduler_M;
+	private ScheduledThreadPoolExecutor serviceScheduler_M;
 	/**List of Scheduled futures representing service threads**/
-	List<ScheduledFuture<?>> services_M;
+	private List<ScheduledFuture<?>> services_M;
 	
 	/**
 	 * constructor creates a thread pool with the number of threads specified in the arguments.

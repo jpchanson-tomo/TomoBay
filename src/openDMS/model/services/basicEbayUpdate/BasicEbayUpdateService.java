@@ -16,6 +16,7 @@ package openDMS.model.services.basicEbayUpdate;
  */
 import openDMS.helpers.ConfigReader;
 import openDMS.model.eBayAPI.OrdersCall;
+import openDMS.model.services.AbstractConfiguration;
 import openDMS.model.services.AbstractService;
 
 import com.ebay.soap.eBLBaseComponents.OrderType;
@@ -49,5 +50,12 @@ public class BasicEbayUpdateService implements AbstractService
 		} 
 		catch (Exception e)
 		{e.printStackTrace();}
-	}	
+	}
+
+	/* (non-Javadoc)
+	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)
+	 */
+	@Override
+	public <E> void setConfig(AbstractConfiguration<E> config)
+	{}
 }

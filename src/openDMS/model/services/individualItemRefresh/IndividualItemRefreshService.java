@@ -15,28 +15,70 @@ package openDMS.model.services.individualItemRefresh;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import openDMS.helpers.ConfigReader;
+import openDMS.model.eBayAPI.APIcontext;
+import openDMS.model.eBayAPI.ItemCall;
+import openDMS.model.services.AbstractConfiguration;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
 import openDMS.model.services.AbstractService;
+import openDMS.model.services.stockUpdate.StockRequiredQueryFactory;
+
+import com.ebay.soap.eBLBaseComponents.ItemType;
 /**
  *
  * @author Jan P.C. Hanson
  *
+ *
  */
 public class IndividualItemRefreshService implements AbstractService
 {
-	int i = 0;
+	
+	private long listingID_M;
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Runnable#run()
 	 */
 	@Override
 	public void run()
 	{
-		System.out.println("another sheduled task" +i);
-		++i;
+		ItemType item = this.getItemData(String.valueOf(this.listingID_M));
+		
+		int required = reCalculateRequiredStock.calculate(item);
+		
+		
 	}
-
+	
+	/* (non-Javadoc)
+	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)
+	 */
+	@Override
+	public <E> void setConfig(AbstractConfiguration<E> config)
+	{
+		this.listingID_M = (Long) config.configure();
+	}
+	
+	
+	/**
+	 * use the itemID passed in to find out information about a specific eBay item.
+	 * @param itemID the ID of a particular eBay Item (listing)
+	 * @return ItemType eBay API datatype containing the details of a particular item.
+	 */
+	private ItemType getItemData(String itemID)
+	{
+		try
+		{
+			String[] credentials = ConfigReader.read("./config/", "ebay.cfg");
+			ItemCall item = new ItemCall(credentials[4], credentials[3]);
+			return item.call(itemID);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

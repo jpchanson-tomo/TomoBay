@@ -17,6 +17,7 @@ package openDMS.model.services.stockUpdate;
 import java.util.List;
 
 import openDMS.helpers.BrandToCode;
+import openDMS.model.services.AbstractConfiguration;
 import openDMS.model.services.AbstractService;
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.model.sql.queries.QueryInvoker.QueryType;
@@ -105,4 +106,11 @@ public class StockUpdateService implements AbstractService
 		
 		QueryInvoker.execute(query, queryPayload);
 	}
+
+	/* (non-Javadoc)
+	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)
+	 */
+	@Override
+	public <E> void setConfig(AbstractConfiguration<E> config)
+	{}
 }

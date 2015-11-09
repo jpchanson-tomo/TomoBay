@@ -23,5 +23,15 @@ package openDMS.model.services;
  */
 public interface AbstractService extends Runnable
 {
+	/**
+	 * The individual services equivalent of main
+	 */
 	public void run();
+	
+	/**
+	 * sets the configuration for this service. Not all services require configuration, see the
+	 * documentation for individual services.
+	 * @param config the AbstractConfiguration concrete object applicable to the concrete service.
+	 */
+	public <E> void setConfig(AbstractConfiguration<E> config);
 }

@@ -14,13 +14,32 @@ package openDMS.model.services.individualItemRefresh;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import openDMS.model.services.AbstractConfiguration;
 /**
  *
  * @author Jan P.C. Hanson
  *
+ *
  */
-public class IndividualItemRefreshConfig
+public class IndividualItemRefreshConfig implements AbstractConfiguration<Long>
 {
+	private long listingID_M;
+	
+//	/* (non-Javadoc)
+//	 * @see openDMS.model.services.AbstractConfiguration#configure(java.lang.Object)
+//	 */
+//	@Override
+	public void configure(Long value)
+	{
+		this.listingID_M = value;
+	}
 
+//	/* (non-Javadoc)
+//	 * @see openDMS.model.services.AbstractConfiguration#configure()
+//	 */
+//	@Override
+	public Long configure()
+	{
+		return this.listingID_M;
+	}
 }

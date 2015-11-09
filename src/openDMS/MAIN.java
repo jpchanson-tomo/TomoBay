@@ -14,21 +14,11 @@ package openDMS;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.Arrays;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import openDMS.model.services.AbstractConfiguration;
+import openDMS.model.services.AbstractService;
 import openDMS.model.services.ServiceFactory;
-import openDMS.model.services.ServiceScheduler;
 import openDMS.model.services.TriggerService;
-import openDMS.model.services.stockUpdate.PartList;
-import openDMS.model.services.stockUpdate.StockRequiredQueryFactory;
-import openDMS.model.services.stockUpdate.StockRequiredQueryFactory.BrandCode;
-import openDMS.model.services.stockUpdate.StockRequiredQueryFactory.StockQueryType;
-import openDMS.model.sql.queries.QueryInvoker;
-import openDMS.model.sql.queries.QueryInvoker.QueryType;
-import openDMS.view.HttpServer;
+import openDMS.model.services.individualItemRefresh.IndividualItemRefreshConfig;
 /**
  * The entry point into the program
  * 
@@ -50,10 +40,15 @@ public class MAIN
 //		
 //		services.start();
 		
-		TriggerService.start(ServiceFactory.make(ServiceFactory.ServiceType.STOCK_UPDATE_SERVICE));
+//		TriggerService.start(ServiceFactory.make(ServiceFactory.ServiceType.TEST_SERVICE));
 		
-//		PartList parts = new PartList("37968(1)");
-//		for(int i = 0 ; i < parts.size() ; ++i)
-//		{System.out.println(parts.getPartNumber(i) + " : " + parts.getPartQty(i));}
+		AbstractService itemRefresh = ServiceFactory.make(ServiceFactory.ServiceType.INDVIDUAL_ITEM_REFRESH_SERVICE);
+		AbstractConfiguration<Long> config = new IndividualItemRefreshConfig();
+		config.configure(123123123l);
+		itemRefresh.setConfig(config);
+		for (int i = 0 ; i < 10 ; ++i)
+		{
+			TriggerService.start(itemRefresh);
+		}
 	}
 }

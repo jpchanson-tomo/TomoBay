@@ -48,7 +48,7 @@ public class ServiceFactory
 
 	/**
 	 * make the service requested using an ServiceType enum value
-	 * @param service the service requested
+	 * @param service the service requested 
 	 * @return
 	 */
 	public static AbstractService make(ServiceType service)

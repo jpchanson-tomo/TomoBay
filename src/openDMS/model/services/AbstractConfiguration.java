@@ -1,5 +1,4 @@
-package openDMS.model.services.testService;
-import openDMS.model.services.AbstractConfiguration;
+package openDMS.model.services;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -15,29 +14,24 @@ import openDMS.model.services.AbstractConfiguration;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import openDMS.model.services.AbstractService;
+
 /**
+ *
  *
  * @author Jan P.C. Hanson
  *
  */
-public class TestService implements AbstractService
+public interface AbstractConfiguration<T>
 {
-	int i = 0;
-	/* (non-Javadoc)
-	 * @see java.lang.Runnable#run()
+	/**
+	 * sets the configuration information for the service
+	 * @param value
 	 */
-	@Override
-	public void run()
-	{
-		System.out.println("another sheduled task" +i);
-		++i;
-	}
-	/* (non-Javadoc)
-	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)
+	public void configure(T value);
+	
+	/**
+	 * retrieves the configuration for the service
+	 * @return
 	 */
-	@Override
-	public <E> void setConfig(AbstractConfiguration<E> config)
-	{}
-
+	public T configure();
 }
