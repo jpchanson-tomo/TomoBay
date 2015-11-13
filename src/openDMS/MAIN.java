@@ -14,11 +14,9 @@ package openDMS;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import openDMS.model.services.AbstractConfiguration;
-import openDMS.model.services.AbstractService;
 import openDMS.model.services.ServiceFactory;
-import openDMS.model.services.TriggerService;
-import openDMS.model.services.individualItemRefresh.IndividualItemRefreshConfig;
+import openDMS.model.services.ServiceScheduler;
+import openDMS.view.HttpServer;
 /**
  * The entry point into the program
  * 
@@ -31,24 +29,21 @@ public class MAIN
 	{
 		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
 		
-//		ServiceScheduler services = new ServiceScheduler(2);
-//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.TEST_SERVICE), 0, 1);
-//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE), 0, 10);
-//		
-//		HttpServer uiServer = new HttpServer();
-//		uiServer.start(Integer.parseInt(args[0]));
-//		
-//		services.start();
+		ServiceScheduler services = new ServiceScheduler(2);
+		services.add(ServiceFactory.make(ServiceFactory.ServiceType.TEST_SERVICE), 0, 1);
+		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE), 0, 10);
+		
+		HttpServer uiServer = new HttpServer();
+		uiServer.start(Integer.parseInt(args[0]));
+		
+		services.start();
 		
 //		TriggerService.start(ServiceFactory.make(ServiceFactory.ServiceType.TEST_SERVICE));
 		
-		AbstractService itemRefresh = ServiceFactory.make(ServiceFactory.ServiceType.INDVIDUAL_ITEM_REFRESH_SERVICE);
-		AbstractConfiguration<Long> config = new IndividualItemRefreshConfig();
-		config.configure(123123123l);
-		itemRefresh.setConfig(config);
-		for (int i = 0 ; i < 10 ; ++i)
-		{
-			TriggerService.start(itemRefresh);
-		}
+//		AbstractService itemRefresh = ServiceFactory.make(ServiceFactory.ServiceType.INDVIDUAL_ITEM_REFRESH_SERVICE);
+//		AbstractConfiguration<Long> config = new IndividualItemRefreshConfig();
+//		config.configure(331536262210l);
+//		itemRefresh.setConfig(config);
+//		TriggerService.start(itemRefresh);
 	}
 }

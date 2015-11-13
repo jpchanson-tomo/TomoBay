@@ -15,8 +15,10 @@ package openDMS.model.services.individualItemRefresh;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import java.util.HashMap;
+import java.util.Map;
+
 import openDMS.helpers.ConfigReader;
-import openDMS.model.eBayAPI.APIcontext;
 import openDMS.model.eBayAPI.ItemCall;
 import openDMS.model.services.AbstractConfiguration;
 /**
@@ -25,9 +27,10 @@ import openDMS.model.services.AbstractConfiguration;
  *
  */
 import openDMS.model.services.AbstractService;
-import openDMS.model.services.stockUpdate.StockRequiredQueryFactory;
+import openDMS.model.services.stockUpdate.PartList;
 
 import com.ebay.soap.eBLBaseComponents.ItemType;
+import com.ebay.soap.eBLBaseComponents.NameValueListType;
 /**
  *
  * @author Jan P.C. Hanson
@@ -45,10 +48,17 @@ public class IndividualItemRefreshService implements AbstractService
 	@Override
 	public void run()
 	{
+		System.out.println(this.listingID_M);
 		ItemType item = this.getItemData(String.valueOf(this.listingID_M));
+		Map<String, String> specifics = this.getSpecifics(item);
+		String brand = specifics.get("Brand");
+		String partNo = specifics.get("Manufacturer Part Number");
+		PartList partlist = new PartList(partNo);
 		
-		int required = reCalculateRequiredStock.calculate(item);
-		
+		new RePopulateEbayItem().resetBrandTable(partlist, partNo, brand, Long.parseLong(item.getItemID()));
+		new RePopulateEbayItem().populate(partNo, brand, Long.parseLong(partNo));
+		new ReCalculateRequiredStock().calculate(partlist, brand, partNo, item);
+		new ReCalculateAvailableStock().calculate(partlist, brand, partNo, item.getItemID());
 		
 	}
 	
@@ -57,9 +67,7 @@ public class IndividualItemRefreshService implements AbstractService
 	 */
 	@Override
 	public <E> void setConfig(AbstractConfiguration<E> config)
-	{
-		this.listingID_M = (Long) config.configure();
-	}
+	{this.listingID_M = (Long) config.configure();}
 	
 	
 	/**
@@ -80,5 +88,34 @@ public class IndividualItemRefreshService implements AbstractService
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	/**
+	 * Read the Brand and the manufacturer part number into a map for convienience
+	 * @param item the item to store the brand and manufacturer part number of.
+	 * @return Map<String,String> containing the above data.
+	 */
+	private Map<String, String> getSpecifics(ItemType item)
+	{
+		Map<String, String> itemSpecifics = new HashMap<String, String>();
+		try
+		{
+			NameValueListType[] tmp = item.getItemSpecifics().getNameValueList();
+		
+			for(int i = 0; i < tmp.length; ++i)
+			{
+				String res = "";
+				for(String itemSpecific : tmp[i].getValue())
+				{res+= itemSpecific;}
+				itemSpecifics.put(tmp[i].getName(), res);
+				item.getBuyItNowPrice().getValue();
+			}
+		}
+		catch (NullPointerException e)
+		{
+			itemSpecifics.put("Brand", "not available");
+			itemSpecifics.put("Manufacturer Part Number", "not available");
+		}
+		return itemSpecifics;
 	}
 }

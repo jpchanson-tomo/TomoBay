@@ -30,6 +30,7 @@ import openDMS.model.sql.queries.factories.InsertEbayTransactionsFactory;
 import openDMS.model.sql.queries.factories.InsertFordStockReqFactory;
 import openDMS.model.sql.queries.factories.InsertPSAStockReqFactory;
 import openDMS.model.sql.queries.factories.InsertPrestigeStockReqFactory;
+import openDMS.model.sql.queries.factories.SelectEbayItemSpecificFactory;
 import openDMS.model.sql.queries.factories.SelectEbayItemsFactory;
 import openDMS.model.sql.queries.factories.SelectEbayItemsNotInTransactionsFactory;
 import openDMS.model.sql.queries.factories.SelectEbayOrdersFactory;
@@ -60,7 +61,7 @@ public class QueryInvoker
 			
 			SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS, SELECT_EBAY_ORDERS, SELECT_ITEMS_WITH_BLANK_FIELDS,
 			SELECT_EBAY_ITEMS, SELECT_PSA_STOCK_REQ, SELECT_FORD_STOCK_REQ, SELECT_PRESTIGE_STOCK_REQ,
-			SELECT_ALL_PSA_PARTS,
+			SELECT_ALL_PSA_PARTS, SELECT_EBAY_ITEM_SPECIFIC,
 			
 			UPDATE_ITEM_BRAND_AND_PARTNO, UPDATE_TOTAL_ITEMS_REQUIRED, UPDATE_PSA_STOCK_REQ,
 			UPDATE_FORD_STOCK_REQ, UPDATE_PRESTIGE_STOCK_REQ, UPDATE_AVAILABLE_STOCK_PSA,
@@ -89,6 +90,7 @@ public class QueryInvoker
 			put(QueryType.SELECT_PSA_STOCK_REQ, new SelectPSAStockReqFactory());
 			put(QueryType.SELECT_FORD_STOCK_REQ, new SelectFordStockReqFactory());
 			put(QueryType.SELECT_PRESTIGE_STOCK_REQ, new SelectPrestigeStockReqFactory());
+			put(QueryType.SELECT_EBAY_ITEM_SPECIFIC, new SelectEbayItemSpecificFactory());
 
 			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
 			put(QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, new UpdateTotalItemsRequiredFactory());

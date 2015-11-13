@@ -2,6 +2,7 @@ package openDMS.model.sql.queries.concreteQueries;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,43 +30,67 @@ import openDMS.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdatePSAStockReq implements AbstractDBQuery
+public class SelectEbayItemSpecific implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
-	private PreparedStatement statement_M = null;
+	private PreparedStatement selectStatement_M = null;
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="UPDATE parts_psa SET required=? WHERE partNo=?";
-	
+	private String query ="SELECT * FROM ebay_items WHERE itemID=?;";
+	//
 	/**
 	 * default constructor
 	 */
-	public UpdatePSAStockReq()
+	public SelectEbayItemSpecific()
 	{super();}
 	
 	/**
 	 * execute the query
-	 * @param parameter a two element array where the first element is the value to set as the 
-	 * required stock value, the second element is the part number to update.
+	 * @param parameter single element array where that single element corresponds to the 
+	 * itemID you wish to query. (all further elements will be ignored)
 	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
+	 * column the itemID, so each list element contains a String[1] which contains an itemID.
 	 * @throws SQLException
 	 */
 	public List<String[]> execute(String[] parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
 		this.initQuery();
-		this.connection_M.prepareStatement(query);
-		this.statement_M.setInt(1, Integer.parseInt(parameter[0]));	//required
-		this.statement_M.setString(2, parameter[1]);
-		int resultCode = statement_M.executeUpdate();
+		this.selectStatement_M.setLong(1, Long.parseLong(parameter[0]));
+		ResultSet rs = this.selectStatement_M.executeQuery();
+		
+		List<String[]> selectResults = this.formatResults(rs);
+
 		this.connection_M.commit();
 		this.cleanup();
 		
-		res.add(new String[] {resultCode+""});
 		
-		return res;
+		return selectResults;
+	}
+	
+	/**
+	 * formats the ResultSet (returned from the executed query) as a string
+	 * @param results the ResultSet (post query execution)
+	 * @return String containing the formatted results.
+	 * @throws SQLException
+	 */
+	private List<String[]> formatResults(ResultSet results) throws SQLException
+	{
+		List<String[]> rows = new ArrayList<String[]>();
+		while (results.next())
+		{
+			String[] cols = new String[8];
+			cols[0] = String.valueOf(results.getLong("itemID"));
+			cols[1] = results.getString("title");
+			cols[2] = results.getString("sellCondition");
+			cols[3] = results.getString("brand");
+			cols[4] = results.getString("partNo");
+			cols[5] = String.valueOf(results.getInt("noRequired"));
+			cols[6] = String.valueOf(results.getFloat("cost"));
+			cols[7] = results.getString("notes");
+			rows.add(cols);
+		}
+		return rows;
 	}
 	
 	/**
@@ -76,7 +101,7 @@ public class UpdatePSAStockReq implements AbstractDBQuery
 	{
 		this.connection_M = ConnectionManager.instance().getConnection();
 		this.connection_M.setAutoCommit(false);
-		statement_M = connection_M.prepareStatement(query);
+		this.selectStatement_M = this.connection_M.prepareStatement(query);
 	}
 	
 	/**
@@ -85,7 +110,7 @@ public class UpdatePSAStockReq implements AbstractDBQuery
 	 */
 	private void cleanup() throws SQLException
 	{
-		if (statement_M != null) {statement_M.close();}
+		if (this.selectStatement_M != null) {this.selectStatement_M.close();}
 		if (connection_M != null) {connection_M.close();}
 	}
 }
