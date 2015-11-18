@@ -18,17 +18,18 @@ import java.util.List;
 
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.presenters.AbstractPresenter;
+import openDMS.presenters.helpers.SortOrders;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class SalesPresenter implements AbstractPresenter
+public class SalesOrderPresenter implements AbstractPresenter
 {
 	/**
 	 * default constructor
 	 */
-	public SalesPresenter()
+	public SalesOrderPresenter()
 	{super();}
 	
 	/* (non-Javadoc)
@@ -38,36 +39,38 @@ public class SalesPresenter implements AbstractPresenter
 	public String present()
 	{
 		String output = "";
+		List<String[]> rows = QueryInvoker.execute
+				(QueryInvoker.QueryType.SELECT_EBAY_ORDERS,new String[] {""});
 		
-		output += this.doStuff();
+		rows = new SortOrders().sortDefault(rows);
+		
+		output += this.doStuff(rows);
 		
 		return output;
 	}
 
-	private String doStuff() 
+	private String doStuff(List<String[]> input) 
 	{
 		String result = "";
-			List<String[]> rows = QueryInvoker.execute
-					(QueryInvoker.QueryType.SELECT_EBAY_ORDERS,new String[] {""});
 			
 			result+= "<table class='table table-condensed'> \n";
 			result+= "<thead>\n<tr>\n"
 					+ "<th>"+ "<input type='checkbox' class = 'chcktbl' />"  + "</th>\n"
-					+ "<th>ID</th>\n"
-					+ "<th>name</th>\n"
-					+ "<th>Address</th>\n"
-					+ "<th>Telephone</th>\n"
-					+ "<th>Email</th>\n"
+					+ "<th>Name</th>\n"
+					+ "<th>Date</th>\n"
+					+ "<th>Shipping Type</th>\n"
+					+ "<th>Details</th>\n"
+					+ "<th>Status</th>\n"
 					+ "</tr>\n</thead>\n <tbody>";
-			for (String[] cols : rows)
+			for (String[] cols : input)
 			{
 				result+="<tr>\n";
 				result+="<td>"+ "<input type='checkbox' class = 'chcktbl' />"  + "</td>\n";
-				result+="<td>"+ cols[0].trim() + "</td>\n";
 				result+="<td>"+ cols[1].trim() + "</td>\n";
-				result+="<td>"+ cols[2].trim() + "</td>\n";
-				result+="<td>"+ "07354463849" + "</td>\n";
-				result+="<td>"+ "<a href='mailto:someone@example.com'>test.user.name@email.com</a>" + "</td>\n";
+				result+="<td>"+ cols[4].trim() + "</td>\n";
+				result+="<td>"+ cols[3].trim() + "</td>\n";
+				result+="<td>"+ "<button class='btn btn-success' value='"+cols[0].trim()+"'>View</button>" + "</td>\n";
+				result+="<td>"+ "N/A";
 				result+="</tr>\n";
 			}
 			

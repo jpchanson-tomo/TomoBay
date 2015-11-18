@@ -19,6 +19,7 @@ import java.util.List;
 import openDMS.helpers.BrandToCode;
 import openDMS.model.services.AbstractConfiguration;
 import openDMS.model.services.AbstractService;
+import openDMS.model.services.helpers.PartList;
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.model.sql.queries.QueryInvoker.QueryType;
 import openDMS.model.winstock.Stock;

@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-	$.get("/res/?data=SALES_PRESENTER", function(data, textStatus)
+	$.get("/res/?data=SALES_ORDER_PRESENTER", function(data, textStatus)
         {
                 $(".table-responsive").append(data);
         });

@@ -20,7 +20,7 @@ import java.util.Map;
 import openDMS.presenters.factories.AbstractPresenterFactory;
 import openDMS.presenters.factories.ErrorPresenterFactory;
 import openDMS.presenters.factories.RootPresenterFactory;
-import openDMS.presenters.factories.SalesPresenterFactory;
+import openDMS.presenters.factories.SalesOrderPresenterFactory;
 /**
  *
  * @author Jan P.C. Hanson
@@ -31,7 +31,7 @@ public class PresenterFactory
 	/** defencive enum limits the number of inputs to the make method**/
 	public enum PresenterType 
 			{
-				ERROR_PRESENTER, ROOT_PRESENTER, SALES_PRESENTER
+				ERROR_PRESENTER, ROOT_PRESENTER, SALES_ORDER_PRESENTER
 			}
 	
 	/****/
@@ -41,7 +41,7 @@ public class PresenterFactory
 			{{
 				put(PresenterFactory.PresenterType.ERROR_PRESENTER, new ErrorPresenterFactory());
 				put(PresenterFactory.PresenterType.ROOT_PRESENTER, new RootPresenterFactory());
-				put(PresenterFactory.PresenterType.SALES_PRESENTER, new SalesPresenterFactory());
+				put(PresenterFactory.PresenterType.SALES_ORDER_PRESENTER, new SalesOrderPresenterFactory());
 			}};
 	/**
 	 * default constructor

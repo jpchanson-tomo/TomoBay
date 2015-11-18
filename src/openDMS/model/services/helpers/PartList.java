@@ -1,4 +1,4 @@
-package openDMS.model.services.stockUpdate;
+package openDMS.model.services.helpers;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify

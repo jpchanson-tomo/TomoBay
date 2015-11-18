@@ -14,8 +14,12 @@ package openDMS;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.ArrayList;
+import java.util.List;
+
 import openDMS.model.services.ServiceFactory;
 import openDMS.model.services.ServiceScheduler;
+import openDMS.presenters.helpers.ShippingPriority;
 import openDMS.view.HttpServer;
 /**
  * The entry point into the program
@@ -28,15 +32,15 @@ public class MAIN
 	public static void main(String[] args) throws Exception
 	{
 		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
-		
-		ServiceScheduler services = new ServiceScheduler(2);
-		services.add(ServiceFactory.make(ServiceFactory.ServiceType.TEST_SERVICE), 0, 1);
-		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE), 0, 10);
-		
+//		
+//		ServiceScheduler services = new ServiceScheduler(2);
+//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.TEST_SERVICE), 0, 1);
+//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE), 0, 10);
+//		
 		HttpServer uiServer = new HttpServer();
 		uiServer.start(Integer.parseInt(args[0]));
-		
-		services.start();
+//		
+//		services.start();
 		
 //		TriggerService.start(ServiceFactory.make(ServiceFactory.ServiceType.TEST_SERVICE));
 		

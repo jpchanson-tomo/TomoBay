@@ -27,7 +27,7 @@ import openDMS.model.services.AbstractConfiguration;
  *
  */
 import openDMS.model.services.AbstractService;
-import openDMS.model.services.stockUpdate.PartList;
+import openDMS.model.services.helpers.PartList;
 
 import com.ebay.soap.eBLBaseComponents.ItemType;
 import com.ebay.soap.eBLBaseComponents.NameValueListType;
@@ -91,7 +91,7 @@ public class IndividualItemRefreshService implements AbstractService
 	}
 	
 	/**
-	 * Read the Brand and the manufacturer part number into a map for convienience
+	 * Read the Brand and the manufacturer part number into a map for convenience
 	 * @param item the item to store the brand and manufacturer part number of.
 	 * @return Map<String,String> containing the above data.
 	 */

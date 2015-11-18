@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>TomoBay - Home</title>
+		<title>TomoBay - eBay</title>
 		<link rel="shortcut icon" href="images/logo.png" />
 		<meta charset="utf-8">
  		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,9 +8,11 @@
 		<link rel="stylesheet" href="css/stylesheet.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="js/test.js"></script>
+		<script src="js/getOrders.js"></script>
+		<script src="js/print.js"></script>
+		
 	</head>
-
+	
 	<body>
 	<!------------------------- NAVBAR --------------------------------->
 		<nav class='navbar navbar-default navbar-static-top navbar-inverse info'>
@@ -54,7 +56,23 @@
 			</div>
 		</nav>
 	<!---------------------- ENDOF NAVBAR ------------------------------->
-		
+	
+		<div class="container-fluid">
+			<div class="panel panel-default panel-primary">
+				<div class="panel-heading">
+					<h2 class="">Sales - Orders</h2>
+				</div>
+				
+				<div class="table-responsive"></div>
+				
+				<div class="panel-footer panel-primary">
+					<a class="btn btn-primary">Send to Warehouse</a>
+					<a class="btn btn-primary" href="/sales_orders.html">Refresh</a>
+					<button onclick="printFunc()" class="btn btn-primary">Print</button>
+					<script>function printFunc(){window.print();}</script>
+				</div>
+			</div>
+		</div>
 		
 	</body>
 </html>

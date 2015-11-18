@@ -35,7 +35,7 @@ public class SelectEbayOrders implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private static final String query = "SELECT * FROM ebay.ebay_orders;";
+	private static final String query = "SELECT * FROM ebay.ebay_orders ORDER BY createdTime ASC;";
 	
 	/**
 	 * default constructor
@@ -75,14 +75,15 @@ public class SelectEbayOrders implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[7];
+			String[] cols = new String[8];
 			cols[0] = results.getString("orderID");
 			cols[1] = results.getString("buyerID");
 			cols[2] = results.getString("salesRecNo");
 			cols[3] = results.getString("shippingType");
 			cols[4] = results.getString("createdTime");
-			cols[5] = results.getString("beingPacked");
-			cols[6] = results.getString("shipped");
+			cols[5] = results.getString("picked");
+			cols[6] = results.getString("packed");
+			cols[7] = results.getString("shipped");
 			rows.add(cols);
 		}
 		return rows;

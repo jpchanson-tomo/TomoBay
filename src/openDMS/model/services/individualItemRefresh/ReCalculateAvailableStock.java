@@ -1,7 +1,7 @@
 package openDMS.model.services.individualItemRefresh;
 
 import openDMS.helpers.BrandToCode;
-import openDMS.model.services.stockUpdate.PartList;
+import openDMS.model.services.helpers.PartList;
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.model.sql.queries.QueryInvoker.QueryType;
 import openDMS.model.winstock.Stock;

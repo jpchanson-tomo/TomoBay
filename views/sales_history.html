@@ -1,16 +1,16 @@
 <html>
 	<head>
-		<title>TomoBay - eBay</title>
+		<title>TomoBay - Home</title>
 		<link rel="shortcut icon" href="images/logo.png" />
 		<meta charset="utf-8">
  		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="js/getOrders.js"></script>
+		<script src="js/test.js"></script>
 	</head>
-	
+
 	<body>
 	<!------------------------- NAVBAR --------------------------------->
 		<nav class='navbar navbar-default navbar-static-top navbar-inverse info'>
@@ -28,16 +28,16 @@
 							<li><a href="/">Dashboard</a></li>
 							<li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Sales<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="/sales.html">Orders</a></li>
-									<li><a href="">History</a></li>
+									<li><a href="/sales_orders.html">Orders</a></li>
+									<li><a href="/sales_history.html">History</a></li>
 									<li><a href="">Statistics</a></li>
 								</ul>
 							</li>
 							<li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Warehouse<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="">Orders</a></li>
-									<li><a href="">Inventory</a></li>
-									<li><a href="">Statistics</a></li>
+									<li><a href="/w-house_orders.html">Orders</a></li>
+									<li><a href="/w-house_picking.html">Picking</a></li>
+									<li><a href="/w-house_shipping.html">Shipping</a></li>
 								</ul>
 							</li>
 							<li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
@@ -54,21 +54,7 @@
 			</div>
 		</nav>
 	<!---------------------- ENDOF NAVBAR ------------------------------->
-	
-		<div class="container-fluid">
-			<div class="panel panel-default panel-primary">
-				<div class="panel-heading">
-					<h2 class="">Sales</h2>
-				</div>
-				
-				<div class="table-responsive"></div>
-				
-				<div class="panel-footer panel-primary">
-					<a class="btn btn-primary">Send to Warehouse</a>
-					<a class="btn btn-primary">View</a>
-					<a class="btn btn-primary">Print</a>
-				</div>
-			</div>
-		</div>
+		
+		
 	</body>
 </html>

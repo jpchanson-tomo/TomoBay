@@ -17,7 +17,7 @@ package openDMS.model.services.individualItemRefresh;
 import java.util.List;
 
 import openDMS.helpers.BrandToCode;
-import openDMS.model.services.stockUpdate.PartList;
+import openDMS.model.services.helpers.PartList;
 import openDMS.model.services.stockUpdate.StockRequiredQueryFactory;
 import openDMS.model.services.stockUpdate.StockRequiredQueryFactory.StockQueryType;
 import openDMS.model.sql.queries.QueryInvoker;

@@ -15,23 +15,23 @@ package openDMS.presenters.factories;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import openDMS.presenters.AbstractPresenter;
-import openDMS.presenters.sales.SalesPresenter;
+import openDMS.presenters.sales.SalesOrderPresenter;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class SalesPresenterFactory implements AbstractPresenterFactory
+public class SalesOrderPresenterFactory implements AbstractPresenterFactory
 {
 	/**
 	 * default constructor
 	 */
-	public SalesPresenterFactory()
+	public SalesOrderPresenterFactory()
 	{super();}
 	/* (non-Javadoc)
 	 * @see openDMS.presenters.factories.AbstractEbayPresenterFactory#make()
 	 */
 	@Override
 	public AbstractPresenter make()
-	{return new SalesPresenter();}
+	{return new SalesOrderPresenter();}
 }
