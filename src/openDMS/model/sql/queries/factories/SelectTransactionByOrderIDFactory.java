@@ -1,4 +1,7 @@
-package openDMS.presenters.helpers;
+package openDMS.model.sql.queries.factories;
+
+import openDMS.model.sql.queries.AbstractDBQuery;
+import openDMS.model.sql.queries.AbstractQueryFactory;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,26 +17,23 @@ package openDMS.presenters.helpers;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.List;
+import openDMS.model.sql.queries.concreteQueries.SelectTransactionByOrder;
+
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class Status
+public class SelectTransactionByOrderIDFactory implements AbstractQueryFactory
 {
-	/**
-	 * default ctor
+
+	/* (non-Javadoc)
+	 * @see openDMS.model.sql.queries.AbstractQueryFactory#make()
 	 */
-	public Status()
-	{super();}
-	
-	public String pickeableStatus(String orderNo)
+	@Override
+	public AbstractDBQuery make()
 	{
-		List<String[]> orderTransactions;
-		
-		
-		
-		return null;
+		return new SelectTransactionByOrder();
 	}
+
 }

@@ -18,6 +18,7 @@ import java.util.List;
 
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.presenters.AbstractPresenter;
+import openDMS.presenters.helpers.PickeableStatus;
 import openDMS.presenters.helpers.SortOrders;
 /**
  *
@@ -52,6 +53,7 @@ public class SalesOrderPresenter implements AbstractPresenter
 	private String doStuff(List<String[]> input) 
 	{
 		String result = "";
+		PickeableStatus status = new PickeableStatus();
 			
 			result+= "<table class='table table-condensed'> \n";
 			result+= "<thead>\n<tr>\n"
@@ -65,12 +67,12 @@ public class SalesOrderPresenter implements AbstractPresenter
 			for (String[] cols : input)
 			{
 				result+="<tr>\n";
-				result+="<td>"+ "<input type='checkbox' class = 'chcktbl' />"  + "</td>\n";
-				result+="<td>"+ cols[1].trim() + "</td>\n";
-				result+="<td>"+ cols[4].trim() + "</td>\n";
-				result+="<td>"+ cols[3].trim() + "</td>\n";
-				result+="<td>"+ "<button class='btn btn-success' value='"+cols[0].trim()+"'>View</button>" + "</td>\n";
-				result+="<td>"+ "N/A";
+				result+="<td class='checkbox'>"+ "<input type='checkbox' class = 'chcktbl' />"  + "</td>\n";
+				result+="<td class='name'>"+ cols[1].trim() + "</td>\n";
+				result+="<td class='date'>"+ cols[4].trim() + "</td>\n";
+				result+="<td class='shippingType'>"+ cols[3].trim() + "</td>\n";
+				result+="<td class='details'>"+ "<button class='btn btn-success' value='"+cols[0].trim()+"'>View</button>" + "</td>\n";
+				result+="<td class='status'>"+ status.status(cols[0]);
 				result+="</tr>\n";
 			}
 			

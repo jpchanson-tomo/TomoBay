@@ -30,42 +30,43 @@ import openDMS.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectPSAStockReqByPart implements AbstractDBQuery
+public class SelectTransactionByOrder implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
-	private PreparedStatement selectStatement_M = null;
+	private PreparedStatement statement_M = null;
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="SELECT partNo, required FROM parts_psa WHERE partNo=?;";
-	//
+	private static final String query = "SELECT * FROM ebay_transactions WHERE orderID=?;";
+	
 	/**
 	 * default constructor
 	 */
-	public SelectPSAStockReqByPart()
+	public SelectTransactionByOrder()
 	{super();}
 	
 	/**
 	 * execute the query
-	 * @param parameter the partNumber that you wish to query the required stock levels of encoded
-	 * as a 1 element String array i.e. String[0]=partNumber String.length=1.
-	 * @return List<String[]> representing the results of the query. The list contains only 2 
-	 * columns the partNumber and the required quantity so far.
+	 * @param parameter single element String array with that element being the order number to
+	 * look up.
+	 * @return String representing the results of the query. each item of the list is a seperate
+	 * row, each element of the String[] represents a column. String[0]=buyerID, String[1]=name,
+	 * String[2]=shippingAddress.
 	 * @throws SQLException
 	 */
 	public List<String[]> execute(String[] parameter) throws SQLException
 	{
 		this.initQuery();
-		this.selectStatement_M.setString(1, parameter[0]);
-		ResultSet rs = this.selectStatement_M.executeQuery();
+		this.statement_M.setString(1, parameter[0]);
+		ResultSet resultset = statement_M.executeQuery();
 		
-		List<String[]> selectResults = this.formatResults(rs);
+		List<String[]> result = this.formatResults(resultset);
 		
 		this.connection_M.commit();
+		
 		this.cleanup();
 		
-		
-		return selectResults;
+		return result;
 	}
 	
 	/**
@@ -79,9 +80,15 @@ public class SelectPSAStockReqByPart implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[2];
-			cols[0] = results.getString("partNo");
-			cols[1] = String.valueOf(results.getInt("required"));
+			String[] cols = new String[8];
+			cols[0] = results.getString("transactionID");
+			cols[1] = results.getString("orderID");
+			cols[2] = results.getString("itemID");
+			cols[3] = results.getString("quantity");
+			cols[4] = results.getString("price");
+			cols[5] = results.getString("picked");
+			cols[6] = results.getString("packed");
+			cols[7] = results.getString("shipped");
 			rows.add(cols);
 		}
 		return rows;
@@ -95,7 +102,7 @@ public class SelectPSAStockReqByPart implements AbstractDBQuery
 	{
 		this.connection_M = ConnectionManager.instance().getConnection();
 		this.connection_M.setAutoCommit(false);
-		this.selectStatement_M = this.connection_M.prepareStatement(query);
+		this.statement_M = this.connection_M.prepareStatement(query);
 	}
 	
 	/**
@@ -104,7 +111,7 @@ public class SelectPSAStockReqByPart implements AbstractDBQuery
 	 */
 	private void cleanup() throws SQLException
 	{
-		if (this.selectStatement_M != null) {this.selectStatement_M.close();}
+		if (statement_M != null) {statement_M.close();}
 		if (connection_M != null) {connection_M.close();}
 	}
 }
