@@ -1,4 +1,4 @@
-package openDMS.presenters.helpers;
+package openDMS.model.services.helpers;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Set;
 
 import openDMS.helpers.BrandToCode;
-import openDMS.model.services.helpers.PartList;
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.model.sql.queries.QueryInvoker.QueryType;
 import openDMS.model.winstock.Stock;
@@ -42,9 +41,9 @@ public class PickeableStatus
 	 * @param orderNo
 	 * @return
 	 */
-	public String status(String orderNo)
+	public InvoiceableStatus status(String orderNo)
 	{
-		String result="ERROR";
+		InvoiceableStatus result= InvoiceableStatus.ERROR;
 		Set<Boolean> itemStatus = new HashSet<Boolean>();
 		
 		List<String[]> orderTransactions 
@@ -63,7 +62,7 @@ public class PickeableStatus
 			
 			
 		}
-		
+		System.out.println(orderNo);
 		for (String[] item : items)
 		{
 			Stock stockAvailable = new Stock();
@@ -77,16 +76,17 @@ public class PickeableStatus
 				
 				int required = partlist.getPartQty(i);
 				
-				boolean status = available == required ? true : false;
+				boolean status = available >= required ? true : false;
 				
 				itemStatus.add(status);
+				System.out.println(status);
 			}
 			
 		}
 		
-		if (itemStatus.size()==1 && itemStatus.contains(true)) {result="Pickeable";}
-		else if (itemStatus.size()==1) {result="Unpickeable";}
-		else {result = "Partial";}
+		if (itemStatus.size()==1 && itemStatus.contains(true)) {result=InvoiceableStatus.Invoiceable;}
+		else if (itemStatus.size()==1 && itemStatus.contains(false)) {result=InvoiceableStatus.UnInvoiceable;}
+		else {result = InvoiceableStatus.Partial;}
 		return result;
 	}
 }

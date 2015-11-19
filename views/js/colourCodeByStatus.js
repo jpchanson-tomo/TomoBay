@@ -4,9 +4,18 @@ function colourCode()
 	
 	for (var i = 0 ; i < pickeable.length ; ++i)
 	{
-		if(pickeable[i].innerHTML == "unpickeable")
+		if(pickeable[i].innerHTML == "Pickeable")
 		{
-				pickeable[i].style.color="blue";
+				pickeable[i].parentElement.style.color="green";
 		}
+		else if (pickeable[i].innerHTML == "Unpickeable")
+		{
+			pickeable[i].parentElement.style.color="red"
+		}
+		else
+		{
+			pickeable[i].parentElement.style.color="orange"
+		}
+		
 	}
 }

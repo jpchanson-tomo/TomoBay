@@ -75,7 +75,7 @@ public class SelectEbayOrders implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[8];
+			String[] cols = new String[9];
 			cols[0] = results.getString("orderID");
 			cols[1] = results.getString("buyerID");
 			cols[2] = results.getString("salesRecNo");
@@ -84,6 +84,7 @@ public class SelectEbayOrders implements AbstractDBQuery
 			cols[5] = results.getString("picked");
 			cols[6] = results.getString("packed");
 			cols[7] = results.getString("shipped");
+			cols[8] = results.getString("invoiced");
 			rows.add(cols);
 		}
 		return rows;

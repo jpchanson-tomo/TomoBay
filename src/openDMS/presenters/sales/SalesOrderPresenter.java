@@ -16,9 +16,9 @@ package openDMS.presenters.sales;
  */
 import java.util.List;
 
+import openDMS.model.services.helpers.PickeableStatus;
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.presenters.AbstractPresenter;
-import openDMS.presenters.helpers.PickeableStatus;
 import openDMS.presenters.helpers.SortOrders;
 /**
  *
@@ -55,28 +55,19 @@ public class SalesOrderPresenter implements AbstractPresenter
 		String result = "";
 		PickeableStatus status = new PickeableStatus();
 			
-			result+= "<table class='table table-condensed'> \n";
-			result+= "<thead>\n<tr>\n"
-					+ "<th>"+ "<input type='checkbox' class = 'chcktbl' />"  + "</th>\n"
-					+ "<th>Name</th>\n"
-					+ "<th>Date</th>\n"
-					+ "<th>Shipping Type</th>\n"
-					+ "<th>Details</th>\n"
-					+ "<th>Status</th>\n"
-					+ "</tr>\n</thead>\n <tbody>";
 			for (String[] cols : input)
 			{
-				result+="<tr>\n";
-				result+="<td class='checkbox'>"+ "<input type='checkbox' class = 'chcktbl' />"  + "</td>\n";
-				result+="<td class='name'>"+ cols[1].trim() + "</td>\n";
-				result+="<td class='date'>"+ cols[4].trim() + "</td>\n";
-				result+="<td class='shippingType'>"+ cols[3].trim() + "</td>\n";
-				result+="<td class='details'>"+ "<button class='btn btn-success' value='"+cols[0].trim()+"'>View</button>" + "</td>\n";
-				result+="<td class='status'>"+ status.status(cols[0]);
+				result+="<tr class='"+cols[0]+"'>\n";
+				result+="<td>"+ "<input type='checkbox' class = 'chcktbl filterable-cell ' />"  + "</td>\n";
+				result+="<td class='name filterable-cell '>"+ cols[1].trim() + "</td>\n";
+				result+="<td class='date filterable-cell '>"+ cols[4].trim() + "</td>\n";
+				result+="<td class='shippingType filterable-cell '>"+ cols[3].trim() + "</td>\n";
+				result+="<td class='details filterable-cell '>"+ "<button class='btn btn-primary' value='"+cols[0].trim()+"'>View</button>" + "</td>\n";
+				result+="<td class='status filterable-cell '>"+ status.status(cols[0]);
 				result+="</tr>\n";
 			}
 			
-			result+="</tbody>\n</table>";
+			result+="</table>";
 			
 		return  result;
 	}

@@ -42,6 +42,7 @@ import openDMS.model.sql.queries.factories.UpdateAvailableStockFordFactory;
 import openDMS.model.sql.queries.factories.UpdateAvailableStockPSAFactory;
 import openDMS.model.sql.queries.factories.UpdateAvailableStockPrestigeFactory;
 import openDMS.model.sql.queries.factories.UpdateFordStockReqFactory;
+import openDMS.model.sql.queries.factories.UpdateInvoiceStatusFactory;
 import openDMS.model.sql.queries.factories.UpdateItemBrandAndPartNoFactory;
 import openDMS.model.sql.queries.factories.UpdatePSAStockReqFactory;
 import openDMS.model.sql.queries.factories.UpdatePrestigeStockReqFactory;
@@ -65,7 +66,7 @@ public class QueryInvoker
 			
 			UPDATE_ITEM_BRAND_AND_PARTNO, UPDATE_TOTAL_ITEMS_REQUIRED, UPDATE_PSA_STOCK_REQ,
 			UPDATE_FORD_STOCK_REQ, UPDATE_PRESTIGE_STOCK_REQ, UPDATE_AVAILABLE_STOCK_PSA,
-			UPDATE_AVAILABLE_STOCK_FORD, UPDATE_AVAILABLE_STOCK_PRESTIGE,
+			UPDATE_AVAILABLE_STOCK_FORD, UPDATE_AVAILABLE_STOCK_PRESTIGE, UPDATE_INVOICE_STATUS,
 			
 			CLEAR_PARTS_PSA, CLEAR_PARTS_FORD, CLEAR_PARTS_PRESTIGE
 		}
@@ -100,6 +101,7 @@ public class QueryInvoker
 			put(QueryType.UPDATE_AVAILABLE_STOCK_PSA, new UpdateAvailableStockPSAFactory());
 			put(QueryType.UPDATE_AVAILABLE_STOCK_FORD, new UpdateAvailableStockFordFactory());
 			put(QueryType.UPDATE_AVAILABLE_STOCK_PRESTIGE, new UpdateAvailableStockPrestigeFactory());
+			put(QueryType.UPDATE_INVOICE_STATUS, new UpdateInvoiceStatusFactory());
 
 			put(QueryType.CLEAR_PARTS_PSA, new ClearPartsPSAFactory());
 			put(QueryType.CLEAR_PARTS_FORD, new ClearPartsFordFactory());
