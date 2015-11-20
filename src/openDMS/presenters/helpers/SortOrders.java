@@ -1,8 +1,4 @@
 package openDMS.presenters.helpers;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +14,10 @@ import java.util.List;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.ArrayList;
+import java.util.List;
 
+import openDMS.model.services.helpers.InvoiceableStatus;
 /**
  *
  * @author Jan P.C. Hanson
@@ -39,16 +38,25 @@ public class SortOrders
 	 * @return sorted list of strings.
 	 */
 	public List<String[]> sortDefault(List<String[]> input)
-	{return this.sortByShipping(this.sortByPickeability(input));}
+	{return this.sortByPickeability(input);}
 	
 	/**
-	 * sort the list<String> by date descending
+	 * sort the list<String> by Invoice status descending (see InvoiceableStatus enum)
 	 * @param input list of strings unordered
 	 * @return List<String> sorted by date descending
 	 */
 	private List<String[]> sortByPickeability(List<String[]> input)
 	{
-		return input;
+		List<List<String[]>> categoryList = new ArrayList<List<String[]>>(InvoiceableStatus.size());
+		
+		for(int i = 0 ; i < InvoiceableStatus.size() ; ++i) {categoryList.add(new ArrayList<String[]>());}
+		
+		for (int i = 0 ; i < input.size() ; ++i)
+		{
+			categoryList.get(Integer.parseInt((input.get(i)[8])))
+						.add(input.get(i));
+		}
+		return reAssembleCategories(categoryList);
 	}
 	
 	/**

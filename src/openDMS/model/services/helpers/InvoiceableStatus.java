@@ -3,6 +3,8 @@ package openDMS.model.services.helpers;
 import java.util.HashMap;
 import java.util.Map;
 
+import openDMS.presenters.helpers.ShippingPriority;
+
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -36,9 +38,6 @@ public enum InvoiceableStatus
 	/**there has been an error somewhere along the line.....dufus**/
 	ERROR(-1);
 
-	/**holder for the status code**/
-	private int status_M;
-	
 	/**map for converting ints back to enum constants**/
 	@SuppressWarnings("serial")
 	private static final Map<Integer, InvoiceableStatus> fromInt_M = new HashMap<Integer,InvoiceableStatus>()
@@ -48,6 +47,12 @@ public enum InvoiceableStatus
 		put(1 , InvoiceableStatus.Partial);
 		put(2 , InvoiceableStatus.Invoiceable);
 	}};
+	
+	/**holder for the status code**/
+	private int status_M;
+	
+	/**size of the enum**/
+	private static final int size = InvoiceableStatus.values().length;
 	
 	/**
 	 * private ctor so enum can hold int values
@@ -69,4 +74,11 @@ public enum InvoiceableStatus
 	 */
 	public static InvoiceableStatus fromInt(int statusCode)
 	{return InvoiceableStatus.fromInt_M.get(statusCode);}
+	
+	/**
+	 * gets the number of constants held in this enum
+	 * @return integer denoting the size of the enum
+	 */
+	public static int size()
+	{return InvoiceableStatus.size;}
 }
