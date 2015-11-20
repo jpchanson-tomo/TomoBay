@@ -51,6 +51,11 @@ public class SalesOrderPresenter implements AbstractPresenter
 		return output;
 	}
 
+	/**
+	 * 
+	 * @param input
+	 * @return
+	 */
 	private String doStuff(List<String[]> input) 
 	{
 		String result = "";
@@ -71,6 +76,11 @@ public class SalesOrderPresenter implements AbstractPresenter
 		return  result;
 	}
 	
+	/**
+	 * 
+	 * @param invoiced
+	 * @return
+	 */
 	private String pickeability(String invoiced)
 	{
 		String pickeability="";
