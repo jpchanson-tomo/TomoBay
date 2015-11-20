@@ -38,7 +38,7 @@ public class SortOrders
 	 * @return sorted list of strings.
 	 */
 	public List<String[]> sortDefault(List<String[]> input)
-	{return this.sortByShipping(input);}
+	{return this.sortByPickeability(this.sortByShipping(input));}
 	
 	/**
 	 * sort the list<String> by Invoice status descending (see InvoiceableStatus enum)
@@ -56,7 +56,7 @@ public class SortOrders
 			categoryList.get(Integer.parseInt((input.get(i)[8])))
 						.add(input.get(i));
 		}
-		return reAssembleCategories(categoryList);
+		return reAssembleCategories(categoryList, InvoiceableStatus.size());
 	}
 	
 	/**
@@ -75,7 +75,7 @@ public class SortOrders
 			categoryList.get( ShippingPriority.valueOf(input.get(i)[3]).getPriority() )
 						.add(input.get(i));
 		}
-		return reAssembleCategories(categoryList);
+		return reAssembleCategories(categoryList, ShippingPriority.size());
 	}
 	
 	/**
@@ -83,11 +83,11 @@ public class SortOrders
 	 * @param input List<List<String[]>> 
 	 * @return category sorted list of strings with previous sort order preserved
 	 */
-	private List<String[]> reAssembleCategories(List<List<String[]>> input)
+	private List<String[]> reAssembleCategories(List<List<String[]>> input, int size)
 	{
 		List<String[]> result = new ArrayList<String[]>();
 		
-		for (int i = 0 ; i < ShippingPriority.size() ; ++i)
+		for (int i = 0 ; i < size ; ++i)
 		{
 			result.addAll(input.get(i));
 		}

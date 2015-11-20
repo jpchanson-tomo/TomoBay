@@ -74,9 +74,10 @@ public class SalesOrderPresenter implements AbstractPresenter
 	private String pickeability(String invoiced)
 	{
 		String pickeability="";
-		if(Integer.parseInt(invoiced)==0){pickeability = "Unpickeable";}
+		if(Integer.parseInt(invoiced)==3){pickeability = "ERROR";}
+		if(Integer.parseInt(invoiced)==2){pickeability = "Unpickeable";}
 		if(Integer.parseInt(invoiced)==1){pickeability = "Partial";}
-		if(Integer.parseInt(invoiced)==2){pickeability = "Pickeable";}
+		if(Integer.parseInt(invoiced)==0){pickeability = "Pickeable";}
 		
 		return pickeability;
 	}

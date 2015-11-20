@@ -30,22 +30,22 @@ import tomoBay.presenters.helpers.ShippingPriority;
 public enum InvoiceableStatus 
 {
 	/**an invoice is fully invoiceable or already invoiced**/
-	Invoiceable(2), 
-	/**it is not possible to invoice this order at the present time**/
-	UnInvoiceable(0), 
+	Invoiceable(0), 
 	/**this order is partially invoiceable, probably due to some parts being out of stock**/
 	Partial(1), 
+	/**it is not possible to invoice this order at the present time**/
+	UnInvoiceable(2), 
 	/**there has been an error somewhere along the line.....dufus**/
-	ERROR(-1);
+	ERROR(3);
 
 	/**map for converting ints back to enum constants**/
 	@SuppressWarnings("serial")
 	private static final Map<Integer, InvoiceableStatus> fromInt_M = new HashMap<Integer,InvoiceableStatus>()
 	{{
-		put(-1, InvoiceableStatus.ERROR);
-		put(0 , InvoiceableStatus.UnInvoiceable);
+		put(3, InvoiceableStatus.ERROR);
+		put(2 , InvoiceableStatus.UnInvoiceable);
 		put(1 , InvoiceableStatus.Partial);
-		put(2 , InvoiceableStatus.Invoiceable);
+		put(0 , InvoiceableStatus.Invoiceable);
 	}};
 	
 	/**holder for the status code**/
