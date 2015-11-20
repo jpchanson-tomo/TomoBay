@@ -19,6 +19,7 @@ import java.util.List;
 
 import openDMS.model.services.ServiceFactory;
 import openDMS.model.services.ServiceScheduler;
+import openDMS.model.services.TriggerService;
 import openDMS.presenters.helpers.ShippingPriority;
 import openDMS.view.HttpServer;
 /**
@@ -42,7 +43,7 @@ public class MAIN
 //		
 //		services.start();
 		
-//		TriggerService.start(ServiceFactory.make(ServiceFactory.ServiceType.TEST_SERVICE));
+//		TriggerService.start(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
 		
 //		AbstractService itemRefresh = ServiceFactory.make(ServiceFactory.ServiceType.INDVIDUAL_ITEM_REFRESH_SERVICE);
 //		AbstractConfiguration<Long> config = new IndividualItemRefreshConfig();

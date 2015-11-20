@@ -39,14 +39,14 @@ public class SortOrders
 	 * @return sorted list of strings.
 	 */
 	public List<String[]> sortDefault(List<String[]> input)
-	{return this.sortByShipping(this.sortByDate(input));}
+	{return this.sortByShipping(this.sortByPickeability(input));}
 	
 	/**
 	 * sort the list<String> by date descending
 	 * @param input list of strings unordered
 	 * @return List<String> sorted by date descending
 	 */
-	private List<String[]> sortByDate(List<String[]> input)
+	private List<String[]> sortByPickeability(List<String[]> input)
 	{
 		return input;
 	}

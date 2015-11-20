@@ -1,4 +1,8 @@
 package openDMS.model.services.helpers;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -35,6 +39,16 @@ public enum InvoiceableStatus
 	/**holder for the status code**/
 	private int status_M;
 	
+	/**map for converting ints back to enum constants**/
+	@SuppressWarnings("serial")
+	private static final Map<Integer, InvoiceableStatus> fromInt_M = new HashMap<Integer,InvoiceableStatus>()
+	{{
+		put(-1, InvoiceableStatus.ERROR);
+		put(0 , InvoiceableStatus.UnInvoiceable);
+		put(1 , InvoiceableStatus.Partial);
+		put(2 , InvoiceableStatus.Invoiceable);
+	}};
+	
 	/**
 	 * private ctor so enum can hold int values
 	 */
@@ -47,4 +61,12 @@ public enum InvoiceableStatus
 	 */
 	public int getStatusCode()
 	{return this.status_M;}
+	
+	/**
+	 * 
+	 * @param statusCode
+	 * @return
+	 */
+	public static InvoiceableStatus fromInt(int statusCode)
+	{return InvoiceableStatus.fromInt_M.get(statusCode);}
 }

@@ -1,7 +1,4 @@
 package openDMS.model.services.invoiceOrderService;
-
-import openDMS.model.services.AbstractConfiguration;
-import openDMS.model.services.AbstractService;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -17,7 +14,12 @@ import openDMS.model.services.AbstractService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.List;
 
+import openDMS.model.services.AbstractConfiguration;
+import openDMS.model.services.AbstractService;
+import openDMS.model.sql.queries.QueryInvoker;
+import openDMS.model.sql.queries.QueryInvoker.QueryType;
 /**
  * This service runs through all the orders on the system that havent yet been invoiced and 
  * checks them against stock levels to see how invoiceable they are (invoiceable/partially
@@ -35,7 +37,16 @@ public class InvoiceService implements AbstractService
 	@Override
 	public void run()
 	{
+		CalculateInvoiceStatus status = new CalculateInvoiceStatus();
+		List<String[]> orders = QueryInvoker.execute(QueryType.SELECT_UNINVOICED_ORDERS, new String[] {});
 		
+		for(String[] order : orders)
+		{
+			String statusCode = String.valueOf(status.status(order[0]).getStatusCode());
+			QueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS, new String[] {statusCode,order[0]});
+			//generate invoice for this order number here
+			System.out.println("trying to generate invoice for order number: " + order[0]);
+		}
 	}
 
 	/* (non-Javadoc)

@@ -16,7 +16,8 @@ package openDMS.presenters.sales;
  */
 import java.util.List;
 
-import openDMS.model.services.helpers.PickeableStatus;
+import openDMS.model.services.helpers.InvoiceableStatus;
+import openDMS.model.services.invoiceOrderService.CalculateInvoiceStatus;
 import openDMS.model.sql.queries.QueryInvoker;
 import openDMS.presenters.AbstractPresenter;
 import openDMS.presenters.helpers.SortOrders;
@@ -53,7 +54,6 @@ public class SalesOrderPresenter implements AbstractPresenter
 	private String doStuff(List<String[]> input) 
 	{
 		String result = "";
-		PickeableStatus status = new PickeableStatus();
 			
 			for (String[] cols : input)
 			{
@@ -63,12 +63,21 @@ public class SalesOrderPresenter implements AbstractPresenter
 				result+="<td class='date filterable-cell '>"+ cols[4].trim() + "</td>\n";
 				result+="<td class='shippingType filterable-cell '>"+ cols[3].trim() + "</td>\n";
 				result+="<td class='details filterable-cell '>"+ "<button class='btn btn-primary' value='"+cols[0].trim()+"'>View</button>" + "</td>\n";
-				result+="<td class='status filterable-cell '>"+ status.status(cols[0]);
+				result+="<td class='status filterable-cell '>"+ this.pickeability(cols[8]) + "</td>";
 				result+="</tr>\n";
 			}
 			
-			result+="</table>";
-			
+		result+="</table>";
 		return  result;
+	}
+	
+	private String pickeability(String invoiced)
+	{
+		String pickeability="";
+		if(Integer.parseInt(invoiced)==0){pickeability = "Unpickeable";}
+		if(Integer.parseInt(invoiced)==1){pickeability = "Partial";}
+		if(Integer.parseInt(invoiced)==2){pickeability = "Pickeable";}
+		
+		return pickeability;
 	}
 }
