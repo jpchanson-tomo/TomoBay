@@ -25,7 +25,6 @@ import tomoBay.model.services.AbstractService;
  */
 public class UpdateOrderStatusService implements AbstractService
 {
-
 	/* (non-Javadoc)
 	 * @see tomoBay.model.services.AbstractService#run()
 	 */
