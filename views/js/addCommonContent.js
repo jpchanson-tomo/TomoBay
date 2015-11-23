@@ -1,3 +1,6 @@
+/**
+ * adds content common to all pages
+ */
 $(document).ready(function()
 {
 	/**load the navbar**/

@@ -1,3 +1,6 @@
+/**
+ * colours rows of a table according to the pickeability of the contents of the status element.
+ */
 function colourCode()
 {
 	pickeable = $(".status"); 

@@ -1,7 +1,7 @@
-$(document).ready(function()
+/**
+ * sends the current visible contents of the viewport to the printer.
+ */
+function printScreen()
 {
-	function printFunc()
-	{
-		window.print();
-	}
-});
+	window.print();
+};
