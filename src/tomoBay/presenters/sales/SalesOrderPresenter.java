@@ -16,8 +16,6 @@ package tomoBay.presenters.sales;
  */
 import java.util.List;
 
-import tomoBay.model.services.helpers.InvoiceableStatus;
-import tomoBay.model.services.invoiceOrderService.CalculateInvoiceStatus;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.helpers.SortOrders;

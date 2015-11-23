@@ -1,10 +1,4 @@
 package tomoBay.model.services.helpers;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import tomoBay.presenters.helpers.ShippingPriority;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +14,8 @@ import tomoBay.presenters.helpers.ShippingPriority;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import java.util.HashMap;
+import java.util.Map;
 /**
  * this enum defines the different status's and status codes for the state of an order with 
  * respect to invoiceability.
