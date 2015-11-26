@@ -1,0 +1,6 @@
+<map id="tomoBay.model.eBayAPI.ItemCall.call" name="tomoBay.model.eBayAPI.ItemCall.call">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1individualItemRefresh_1_1IndividualItemRefreshService.html#a5cac8ea543146d5aba7813bf8856125b" title="tomoBay.model.services.individual\lItemRefresh.IndividualItemRefreshService.get\lItemData" alt="" coords="252,5,543,61"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdate_1_1ItemsTable.html#a1f97957922b6b18742500a36637fc3b7" title="tomoBay.model.services.basic\lEbayUpdate.ItemsTable.populate" alt="" coords="289,85,505,126"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1individualItemRefresh_1_1IndividualItemRefreshService.html#a579244b8909621f27fc4871a532f87ee" title="tomoBay.model.services.individual\lItemRefresh.IndividualItemRefreshService.run" alt="" coords="591,13,881,54"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdate_1_1BasicEbayUpdateService.html#a4f88ce1244d0e8869470d3f5c95c72d5" title="tomoBay.model.services.basic\lEbayUpdate.BasicEbayUpdateService.run" alt="" coords="601,85,871,126"/>
+</map>

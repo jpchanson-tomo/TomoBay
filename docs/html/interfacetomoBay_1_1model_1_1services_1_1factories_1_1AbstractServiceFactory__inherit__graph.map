@@ -1,0 +1,7 @@
+<map id="tomoBay.model.services.factories.AbstractServiceFactory" name="tomoBay.model.services.factories.AbstractServiceFactory">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1BasicEbayServiceFactory.html" title="{tomoBay.model.services.factories.\lBasicEbayServiceFactory\n||+ make()\l}" alt="" coords="5,153,229,245"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1IndividualItemRefreshServiceFactory.html" title="{tomoBay.model.services.factories.\lIndividualItemRefreshServiceFactory\n||+ make()\l}" alt="" coords="253,153,491,245"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1InvoiceServiceFactory.html" title="{tomoBay.model.services.factories.\lInvoiceServiceFactory\n||+ make()\l}" alt="" coords="515,153,739,245"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1StockUpdateServiceFactory.html" title="{tomoBay.model.services.factories.\lStockUpdateServiceFactory\n||+ StockUpdateServiceFactory()\l+ make()\l}" alt="" coords="763,145,987,252"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1TestServiceFactory.html" title="{tomoBay.model.services.factories.\lTestServiceFactory\n||+ make()\l}" alt="" coords="1011,153,1235,245"/>
+</map>

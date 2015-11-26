@@ -1,0 +1,5 @@
+<map id="tomoBay.model.eBayAPI.AbstractAPIcall" name="tomoBay.model.eBayAPI.AbstractAPIcall">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1eBayAPI_1_1ItemCall.html" title="{tomoBay.model.eBayAPI.ItemCall\n|~ item_M\l~ itemreq_M\l|+ ItemCall()\l+ call()\l}" alt="" coords="5,160,228,267"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1eBayAPI_1_1ListingsCall.html" title="{tomoBay.model.eBayAPI.ListingsCall\n|~ listingsCall_M\l|+ ListingsCall()\l+ call()\l}" alt="" coords="252,167,493,259"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1eBayAPI_1_1OrdersCall.html" title="{tomoBay.model.eBayAPI.OrdersCall\n|~ order_M\l~ ordreq_M\l|+ OrdersCall()\l+ call()\l}" alt="" coords="518,160,753,267"/>
+</map>

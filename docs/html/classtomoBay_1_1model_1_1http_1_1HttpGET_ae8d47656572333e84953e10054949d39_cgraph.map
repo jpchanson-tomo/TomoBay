@@ -1,0 +1,5 @@
+<map id="tomoBay.model.http.HttpGET.request" name="tomoBay.model.http.HttpGET.request">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1http_1_1HttpGET.html#ae7362bbfd72cb1e5f85a4b9c33247b6f" title="tomoBay.model.http.HttpGET.read\lConnection" alt="" coords="299,5,523,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1http_1_1HttpGET.html#afba0883bfeaf2d9df3fd2bd2323aacdd" title="tomoBay.model.http.HttpGET.set\lUpConnection" alt="" coords="303,71,520,112"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1http_1_1HttpGET.html#ad7f5ebd923e11accaa5c1839bf6578f3" title="tomoBay.model.http.HttpGET.stack\lTraceToString" alt="" coords="296,136,527,177"/>
+</map>

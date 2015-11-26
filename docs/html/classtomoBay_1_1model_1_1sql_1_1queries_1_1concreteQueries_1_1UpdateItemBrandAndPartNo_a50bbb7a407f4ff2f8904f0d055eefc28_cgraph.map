@@ -1,0 +1,6 @@
+<map id="tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo.execute" name="tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo.execute">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1UpdateItemBrandAndPartNo.html#a9f4a33b403e92af26442ac08eca35883" title="tomoBay.model.sql.queries.concrete\lQueries.UpdateItemBrandAndPartNo.cleanup" alt="" coords="343,5,630,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1UpdateItemBrandAndPartNo.html#a7827908e3ae30558d50a9498a37f6d24" title="tomoBay.model.sql.queries.concrete\lQueries.UpdateItemBrandAndPartNo.initQuery" alt="" coords="340,71,633,112"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#a258fdcb8481c013b1864d6835e5dfaa2" title="tomoBay.model.sql.Connection\lManager.instance" alt="" coords="681,37,885,79"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ae409bc78f5d56de5a3da5dc34b992912" title="tomoBay.model.sql.Connection\lManager.getConnection" alt="" coords="681,103,885,144"/>
+</map>

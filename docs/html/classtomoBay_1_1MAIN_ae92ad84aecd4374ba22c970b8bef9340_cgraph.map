@@ -1,0 +1,5 @@
+<map id="tomoBay.MAIN.main" name="tomoBay.MAIN.main">
+<area shape="rect" id="node2" href="$classtomoBay_1_1view_1_1HttpServer.html#abe14957a1f60dc21aaeb052313f00fd2" title="tomoBay.view.HttpServer.start" alt="" coords="197,46,400,73"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1view_1_1HttpServer.html#a77903ab9ba6f3ec6a49c9022337b1235" title="tomoBay.view.HttpServer.set\lUpDataServletHandler" alt="" coords="448,5,643,47"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1view_1_1HttpServer.html#a2111eb8935bdf0192cf5b24841bef438" title="tomoBay.view.HttpServer.set\lUpGuiHandler" alt="" coords="448,71,643,112"/>
+</map>

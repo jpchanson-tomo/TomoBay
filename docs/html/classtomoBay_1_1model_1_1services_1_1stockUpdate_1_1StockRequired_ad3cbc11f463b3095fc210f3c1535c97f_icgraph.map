@@ -1,0 +1,5 @@
+<map id="tomoBay.model.services.stockUpdate.StockRequired.insertORUpdate" name="tomoBay.model.services.stockUpdate.StockRequired.insertORUpdate">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1stockUpdate_1_1StockRequired.html#a493c422b0f5f59b217afed68fa026611" title="tomoBay.model.services.stock\lUpdate.StockRequired.iterateThrough\lPartsList" alt="" coords="305,5,547,61"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1stockUpdate_1_1StockRequired.html#af34f448b2e06ca4c1a6b6b9eab4151ee" title="tomoBay.model.services.stock\lUpdate.StockRequired.calculate" alt="" coords="595,13,805,54"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1stockUpdate_1_1StockUpdateService.html#a4ca5d3569102ee0441f7f5548ea297b0" title="tomoBay.model.services.stock\lUpdate.StockUpdateService.run" alt="" coords="853,13,1064,54"/>
+</map>

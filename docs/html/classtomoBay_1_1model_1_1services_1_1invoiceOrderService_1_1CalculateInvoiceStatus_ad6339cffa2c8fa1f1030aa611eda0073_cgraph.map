@@ -1,0 +1,15 @@
+<map id="tomoBay.model.services.invoiceOrderService.CalculateInvoiceStatus.status" name="tomoBay.model.services.invoiceOrderService.CalculateInvoiceStatus.status">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1invoiceOrderService_1_1CalculateInvoiceStatus.html#a3d123bd6b208f0f0cf28aa46ea5a630a" title="tomoBay.model.services.invoice\lOrderService.CalculateInvoiceStatus.assemble\lItemsList" alt="" coords="331,30,628,86"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#af9783588735e13b18741b48b375ca626" title="tomoBay.model.sql.queries.\lQueryInvoker.execute" alt="" coords="711,37,895,79"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1invoiceOrderService_1_1CalculateInvoiceStatus.html#a36bda615a95d80b2d5d3b24e04f6ae96" title="tomoBay.model.services.invoice\lOrderService.CalculateInvoiceStatus.check\lStockLevelOfItems" alt="" coords="341,161,617,217"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#aff8d54f537b905d5a8b35a20113fd100" title="tomoBay.model.sql.queries.\lQueryInvoker.make" alt="" coords="1005,5,1189,47"/>
+<area shape="rect" id="node5" href="$interfacetomoBay_1_1model_1_1sql_1_1queries_1_1AbstractDBQuery.html#af2b3eebaeac3f2330d4c4e27182cec48" title="tomoBay.model.sql.queries.\lAbstractDBQuery.execute" alt="" coords="1005,71,1189,112"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#a685e9b8eb9b3b66937c327106d4c7ca1" title="tomoBay.helpers.BrandToCode.convert" alt="" coords="678,103,929,130"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1services_1_1helpers_1_1PartList.html#ad78e5b214d7f6060e461abac7fca9559" title="tomoBay.model.services.helpers.\lPartList.getPartNumber" alt="" coords="695,155,911,196"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1model_1_1services_1_1helpers_1_1PartList.html#a554b8b08e0c00b2c094af388611fb318" title="tomoBay.model.services.helpers.\lPartList.getPartQty" alt="" coords="695,220,911,261"/>
+<area shape="rect" id="node10" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a1782a19980de34680ae751b8a334af96" title="tomoBay.model.winstock.Stock.request\lStockLevel" alt="" coords="676,285,931,327"/>
+<area shape="rect" id="node14" href="$classtomoBay_1_1model_1_1services_1_1helpers_1_1PartList.html#a560c1e8e7c88cd213aba97da6620aa42" title="tomoBay.model.services.helpers.\lPartList.size" alt="" coords="695,351,911,392"/>
+<area shape="rect" id="node11" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a0b60d421fe27874ceb35c702ffa2483f" title="tomoBay.model.winstock.Stock.post\lFormatXMLString" alt="" coords="979,256,1215,297"/>
+<area shape="rect" id="node13" href="$classtomoBay_1_1helpers_1_1XMLParser.html#ac25716dcaf3586b706f71c7354d6626c" title="tomoBay.helpers.XMLParser.parse" alt="" coords="984,322,1209,349"/>
+<area shape="rect" id="node12" href="$classtomoBay_1_1model_1_1http_1_1HttpResponse.html#a24a810db349f2e0bb6188d836b9ab916" title="tomoBay.model.http.HttpResponse.get\lResponseMessage" alt="" coords="1263,256,1512,297"/>
+</map>

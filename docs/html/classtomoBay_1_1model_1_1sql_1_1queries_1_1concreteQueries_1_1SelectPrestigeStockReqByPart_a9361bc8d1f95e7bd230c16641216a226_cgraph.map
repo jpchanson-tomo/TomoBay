@@ -1,0 +1,7 @@
+<map id="tomoBay.model.sql.queries.concreteQueries.SelectPrestigeStockReqByPart.execute" name="tomoBay.model.sql.queries.concreteQueries.SelectPrestigeStockReqByPart.execute">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectPrestigeStockReqByPart.html#a926ccf438f0a39b166e20c9d3b0f9537" title="tomoBay.model.sql.queries.concrete\lQueries.SelectPrestigeStockReqByPart.cleanup" alt="" coords="361,5,664,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectPrestigeStockReqByPart.html#a65c8bee43cff11d0f5a7773018a2f991" title="tomoBay.model.sql.queries.concrete\lQueries.SelectPrestigeStockReqByPart.format\lResults" alt="" coords="365,70,660,126"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectPrestigeStockReqByPart.html#a90389cae824f8b88d2d6189ed8e2c852" title="tomoBay.model.sql.queries.concrete\lQueries.SelectPrestigeStockReqByPart.initQuery" alt="" coords="357,149,668,191"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#a258fdcb8481c013b1864d6835e5dfaa2" title="tomoBay.model.sql.Connection\lManager.instance" alt="" coords="716,116,920,157"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ae409bc78f5d56de5a3da5dc34b992912" title="tomoBay.model.sql.Connection\lManager.getConnection" alt="" coords="716,181,920,223"/>
+</map>

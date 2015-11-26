@@ -1,0 +1,5 @@
+<map id="tomoBay.presenters.factories.AbstractPresenterFactory" name="tomoBay.presenters.factories.AbstractPresenterFactory">
+<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1factories_1_1ErrorPresenterFactory.html" title="{tomoBay.presenters.factories.\lErrorPresenterFactory\n||+ ErrorPresenterFactory()\l+ make()\l}" alt="" coords="5,145,203,252"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1factories_1_1RootPresenterFactory.html" title="{tomoBay.presenters.factories.\lRootPresenterFactory\n||+ RootPresenterFactory()\l+ make()\l}" alt="" coords="227,145,424,252"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1factories_1_1SalesOrderPresenterFactory.html" title="{tomoBay.presenters.factories.\lSalesOrderPresenterFactory\n||+ SalesOrderPresenterFactory()\l+ make()\l}" alt="" coords="449,145,655,252"/>
+</map>

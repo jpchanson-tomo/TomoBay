@@ -1,0 +1,6 @@
+<map id="tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPrestige.execute" name="tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPrestige.execute">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1UpdateAvailableStockPrestige.html#ac868c2d90bbfc99f34c012e63dcc07fb" title="tomoBay.model.sql.queries.concrete\lQueries.UpdateAvailableStockPrestige.cleanup" alt="" coords="355,5,653,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1UpdateAvailableStockPrestige.html#a1f943e87e9910a8efdaf09bc6b45d39b" title="tomoBay.model.sql.queries.concrete\lQueries.UpdateAvailableStockPrestige.initQuery" alt="" coords="352,71,656,112"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#a258fdcb8481c013b1864d6835e5dfaa2" title="tomoBay.model.sql.Connection\lManager.instance" alt="" coords="704,37,908,79"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ae409bc78f5d56de5a3da5dc34b992912" title="tomoBay.model.sql.Connection\lManager.getConnection" alt="" coords="704,103,908,144"/>
+</map>
