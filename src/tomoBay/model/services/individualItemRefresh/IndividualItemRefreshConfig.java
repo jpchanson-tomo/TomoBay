@@ -16,7 +16,9 @@ package tomoBay.model.services.individualItemRefresh;
  */
 import tomoBay.model.services.AbstractConfiguration;
 /**
- *
+ * This class defines an object that is passed to the IndividualItemRefreshService setConfig
+ * method. it provides the information necessary for the service to perform its task. in this
+ * case the listing id.
  * @author Jan P.C. Hanson
  *
  *
@@ -25,19 +27,19 @@ public class IndividualItemRefreshConfig implements AbstractConfiguration<Long>
 {
 	private long listingID_M;
 	
-//	/* (non-Javadoc)
-//	 * @see openDMS.model.services.AbstractConfiguration#configure(java.lang.Object)
-//	 */
-//	@Override
+	/* (non-Javadoc)
+	 * @see openDMS.model.services.AbstractConfiguration#configure(java.lang.Object)
+	 */
+	@Override
 	public void configure(Long value)
 	{
 		this.listingID_M = value;
 	}
 
-//	/* (non-Javadoc)
-//	 * @see openDMS.model.services.AbstractConfiguration#configure()
-//	 */
-//	@Override
+	/* (non-Javadoc)
+	 * @see openDMS.model.services.AbstractConfiguration#configure()
+	 */
+	@Override
 	public Long configure()
 	{
 		return this.listingID_M;

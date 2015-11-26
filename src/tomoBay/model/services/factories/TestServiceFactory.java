@@ -17,7 +17,7 @@ package tomoBay.model.services.factories;
 import tomoBay.model.services.AbstractService;
 import tomoBay.model.services.testService.TestService;
 /**
- *
+ * This factory creates a test service.
  * @author Jan P.C. Hanson
  *
  */

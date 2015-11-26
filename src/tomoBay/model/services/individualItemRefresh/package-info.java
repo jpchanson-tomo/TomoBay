@@ -1,20 +1,10 @@
-/** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 /**
- *
+ * This package contains all the classes relevant to the Individual Item Refresh Service, this
+ * service re queries the eBay API for item data specific to a particular listing.
+ * 
+ * The purpose of this is: when a user makes a mistake the system will pick up on that mistake,
+ * however the BasicEbayUpdateService will not then pick up on any fixes as it concentrates purely
+ * on new data. This service allows changes to individual listings to be picked up by the application.
  * @author Jan P.C. Hanson
  *
  */

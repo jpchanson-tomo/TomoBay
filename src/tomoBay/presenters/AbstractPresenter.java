@@ -27,7 +27,6 @@ public interface AbstractPresenter
 	/**
 	 * this method is called when you actually want to present the information contained in the
 	 * view/presenter to the servlet 
-	 * @param view the view to be rpesented
 	 * @return String representing the html contained in the view/presenter
 	 */
 	public String present();

@@ -16,7 +16,7 @@ package tomoBay.presenters.helpers;
  */
 import tomoBay.helpers.NoImports;
 /**
- *
+ * This Enum defines the hierarchy of shipping types.
  * @author Jan P.C. Hanson
  *
  */

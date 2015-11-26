@@ -18,7 +18,7 @@ import tomoBay.model.services.AbstractService;
 import tomoBay.model.services.individualItemRefresh.IndividualItemRefreshService;
 
 /**
- *
+ * This factory creates an IndividualItemRefreshService.
  * @author Jan P.C. Hanson
  *
  */

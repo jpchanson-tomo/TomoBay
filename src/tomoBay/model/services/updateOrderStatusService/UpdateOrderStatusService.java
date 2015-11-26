@@ -1,7 +1,4 @@
 package tomoBay.model.services.updateOrderStatusService;
-
-import tomoBay.model.services.AbstractConfiguration;
-import tomoBay.model.services.AbstractService;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -17,9 +14,11 @@ import tomoBay.model.services.AbstractService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.model.services.AbstractConfiguration;
+import tomoBay.model.services.AbstractService;
 /**
- *
+ * This service is responsible for updateing the status of an order i.e. moving it from picking
+ * to packing to shipping etc.
  * @author Jan P.C. Hanson
  *
  */

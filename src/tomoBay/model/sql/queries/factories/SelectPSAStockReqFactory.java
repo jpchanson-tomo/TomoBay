@@ -18,12 +18,18 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
 import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.SelectPSAStockReqByPart;
 /**
- *
+ * creates a SelectPSAStockReqByPart query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.SelectPSAStockReqByPart}
  * @author Jan P.C. Hanson
  *
  */
 public class SelectPSAStockReqFactory implements AbstractQueryFactory
 {
+	/**
+	 * default ctor
+	 */
+	public SelectPSAStockReqFactory()
+	{super();}
 
 	/* (non-Javadoc)
 	 * @see openDMS.model.sql.queries.AbstractQueryFactory#make()

@@ -17,7 +17,8 @@ package tomoBay.presenters.factories;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.root.RootPresenter;
 /**
- *
+ * This class is creates an RootPresenter object
+ * @see {@link tomoBay.presenters.root.RootPresenter}
  * @author Jan P.C. Hanson
  *
  */

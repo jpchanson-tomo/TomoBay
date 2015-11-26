@@ -19,7 +19,12 @@ import java.util.List;
 
 import tomoBay.model.services.helpers.InvoiceableStatus;
 /**
- *
+ * This class contains functionality for performing a category based sorting algorithm first 
+ * ordering the data passed in by shipping type and the now sorted data by Pickeability. this 
+ * leads to data that is first displayed by pickeability then within each pickability type it 
+ * is then sorted by shipping type.
+ * 
+ * @see {@link tomoBay.presenters.helpers.ShippingPriority}
  * @author Jan P.C. Hanson
  *
  */
@@ -80,7 +85,8 @@ public class SortOrders
 	
 	/**
 	 * reassemble the categories into one list
-	 * @param input List<List<String[]>> 
+	 * @param input List<List<String[]>>  the list of catagories
+	 * @param size the size of the shipping priority enum
 	 * @return category sorted list of strings with previous sort order preserved
 	 */
 	private List<String[]> reAssembleCategories(List<List<String[]>> input, int size)

@@ -1,4 +1,4 @@
-package tomoBay.model.services;
+package tomoBay.model.services.updateOrderStatusService;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -16,24 +16,40 @@ package tomoBay.model.services;
  */
 import tomoBay.helpers.NoImports;
 /**
- * Allows the system to only accept runnable's that implement this
- * interface rather than all runnables. As well as providing an interface that all abstract 
- * service should conform to.
+ * This enum defines options for the various state variables in the database orders table, these
+ * can be used by the UpdateOrderConfiguration to provide the service with appropriate data.
  * @author Jan P.C. Hanson
  *
  */
 @SuppressWarnings("unused")
-public interface AbstractService extends Runnable
+public enum OrderStatus
 {
-	/**
-	 * The individual services equivalent of main
-	 */
-	public void run();
+	/****/
+	PICKING_STARTED(10),
+	/****/
+	PICKING_FINISHED(11),
+	/****/
+	PACKING_STARTED(20),
+	/****/
+	PACKING_FINISHED(21),
+	/****/
+	SHIPPING_STARTED(30),
+	/****/
+	SHIPPING_FINISHED(31);
+	
+	/**holder for the status code**/
+	private int status_M;
 	
 	/**
-	 * sets the configuration for this service. Not all services require configuration, see the
-	 * documentation for individual services.
-	 * @param config the AbstractConfiguration concrete object applicable to the concrete service.
+	 * private ctor so enum can hold int values
 	 */
-	public <E> void setConfig(AbstractConfiguration<E> config);
+	private OrderStatus(int status)
+	{this.status_M = status;}
+	
+	/**
+	 * retrieve the status code for a particular constant
+	 * @return integer status code
+	 */
+	public int getStatusCode()
+	{return this.status_M;}
 }

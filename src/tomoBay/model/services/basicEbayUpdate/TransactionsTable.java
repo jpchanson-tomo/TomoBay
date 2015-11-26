@@ -1,5 +1,4 @@
 package tomoBay.model.services.basicEbayUpdate;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -23,7 +22,7 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import com.ebay.soap.eBLBaseComponents.OrderType;
 import com.ebay.soap.eBLBaseComponents.TransactionType;
 /**
- *
+ * updates the database transactions table with information taken from the ebay orders API call.
  * @author Jan P.C. Hanson
  *
  */

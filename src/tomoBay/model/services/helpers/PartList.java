@@ -30,7 +30,7 @@ public class PartList
 	
 	/**
 	 * creates a part list with the partNoString provided.
-	 * @param partNoList a list of part numbers and quantities. acceptable formats are:
+	 * @param partNoString a list of part numbers and quantities. acceptable formats are:
 	 * 1234 or 1234(1)567(2)8910(3) or 1234(1)567(2)8910 [if 8910 has qty 1] or 1234 567 [if
 	 * both 1234 AND 567 have qty 1
 	 */
@@ -49,8 +49,9 @@ public class PartList
 	{return this.partNos_M[i];}
 	
 	/**
-	 * 
-	 * @return
+	 * get the part numbers as a whole
+	 * @return String[] where the elements correspond to the part numbers as ordered in the 
+	 * argument passed to the constructor.
 	 */
 	public String[] getPartNumbers()
 	{return this.partNos_M;}
@@ -63,8 +64,9 @@ public class PartList
 	{return this.partQty_M[i];}
 	
 	/**
-	 * 
-	 * @return
+	 * get the par quantities as a whole.
+	 * @return int[] with each element containing the quantity of the part associated with the
+	 * same index.
 	 */
 	public int[] getPartQtys()
 	{return this.partQty_M;}
@@ -89,7 +91,9 @@ public class PartList
 	//if string contains no brackets no spaces 
 	//if string contains brackets and spaces 
 	/**
-	 * 
+	 * orchestrates the conversion of the composite part number as provided in the constructor
+	 * to individual part numbers. depending on the format of the composite part number i.e. 
+	 * does it contain brackets and/or spaces etc. 
 	 * @param partNoString
 	 */
 	private void convert(String partNoString)
@@ -110,8 +114,9 @@ public class PartList
 	
 	
 	/**
-	 * 
-	 * @param input
+	 * convert a composite part number containing brackets and spaces i.e. there is more than 
+	 * one part number or a quantity larger than 1. uses regex W00t :)
+	 * @param input the composite part number
 	 */
 	private void bracketsNSpaces(String input)
 	{
@@ -138,8 +143,9 @@ public class PartList
 	}
 	
 	/**
-	 * 
-	 * @param input
+	 * does the conversion for an input string that contains brackets and spaces but where the 
+	 * last part number has no brackets i.e. quantity of 1 on last entry.
+	 * @param input the composite part number
 	 */
 	private void bracketsNSpacesTrunc(String input)
 	{
@@ -147,8 +153,9 @@ public class PartList
 		this.partQty_M[this.partQty_M.length-1] = 1;
 	}
 	/**
-	 * 
-	 * @param input
+	 * does the conversion for a composite part number where the composite contains spaces but
+	 * no brackets i.e. all part numbers have quantity 1.
+	 * @param input the composite part number
 	 */
 	private void spacesNoBrackets(String input)
 	{
@@ -158,8 +165,10 @@ public class PartList
 	}
 	
 	/**
-	 * 
-	 * @param input
+	 * does the conversion for a composite part number where the input contains no brackets or 
+	 * spaces i.e. the composite part number contains only one part number and it has a quantity
+	 * of 1.
+	 * @param input the composite part number
 	 */
 	private void noBracketsNoSpaces(String input)
 	{
@@ -168,8 +177,9 @@ public class PartList
 	}
 	
 	/**
-	 * 
-	 * @param input
+	 * if the part number is not convertible as defined by the rules of the convert method this
+	 * method is triggered. It provides an easily recognisable error code. 
+	 * @param input the composite part number.
 	 */
 	private void error(String input)
 	{

@@ -20,7 +20,8 @@ import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.helpers.SortOrders;
 /**
- *
+ * This class is responsible for providing the dynamic data to the orders section of the 
+ * sales area.
  * @author Jan P.C. Hanson
  *
  */

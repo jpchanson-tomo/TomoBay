@@ -1,5 +1,19 @@
 package tomoBay.model.sql.queries.concreteQueries;
-
+/** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -10,7 +24,9 @@ import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 
 /**
- *
+ * this class defines a database transaction comprised of two queries: the first updates the 
+ * ford specific parts table with available stock data based on partNo. The second query updates
+ * the items table with a note (assuming there is an error) given a particular item id.
  * @author Jan P.C. Hanson
  *
  */
@@ -35,10 +51,16 @@ public class UpdateAvailableStockFord implements AbstractDBQuery
 	
 	/**
 	 * execute the query
-	 * @param parameter element 1 = qty available, element 2 = partNo, element 3 = notes, 
-	 * element 4 = itemID, 
-	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * column the itemID, so each list element contains a String[1] which contains 
+	 * @param parameter an array of strings where the 0th element is the parameter for the 
+	 * first column, the 1st element is the parameter for the 2nd column and so on. 
+	 * The Ebay Orders Table only has 4 columns so any element above the 3rd element will be ignored.
+	 * - col1 = parts_ford.available:int(6)
+	 * - col2 = parts_ford.partNo:varchar(50)
+	 * - col3 = ebay_items.notes:varchar(60)
+	 * - col4 = ebay_items.itemID:bigint(11)
+	 * @return List<String[]> representing the results of the query. The list contains only 2 
+	 * columns the first is a resultcode for the first query, the second is the resultcode for
+	 * the second query.
 	 * @throws SQLException
 	 */
 	public List<String[]> execute(String[] parameter) throws SQLException

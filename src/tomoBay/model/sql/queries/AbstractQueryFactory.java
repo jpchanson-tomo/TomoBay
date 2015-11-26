@@ -14,12 +14,14 @@ package tomoBay.model.sql.queries;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
- *
+ * all Queries are instantiated using a factory and each of these factories must conform to this
+ * interface. 
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public interface AbstractQueryFactory
 {
 	public AbstractDBQuery make();

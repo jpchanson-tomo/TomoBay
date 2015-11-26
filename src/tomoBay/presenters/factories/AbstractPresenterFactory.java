@@ -16,7 +16,7 @@ package tomoBay.presenters.factories;
  */
 import tomoBay.presenters.AbstractPresenter;
 /**
- *
+ * This is the interface that all presenter factories should subscribe to.
  * @author Jan P.C. Hanson
  *
  */

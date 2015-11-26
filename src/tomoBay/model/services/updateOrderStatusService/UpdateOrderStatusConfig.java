@@ -1,4 +1,4 @@
-package tomoBay.model.services.testService;
+package tomoBay.model.services.updateOrderStatusService;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -15,29 +15,28 @@ package tomoBay.model.services.testService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.services.AbstractConfiguration;
-import tomoBay.model.services.AbstractService;
 /**
- * A test service.
+ * configuration object for the UpdateOrderStatusService, carries OrderStatus (enum) information
  * @author Jan P.C. Hanson
  *
  */
-public class TestService implements AbstractService
+public class UpdateOrderStatusConfig implements AbstractConfiguration<OrderStatus>
 {
-	int i = 0;
+
+	private OrderStatus status_M;
+	
 	/* (non-Javadoc)
-	 * @see java.lang.Runnable#run()
+	 * @see tomoBay.model.services.AbstractConfiguration#configure(java.lang.Object)
 	 */
 	@Override
-	public void run()
-	{
-		System.out.println("another sheduled task" +i);
-		++i;
-	}
+	public void configure(OrderStatus value)
+	{this.status_M = value;}
+
 	/* (non-Javadoc)
-	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)
+	 * @see tomoBay.model.services.AbstractConfiguration#configure()
 	 */
 	@Override
-	public <E> void setConfig(AbstractConfiguration<E> config)
-	{}
+	public OrderStatus configure()
+	{return this.status_M;}
 
 }

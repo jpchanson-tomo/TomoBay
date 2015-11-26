@@ -1,5 +1,4 @@
 package tomoBay.model.sql.queries;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -49,28 +48,80 @@ import tomoBay.model.sql.queries.factories.UpdatePSAStockReqFactory;
 import tomoBay.model.sql.queries.factories.UpdatePrestigeStockReqFactory;
 import tomoBay.model.sql.queries.factories.UpdateTotalItemsRequiredFactory;
 /**
- *
+ * This object is responsible for providing the user with Query objects as specified by the
+ * internal enum, which defines all possible queries that can be executed on the database.
+ * 
+ * These queries objects can either be created using the make() method or directly executed
+ * using the execute() method. 
+ * 
+ * acceptable input values for those methods is defined in QueryType.
  * @author Jan P.C. Hanson
  *
  */
 public class QueryInvoker
 {
-	/**Defensive enum to limit the acceptable inputs to the factory**/
+	/** Defensive enum defines the acceptable inputs to the factory**/
 	public enum QueryType 
 		{
-			INSERT_EBAY_BUYERS, INSERT_EBAY_ITEMS, INSERT_EBAY_ORDERS, INSERT_EBAY_TRANSACTIONS,
-			INSERT_PSA_STOCK_REQ, INSERT_FORD_STOCK_REQ, INSERT_PRESTIGE_STOCK_REQ,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertEbayBuyers}**/
+			INSERT_EBAY_BUYERS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertEbayItems}**/
+			INSERT_EBAY_ITEMS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertEbayOrders}**/
+			INSERT_EBAY_ORDERS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertEbayTransactions}**/
+			INSERT_EBAY_TRANSACTIONS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertPSAStockReq}**/
+			INSERT_PSA_STOCK_REQ,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertFordStockReq}**/
+			INSERT_FORD_STOCK_REQ,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertPrestigeStockReq}**/
+			INSERT_PRESTIGE_STOCK_REQ,
 			
-			SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS, SELECT_EBAY_ORDERS, SELECT_ITEMS_WITH_BLANK_FIELDS,
-			SELECT_EBAY_ITEMS, SELECT_PSA_STOCK_REQ, SELECT_FORD_STOCK_REQ, SELECT_PRESTIGE_STOCK_REQ,
-			SELECT_ALL_PSA_PARTS, SELECT_EBAY_ITEM_SPECIFIC, SELECT_TRANSACTION_BY_ORDERID,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayItemsNotInTransactions}**/
+			SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayOrders}**/
+			SELECT_EBAY_ORDERS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayItems}**/
+			SELECT_EBAY_ITEMS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectPSAStockReqByPart}**/
+			SELECT_PSA_STOCK_REQ,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectFordStockReqByPart}**/
+			SELECT_FORD_STOCK_REQ,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectPrestigeStockReqByPart}**/
+			SELECT_PRESTIGE_STOCK_REQ,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayItemSpecific}**/
+			SELECT_EBAY_ITEM_SPECIFIC,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectTransactionByOrder}**/
+			SELECT_TRANSACTION_BY_ORDERID,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrders}**/
 			SELECT_UNINVOICED_ORDERS,
 			
-			UPDATE_ITEM_BRAND_AND_PARTNO, UPDATE_TOTAL_ITEMS_REQUIRED, UPDATE_PSA_STOCK_REQ,
-			UPDATE_FORD_STOCK_REQ, UPDATE_PRESTIGE_STOCK_REQ, UPDATE_AVAILABLE_STOCK_PSA,
-			UPDATE_AVAILABLE_STOCK_FORD, UPDATE_AVAILABLE_STOCK_PRESTIGE, UPDATE_INVOICE_STATUS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo}**/
+			UPDATE_ITEM_BRAND_AND_PARTNO,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateTotalItemsRequired}**/
+			UPDATE_TOTAL_ITEMS_REQUIRED,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdatePSAStockReq}**/
+			UPDATE_PSA_STOCK_REQ,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateFordStockReq}**/
+			UPDATE_FORD_STOCK_REQ,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdatePrestigeStockReq}**/
+			UPDATE_PRESTIGE_STOCK_REQ,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPSA}**/
+			UPDATE_AVAILABLE_STOCK_PSA,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockFord}**/
+			UPDATE_AVAILABLE_STOCK_FORD,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPrestige}**/
+			UPDATE_AVAILABLE_STOCK_PRESTIGE,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateInvoiceStatus}**/
+			UPDATE_INVOICE_STATUS,
 			
-			CLEAR_PARTS_PSA, CLEAR_PARTS_FORD, CLEAR_PARTS_PRESTIGE
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsPSA}**/
+			CLEAR_PARTS_PSA,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsFord}**/
+			CLEAR_PARTS_FORD,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsPrestige}**/
+			CLEAR_PARTS_PRESTIGE
 		}
 	/**internal map holds factory objects created static final to make threadsafe**/
 	@SuppressWarnings("serial")

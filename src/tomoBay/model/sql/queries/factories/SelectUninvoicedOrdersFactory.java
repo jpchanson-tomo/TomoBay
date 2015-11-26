@@ -18,12 +18,18 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
 import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrders;
 /**
- *
+ * creates a SelectUninvoicedOrders query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrders}
  * @author Jan P.C. Hanson
  *
  */
 public class SelectUninvoicedOrdersFactory implements AbstractQueryFactory
 {
+	/**
+	 * default ctor
+	 */
+	public SelectUninvoicedOrdersFactory()
+	{super();}
 
 	/* (non-Javadoc)
 	 * @see openDMS.model.sql.queries.AbstractQueryFactory#make()

@@ -23,7 +23,8 @@ import java.util.List;
 import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 /**
- *
+ * This class represents a query that inserts transaction data into the transactions table of
+ * the database.
  * @author Jan P.C. Hanson
  *
  */
@@ -47,10 +48,13 @@ public class InsertEbayTransactions implements AbstractDBQuery
 	/**
 	 * execute the query
 	 * @param parameter an array of strings where the 0th element is the parameter for the 
-	 * first column, the 1st element is the parameter for the 2nd column and so on. The Ebay
-	 * Orders Table only has 4 columns so any element above the 3rd element will be ignored.
-	 * col1 =transactionID:bigint(20), col2=orderID:varchar(30), col3=itemID:bigint(20), 
-	 * col4=quantity:int(7) 
+	 * first column, the 1st element is the parameter for the 2nd column and so on. 
+	 * The Ebay Orders Table only has 4 columns so any element above the 3rd element will be ignored.
+	 * - col1 = transactionID:bigint(20)
+	 * - col2 = orderID:varchar(30)
+	 * - col3 = itemID:bigint(20) 
+	 * - col4 = quantity:int(7) 
+	 * - col5 = price:float
 	 * @return List<String[]> representing the results of the query. The list contains only 1 
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException

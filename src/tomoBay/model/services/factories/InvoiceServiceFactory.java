@@ -17,7 +17,7 @@ package tomoBay.model.services.factories;
 import tomoBay.model.services.AbstractService;
 import tomoBay.model.services.invoiceOrderService.InvoiceService;
 /**
- *
+ * This factory crea5tes an InvoiceService
  * @author Jan P.C. Hanson
  *
  */

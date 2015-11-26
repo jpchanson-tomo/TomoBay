@@ -1,11 +1,4 @@
 package tomoBay.model.services.individualItemRefresh;
-
-import tomoBay.helpers.BrandToCode;
-import tomoBay.model.services.helpers.PartList;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
-import tomoBay.model.winstock.Stock;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -21,9 +14,14 @@ import tomoBay.model.winstock.Stock;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.BrandToCode;
+import tomoBay.model.services.helpers.PartList;
+import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.winstock.Stock;
 /**
- *
+ * This class recalculates the available stock of a particular listing, by querying Winstock 
+ * for the appropriate information.
  * @author Jan P.C. Hanson
  *
  */

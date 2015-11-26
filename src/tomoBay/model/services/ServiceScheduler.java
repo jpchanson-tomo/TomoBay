@@ -21,7 +21,10 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /**
- *
+ * This class defines a service scheduler, it runs services intervalicaly, with the interval 
+ * being defined from the previous termination of that service thread. Contains a threadpool
+ * which should be changed to reflect the number of services stored in the queue, for small
+ * numbers of services; and set to a sensible value for larger numbers of services.
  * @author Jan P.C. Hanson
  *
  */

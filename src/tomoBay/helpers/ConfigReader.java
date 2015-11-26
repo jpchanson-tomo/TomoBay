@@ -22,12 +22,18 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 /**
- *
+ * naive config file reader. takes individual lines of a file and converts it to an array of 
+ * strings. 
  * @author Jan P.C. Hanson
  *
  */
 public class ConfigReader
 {
+	/**
+	 * Ddefault ctor
+	 */
+	public ConfigReader()
+	{super();}
 	/**
 	 * reads a config file and passes back an list of strings representing different lines 
 	 * in the config file specified. It is important when constructing config files to put the

@@ -26,7 +26,8 @@ import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.model.winstock.Stock;
 /**
- *
+ * This class calculates the invoicability of all orders currently on the system. (yes i know 
+ * invoicability isnt a word)
  * @author Jan P.C. Hanson
  *
  */

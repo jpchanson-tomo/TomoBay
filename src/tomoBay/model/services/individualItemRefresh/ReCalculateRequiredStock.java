@@ -26,7 +26,8 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import com.ebay.soap.eBLBaseComponents.ItemType;
 
 /**
- *
+ * This class re calculates the ammount of stock currently required to fulfill all orders on the
+ * system. it does this by querying the MySQL database used to store all app specific information. 
  * @author Jan P.C. Hanson
  *
  */
@@ -42,7 +43,7 @@ public class ReCalculateRequiredStock
 	 * calculate the amount of stock required to fulfil an order for a particular ebay item, 
 	 * update the database with the calculated values.
 	 * @param item The item to update.
-	 * @param partlist the partlist created by the composite part list retrieved from an ItemCall
+	 * @param partList the partlist created by the composite part list retrieved from an ItemCall
 	 * @param brand the brand string associaiated with this eBay Item.
 	 * @param partNo the composite part number taken from the ItemCall
 	 */

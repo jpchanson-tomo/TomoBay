@@ -1,5 +1,19 @@
 package tomoBay.model.sql.queries.concreteQueries;
-
+/** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +25,8 @@ import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 
 /**
- *
+ * This class represents a query that selects all data from the transactions table of the 
+ * database given a particular orderID.
  * @author Jan P.C. Hanson
  *
  */
@@ -34,9 +49,19 @@ public class SelectTransactionByOrder implements AbstractDBQuery
 	 * execute the query
 	 * @param parameter single element String array with that element being the order number to
 	 * look up.
-	 * @return String representing the results of the query. each item of the list is a seperate
-	 * row, each element of the String[] represents a column. String[0]=buyerID, String[1]=name,
-	 * String[2]=shippingAddress.
+	 * @return List<String[]> representing the results of the query. Each element in the list
+	 * represents a row of the database and each element of the String[] represents a field.
+	 * 
+	 * The available fields for each element of the string[] are:
+	 * - String[0] = transactionID
+	 * - String[1] = orderID
+	 * - String[2] = itemID
+	 * - String[3] = quantity
+	 * - String[4] = price
+	 * - String[5] = picked
+	 * - String[6] = packed
+	 * - String[7] = shipped
+	 * 
 	 * @throws SQLException
 	 */
 	public List<String[]> execute(String[] parameter) throws SQLException

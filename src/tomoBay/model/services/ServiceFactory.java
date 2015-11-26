@@ -24,7 +24,10 @@ import tomoBay.model.services.factories.InvoiceServiceFactory;
 import tomoBay.model.services.factories.StockUpdateServiceFactory;
 import tomoBay.model.services.factories.TestServiceFactory;
 /**
- *
+ * This factory is responsible for creating services which can be passed to the TriggerService
+ * or ServicesScheduler objects.
+ * 
+ * The types of object that can be created are defined by the internal enum.
  * @author Jan P.C. Hanson
  *
  */

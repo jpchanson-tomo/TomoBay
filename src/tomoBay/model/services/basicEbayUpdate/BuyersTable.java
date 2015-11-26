@@ -21,7 +21,7 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 
 import com.ebay.soap.eBLBaseComponents.OrderType;
 /**
- *
+ * updates the buyers table of the database with the information gleaned from an ebay api call
  * @author Jan P.C. Hanson
  *
  */

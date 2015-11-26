@@ -1,4 +1,12 @@
 package tomoBay.helpers;
+/**
+ * dummy import created so that classes that doxygen works correctly with classes that have no
+ * imports. If this is not imported then doxygen will use the copyright notice in places it shouldnt.
+ * @author Jan P.C. Hanson
+ *
+ */
+public class NoImports
+{}
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,14 +22,3 @@ package tomoBay.helpers;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-/**
- * dummy import created so that classes that doxyggen works correctly with classes that have no
- * imports. If this is not imported then doxygen will use the copyright notice in places it shouldnt.
- * @author Jan P.C. Hanson
- *
- */
-public class NoImports
-{
-
-}

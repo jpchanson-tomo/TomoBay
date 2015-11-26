@@ -20,13 +20,19 @@ import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.ClearPartsPrestige;
 
 /**
- *
+ * creates a ClearPartsPrestige query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsPrestige}
  * @author Jan P.C. Hanson
  *
  */
 public class ClearPartsPrestigeFactory implements AbstractQueryFactory
 {
-
+	/**
+	 * default ctor
+	 */
+	public ClearPartsPrestigeFactory()
+	{super();}
+	
 	/* (non-Javadoc)
 	 * @see openDMS.model.sql.queries.AbstractQueryFactory#make()
 	 */

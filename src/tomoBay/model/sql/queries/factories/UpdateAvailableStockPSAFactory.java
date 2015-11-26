@@ -18,12 +18,18 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
 import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPSA;
 /**
- *
+ * creates an UpdateAvailableStockPSA query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPSA}
  * @author Jan P.C. Hanson
  *
  */
 public class UpdateAvailableStockPSAFactory implements AbstractQueryFactory
 {
+	/**
+	 * default ctor
+	 */
+	public UpdateAvailableStockPSAFactory()
+	{super();}
 
 	/* (non-Javadoc)
 	 * @see openDMS.model.sql.queries.AbstractQueryFactory#make()

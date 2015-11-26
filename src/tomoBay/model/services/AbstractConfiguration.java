@@ -14,13 +14,15 @@ package tomoBay.model.services;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
- *
+ * This interface defines the form that every configuration object used to provide information
+ * to particular services should conform to.
  *
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public interface AbstractConfiguration<T>
 {
 	/**

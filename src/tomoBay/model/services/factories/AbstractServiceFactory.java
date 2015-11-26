@@ -16,7 +16,7 @@ package tomoBay.model.services.factories;
  */
 import tomoBay.model.services.AbstractService;
 /**
- *
+ * This interface is the construct that all the Service factories must conform to.
  * @author Jan P.C. Hanson
  *
  */

@@ -22,7 +22,7 @@ import com.ebay.sdk.TimeFilter;
 import com.ebay.sdk.call.GetSellerListCall;
 import com.ebay.soap.eBLBaseComponents.ItemType;
 /**
- *
+ *This represents an eBay API call requesting information about a listing.
  * @author Jan P.C. Hanson
  *
  */
@@ -32,8 +32,9 @@ public class ListingsCall extends AbstractAPIcall
 	GetSellerListCall listingsCall_M;
 
 	/**
-	 * @param usrToken
-	 * @param server
+	 * initialise the ListingsCall
+	 * @param usrToken your api key
+	 * @param server sandbox or production server string
 	 */
 	public ListingsCall(String usrToken, String server)
 	{
@@ -43,7 +44,15 @@ public class ListingsCall extends AbstractAPIcall
 	}
 	
 	
-	
+	/**
+	 * 
+	 * @param startDateRange the start of the date range to get information for
+	 * @param endDateRange the end of the date range to get information for
+	 * @return ItemType an eBay type that contains the information about a particular order.
+	 * @throws ApiException
+	 * @throws SdkException
+	 * @throws Exception
+	 */
 	public ItemType[] call(int startDateRange, int endDateRange) throws ApiException, SdkException, Exception
 	{
 		

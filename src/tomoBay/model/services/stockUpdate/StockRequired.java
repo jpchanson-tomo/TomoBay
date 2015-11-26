@@ -23,7 +23,8 @@ import tomoBay.model.services.stockUpdate.StockRequiredQueryFactory.StockQueryTy
 import tomoBay.model.sql.queries.QueryInvoker;
 /**
  * 
- *
+ * This class calculates the stock required for all orders on the system at the point in time 
+ * at which the service is run.
  * @author Jan P.C. Hanson
  *
  */
@@ -64,6 +65,8 @@ public class StockRequired
 	 * iterates through the parts list for a particular listing and adds the quantity of each
 	 * part number to the specific brands parts db.
 	 * @param parts
+	 * @param item list of items 
+	 * @param enumFactory the StockRequiredQueryFactory 
 	 * @throws SQLException
 	 */
 	private void iterateThroughPartsList(PartList parts, String[] item, StockRequiredQueryFactory enumFactory)
@@ -76,6 +79,10 @@ public class StockRequired
 	 * depending on whether the Select query returns results or not decides whether an
 	 * IndexOutOfBoundsException is thrown, which in turn decides whether the system will insert
 	 * or update a particular record.
+	 * @param parts
+	 * @param item list of items 
+	 * @param enumFactory the StockRequiredQueryFactory 
+	 * @param count the loop count variable
 	 */
 	private void insertORUpdate
 	(StockRequiredQueryFactory enumFactory, PartList parts, String[] item, int count) 

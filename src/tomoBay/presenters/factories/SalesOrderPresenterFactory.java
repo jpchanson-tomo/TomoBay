@@ -17,7 +17,8 @@ package tomoBay.presenters.factories;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.sales.SalesOrderPresenter;
 /**
- *
+ * This class is creates an SalesOrderPresenter object
+ * @see {@link tomoBay.presenters.sales.SalesOrderPresenter}
  * @author Jan P.C. Hanson
  *
  */

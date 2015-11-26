@@ -23,7 +23,11 @@ import java.util.List;
 import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 /**
- *
+ * This class represents a query that updates the 'invoiced' field of particular order on the 
+ * orders table of the database with appropriate data:
+ * - 0 = not invoiceable
+ * - 1 = partially invoiceable
+ * - 2 = order has been invoiced 
  * @author Jan P.C. Hanson
  *
  */
@@ -44,7 +48,7 @@ public class UpdateInvoiceStatus implements AbstractDBQuery
 	
 	/**
 	 * execute the query
-	 * @param The list contains only 2
+	 * @param parameter The list contains only 2
 	 * elements 1st element is invoiced status (0=not invoiceable, 1=partially invoiceable,
 	 * 3=invoiced), the second element is the orderID
 	 * @return List<String[]> representing the results of the query. The list contains only 1 

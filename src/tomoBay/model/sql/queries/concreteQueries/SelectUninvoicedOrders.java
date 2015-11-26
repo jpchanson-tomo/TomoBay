@@ -24,7 +24,10 @@ import java.util.List;
 import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 /**
- * 
+ * This class represents a query that selects all data from the orders table that is not
+ * currently invoiced as determined by the value of the 'invoiced' field where a value of 0 
+ * indicates that the order is not invoicable, a value of 1 indicates that the order is partially
+ * invoicable and a value of 2 indicates that the order has been invoiced.
  * @author Jan P.C. Hanson
  *
  */
@@ -46,9 +49,20 @@ public class SelectUninvoicedOrders implements AbstractDBQuery
 	/**
 	 * execute the query
 	 * @param parameter NOT USED for this query.
-	 * @return String representing the results of the query. each item of the list is a seperate
-	 * row, each element of the String[] represents a column. String[0]=buyerID, String[1]=name,
-	 * String[2]=shippingAddress.
+	 * @return List<String[]> representing the results of the query. Each element in the list
+	 * represents a row of the database and each element of the String[] represents a field.
+	 * 
+	 * The available fields for each element of the string[] are:
+	 * - String[0] = orderID
+	 * - String[1] = buyerID
+	 * - String[2] = salesRecNo
+	 * - String[3] = shippingType
+	 * - String[4] = createdTime
+	 * - String[5] = picked
+	 * - String[6] = packed
+	 * - String[7] = shipped
+	 * - String[8] = invoiced
+	 * 
 	 * @throws SQLException
 	 */
 	public List<String[]> execute(String[] parameter) throws SQLException

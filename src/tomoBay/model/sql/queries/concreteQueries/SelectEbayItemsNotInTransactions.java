@@ -24,7 +24,8 @@ import java.util.List;
 import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 /**
- *
+ * This class represents a query that selects all items (from the transactions table) that do 
+ * not currently exist in the items table.
  * @author Jan P.C. Hanson
  *
  */
@@ -49,12 +50,12 @@ public class SelectEbayItemsNotInTransactions implements AbstractDBQuery
 	
 	/**
 	 * execute the query
-	 * @param NOT USED
+	 * @param NotUsed NOT USED
 	 * @return List<String[]> representing the results of the query. The list contains only 1 
 	 * column the itemID, so each list element contains a String[1] which contains an itemID.
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public List<String[]> execute(String[] NotUsed) throws SQLException
 	{
 		this.initQuery();
 		this.connection_M.prepareStatement(query);

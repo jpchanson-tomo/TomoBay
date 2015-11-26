@@ -23,7 +23,8 @@ import java.util.List;
 import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 /**
- * 
+ * this class represents a query that updates the total number of items needed in the items table
+ * with data taken from the transactions transactions table. given a specific item id.
  * @author Jan P.C. Hanson
  *
  */
@@ -47,7 +48,10 @@ public class UpdateTotalItemsRequired implements AbstractDBQuery
 	
 	/**
 	 * execute the query
-	 * @param NOT USED
+	 * @param parameter an array of strings where the 0th element is the parameter for the 
+	 * first column, the 1st element is the parameter for the 2nd column and so on. 
+	 * This query only needs 1 input so any element above the 0th element will be ignored.
+	 * - col1 = required:int(6)
 	 * @return List<String[]> representing the results of the query. The list contains only 1 
 	 * column the itemID, so each list element contains a String[1] which contains 
 	 * @throws SQLException

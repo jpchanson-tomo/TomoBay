@@ -17,7 +17,7 @@ package tomoBay.model.services.factories;
 import tomoBay.model.services.AbstractService;
 import tomoBay.model.services.basicEbayUpdate.BasicEbayUpdateService;
 /**
- *
+ * This factory creates a BasicEbayUpdateService
  * @author Jan P.C. Hanson
  *
  */

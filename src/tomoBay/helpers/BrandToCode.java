@@ -14,12 +14,14 @@ package tomoBay.helpers;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
- *
+ * This helper class converts a generic brand string into a brand code specific to the winstock
+ * http api.
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public class BrandToCode
 {
 	/**

@@ -1,14 +1,4 @@
 package tomoBay.model.services.individualItemRefresh;
-
-import java.util.List;
-
-import tomoBay.helpers.BrandToCode;
-import tomoBay.model.services.helpers.PartList;
-import tomoBay.model.services.stockUpdate.StockRequiredQueryFactory;
-import tomoBay.model.services.stockUpdate.StockRequiredQueryFactory.StockQueryType;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -24,9 +14,17 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.List;
 
+import tomoBay.helpers.BrandToCode;
+import tomoBay.model.services.helpers.PartList;
+import tomoBay.model.services.stockUpdate.StockRequiredQueryFactory;
+import tomoBay.model.services.stockUpdate.StockRequiredQueryFactory.StockQueryType;
+import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /**
- *
+ * This class takes data provided to it and uses this to re populate the database so that
+ * the changes can be picked up by the system.
  * @author Jan P.C. Hanson
  *
  */
@@ -52,11 +50,11 @@ public class RePopulateEbayItem
 	}
 	
 	/**
-	 * 
-	 * @param parts
-	 * @param partNoDB
-	 * @param brand
-	 * @param itemID
+	 * This method resets the databases brand specific parts table.
+	 * @param parts the partlist to use
+	 * @param partNoDB String representing the database table associated with this part number
+	 * @param brand the brand of the part number
+	 * @param itemID the itemID of the listing as a whole.
 	 */
 	public void resetBrandTable(PartList parts, String partNoDB, String brand, long itemID)
 	{

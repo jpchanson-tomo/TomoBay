@@ -18,7 +18,8 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
 import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.UpdateTotalItemsRequired;
 /**
- *
+ * creates an UpdateTotalItemsRequired query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.UpdateTotalItemsRequired}
  * @author Jan P.C. Hanson
  *
  */

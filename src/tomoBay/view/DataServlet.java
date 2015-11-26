@@ -26,7 +26,9 @@ import javax.servlet.http.HttpServletResponse;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.PresenterFactory;
 /**
- *
+ * This class represents the Data servlet that the webApp can query for a particular presenter
+ * which will in turn provide dynamic data specific to the particular presenter requested i.e.
+ * for a specific area of the app.
  * @author Jan P.C. Hanson
  *
  */
@@ -36,8 +38,7 @@ public class DataServlet extends HttpServlet
 	private static final long serialVersionUID = -417534770555839323L;
 	
 	/**
-	 * instantiates a servlet using the views provided.
-	 * @param views
+	 * default ctor
 	 */
 	public DataServlet()
 	{super();}

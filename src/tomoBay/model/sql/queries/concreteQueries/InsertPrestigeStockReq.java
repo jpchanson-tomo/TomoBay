@@ -1,5 +1,19 @@
 package tomoBay.model.sql.queries.concreteQueries;
-
+/** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -10,7 +24,8 @@ import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 
 /**
- *
+ * This class represents a query that inserts required stock level data into the Prestige specific 
+ * parts table of the database.
  * @author Jan P.C. Hanson
  *
  */
@@ -33,9 +48,10 @@ public class InsertPrestigeStockReq implements AbstractDBQuery
 	/**
 	 * execute the query
 	 * @param parameter an array of strings where the 0th element is the parameter for the 
-	 * first column, the 1st element is the parameter for the 2nd column and so on. The Ebay
-	 * Orders Table only has 4 columns so any element above the 3rd element will be ignored.
-	 * col1 =partNo:VARCHAR(20), col2=required:INT(6)
+	 * first column, the 1st element is the parameter for the 2nd column and so on. 
+	 * The Ebay Orders Table only has 4 columns so any element above the 3rd element will be ignored.
+	 * - col1 = partNo:VARCHAR(20) 
+	 * - col2 = required:INT(6)
 	 * @return List<String[]> representing the results of the query. The list contains only 1 
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
@@ -44,7 +60,6 @@ public class InsertPrestigeStockReq implements AbstractDBQuery
 	{
 		List<String[]> res = new ArrayList<String[]>();
 		this.initQuery();
-		this.connection_M.prepareStatement(query);
 		this.statement_M.setString(1, parameter[0]); //partNumber
 		this.statement_M.setInt(2, Integer.parseInt(parameter[1])); //required amount
 		int resultCode = statement_M.executeUpdate();

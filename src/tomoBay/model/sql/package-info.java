@@ -1,20 +1,10 @@
-/** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 /**
- *
+ * This package contains all classes and sub packages relevant to interaction with the MySQL 
+ * database used by the application. The only class directly in this package is the
+ * ConnectionManager, which is responsible for creating and pooling connections, as well as
+ * handing them out to objects that ask for them. 
+ * 
+ * T
  * @author Jan P.C. Hanson
  *
  */

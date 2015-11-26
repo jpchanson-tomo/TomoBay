@@ -18,7 +18,7 @@ import tomoBay.helpers.XMLParser;
 import tomoBay.model.http.HttpGET;
 import tomoBay.model.http.HttpResponse;
 /**
- *
+ * This class is responsible for querying stock levels on winstock. 
  * @author Jan P.C. Hanson
  *
  */

@@ -17,7 +17,8 @@ package tomoBay.presenters.factories;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.error.ErrorPresenter;
 /**
- *
+ * This class is creates an ErrorPresenter object
+ * @see {@link tomoBay.presenters.error.ErrorPresenter}
  * @author Jan P.C. Hanson
  *
  */

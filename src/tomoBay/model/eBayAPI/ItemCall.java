@@ -21,7 +21,7 @@ import com.ebay.soap.eBLBaseComponents.DetailLevelCodeType;
 import com.ebay.soap.eBLBaseComponents.GetItemRequestType;
 import com.ebay.soap.eBLBaseComponents.ItemType;
 /**
- *
+ * This class represents an eBay API call requesting Item Data.
  * @author Jan P.C. Hanson
  *
  */
@@ -33,9 +33,9 @@ public class ItemCall extends AbstractAPIcall
 	GetItemRequestType itemreq_M;
 	
 	/**
-	 * constructor, calls superconstructor and 
-	 * @param usrToken
-	 * @param server
+	 * constructor, calls superconstructor and initialises with api key and server string
+	 * @param usrToken your api key
+	 * @param server either the url string of the production or sandbox server
 	 */
 	public ItemCall(String usrToken, String server)
 	{
@@ -48,7 +48,7 @@ public class ItemCall extends AbstractAPIcall
 	/**
 	 * This method performs a call to the API grabbing a item data for the specified 
 	 * itemID.
-	 * @param itemID the itemID found from the order data
+	 * @param itemId the itemID found from the order data
 	 * @return ItemType containing all item specific data
 	 * @throws Exception 
 	 * @throws SdkException 

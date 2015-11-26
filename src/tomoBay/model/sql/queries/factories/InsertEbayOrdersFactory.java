@@ -18,7 +18,8 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
 import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.InsertEbayOrders;
 /**
- *
+ * creates an InsertEbayOrders query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.InsertEbayOrders}
  * @author Jan P.C. Hanson
  *
  */

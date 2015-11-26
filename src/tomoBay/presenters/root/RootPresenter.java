@@ -19,7 +19,9 @@ import tomoBay.model.services.TriggerService;
 import tomoBay.model.services.ServiceFactory.ServiceType;
 import tomoBay.presenters.AbstractPresenter;
 /**
- * this is the presenter for the root of the webApp.
+ * this is the presenter for the root of the webApp. The root presenter is the 
+ * default presenter which is responsible for providing the dynamic information to be displayed
+ * on the dashboard.
  * @author Jan P.C. Hanson
  *
  */

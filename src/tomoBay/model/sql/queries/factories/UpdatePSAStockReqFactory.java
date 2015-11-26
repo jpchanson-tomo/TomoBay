@@ -18,12 +18,18 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
 import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.UpdatePSAStockReq;
 /**
- *
+ * creates an UpdatePSAStockReq query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.UpdatePSAStockReq}
  * @author Jan P.C. Hanson
  *
  */
 public class UpdatePSAStockReqFactory implements AbstractQueryFactory
 {
+	/**
+	 * default ctor
+	 */
+	public UpdatePSAStockReqFactory()
+	{super();}
 
 	/* (non-Javadoc)
 	 * @see openDMS.model.sql.queries.AbstractQueryFactory#make()

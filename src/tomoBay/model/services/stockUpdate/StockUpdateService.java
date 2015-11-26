@@ -24,7 +24,8 @@ import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.model.winstock.Stock;
 /**
- *
+ * This service updates the stock levels stored in the brand specific parts tables of the 
+ * database. 
  * @author Jan P.C. Hanson
  *
  */
@@ -71,17 +72,23 @@ public class StockUpdateService implements AbstractService
 	}
 
 	
-
+	/**
+	 * retreive the available stock level from winstock
+	 * @param partNo the part number to check the stock of
+	 * @param brandCode the winstock brand code used in conjunction with the part number to 
+	 * query the available stock level
+	 * @return int representing the amount of available stock
+	 */
 	private int getStockLevel(String partNo, String brandCode)
 	{return new Stock().requestStockLevel(partNo.toUpperCase(), brandCode);}
 	
 	/**
-	 * 
-	 * @param brandCode
-	 * @param partNo
-	 * @param available
-	 * @param notes
-	 * @param itemID
+	 * Inserts the data provided into a brand specific parts table in the database.
+	 * @param brandCode the brandCode identifying the brand specific table to insert data into.
+	 * @param partNo The part number to insert
+	 * @param available the available amount of stock
+	 * @param notes error codes and the like
+	 * @param itemID the itemID that the partNo is associated with.
 	 */
 	private void insertStockIntoDB
 	(String brandCode, String partNo, int available, String notes, String itemID)

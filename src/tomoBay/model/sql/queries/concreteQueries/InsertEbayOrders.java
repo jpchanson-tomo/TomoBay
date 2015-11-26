@@ -28,7 +28,7 @@ import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 
 /**
- *
+ * This class represents a class that inserts order data into the orders table of the database.
  * @author Jan P.C. Hanson
  *
  */
@@ -51,10 +51,13 @@ public class InsertEbayOrders implements AbstractDBQuery
 	/**
 	 * execute the query
 	 * @param parameter an array of strings where the 0th element is the parameter for the 
-	 * first column, the 1st element is the parameter for the 2nd column and so on. The Ebay
-	 * Orders Table only has 5 columns so any element above the 4th element will be ignored.
-	 * col1 =orderID:int(30), col2=buyerID:varchar(40), 
-	 * col3=salesRecNo:int(10), col4=shippingType:varchar(200), col5=createdTime:datetime 
+	 * first column, the 1st element is the parameter for the 2nd column and so on. 
+	 * The Ebay Orders Table only has 5 columns so any element above the 4th element will be ignored.
+	 * - col1 = orderID:int(30)
+	 * - col2 = buyerID:varchar(40)
+	 * - col3 = salesRecNo:int(10)
+	 * - col4 = shippingType:varchar(200)
+	 * - col5 = createdTime:datetime 
 	 * @return List<String[]> representing the results of the query. The list contains only 1 
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
@@ -65,7 +68,6 @@ public class InsertEbayOrders implements AbstractDBQuery
 		try
 		{
 			this.initQuery();
-			this.connection_M.prepareStatement(query);
 			this.statement_M.setString(1, parameter[0]);						//orderID
 			this.statement_M.setString(2, parameter[1]);						//buyerID
 			this.statement_M.setInt(3, Integer.parseInt(parameter[2]));			//salesRecNo

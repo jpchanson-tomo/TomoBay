@@ -20,7 +20,8 @@ import java.util.Map;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /**
- *
+ * This class is a factory that allows the selection and creation of enum constants useful to 
+ * the QueryInvoker factory class for the creation of queries relevant to the stockUpdateService
  * @author Jan P.C. Hanson
  *
  */
@@ -32,8 +33,9 @@ public class StockRequiredQueryFactory
 	public enum StockQueryType {UPDATE, INSERT, SELECT}
 	/**Holder for the brand currently set**/
 	private BrandCode currentBrand;
+	
 	/**
-	 * 
+	 * Map defining the QueryTypes associated with the enum constants defined in BrandCode
 	 */
 	@SuppressWarnings("serial")
 	private static final Map<BrandCode, QueryInvoker.QueryType[]> brandToQuery_M 
@@ -59,16 +61,17 @@ public class StockRequiredQueryFactory
 						});
 			}};
 	/**
-	 * 
-	 * @param brand
+	 * set the brand of the table that you wish to manipulate
+	 * @param brandCode the brand of the table that you wish to manipulate.
 	 */
 	public void setBrand(String brandCode)
 	{currentBrand = BrandCode.valueOf(brandCode);}
 	
 	/**
-	 * 
-	 * @param specificQuery
-	 * @return
+	 * create the enum constant for the query specified by the specificQuery parameter. 
+	 * @param specificQuery enum constant defining the query that you wish to create.
+	 * @return QueryType enum constant that can be used by the QueryInvoker to create the query
+	 * specified.
 	 */
 	public QueryType make(StockQueryType specificQuery)
 	{

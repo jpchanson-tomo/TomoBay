@@ -24,7 +24,8 @@ import java.util.List;
 import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 /**
- * 
+ *  This class represents a query that selects all data contained in the orders table of the
+ *  database sorted by the time it was created (in ascending order)
  * @author Jan P.C. Hanson
  *
  */
@@ -45,10 +46,21 @@ public class SelectEbayOrders implements AbstractDBQuery
 	
 	/**
 	 * execute the query
-	 * @param parameter NOT USED for this query.
-	 * @return String representing the results of the query. each item of the list is a seperate
-	 * row, each element of the String[] represents a column. String[0]=buyerID, String[1]=name,
-	 * String[2]=shippingAddress.
+	 * @param parameter NotUsed NOT USED 
+	 * @return List<String[]> representing the results of the query. Each element in the list
+	 * represents a row of the database and each element of the String[] represents a field.
+	 * 
+	 * The available fields for each element of the string[] are:
+	 * - String[0] = orderID
+	 * - String[1] = buyerID
+	 * - String[2] = salesRecNo
+	 * - String[3] = shippingType
+	 * - String[4] = createdTime
+	 * - String[5] = picked
+	 * - String[6] = packed
+	 * - String[7] = shipped
+	 * - String[8] = invoiced
+	 * 
 	 * @throws SQLException
 	 */
 	public List<String[]> execute(String[] parameter) throws SQLException

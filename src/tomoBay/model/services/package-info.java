@@ -1,20 +1,18 @@
-/** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 /**
- *
+ * This package contains all classes and sub packages relevant to Services that can be run 
+ * by the system, Ways of creating the services and ways to run them i.e. scheduled or triggered.
+ * 
+ * Scheduled services run intermittantly at set intervals (measured from the end of the previous
+ * run)
+ * 
+ * Triggered services run as they are requested.
+ * 
+ * Both ways of running services have their own thread pool. The scheduled services threadpool
+ * should be set to the number of services in the services queue. Whereas the triggered services
+ * thread pool should be set to a value that makes sense for the hardware that it is being run on.
+ * 
+ * This package also contains the ServiceFactory which, like other factories in this application
+ * is creates objects as specified by an internal enum which defines accepteable input values.
  * @author Jan P.C. Hanson
  *
  */

@@ -1,5 +1,4 @@
 package tomoBay.model.sql.queries.factories;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -20,12 +19,18 @@ import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.SelectPrestigeStockReqByPart;
 
 /**
- *
+ * Creates a SelectPrestigeStockReqByPart query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.SelectPrestigeStockReqByPart}
  * @author Jan P.C. Hanson
  *
  */
 public class SelectPrestigeStockReqFactory implements AbstractQueryFactory
 {
+	/**
+	 * default ctor
+	 */
+	public SelectPrestigeStockReqFactory()
+	{super();}
 
 	/* (non-Javadoc)
 	 * @see openDMS.model.sql.queries.AbstractQueryFactory#make()

@@ -17,7 +17,7 @@ package tomoBay.model.services.factories;
 import tomoBay.model.services.AbstractService;
 import tomoBay.model.services.stockUpdate.StockUpdateService;
 /**
- *
+ * This factory creates a StockUpdateService
  * @author Jan P.C. Hanson
  *
  */

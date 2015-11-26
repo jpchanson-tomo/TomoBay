@@ -16,7 +16,8 @@ package tomoBay.model.http;
  */
 
 /**
- *
+ * data object that contains the response code and the response message associated with a
+ * particular HttpGET request.
  * @author Jan P.C. Hanson
  *
  */

@@ -1,5 +1,19 @@
 package tomoBay.model.sql.queries.concreteQueries;
-
+/** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +25,9 @@ import tomoBay.model.sql.ConnectionManager;
 import tomoBay.model.sql.queries.AbstractDBQuery;
 
 /**
- *
+ * This class represents a query that selects the part number and required stock level from the 
+ * Prestige specific parts table of the database, given a particular part number.
+ * 
  * @author Jan P.C. Hanson
  *
  */
@@ -34,8 +50,13 @@ public class SelectPSAStockReqByPart implements AbstractDBQuery
 	 * execute the query
 	 * @param parameter the partNumber that you wish to query the required stock levels of encoded
 	 * as a 1 element String array i.e. String[0]=partNumber String.length=1.
-	 * @return List<String[]> representing the results of the query. The list contains only 2 
-	 * columns the partNumber and the required quantity so far.
+	 * @return List<String[]> representing the results of the query. Each element in the list
+	 * represents a row of the database and each element of the String[] represents a field.
+	 * 
+	 * The available fields for each element of the string[] are:
+	 * - String[0] = partNo
+	 * - String[1] = required
+	 * 
 	 * @throws SQLException
 	 */
 	public List<String[]> execute(String[] parameter) throws SQLException

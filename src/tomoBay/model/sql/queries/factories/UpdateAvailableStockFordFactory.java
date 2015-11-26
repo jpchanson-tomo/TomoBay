@@ -18,12 +18,18 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
 import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockFord;
 /**
- *
+ * creates an UpdateAvailableStockFord query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockFord}
  * @author Jan P.C. Hanson
  *
  */
 public class UpdateAvailableStockFordFactory implements AbstractQueryFactory
 {
+	/**
+	 * default ctor
+	 */
+	public UpdateAvailableStockFordFactory()
+	{super();}
 
 	/* (non-Javadoc)
 	 * @see openDMS.model.sql.queries.AbstractQueryFactory#make()

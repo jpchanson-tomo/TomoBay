@@ -29,7 +29,7 @@ import com.ebay.soap.eBLBaseComponents.ItemType;
 import com.ebay.soap.eBLBaseComponents.NameValueListType;
 import com.ebay.soap.eBLBaseComponents.OrderType;
 /**
- *
+ * updates the items table with the information gleaned from a specific ebay item call.
  * @author Jan P.C. Hanson
  *
  */
@@ -105,7 +105,6 @@ public class ItemsTable
 	/**
 	 * add up all the distinct items and update with the total number of those items on order
 	 * taken from the transactions table.
-	 * @param items
 	 * @throws SQLException
 	 */
 	private static void requiredQty() throws SQLException

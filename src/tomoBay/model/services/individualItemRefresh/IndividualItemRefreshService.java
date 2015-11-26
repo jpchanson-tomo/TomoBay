@@ -32,7 +32,9 @@ import tomoBay.model.services.helpers.PartList;
 import com.ebay.soap.eBLBaseComponents.ItemType;
 import com.ebay.soap.eBLBaseComponents.NameValueListType;
 /**
- *
+ * This service updates an individual item by re querying the eBay API for item information. It
+ * requires information provided by an IndividualItemRefreshConfiguration object passed to its
+ * setConfig method in order to function properly.
  * @author Jan P.C. Hanson
  *
  *

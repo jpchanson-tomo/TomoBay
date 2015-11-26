@@ -26,7 +26,10 @@ import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.util.resource.Resource;
 /**
+ * This class defines the setup of the Jetty embedded http server, servlets, resources, security
+ * and many other features can be introduced from here.
  * 
+ * the server operates on a port specified as a command line argument.
  * @author Jan P.C. Hanson
  *
  */
@@ -39,9 +42,10 @@ public class HttpServer
 	{super();}
 	
 	/**
-	 * 
-	 * @param port
-	 * @return
+	 * This starts the http servlet with 2 context handler: 1 is a resource handler that is 
+	 * responsible for providing access to the static html and the other is the DataServlet 
+	 * which is what can be queried by the WebApp for specific presenters.
+	 * @param port the port to run the server on
 	 * @throws MalformedURLException 
 	 */
 	public void start(int port) throws MalformedURLException

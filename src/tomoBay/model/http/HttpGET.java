@@ -22,7 +22,8 @@ import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 /**
- *
+ * provides functionality to perform a HTTP GET request and recieve a HttpResponse object in 
+ * response.
  * @author Jan P.C. Hanson
  *
  */
@@ -96,6 +97,11 @@ public class HttpGET
 		{return "GET request rejected:" + responseCode + " error";}
 	}
 	
+	/**
+	 * converts a stacktrace to a string that can be printed to the screen
+	 * @param e the exception to convert the stack trace of
+	 * @return String containing the stack trace of the Exception specified.
+	 */
 	private String stackTraceToString(Exception e)
 	{
 		StringWriter stringWriter = new StringWriter();

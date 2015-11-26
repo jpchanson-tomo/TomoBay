@@ -1,5 +1,4 @@
 package tomoBay.model.sql.queries.factories;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -19,7 +18,8 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
 import tomoBay.model.sql.queries.AbstractQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo;
 /**
- *
+ * create an UpdateItemBrandAndPartNo query object
+ * @see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo}
  * @author Jan P.C. Hanson
  *
  */

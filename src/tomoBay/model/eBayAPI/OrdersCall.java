@@ -21,9 +21,8 @@ import com.ebay.soap.eBLBaseComponents.DetailLevelCodeType;
 import com.ebay.soap.eBLBaseComponents.GetOrdersRequestType;
 import com.ebay.soap.eBLBaseComponents.OrderType;
 import com.ebay.soap.eBLBaseComponents.SortOrderCodeType;
-
 /**
- *
+ * This represents an eBay API call that requests information about an order
  * @author Jan P.C. Hanson
  *
  */
@@ -50,8 +49,7 @@ public class OrdersCall extends AbstractAPIcall
 	/**
 	 * This method performs a call to the API grabbing a list of orders for the specified 
 	 * number of days.
-	 * @param data an ApiOrderData object to populate with the orders 
-	 * @param numOfDays
+	 * @param numOfDays the number of days to get data for
 	 * @return OrderType[] and array where each element contains order specific data type
 	 * @throws Exception 
 	 * @throws SdkException 

@@ -22,7 +22,9 @@ import tomoBay.presenters.factories.ErrorPresenterFactory;
 import tomoBay.presenters.factories.RootPresenterFactory;
 import tomoBay.presenters.factories.SalesOrderPresenterFactory;
 /**
- *
+ * This class defines a factory method that creates the different types of presenter. The types
+ * of presenter that can be created are defined in the PresenterType enum and the string that
+ * is passed to the make() method **MUST** be equivalent to one of the predefined enum constants. 
  * @author Jan P.C. Hanson
  *
  */
@@ -31,7 +33,12 @@ public class PresenterFactory
 	/** defencive enum limits the number of inputs to the make method**/
 	public enum PresenterType 
 			{
-				ERROR_PRESENTER, ROOT_PRESENTER, SALES_ORDER_PRESENTER
+				/**@see {@link tomoBay.presenters.error.ErrorPresenter}**/
+				ERROR_PRESENTER,
+				/**@see {@link tomoBay.presenters.root.RootPresenter}**/
+				ROOT_PRESENTER,
+				/**@see {@link tomoBay.presenters.sales.SalesOrderPresenter}**/
+				SALES_ORDER_PRESENTER
 			}
 	
 	/****/
