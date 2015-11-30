@@ -15,8 +15,8 @@ package tomoBay.model.winstock;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.helpers.XMLParser;
-import tomoBay.model.http.HttpGET;
-import tomoBay.model.http.HttpResponse;
+import tomoBay.model.net.HttpGET;
+import tomoBay.model.net.HttpResponse;
 /**
  * This class is responsible for querying stock levels on winstock. 
  * @author Jan P.C. Hanson

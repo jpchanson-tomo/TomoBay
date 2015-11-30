@@ -1,4 +1,4 @@
-package tomoBay.model.winstock.sockets;
+package tomoBay.model.net;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
