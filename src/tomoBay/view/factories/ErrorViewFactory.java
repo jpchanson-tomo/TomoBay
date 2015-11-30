@@ -1,4 +1,6 @@
-package tomoBay.presenters;
+package tomoBay.view.factories;
+
+import tomoBay.view.AbstractView;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,21 +16,28 @@ package tomoBay.presenters;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.helpers.NoImports;
-import tomoBay.view.AbstractView;
+import tomoBay.view.ErrorView;
+
 /**
- * provides an interface that all presenters should subscribe to.
- * 
+ *
  * @author Jan P.C. Hanson
  *
  */
-@SuppressWarnings("unused")
-public interface AbstractPresenter
+public class ErrorViewFactory implements AbstractViewFactory
 {
 	/**
-	 * this method is called when you actually want to present the information contained in the
-	 * view/presenter to the servlet 
-	 * @return String representing the html contained in the view/presenter
+	 * default ctor.
 	 */
-	public String present(AbstractView view);
+	public ErrorViewFactory()
+	{super();}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.view.factories.AbstractViewFactory#make()
+	 */
+	@Override
+	public AbstractView make()
+	{
+		return new ErrorView();
+	}
+
 }

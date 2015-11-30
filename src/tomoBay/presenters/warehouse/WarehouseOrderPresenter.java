@@ -1,6 +1,7 @@
 package tomoBay.presenters.warehouse;
 
 import tomoBay.presenters.AbstractPresenter;
+import tomoBay.view.AbstractView;
 
 /**
  * This class is responsible for providing the dynamic information specific to the picking 
@@ -20,7 +21,7 @@ public class WarehouseOrderPresenter implements AbstractPresenter
 	 * @see openDMS.presenters.AbstractPresenter#present()
 	 */
 	@Override
-	public String present()
+	public String present(AbstractView view)
 	{
 		// TODO Auto-generated method stub
 		return null;

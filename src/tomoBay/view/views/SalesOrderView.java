@@ -1,4 +1,4 @@
-package tomoBay.presenters.sales;
+package tomoBay.view.views;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,49 +14,28 @@ package tomoBay.presenters.sales;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.List;
-
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.presenters.AbstractPresenter;
-import tomoBay.presenters.helpers.SortOrders;
 import tomoBay.view.AbstractView;
+import java.util.List;
 /**
- * This class is responsible for providing the dynamic data to the orders section of the 
- * sales area.
+ * This class is responsible for formatting the data passed to it by the SalesOrderPresenter and
+ * providing a string that can be displayed by the AJAX requestor.
  * @author Jan P.C. Hanson
  *
  */
-public class SalesOrderPresenter implements AbstractPresenter
+public class SalesOrderView implements AbstractView
 {
 	/**
-	 * default constructor
+	 * 
 	 */
-	public SalesOrderPresenter()
+	public SalesOrderView()
 	{super();}
 	
-	/* (non-Javadoc)
-	 * @see openDMS.presenters.AbstractPresenter#present(openDMS.view.views.AbstractView)
-	 */
-	@Override
-	public String present(AbstractView view)
-	{
-		String output = "";
-		List<String[]> rows = QueryInvoker.execute
-				(QueryInvoker.QueryType.SELECT_EBAY_ORDERS,new String[] {""});
-		
-		rows = new SortOrders().sortDefault(rows);
-		
-		output += view.format(rows);
-		
-		return output;
-	}
-
 	/**
 	 * 
 	 * @param input
 	 * @return
 	 */
-	private String doStuff(List<String[]> input) 
+	public String format(List<String[]> input) 
 	{
 		String result = "";
 			

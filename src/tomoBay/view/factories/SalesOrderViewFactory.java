@@ -1,4 +1,4 @@
-package tomoBay.presenters.root;
+package tomoBay.view.factories;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,38 +14,28 @@ package tomoBay.presenters.root;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.services.ServiceFactory;
-import tomoBay.model.services.TriggerService;
-import tomoBay.model.services.ServiceFactory.ServiceType;
-import tomoBay.presenters.AbstractPresenter;
 import tomoBay.view.AbstractView;
+import tomoBay.view.views.SalesOrderView;
 /**
- * this is the presenter for the root of the webApp. The root presenter is the 
- * default presenter which is responsible for providing the dynamic information to be displayed
- * on the dashboard.
+ *
  * @author Jan P.C. Hanson
  *
  */
-public class RootPresenter implements AbstractPresenter
+public class SalesOrderViewFactory implements AbstractViewFactory
 {
 	/**
-	 * default constructor
+	 * default ctor
 	 */
-	public RootPresenter()
+	public SalesOrderViewFactory()
 	{super();}
-	
+
 	/* (non-Javadoc)
-	 * @see openDMS.presenters.AbstractPresenter#present(openDMS.view.views.AbstractView)
+	 * @see tomoBay.presenters.factories.AbstractPresenterFactory#make()
 	 */
 	@Override
-	public String present(AbstractView view)
+	public AbstractView make()
 	{
-		String output = "";
-		
-		
-		TriggerService.start(ServiceFactory.make(ServiceType.TEST_SERVICE));
-		System.out.println("Root page loaded");
-		
-		return output;
+		return new SalesOrderView();
 	}
+
 }

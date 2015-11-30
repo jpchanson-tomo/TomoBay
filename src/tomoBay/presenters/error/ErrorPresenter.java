@@ -15,6 +15,7 @@ package tomoBay.presenters.error;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.presenters.AbstractPresenter;
+import tomoBay.view.AbstractView;
 
 /**
  * This class provides the presenter for the scenario in which the designer of the frontend
@@ -34,7 +35,7 @@ public class ErrorPresenter implements AbstractPresenter
 	 * @see openDMS.presenters.AbstractPresenter#present()
 	 */
 	@Override
-	public String present()
+	public String present(AbstractView view)
 	{
 		return "<h1>You have requested data that doesnt exist</h1>"
 				+ "<p>check the spelling of your query string parameter</p>";
