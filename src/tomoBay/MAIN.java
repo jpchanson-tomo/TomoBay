@@ -42,8 +42,8 @@ public class MAIN
 //		services.add(ServiceFactory.make(ServiceFactory.ServiceType.TEST_SERVICE), 0, 1);
 //		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE), 0, 10);
 //		
-//		HttpServer uiServer = new HttpServer();
-//		uiServer.start(Integer.parseInt(args[0]));
+		HttpServer uiServer = new HttpServer();
+		uiServer.start(Integer.parseInt(args[0]));
 //		
 //		services.start();
 		

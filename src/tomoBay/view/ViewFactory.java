@@ -14,7 +14,12 @@ package tomoBay.view;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.presenters.AbstractPresenter;
+import tomoBay.presenters.error.ErrorPresenter;
+import tomoBay.presenters.root.RootPresenter;
+import tomoBay.presenters.sales.SalesOrderPresenter;
 import tomoBay.view.factories.SalesOrderViewFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,26 +33,17 @@ import tomoBay.view.factories.RootViewFactory;
  */
 public class ViewFactory
 {
-	/** defencive enum limits the number of inputs to the make method**/
-	public enum ViewType 
-			{
-				/**@see {@link tomoBay.presenters.error.ErrorPresenter}**/
-				ERROR_VIEW,
-				/**@see {@link tomoBay.presenters.root.RootPresenter}**/
-				ROOT_VIEW,
-				/**@see {@link tomoBay.presenters.sales.SalesOrderPresenter}**/
-				SALES_ORDER_VIEW
-			}
-	
-	/****/
+
+			
 	@SuppressWarnings("serial")
-	private static final Map<ViewType, AbstractViewFactory> presenterMap_M 
-						= new HashMap<ViewType, AbstractViewFactory>()
+	private static final Map<Class<? extends AbstractPresenter>, AbstractViewFactory> viewMap_M 
+						= new HashMap<Class<? extends AbstractPresenter>, AbstractViewFactory>()
 			{{
-				put(ViewFactory.ViewType.ERROR_VIEW, new ErrorViewFactory());
-				put(ViewFactory.ViewType.ROOT_VIEW, new RootViewFactory());
-				put(ViewFactory.ViewType.SALES_ORDER_VIEW, new SalesOrderViewFactory());
+				put(ErrorPresenter.class, new ErrorViewFactory());
+				put(RootPresenter.class, new RootViewFactory());
+				put(SalesOrderPresenter.class, new SalesOrderViewFactory());
 			}};
+			
 	/**
 	 * default constructor
 	 */
@@ -59,15 +55,15 @@ public class ViewFactory
 	 * @param presenter the enum value defined in the internal enum.
 	 * @return AbstractPresenter the presenter requested.
 	 */
-	public static AbstractView make(String presenter)
+	public static AbstractView make(AbstractPresenter presenter)
 	{
 		try
-		{return ViewFactory.presenterMap_M.get(ViewFactory.ViewType.valueOf(presenter)).make();}
+		{return ViewFactory.viewMap_M.get(presenter.getClass()).make();}
 		
 		catch(IllegalArgumentException e)
 		{
-			return ViewFactory.presenterMap_M.get
-				(ViewFactory.ViewType.ERROR_VIEW).make();
+			return ViewFactory.viewMap_M.get
+				(ErrorPresenter.class).make();
 		}
 	}
 

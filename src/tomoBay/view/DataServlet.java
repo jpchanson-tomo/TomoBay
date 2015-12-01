@@ -54,7 +54,7 @@ public class DataServlet extends HttpServlet
 		PrintWriter out = response.getWriter();
 		String data = request.getParameter("data");
 		AbstractPresenter presenter = PresenterFactory.make(data);
-		AbstractView view = ViewFactory.make(data);
+		AbstractView view = ViewFactory.make(presenter);
 		
 		out.print(presenter.present(view));
 		
