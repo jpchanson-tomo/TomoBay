@@ -18,23 +18,25 @@ import tomoBay.view.AbstractView;
 import java.util.List;
 /**
  * This class is responsible for formatting the data passed to it by the SalesOrderPresenter and
- * providing a string that can be displayed by the AJAX requestor.
+ * providing a string that can be displayed by the AJAX requestor. The data is formatted as a 
+ * 6 column html table with the column headings: type=checkbox class=chckbl, 'Name' class=name,
+ * 'Date' class=date, 'shippingType' class=shippingType, 'Details' class=details contains button,
+ * 'Status' class=status.
  * @author Jan P.C. Hanson
  *
  */
 public class SalesOrderView implements AbstractView
 {
 	/**
-	 * 
+	 * default ctor.
 	 */
 	public SalesOrderView()
 	{super();}
 	
-	/**
-	 * 
-	 * @param input
-	 * @return
+	/* (non-Javadoc)
+	 * @see openDMS.view.views.AbstractView#format(openDMS.view.views.AbstractView)
 	 */
+	@Override
 	public String format(List<String[]> input) 
 	{
 		String result = "";
@@ -56,9 +58,11 @@ public class SalesOrderView implements AbstractView
 	}
 	
 	/**
-	 * 
-	 * @param invoiced
-	 * @return
+	 * defines a set of set of String values that equate to the 'invoiced' values grabbed from the
+	 * database.
+	 * @param invoiced int between 0 and 3 grabbed from the database: 0='Pickeable', 1='Partially 
+	 * pickable', 2='Unpickeable', 3='ERROR'.
+	 * @return one of the above string values Pickeable/Partial/Unpickeable/ERROR.
 	 */
 	private String pickeability(String invoiced)
 	{

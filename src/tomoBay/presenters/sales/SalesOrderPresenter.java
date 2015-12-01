@@ -20,9 +20,10 @@ import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.helpers.SortOrders;
 import tomoBay.view.AbstractView;
+import tomoBay.view.ViewFactory;
 /**
  * This class is responsible for providing the dynamic data to the orders section of the 
- * sales area.
+ * sales 'Orders' area.
  * @author Jan P.C. Hanson
  *
  */
@@ -50,46 +51,11 @@ public class SalesOrderPresenter implements AbstractPresenter
 		
 		return output;
 	}
- 
-	
-	/**
-	 * 
-	 * @param input
-	 * @return
+
+	/* (non-Javadoc)
+	 * @see tomoBay.presenters.AbstractPresenter#accept(tomoBay.view.ViewFactory)
 	 */
-	private String doStuff(List<String[]> input) 
-	{
-		String result = "";
-			
-			for (String[] cols : input)
-			{
-				result+="<tr class='"+cols[0]+"'>\n";
-				result+="<td>"+ "<input type='checkbox' class = 'chcktbl filterable-cell ' />"  + "</td>\n";
-				result+="<td class='name filterable-cell '>"+ cols[1].trim() + "</td>\n";
-				result+="<td class='date filterable-cell '>"+ cols[4].trim() + "</td>\n";
-				result+="<td class='shippingType filterable-cell '>"+ cols[3].trim() + "</td>\n";
-				result+="<td class='details filterable-cell '>"+ "<button class='btn btn-primary' value='"+cols[0].trim()+"'>View</button>" + "</td>\n";
-				result+="<td class='status filterable-cell '>"+ this.pickeability(cols[8]) + "</td>";
-				result+="</tr>\n";
-			}
-			
-		result+="</table>";
-		return  result;
-	}
-	
-	/**
-	 * 
-	 * @param invoiced
-	 * @return
-	 */
-	private String pickeability(String invoiced)
-	{
-		String pickeability="";
-		if(Integer.parseInt(invoiced)==3){pickeability = "ERROR";}
-		if(Integer.parseInt(invoiced)==2){pickeability = "Unpickeable";}
-		if(Integer.parseInt(invoiced)==1){pickeability = "Partial";}
-		if(Integer.parseInt(invoiced)==0){pickeability = "Pickeable";}
-		
-		return pickeability;
-	}
+	@Override
+	public AbstractView accept(ViewFactory viewFactory)
+	{return viewFactory.visit(this);}
 }

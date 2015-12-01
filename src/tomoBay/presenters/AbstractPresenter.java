@@ -14,21 +14,30 @@ package tomoBay.presenters;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.helpers.NoImports;
 import tomoBay.view.AbstractView;
+import tomoBay.view.ViewFactory;
 /**
  * provides an interface that all presenters should subscribe to.
  * 
  * @author Jan P.C. Hanson
  *
  */
-@SuppressWarnings("unused")
 public interface AbstractPresenter
 {
 	/**
-	 * this method is called when you actually want to present the information contained in the
-	 * view/presenter to the servlet 
-	 * @return String representing the html contained in the view/presenter
+	 * this method is called when you actually want to present the information to be displayed
+	 * to the appropriate view for formatting returning a string that can be displayed by the
+	 * servlet.
+	 * @return String representing the html formatted information presented to the view by this
+	 * presenter.
 	 */
 	public String present(AbstractView view);
+	
+	/**
+	 * double dispatch method that allows the presenter to be responsible for creation of its
+	 * associated view, through the use of the ViewFactory object passed in the arguments.
+	 * @param viewFactory a ViewFactory object.
+	 * @return AbstractView the view associated with this particular presenter.
+	 */
+	public AbstractView accept(ViewFactory viewFactory);
 }

@@ -16,6 +16,7 @@ package tomoBay.presenters.error;
  */
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.view.AbstractView;
+import tomoBay.view.ViewFactory;
 
 /**
  * This class provides the presenter for the scenario in which the designer of the frontend
@@ -40,5 +41,12 @@ public class ErrorPresenter implements AbstractPresenter
 		return "<h1>You have requested data that doesnt exist</h1>"
 				+ "<p>check the spelling of your query string parameter</p>";
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.presenters.AbstractPresenter#accept(tomoBay.view.ViewFactory)
+	 */
+	@Override
+	public AbstractView accept(ViewFactory viewFactory)
+	{return viewFactory.visit(this);}
 
 }

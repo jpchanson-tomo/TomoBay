@@ -1,4 +1,6 @@
-package tomoBay.view.factories;
+package tomoBay.view.views;
+
+import java.util.List;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,28 +16,25 @@ package tomoBay.view.factories;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 import tomoBay.view.AbstractView;
-import tomoBay.view.views.RootView;
+
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class RootViewFactory implements AbstractViewFactory
+public class RootView implements AbstractView
 {
-	/**
-	 * default ctor
-	 */
-	public RootViewFactory()
-	{super();}
-	
+
 	/* (non-Javadoc)
-	 * @see tomoBay.presenters.factories.AbstractPresenterFactory#make()
+	 * @see tomoBay.view.AbstractView#format(java.util.List)
 	 */
 	@Override
-	public AbstractView make()
+	public String format(List<String[]> input)
 	{
-		return new RootView();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

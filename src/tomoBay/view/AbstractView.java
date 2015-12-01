@@ -18,7 +18,8 @@ import java.util.List;
  */
 
 /**
- * this is the interface that all views must subscribe to.
+ * this is the interface that all views must subscribe to. Views are responsible for formatting
+ * the information provided to them by the presenters.
  * @author Jan P.C. Hanson
  *
  */
@@ -28,7 +29,7 @@ public interface AbstractView
 	 * this method is responsible for formatting the data as required for the specific derived
 	 * view
 	 * @param input a List<String[]> containing the data to be formatted.
-	 * @return String that can be outputed to the AJAX requestor.
+	 * @return String that can be output to the AJAX requester.
 	 */
 	public String format(List<String[]> input);
 }

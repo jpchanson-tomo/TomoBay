@@ -19,6 +19,7 @@ import tomoBay.model.services.TriggerService;
 import tomoBay.model.services.ServiceFactory.ServiceType;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.view.AbstractView;
+import tomoBay.view.ViewFactory;
 /**
  * this is the presenter for the root of the webApp. The root presenter is the 
  * default presenter which is responsible for providing the dynamic information to be displayed
@@ -48,4 +49,11 @@ public class RootPresenter implements AbstractPresenter
 		
 		return output;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.presenters.AbstractPresenter#accept(tomoBay.view.ViewFactory)
+	 */
+	@Override
+	public AbstractView accept(ViewFactory viewFactory)
+	{return viewFactory.visit(this);}
 }

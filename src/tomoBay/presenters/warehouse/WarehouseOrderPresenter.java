@@ -2,6 +2,7 @@ package tomoBay.presenters.warehouse;
 
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.view.AbstractView;
+import tomoBay.view.ViewFactory;
 
 /**
  * This class is responsible for providing the dynamic information specific to the picking 
@@ -26,5 +27,12 @@ public class WarehouseOrderPresenter implements AbstractPresenter
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.presenters.AbstractPresenter#accept(tomoBay.view.ViewFactory)
+	 */
+	@Override
+	public AbstractView accept(ViewFactory viewFactory)
+	{return viewFactory.visit(this);}
 
 }

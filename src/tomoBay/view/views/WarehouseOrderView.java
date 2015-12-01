@@ -1,6 +1,8 @@
-package tomoBay.view;
+package tomoBay.view.views;
 
 import java.util.List;
+
+import tomoBay.view.AbstractView;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -22,7 +24,7 @@ import java.util.List;
  * @author Jan P.C. Hanson
  *
  */
-public class RootView implements AbstractView
+public class WarehouseOrderView implements AbstractView
 {
 
 	/* (non-Javadoc)

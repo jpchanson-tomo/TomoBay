@@ -14,57 +14,65 @@ package tomoBay.view;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.error.ErrorPresenter;
 import tomoBay.presenters.root.RootPresenter;
+import tomoBay.presenters.sales.SalesHistoryPresenter;
 import tomoBay.presenters.sales.SalesOrderPresenter;
-import tomoBay.view.factories.SalesOrderViewFactory;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import tomoBay.view.factories.AbstractViewFactory;
-import tomoBay.view.factories.ErrorViewFactory;
-import tomoBay.view.factories.RootViewFactory;
+import tomoBay.presenters.warehouse.WarehouseOrderPresenter;
+import tomoBay.view.views.ErrorView;
+import tomoBay.view.views.RootView;
+import tomoBay.view.views.SalesHistoryView;
+import tomoBay.view.views.SalesOrderView;
+import tomoBay.view.views.WarehouseOrderView;
 /**
- *
+ * This class is the visitor in a visitor/double dispatch type setup where the AbstractPresenter
+ * concrete classes are the visitables and contain the corresponding accept() methods. This 
+ * visitor acts as a view factory allowing the presenters to be responsible for the creation of
+ * their own views.
+ * 
  * @author Jan P.C. Hanson
  *
  */
 public class ViewFactory
 {
-
-			
-	@SuppressWarnings("serial")
-	private static final Map<Class<? extends AbstractPresenter>, AbstractViewFactory> viewMap_M 
-						= new HashMap<Class<? extends AbstractPresenter>, AbstractViewFactory>()
-			{{
-				put(ErrorPresenter.class, new ErrorViewFactory());
-				put(RootPresenter.class, new RootViewFactory());
-				put(SalesOrderPresenter.class, new SalesOrderViewFactory());
-			}};
-			
 	/**
-	 * default constructor
+	 * factory method for ErrorView
+	 * @param presenter a valid ErrorPresenter
+	 * @return ErrorView
 	 */
-	public ViewFactory()
-	{super();}
-
+	public AbstractView visit(ErrorPresenter presenter)
+	{return new ErrorView();}
+	
 	/**
-	 * creates the presenter specified by one of the enum values defined in PresenterType
-	 * @param presenter the enum value defined in the internal enum.
-	 * @return AbstractPresenter the presenter requested.
+	 * factory method for the RootView
+	 * @param presenter a valid RootPresenter
+	 * @return RootView
 	 */
-	public static AbstractView make(AbstractPresenter presenter)
-	{
-		try
-		{return ViewFactory.viewMap_M.get(presenter.getClass()).make();}
-		
-		catch(IllegalArgumentException e)
-		{
-			return ViewFactory.viewMap_M.get
-				(ErrorPresenter.class).make();
-		}
-	}
+	public AbstractView visit(RootPresenter presenter)
+	{return new RootView();}
+	
+	/**
+	 * factory method for the SalesHistoryView
+	 * @param presenter a valid SalesHistoryPresenter
+	 * @return SalesHistoryView
+	 */
+	public AbstractView visit(SalesHistoryPresenter presenter)
+	{return new SalesHistoryView();}
+	
+	/**
+	 * factory method for the SalesOrderView
+	 * @param presenter a valid SalesOrderPresenter
+	 * @return SalesOrderView
+	 */
+	public AbstractView visit(SalesOrderPresenter presenter)
+	{return new SalesOrderView();}
+	
+	/**
+	 * factory method for the SalesOrderView
+	 * @param presenter a valid WarehouseOrderPresenter
+	 * @return WarehouseOrderView
+	 */
+	public AbstractView visit(WarehouseOrderPresenter presenter)
+	{return new WarehouseOrderView();}
 
 }
