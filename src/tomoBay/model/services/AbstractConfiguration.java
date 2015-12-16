@@ -17,7 +17,14 @@ package tomoBay.model.services;
 import tomoBay.helpers.NoImports;
 /**
  * This interface defines the form that every configuration object used to provide information
- * to particular services should conform to.
+ * to particular services should conform to.<br>
+ * 
+ * ***Using a Configuration Object***<br>
+ * 
+ * 
+ * 
+ * ***Writing a Configuration Object***<br>
+ *
  *
  * @author Jan P.C. Hanson
  *
@@ -26,13 +33,14 @@ import tomoBay.helpers.NoImports;
 public interface AbstractConfiguration<T>
 {
 	/**
-	 * sets the configuration information for the service
+	 * used to set the configuration information for the service.
 	 * @param value
 	 */
-	public void configure(T value);
+	public AbstractConfiguration<T> configure(T value);
 	
 	/**
-	 * retrieves the configuration for the service
+	 * used by the service to retrieve the information necessary for the service to configure
+	 * itself.
 	 * @return
 	 */
 	public T configure();

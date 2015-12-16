@@ -36,7 +36,7 @@ public class ClearPartsPSA implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="UPDATE ebay.parts_psa "
+	private String query ="UPDATE parts_psa "
 						+ "SET parts_psa.required=0 "
 						+ "WHERE parts_psa.required!=0;";
 	

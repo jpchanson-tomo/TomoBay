@@ -24,9 +24,9 @@ import tomoBay.helpers.ConfigReader;
 public class WinstockConfig
 {
 	/**the path to the config file**/
-	private static final String pathToFile= "";
+	private static final String pathToFile= "./config/";
 	/**the actual filename**/
-	private static final String fileName = "";
+	private static final String fileName = "winstock.conf";
 	/**the contents of the config file as an String[] where elements correspond to line-1**/
 	private static String[] configContents_M;
 	
@@ -43,12 +43,12 @@ public class WinstockConfig
 	 * @return String representing the name of the machine on which winstock is running.
 	 */
 	public String getMachineName()
-	{return WinstockConfig.configContents_M[0];}
+	{return WinstockConfig.configContents_M[1];}
 	
 	/**
 	 * method used to retrieve the port on which winstock is running.
 	 * @return int representing the port number on which winstock is running.
 	 */
 	public int getPort()
-	{return Integer.parseInt(WinstockConfig.configContents_M[1]);}
+	{return Integer.parseInt(WinstockConfig.configContents_M[2]);}
 }

@@ -19,8 +19,11 @@ import java.util.Map;
 
 import tomoBay.model.services.factories.AbstractServiceFactory;
 import tomoBay.model.services.factories.BasicEbayServiceFactory;
+import tomoBay.model.services.factories.CheckErrorsFactory;
+import tomoBay.model.services.factories.EmailErrorsServiceFactory;
 import tomoBay.model.services.factories.IndividualItemRefreshServiceFactory;
 import tomoBay.model.services.factories.InvoiceServiceFactory;
+import tomoBay.model.services.factories.ReScanErrorsServiceFactory;
 import tomoBay.model.services.factories.StockUpdateServiceFactory;
 import tomoBay.model.services.factories.TestServiceFactory;
 /**
@@ -37,7 +40,8 @@ public class ServiceFactory
 	public enum ServiceType 
 			{
 				EBAY_SERVICE, TEST_SERVICE, STOCK_UPDATE_SERVICE,
-				INDVIDUAL_ITEM_REFRESH_SERVICE, INVOICE_SERVICE
+				INDVIDUAL_ITEM_REFRESH_SERVICE, INVOICE_SERVICE, CHECK_ERRORS,
+				RESCAN_ERRORS_SERVICE, EMAIL_ERRORS_SERVICE
 			}
 	/**internal map holds service factories**/
 	@SuppressWarnings("serial")
@@ -49,13 +53,31 @@ public class ServiceFactory
 				put(ServiceType.STOCK_UPDATE_SERVICE, new StockUpdateServiceFactory());
 				put(ServiceType.INDVIDUAL_ITEM_REFRESH_SERVICE, new IndividualItemRefreshServiceFactory());
 				put(ServiceType.INVOICE_SERVICE, new InvoiceServiceFactory());
+				put(ServiceType.CHECK_ERRORS, new CheckErrorsFactory());
+				put(ServiceType.RESCAN_ERRORS_SERVICE, new ReScanErrorsServiceFactory());
+				put(ServiceType.EMAIL_ERRORS_SERVICE, new EmailErrorsServiceFactory());
+				
 			}};
 
 	/**
 	 * make the service requested using an ServiceType enum value
 	 * @param service the service requested 
-	 * @return
+	 * @return AbstractService as requested.
 	 */
 	public static AbstractService make(ServiceType service)
 	{return ServiceFactory.serviceFactoryMap.get(service).make();}
+	
+	/**
+	 * make a configured service using the AbstractConfiguration provided
+	 * @param service the service to make only ServiceType enum constants are valid
+	 * @param config the AbstractConfiguration appropriate to the Service being made
+	 * @return AbstractService, configured as requested.
+	 */
+	public static AbstractService make(ServiceType service, AbstractConfiguration<?> config)
+	{
+		AbstractService configuredService = ServiceFactory.serviceFactoryMap.get(service).make();
+		configuredService.setConfig(config);
+		
+		return configuredService;
+	}
 }

@@ -36,7 +36,7 @@ public class InsertFordStockReq implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay.parts_ford (parts_ford.partNo, parts_ford.required)"
+	private String query ="INSERT IGNORE INTO parts_ford (parts_ford.partNo, parts_ford.required)"
 			+ " VALUES(?, ?) ;";
 	
 	/**

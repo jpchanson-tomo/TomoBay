@@ -36,7 +36,7 @@ public class InsertPSAStockReq implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay.parts_psa (parts_psa.partNo, parts_psa.required)"
+	private String query ="INSERT IGNORE INTO parts_psa (parts_psa.partNo, parts_psa.required)"
 			+ " VALUES(?, ?) ;";
 	
 	/**

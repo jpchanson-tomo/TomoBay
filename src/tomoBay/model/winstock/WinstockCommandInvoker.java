@@ -19,9 +19,13 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
+import tomoBay.exceptions.PayloadException;
+import tomoBay.helpers.DualList;
 import tomoBay.model.winstock.commandFactories.AbstractWinstockCommandFactory;
+import tomoBay.model.winstock.commandFactories.PrintInvoiceCommandFactory;
 import tomoBay.model.winstock.commandFactories.PutInvoiceCommandFactory;
-import tomoBay.model.winstock.commands.AbstractWinstockCommandResponse;
+import tomoBay.model.winstock.payloads.PayloadType;
+import tomoBay.model.winstock.response.AbstractWinstockCommandResponse;
 /**
  * This class acts as the Invoker in a GoF style command pattern, it is responsible for the
  * execution of AbstractWinstockCommands. In this case it is also a factory and as such is 
@@ -40,7 +44,9 @@ public class WinstockCommandInvoker
 	public enum WinstockCommandTypes
 		{
 			/** represents a PutInvoiceCommand @see {@link tomoBay.model.winstock.commands.PutInvoiceCommand}**/
-			PutInvoice
+			PutInvoice,
+			/** represents a PrintInvoiceCommand @see {@link tomoBay.model.winstock.commands.PrintInvoiceCommand}**/
+			PrintInvoice
 		}
 	
 	/**
@@ -52,18 +58,20 @@ public class WinstockCommandInvoker
 	= new HashMap<WinstockCommandTypes, AbstractWinstockCommandFactory>()
 		{{
 			put(WinstockCommandInvoker.WinstockCommandTypes.PutInvoice, new PutInvoiceCommandFactory());
+			put(WinstockCommandInvoker.WinstockCommandTypes.PrintInvoice, new PrintInvoiceCommandFactory());
 		}};
 	
 	/**
 	 * This method executes the AbstractWinstockCommand that the user has requested.
-	 * @param commandType represents the users request for an AbstractWinstockCommand see enum
-	 * documentation
+	 * @param commandType contains the info to @see{@link tomoBay.helpers.DualList}
 	 * @see {@link tomoBay.model.winstock.WinstockCommandInvoker.WinstockCommandTypes}
 	 * @return AbstractWinstockCommandResponse containing the servers response to this command.
 	 * @throws IOException 
 	 * @throws UnknownHostException 
+	 * @throws PayloadException 
 	 */
-	public AbstractWinstockCommandResponse execute(WinstockCommandInvoker.WinstockCommandTypes commandType) 
-			throws UnknownHostException, IOException
-	{return WinstockCommandInvoker.factoryMap_M.get(commandType).make().execute();}
+	public static AbstractWinstockCommandResponse execute
+	(WinstockCommandInvoker.WinstockCommandTypes commandType, DualList<String, PayloadType> commandInfo) 
+			throws UnknownHostException, IOException, PayloadException
+	{return WinstockCommandInvoker.factoryMap_M.get(commandType).make().execute(commandInfo);}
 }

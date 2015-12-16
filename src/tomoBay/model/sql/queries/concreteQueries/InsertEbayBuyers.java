@@ -34,9 +34,9 @@ public class InsertEbayBuyers implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay.ebay_buyers "
-			+ "(buyerID, name, shippingAddress)"
-			+ "VALUES (?,?,?);";
+	private String query ="INSERT IGNORE INTO ebay_buyers "
+			+ "(buyerID, name, shippingAddress, email, phoneNo)"
+			+ "VALUES (?,?,?,?,?);";
 	
 	/**
 	 * default constructor
@@ -63,6 +63,8 @@ public class InsertEbayBuyers implements AbstractDBQuery
 		this.statement_M.setString(1, parameter[0]);//buyerID
 		this.statement_M.setString(2, parameter[1]);//name
 		this.statement_M.setString(3, parameter[2]);//address
+		this.statement_M.setString(4, parameter[3]);//email
+		this.statement_M.setString(5, parameter[4]);//phoneNo
 		int resultCode = statement_M.executeUpdate();
 		this.connection_M.commit();
 		this.cleanup();

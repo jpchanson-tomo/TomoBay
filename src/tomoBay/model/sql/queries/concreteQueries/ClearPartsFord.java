@@ -36,7 +36,7 @@ public class ClearPartsFord implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="UPDATE ebay.parts_ford "
+	private String query ="UPDATE parts_ford "
 						+ "SET parts_ford.required=0 "
 						+ "WHERE parts_ford.required!=0;";
 	

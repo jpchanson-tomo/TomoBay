@@ -15,7 +15,7 @@ package tomoBay.model.services.factories;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.services.AbstractService;
-import tomoBay.model.services.basicEbayUpdate.BasicEbayUpdateService;
+import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
 /**
  * This factory creates a BasicEbayUpdateService
  * @author Jan P.C. Hanson

@@ -29,8 +29,8 @@ public class UpdateOrderStatusConfig implements AbstractConfiguration<OrderStatu
 	 * @see tomoBay.model.services.AbstractConfiguration#configure(java.lang.Object)
 	 */
 	@Override
-	public void configure(OrderStatus value)
-	{this.status_M = value;}
+	public AbstractConfiguration<OrderStatus> configure(OrderStatus value)
+	{this.status_M = value; return this;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.services.AbstractConfiguration#configure()

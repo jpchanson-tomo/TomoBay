@@ -39,7 +39,7 @@ public class InsertEbayOrders implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay.ebay_orders (orderID, buyerID, salesRecNo, shippingType, createdTime)"
+	private String query ="INSERT IGNORE INTO ebay_orders (orderID, buyerID, salesRecNo, shippingType, createdTime)"
 			+ "VALUES (?,?,?,?,?);";
 	
 	/**

@@ -35,9 +35,9 @@ public class UpdateTotalItemsRequired implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="UPDATE ebay.ebay_items "
+	private String query ="UPDATE ebay_items "
 					+ "SET noRequired=(SELECT SUM(ebay_transactions.quantity) AS required "
-					+ "FROM ebay.ebay_transactions WHERE ebay_transactions.itemID=?) "
+					+ "FROM ebay_transactions WHERE ebay_transactions.itemID=?) "
 					+ "WHERE ebay_items.itemID=?;";
 	
 	/**

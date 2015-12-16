@@ -16,9 +16,9 @@ package tomoBay.presenters.sales;
  */
 import java.util.List;
 
+import tomoBay.helpers.SortOrders;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.presenters.AbstractPresenter;
-import tomoBay.presenters.helpers.SortOrders;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
 /**

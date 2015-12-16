@@ -29,11 +29,11 @@ import java.net.UnknownHostException;
 public class ClientSocket
 {
 	/**the socket**/
-	private Socket winstock_M;
+	private Socket socket_M;
 	/**data going to the socket**/
-	private DataOutputStream dataIn_M;
+	private DataOutputStream dataOut_M;
 	/**data coming from the socket**/
-	private DataInputStream dataOut_M;
+	private DataInputStream dataIn_M;
 	
 	/**
 	 * creates a general socket connection to the specified machine name and port.
@@ -46,34 +46,27 @@ public class ClientSocket
 			throws UnknownHostException, IOException
 	{
 		super();
-		this.winstock_M = new Socket(machineName, port);
-		this.dataIn_M = new DataOutputStream(this.winstock_M.getOutputStream());
-		this.dataOut_M = new DataInputStream(this.winstock_M.getInputStream());
+		this.socket_M = new Socket(machineName, port);
+		this.dataOut_M = new DataOutputStream(this.socket_M.getOutputStream());
+		this.dataIn_M = new DataInputStream(this.socket_M.getInputStream());
 	}
 	
 	/**
-	 * get the DataOutputStream associated with this socket connection, allowing the user to 
-	 * write to this socket connection.
-	 * @return DataOutputStream
-	 */
-	public DataOutputStream getOutputStream()
-	{return this.dataIn_M;}
-	
-	/**
-	 * get the response from the server as a byte array. The length of the byte array returned 
-	 * by this method is set to the estimated number of bytes returned by the server and as such
-	 * guarantees that it will not be longer, but it may truncate some of the end of the message.
-	 * @return byte[] containing the server response.
+	 * sends the byte array to the socket
+	 * @param payload byte[] containing the information to send to the socket
 	 * @throws IOException
 	 */
-	public byte[] getResponse() throws IOException
+	public byte[] send(byte[] payload, int responseSize) throws IOException
 	{
-		byte[] response = new byte[this.dataOut_M.available()];
+		this.dataOut_M.write(payload);
 		
-		this.dataOut_M.readFully(response);
+		byte[] response = new byte[responseSize];
+		
+		this.dataIn_M.readFully(response);
 		
 		return response;
 	}
+
 	
 	/**
 	 * releases all resources opened by this object or throws an IOException
@@ -82,11 +75,11 @@ public class ClientSocket
 	 */
 	public boolean close() throws IOException
 	{
-		this.dataIn_M.close();
-		this.dataOut_M.close();
-		this.winstock_M.close();
+		this.dataOut_M.close();			this.dataOut_M = null;
+		this.dataIn_M.close();			this.dataIn_M = null;
+		this.socket_M.close();			this.socket_M = null;
 		
-		if(this.dataIn_M ==null  && this.dataOut_M ==null && this.winstock_M == null)
+		if(this.dataOut_M ==null  && this.dataIn_M ==null && this.socket_M == null)
 		{return true;}
 		else
 		{throw new IOException("could not close resources");}

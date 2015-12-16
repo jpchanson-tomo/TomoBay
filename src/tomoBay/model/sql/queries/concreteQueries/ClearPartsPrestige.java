@@ -36,7 +36,7 @@ public class ClearPartsPrestige implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="UPDATE ebay.parts_prestige "
+	private String query ="UPDATE parts_prestige "
 						+ "SET parts_prestige.required=0 "
 						+ "WHERE parts_prestige.required!=0;";
 	

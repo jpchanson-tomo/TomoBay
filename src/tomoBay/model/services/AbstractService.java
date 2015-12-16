@@ -14,21 +14,27 @@ package tomoBay.model.services;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.helpers.NoImports;
+import tomoBay.exceptions.ServiceException;
 /**
  * Allows the system to only accept runnable's that implement this
  * interface rather than all runnables. As well as providing an interface that all abstract 
  * service should conform to.
+ * 
+ * There are two varieties of AbstractService Derived Type: an unconfigured Service and a configured
+ * service. for an unconfigured service ignore the setConfig method as the service will ignore it
+ * anyway.
+ * 
+ * for a configured service it is necessary to provide an AbstractConfiguration object in order
+ * for it to work properly
  * @author Jan P.C. Hanson
  *
  */
-@SuppressWarnings("unused")
 public interface AbstractService extends Runnable
 {
 	/**
 	 * The individual services equivalent of main
 	 */
-	public void run();
+	public void run() throws ServiceException;
 	
 	/**
 	 * sets the configuration for this service. Not all services require configuration, see the

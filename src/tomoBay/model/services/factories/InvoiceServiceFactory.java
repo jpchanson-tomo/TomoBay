@@ -15,7 +15,7 @@ package tomoBay.model.services.factories;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.services.AbstractService;
-import tomoBay.model.services.invoiceOrderService.InvoiceService;
+import tomoBay.model.services.invoiceOrdersService.InvoiceService;
 /**
  * This factory crea5tes an InvoiceService
  * @author Jan P.C. Hanson

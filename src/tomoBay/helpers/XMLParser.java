@@ -22,6 +22,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 /**
@@ -32,7 +33,7 @@ import org.xml.sax.SAXException;
 public class XMLParser
 {
 	/**
-	 * parses an XML formatted string looking for the tag specified in the parameters.
+	 * parses an XML formatted string looking for the first tag specified in the parameters.
 	 * @param tag the name of the tag (not including angle brackets)
 	 * @param stringToParse the XML formatted string to parse for the tag specified
 	 * @return String containing the text inside the XML tag specified
@@ -51,7 +52,6 @@ public class XMLParser
 
 			Document doc = builder.parse(src);
 			String tagContent = doc.getElementsByTagName(tag).item(0).getTextContent();
-
 			return tagContent;
 		}
 		catch(SAXException saxE)
@@ -60,5 +60,33 @@ public class XMLParser
 		{return "Internal Error" + e.getMessage();}
 		catch(NullPointerException ne)
 		{return "<" + tag + ">..." + "</" + tag + ">" + " not found";}
+	}
+	
+	/**
+	 * returns a NodeList containing all the nodes that have the specified tag name
+	 * @param tag the tag to search for within the string provided
+	 * @param stringToParse The string to search for specific tags in.
+	 * @return NodeList containing all the tags that match the search term.
+	 */
+	public static NodeList parseAll(String tag, String stringToParse)
+	{
+		try
+		{
+			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			InputSource src = new InputSource();
+
+			src.setCharacterStream(new StringReader(stringToParse));
+
+			Document doc = builder.parse(src);
+			NodeList tagContent = doc.getElementsByTagName(tag);
+			return tagContent;
+		}
+		catch(SAXException saxE)
+		{saxE.printStackTrace();}
+		catch(ParserConfigurationException | IOException e)
+		{e.printStackTrace();}
+		catch(NullPointerException ne)
+		{ne.printStackTrace();}
+		return null;
 	}
 }

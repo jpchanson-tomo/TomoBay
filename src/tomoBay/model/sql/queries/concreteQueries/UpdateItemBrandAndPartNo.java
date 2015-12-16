@@ -37,7 +37,7 @@ public class UpdateItemBrandAndPartNo implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="UPDATE ebay.ebay_items "
+	private String query ="UPDATE ebay_items "
 					+ "SET brand=?,partNo=? "
 					+ "WHERE itemID=?";
 	
@@ -54,6 +54,7 @@ public class UpdateItemBrandAndPartNo implements AbstractDBQuery
 	 * This query only requires 2 inputs so any element above the 1st element will be ignored.
 	 * - col1 = brand:varchar(20)
 	 * - col2 = partNo:varchar(100) 
+	 * - col3 = itemID:bigint(13)
 	 * @return List<String[]> representing the results of the query. The list contains only 1 
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException

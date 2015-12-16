@@ -46,7 +46,7 @@ public class Stock
 	public int requestStockLevel(String partNo, String brandCode)
 	{
 		HttpGET get = new HttpGET();
-		HttpResponse response = get.request(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo);
+		HttpResponse response = get.request(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo.toUpperCase());
 		//System.out.println(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo);
 		result = this.postFormatXMLString(response);
 		result = XMLParser.parse("QTY_EXIST", result);

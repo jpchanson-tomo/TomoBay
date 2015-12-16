@@ -15,7 +15,7 @@ package tomoBay.model.services.factories;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.services.AbstractService;
-import tomoBay.model.services.individualItemRefresh.IndividualItemRefreshService;
+import tomoBay.model.services.individualItemRefreshService.IndividualItemRefreshService;
 
 /**
  * This factory creates an IndividualItemRefreshService.

@@ -35,7 +35,7 @@ public class InsertEbayTransactions implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay.ebay_transactions "
+	private String query ="INSERT IGNORE INTO ebay_transactions "
 			+ "(transactionID, orderID, itemID, quantity, price)"
 			+ "VALUES (?,?,?,?, ?);";
 	

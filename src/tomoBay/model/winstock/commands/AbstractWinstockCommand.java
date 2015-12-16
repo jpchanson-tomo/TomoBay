@@ -14,11 +14,15 @@ package tomoBay.model.winstock.commands;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.net.ClientSocket;
-import tomoBay.model.winstock.WinstockConfig;
-
 import java.io.IOException;
 import java.net.UnknownHostException;
+
+import tomoBay.exceptions.PayloadException;
+import tomoBay.helpers.DualList;
+import tomoBay.model.net.ClientSocket;
+import tomoBay.model.winstock.WinstockConfig;
+import tomoBay.model.winstock.payloads.PayloadType;
+import tomoBay.model.winstock.response.AbstractWinstockCommandResponse;
 /**
  * This is the abstract base class for all Winstock commands, and acts as the abstract command
  * in a GoF style command pattern.
@@ -50,5 +54,6 @@ public abstract class AbstractWinstockCommand
 	 * this method executes the AbstractWinstockCommand specific to the derived type.
 	 * @return AbstractWinstockCommandRepsonse containing the results of the command.
 	 */
-	public abstract AbstractWinstockCommandResponse execute();
+	public abstract AbstractWinstockCommandResponse execute(DualList<String, PayloadType> commandInfo)
+			throws IOException, PayloadException;
 }

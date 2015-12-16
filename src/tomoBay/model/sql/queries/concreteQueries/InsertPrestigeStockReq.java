@@ -36,7 +36,7 @@ public class InsertPrestigeStockReq implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay.parts_prestige (parts_prestige.partNo, parts_prestige.required)"
+	private String query ="INSERT IGNORE INTO parts_prestige (parts_prestige.partNo, parts_prestige.required)"
 			+ " VALUES(?, ?) ;";
 	
 	/**

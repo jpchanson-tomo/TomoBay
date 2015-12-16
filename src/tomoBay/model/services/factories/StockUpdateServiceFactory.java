@@ -15,7 +15,7 @@ package tomoBay.model.services.factories;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.services.AbstractService;
-import tomoBay.model.services.stockUpdate.StockUpdateService;
+import tomoBay.model.services.stockUpdateService.StockUpdateService;
 /**
  * This factory creates a StockUpdateService
  * @author Jan P.C. Hanson
