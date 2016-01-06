@@ -72,10 +72,9 @@ public class PutInvoiceResponse implements AbstractWinstockCommandResponse
 	@Override
 	public String getRecieved()
 	{
-		String data="";
-		for (byte element : this.responseBytes_M)
-		{data += element + " ";}
-		return data;
+		byte[] bites = {this.responseBytes_M[6], this.responseBytes_M[7], this.responseBytes_M[8], this.responseBytes_M[9]};
+		int result = java.nio.ByteBuffer.wrap(bites).order(java.nio.ByteOrder.LITTLE_ENDIAN).getInt();
+		return String.valueOf(result);
 	}
 }
 /**

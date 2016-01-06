@@ -46,19 +46,12 @@ public class BuyersTable
 			String[] insertVals = 
 				{
 					order.getBuyerUserID(),
-					order.getShippingAddress().getName()+" "+order.getShippingAddress().getInternationalName(),
-					(
-						order.getShippingAddress().getInternationalStreet() + ", "
-						+ order.getShippingAddress().getInternationalStateAndCity() + ", "
-						+ order.getShippingAddress().getStreet() + ", "
-						+ order.getShippingAddress().getStreet1() + ", "
-						+ order.getShippingAddress().getStreet2() + ", "
-						+ order.getShippingAddress().getCityName() + ", "
-						+ order.getShippingAddress().getCounty() + ", "
-						+ order.getShippingAddress().getStateOrProvince() + ", "
-						+ order.getShippingAddress().getPostalCode() + ", "
-						+ order.getShippingAddress().getCounty()
-					),
+					order.getShippingAddress().getName(),
+						order.getShippingAddress().getStreet1(), 
+						order.getShippingAddress().getStreet2(), 
+						order.getShippingAddress().getCityName(),
+						order.getShippingAddress().getStateOrProvince(),
+						order.getShippingAddress().getPostalCode(), 
 					order.getTransactionArray().getTransaction(0).getBuyer().getEmail(),
 					order.getShippingAddress().getPhone()
 				};

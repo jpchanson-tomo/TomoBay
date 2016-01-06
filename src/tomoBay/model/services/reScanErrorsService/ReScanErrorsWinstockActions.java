@@ -44,8 +44,14 @@ public class ReScanErrorsWinstockActions
 		Stock errorCheck = new Stock();
 		for (String partNo : partList.getPartNumbers())
 		{
-			int result = errorCheck.requestStockLevel(partNo, BrandToCode.convert(item.get("Brand")));
-			if(result == -8008135) {return true;}
+			try 
+			{
+				int result = errorCheck.requestStockLevel(partNo, BrandToCode.convert(item.get("Brand")));
+				if(result == -8008135) {return true;}
+			}
+			catch (NullPointerException npe)
+			{System.out.println("null");return true;}
+			
 		}
 		
 		return false;

@@ -14,7 +14,7 @@ package tomoBay.model.sql;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
  * this enum contains all the fields used in the database, the fields of different tables
  * are prefixed differently to avoid confusion between similarly named fields.
@@ -27,28 +27,90 @@ package tomoBay.model.sql;
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public enum DataBaseSchema
 {
 	/**
 	 * all the fields contained in the ebay_buyers table 
 	 */
-	BUY_BUYER_ID, BUY_NAME, BUY_SHIPPING_ADDRESS, BUY_EMAIL, BUY_PHONE_NO,
+	/**VARCHAR(40)**/
+	BUY_BUYER_ID, 
+	/**VARCHAR(45)**/
+	BUY_NAME, 
+	/**VARCHAR(100)**/
+	BUY_STREET1,
+	/**VARCHAR(100)**/
+	BUY_STREET2,
+	/**VARCHAR(100)**/
+	BUY_CITY,
+	/**VARCHAR(100)**/
+	BUY_COUNTY,
+	/**VARCHAR(100)**/
+	BUY_POSTCODE,
+	/**VARCHAR(45)**/
+	BUY_EMAIL, 
+	/**VARCHAR(16)**/
+	BUY_PHONE_NO,
 	
 	/**
 	 * all the fields contained in the ebay_orders table 
 	 */
-	ORD_ORDER_ID, ORD_BUYER_ID, ORD_SALES_REC_NO, ORD_SHIPPING_TYPE, 
-	ORD_CREATED_TIME, ORD_PICKED, ORD_PACKED, ORD_SHIPPED, ORD_INVOICED,
+	/**VARCHAR(30)**/
+	ORD_ORDER_ID, 
+	/**VARCHAR(40)**/
+	ORD_BUYER_ID, 
+	/**INT(20)**/
+	ORD_SALES_REC_NO, 
+	/**VARCHAR(200)**/
+	ORD_SHIPPING_TYPE, 
+	/**TIMESTAMP(19)**/
+	ORD_CREATED_TIME, 
+	/**TINYINT(1)**/
+	ORD_PICKED, 
+	/**TINYINT(1)**/
+	ORD_PACKED, 
+	/**TINYINT(1)**/
+	ORD_SHIPPED, 
+	/**TINYINT(1)**/
+	ORD_INVOICED,
 	
 	/**
 	 * all the fields contained in the ebay_transactions table 
 	 */
-	TRN_TRANSACTION_ID, TRN_ORDER_ID, TRN_ITEM_ID, TRN_QUANTITY,
-	TRN_PRICE, TRN_PICKED, TRN_PACKED, TRN_SHIPPED,
+	/**BIGINT(20)**/
+	TRN_TRANSACTION_ID, 
+	/**VARCHAR(30)**/
+	TRN_ORDER_ID, 
+	/**BIGINT(20)**/
+	TRN_ITEM_ID, 
+	/**INT(7)**/
+	TRN_QUANTITY,
+	/**FLOAT(12)**/
+	TRN_PRICE, 
+	/**TINYINT(1)**/
+	TRN_PICKED, 
+	/**TINYINT(1)**/
+	TRN_PACKED, 
+	/**TINYINT(1)**/
+	TRN_SHIPPED,
 	
 	/**
 	 * all the fields contained in the ebay_items table 
 	 */
-	ITM_ITEM_ID, TRN_TITLE, TRN_CONDITION, TRN_BRAND, 
-	TRN_PART_NO, TRN_NO_REQUIRED, TRN_COST, TRN_NOTES
+	/**BIGINT(13)**/
+	ITM_ITEM_ID, 
+	/**VARCHAR(83)**/
+	ITM_TITLE, 
+	/**VARCHAR(15)**/
+	ITM_CONDITION, 
+	/**VARCHAR(50)**/
+	ITM_BRAND, 
+	/**VARCHAR(100)**/
+	ITM_PART_NO, 
+	/**INT(6)**/
+	ITM_NO_REQUIRED, 
+	/**FLOAT(12)**/
+	ITM_COST, 
+	/**VARCHAR(60)**/
+	ITM_NOTES
 }

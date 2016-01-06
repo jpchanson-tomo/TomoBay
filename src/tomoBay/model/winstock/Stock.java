@@ -28,14 +28,22 @@ public class Stock
 	private static final String URL_PT1_M="http://192.168.0.100:7979/get?index=product&company=";
 	/**the second part of the winstock url up to the second variable**/
 	private static final String URL_PT2_M= "&find=";
-	/**holder for the result**/
-	private String result;
+	/**the last part number to have info on it requested**/
+	private String currentPartNo_M;
+	/**the brandCode of the last part number to have info in it requested**/
+	private String currentBrandCode_M;
+	/**the response from winstock for the last part number queried**/
+	private HttpResponse response_M;
 	
 	/**
 	 * default ctor
 	 */
 	public Stock()
-	{super();}
+	{
+		super();
+		this.currentBrandCode_M="";
+		this.currentPartNo_M="";
+	}
 	
 	/**
 	 * query winstock for the stock level of a particular part.
@@ -45,14 +53,55 @@ public class Stock
 	 */
 	public int requestStockLevel(String partNo, String brandCode)
 	{
-		HttpGET get = new HttpGET();
-		HttpResponse response = get.request(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo.toUpperCase());
-		//System.out.println(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo);
-		result = this.postFormatXMLString(response);
+		this.queryWinstockURL(partNo, brandCode);
+		String result = this.postFormatXMLString(this.response_M);
 		result = XMLParser.parse("QTY_EXIST", result);
 
 		try{return Integer.parseInt(result);}
 		catch(NumberFormatException nfe) {return -8008135;}
+	}
+	
+	/**
+	 * query winstock for the description of a particular part.
+	 * @param partNo the manufacturer part number
+	 * @param brandCode 'C'=citroen/peugeot/psa, 'F'=ford, 'P'=everything else
+	 * @return int the number of the requested part in stock
+	 */
+	public String requestDescription(String partNo, String brandCode)
+	{
+		String result;
+		this.queryWinstockURL(partNo, brandCode);
+		
+		result = this.postFormatXMLString(this.response_M);
+		result = XMLParser.parse("DESC", result);
+		return result;
+	}
+	
+	/**
+	 * query winstock for the last cost price of a particular part.
+	 * @param partNo the manufacturer part number
+	 * @param brandCode 'C'=citroen/peugeot/psa, 'F'=ford, 'P'=everything else
+	 * @return int the number of the requested part in stock
+	 */
+	public double requestLastCost(String partNo, String brandCode)
+	{
+		String result;
+		this.queryWinstockURL(partNo, brandCode);
+		
+		result = this.postFormatXMLString(this.response_M);
+		result = XMLParser.parse("COST", result);
+		try{return Double.parseDouble(result);}
+		catch(NumberFormatException nfe) {return -8008135;}
+	}
+	
+	private void queryWinstockURL(String partNo, String brandCode)
+	{
+		if(this.currentPartNo_M != partNo || this.currentBrandCode_M != brandCode)
+		{
+			HttpGET get = new HttpGET();
+			this.response_M = get.request(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo.toUpperCase());
+		}
+			
 	}
 	
 	/**

@@ -35,10 +35,12 @@ import tomoBay.model.sql.queries.factories.SelectEbayItemsFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemsNotInTransactionsFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayOrdersFactory;
 import tomoBay.model.sql.queries.factories.SelectFordStockReqFactory;
+import tomoBay.model.sql.queries.factories.SelectFullOrderLineFactory;
 import tomoBay.model.sql.queries.factories.SelectPSAStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectPrestigeStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectTransactionByOrderIDFactory;
 import tomoBay.model.sql.queries.factories.SelectUninvoicedOrdersFactory;
+import tomoBay.model.sql.queries.factories.SelectUninvoicedOrdersNoErrorsFactory;
 import tomoBay.model.sql.queries.factories.UpdateAvailableStockFordFactory;
 import tomoBay.model.sql.queries.factories.UpdateAvailableStockPSAFactory;
 import tomoBay.model.sql.queries.factories.UpdateAvailableStockPrestigeFactory;
@@ -99,8 +101,12 @@ public class QueryInvoker
 			SELECT_TRANSACTION_BY_ORDERID,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrders}**/
 			SELECT_UNINVOICED_ORDERS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrdersNoErrors}**/
+			SELECT_UNINVOICED_ORDERS_NO_ERRORS,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayItemsError}**/
 			SELECT_EBAY_ITEMS_ERROR,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectFullOrderLine}**/
+			SELECT_FULL_ORDER_LINE,
 			
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo}**/
 			UPDATE_ITEM_BRAND_AND_PARTNO,
@@ -155,7 +161,9 @@ public class QueryInvoker
 			put(QueryType.SELECT_EBAY_ITEM_SPECIFIC, new SelectEbayItemSpecificFactory());
 			put(QueryType.SELECT_TRANSACTION_BY_ORDERID, new SelectTransactionByOrderIDFactory());
 			put(QueryType.SELECT_UNINVOICED_ORDERS, new SelectUninvoicedOrdersFactory());
+			put(QueryType.SELECT_UNINVOICED_ORDERS_NO_ERRORS, new SelectUninvoicedOrdersNoErrorsFactory());
 			put(QueryType.SELECT_EBAY_ITEMS_ERROR, new SelectEbayItemsErrorFactory());
+			put(QueryType.SELECT_FULL_ORDER_LINE, new SelectFullOrderLineFactory());
 
 			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
 			put(QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, new UpdateTotalItemsRequiredFactory());

@@ -45,32 +45,11 @@ public class SortOrders
 	 * @param shippingIndex the index of the shippingType within the data
 	 * @return sorted list of strings.
 	 */
-	public List<String[]> sortDefault(List<String[]> input, int invoiceableIndex, int shippingIndex)
+	public List<String[]> sortDefault(List<String[]> input, int shippingIndex)
 	{
-		List<String[]> sortedData = new ArrayList<String[]>();
+		List<String[]> sortedData = input;
 		sortedData = this.sortByShipping(input, shippingIndex);
-		sortedData = this.sortByPickeability(sortedData, invoiceableIndex);
 		return sortedData;
-		
-	}
-	
-	/**
-	 * sort the list<String> by Invoice status descending (see InvoiceableStatus enum)
-	 * @param input list of strings unordered
-	 * @return List<String> sorted by date descending
-	 */
-	private List<String[]> sortByPickeability(List<String[]> input, int invoiceIndex)
-	{
-		List<List<String[]>> categoryList = new ArrayList<List<String[]>>(InvoiceableStatus.size());
-		
-		for(int i = 0 ; i < InvoiceableStatus.size() ; ++i) {categoryList.add(new ArrayList<String[]>());}
-		
-		for (int i = 0 ; i < input.size() ; ++i)
-		{
-			categoryList.get(Integer.parseInt((input.get(i)[invoiceIndex])))
-						.add(input.get(i));
-		}
-		return reAssembleCategories(categoryList, InvoiceableStatus.size());
 	}
 	
 	/**

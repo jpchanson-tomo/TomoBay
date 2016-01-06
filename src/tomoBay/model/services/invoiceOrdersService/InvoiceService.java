@@ -14,12 +14,30 @@ package tomoBay.model.services.invoiceOrdersService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.NoSuchProviderException;
+import javax.mail.internet.AddressException;
+
+import tomoBay.exceptions.NullEmailObjectException;
+import tomoBay.exceptions.NullEmailServerObjectException;
+import tomoBay.model.net.email.Email;
+import tomoBay.model.net.email.EmailDirector;
+import tomoBay.model.net.email.GmailBuilder;
+import tomoBay.model.net.email.MailServerSend;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.services.ServiceFactory;
+import tomoBay.model.services.ServiceFactory.ServiceType;
+import tomoBay.model.services.TriggerService;
+import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
+import tomoBay.model.services.helpers.InvoiceableStatus;
+import tomoBay.model.services.invoiceOrdersService.invoice.Invoice;
+import tomoBay.model.sql.DataBaseSchema;
 /**
  * This service runs through all the orders on the system that havent yet been invoiced and 
  * checks them against stock levels to see how invoiceable they are (invoiceable/partially
@@ -38,32 +56,74 @@ public class InvoiceService implements AbstractService
 	public void run()
 	{
 		ValidUninvoicedOrderList orderList = new ValidUninvoicedOrderList();
+		CalculateInvoiceStatus orderStatus = new CalculateInvoiceStatus();
+		UpdateDB db = new UpdateDB();
+		List<String[]> invoicedOrders = new ArrayList<String[]>();
 		orderList.sortList();
-		orderList.removeUninvoiceableOrders();
-		while(orderList.exists())
+		List<Map<DataBaseSchema,String>> orders = orderList.get();
+		
+		for(Map<DataBaseSchema,String> order : orders)
 		{
-			
-			
-			orderList.reGenerateList();
-			orderList.sortList();
-			orderList.removeUninvoiceableOrders();
+			if(orderStatus.status(order.get(DataBaseSchema.ORD_ORDER_ID))==InvoiceableStatus.Invoiceable)
+			{
+				Invoice invoice = new Invoice(order.get(DataBaseSchema.ORD_ORDER_ID));
+				int invNo = invoice.generate();
+				System.out.println(invNo);
+				invoice.print();
+				invoicedOrders.add(new String[] {order.get(DataBaseSchema.ORD_ORDER_ID), order.get(DataBaseSchema.ORD_SALES_REC_NO), order.get(DataBaseSchema.ORD_CREATED_TIME)});
+				db.update(order.get(DataBaseSchema.ORD_ORDER_ID));
+			}
 		}
 		
+//		if(invoicedOrders.size() > 0)
+//		{
+//		String message="<table border='1' style='width:100%'><thead><th>orderID</th><th>salesRecordNo</th></th><th>created time</th></thead><tbody>";
+//		for (String[] maildata : invoicedOrders)
+//		{
+//			message += "<tr><td>"+maildata[0]+"</td>";
+//			message += "<td>"+maildata[1]+"</td>"
+//					+ "<td>"+maildata[2]+"</td></tr>";
+//		}
+//		message+="</tbody></table>";
+//		
+//		try
+//		{
+//			EmailDirector mailmanager = new EmailDirector();
+//			mailmanager.constructEmailAndServer(new GmailBuilder());
+//			MailServerSend mailServer = mailmanager.getMailSendServer();
+//			Email email = mailmanager.getEmail();
+//		
+//			email.setRecipient(Message.RecipientType.TO, "tomomotorbay@gmail.com");
+//			email.setRecipient(Message.RecipientType.TO, "paul@tomoparts.co.uk");
+//			email.setRecipient(Message.RecipientType.TO, "steve@tomoparts.co.uk");
+//			email.setSubject("INVOICED ORDERS");
+//			email.setMessage(message);
+//		
+//			mailServer.send(email, "tomomotorbay@gmail.com", "3bay15myl1f3");
+//		}
+//		catch (NoSuchProviderException e)
+//		{
+//			e.printStackTrace();
+//		} 
+//		catch (NullEmailObjectException e)
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (NullEmailServerObjectException e)
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (AddressException e)
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (MessagingException e)
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		}
 		
-		
-		
-		
-		
-		CalculateInvoiceStatus status = new CalculateInvoiceStatus();
-		List<String[]> orders = QueryInvoker.execute(QueryType.SELECT_UNINVOICED_ORDERS, new String[] {});
-		
-		for(String[] order : orders)
-		{
-			String statusCode = String.valueOf(status.status(order[0]).getStatusCode());
-			QueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS, new String[] {statusCode,order[0]});
-			//generate invoice for this order number here
-			System.out.println("trying to generate invoice for order number: " + order[0] + ": "+ statusCode);
-		}
 	}
 
 	/* (non-Javadoc)

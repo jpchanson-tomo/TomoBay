@@ -25,6 +25,7 @@ import tomoBay.model.services.factories.IndividualItemRefreshServiceFactory;
 import tomoBay.model.services.factories.InvoiceServiceFactory;
 import tomoBay.model.services.factories.ReScanErrorsServiceFactory;
 import tomoBay.model.services.factories.StockUpdateServiceFactory;
+import tomoBay.model.services.factories.StopGapServiceFactory;
 import tomoBay.model.services.factories.TestServiceFactory;
 /**
  * This factory is responsible for creating services which can be passed to the TriggerService
@@ -41,7 +42,7 @@ public class ServiceFactory
 			{
 				EBAY_SERVICE, TEST_SERVICE, STOCK_UPDATE_SERVICE,
 				INDVIDUAL_ITEM_REFRESH_SERVICE, INVOICE_SERVICE, CHECK_ERRORS,
-				RESCAN_ERRORS_SERVICE, EMAIL_ERRORS_SERVICE
+				RESCAN_ERRORS_SERVICE, EMAIL_ERRORS_SERVICE, STOPGAP_SERVICE
 			}
 	/**internal map holds service factories**/
 	@SuppressWarnings("serial")
@@ -56,6 +57,7 @@ public class ServiceFactory
 				put(ServiceType.CHECK_ERRORS, new CheckErrorsFactory());
 				put(ServiceType.RESCAN_ERRORS_SERVICE, new ReScanErrorsServiceFactory());
 				put(ServiceType.EMAIL_ERRORS_SERVICE, new EmailErrorsServiceFactory());
+				put(ServiceType.STOPGAP_SERVICE, new StopGapServiceFactory());
 				
 			}};
 

@@ -15,11 +15,14 @@ package tomoBay.model.services.invoiceOrdersService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import tomoBay.model.sql.DataBaseSchema;
+import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /**
  * This class represents a list of orders that are uninvoiced and contain no errors, as well as
  * functionality to manipulate this order list.
@@ -47,20 +50,15 @@ public class ValidUninvoicedOrderList
 	 */
 	public List<Map<DataBaseSchema,String>> get()
 	{
-		Map<DataBaseSchema, String> result = new HashMap<DataBaseSchema, String>();
+		
 		List<Map<DataBaseSchema, String>> results = new ArrayList<Map<DataBaseSchema, String>>();
 		for(String[] order : this.orderList_M)
 		{
-			result.clear();
+			Map<DataBaseSchema, String> result = new HashMap<DataBaseSchema, String>();
 			result.put(DataBaseSchema.ORD_ORDER_ID, order[0]);
-			result.put(DataBaseSchema.ORD_BUYER_ID, order[1]);
-			result.put(DataBaseSchema.ORD_SALES_REC_NO, order[2]);
 			result.put(DataBaseSchema.ORD_SHIPPING_TYPE, order[3]);
+			result.put(DataBaseSchema.ORD_SALES_REC_NO, order[2]);
 			result.put(DataBaseSchema.ORD_CREATED_TIME, order[4]);
-			result.put(DataBaseSchema.ORD_PICKED, order[5]);
-			result.put(DataBaseSchema.ORD_PACKED, order[6]);
-			result.put(DataBaseSchema.ORD_SHIPPED, order[7]);
-			result.put(DataBaseSchema.ORD_INVOICED, order[8]);
 			results.add(result);
 		}
 		
@@ -68,44 +66,32 @@ public class ValidUninvoicedOrderList
 	}
 	
 	/**
+	 * retrieve the size of the ValidUninvoicedOrderList
+	 * @return int representing the size.
+	 */
+	public int size()
+	{return this.orderList_M.size();}
+	
+	/**
 	 * orders this list of orders first by pickeability, then by shipping status, then by date.
 	 */
 	public void sortList()
 	{
 		SortOrders sort = new SortOrders();
-		this.orderList_M = sort.sortDefault(this.orderList_M, 8, 3);
+		this.orderList_M = sort.sortDefault(this.orderList_M, 3);
 	}
 	
-	/**
-	 * removes orders from the list that are uninvoiceable or partially invoiceable. Will only 
-	 * produce the desired result if the data has first been sorted using this.sortList()
-	 */
-	public void removeUninvoiceableOrders()
+	public String print()
 	{
-		for(int i = 0 ; i < this.orderList_M.size() ; ++i) 
-		{
-			if(this.orderList_M.get(i)[8].equals("0")==false)
-				
-			{this.orderList_M.remove(i);}
-		}
+		String result="";
+		for(String[] order : this.orderList_M) {result+=Arrays.deepToString(order)+"\n";}
+		return result;
 	}
 	
-	/**
-	 * re-generates the list of orders.
-	 */
-	public void reGenerateList()
-	{this.generateList();}
-	
-	/**
-	 * returns true if the orderlist exists, false if it is empty.
-	 * @return
-	 */
-	public boolean exists()
-	{if (this.orderList_M.size()>0) {return true;} else {return false;}}	
 	/**
 	 * generates the list of orders and stores them internally, this method is only called by 
 	 * the constructor and this.reGenerateList().
 	 */
 	private void generateList()
-	{}
+	{this.orderList_M = QueryInvoker.execute(QueryType.SELECT_UNINVOICED_ORDERS_NO_ERRORS, null);}
 }

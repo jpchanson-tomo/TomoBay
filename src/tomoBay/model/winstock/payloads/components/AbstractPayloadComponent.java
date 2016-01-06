@@ -27,17 +27,12 @@ import tomoBay.exceptions.PayloadException;
  */
 public abstract class AbstractPayloadComponent
 {
-	/****/
-	protected List<Byte> result_M;
 	
 	/**
 	 * 
 	 */
 	public AbstractPayloadComponent()
-	{
-		super();
-		this.result_M = new ArrayList<Byte>();
-	}
+	{super();}
 	
 	/**
 	 * this method converts the string passed in as input to the call into a list of bytes as 
@@ -55,10 +50,10 @@ public abstract class AbstractPayloadComponent
 	 */
 	protected List<Byte> addString(String string)
 	{
-		this.result_M.clear();
+		List<Byte> result = new ArrayList<Byte>();
 		byte[] stringToAdd = string.getBytes();
-		for(byte charInArray : stringToAdd) {this.result_M.add(charInArray);}
-		return this.result_M;
+		for(byte charInArray : stringToAdd) {result.add(charInArray);}
+		return result;
 	}
 	
 	/**
@@ -69,12 +64,27 @@ public abstract class AbstractPayloadComponent
 	 */
 	protected List<Byte> addByte(String bite) throws PayloadException
 	{
-		this.result_M.clear();
+		List<Byte> result = new ArrayList<Byte>();
 		if (Integer.parseInt(bite) <= 255)
-		{this.result_M.add(Byte.parseByte(bite));}
+		{result.add(Byte.parseByte(bite));}
 		else
 		{throw new PayloadException("this is not a byte: "+bite);}
-		return this.result_M;
+		return result;
+		
+//		try
+//		{
+//			List<Byte> result = new ArrayList<Byte>();
+//			ByteBuffer buffer = ByteBuffer.allocate(4);
+//			buffer.order(ByteOrder.LITTLE_ENDIAN);
+//			buffer.put(Byte.parseByte(bite));
+//			
+//
+//			for(byte bt : buffer.array())
+//			{result.add(bt);}
+//			return result;
+//		}
+//		catch(Exception e)
+//		{throw new PayloadException("this is not a byte: "+bite , e);}
 	}
 	
 	/**
@@ -84,14 +94,14 @@ public abstract class AbstractPayloadComponent
 	 */
 	protected List<Byte> addInt(String integer)
 	{
-		this.result_M.clear();
+		List<Byte> result = new ArrayList<Byte>();
 		ByteBuffer buffer = ByteBuffer.allocate(4);
 		buffer.order(ByteOrder.LITTLE_ENDIAN);
 		buffer.putInt(Integer.parseInt(integer));
 		
 		for(byte bt : buffer.array())
-		{this.result_M.add(bt);}
-		return this.result_M;
+		{result.add(bt);}
+		return result;
 	}
 	
 	/**
@@ -101,13 +111,13 @@ public abstract class AbstractPayloadComponent
 	 */
 	protected List<Byte> addShort(String smallInt)
 	{
-		this.result_M.clear();
+		List<Byte> result = new ArrayList<Byte>();
 		ByteBuffer buffer = ByteBuffer.allocate(2);
 		buffer.order(ByteOrder.LITTLE_ENDIAN);
 		buffer.putShort(Short.parseShort(smallInt));
 		
 		for(byte bt : buffer.array())
-		{this.result_M.add(bt);}
-		return this.result_M;
+		{result.add(bt);}
+		return result;
 	}
 }

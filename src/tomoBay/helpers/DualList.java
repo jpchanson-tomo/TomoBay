@@ -54,6 +54,19 @@ public class DualList<K,V>
 	}
 	
 	/**
+	 * append the contents of another DualList to the end of this one
+	 * @param dualList the DualList<K,V> to append to this one.
+	 */
+	public DualList<K,V> append(DualList<K,V> dualList)
+	{
+		for(int i = 0 ; i < dualList.size() ; ++i)
+		{
+			this.put(dualList.getKeybyIndex(i), dualList.getValueByIndex(i));
+		}
+		return this;
+	}
+	
+	/**
 	 * Returns the Key at the specified position in the DualList
 	 * @param index specifies the position in the DualList
 	 * @return K the key at the specified position
@@ -101,5 +114,13 @@ public class DualList<K,V>
 		{return this.key_M.size();}
 		else
 		{throw new DualListException("DualList inconsistency error");}
+	}
+	
+	public String toString()
+	{
+		String result = "";
+		for(int i = 0 ; i < this.size() ; ++i)
+		{result+= "["+this.key_M.get(i) + ":" + this.value_M.get(i) +"]\n";}
+		return result;
 	}
 }

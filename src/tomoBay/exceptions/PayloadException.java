@@ -43,4 +43,13 @@ public class PayloadException extends Exception
 	{
 		super(message);
 	}
+	
+	/**
+	 * ctor with message and cause
+	 * @param message
+	 */
+	public PayloadException(String message, Exception e)
+	{
+		super(message, e);
+	}
 }

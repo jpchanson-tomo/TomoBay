@@ -19,7 +19,6 @@ package tomoBay.helpers;
  * @author Jan P.C. Hanson
  *
  */
-@SuppressWarnings("unused")
 public enum ShippingPriority
 {
 	UK_RoyalMailTracked(1),
@@ -29,12 +28,15 @@ public enum ShippingPriority
 	UK_RoyalMailSecondClassRecorded(5),
 	UK_myHermesDoorToDoorService(6),
 	UK_RoyalMailSecondClassStandard(7),
-	ShippingMethodStandard(8),
-	UK_Parcelforce24(9),
-	UK_Parcelforce48(10),
-	UK_RoyalMailInternationalSignedFor(11),
-	UK_RoyalMailAirsureInternational(12),
-	InternationalPriorityShippingUK(13);
+	UK_RoyalMail48(8),
+	ShippingMethodStandard(9),
+	UK_Parcelforce24(10),
+	UK_Parcelforce48(11),
+	UK_RoyalMailInternationalSignedFor(12),
+	UK_RoyalMailAirsureInternational(13),
+	UK_RoyalMailSurfaceMailInternational(14),
+	InternationalPriorityShippingUK(15),
+	OTHER(16);
 
 	/**local holder for initialised **/
 	private int priority;
