@@ -75,54 +75,54 @@ public class InvoiceService implements AbstractService
 			}
 		}
 		
-//		if(invoicedOrders.size() > 0)
-//		{
-//		String message="<table border='1' style='width:100%'><thead><th>orderID</th><th>salesRecordNo</th></th><th>created time</th></thead><tbody>";
-//		for (String[] maildata : invoicedOrders)
-//		{
-//			message += "<tr><td>"+maildata[0]+"</td>";
-//			message += "<td>"+maildata[1]+"</td>"
-//					+ "<td>"+maildata[2]+"</td></tr>";
-//		}
-//		message+="</tbody></table>";
-//		
-//		try
-//		{
-//			EmailDirector mailmanager = new EmailDirector();
-//			mailmanager.constructEmailAndServer(new GmailBuilder());
-//			MailServerSend mailServer = mailmanager.getMailSendServer();
-//			Email email = mailmanager.getEmail();
-//		
-//			email.setRecipient(Message.RecipientType.TO, "tomomotorbay@gmail.com");
-//			email.setRecipient(Message.RecipientType.TO, "paul@tomoparts.co.uk");
-//			email.setRecipient(Message.RecipientType.TO, "steve@tomoparts.co.uk");
-//			email.setSubject("INVOICED ORDERS");
-//			email.setMessage(message);
-//		
-//			mailServer.send(email, "tomomotorbay@gmail.com", "3bay15myl1f3");
-//		}
-//		catch (NoSuchProviderException e)
-//		{
-//			e.printStackTrace();
-//		} 
-//		catch (NullEmailObjectException e)
-//		{
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (NullEmailServerObjectException e)
-//		{
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (AddressException e)
-//		{
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (MessagingException e)
-//		{
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		}
+		if(invoicedOrders.size() > 0)
+		{
+		String message="<table border='1' style='width:100%'><thead><th>orderID</th><th>salesRecordNo</th></th><th>created time</th></thead><tbody>";
+		for (String[] maildata : invoicedOrders)
+		{
+			message += "<tr><td>"+maildata[0]+"</td>";
+			message += "<td>"+maildata[1]+"</td>"
+					+ "<td>"+maildata[2]+"</td></tr>";
+		}
+		message+="</tbody></table>";
+		
+		try
+		{
+			EmailDirector mailmanager = new EmailDirector();
+			mailmanager.constructEmailAndServer(new GmailBuilder());
+			MailServerSend mailServer = mailmanager.getMailSendServer();
+			Email email = mailmanager.getEmail();
+		
+			email.setRecipient(Message.RecipientType.TO, "tomomotorbay@gmail.com");
+			email.setRecipient(Message.RecipientType.TO, "paul@tomoparts.co.uk");
+			email.setRecipient(Message.RecipientType.TO, "steve@tomoparts.co.uk");
+			email.setSubject("INVOICED ORDERS");
+			email.setMessage(message);
+		
+			mailServer.send(email, "tomomotorbay@gmail.com", "3bay15myl1f3");
+		}
+		catch (NoSuchProviderException e)
+		{
+			e.printStackTrace();
+		} 
+		catch (NullEmailObjectException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NullEmailServerObjectException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (AddressException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MessagingException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
 		
 	}
 

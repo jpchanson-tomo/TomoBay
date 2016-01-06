@@ -60,7 +60,7 @@ public class Invoice
 		this.printData_M.put("35", PayloadType.TYPE);
 		this.printData_M.put(this.brandToCode(this.dataFields_M.get(0)[6]), PayloadType.COMPANY);
 		this.printData_M.put(String.valueOf(this.invNo_M), PayloadType.INVOICE_NO);
-		this.printData_M.put("0", PayloadType.PRINT_COPIES);
+		this.printData_M.put("1", PayloadType.PRINT_COPIES);
 		this.printData_M.put("0", PayloadType.PACKING_LISTS);
 		
 		AbstractWinstockCommandResponse response;
