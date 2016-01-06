@@ -39,39 +39,39 @@ public class StopGapService implements AbstractService
 	{
 		try
 		{
-//			System.out.println("start: EBAY SERVICE");
-//			TriggerService.start(ServiceFactory.make(ServiceType.EBAY_SERVICE));
-//			System.out.println("started: wait(120000)");
-//			Thread.sleep(120000);
-//			System.out.println("finished: EBAY SERVICE");			
-//			
-//			System.out.println("started: RESCAN ERRORS");
-//			TriggerService.start(ServiceFactory.make(ServiceType.RESCAN_ERRORS_SERVICE));
-//			System.out.println("started: wait(120000)");
-//			Thread.sleep(120000);
-//			System.out.println("finished: RESCAN ERRORS");			
-//			
-//			System.out.println("started: CHECK ERRORS");
-//			TriggerService.start(ServiceFactory.make(ServiceType.CHECK_ERRORS));
-//			System.out.println("started: wait(120000)");
-//			Thread.sleep(120000);
-//			System.out.println("finished: CHECK ERRORS");			
-//			
-//			System.out.println("started: EMAIL ERRORS");
-//			String data = "<EMAIL>"
-//					+ "<TO>tomomotorbay@gmail.com</TO>"
-//					+ "<TO>paul@tomoparts.co.uk</TO>"
-//					+ "<TO>steve@tomoparts.co.uk</TO>"
-//					+ "<SUBJECT>ERRORS TO FIX!!!!!</SUBJECT>"
-//					+ "</EMAIL>";
-//			TriggerService.start(ServiceFactory.make(
-//												ServiceType.EMAIL_ERRORS_SERVICE,
-//												new EmailErrorsConfig().configure(data)
-//													));
-//			System.out.println("started: wait(120000)");
-//			Thread.sleep(120000);
-//			System.out.println("finished: EMAIL ERRORS");
-//			
+			System.out.println("start: EBAY SERVICE");
+			TriggerService.start(ServiceFactory.make(ServiceType.EBAY_SERVICE));
+			System.out.println("started: wait(120000)");
+			Thread.sleep(120000);
+			System.out.println("finished: EBAY SERVICE");			
+			
+			System.out.println("started: RESCAN ERRORS");
+			TriggerService.start(ServiceFactory.make(ServiceType.RESCAN_ERRORS_SERVICE));
+			System.out.println("started: wait(120000)");
+			Thread.sleep(120000);
+			System.out.println("finished: RESCAN ERRORS");			
+			
+			System.out.println("started: CHECK ERRORS");
+			TriggerService.start(ServiceFactory.make(ServiceType.CHECK_ERRORS));
+			System.out.println("started: wait(120000)");
+			Thread.sleep(120000);
+			System.out.println("finished: CHECK ERRORS");			
+			
+			System.out.println("started: EMAIL ERRORS");
+			String data = "<EMAIL>"
+					+ "<TO>tomomotorbay@gmail.com</TO>"
+					+ "<TO>paul@tomoparts.co.uk</TO>"
+					+ "<TO>steve@tomoparts.co.uk</TO>"
+					+ "<SUBJECT>ERRORS TO FIX!!!!!</SUBJECT>"
+					+ "</EMAIL>";
+			TriggerService.start(ServiceFactory.make(
+												ServiceType.EMAIL_ERRORS_SERVICE,
+												new EmailErrorsConfig().configure(data)
+													));
+			System.out.println("started: wait(120000)");
+			Thread.sleep(120000);
+			System.out.println("finished: EMAIL ERRORS");
+			
 			System.out.println("started: INVOICE SERVICE");
 			TriggerService.start(ServiceFactory.make(ServiceType.INVOICE_SERVICE));
 			Thread.sleep(120000);
