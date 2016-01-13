@@ -15,7 +15,9 @@ package tomoBay.model.services.basicEbayUpdateService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
+import java.util.Arrays;
 
+import tomoBay.model.services.helpers.EbayOrderCancellationStatus;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 
@@ -47,16 +49,21 @@ public class TransactionsTable
 			TransactionType[] transactionArray = order.getTransactionArray().getTransaction();
 			for(TransactionType transaction : transactionArray)
 			{
+				double shippingCost = 0.00;
+				try {shippingCost = transaction.getActualShippingCost().getValue();}
+				catch (Exception e){}
+				
 				String[] insertVals = 
 					{
 						transaction.getTransactionID(),
 						order.getOrderID(),
 						transaction.getItem().getItemID(),
 						String.valueOf(transaction.getQuantityPurchased()),
-						String.valueOf(transaction.getTransactionPrice().getValue())
+						String.valueOf(transaction.getTransactionPrice().getValue()),
+						String.valueOf(shippingCost)
 					};
-				QueryInvoker.execute(QueryType.INSERT_EBAY_TRANSACTIONS,insertVals);
-				
+				if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
+				{QueryInvoker.execute(QueryType.INSERT_EBAY_TRANSACTIONS,insertVals);}
 			}
 		}
 	}

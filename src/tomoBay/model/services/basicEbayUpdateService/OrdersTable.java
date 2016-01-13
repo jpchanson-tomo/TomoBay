@@ -19,8 +19,14 @@ import java.sql.Timestamp;
 
 
 
+import java.util.Arrays;
+
+import tomoBay.model.services.helpers.EbayOrderCancellationStatus;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+
+
+
 
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -70,7 +76,8 @@ public class OrdersTable
 					order.getShippingServiceSelected().getShippingService(),
 					ts.toString()
 				};
-			QueryInvoker.execute(QueryType.INSERT_EBAY_ORDERS, insertVals);
+			if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
+			{QueryInvoker.execute(QueryType.INSERT_EBAY_ORDERS, insertVals);}
 		}
 	}
 }

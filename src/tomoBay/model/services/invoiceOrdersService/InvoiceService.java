@@ -57,13 +57,14 @@ public class InvoiceService implements AbstractService
 	{
 		ValidUninvoicedOrderList orderList = new ValidUninvoicedOrderList();
 		CalculateInvoiceStatus orderStatus = new CalculateInvoiceStatus();
-		UpdateDB db = new UpdateDB();
+		DB db = new DB();
 		List<String[]> invoicedOrders = new ArrayList<String[]>();
 		orderList.sortList();
 		List<Map<DataBaseSchema,String>> orders = orderList.get();
 		
 		for(Map<DataBaseSchema,String> order : orders)
 		{
+//			System.out.println("0");
 			if(orderStatus.status(order.get(DataBaseSchema.ORD_ORDER_ID))==InvoiceableStatus.Invoiceable)
 			{
 				Invoice invoice = new Invoice(order.get(DataBaseSchema.ORD_ORDER_ID));
@@ -71,7 +72,7 @@ public class InvoiceService implements AbstractService
 				System.out.println(invNo);
 				invoice.print();
 				invoicedOrders.add(new String[] {order.get(DataBaseSchema.ORD_ORDER_ID), order.get(DataBaseSchema.ORD_SALES_REC_NO), order.get(DataBaseSchema.ORD_CREATED_TIME)});
-				db.update(order.get(DataBaseSchema.ORD_ORDER_ID));
+				db.updateInvStatus(order.get(DataBaseSchema.ORD_ORDER_ID));
 			}
 		}
 		

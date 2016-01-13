@@ -59,8 +59,6 @@ public class InvoiceHeader
 		header.put(this.getAddress(InvoiceHeader.AddressType_M.COUNTY), PayloadType.COUNTY);
 		header.put(this.getAddress(InvoiceHeader.AddressType_M.POSTCODE), PayloadType.POSTCODE);
 		header.put(this.getInvoiceNo(), PayloadType.ORDER_NO);
-//		header.put(this.getInvLines(), PayloadType.INV_LINES);
-		
 		return header;
 	}
 	
@@ -114,65 +112,5 @@ public class InvoiceHeader
 		this.addressLines_M.put(AddressType_M.CITY, this.dataFields_M.get(0)[15]);
 		this.addressLines_M.put(AddressType_M.COUNTY, this.dataFields_M.get(0)[16]);
 		this.addressLines_M.put(AddressType_M.POSTCODE, this.dataFields_M.get(0)[17]);
-		
-		
-//		String addresses = this.dataFields_M.get(0)[13].replaceAll("null,", "")
-//							.replaceAll(", null", "").replaceAll(" ,", "")
-//							.replaceAll(",(,)\\s", "$1");
-//		String[] addressArray = addresses.split(",");
-//		for(int i=0 ; i < addressArray.length ; ++i) {addressArray[i] = addressArray[i].trim();}
-//		
-//		System.out.println(addresses);
-//		System.out.println(Arrays.toString(addressArray));
-//		
-//		if (addressArray.length > 5) {this.addressArrayGreaterThan5(addressArray);}
-//		else if (addressArray.length < 5) {this.addressArrayLessThan5(addressArray);}
-//		else
-//		{
-//			this.addressLines_M.put(AddressType_M.LINE1, addressArray[0]);
-//			this.addressLines_M.put(AddressType_M.LINE2, addressArray[1]);
-//			this.addressLines_M.put(AddressType_M.CITY, addressArray[2]);
-//			this.addressLines_M.put(AddressType_M.COUNTY, addressArray[3]);
-//			this.addressLines_M.put(AddressType_M.POSTCODE, addressArray[4]);
-//			
-//		}
-	}
-	
-	/**
-	 * 
-	 * @param addresses
-	 */
-	private void addressArrayGreaterThan5(String[] addresses)
-	{
-		for(int i = addresses.length-1 ; i > 0 ; --i)
-		{
-			this.addressLines_M.put(AddressType_M.values()[i], addresses[i]);
-		}
-		this.addressLines_M.put(AddressType_M.LINE1, addresses[0]+", "+addresses[1]);
-		this.addressLines_M.put(AddressType_M.LINE2, addresses[2]);
-		this.addressLines_M.put(AddressType_M.CITY, addresses[3]);
-		this.addressLines_M.put(AddressType_M.COUNTY, addresses[4]);
-		this.addressLines_M.put(AddressType_M.POSTCODE, addresses[5]);
-	}
-	
-	/**
-	 * 
-	 * @param addresses
-	 */
-	private void addressArrayLessThan5(String[] addresses)
-	{
-		for(int i = addresses.length-1 ; i >= 0 ; --i)
-		{
-			this.addressLines_M.put(AddressType_M.values()[i], addresses[i]);
-//			this.addressLines_M.put(AddressType_M.LINE1, addresses[0]);
-//			this.addressLines_M.put(AddressType_M.LINE2, " ");
-//			this.addressLines_M.put(AddressType_M.CITY, addresses[1]);
-//			this.addressLines_M.put(AddressType_M.COUNTY, addresses[2]);
-//			this.addressLines_M.put(AddressType_M.POSTCODE, addresses[3]);
-		}
-		for (int i = addresses.length ; i < AddressType_M.values().length ; ++i)
-		{
-			this.addressLines_M.put(AddressType_M.values()[i], " ");
-		}
 	}
 }

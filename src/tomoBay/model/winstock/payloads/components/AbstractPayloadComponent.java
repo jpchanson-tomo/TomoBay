@@ -16,6 +16,7 @@ package tomoBay.model.winstock.payloads.components;
  */
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,9 +51,15 @@ public abstract class AbstractPayloadComponent
 	 */
 	protected List<Byte> addString(String string)
 	{
+		byte standin = ".".getBytes()[0];
 		List<Byte> result = new ArrayList<Byte>();
-		byte[] stringToAdd = string.getBytes();
-		for(byte charInArray : stringToAdd) {result.add(charInArray);}
+		byte[] stringToAdd = string.getBytes(StandardCharsets.US_ASCII);
+		for(byte charInArray : stringToAdd) 
+		{	//replace "?" i.e. weird chars with a full stop
+			if(charInArray == 63){result.add(standin);}
+			else {result.add(charInArray);}
+			
+		}
 		return result;
 	}
 	
@@ -70,21 +77,6 @@ public abstract class AbstractPayloadComponent
 		else
 		{throw new PayloadException("this is not a byte: "+bite);}
 		return result;
-		
-//		try
-//		{
-//			List<Byte> result = new ArrayList<Byte>();
-//			ByteBuffer buffer = ByteBuffer.allocate(4);
-//			buffer.order(ByteOrder.LITTLE_ENDIAN);
-//			buffer.put(Byte.parseByte(bite));
-//			
-//
-//			for(byte bt : buffer.array())
-//			{result.add(bt);}
-//			return result;
-//		}
-//		catch(Exception e)
-//		{throw new PayloadException("this is not a byte: "+bite , e);}
 	}
 	
 	/**

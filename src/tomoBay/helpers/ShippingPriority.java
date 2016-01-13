@@ -21,6 +21,7 @@ package tomoBay.helpers;
  */
 public enum ShippingPriority
 {
+	UK_RoyalMailFirstClassRecorded(1),
 	UK_RoyalMailTracked(1),
 	UK_OtherCourier24(2),
 	UK_RoyalMail24(3),

@@ -104,6 +104,11 @@ public class Invoice
 	private void retrieveOrderInfo(String orderNo)
 	{this.dataFields_M = QueryInvoker.execute(QueryType.SELECT_FULL_ORDER_LINE, new String[] {orderNo});}
 	
+	/**
+	 * 
+	 * @param invoice
+	 * @return
+	 */
 	private AbstractWinstockCommandResponse sendInvoice(DualList<String, PayloadType> invoice)
 	{
 		try
@@ -127,6 +132,5 @@ public class Invoice
 		{return "3";}
 		else
 		{return "8";}
-		
 	}
 }

@@ -89,7 +89,7 @@ public class Stock
 		this.queryWinstockURL(partNo, brandCode);
 		
 		result = this.postFormatXMLString(this.response_M);
-		result = XMLParser.parse("COST", result);
+		result = XMLParser.parse("LAST_COST", result);
 		try{return Double.parseDouble(result);}
 		catch(NumberFormatException nfe) {return -8008135;}
 	}

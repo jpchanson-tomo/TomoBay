@@ -15,10 +15,13 @@ package tomoBay.model.services.basicEbayUpdateService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Arrays;
 
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 
+import com.ebay.soap.eBLBaseComponents.InternationalShippingServiceOptionsType;
 import com.ebay.soap.eBLBaseComponents.OrderType;
 /**
  * updates the buyers table of the database with the information gleaned from an ebay api call
@@ -43,19 +46,60 @@ public class BuyersTable
 	{
 		for (OrderType order : orders)
 		{
-			String[] insertVals = 
-				{
-					order.getBuyerUserID(),
-					order.getShippingAddress().getName(),
-						order.getShippingAddress().getStreet1(), 
-						order.getShippingAddress().getStreet2(), 
-						order.getShippingAddress().getCityName(),
-						order.getShippingAddress().getStateOrProvince(),
-						order.getShippingAddress().getPostalCode(), 
-					order.getTransactionArray().getTransaction(0).getBuyer().getEmail(),
-					order.getShippingAddress().getPhone()
-				};
+			String[] insertVals;
+			
+			if(order.isIsMultiLegShipping()==true)
+			{insertVals = BuyersTable.getGSPaddress(order);System.out.println(order.getOrderID());}
+			
+			else
+			{insertVals = BuyersTable.getAddress(order);}
+			
 			QueryInvoker.execute(QueryType.INSERT_EBAY_BUYERS,insertVals);
 		}
+	}
+	
+	/**
+	 * retrieves the personal address associated with the order passed in as an argument.
+	 * @param order the OrderType representing a particular order (from ebay API)
+	 * @return String[] containing the address fields for this buyer
+	 */
+	private static String[] getAddress(OrderType order)
+	{
+		String[] insertVals = 
+			{
+				order.getBuyerUserID(),
+				order.getShippingAddress().getName(),
+				order.getShippingAddress().getStreet1(), 
+				order.getShippingAddress().getStreet2(), 
+				order.getShippingAddress().getCityName(),
+				order.getShippingAddress().getStateOrProvince(),
+				order.getShippingAddress().getPostalCode(), 
+				order.getTransactionArray().getTransaction(0).getBuyer().getEmail(),
+				order.getShippingAddress().getPhone()
+			};
+		return insertVals;
+	}
+	
+	/**
+	 * retrieves the global shipping program address associated with the order passed in as an argument.
+	 * This method will return a null pointer if the order is not applicable to the global shipping program
+	 * @param order the OrderType representing a particular order (from ebay API)
+	 * @return String[] containing the address fields for this buyer
+	 */
+	private static String[] getGSPaddress(OrderType order)
+	{
+		String[] insertVals = 
+			{
+				order.getBuyerUserID(),
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getReferenceID()+"\n",
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getName()+"\n",
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStreet1()+"\n",
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getCityName()+"\n",
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStateOrProvince()+"\n",
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getPostalCode(),
+				order.getTransactionArray().getTransaction(0).getBuyer().getEmail(),
+				order.getShippingAddress().getPhone()
+			};
+		return insertVals;
 	}
 }

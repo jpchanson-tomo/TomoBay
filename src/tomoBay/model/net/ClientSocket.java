@@ -19,6 +19,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 /**
  * This class is responsible for creating a client socket connection to a particular machine at a
  * specified port. It also provides a method of passing information to and receiving information

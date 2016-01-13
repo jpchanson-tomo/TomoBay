@@ -16,11 +16,14 @@ package tomoBay.model.services.invoiceOrdersService.invoice;
  */
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.List;
 
 import tomoBay.helpers.BrandToCode;
 import tomoBay.helpers.DualList;
 import tomoBay.model.services.helpers.PartList;
+import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.model.winstock.Stock;
 import tomoBay.model.winstock.payloads.PayloadType;
 /**
@@ -36,6 +39,9 @@ public class InvoiceBody
 	private Stock winstock_M;
 	/****/
 	private int[] prices_M;
+	
+	private double extraPostage=0.00;
+	
 	/**
 	 * default ctor
 	 */
@@ -55,18 +61,19 @@ public class InvoiceBody
 		for(String[] data : this.dataFields_M)
 		{
 			PartList parts = new PartList(data[7]);
-			this.populatePrices(parts, data[9], BrandToCode.convert(data[6]));
+			this.prices_M = new Prices(parts,data[9],BrandToCode.convert(data[6]), data[8], this.extraPostage).getPrices();
+			
 			
 			for(int i = 0 ; i < parts.size() ; ++i)
 			{
 				body.put(this.getPartNo(i, parts), PayloadType.PART_NO);
 				body.put(this.getDescription(i, parts, data[6]), PayloadType.DESCRIPTION);
-				body.put(this.getQuantity(i, parts), PayloadType.QUANTITY);
+				body.put(this.getQuantity(i, parts, data[8]), PayloadType.QUANTITY);
 				body.put(this.getPrice(i, data[9], parts), PayloadType.PRICE);
 				body.put("1", PayloadType.INSTOCK);
 			}
 		}
-		
+		this.addPostage(body);
 		
 		return body;
 	}
@@ -78,8 +85,14 @@ public class InvoiceBody
 	private int getNoInvLines()
 	{
 		int noOfParts=0;
-		for(String[] data : this.dataFields_M) {noOfParts += data[7].split("\\(\\d*\\s*\\)").length;}
-		return noOfParts;
+		for(String[] data : this.dataFields_M) 
+		{
+			noOfParts += data[7].split("\\(\\d*\\s*\\)").length;
+			if (Double.parseDouble(data[18]) != 0.00) {extraPostage=Double.parseDouble(data[18]);}
+		}
+		
+		if(this.extraPostage != 0.00) {return noOfParts+1;}
+		else{return noOfParts;}
 	}
 	
 	/**
@@ -99,8 +112,8 @@ public class InvoiceBody
 	{
 		String result = winstock_M
 					.requestDescription(parts.getPartNumber(index), BrandToCode.convert(brand));
-//		int endOfString = result.indexOf("�");
-		int endOfString = result.indexOf("œ");
+		int endOfString = result.indexOf("�");
+//		int endOfString = result.indexOf("œ");
 		result = result.substring(0, endOfString);
 		return result;
 	}
@@ -110,8 +123,11 @@ public class InvoiceBody
 	 * @param index
 	 * @return
 	 */
-	private String getQuantity(int index, PartList parts)
-	{return String.valueOf(parts.getPartQty(index));}
+	private String getQuantity(int index, PartList parts, String orderQty)
+	{
+		int oQty = Integer.parseInt(orderQty);
+		return String.valueOf(parts.getPartQty(index) * oQty);
+	}
 	
 	/**
 	 * 
@@ -119,76 +135,21 @@ public class InvoiceBody
 	 * @return
 	 */
 	private String getPrice(int index, String itemPrice, PartList parts)
-	{
-		int price = this.convertPriceToPennies(itemPrice)/this.getNoInvLines();
-		
-		
-		return String.valueOf( (price*10)/12 );
-	}
+	{return String.valueOf(this.prices_M[index]);}
 	
 	/**
 	 * 
-	 * @param price
-	 * @return
+	 * @param invoiceBody
 	 */
-	private int convertPriceToPennies(String price)
+	private void addPostage(DualList<String, PayloadType> invoiceBody)
 	{
-		int result;
-		if(price.contains("."))
+		if (this.extraPostage != 0.00) 
 		{
-			int preDecimal = Integer.parseInt(price.split("\\.")[1]);
-			int postDecimal = (Integer.parseInt(price.split("\\.")[0])*100);
-		
-			if(preDecimal < 10) {preDecimal = preDecimal * 10;}
-		
-			result = (postDecimal+preDecimal);
+			invoiceBody.put("POST", PayloadType.PART_NO);
+			invoiceBody.put("Postage and Packaging", PayloadType.DESCRIPTION);
+			invoiceBody.put("1", PayloadType.QUANTITY);
+			invoiceBody.put(String.valueOf(Prices.convertPriceToPennies(this.extraPostage/1.2)), PayloadType.PRICE);
+			invoiceBody.put("1", PayloadType.INSTOCK);
 		}
-		else
-		{
-			result = (Integer.parseInt(price)*100);
-		}
-		return result;
-	}
-	////////////////////////////////////////////////////////////////////////////////PRICE OBJECT
-	private void populatePrices(PartList parts, String itemPrice, String brandCode)
-	{
-		this.prices_M = new int[parts.size()];
-		this.generateCosts(parts, brandCode, itemPrice);
-	}
-	
-	private void generateCosts(PartList parts, String brandCode, String itemPrice)
-	{
-		double[] costs = new double[parts.size()]; 
-		double totalCost= 0;
-		double totalPrice = Double.parseDouble(itemPrice);
-		for (int i = 0 ; i < costs.length ; ++i)
-		{
-			 costs[i] = this.winstock_M.requestLastCost(parts.getPartNumber(i).toUpperCase(), brandCode);
-			 totalCost += costs[i];
-		}
-		
-		this.generatePrices(costs, totalCost, totalPrice);
-	}
-	
-	private void generatePrices(double[] costsArray, double totalCost, double itemPrice)
-	{
-		int totalCostworkedOut = 0;
-		double priceMinusVAT = (itemPrice-(itemPrice/6));
-		DecimalFormat toDecimal = new DecimalFormat("#.##");
-		toDecimal.setRoundingMode(RoundingMode.DOWN);
-		int remainder = 0;
-		for (int i = 0 ; i < costsArray.length ; ++i)
-		{
-			double individualPrice =  (costsArray[i]/totalCost)*priceMinusVAT;
-			this.prices_M[i] = this.convertPriceToPennies(toDecimal.format(individualPrice));
-			totalCostworkedOut += this.prices_M[i];
-			System.out.println("individualPrice = "+individualPrice);
-		}
-		remainder = this.convertPriceToPennies(toDecimal.format(priceMinusVAT)) - totalCostworkedOut;
-		this.prices_M[0] += remainder;
-		
-//		System.out.println("calculated total = "+toDecimal.format(totalCostworkedOut));
-//		System.out.println("actual total = " + toDecimal.format(priceMinusVAT));
-//		System.out.println(this.prices_M[0] + " " + this.prices_M[1]);
 	}
 }
