@@ -22,7 +22,7 @@ public class WarehouseOrderPresenter implements AbstractPresenter
 	 * @see openDMS.presenters.AbstractPresenter#present()
 	 */
 	@Override
-	public String present(AbstractView view)
+	public String present(AbstractView view, String type, String data)
 	{
 		// TODO Auto-generated method stub
 		return null;

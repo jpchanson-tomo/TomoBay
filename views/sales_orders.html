@@ -1,50 +1,21 @@
 <html>
 	<head>
-		<title>TomoBay - eBay</title>
+		<title>TomoBay - Sales Orders</title>
 		<link rel="shortcut icon" href="images/logo.png" />
 		<meta charset="utf-8">
  		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/stylesheet.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="js/getOrders.js"></script>
-		<script src="js/print.js"></script>
-		<script src="js/colourCodeByStatus.js"></script>
-		<script src="js/addCommonContent.js"></script>
+		<script src="js/salesOrders.js"></script>
 	</head>
 
 	<body>		
 		<div class="navibar"></div>
 	
 		<div class="container-fluid">
-			<div class="panel panel-default panel-primary">
-				<div class="panel-heading">
-					<h2 class="">Sales - Orders</h2>
-				</div>
-				
-				<div class="table-responsive">
-					<table class='table table-condensed table-striped'>
-						<thead>
-							<tr>
-								<th><input type='checkbox' class = 'chcktbl' /></th>
-								<th>Name</th>
-								<th>Date</th>
-								<th>Shipping Type</th>
-								<th>Details</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<tbody class="tableData"></tbody>
-					</table>
-				</div>
-				
-				<div class="panel-footer panel-primary">
-					<a class="btn btn-primary">Send to Warehouse</a>
-					<a class="btn btn-primary" href="/sales_orders.html">Refresh</a>
-					<button onclick="printScreen()" class="btn btn-primary">Print</button>
-				</div>
-			</div>
+			<div class="sortable"></div>
 		</div>
 		
 	</body>

@@ -52,7 +52,7 @@ public class XMLParser
 
 			Document doc = builder.parse(src);
 			String tagContent = doc.getElementsByTagName(tag).item(0).getTextContent();
-			return tagContent;
+			return tagContent.trim();
 		}
 		catch(SAXException saxE)
 		{return saxE.getMessage();}

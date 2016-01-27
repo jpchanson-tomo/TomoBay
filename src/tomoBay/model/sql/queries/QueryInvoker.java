@@ -36,6 +36,7 @@ import tomoBay.model.sql.queries.factories.SelectEbayItemsNotInTransactionsFacto
 import tomoBay.model.sql.queries.factories.SelectEbayOrdersFactory;
 import tomoBay.model.sql.queries.factories.SelectFordStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectFullOrderLineFactory;
+import tomoBay.model.sql.queries.factories.SelectInvoicedOrdersFactory;
 import tomoBay.model.sql.queries.factories.SelectPSAStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectPrestigeStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectTransactionByOrderIDFactory;
@@ -46,6 +47,7 @@ import tomoBay.model.sql.queries.factories.UpdateAvailableStockPSAFactory;
 import tomoBay.model.sql.queries.factories.UpdateAvailableStockPrestigeFactory;
 import tomoBay.model.sql.queries.factories.UpdateFordStockReqFactory;
 import tomoBay.model.sql.queries.factories.UpdateInvoiceStatusFactory;
+import tomoBay.model.sql.queries.factories.UpdateInvoiceStatusSRNFactory;
 import tomoBay.model.sql.queries.factories.UpdateItemBrandAndPartNoFactory;
 import tomoBay.model.sql.queries.factories.UpdateItemErrorFactory;
 import tomoBay.model.sql.queries.factories.UpdateItemNoteFactory;
@@ -107,6 +109,8 @@ public class QueryInvoker
 			SELECT_EBAY_ITEMS_ERROR,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectFullOrderLine}**/
 			SELECT_FULL_ORDER_LINE,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectInvoicedOrders}**/
+			SELECT_INVOICED_ORDERS,
 			
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo}**/
 			UPDATE_ITEM_BRAND_AND_PARTNO,
@@ -126,6 +130,8 @@ public class QueryInvoker
 			UPDATE_AVAILABLE_STOCK_PRESTIGE,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateInvoiceStatus}**/
 			UPDATE_INVOICE_STATUS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateInvoiceStatusSRN}**/
+			UPDATE_INVOICE_STATUS_SRN,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemError}**/
 			UPDATE_ITEM_ERROR,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemNote}**/
@@ -164,6 +170,7 @@ public class QueryInvoker
 			put(QueryType.SELECT_UNINVOICED_ORDERS_NO_ERRORS, new SelectUninvoicedOrdersNoErrorsFactory());
 			put(QueryType.SELECT_EBAY_ITEMS_ERROR, new SelectEbayItemsErrorFactory());
 			put(QueryType.SELECT_FULL_ORDER_LINE, new SelectFullOrderLineFactory());
+			put(QueryType.SELECT_INVOICED_ORDERS, new SelectInvoicedOrdersFactory());
 
 			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
 			put(QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, new UpdateTotalItemsRequiredFactory());
@@ -176,6 +183,7 @@ public class QueryInvoker
 			put(QueryType.UPDATE_INVOICE_STATUS, new UpdateInvoiceStatusFactory());
 			put(QueryType.UPDATE_ITEM_ERROR, new UpdateItemErrorFactory());
 			put(QueryType.UPDATE_ITEM_NOTE, new UpdateItemNoteFactory());
+			put(QueryType.UPDATE_INVOICE_STATUS_SRN, new UpdateInvoiceStatusSRNFactory());
 			
 			put(QueryType.CLEAR_PARTS_PSA, new ClearPartsPSAFactory());
 			put(QueryType.CLEAR_PARTS_FORD, new ClearPartsFordFactory());

@@ -38,7 +38,7 @@ public class SelectUninvoicedOrders implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private static final String query = "SELECT * FROM ebay_orders WHERE invoiced <> 1 ;";
+	private static final String query = "SELECT * FROM ebay_orders WHERE invoiced <> 1 ORDER BY createdTime ASC;";
 	
 	/**
 	 * default constructor

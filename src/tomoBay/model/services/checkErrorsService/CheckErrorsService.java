@@ -37,8 +37,9 @@ public class CheckErrorsService implements AbstractService
 	 * @see tomoBay.model.services.AbstractService#run()
 	 */
 	@Override
-	public void run()
+	public String call()
 	{
+		System.out.println("check errors started");
 		PartList partlist;
 		Stock errorCheck = new Stock();
 		List<String[]> orders = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS, new String[] {});
@@ -53,6 +54,7 @@ public class CheckErrorsService implements AbstractService
 				{QueryInvoker.execute(QueryType.UPDATE_ITEM_NOTE, new String[] {errorMsg, order[0]});}
 			}
 		}
+		return "check errors finished";
 	}
 
 	/* (non-Javadoc)

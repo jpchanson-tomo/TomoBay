@@ -51,7 +51,7 @@ public interface AbstractWinstockCommandResponse
 	 * AbstractWinstockCommandResponse.
 	 * @return String the data of the query
 	 */
-	public String getRecieved();
+	public String[] getRecieved();
 	
 	/**
 	 * method used to retrieve the data sent to the socket.

@@ -105,4 +105,23 @@ ul.dropdown-menu > li > a:hover
 	height:63%;
 	overflow-y:scroll;
 }
+
+.spinner
+{
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.spinner-text
+{
+	margin: 0;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
 /*********************************************************************************ENDOF TABLE*/

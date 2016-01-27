@@ -14,6 +14,8 @@ package tomoBay.model.winstock;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.helpers.Config;
+import tomoBay.helpers.ConfigReader;
 import tomoBay.helpers.XMLParser;
 import tomoBay.model.net.HttpGET;
 import tomoBay.model.net.HttpResponse;
@@ -25,9 +27,9 @@ import tomoBay.model.net.HttpResponse;
 public class Stock
 {
 	/**the first part of the winstock url up to the first variable**/
-	private static final String URL_PT1_M="http://192.168.0.100:7979/get?index=product&company=";
+	private static final String URL_PT1_M=ConfigReader.getConf(Config.WIN_URL1);
 	/**the second part of the winstock url up to the second variable**/
-	private static final String URL_PT2_M= "&find=";
+	private static final String URL_PT2_M= ConfigReader.getConf(Config.WIN_URL2);
 	/**the last part number to have info on it requested**/
 	private String currentPartNo_M;
 	/**the brandCode of the last part number to have info in it requested**/
@@ -89,7 +91,7 @@ public class Stock
 		this.queryWinstockURL(partNo, brandCode);
 		
 		result = this.postFormatXMLString(this.response_M);
-		result = XMLParser.parse("LAST_COST", result);
+		result = XMLParser.parse("COST", result);
 		try{return Double.parseDouble(result);}
 		catch(NumberFormatException nfe) {return -8008135;}
 	}
@@ -101,7 +103,6 @@ public class Stock
 			HttpGET get = new HttpGET();
 			this.response_M = get.request(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo.toUpperCase());
 		}
-			
 	}
 	
 	/**

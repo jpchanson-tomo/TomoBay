@@ -28,10 +28,11 @@ public class TestService implements AbstractService
 	 * @see java.lang.Runnable#run()
 	 */
 	@Override
-	public void run()
+	public String call()
 	{
 		System.out.println("another sheduled task" +i);
 		++i;
+		return "";
 	}
 	/* (non-Javadoc)
 	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)

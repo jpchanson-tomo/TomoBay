@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<title>TomoBay - Sales Orders</title>
+		<link rel="shortcut icon" href="images/logo.png" />
+		<meta charset="utf-8">
+ 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="js/order.js"></script>
+	</head>
+
+	<body>		
+		<div class="navibar"></div>
+	
+		<div class="container-fluid">
+			<div class="panel panel-default panel-primary">
+
+				<div class="panel-heading">
+					<h2 class="" >Order: 20165748964621</h2>
+				</div>
+				
+				
+				<div class="panel-body bg-warning">
+				
+					<div class="row summaryContainer">
+						<div class="col-sm-4 addressInfo">
+							<div class="panel panel-default panel-primary">
+							<div class="panel-heading"><h3>Address Info</h3></div>
+								<table class="">
+									<tr>
+										<th>Street1:</th>
+										<td id="street1"></td>
+									</tr>
+									<tr>
+										<th>Street2:</th>
+										<td id="street2"></td>
+									</tr>
+									<tr>
+										<th>City:</th>
+										<td id="city"></td>
+									</tr>
+									<tr>
+										<th>County:</th>
+										<td id="county"></td>
+									</tr>
+									<tr>
+										<th>PostCode:</th>
+										<td id="postcode"></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						
+						<div class="col-sm-4 buyerInfo">
+							<div class="panel panel-default panel-primary">
+							<div class="panel-heading"><h3>Buyer Info</h3></div>
+								<table class="">
+									<tr>
+										<th>Name:</th>
+										<td id="name"></td>
+									</tr>
+									<tr>
+										<th>Buyer ID:</th>
+										<td id="buyerID"></td>
+									</tr>
+									<tr>
+										<th>Email:</th>
+										<td id="email"></td>
+									</tr>
+									<tr>
+										<th>Phone#:</th>
+										<td id="phone"></td>
+									</tr>
+									<tr>
+										<th> </br></th>
+										<td> </br></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						
+						
+						<div class="col-sm-4  orderInfo">
+							<div class="panel panel-default panel-primary">
+							<div class="panel-heading"><h3>Order Info</h3></div>
+								<table class="">
+									<tr>
+										<th>Sales Record Number:</th>
+										<td id="salesRecNo"></td>
+									</tr>
+									<tr>
+										<th>Shipping Type:</th>
+										<td id="shippingType"></td>
+									</tr>
+									<tr>
+										<th>Created Time:</th>
+										<td id="createdTime"></td>
+									</tr>
+									<tr>
+										<th>Order Total(ex VAT):</th>
+										<td id="orderTotalExVAT"></td>
+									</tr>
+									<tr>
+										<th>Order Total(inc VAT):</th>
+										<td id="orderTotalIncVAT"></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-xs-12 transactions">
+							<div class="panel panel-default panel-primary">
+								<div class="panel-heading"><h3>Transaction(s) Info</h3></div>
+								
+								<div class="panel-body transactionData">
+								
+								</div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-footer panel-primary">
+					<button class="btn btn-primary">action 1</button>
+					<button class="btn btn-primary">action 2</button>
+					<button class="btn btn-primary">action 3</button>
+					<button class="btn btn-primary">action 4</button>
+				</div>
+				
+			</div>
+		</div>
+		
+	</body>
+</html>

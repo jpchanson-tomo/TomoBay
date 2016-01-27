@@ -1,0 +1,37 @@
+<div class="panel">
+				<div id="hacker-list" class="table-responsive">
+					<input class="search" placeholder="Search" />
+    				<table class="table table-bordered table-striped table-condensed">
+    					<thead>
+							<th class="sort" data-sort="name">name</th>
+							<th class="sort" data-sort="city">city</th>
+							<th>select</th>
+						</thead>
+						<tbody class="list"></tbody>
+					</table>
+				</div>
+
+				<div style="display:none;">
+    				<table>
+       					<tbody class="list">
+       						<tr id="hacker-item">
+	       						<td class="name"></td>
+		       					<td class="city"></td>
+		       					<td class="select"></td>
+		       				</tr>
+       					</tbody>
+    				</table>
+				</div>
+				</div>
+				
+				
+				
+	var options = {item: 'hacker-item'};
+
+	var values = 
+	[ //get request goes here
+	  { name: 'Jonny', city:'Stockholm', select:"<input type='checkbox' class='chcktbl'/>a" },
+	  { name: 'Jonas', city:'Berlin', select:"<input type='checkbox' class='chcktbl'/>b" }
+    ];
+
+	var hackerList = new List('hacker-list', options, values);

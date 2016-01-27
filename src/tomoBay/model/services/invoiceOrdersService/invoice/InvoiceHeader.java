@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 import tomoBay.helpers.BrandToCode;
-import tomoBay.helpers.DualList;
+import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.winstock.payloads.PayloadType;
 /**
  *

@@ -63,7 +63,7 @@ public class OrdersTable
 	 * @param orders list of orders.
 	 * @throws SQLException 
 	 */
-	public static void populate(String[] credentials, OrderType[] orders) throws SQLException
+	public static void populate(OrderType[] orders) throws SQLException
 	{
 		for (OrderType order : orders)
 		{
@@ -74,7 +74,8 @@ public class OrdersTable
 					order.getBuyerUserID(),
 					String.valueOf(order.getShippingDetails().getSellingManagerSalesRecordNumber()),
 					order.getShippingServiceSelected().getShippingService(),
-					ts.toString()
+					ts.toString(),
+					String.valueOf(order.getTotal().getValue())
 				};
 			if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
 			{QueryInvoker.execute(QueryType.INSERT_EBAY_ORDERS, insertVals);}

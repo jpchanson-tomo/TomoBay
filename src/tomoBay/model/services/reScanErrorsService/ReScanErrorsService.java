@@ -35,8 +35,9 @@ public class ReScanErrorsService implements AbstractService
 	 * @see tomoBay.model.services.AbstractService#run()
 	 */
 	@Override
-	public void run()
+	public String call()
 	{
+		System.out.println("rescan errors started");
 		ReScanErrorsDBActions database = new ReScanErrorsDBActions();
 		ReScanErrorsWinstockActions winstock = new ReScanErrorsWinstockActions();
 		
@@ -48,6 +49,7 @@ public class ReScanErrorsService implements AbstractService
 			if (winstock.partNoHasError(item) == false)
 			{database.updateDBwithCorrectedInfo(item);}
 		}
+		return "rescan errors finished";
 	}
 
 	/* (non-Javadoc)

@@ -1,4 +1,6 @@
 package tomoBay.model.services;
+import java.util.concurrent.Callable;
+
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -29,12 +31,12 @@ import tomoBay.exceptions.ServiceException;
  * @author Jan P.C. Hanson
  *
  */
-public interface AbstractService extends Runnable
+public interface AbstractService extends Callable<String>
 {
 	/**
 	 * The individual services equivalent of main
 	 */
-	public void run() throws ServiceException;
+	public String call() throws ServiceException;
 	
 	/**
 	 * sets the configuration for this service. Not all services require configuration, see the

@@ -8,12 +8,82 @@
 		<link rel="stylesheet" href="css/stylesheet.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="js/test.js"></script>
-		<script src="js/addCommonContent.js"></script>
+		<script src="js/modules/addCommonContent.js"></script>
+		<script src="js/modules/print.js"></script>
+		<script src="js/modules/list.min.js"></script>
+		<script src="js/modules/ajaxButton.js"></script>
+		<script src="js/modules/ajaxTable.js"></script>
 	</head>
 
 	<body>		
 		<div class="navibar"></div>
+		
+		
+		
+		
+		<div class="container-fluid">
+			<div class="panel panel-default panel-primary">
+				<div class="panel-heading">
+					<h2 class="" >Mark As Invoiced</h2>
+					
+					<div style="position:relative;left:35%;">
+					<input class="srn" placeholder="Sales record Number" style="color:#337AB7;"/>
+					
+					<button class="markInvoiced" 
+							onclick="ajaxButton('.srn', 
+												'/res/?page=ROOT_PRESENTER&type=invoice&data=',
+												'.result')" 
+							style="color:#337AB7;">
+						Mark as Invoiced
+					</button>
+  					
+  					<button class="markUninvoiced" 
+  							onclick="ajaxButton('.srn',
+  												'/res/?page=ROOT_PRESENTER&type=uninvoice&data=',
+  												'.result')"
+  							style="color:#337AB7;">
+  						Mark as Uninvoiced
+  					</button>
+  					<big class="result"></big>
+  					</div>
+				</div>
+				
+				
+				<div class="panel-footer panel-primary">
+					<big>Enter the sales record number into the box and press the appropriate button</big>
+				</div>
+				
+				
+			</div>
+			
+			<div class="panel panel-default panel-primary">
+				<div class="panel-heading">
+					<h2 class="" >ReScan Listing</h2>
+					
+					<div style="position:relative;left:35%;">
+					<input class="LID" placeholder="ListingID" style="color:#337AB7;"/>
+					
+					<button class="reScan" 
+							onclick="ajaxButton('.LID',
+												'/res/?page=ROOT_PRESENTER&type=reScan&data=',
+												'.resultScan')" 
+							style="color:#337AB7;">
+						Re-Scan Listing
+					</button>
+  					
+  					<big class="resultScan"></big>
+  					</div>
+				</div>
+				
+				
+				<div class="panel-footer panel-primary">
+					<big>Enter the ListingID into the box and press the button</big>
+				</div>
+			</div>
+				
+				
+		</div>
+		
 		
 	</body>
 </html>

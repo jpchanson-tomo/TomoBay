@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Set;
 
 import tomoBay.helpers.BrandToCode;
-import tomoBay.model.services.helpers.InvoiceableStatus;
+import tomoBay.model.services.helpers.PickeableStatus;
 import tomoBay.model.services.helpers.PartList;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
@@ -44,7 +44,7 @@ public class CalculateInvoiceStatus
 	 * @param orderNo the order number to check
 	 * @return InvoiceableStatus Invoiceable/UnInvoiceable/Partial/ERROR
 	 */
-	public InvoiceableStatus status(String orderNo)
+	public PickeableStatus status(String orderNo)
 	{
 		List<String[]> orderTransactions 
 		= QueryInvoker.execute(QueryType.SELECT_TRANSACTION_BY_ORDERID, new String[] {orderNo});
@@ -55,11 +55,11 @@ public class CalculateInvoiceStatus
 		
 		Set<Boolean> itemStatus = this.checkStockLevelOfItems(items);
 		
-		InvoiceableStatus result;
-		if (itemStatus.size()==1 && itemStatus.contains(true)) {result=InvoiceableStatus.Invoiceable;}
-		else if (itemStatus.size()==1 && itemStatus.contains(false)) {result=InvoiceableStatus.UnInvoiceable;}
-		else if (itemStatus.size()==2){result = InvoiceableStatus.Partial;}
-		else {result = InvoiceableStatus.ERROR;}
+		PickeableStatus result;
+		if (itemStatus.size()==1 && itemStatus.contains(true)) {result=PickeableStatus.PICKEABLE;}
+		else if (itemStatus.size()==1 && itemStatus.contains(false)) {result=PickeableStatus.UNPICKEABLE;}
+		else if (itemStatus.size()==2){result = PickeableStatus.PARTIAL;}
+		else {result = PickeableStatus.ERROR;}
 		
 		return result;
 	}

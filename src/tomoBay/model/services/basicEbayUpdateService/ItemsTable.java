@@ -56,7 +56,7 @@ public class ItemsTable
 		for (String[] item : items)
 		{
 			
-			ItemCall itemreq = new ItemCall(credentials[4], credentials[3]);
+			ItemCall itemreq = new ItemCall(credentials[0], credentials[1]);
 			ItemType itemType = itemreq.call(item[0]);
 			Map<String, String> specifics = ItemsTable.getSpecifics(itemType);
 			

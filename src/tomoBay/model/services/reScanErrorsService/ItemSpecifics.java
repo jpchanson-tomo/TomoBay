@@ -21,6 +21,7 @@ import java.util.Map;
 import com.ebay.soap.eBLBaseComponents.ItemType;
 import com.ebay.soap.eBLBaseComponents.NameValueListType;
 
+import tomoBay.helpers.Config;
 import tomoBay.helpers.ConfigReader;
 import tomoBay.model.eBayAPI.ItemCall;
 /**
@@ -46,7 +47,7 @@ public class ItemSpecifics
 	{
 		super();
 		this.itemID_M = itemID;
-		credentials_M = ConfigReader.read("./config/", "ebay.cfg");
+		credentials_M = new String[]{ConfigReader.getConf(Config.EBAY_PROD_KEY), ConfigReader.getConf(Config.EBAY_PROD_SRV)};
 		this.itemSpecifics_M = new HashMap<String,String>();
 		
 		this.populateMap(this.performAPIcall(itemID));
@@ -75,7 +76,7 @@ public class ItemSpecifics
 	 */
 	private ItemType performAPIcall(String itemID)
 	{
-		ItemCall itemscan = new ItemCall(this.credentials_M[4], this.credentials_M[3]);
+		ItemCall itemscan = new ItemCall(this.credentials_M[0],this.credentials_M[1]);
 		try
 		{return itemscan.call(itemID);} 
 		

@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 
 import tomoBay.exceptions.PayloadException;
-import tomoBay.helpers.DualList;
+import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.net.ClientSocket;
 import tomoBay.model.winstock.WinstockConfig;
 import tomoBay.model.winstock.payloads.PayloadType;

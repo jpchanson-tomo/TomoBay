@@ -70,11 +70,16 @@ public class PutInvoiceResponse implements AbstractWinstockCommandResponse
 	 * @see tomoBay.model.winstock.commands.AbstractWinstockCommandResponse#getData()
 	 */
 	@Override
-	public String getRecieved()
+	public String[] getRecieved()
 	{
-		byte[] bites = {this.responseBytes_M[6], this.responseBytes_M[7], this.responseBytes_M[8], this.responseBytes_M[9]};
-		int result = java.nio.ByteBuffer.wrap(bites).order(java.nio.ByteOrder.LITTLE_ENDIAN).getInt();
-		return String.valueOf(result);
+		byte[] invNo = {this.responseBytes_M[6], this.responseBytes_M[7], this.responseBytes_M[8], this.responseBytes_M[9]};
+		int result = java.nio.ByteBuffer.wrap(invNo).order(java.nio.ByteOrder.LITTLE_ENDIAN).getInt();
+		
+		byte[] weight = {this.responseBytes_M[10], this.responseBytes_M[11], this.responseBytes_M[12], this.responseBytes_M[13]};
+		int result2 = java.nio.ByteBuffer.wrap(weight).order(java.nio.ByteOrder.LITTLE_ENDIAN).getInt();
+		
+		String[] output = {String.valueOf(result), String.valueOf(result2)};
+		return output;
 	}
 }
 /**

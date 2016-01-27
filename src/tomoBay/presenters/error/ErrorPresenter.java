@@ -36,7 +36,7 @@ public class ErrorPresenter implements AbstractPresenter
 	 * @see openDMS.presenters.AbstractPresenter#present()
 	 */
 	@Override
-	public String present(AbstractView view)
+	public String present(AbstractView view, String type ,String data)
 	{
 		return "<h1>You have requested data that doesnt exist</h1>"
 				+ "<p>check the spelling of your query string parameter</p>";

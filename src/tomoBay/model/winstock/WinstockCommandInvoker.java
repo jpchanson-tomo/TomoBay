@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tomoBay.exceptions.PayloadException;
-import tomoBay.helpers.DualList;
+import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.winstock.commandFactories.AbstractWinstockCommandFactory;
 import tomoBay.model.winstock.commandFactories.PrintInvoiceCommandFactory;
 import tomoBay.model.winstock.commandFactories.PutInvoiceCommandFactory;
@@ -63,7 +63,7 @@ public class WinstockCommandInvoker
 	
 	/**
 	 * This method executes the AbstractWinstockCommand that the user has requested.
-	 * @param commandType contains the info to @see{@link tomoBay.helpers.DualList}
+	 * @param commandType contains the info to @see{@link tomoBay.model.dataTypes.DualList}
 	 * @see {@link tomoBay.model.winstock.WinstockCommandInvoker.WinstockCommandTypes}
 	 * @return AbstractWinstockCommandResponse containing the servers response to this command.
 	 * @throws IOException 

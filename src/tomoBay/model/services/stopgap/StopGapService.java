@@ -14,11 +14,15 @@ package tomoBay.model.services.stopgap;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Future;
+
 import tomoBay.model.services.TriggerService;
 import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
 import tomoBay.model.services.helpers.EbayOrderCancellationStatus;
 import tomoBay.exceptions.ServiceException;
-import tomoBay.helpers.CheckTime;
+import tomoBay.helpers.checkTime.CheckTime;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
 import tomoBay.model.services.ServiceFactory;
@@ -36,16 +40,14 @@ public class StopGapService implements AbstractService
 	 * @see tomoBay.model.services.AbstractService#run()
 	 */
 	@Override
-	public void run() throws ServiceException
+	public String call() throws ServiceException
 	{
-		int startTime = 800;
-		int endTime = 1730;
+		List<Future<String>> threadList = new ArrayList<Future<String>>();
 		try
 		{
-			if(CheckTime.isInRange(startTime, endTime))
-			{
+				System.out.println("start");
 				System.out.println("start: EBAY SERVICE");
-				TriggerService.start(ServiceFactory.make(ServiceType.EBAY_SERVICE));
+				threadList.add(TriggerService.start(ServiceFactory.make(ServiceType.EBAY_SERVICE)));
 				System.out.println("started: wait(120000)");
 				Thread.sleep(120000);
 				System.out.println("finished: EBAY SERVICE");			
@@ -76,19 +78,24 @@ public class StopGapService implements AbstractService
 				System.out.println("started: wait(120000)");
 				Thread.sleep(120000);
 				System.out.println("finished: EMAIL ERRORS");
+//			
 			
 				System.out.println("started: INVOICE SERVICE");
 				TriggerService.start(ServiceFactory.make(ServiceType.INVOICE_SERVICE));
 				Thread.sleep(120000);
 				System.out.println("finished: INVOICE SERVICE");
 			
-				System.out.println("end");
-				
-			}
+			System.out.println("end");
+			for (Future<String> thread : threadList) {System.out.println(thread.toString()+" cancelled="+thread.cancel(true));}
+			System.out.println("threads cleaned up?");
+			return "ALL DONE";
 		} 
 		
 		catch (Exception e)
-		{e.printStackTrace();}
+		{
+			e.printStackTrace();
+			return "ERROR";
+		}
 
 	}
 

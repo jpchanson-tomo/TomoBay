@@ -17,7 +17,7 @@ package tomoBay.helpers;
 import java.util.ArrayList;
 import java.util.List;
 
-import tomoBay.model.services.helpers.InvoiceableStatus;
+import tomoBay.model.services.helpers.PickeableStatus;
 /**
  * This class contains functionality for performing a category based sorting algorithm first 
  * ordering the data passed in by shipping type and the now sorted data by Pickeability. this 
@@ -55,16 +55,16 @@ public class SortOrders
 	 */
 	private List<String[]> sortByPickeability(List<String[]> input)
 	{
-		List<List<String[]>> categoryList = new ArrayList<List<String[]>>(InvoiceableStatus.size());
+		List<List<String[]>> categoryList = new ArrayList<List<String[]>>(PickeableStatus.size());
 		
-		for(int i = 0 ; i < InvoiceableStatus.size() ; ++i) {categoryList.add(new ArrayList<String[]>());}
+		for(int i = 0 ; i < PickeableStatus.size() ; ++i) {categoryList.add(new ArrayList<String[]>());}
 		
 		for (int i = 0 ; i < input.size() ; ++i)
 		{
 			categoryList.get(Integer.parseInt((input.get(i)[8])))
 						.add(input.get(i));
 		}
-		return reAssembleCategories(categoryList, InvoiceableStatus.size());
+		return reAssembleCategories(categoryList, PickeableStatus.size());
 	}
 	
 	/**

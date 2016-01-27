@@ -21,7 +21,7 @@ import java.util.List;
 import tomoBay.exceptions.PayloadException;
 import tomoBay.exceptions.ServiceException;
 import tomoBay.helpers.BrandToCode;
-import tomoBay.helpers.DualList;
+import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.model.winstock.WinstockCommandInvoker;
@@ -39,6 +39,7 @@ public class Invoice
 	private List<String[]> dataFields_M;
 	private DualList<String, PayloadType> invoiceData_M;
 	private DualList<String, PayloadType> printData_M;
+	private String[] invoiceResult_M;
 	
 	/**
 	 * default ctor
@@ -59,9 +60,9 @@ public class Invoice
 		this.printData_M = new DualList<String, PayloadType>();
 		this.printData_M.put("35", PayloadType.TYPE);
 		this.printData_M.put(this.brandToCode(this.dataFields_M.get(0)[6]), PayloadType.COMPANY);
-		this.printData_M.put(String.valueOf(this.invNo_M), PayloadType.INVOICE_NO);
+		this.printData_M.put(String.valueOf(this.invoiceResult_M[0]), PayloadType.INVOICE_NO);
 		this.printData_M.put("1", PayloadType.PRINT_COPIES);
-		this.printData_M.put("0", PayloadType.PACKING_LISTS);
+		this.printData_M.put("1", PayloadType.PACKING_LISTS);
 		
 		AbstractWinstockCommandResponse response;
 		try
@@ -91,11 +92,17 @@ public class Invoice
 		this.invoiceData_M = header.generate().append(body.generate());
 		System.out.println(this.invoiceData_M.toString());
 		
-		this.invNo_M = Integer.parseInt(this.sendInvoice(this.invoiceData_M).getRecieved());
-		return this.invNo_M;
+		this.invoiceResult_M = this.sendInvoice(this.invoiceData_M).getRecieved();
+		
+		return Integer.parseInt(this.invoiceResult_M[0]);
 	}
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
+	public int getWeight()
+	{return Integer.parseInt(this.invoiceResult_M[1]);}
 	
 	/**
 	 * fill the local list with all the items associated with the orderNo provided

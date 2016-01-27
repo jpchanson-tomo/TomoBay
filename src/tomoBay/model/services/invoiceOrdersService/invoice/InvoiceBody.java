@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import tomoBay.helpers.BrandToCode;
-import tomoBay.helpers.DualList;
+import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.services.helpers.PartList;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
@@ -88,10 +88,11 @@ public class InvoiceBody
 		for(String[] data : this.dataFields_M) 
 		{
 			noOfParts += data[7].split("\\(\\d*\\s*\\)").length;
-			if (Double.parseDouble(data[18]) != 0.00) {extraPostage=Double.parseDouble(data[18]);}
+			if (Double.parseDouble(data[18]) != 0.00){extraPostage=Double.parseDouble(data[18]);}
 		}
 		
-		if(this.extraPostage != 0.00) {return noOfParts+1;}
+		if(this.extraPostage != 0.00 && (this.dataFields_M.get(0)[14].toUpperCase()).contains("GSP")==false) 
+		{return noOfParts+1;}
 		else{return noOfParts;}
 	}
 	
@@ -112,8 +113,8 @@ public class InvoiceBody
 	{
 		String result = winstock_M
 					.requestDescription(parts.getPartNumber(index), BrandToCode.convert(brand));
-		int endOfString = result.indexOf("�");
-//		int endOfString = result.indexOf("œ");
+//		int endOfString = result.indexOf("�");
+		int endOfString = result.indexOf("œ");
 		result = result.substring(0, endOfString);
 		return result;
 	}
@@ -143,7 +144,7 @@ public class InvoiceBody
 	 */
 	private void addPostage(DualList<String, PayloadType> invoiceBody)
 	{
-		if (this.extraPostage != 0.00) 
+		if (this.extraPostage != 0.00 && (this.dataFields_M.get(0)[14].toUpperCase()).contains("GSP")==false) 
 		{
 			invoiceBody.put("POST", PayloadType.PART_NO);
 			invoiceBody.put("Postage and Packaging", PayloadType.DESCRIPTION);

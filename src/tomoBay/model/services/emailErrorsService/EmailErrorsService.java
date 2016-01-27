@@ -50,8 +50,10 @@ public class EmailErrorsService implements AbstractService
 	 * @see tomoBay.model.services.AbstractService#run()
 	 */
 	@Override
-	public void run() throws ServiceException
+	public String call() throws ServiceException
 	{	//make sure the service has been configured
+		
+		System.out.println("email errors started");
 		if (this.mailData_M == null) {throw new ServiceException("no AbstractConfiguration object set");}
 		ErrorsList errors = new ErrorsList();
 		
@@ -66,6 +68,7 @@ public class EmailErrorsService implements AbstractService
 			
 			email.send();
 		}
+		return "email errors finished";
 	}
 
 	/* (non-Javadoc)

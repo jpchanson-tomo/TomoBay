@@ -14,6 +14,8 @@ package tomoBay.model.services.reScanErrorsService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.Arrays;
+
 import tomoBay.helpers.BrandToCode;
 import tomoBay.model.services.helpers.PartList;
 import tomoBay.model.winstock.Stock;
@@ -40,20 +42,18 @@ public class ReScanErrorsWinstockActions
 	 */
 	public boolean partNoHasError(ItemSpecifics item)
 	{
-		PartList partList = new PartList(item.get("ManufacturerPartNumber"));
-		Stock errorCheck = new Stock();
-		for (String partNo : partList.getPartNumbers())
+		try 
 		{
-			try 
+			PartList partList = new PartList(item.get("ManufacturerPartNumber"));
+			Stock errorCheck = new Stock();
+			for (String partNo : partList.getPartNumbers())
 			{
-				int result = errorCheck.requestStockLevel(partNo, BrandToCode.convert(item.get("Brand")));
-				if(result == -8008135) {return true;}
+					int result = errorCheck.requestStockLevel(partNo, BrandToCode.convert(item.get("Brand")));
+					if(result == -8008135) {return true;}
 			}
-			catch (NullPointerException npe)
-			{System.out.println("null");return true;}
-			
 		}
-		
+		catch (NullPointerException npe)
+		{return true;}
 		return false;
 	}
 }

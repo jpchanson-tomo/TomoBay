@@ -18,6 +18,7 @@ import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import tomoBay.helpers.Config;
 import tomoBay.helpers.ConfigReader;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
@@ -46,13 +47,13 @@ public class ConnectionManager
 		catch (PropertyVetoException e)
 		{e.printStackTrace();}
 		
-		cpds.setJdbcUrl(ConfigReader.read("./config/", "db.cfg")[1]);
-		cpds.setUser(ConfigReader.read("./config/", "db.cfg")[2]);
-		cpds.setPassword(ConfigReader.read("./config/", "db.cfg")[3]);
-		cpds.setMinPoolSize(3);
-		cpds.setAcquireIncrement(5);
-		cpds.setMaxPoolSize(20);
-		cpds.setMaxStatements(180);
+		cpds.setJdbcUrl(ConfigReader.getConf(Config.DB_QSTR));
+		cpds.setUser(ConfigReader.getConf(Config.DB_USR));
+		cpds.setPassword(ConfigReader.getConf(Config.DB_PWD));
+		cpds.setMinPoolSize(Integer.parseInt(ConfigReader.getConf(Config.DB_CON_MIN)));
+		cpds.setAcquireIncrement(Integer.parseInt(ConfigReader.getConf(Config.DB_AQUIRE_INC)));
+		cpds.setMaxPoolSize(Integer.parseInt(ConfigReader.getConf(Config.DB_CON_MAX)));
+		cpds.setMaxStatements(Integer.parseInt(ConfigReader.getConf(Config.DB_MAX_STMTS)));
 	}
 	
 	/**

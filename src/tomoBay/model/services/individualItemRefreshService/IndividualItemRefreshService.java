@@ -18,6 +18,7 @@ package tomoBay.model.services.individualItemRefreshService;
 import java.util.HashMap;
 import java.util.Map;
 
+import tomoBay.helpers.Config;
 /**
  *
  * @author Jan P.C. Hanson
@@ -48,20 +49,26 @@ public class IndividualItemRefreshService implements AbstractService
 	 * @see java.lang.Runnable#run()
 	 */
 	@Override
-	public void run()
+	public String call()
 	{
-		System.out.println(this.listingID_M);
-		ItemType item = this.getItemData(String.valueOf(this.listingID_M));
-		Map<String, String> specifics = this.getSpecifics(item);
-		String brand = specifics.get("Brand");
-		String partNo = specifics.get("Manufacturer Part Number");
-		PartList partlist = new PartList(partNo);
+		try
+		{
+			ItemType item = this.getItemData(String.valueOf(this.listingID_M));
+			Map<String, String> specifics = this.getSpecifics(item);
+			String brand = specifics.get("Brand");
+			String partNo = specifics.get("Manufacturer Part Number");
+			PartList partlist = new PartList(partNo);
 		
-		new RePopulateEbayItem().resetBrandTable(partlist, partNo, brand, Long.parseLong(item.getItemID()));
-		new RePopulateEbayItem().populate(partNo, brand, Long.parseLong(partNo));
-		new ReCalculateRequiredStock().calculate(partlist, brand, partNo, item);
-		new ReCalculateAvailableStock().calculate(partlist, brand, partNo, item.getItemID());
+//			new RePopulateEbayItem().resetBrandTable(partlist, partNo, brand, Long.parseLong(item.getItemID()));
+			new RePopulateEbayItem().populate(partNo, brand, Long.parseLong(item.getItemID()));
+//			new ReCalculateRequiredStock().calculate(partlist, brand, partNo, item);
+//			new ReCalculateAvailableStock().calculate(partlist, brand, partNo, item.getItemID());
 		
+			System.out.println(this.listingID_M+" refreshed");
+			return this.listingID_M+" refreshed";
+		}
+		catch(Exception e)
+		{e.printStackTrace();return "error";}
 	}
 	
 	/* (non-Javadoc)
@@ -81,8 +88,9 @@ public class IndividualItemRefreshService implements AbstractService
 	{
 		try
 		{
-			String[] credentials = ConfigReader.read("./config/", "ebay.cfg");
-			ItemCall item = new ItemCall(credentials[4], credentials[3]);
+			String APIkey = ConfigReader.getConf(Config.EBAY_PROD_KEY);
+			String server = ConfigReader.getConf(Config.EBAY_PROD_SRV);
+			ItemCall item = new ItemCall(APIkey, server);
 			return item.call(itemID);
 		}
 		catch(Exception e)

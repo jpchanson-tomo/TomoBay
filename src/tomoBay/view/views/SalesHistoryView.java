@@ -33,8 +33,30 @@ public class SalesHistoryView implements AbstractView
 	@Override
 	public String format(List<String[]> input)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		String result = "{ \"tableData\":[\n";
+		
+		for (String[] cols : input)
+		{
+			result+="{";
+			result+="\"Select\":\"<input type='checkbox' class = 'chcktbl filterable-cell ' />\", ";
+			result+="\"Name\":\""+cols[1].trim()+"\", ";
+			result+="\"Date\":\""+cols[4].trim()+"\", ";
+			result+="\"SalesRecNo\":\""+cols[2].trim()+"\", ";
+			result+="\"Details\":\"<button class='btn btn-primary' value='"+cols[0].trim()+"'>View</button>\"";
+			result+="},\n";
+		}
+		
+		result+=" ]}";
+		return  this.replaceLast(result, ",", "");
 	}
 
+	
+	private String replaceLast(String string, String target, String replacement)
+	{
+	  int index = string.lastIndexOf(target);
+	  if (index == -1)
+	    return string;
+	  return string.substring(0, index) + replacement
+	          + string.substring(index+target.length());
+	}
 }

@@ -40,7 +40,8 @@ public class SelectFullOrderLine implements AbstractDBQuery
 					+ "ebay_items.itemID, ebay_items.title, ebay_items.brand, ebay_items.partNo, "
 					+ "ebay_transactions.quantity, ebay_transactions.price, ebay_items.notes , "
 					+ "ebay_buyers.buyerID, ebay_buyers.name, ebay_buyers.street1, ebay_buyers.street2,"
-					+ "ebay_buyers.city, ebay_buyers.county, ebay_buyers.postcode, ebay_transactions.shippingCost "
+					+ "ebay_buyers.city, ebay_buyers.county, ebay_buyers.postcode, ebay_transactions.shippingCost, "
+					+ "ebay_orders.orderTotal, ebay_orders.invoiced, ebay_items.itemID "
 					+ "FROM ebay_orders "
 					+ "INNER JOIN ebay_transactions ON ebay_orders.orderID=ebay_transactions.orderID "
 					+ "INNER JOIN ebay_items ON ebay_transactions.itemID=ebay_items.itemID "
@@ -79,6 +80,8 @@ public class SelectFullOrderLine implements AbstractDBQuery
 	 * - String[16] = county
 	 * - String[17] = postcode
 	 * - String[18] = shippingCost 
+	 * - String[19] = orderTotal
+	 * - String[20] = invoiced
 	 * 
 	 * @throws SQLException
 	 */
@@ -108,7 +111,7 @@ public class SelectFullOrderLine implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[19];
+			String[] cols = new String[21];
 			cols[0] = results.getString("orderID");
 			cols[1] = results.getString("shippingType");
 			cols[2] = results.getString("salesRecNo");
@@ -128,6 +131,8 @@ public class SelectFullOrderLine implements AbstractDBQuery
 			cols[16] = results.getString("county");
 			cols[17] = results.getString("postcode");
 			cols[18] = results.getString("shippingCost");
+			cols[19] = results.getString("orderTotal");
+			cols[20] = results.getString("invoiced");
 			rows.add(cols);
 		}
 		return rows;

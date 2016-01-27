@@ -73,12 +73,13 @@ public class Prices
 	 */
 	public static int convertPriceToPennies(double price)
 	{
+		System.out.println(price);
 		String priceChecked = Prices.convertToString(price);
 		double numericalPrice = Double.parseDouble(priceChecked);
 		int result = 0;
 		
 		result = new Double(numericalPrice*100).intValue();
-		
+//		System.out.println(result);
 		return result;
 	}
 	
@@ -114,7 +115,6 @@ public class Prices
 //		
 		for (int i = 0 ; i < this.costs_M.length ; ++i)
 		{
-			
 			double individualPrice =  (((this.costs_M[i]/this.totalCost_M)*(this.priceExVat(itemPrice))/parts.getPartQty(i)));
 			this.prices_M[i] = Prices.convertPriceToPennies(individualPrice);
 			
@@ -126,7 +126,7 @@ public class Prices
 		
 		int remainder = Prices.convertPriceToPennies(this.priceExVat(itemPrice)) - totalCostworkedOut;
 		System.out.println("remainder: "+remainder);
-		this.prices_M[0] += remainder;
+		this.prices_M[0] += this.remainder(itemPrice, parts);
 		System.out.println(Arrays.toString(this.prices_M));
 	}
 	
@@ -163,4 +163,36 @@ public class Prices
 	
 	private double itemCost(String partNo, String brandCode)
 	{return this.winstock_M.requestLastCost(partNo.toUpperCase(), brandCode);}
+	
+	
+	private int totalPrice(PartList parts, int[] prices)
+	{
+		int result=0;
+		for (int i = 0 ; i < parts.size() ; ++i)
+		{result += prices[i] * parts.getPartQty(i);}
+		return result;
+	}
+	
+	private int remainder(double itemPrice, PartList parts)
+	{
+		int total = Prices.convertPriceToPennies(this.priceExVat(itemPrice));
+		int currentTotal=this.totalPrice(parts, this.prices_M);
+		int remainder = total - currentTotal;
+		System.out.println("Total="+ total + " currentTotal="+currentTotal+ " remainder="+remainder);
+		
+		int result=0;
+		double before = this.totalPrice(parts, this.prices_M);
+		
+		for(int n = 0 ; n < remainder ; ++n)
+		{
+			
+			int addition = ((n+1)*parts.getPartQty(0));
+			double after = this.totalPrice(parts, this.prices_M) + addition;
+			
+			System.out.println(Math.abs((total-before))+" : "+ Math.abs((total-after)));
+			if (Math.abs(total-before)<Math.abs(total -after)) {System.out.println("keep going");}
+			else {System.out.println("closest point found"); before = after; result = n+1;}
+		}
+		return result;
+	}
 }

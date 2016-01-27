@@ -28,10 +28,10 @@ public class UpdateOrderStatusService implements AbstractService
 	 * @see tomoBay.model.services.AbstractService#run()
 	 */
 	@Override
-	public void run()
+	public String call()
 	{
 		// TODO Auto-generated method stub
-
+		return "";
 	}
 
 	/* (non-Javadoc)

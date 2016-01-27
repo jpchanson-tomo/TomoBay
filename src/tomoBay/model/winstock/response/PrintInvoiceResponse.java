@@ -61,12 +61,13 @@ public class PrintInvoiceResponse implements AbstractWinstockCommandResponse
 	 * @see tomoBay.model.winstock.commands.AbstractWinstockCommandResponse#getData()
 	 */
 	@Override
-	public String getRecieved()
+	public String[] getRecieved()
 	{
 		String data="";
 		for (byte element : this.responseBytes_M)
 		{data += element + " ";}
-		return data;
+		String[] result = {data};
+		return result;
 	}
 
 	/* (non-Javadoc)

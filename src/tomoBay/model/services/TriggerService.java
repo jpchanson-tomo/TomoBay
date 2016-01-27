@@ -16,6 +16,7 @@ package tomoBay.model.services;
  */
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -57,13 +58,19 @@ public class TriggerService
 	 * constructor, default
 	 */
 	public TriggerService()
-	{super();}
+	{
+		super();
+	}
 	
 	/**
 	 * tries to start a particular service, if there arn't enough threads available it will
 	 * be placed in a BlockingQueue until there is a free thread.
 	 * @param service the service to be started.
 	 */
-	public static void start(AbstractService service)
-	{TriggerService.THREADPOOLEXECUTOR.execute(service);}
+	public static Future<String> start(AbstractService service)
+	{
+//		TriggerService.THREADPOOLEXECUTOR.execute(service);
+		Future<String> result = TriggerService.THREADPOOLEXECUTOR.submit(service);
+		return result;
+	}
 }

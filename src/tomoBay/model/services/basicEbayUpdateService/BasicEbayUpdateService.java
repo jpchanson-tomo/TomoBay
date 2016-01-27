@@ -14,6 +14,7 @@ package tomoBay.model.services.basicEbayUpdateService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.helpers.Config;
 import tomoBay.helpers.ConfigReader;
 import tomoBay.model.eBayAPI.OrdersCall;
 import tomoBay.model.services.AbstractConfiguration;
@@ -33,23 +34,29 @@ public class BasicEbayUpdateService implements AbstractService
 	 * @see java.lang.Runnable#run()
 	 */
 	@Override
-	public void run()
+	public String call()
 	{
 		try
 		{
-			//index 0 = blank, index 1 = sandbox server string, index 2 = sandbox user token
-			//index 3 = production server string, index 4 = production user token.
-			String[] credentials = ConfigReader.read("./config/", "ebay.cfg");
-			OrdersCall oCall = new OrdersCall(credentials[4], credentials[3]);
-			OrderType[] orders = oCall.call(1);
+			System.out.println("ebay update started");
+			String usrKey = ConfigReader.getConf(Config.EBAY_PROD_KEY);
+			String server =  ConfigReader.getConf(Config.EBAY_PROD_SRV);
 			
-			OrdersTable.populate(credentials, orders);
-			TransactionsTable.populate(credentials, orders);
-			BuyersTable.populate(credentials, orders);
-			ItemsTable.populate(credentials, orders);
+			OrdersCall oCall = new OrdersCall(usrKey, server);
+			OrderType[] orders = oCall.call(Integer.parseInt(ConfigReader.getConf(Config.EBAY_LOOKBCK)));
+			
+			OrdersTable.populate(orders);
+			TransactionsTable.populate(orders);
+			BuyersTable.populate(orders);
+			ItemsTable.populate(new String[] {usrKey,server}, orders);
+			return "finished ebay update";
+			
 		} 
 		catch (Exception e)
-		{e.printStackTrace();}
+		{
+			e.printStackTrace();
+			return "error";
+		}
 	}
 
 	/* (non-Javadoc)

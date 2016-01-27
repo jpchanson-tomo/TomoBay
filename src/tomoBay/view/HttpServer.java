@@ -66,7 +66,7 @@ public class HttpServer
         try
         {
         	server.start();
-        	server.join();
+//        	server.join();
         }
         catch(InterruptedException ie)
         {

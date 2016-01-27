@@ -20,6 +20,7 @@ import java.util.Map;
 import tomoBay.presenters.factories.AbstractPresenterFactory;
 import tomoBay.presenters.factories.ErrorPresenterFactory;
 import tomoBay.presenters.factories.RootPresenterFactory;
+import tomoBay.presenters.factories.SalesHistoryPresenterFactory;
 import tomoBay.presenters.factories.SalesOrderPresenterFactory;
 /**
  * This class defines a factory method that creates the different types of presenter. The types
@@ -38,7 +39,9 @@ public class PresenterFactory
 				/**@see {@link tomoBay.presenters.root.RootPresenter}**/
 				ROOT_PRESENTER,
 				/**@see {@link tomoBay.presenters.sales.SalesOrderPresenter}**/
-				SALES_ORDER_PRESENTER
+				SALES_ORDER_PRESENTER,
+				/**@see {@link tomoBay.presenters.sales.SalesHistoryPresenter}**/
+				SALES_HISTORY_PRESENTER,
 			}
 	
 	/****/
@@ -49,6 +52,7 @@ public class PresenterFactory
 				put(PresenterFactory.PresenterType.ERROR_PRESENTER, new ErrorPresenterFactory());
 				put(PresenterFactory.PresenterType.ROOT_PRESENTER, new RootPresenterFactory());
 				put(PresenterFactory.PresenterType.SALES_ORDER_PRESENTER, new SalesOrderPresenterFactory());
+				put(PresenterFactory.PresenterType.SALES_HISTORY_PRESENTER, new SalesHistoryPresenterFactory());
 			}};
 	/**
 	 * default constructor

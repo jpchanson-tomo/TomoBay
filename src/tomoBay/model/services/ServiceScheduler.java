@@ -17,6 +17,7 @@ package tomoBay.model.services;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -32,8 +33,11 @@ public class ServiceScheduler
 {
 	/**Scheduled thread pool**/
 	private ScheduledThreadPoolExecutor serviceScheduler_M;
-	/**List of Scheduled futures representing service threads**/
-	private List<ScheduledFuture<?>> services_M;
+	/**List of scheduled services**/
+	private List<AbstractService> services_M; 
+	/**List of Scheduled futures representing service threads return values**/
+//	private List<ScheduledFuture<?>> servicesResults_M;
+	private List<Future<?>> servicesResults_M;
 	
 	/**
 	 * constructor creates a thread pool with the number of threads specified in the arguments.
@@ -42,7 +46,9 @@ public class ServiceScheduler
 	public ServiceScheduler(int noOfThreads)
 	{
 		this.serviceScheduler_M = new ScheduledThreadPoolExecutor(noOfThreads);
-		this.services_M = new ArrayList<ScheduledFuture<?>>();
+		this.services_M = new ArrayList<AbstractService>();
+//		this.servicesResults_M = new ArrayList<ScheduledFuture<?>>();
+		this.servicesResults_M = new ArrayList<Future<?>>();
 	}
 	
 	/**
@@ -54,26 +60,32 @@ public class ServiceScheduler
 	 * @param delay the initial delay before running the service
 	 * @param rate the rate at which to  repeat the service.
 	 */
-	public void add(AbstractService service, long delay, long rate)
+	public void add(AbstractService service)
 	{
-		this.services_M.add(this.serviceScheduler_M.scheduleWithFixedDelay(service, delay, rate, TimeUnit.MINUTES));
+//		this.services_M.add(this.serviceScheduler_M.scheduleWithFixedDelay(service, delay, rate, TimeUnit.MINUTES));
+		this.services_M.add(service);
+//		this.servicesResults_M.add(this.serviceScheduler_M.schedule(service, delay, TimeUnit.MINUTES));
 	}
 	
 	/**
 	 * starts the service.
 	 */
-	public void start()
+	public void start(long rateInMins)
 	{
-		try 
+		while(this.services_M.size() > 0)
 		{
-			for(int i = 0 ; i < this.services_M.size() ; ++i)
+			try 
 			{
-				this.services_M.get(i).get();
+				for(int i = 0 ; i < this.services_M.size() ; ++i)
+				{
+					System.out.println(this.serviceScheduler_M.submit(this.services_M.get(i)).get().toString());
+				}
+				Thread.sleep(rateInMins*60*1000);
 			}
+			catch(InterruptedException | ExecutionException e)
+			{e.printStackTrace();}
 		}
-		catch(InterruptedException | ExecutionException e)
-		{e.printStackTrace();}
-		
 		serviceScheduler_M.shutdown();
+		System.out.println("scheduler shut down");
 	}
 }

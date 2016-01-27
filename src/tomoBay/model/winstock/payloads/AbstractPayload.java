@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 import tomoBay.exceptions.PayloadException;
-import tomoBay.helpers.DualList;
+import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.winstock.payloads.componentFactories.AbstractComponentFactory;
 /**
  * This is the abstract base class for all Payload sub types. This allows a different payload 

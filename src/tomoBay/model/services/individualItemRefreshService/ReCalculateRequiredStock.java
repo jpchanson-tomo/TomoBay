@@ -95,14 +95,12 @@ public class ReCalculateRequiredStock
 		{
 			int total = ((parts.getPartQty(count) * qty)
 						+Integer.parseInt(part.get(0)[1]));
-			System.out.println("update: "+parts.getPartQty(count)+"+"+Integer.parseInt(part.get(0)[1])+"*"+qty+"="+total);
 			QueryInvoker.execute(enumFactory.make(StockQueryType.UPDATE), 
 					new String[] {String.valueOf(total),parts.getPartNumber(count)}); 
 		}
 		catch(IndexOutOfBoundsException ioobe)
 		{
 			int total = (parts.getPartQty(count)) * qty;
-			System.out.println("insert"+total);
 			QueryInvoker.execute(enumFactory.make(StockQueryType.INSERT), 
 					new String[] {parts.getPartNumber(count), String.valueOf(total)});
 		}

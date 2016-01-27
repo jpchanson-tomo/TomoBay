@@ -42,7 +42,7 @@ public class TransactionsTable
 	 * @param orders list of orders.
 	 * @throws SQLException 
 	 */
-	public static void populate(String[] credentials, OrderType[] orders) throws SQLException
+	public static void populate(OrderType[] orders) throws SQLException
 	{
 		for (OrderType order : orders)
 		{

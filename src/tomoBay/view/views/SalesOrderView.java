@@ -39,22 +39,23 @@ public class SalesOrderView implements AbstractView
 	@Override
 	public String format(List<String[]> input) 
 	{
-		String result = "";
+		String result = "{ \"tableData\":[\n";
 			
 			for (String[] cols : input)
 			{
-				result+="<tr class='"+cols[0]+"'>\n";
-				result+="<td>"+ "<input type='checkbox' class = 'chcktbl filterable-cell ' />"  + "</td>\n";
-				result+="<td class='name filterable-cell '>"+ cols[1].trim() + "</td>\n";
-				result+="<td class='date filterable-cell '>"+ cols[4].trim() + "</td>\n";
-				result+="<td class='shippingType filterable-cell '>"+ cols[3].trim() + "</td>\n";
-				result+="<td class='details filterable-cell '>"+ "<button class='btn btn-primary' value='"+cols[0].trim()+"'>View</button>" + "</td>\n";
-				result+="<td class='status filterable-cell '>"+ this.pickeability(cols[8]) + "</td>";
-				result+="</tr>\n";
+				result+="{";
+				result+=" \"Select\": \"<input type='checkbox' class='chcktbl'/>\" ,";
+				result+=" \"Name\": \""+cols[1].trim()+"\", ";
+				result+=" \"Date\": \""+cols[4].trim()+"\", ";
+				result+=" \"SalesRecNo\": \""+cols[2].trim()+"\", ";
+				result+=" \"ShippingType\": \""+cols[3].trim()+"\", ";
+				result+=" \"Details\": \""+"<button class='btn btn-primary' value='"+cols[0].trim()+"'>View</button>"+"\" ,";
+				result+=" \"Status\": \""+this.pickeability(cols[8])+"\" ";
+				result+="}, \n";
 			}
 			
-		result+="</table>";
-		return  result;
+		result+=" ]}";
+		return  this.replaceLast(result, ",", "");
 	}
 	
 	/**
@@ -73,5 +74,21 @@ public class SalesOrderView implements AbstractView
 		if(Integer.parseInt(invoiced)==0){pickeability = "Pickeable";}
 		
 		return pickeability;
+	}
+	
+	/**
+	 * replace the last instance of a particular character in a string with another.
+	 * @param string the string to analyse
+	 * @param target the String whose last instance is replaced by target
+	 * @param replacement the String to replace the last instance of target with.
+	 * @return String with the last instance of target replaced by replacement.
+	 */
+	private String replaceLast(String string, String target, String replacement)
+	{
+	  int index = string.lastIndexOf(target);
+	  if (index == -1)
+	    return string;
+	  return string.substring(0, index) + replacement
+	          + string.substring(index+target.length());
 	}
 }

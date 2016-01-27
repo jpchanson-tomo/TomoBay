@@ -39,8 +39,8 @@ public class InsertEbayOrders implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay_orders (orderID, buyerID, salesRecNo, shippingType, createdTime)"
-			+ "VALUES (?,?,?,?,?);";
+	private String query ="INSERT IGNORE INTO ebay_orders (orderID, buyerID, salesRecNo, shippingType, createdTime, orderTotal)"
+			+ "VALUES (?,?,?,?,?,?);";
 	
 	/**
 	 * default constructor
@@ -73,6 +73,7 @@ public class InsertEbayOrders implements AbstractDBQuery
 			this.statement_M.setInt(3, Integer.parseInt(parameter[2]));			//salesRecNo
 			this.statement_M.setString(4, parameter[3]);						//shippingType
 			this.statement_M.setTimestamp(5, this.makeTimestamp(parameter[4]));	//createdTime
+			this.statement_M.setFloat(6, Float.parseFloat(parameter[5]));
 			int resultCode = statement_M.executeUpdate();
 			this.connection_M.commit();
 			this.cleanup();

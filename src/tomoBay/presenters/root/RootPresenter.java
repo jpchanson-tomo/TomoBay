@@ -14,10 +14,19 @@ package tomoBay.presenters.root;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.HashMap;
+import java.util.Map;
+
 import tomoBay.model.services.ServiceFactory;
 import tomoBay.model.services.TriggerService;
 import tomoBay.model.services.ServiceFactory.ServiceType;
+import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.presenters.AbstractPresenter;
+import tomoBay.presenters.presenterActions.AbstractPresenterAction;
+import tomoBay.presenters.presenterActions.MarkAsInvoiced;
+import tomoBay.presenters.presenterActions.MarkAsUninvoiced;
+import tomoBay.presenters.presenterActions.ReScanListing;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
 /**
@@ -29,6 +38,15 @@ import tomoBay.view.ViewFactory;
  */
 public class RootPresenter implements AbstractPresenter
 {
+	/**maps the type string to an action**/
+	@SuppressWarnings("serial")
+	private static final Map<String, AbstractPresenterAction> actionMap_M
+				= new HashMap<String, AbstractPresenterAction>()
+				{{
+					put("invoice", new MarkAsInvoiced());
+					put("uninvoice", new MarkAsUninvoiced());
+					put("reScan", new ReScanListing());
+				}};
 	/**
 	 * default constructor
 	 */
@@ -39,15 +57,9 @@ public class RootPresenter implements AbstractPresenter
 	 * @see openDMS.presenters.AbstractPresenter#present(openDMS.view.views.AbstractView)
 	 */
 	@Override
-	public String present(AbstractView view)
+	public String present(AbstractView view, String type, String data)
 	{
-		String output = "";
-		
-		
-		TriggerService.start(ServiceFactory.make(ServiceType.TEST_SERVICE));
-		System.out.println("Root page loaded");
-		
-		return output;
+		return RootPresenter.actionMap_M.get(type).execute(data);
 	}
 
 	/* (non-Javadoc)

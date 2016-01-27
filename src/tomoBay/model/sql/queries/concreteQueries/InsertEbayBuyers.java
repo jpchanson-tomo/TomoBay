@@ -36,7 +36,11 @@ public class InsertEbayBuyers implements AbstractDBQuery
 	/**SQL query string**/
 	private String query ="INSERT IGNORE INTO ebay_buyers "
 			+ "(buyerID, name, street1, street2, city, county, postcode, email, phoneNo)"
-			+ "VALUES (?,?,?,?,?,?,?,?,?);";
+			+ "VALUES (?,?,?,?,?,?,?,?,?) "
+			+ "ON DUPLICATE KEY UPDATE buyerID=values(buyerID), name=values(name), "
+			+ "street1=values(street1), street2=values(street2), city=values(city), "
+			+ "county=values(county), postcode=values(postcode), email=values(email), "
+			+ "phoneNo=values(phoneNo);";
 	
 	/**
 	 * default constructor

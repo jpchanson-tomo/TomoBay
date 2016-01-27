@@ -53,12 +53,14 @@ public class DataServlet extends HttpServlet
 	{
 		PrintWriter out = response.getWriter();
 		String data = request.getParameter("data");
+		String type = request.getParameter("type");
+		String page = request.getParameter("page");
 		ViewFactory viewFactory = new ViewFactory();
 		
-		AbstractPresenter presenter = PresenterFactory.make(data);
+		AbstractPresenter presenter = PresenterFactory.make(page);
 		AbstractView view = presenter.accept(viewFactory);
 		
-		out.print(presenter.present(view));
+		out.print(presenter.present(view, type, data));
 		
 		out.close();
 	}

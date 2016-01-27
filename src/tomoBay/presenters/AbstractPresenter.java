@@ -31,7 +31,7 @@ public interface AbstractPresenter
 	 * @return String representing the html formatted information presented to the view by this
 	 * presenter.
 	 */
-	public String present(AbstractView view);
+	public String present(AbstractView view, String type, String data);
 	
 	/**
 	 * double dispatch method that allows the presenter to be responsible for creation of its

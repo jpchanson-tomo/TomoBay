@@ -1,4 +1,5 @@
 package tomoBay.model.winstock;
+import tomoBay.helpers.Config;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -43,12 +44,12 @@ public class WinstockConfig
 	 * @return String representing the name of the machine on which winstock is running.
 	 */
 	public String getMachineName()
-	{return WinstockConfig.configContents_M[1];}
+	{return ConfigReader.getConf(Config.WIN_LOC);}
 	
 	/**
 	 * method used to retrieve the port on which winstock is running.
 	 * @return int representing the port number on which winstock is running.
 	 */
 	public int getPort()
-	{return Integer.parseInt(WinstockConfig.configContents_M[2]);}
+	{return Integer.parseInt(ConfigReader.getConf(Config.WIN_PORT));}
 }

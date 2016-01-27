@@ -25,6 +25,7 @@ import javax.mail.internet.AddressException;
 import tomoBay.exceptions.NullEmailObjectException;
 import tomoBay.exceptions.NullEmailServerObjectException;
 import tomoBay.exceptions.ServiceException;
+import tomoBay.helpers.Config;
 import tomoBay.helpers.ConfigReader;
 import tomoBay.model.net.email.Email;
 import tomoBay.model.net.email.EmailDirector;
@@ -108,8 +109,9 @@ public class EmailErrorsMailActions
 	 */
 	public void send()
 	{
-		String[] credentials = ConfigReader.read("./config/", "mail.conf");
-		try{this.sendConnection.send(this.email, credentials[1], credentials[2]);}
+		String sendFrom = ConfigReader.getConf(Config.MAIL_ADDR);
+		String sendPwd = ConfigReader.getConf(Config.MAIL_PWD);
+		try{this.sendConnection.send(this.email, sendFrom, sendPwd);}
 		
 		catch (Exception e) {throw new ServiceException("cant send email - check that all necessary fields exist: recipients/subject/message", e);}
 	}

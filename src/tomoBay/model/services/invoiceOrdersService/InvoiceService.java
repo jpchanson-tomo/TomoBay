@@ -25,6 +25,7 @@ import javax.mail.internet.AddressException;
 
 import tomoBay.exceptions.NullEmailObjectException;
 import tomoBay.exceptions.NullEmailServerObjectException;
+import tomoBay.helpers.checkTime.CheckTime;
 import tomoBay.model.net.email.Email;
 import tomoBay.model.net.email.EmailDirector;
 import tomoBay.model.net.email.GmailBuilder;
@@ -35,7 +36,7 @@ import tomoBay.model.services.ServiceFactory;
 import tomoBay.model.services.ServiceFactory.ServiceType;
 import tomoBay.model.services.TriggerService;
 import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
-import tomoBay.model.services.helpers.InvoiceableStatus;
+import tomoBay.model.services.helpers.PickeableStatus;
 import tomoBay.model.services.invoiceOrdersService.invoice.Invoice;
 import tomoBay.model.sql.DataBaseSchema;
 /**
@@ -53,8 +54,11 @@ public class InvoiceService implements AbstractService
 	 * @see openDMS.model.services.AbstractService#run()
 	 */
 	@Override
-	public void run()
+	public String call()
 	{
+		System.out.println("invoicing started");
+		if(CheckTime.isInRange())
+		{
 		ValidUninvoicedOrderList orderList = new ValidUninvoicedOrderList();
 		CalculateInvoiceStatus orderStatus = new CalculateInvoiceStatus();
 		DB db = new DB();
@@ -64,26 +68,32 @@ public class InvoiceService implements AbstractService
 		
 		for(Map<DataBaseSchema,String> order : orders)
 		{
+//			System.out.println(order.get(DataBaseSchema.ORD_ORDER_ID));
 //			System.out.println("0");
-			if(orderStatus.status(order.get(DataBaseSchema.ORD_ORDER_ID))==InvoiceableStatus.Invoiceable)
+			if(orderStatus.status(order.get(DataBaseSchema.ORD_ORDER_ID))==PickeableStatus.PICKEABLE)
 			{
 				Invoice invoice = new Invoice(order.get(DataBaseSchema.ORD_ORDER_ID));
 				int invNo = invoice.generate();
 				System.out.println(invNo);
 				invoice.print();
-				invoicedOrders.add(new String[] {order.get(DataBaseSchema.ORD_ORDER_ID), order.get(DataBaseSchema.ORD_SALES_REC_NO), order.get(DataBaseSchema.ORD_CREATED_TIME)});
+				invoicedOrders.add(new String[] {order.get(DataBaseSchema.ORD_ORDER_ID), 
+						order.get(DataBaseSchema.ORD_SALES_REC_NO), order.get(DataBaseSchema.ORD_CREATED_TIME),
+						String.valueOf(invoice.getWeight()), String.valueOf(invNo)});
 				db.updateInvStatus(order.get(DataBaseSchema.ORD_ORDER_ID));
 			}
 		}
 		
 		if(invoicedOrders.size() > 0)
 		{
-		String message="<table border='1' style='width:100%'><thead><th>orderID</th><th>salesRecordNo</th></th><th>created time</th></thead><tbody>";
+		String message="<table border='1' style='width:100%'><thead><th>orderID</th><th>salesRecordNo</th>"
+				+ "</th><th>created time</th><th>weight</th><th>Invoice Number</th></thead><tbody>";
 		for (String[] maildata : invoicedOrders)
 		{
 			message += "<tr><td>"+maildata[0]+"</td>";
 			message += "<td>"+maildata[1]+"</td>"
-					+ "<td>"+maildata[2]+"</td></tr>";
+					+ "<td>"+maildata[2]+"</td>"
+					+ "<td>"+maildata[3]+"</td>"
+					+ "<td>"+maildata[4]+"</td></tr>";
 		}
 		message+="</tbody></table>";
 		
@@ -124,7 +134,9 @@ public class InvoiceService implements AbstractService
 			e.printStackTrace();
 		}
 		}
-		
+		return "invoicing finished";
+		}
+		return "out of business hours, nothing invoiced";
 	}
 
 	/* (non-Javadoc)

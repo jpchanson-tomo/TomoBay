@@ -15,11 +15,13 @@ package tomoBay.view;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.presenters.error.ErrorPresenter;
+import tomoBay.presenters.orderDetails.OrderDetailsPresenter;
 import tomoBay.presenters.root.RootPresenter;
 import tomoBay.presenters.sales.SalesHistoryPresenter;
 import tomoBay.presenters.sales.SalesOrderPresenter;
 import tomoBay.presenters.warehouse.WarehouseOrderPresenter;
 import tomoBay.view.views.ErrorView;
+import tomoBay.view.views.OrderView;
 import tomoBay.view.views.RootView;
 import tomoBay.view.views.SalesHistoryView;
 import tomoBay.view.views.SalesOrderView;
@@ -74,5 +76,12 @@ public class ViewFactory
 	 */
 	public AbstractView visit(WarehouseOrderPresenter presenter)
 	{return new WarehouseOrderView();}
+
+	/**
+	 * @param orderDetailsPresenter
+	 * @return
+	 */
+	public AbstractView visit(OrderDetailsPresenter orderDetailsPresenter)
+	{return new OrderView();}
 
 }

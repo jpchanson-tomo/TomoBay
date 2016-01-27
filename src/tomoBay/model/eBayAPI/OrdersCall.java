@@ -14,12 +14,17 @@ package tomoBay.model.eBayAPI;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.ebay.sdk.ApiException;
 import com.ebay.sdk.SdkException;
 import com.ebay.sdk.call.GetOrdersCall;
 import com.ebay.soap.eBLBaseComponents.DetailLevelCodeType;
 import com.ebay.soap.eBLBaseComponents.GetOrdersRequestType;
 import com.ebay.soap.eBLBaseComponents.OrderType;
+import com.ebay.soap.eBLBaseComponents.PaginationType;
 import com.ebay.soap.eBLBaseComponents.SortOrderCodeType;
 /**
  * This represents an eBay API call that requests information about an order
@@ -29,9 +34,11 @@ import com.ebay.soap.eBLBaseComponents.SortOrderCodeType;
 public class OrdersCall extends AbstractAPIcall
 {
 	/**holder for the call object**/
-	GetOrdersCall order_M;
+	private GetOrdersCall order_M;
 	/**holder for request object**/
-	GetOrdersRequestType ordreq_M;
+	private GetOrdersRequestType ordreq_M;
+	/****/
+	private static final int PAGE_NO_MIN = 1;
 	
 	/**
 	 * constructor, initialises the OrdersCall using the credentials passed in.
@@ -57,17 +64,82 @@ public class OrdersCall extends AbstractAPIcall
 	 */
 	public OrderType[] call(int numOfDays) throws ApiException, SdkException, Exception
 	{
-		DetailLevelCodeType[] detail = {DetailLevelCodeType.RETURN_ALL};
 		
-        this.ordreq_M.setNumberOfDays(numOfDays);
+		List<OrderType[]> results = new ArrayList<OrderType[]>();
+		this.setUpCall(numOfDays);
+        PaginationType pagination = this.setUpPagination();
+        int page = OrdersCall.PAGE_NO_MIN;
+
+        do
+        {
+        	pagination.setPageNumber(page);
+        	this.order_M.setPagination(pagination);
+        	results.add(this.order_M.getOrders());
+        	System.out.println("has more orders : "+this.order_M.getReturnedHasMoreOrders());
+        	++page;
+        }
+        while(this.order_M.getReturnedHasMoreOrders());
+        
+        return this.reformResults(results);
+	}
+	
+	/**
+	 * this method does some setup for the API call
+	 * @param numOfDays the number of days to look back for results
+	 */
+	private void setUpCall(int numOfDays)
+	{
+		DetailLevelCodeType[] detail = {DetailLevelCodeType.RETURN_ALL};
+		this.ordreq_M.setNumberOfDays(numOfDays);
         this.ordreq_M.setSortingOrder(SortOrderCodeType.DESCENDING);
         this.ordreq_M.setDetailLevel(detail);
-        this.order_M.executeByApiName("GetOrders", this.ordreq_M);
+        
         this.order_M.setDetailLevel(detail);
         this.order_M.setNumberOfDays(numOfDays);
         this.order_M.setSortingOrder(SortOrderCodeType.DESCENDING);
+//      this.order_M.executeByApiName("GetOrders", this.ordreq_M);
+	}
+	
+	/**
+	 * do setup for the pagination.
+	 * @return PaginationType containing this setup.
+	 */
+	private PaginationType setUpPagination()
+	{
+		PaginationType pagination = new PaginationType();
+		pagination.setEntriesPerPage(100);
+		pagination.setPageNumber(OrdersCall.PAGE_NO_MIN);
+		
+		return pagination;
+	}
+	
+	/**
+	 * convert the List<OrderType[]> passed in as an argument to a single OrderType[] containing
+	 * all of the elements in the same order.
+	 * @param results the List<OrderType[]> to convert
+	 * @return OrderType[] containing all the elements of the arrays in the List<OrderType[]> 
+	 */
+	private OrderType[] reformResults(List<OrderType[]> results)
+	{
+		OrderType[] result;
+		int resultSize = 0;
+		if(results.size()==1) {result = results.get(0);}
+		else
+        {
+			for(int i = 0 ; i < results.size() ; ++i){resultSize += results.get(i).length;}
+			result = new OrderType[resultSize -1 ];
         
+        	int lastArrayEnd = 0;
+        	for(int i = 0 ; i < results.size() ; ++i)
+        	{
+        		for(int j = 0 ; j < results.get(i).length ; ++j)
+        		{
+        			result[lastArrayEnd + j] = results.get(i)[j];
+        		}
+        		lastArrayEnd += (results.get(i).length - 1);
+        	}
+        }
         
-        return this.order_M.getOrders();
+        return result;
 	}
 }

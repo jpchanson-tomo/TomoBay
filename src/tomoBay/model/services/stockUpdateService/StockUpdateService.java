@@ -42,7 +42,7 @@ public class StockUpdateService implements AbstractService
 	 * @see openDMS.model.services.AbstractService#run()
 	 */
 	@Override
-	public void run()
+	public String call()
 	{
 		StockRequired req = new StockRequired();
 		req.calculate();
@@ -69,6 +69,7 @@ public class StockUpdateService implements AbstractService
 			}
 			parts.destroy();
 		}
+		return "";
 	}
 
 	

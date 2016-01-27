@@ -16,9 +16,10 @@ package tomoBay.model.winstock.commands;
  */
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 import tomoBay.exceptions.PayloadException;
-import tomoBay.helpers.DualList;
+import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.winstock.payloads.PayloadType;
 import tomoBay.model.winstock.payloads.PutInvoicePayload;
 import tomoBay.model.winstock.response.PutInvoiceResponse;
