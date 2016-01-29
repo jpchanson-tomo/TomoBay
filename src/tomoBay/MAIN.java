@@ -43,7 +43,7 @@ public class MAIN
 		
 		ServiceScheduler services = new ServiceScheduler(5);
 //		services.add(ServiceFactory.make(ServiceFactory.ServiceType.STOPGAP_SERVICE), 0, 1);
-//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
+		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.CHECK_ERRORS));
