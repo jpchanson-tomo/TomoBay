@@ -17,12 +17,14 @@ package tomoBay.model.services.emailErrorsService;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.w3c.dom.NodeList;
 
 import tomoBay.exceptions.ServiceException;
 import tomoBay.helpers.XMLParser;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
+import tomoBay.model.services.checkErrorsService.CheckErrorsService;
 /**
  * This service is responsible for generating a list of erroneous items that exist within the 
  * database and emailing it to appropriate parties.
@@ -31,6 +33,7 @@ import tomoBay.model.services.AbstractService;
  */
 public class EmailErrorsService implements AbstractService
 {
+	static Logger log = Logger.getLogger(EmailErrorsService.class.getName());
 	/****/
 	private Map<String, emailDataType> mailData_M;
 	/****/
@@ -53,7 +56,7 @@ public class EmailErrorsService implements AbstractService
 	public String call() throws ServiceException
 	{	//make sure the service has been configured
 		
-		System.out.println("email errors started");
+		log.warn("email errors started");
 		if (this.mailData_M == null) {throw new ServiceException("no AbstractConfiguration object set");}
 		ErrorsList errors = new ErrorsList();
 		

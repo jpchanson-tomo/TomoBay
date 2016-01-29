@@ -16,9 +16,12 @@ package tomoBay.model.services.checkErrorsService;
  */
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import tomoBay.helpers.BrandToCode;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
+import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
 import tomoBay.model.services.helpers.PartList;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
@@ -30,6 +33,8 @@ import tomoBay.model.winstock.Stock;
  */
 public class CheckErrorsService implements AbstractService
 {
+	static Logger log = Logger.getLogger(CheckErrorsService.class.getName());
+	
 	public CheckErrorsService()
 	{super();}
 
@@ -39,7 +44,7 @@ public class CheckErrorsService implements AbstractService
 	@Override
 	public String call()
 	{
-		System.out.println("check errors started");
+		log.warn("check errors started");
 		PartList partlist;
 		Stock errorCheck = new Stock();
 		List<String[]> orders = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS, new String[] {});
@@ -51,7 +56,7 @@ public class CheckErrorsService implements AbstractService
 				int result = errorCheck.requestStockLevel(partNo, BrandToCode.convert(order[3]));
 				String errorMsg = "ERROR("+order[0]+"): check part numbers and brand";
 				if (result == -8008135)
-				{QueryInvoker.execute(QueryType.UPDATE_ITEM_NOTE, new String[] {errorMsg, order[0]});}
+				{QueryInvoker.execute(QueryType.UPDATE_ITEM_NOTE, new String[] {errorMsg, order[0]});log.warn(errorMsg);}
 			}
 		}
 		return "check errors finished";

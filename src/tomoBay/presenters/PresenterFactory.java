@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tomoBay.presenters.factories.AbstractPresenterFactory;
+import tomoBay.presenters.factories.AdminServicePresenterFactory;
 import tomoBay.presenters.factories.ErrorPresenterFactory;
 import tomoBay.presenters.factories.RootPresenterFactory;
 import tomoBay.presenters.factories.SalesHistoryPresenterFactory;
@@ -42,6 +43,8 @@ public class PresenterFactory
 				SALES_ORDER_PRESENTER,
 				/**@see {@link tomoBay.presenters.sales.SalesHistoryPresenter}**/
 				SALES_HISTORY_PRESENTER,
+				/**@see {@link tomoBay.presenters.sales.AdminServicePresenter}**/
+				ADMIN_PRESENTER
 			}
 	
 	/****/
@@ -53,6 +56,7 @@ public class PresenterFactory
 				put(PresenterFactory.PresenterType.ROOT_PRESENTER, new RootPresenterFactory());
 				put(PresenterFactory.PresenterType.SALES_ORDER_PRESENTER, new SalesOrderPresenterFactory());
 				put(PresenterFactory.PresenterType.SALES_HISTORY_PRESENTER, new SalesHistoryPresenterFactory());
+				put(PresenterFactory.PresenterType.ADMIN_PRESENTER, new AdminServicePresenterFactory());
 			}};
 	/**
 	 * default constructor

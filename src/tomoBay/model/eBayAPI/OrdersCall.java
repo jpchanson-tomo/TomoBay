@@ -15,8 +15,9 @@ package tomoBay.model.eBayAPI;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
+import org.apache.log4j.Logger;
 
 import com.ebay.sdk.ApiException;
 import com.ebay.sdk.SdkException;
@@ -33,6 +34,7 @@ import com.ebay.soap.eBLBaseComponents.SortOrderCodeType;
  */
 public class OrdersCall extends AbstractAPIcall
 {
+	static Logger log = Logger.getLogger(OrdersCall.class.getName());
 	/**holder for the call object**/
 	private GetOrdersCall order_M;
 	/**holder for request object**/
@@ -64,18 +66,16 @@ public class OrdersCall extends AbstractAPIcall
 	 */
 	public OrderType[] call(int numOfDays) throws ApiException, SdkException, Exception
 	{
-		
 		List<OrderType[]> results = new ArrayList<OrderType[]>();
 		this.setUpCall(numOfDays);
         PaginationType pagination = this.setUpPagination();
         int page = OrdersCall.PAGE_NO_MIN;
-
         do
         {
         	pagination.setPageNumber(page);
         	this.order_M.setPagination(pagination);
         	results.add(this.order_M.getOrders());
-        	System.out.println("has more orders : "+this.order_M.getReturnedHasMoreOrders());
+        	log.warn("has more orders : "+this.order_M.getReturnedHasMoreOrders());
         	++page;
         }
         while(this.order_M.getReturnedHasMoreOrders());

@@ -4,6 +4,8 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Arrays;
 
+import org.apache.log4j.Logger;
+
 import tomoBay.model.services.helpers.PartList;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -29,6 +31,8 @@ import tomoBay.model.winstock.Stock;
  */
 public class Prices
 {
+	static private Logger log = Logger.getLogger(Prices.class.getName());
+	
 	/**array of prices**/
 	private int[] prices_M;
 	/****/
@@ -73,7 +77,7 @@ public class Prices
 	 */
 	public static int convertPriceToPennies(double price)
 	{
-		System.out.println(price);
+		log.warn(price);
 		String priceChecked = Prices.convertToString(price);
 		double numericalPrice = Double.parseDouble(priceChecked);
 		int result = 0;
@@ -95,9 +99,9 @@ public class Prices
 		double orderPrice = this.priceIncVat(listingPrice) + (this.shippingCost);
 		this.populateCostsArray(parts, brandCode);
 		
-		System.out.println(orderPrice+" = " + this.priceExVat(orderPrice)+"+"+this.vat(orderPrice));
-		System.out.println("ListingPrice: " + listingPrice + " orderQty: " + this.orderQty_M);
-		System.out.println("costs: " + Arrays.toString(this.costs_M));
+		log.warn(orderPrice+" = " + this.priceExVat(orderPrice)+"+"+this.vat(orderPrice));
+		log.warn("ListingPrice: " + listingPrice + " orderQty: " + this.orderQty_M);
+		log.warn("costs: " + Arrays.toString(this.costs_M));
 		
 		this.generatePrices(this.costs_M, this.totalCost_M, listingPrice, parts);
 	}
@@ -118,16 +122,16 @@ public class Prices
 			double individualPrice =  (((this.costs_M[i]/this.totalCost_M)*(this.priceExVat(itemPrice))/parts.getPartQty(i)));
 			this.prices_M[i] = Prices.convertPriceToPennies(individualPrice);
 			
-			System.out.println("part#: " + parts.getPartNumber(i) + " partQty: " + parts.getPartQty(i) + " part price: " + individualPrice);
-			System.out.println(this.prices_M[i]);
+			log.warn("part#: " + parts.getPartNumber(i) + " partQty: " + parts.getPartQty(i) + " part price: " + individualPrice);
+			log.warn(this.prices_M[i]);
 			totalCostworkedOut += this.prices_M[i]*parts.getPartQty(i);
-			System.out.println("total cost worked out: "+totalCostworkedOut);
+			log.warn("total cost worked out: "+totalCostworkedOut);
 		}
 		
 		int remainder = Prices.convertPriceToPennies(this.priceExVat(itemPrice)) - totalCostworkedOut;
-		System.out.println("remainder: "+remainder);
+		log.warn("remainder: "+remainder);
 		this.prices_M[0] += this.remainder(itemPrice, parts);
-		System.out.println(Arrays.toString(this.prices_M));
+		log.warn(Arrays.toString(this.prices_M));
 	}
 	
 	/**
@@ -178,7 +182,7 @@ public class Prices
 		int total = Prices.convertPriceToPennies(this.priceExVat(itemPrice));
 		int currentTotal=this.totalPrice(parts, this.prices_M);
 		int remainder = total - currentTotal;
-		System.out.println("Total="+ total + " currentTotal="+currentTotal+ " remainder="+remainder);
+		log.warn("Total="+ total + " currentTotal="+currentTotal+ " remainder="+remainder);
 		
 		int result=0;
 		double before = this.totalPrice(parts, this.prices_M);
@@ -189,7 +193,7 @@ public class Prices
 			int addition = ((n+1)*parts.getPartQty(0));
 			double after = this.totalPrice(parts, this.prices_M) + addition;
 			
-			System.out.println(Math.abs((total-before))+" : "+ Math.abs((total-after)));
+			log.warn(Math.abs((total-before))+" : "+ Math.abs((total-after)));
 			if (Math.abs(total-before)<Math.abs(total -after)) {System.out.println("keep going");}
 			else {System.out.println("closest point found"); before = after; result = n+1;}
 		}

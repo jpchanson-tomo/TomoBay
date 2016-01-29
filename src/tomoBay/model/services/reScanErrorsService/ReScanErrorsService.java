@@ -16,8 +16,11 @@ package tomoBay.model.services.reScanErrorsService;
  */
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
+import tomoBay.model.services.checkErrorsService.CheckErrorsService;
 /**
  *
  * @author Jan P.C. Hanson
@@ -25,6 +28,7 @@ import tomoBay.model.services.AbstractService;
  */
 public class ReScanErrorsService implements AbstractService
 {
+	static Logger log = Logger.getLogger(ReScanErrorsService.class.getName());
 	/**
 	 * default ctor.
 	 */
@@ -37,7 +41,7 @@ public class ReScanErrorsService implements AbstractService
 	@Override
 	public String call()
 	{
-		System.out.println("rescan errors started");
+		log.warn("rescan errors started");
 		ReScanErrorsDBActions database = new ReScanErrorsDBActions();
 		ReScanErrorsWinstockActions winstock = new ReScanErrorsWinstockActions();
 		

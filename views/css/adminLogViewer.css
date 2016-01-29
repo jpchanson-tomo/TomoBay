@@ -1,0 +1,26 @@
+.panel
+{
+	position:absolute;
+	bottom:5px;
+	top:60px;
+	left:10px;
+	right:10px;
+}
+
+.panel-footer
+{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+}
+
+.logFile
+{
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:118px;
+	bottom:40px;
+	overflow-y:scroll;
+}

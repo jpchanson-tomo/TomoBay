@@ -14,6 +14,9 @@ package tomoBay.model.services.basicEbayUpdateService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import org.apache.log4j.Logger;
+import org.eclipse.jetty.util.thread.ThreadPool;
+
 import tomoBay.helpers.Config;
 import tomoBay.helpers.ConfigReader;
 import tomoBay.model.eBayAPI.OrdersCall;
@@ -29,6 +32,9 @@ import com.ebay.soap.eBLBaseComponents.OrderType;
  */
 public class BasicEbayUpdateService implements AbstractService
 {
+	static private Logger log = Logger.getLogger(BasicEbayUpdateService.class.getName());
+	static private int threadCount = 1;
+	static private final int THREADNUMBER = BasicEbayUpdateService.threadCount;
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Runnable#run()
@@ -36,12 +42,12 @@ public class BasicEbayUpdateService implements AbstractService
 	@Override
 	public String call()
 	{
+		this.nameThread();
 		try
 		{
-			System.out.println("ebay update started");
+			log.warn("ebay update started");
 			String usrKey = ConfigReader.getConf(Config.EBAY_PROD_KEY);
 			String server =  ConfigReader.getConf(Config.EBAY_PROD_SRV);
-			
 			OrdersCall oCall = new OrdersCall(usrKey, server);
 			OrderType[] orders = oCall.call(Integer.parseInt(ConfigReader.getConf(Config.EBAY_LOOKBCK)));
 			
@@ -65,4 +71,12 @@ public class BasicEbayUpdateService implements AbstractService
 	@Override
 	public <E> void setConfig(AbstractConfiguration<E> config)
 	{}
+	
+	private void nameThread()
+	{
+		String threadGroup = "Pool-"+Thread.currentThread().getThreadGroup().getName();
+		String name = "BasicEbayUpdateService-"+BasicEbayUpdateService.THREADNUMBER;
+		Thread.currentThread().setName(threadGroup+" "+name);
+		BasicEbayUpdateService.threadCount++;
+	}
 }

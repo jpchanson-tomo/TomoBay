@@ -21,6 +21,10 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.log4j.Logger;
+
+import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
 /**
  * This class defines a service scheduler, it runs services intervalicaly, with the interval 
  * being defined from the previous termination of that service thread. Contains a threadpool
@@ -31,6 +35,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ServiceScheduler
 {
+	static Logger log = Logger.getLogger(ServiceScheduler.class.getName());
 	/**Scheduled thread pool**/
 	private ScheduledThreadPoolExecutor serviceScheduler_M;
 	/**List of scheduled services**/
@@ -53,22 +58,16 @@ public class ServiceScheduler
 	
 	/**
 	 * add a service to the list of services to run at the periods specified in the method 
-	 * parameters. After the initial 'delay' (in minutes) the 'service' executes, once execution
-	 * has finished, the service will be executed again after the number of minutes specified in
-	 * the 'rate' parameter.
-	 * @param service the service to add
-	 * @param delay the initial delay before running the service
-	 * @param rate the rate at which to  repeat the service.
+	 * parameters.
 	 */
 	public void add(AbstractService service)
-	{
-//		this.services_M.add(this.serviceScheduler_M.scheduleWithFixedDelay(service, delay, rate, TimeUnit.MINUTES));
-		this.services_M.add(service);
-//		this.servicesResults_M.add(this.serviceScheduler_M.schedule(service, delay, TimeUnit.MINUTES));
-	}
+	{this.services_M.add(service);}
 	
+	public void clear()
+	{this.services_M.clear();}
 	/**
-	 * starts the service.
+	 * starts the periodic services.
+	 * @param rateInMins 
 	 */
 	public void start(long rateInMins)
 	{
@@ -78,7 +77,7 @@ public class ServiceScheduler
 			{
 				for(int i = 0 ; i < this.services_M.size() ; ++i)
 				{
-					System.out.println(this.serviceScheduler_M.submit(this.services_M.get(i)).get().toString());
+					log.warn(this.serviceScheduler_M.submit(this.services_M.get(i)).get().toString());
 				}
 				Thread.sleep(rateInMins*60*1000);
 			}
@@ -86,6 +85,12 @@ public class ServiceScheduler
 			{e.printStackTrace();}
 		}
 		serviceScheduler_M.shutdown();
-		System.out.println("scheduler shut down");
+		log.warn("scheduler shut down");
 	}
+	
+	/**
+	 * stops the periodic services
+	 */
+	public void stop()
+	{this.serviceScheduler_M.shutdownNow();}
 }

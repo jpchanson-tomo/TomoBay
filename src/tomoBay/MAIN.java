@@ -1,4 +1,5 @@
 package tomoBay;
+import org.apache.log4j.Logger;
 import org.w3c.dom.NodeList;
 
 import com.ebay.soap.eBLBaseComponents.OrderArrayType;
@@ -18,6 +19,7 @@ import tomoBay.model.services.ServiceFactory;
 import tomoBay.model.services.ServiceScheduler;
 import tomoBay.model.services.ServiceFactory.ServiceType;
 import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
+import tomoBay.model.services.invoiceOrdersService.invoice.Invoice;
 import tomoBay.model.winstock.Stock;
 import tomoBay.view.HttpServer;
 /**
@@ -29,15 +31,19 @@ import tomoBay.view.HttpServer;
  */
 public class MAIN
 {
+	static private Logger log = Logger.getLogger(Invoice.class.getName());
+	
 	public static void main(String[] args) throws Exception
 	{
 		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
 		
+		log.warn("*******************************PROGRAM START*******************************");
 		HttpServer server = new HttpServer();
 		server.start(1337);
 		
 		ServiceScheduler services = new ServiceScheduler(5);
 //		services.add(ServiceFactory.make(ServiceFactory.ServiceType.STOPGAP_SERVICE), 0, 1);
+//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.CHECK_ERRORS));
@@ -51,8 +57,7 @@ public class MAIN
 				ServiceType.EMAIL_ERRORS_SERVICE,
 				new EmailErrorsConfig().configure(data)
 					));
-		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
-		services.start(3);
+		services.start(20);
 		
 		
 //		Order order = new Order("200733860016");

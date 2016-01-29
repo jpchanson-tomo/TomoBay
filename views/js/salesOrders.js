@@ -14,7 +14,7 @@ $("head").append("<script src='js/modules/colourCodeByStatus.js'></script>");
 $(document).ready(function(){
 	var resultSelector=".sortable";
 	var tableColumns=["Select", "Name","Date","SalesRecNo", "ShippingType","Details","Status"];
-	var sortableColumns=["Name","Date","SalesRecNo", "ShippingType","Status"];
+	var sortableColumns=["Select", "Name","Date","SalesRecNo", "ShippingType","Status"];
 	var queryString="/res/?page=SALES_ORDER_PRESENTER";
 	var footerContent=	"<a class='btn btn-primary' onclick='invoice()'>Send to Warehouse</a>"+
 	"<a class='btn btn-primary' href='/sales_orders.html'>Refresh</a>"+

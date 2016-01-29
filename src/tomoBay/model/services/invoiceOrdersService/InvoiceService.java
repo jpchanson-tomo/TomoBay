@@ -23,8 +23,11 @@ import javax.mail.MessagingException;
 import javax.mail.NoSuchProviderException;
 import javax.mail.internet.AddressException;
 
+import org.apache.log4j.Logger;
+
 import tomoBay.exceptions.NullEmailObjectException;
 import tomoBay.exceptions.NullEmailServerObjectException;
+import tomoBay.helpers.TimeStampCompare;
 import tomoBay.helpers.checkTime.CheckTime;
 import tomoBay.model.net.email.Email;
 import tomoBay.model.net.email.EmailDirector;
@@ -49,92 +52,91 @@ import tomoBay.model.sql.DataBaseSchema;
  */
 public class InvoiceService implements AbstractService
 {
-
+	static Logger log = Logger.getLogger(InvoiceService.class.getName());
 	/* (non-Javadoc)
 	 * @see openDMS.model.services.AbstractService#run()
 	 */
 	@Override
 	public String call()
 	{
-		System.out.println("invoicing started");
+		log.warn("invoicing started");
 		if(CheckTime.isInRange())
 		{
-		ValidUninvoicedOrderList orderList = new ValidUninvoicedOrderList();
-		CalculateInvoiceStatus orderStatus = new CalculateInvoiceStatus();
-		DB db = new DB();
-		List<String[]> invoicedOrders = new ArrayList<String[]>();
-		orderList.sortList();
-		List<Map<DataBaseSchema,String>> orders = orderList.get();
-		
-		for(Map<DataBaseSchema,String> order : orders)
-		{
-//			System.out.println(order.get(DataBaseSchema.ORD_ORDER_ID));
-//			System.out.println("0");
-			if(orderStatus.status(order.get(DataBaseSchema.ORD_ORDER_ID))==PickeableStatus.PICKEABLE)
+			ValidUninvoicedOrderList orderList = new ValidUninvoicedOrderList();
+			CalculateInvoiceStatus orderStatus = new CalculateInvoiceStatus();
+			DB db = new DB();
+			List<String[]> invoicedOrders = new ArrayList<String[]>();
+			orderList.sortList();
+			List<Map<DataBaseSchema,String>> orders = orderList.get();
+			
+			for(Map<DataBaseSchema,String> order : orders)
 			{
-				Invoice invoice = new Invoice(order.get(DataBaseSchema.ORD_ORDER_ID));
-				int invNo = invoice.generate();
-				System.out.println(invNo);
-				invoice.print();
-				invoicedOrders.add(new String[] {order.get(DataBaseSchema.ORD_ORDER_ID), 
-						order.get(DataBaseSchema.ORD_SALES_REC_NO), order.get(DataBaseSchema.ORD_CREATED_TIME),
-						String.valueOf(invoice.getWeight()), String.valueOf(invNo)});
-				db.updateInvStatus(order.get(DataBaseSchema.ORD_ORDER_ID));
+				if(orderStatus.status(order.get(DataBaseSchema.ORD_ORDER_ID))==PickeableStatus.PICKEABLE 
+						&& TimeStampCompare.olderThan(30, order.get(DataBaseSchema.ORD_CREATED_TIME))==false)
+				{
+					Invoice invoice = new Invoice(order.get(DataBaseSchema.ORD_ORDER_ID));
+					int invNo = invoice.generate();
+					System.out.println(invNo);
+					invoice.print();
+					invoicedOrders.add(new String[] {order.get(DataBaseSchema.ORD_ORDER_ID), 
+							order.get(DataBaseSchema.ORD_SALES_REC_NO), order.get(DataBaseSchema.ORD_CREATED_TIME),
+							String.valueOf(invoice.getWeight()), String.valueOf(invNo)});
+					db.updateInvStatus(order.get(DataBaseSchema.ORD_ORDER_ID));
+				}
 			}
-		}
-		
-		if(invoicedOrders.size() > 0)
-		{
-		String message="<table border='1' style='width:100%'><thead><th>orderID</th><th>salesRecordNo</th>"
-				+ "</th><th>created time</th><th>weight</th><th>Invoice Number</th></thead><tbody>";
-		for (String[] maildata : invoicedOrders)
-		{
-			message += "<tr><td>"+maildata[0]+"</td>";
-			message += "<td>"+maildata[1]+"</td>"
-					+ "<td>"+maildata[2]+"</td>"
-					+ "<td>"+maildata[3]+"</td>"
-					+ "<td>"+maildata[4]+"</td></tr>";
-		}
-		message+="</tbody></table>";
-		
-		try
-		{
-			EmailDirector mailmanager = new EmailDirector();
-			mailmanager.constructEmailAndServer(new GmailBuilder());
-			MailServerSend mailServer = mailmanager.getMailSendServer();
-			Email email = mailmanager.getEmail();
-		
-			email.setRecipient(Message.RecipientType.TO, "tomomotorbay@gmail.com");
-			email.setRecipient(Message.RecipientType.TO, "paul@tomoparts.co.uk");
-			email.setRecipient(Message.RecipientType.TO, "steve@tomoparts.co.uk");
-			email.setSubject("INVOICED ORDERS");
-			email.setMessage(message);
-		
-			mailServer.send(email, "tomomotorbay@gmail.com", "3bay15myl1f3");
-		}
-		catch (NoSuchProviderException e)
-		{
-			e.printStackTrace();
-		} 
-		catch (NullEmailObjectException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NullEmailServerObjectException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (AddressException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MessagingException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		}
-		return "invoicing finished";
+			
+			if(invoicedOrders.size() > 0)
+			{
+				String message="<table border='1' style='width:100%'><thead><th>orderID</th><th>salesRecordNo</th>"
+						+ "</th><th>created time</th><th>weight</th><th>Invoice Number</th></thead><tbody>";
+				for (String[] maildata : invoicedOrders)
+				{
+					message += "<tr><td>"+maildata[0]+"</td>";
+					message += "<td>"+maildata[1]+"</td>"
+							+ "<td>"+maildata[2]+"</td>"
+							+ "<td>"+maildata[3]+"</td>"
+							+ "<td>"+maildata[4]+"</td></tr>";
+				}
+				message+="</tbody></table>";
+				
+				try
+				{
+					EmailDirector mailmanager = new EmailDirector();
+					mailmanager.constructEmailAndServer(new GmailBuilder());
+					MailServerSend mailServer = mailmanager.getMailSendServer();
+					Email email = mailmanager.getEmail();
+				
+					email.setRecipient(Message.RecipientType.TO, "tomomotorbay@gmail.com");
+					email.setRecipient(Message.RecipientType.TO, "paul@tomoparts.co.uk");
+					email.setRecipient(Message.RecipientType.TO, "steve@tomoparts.co.uk");
+					email.setSubject("INVOICED ORDERS");
+					email.setMessage(message);
+				
+					mailServer.send(email, "tomomotorbay@gmail.com", "3bay15myl1f3");
+				}
+				catch (NoSuchProviderException e)
+				{
+					e.printStackTrace();
+				} 
+				catch (NullEmailObjectException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (NullEmailServerObjectException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (AddressException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (MessagingException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			return "invoicing finished";
 		}
 		return "out of business hours, nothing invoiced";
 	}

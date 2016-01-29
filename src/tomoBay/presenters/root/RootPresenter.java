@@ -58,9 +58,7 @@ public class RootPresenter implements AbstractPresenter
 	 */
 	@Override
 	public String present(AbstractView view, String type, String data)
-	{
-		return RootPresenter.actionMap_M.get(type).execute(data);
-	}
+	{return RootPresenter.actionMap_M.get(type).execute(data);}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.presenters.AbstractPresenter#accept(tomoBay.view.ViewFactory)

@@ -18,10 +18,13 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import tomoBay.exceptions.PayloadException;
 import tomoBay.exceptions.ServiceException;
 import tomoBay.helpers.BrandToCode;
 import tomoBay.model.dataTypes.DualList;
+import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.model.winstock.WinstockCommandInvoker;
@@ -36,6 +39,9 @@ public class Invoice
 {
 	/**internal var holding all items in a particular order to be invoiced**/
 	private int invNo_M;
+	
+	static private Logger log = Logger.getLogger(Invoice.class.getName());
+	
 	private List<String[]> dataFields_M;
 	private DualList<String, PayloadType> invoiceData_M;
 	private DualList<String, PayloadType> printData_M;
@@ -47,7 +53,7 @@ public class Invoice
 	public Invoice(String orderNo)
 	{
 		super();
-		System.out.println(orderNo);
+		log.warn(orderNo);
 		this.retrieveOrderInfo(orderNo);
 	}
 	
@@ -69,11 +75,11 @@ public class Invoice
 		{
 			response = 
 					WinstockCommandInvoker.execute(WinstockCommandInvoker.WinstockCommandTypes.PrintInvoice, this.printData_M);
-			System.out.println("print: "+response.isSuccess());
+			log.warn("print: "+response.isSuccess());
 		} 
 		catch (Exception e)
 		{
-			// TODO Auto-generated catch block
+			log.error("problem printing invoice",e);
 			e.printStackTrace();
 		}
 		return true;
@@ -88,9 +94,8 @@ public class Invoice
 		InvoiceHeader header = new InvoiceHeader(this.dataFields_M);
 		InvoiceBody body = new InvoiceBody(this.dataFields_M);
 		
-//		System.out.println(header.generate().toString());
 		this.invoiceData_M = header.generate().append(body.generate());
-		System.out.println(this.invoiceData_M.toString());
+		log.warn("\n"+this.invoiceData_M.toString());
 		
 		this.invoiceResult_M = this.sendInvoice(this.invoiceData_M).getRecieved();
 		
@@ -121,11 +126,12 @@ public class Invoice
 		try
 		{
 			AbstractWinstockCommandResponse res = WinstockCommandInvoker.execute(WinstockCommandInvoker.WinstockCommandTypes.PutInvoice, this.invoiceData_M);
-			System.out.println(res.isSuccess());
+			log.warn("raise Invoice: "+res.isSuccess());
 			return res;
 		} catch (Exception e)
 		{
 			e.printStackTrace();
+			log.error("could not raise invoice", e);
 			throw new ServiceException("could not send invoice", e);
 		} 
 	}

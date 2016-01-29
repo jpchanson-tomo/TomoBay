@@ -14,12 +14,14 @@ package tomoBay.view;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.presenters.admin.AdminPresenter;
 import tomoBay.presenters.error.ErrorPresenter;
 import tomoBay.presenters.orderDetails.OrderDetailsPresenter;
 import tomoBay.presenters.root.RootPresenter;
 import tomoBay.presenters.sales.SalesHistoryPresenter;
 import tomoBay.presenters.sales.SalesOrderPresenter;
 import tomoBay.presenters.warehouse.WarehouseOrderPresenter;
+import tomoBay.view.views.AdminServiceView;
 import tomoBay.view.views.ErrorView;
 import tomoBay.view.views.OrderView;
 import tomoBay.view.views.RootView;
@@ -83,5 +85,8 @@ public class ViewFactory
 	 */
 	public AbstractView visit(OrderDetailsPresenter orderDetailsPresenter)
 	{return new OrderView();}
+	
+	public AbstractView visit(AdminPresenter adminPresenter)
+	{return new AdminServiceView();}
 
 }
