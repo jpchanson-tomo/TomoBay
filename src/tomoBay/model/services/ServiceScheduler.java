@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 
+import tomoBay.helpers.StackTraceToString;
 import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
 /**
  * This class defines a service scheduler, it runs services intervalicaly, with the interval 
@@ -82,7 +83,7 @@ public class ServiceScheduler
 				Thread.sleep(rateInMins*60*1000);
 			}
 			catch(InterruptedException | ExecutionException e)
-			{e.printStackTrace();}
+			{log.error("Service Error "+StackTraceToString.toString(e));}
 		}
 		serviceScheduler_M.shutdown();
 		log.warn("scheduler shut down");

@@ -19,6 +19,7 @@ import org.eclipse.jetty.util.thread.ThreadPool;
 
 import tomoBay.helpers.Config;
 import tomoBay.helpers.ConfigReader;
+import tomoBay.helpers.StackTraceToString;
 import tomoBay.model.eBayAPI.OrdersCall;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
@@ -42,7 +43,6 @@ public class BasicEbayUpdateService implements AbstractService
 	@Override
 	public String call()
 	{
-		this.nameThread();
 		try
 		{
 			log.warn("ebay update started");
@@ -60,6 +60,7 @@ public class BasicEbayUpdateService implements AbstractService
 		} 
 		catch (Exception e)
 		{
+			log.error("could not perform ebayUpdate: "+StackTraceToString.toString(e));
 			e.printStackTrace();
 			return "error";
 		}
@@ -71,12 +72,4 @@ public class BasicEbayUpdateService implements AbstractService
 	@Override
 	public <E> void setConfig(AbstractConfiguration<E> config)
 	{}
-	
-	private void nameThread()
-	{
-		String threadGroup = "Pool-"+Thread.currentThread().getThreadGroup().getName();
-		String name = "BasicEbayUpdateService-"+BasicEbayUpdateService.THREADNUMBER;
-		Thread.currentThread().setName(threadGroup+" "+name);
-		BasicEbayUpdateService.threadCount++;
-	}
 }

@@ -23,6 +23,7 @@ import org.apache.log4j.Logger;
 import tomoBay.exceptions.PayloadException;
 import tomoBay.exceptions.ServiceException;
 import tomoBay.helpers.BrandToCode;
+import tomoBay.helpers.StackTraceToString;
 import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
 import tomoBay.model.sql.queries.QueryInvoker;
@@ -77,7 +78,7 @@ public class Invoice
 		} 
 		catch (Exception e)
 		{
-			log.error("problem printing invoice",e);
+			log.error("problem printing invoice: "+StackTraceToString.toString(e));
 			e.printStackTrace();
 		}
 		return true;
@@ -129,7 +130,7 @@ public class Invoice
 		} catch (Exception e)
 		{
 			e.printStackTrace();
-			log.error("could not raise invoice", e);
+			log.error("could not raise invoice: "+e);
 			throw new ServiceException("could not send invoice", e);
 		} 
 	}

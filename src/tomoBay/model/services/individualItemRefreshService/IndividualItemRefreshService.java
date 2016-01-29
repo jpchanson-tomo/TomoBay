@@ -27,6 +27,7 @@ import tomoBay.helpers.Config;
  *
  */
 import tomoBay.helpers.ConfigReader;
+import tomoBay.helpers.StackTraceToString;
 import tomoBay.model.eBayAPI.ItemCall;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
@@ -71,7 +72,7 @@ public class IndividualItemRefreshService implements AbstractService
 			return this.listingID_M+" refreshed";
 		}
 		catch(Exception e)
-		{e.printStackTrace();log.error("could not refresh "+this.listingID_M, e);return "error";}
+		{e.printStackTrace();log.error("could not refresh "+this.listingID_M+" "+StackTraceToString.toString(e));return "error";}
 	}
 	
 	/* (non-Javadoc)
@@ -98,7 +99,7 @@ public class IndividualItemRefreshService implements AbstractService
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+			log.error("cannot get ItemData "+StackTraceToString.toString(e));
 			return null;
 		}
 	}
