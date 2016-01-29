@@ -93,7 +93,7 @@ public class Invoice
 		InvoiceBody body = new InvoiceBody(this.dataFields_M);
 		
 		this.invoiceData_M = header.generate().append(body.generate());
-		log.warn("</br>"+this.invoiceData_M.toHTML());
+		log.warn(this.invoiceData_M.toHTML());
 		
 		this.invoiceResult_M = this.sendInvoice(this.invoiceData_M).getRecieved();
 		

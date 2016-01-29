@@ -73,17 +73,18 @@ function LogFile(minRefreshTime, logViewSelector, statusSelector)
 	 */
 	function enumerateLogFile(JSON)
 	{
-		var result="<div class='container-fluid'>";
+		var result=	"<div class='container-fluid'><table class='table table-striped table-hover table-condensed'>" +
+					"<thead><tr><th>Source</th><th>DateTime</th><th>Message</th></tr></thead><tbody>";
 		
 		for(var i = JSON.log.length-1 ; i >= 0 ; --i)
 		{
-			result += 	"<div class='row'>" +
-						"<div class='col-xs-2'><em>"+JSON.log[i].source + "</em> </div>" +
-						"<div class='col-xs-2'>["+ JSON.log[i].time + "]</div> " + 
-						"<big><strong>"+JSON.log[i].message+"</strong></big>"+
-						"</div>";
+			result += 	"<tr>" +
+						"<td><em>"+JSON.log[i].source + "</em> </td>" +
+						"<td>["+ JSON.log[i].time + "]</td> " + 
+						"<td><strong>"+JSON.log[i].message+"</strong></td>"+
+						"</tr>";
 		}
-		result += "</div>";
+		result += "</tbody></table></div>";
 		return result;
 	}
 }

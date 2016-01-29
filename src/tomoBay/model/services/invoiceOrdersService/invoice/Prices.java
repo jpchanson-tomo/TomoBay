@@ -77,7 +77,7 @@ public class Prices
 	 */
 	public static int convertPriceToPennies(double price)
 	{
-		log.warn(price);
+//		log.warn(price);
 		String priceChecked = Prices.convertToString(price);
 		double numericalPrice = Double.parseDouble(priceChecked);
 		int result = 0;
@@ -96,12 +96,11 @@ public class Prices
 	private void generateCosts(PartList parts, String brandCode, String itemPrice)
 	{
 		double listingPrice = Double.parseDouble(itemPrice);
-		double orderPrice = this.priceIncVat(listingPrice) + (this.shippingCost);
+//		double orderPrice = this.priceIncVat(listingPrice) + (this.shippingCost);
 		this.populateCostsArray(parts, brandCode);
 		
-		log.warn(orderPrice+" = " + this.priceExVat(orderPrice)+"+"+this.vat(orderPrice));
-		log.warn("ListingPrice: " + listingPrice + " orderQty: " + this.orderQty_M);
-		log.warn("costs: " + Arrays.toString(this.costs_M));
+//		log.warn(orderPrice+" = " + this.priceExVat(orderPrice)+"+"+this.vat(orderPrice));
+		log.warn("ListingTotal: " + listingPrice + " orderQty: " + this.orderQty_M);
 		
 		this.generatePrices(this.costs_M, this.totalCost_M, listingPrice, parts);
 	}
@@ -115,7 +114,7 @@ public class Prices
 	private void generatePrices
 	(double[] costsArray, double totalCost, double itemPrice, PartList parts)
 	{
-		int totalCostworkedOut = 0;
+//		int totalCostworkedOut = 0;
 //		
 		for (int i = 0 ; i < this.costs_M.length ; ++i)
 		{
@@ -123,13 +122,11 @@ public class Prices
 			this.prices_M[i] = Prices.convertPriceToPennies(individualPrice);
 			
 			log.warn("part#: " + parts.getPartNumber(i) + " partQty: " + parts.getPartQty(i) + " part price: " + individualPrice);
-			log.warn(this.prices_M[i]);
-			totalCostworkedOut += this.prices_M[i]*parts.getPartQty(i);
-			log.warn("total cost worked out: "+totalCostworkedOut);
+//			totalCostworkedOut += this.prices_M[i]*parts.getPartQty(i);
 		}
 		
-		int remainder = Prices.convertPriceToPennies(this.priceExVat(itemPrice)) - totalCostworkedOut;
-		log.warn("remainder: "+remainder);
+//		int remainder = Prices.convertPriceToPennies(this.priceExVat(itemPrice)) - totalCostworkedOut;
+//		log.warn("remainder: "+remainder);
 		this.prices_M[0] += this.remainder(itemPrice, parts);
 		log.warn(Arrays.toString(this.prices_M));
 	}
@@ -193,9 +190,8 @@ public class Prices
 			int addition = ((n+1)*parts.getPartQty(0));
 			double after = this.totalPrice(parts, this.prices_M) + addition;
 			
-			log.warn(Math.abs((total-before))+" : "+ Math.abs((total-after)));
-			if (Math.abs(total-before)<Math.abs(total -after)) {System.out.println("keep going");}
-			else {System.out.println("closest point found"); before = after; result = n+1;}
+			if (Math.abs(total-before)<Math.abs(total -after)){}
+			else {before = after; result = n+1;}
 		}
 		return result;
 	}
