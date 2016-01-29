@@ -123,4 +123,12 @@ public class DualList<K,V>
 		{result+= "["+this.key_M.get(i) + ":" + this.value_M.get(i) +"]\n";}
 		return result;
 	}
+	
+	public String toHTML()
+	{
+		String result = "";
+		for(int i = 0 ; i < this.size() ; ++i)
+		{result+= "["+this.key_M.get(i) + ":" + this.value_M.get(i) +"]</br>";}
+		return result;
+	}
 }

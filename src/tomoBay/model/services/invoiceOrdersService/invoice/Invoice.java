@@ -38,8 +38,6 @@ import tomoBay.model.winstock.response.AbstractWinstockCommandResponse;
 public class Invoice
 {
 	/**internal var holding all items in a particular order to be invoiced**/
-	private int invNo_M;
-	
 	static private Logger log = Logger.getLogger(Invoice.class.getName());
 	
 	private List<String[]> dataFields_M;
@@ -95,7 +93,7 @@ public class Invoice
 		InvoiceBody body = new InvoiceBody(this.dataFields_M);
 		
 		this.invoiceData_M = header.generate().append(body.generate());
-		log.warn("\n"+this.invoiceData_M.toString());
+		log.warn("</br>"+this.invoiceData_M.toHTML());
 		
 		this.invoiceResult_M = this.sendInvoice(this.invoiceData_M).getRecieved();
 		
