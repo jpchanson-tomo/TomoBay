@@ -70,6 +70,7 @@ public class EmailErrorsService implements AbstractService
 			email.addMessage(message);
 			
 			email.send();
+			log.warn("Email containing errors sent");
 		}
 		return "email errors finished";
 	}

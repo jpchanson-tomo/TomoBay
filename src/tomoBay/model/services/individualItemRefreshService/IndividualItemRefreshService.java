@@ -18,6 +18,8 @@ package tomoBay.model.services.individualItemRefreshService;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 import tomoBay.helpers.Config;
 /**
  *
@@ -29,6 +31,7 @@ import tomoBay.model.eBayAPI.ItemCall;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
 import tomoBay.model.services.helpers.PartList;
+import tomoBay.model.services.invoiceOrdersService.invoice.Invoice;
 
 import com.ebay.soap.eBLBaseComponents.ItemType;
 import com.ebay.soap.eBLBaseComponents.NameValueListType;
@@ -42,7 +45,7 @@ import com.ebay.soap.eBLBaseComponents.NameValueListType;
  */
 public class IndividualItemRefreshService implements AbstractService
 {
-	
+	static private Logger log = Logger.getLogger(IndividualItemRefreshService.class.getName());
 	private long listingID_M;
 	
 	/* (non-Javadoc)
@@ -64,11 +67,11 @@ public class IndividualItemRefreshService implements AbstractService
 //			new ReCalculateRequiredStock().calculate(partlist, brand, partNo, item);
 //			new ReCalculateAvailableStock().calculate(partlist, brand, partNo, item.getItemID());
 		
-			System.out.println(this.listingID_M+" refreshed");
+			log.warn(this.listingID_M+" refreshed");
 			return this.listingID_M+" refreshed";
 		}
 		catch(Exception e)
-		{e.printStackTrace();return "error";}
+		{e.printStackTrace();log.error("could not refresh "+this.listingID_M, e);return "error";}
 	}
 	
 	/* (non-Javadoc)
