@@ -1,26 +1,17 @@
 package tomoBay;
+import java.util.Arrays;
+import java.util.List;
+
 import org.apache.log4j.Logger;
-import org.w3c.dom.NodeList;
 
-import com.ebay.soap.eBLBaseComponents.OrderArrayType;
-import com.ebay.soap.eBLBaseComponents.OrderType;
-import com.ebay.soap.eBLBaseComponents.TransactionType;
-
-import tomoBay.helpers.Config;
-import tomoBay.helpers.ConfigReader;
-import tomoBay.helpers.ShippingPriority;
-import tomoBay.helpers.XMLParser;
-import tomoBay.helpers.checkTime.CheckTime;
-import tomoBay.model.dataTypes.order.Order;
-import tomoBay.model.dataTypes.order.OrderDataFields;
-import tomoBay.model.eBayAPI.OrderTransactionsCall;
-import tomoBay.model.eBayAPI.OrdersCall;
 import tomoBay.model.services.ServiceFactory;
-import tomoBay.model.services.ServiceScheduler;
 import tomoBay.model.services.ServiceFactory.ServiceType;
+import tomoBay.model.services.ServiceScheduler;
 import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
 import tomoBay.model.services.invoiceOrdersService.invoice.Invoice;
-import tomoBay.model.winstock.Stock;
+import tomoBay.model.services.populateInvoicesService.InvoiceData;
+import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.view.HttpServer;
 /**
  * The entry point into the program, this is a stopgap solution to get invoices ,of orders that
@@ -41,10 +32,11 @@ public class MAIN
 		HttpServer server = new HttpServer();
 		server.start(1337);
 		
-		ServiceScheduler services = new ServiceScheduler(5);
+		ServiceScheduler services = new ServiceScheduler(6);
 //		services.add(ServiceFactory.make(ServiceFactory.ServiceType.STOPGAP_SERVICE), 0, 1);
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
+		services.add(ServiceFactory.make(ServiceFactory.ServiceType.OUT_OF_HOURS_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.CHECK_ERRORS));
 		String data = "<EMAIL>"
@@ -60,32 +52,11 @@ public class MAIN
 		services.start(20);
 		
 		
-//		Order order = new Order("200733860016");
-//		System.out.println(order.getBuyerInfo(OrderDataFields.NAME));
-//		System.out.println(order.getBuyerInfo(OrderDataFields.STREET1));
-//		System.out.println(order.getBuyerInfo(OrderDataFields.STREET2));
-//		System.out.println(order.getBuyerInfo(OrderDataFields.CITY));
-//		System.out.println(order.getBuyerInfo(OrderDataFields.COUNTY));
-//		System.out.println(order.getBuyerInfo(OrderDataFields.POSTCODE));
-//		System.out.println(order.getPriceInfo(0, OrderDataFields.ORDER_TOTAL));
-//		System.out.println(order.getPriceInfo(0, OrderDataFields.SHIPPING_COST));
-//		
-//		int noTransactions = order.getQuantityInfo(0, OrderDataFields.TRANSACTION_QUANTITY);
-//		
-//		for (int i = 0 ; i < noTransactions ; ++i)
-//		{
-//			for(int j = 0 ; j < order.getPartInfo(i, OrderDataFields.PART_QUANTITY).length ; ++j)
-//			{
-//				System.out.println(order.getPartInfo(i, OrderDataFields.PART_NUMBER)[j]+" , "
-//				+order.getPartInfo(i, OrderDataFields.PART_DESCRIPTION)[j]+" , "
-//				+order.getPartInfo(i, OrderDataFields.PART_QUANTITY)[j]+" , "
-//				);
-//			}
-//			System.out.println
-//			(
-//				order.getPriceInfo(i, OrderDataFields.TRANSACTION_PRICE)+" "
-//			);
-//		}
 		
+//		InvoiceData id = new InvoiceData();
+//		for(String[] transaction : id.getMap("200636949016"))
+//		{
+//			System.out.println(Arrays.toString(transaction));
+//		}
 	}
 }

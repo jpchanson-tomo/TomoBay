@@ -136,7 +136,7 @@ public class InvoiceService implements AbstractService
 					e.printStackTrace();
 				}
 			}
-			return "invoicing finished";
+			return "invoicing finished: "+invoicedOrders.size() +" invoices raised.";
 		}
 		return "out of business hours, nothing invoiced";
 	}

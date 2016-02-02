@@ -23,6 +23,7 @@ import tomoBay.model.services.factories.CheckErrorsFactory;
 import tomoBay.model.services.factories.EmailErrorsServiceFactory;
 import tomoBay.model.services.factories.IndividualItemRefreshServiceFactory;
 import tomoBay.model.services.factories.InvoiceServiceFactory;
+import tomoBay.model.services.factories.OutOfHoursServiceFactory;
 import tomoBay.model.services.factories.ReScanErrorsServiceFactory;
 import tomoBay.model.services.factories.StockUpdateServiceFactory;
 import tomoBay.model.services.factories.StopGapServiceFactory;
@@ -42,7 +43,7 @@ public class ServiceFactory
 			{
 				EBAY_SERVICE, TEST_SERVICE, STOCK_UPDATE_SERVICE,
 				INDVIDUAL_ITEM_REFRESH_SERVICE, INVOICE_SERVICE, CHECK_ERRORS,
-				RESCAN_ERRORS_SERVICE, EMAIL_ERRORS_SERVICE, STOPGAP_SERVICE
+				RESCAN_ERRORS_SERVICE, EMAIL_ERRORS_SERVICE, STOPGAP_SERVICE, OUT_OF_HOURS_SERVICE,
 			}
 	/**internal map holds service factories**/
 	@SuppressWarnings("serial")
@@ -58,6 +59,7 @@ public class ServiceFactory
 				put(ServiceType.RESCAN_ERRORS_SERVICE, new ReScanErrorsServiceFactory());
 				put(ServiceType.EMAIL_ERRORS_SERVICE, new EmailErrorsServiceFactory());
 				put(ServiceType.STOPGAP_SERVICE, new StopGapServiceFactory());
+				put(ServiceType.OUT_OF_HOURS_SERVICE, new OutOfHoursServiceFactory());
 				
 			}};
 

@@ -34,8 +34,6 @@ import com.ebay.soap.eBLBaseComponents.OrderType;
 public class BasicEbayUpdateService implements AbstractService
 {
 	static private Logger log = Logger.getLogger(BasicEbayUpdateService.class.getName());
-	static private int threadCount = 1;
-	static private final int THREADNUMBER = BasicEbayUpdateService.threadCount;
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Runnable#run()
@@ -61,7 +59,6 @@ public class BasicEbayUpdateService implements AbstractService
 		catch (Exception e)
 		{
 			log.error("could not perform ebayUpdate: "+StackTraceToString.toString(e));
-			e.printStackTrace();
 			return "error";
 		}
 	}

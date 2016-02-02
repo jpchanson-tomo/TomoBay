@@ -18,12 +18,14 @@ import tomoBay.presenters.admin.AdminPresenter;
 import tomoBay.presenters.error.ErrorPresenter;
 import tomoBay.presenters.orderDetails.OrderDetailsPresenter;
 import tomoBay.presenters.root.RootPresenter;
+import tomoBay.presenters.sales.OutOfHoursPresenter;
 import tomoBay.presenters.sales.SalesHistoryPresenter;
 import tomoBay.presenters.sales.SalesOrderPresenter;
 import tomoBay.presenters.warehouse.WarehouseOrderPresenter;
 import tomoBay.view.views.AdminServiceView;
 import tomoBay.view.views.ErrorView;
 import tomoBay.view.views.OrderView;
+import tomoBay.view.views.OutOfHoursView;
 import tomoBay.view.views.RootView;
 import tomoBay.view.views.SalesHistoryView;
 import tomoBay.view.views.SalesOrderView;
@@ -86,7 +88,20 @@ public class ViewFactory
 	public AbstractView visit(OrderDetailsPresenter orderDetailsPresenter)
 	{return new OrderView();}
 	
+	/**
+	 * 
+	 * @param adminPresenter
+	 * @return
+	 */
 	public AbstractView visit(AdminPresenter adminPresenter)
 	{return new AdminServiceView();}
+	
+	/**
+	 * 
+	 * @param outOfHoursPresenter
+	 * @return
+	 */
+	public AbstractView visit(OutOfHoursPresenter outOfHoursPresenter)
+	{return new OutOfHoursView();}
 
 }

@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>TomoBay - Home</title>
+		<link rel="shortcut icon" href="images/logo.png" />
+		<meta charset="utf-8">
+ 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="js/outOfHours.js"></script>
+	</head>
+	
+	<body>		
+		<div class="navibar"></div>
+		
+		
+		
+		
+			<div class="container-fluid">
+				<div class="panel panel-default panel-primary">
+					<div class="panel-heading">
+						<big class="" >Out Of Hours</big>
+						<small>From: </small><input type="text" id="datepicker1"  size="30">
+						<small>To: </small><input type="text" id="datepicker2"  size="30">
+						<button class="btn btn-default btn-success" onclick="submitDates()">Submit</button>
+						<button class="btn btn-default btn-danger" onclick="clearDates()">Clear</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="container-fluid sortable"></div>
+		
+		
+	</body>
+</html>
