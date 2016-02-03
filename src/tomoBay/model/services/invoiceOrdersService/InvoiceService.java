@@ -29,6 +29,7 @@ import tomoBay.exceptions.NullEmailObjectException;
 import tomoBay.exceptions.NullEmailServerObjectException;
 import tomoBay.helpers.TimeStampCompare;
 import tomoBay.helpers.checkTime.CheckTime;
+import tomoBay.model.dataTypes.dbType.DBSchema;
 import tomoBay.model.net.email.Email;
 import tomoBay.model.net.email.EmailDirector;
 import tomoBay.model.net.email.GmailBuilder;
@@ -41,7 +42,6 @@ import tomoBay.model.services.TriggerService;
 import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
 import tomoBay.model.services.helpers.PickeableStatus;
 import tomoBay.model.services.invoiceOrdersService.invoice.Invoice;
-import tomoBay.model.sql.DataBaseSchema;
 /**
  * This service runs through all the orders on the system that havent yet been invoiced and 
  * checks them against stock levels to see how invoiceable they are (invoiceable/partially
@@ -67,21 +67,21 @@ public class InvoiceService implements AbstractService
 			DB db = new DB();
 			List<String[]> invoicedOrders = new ArrayList<String[]>();
 			orderList.sortList();
-			List<Map<DataBaseSchema,String>> orders = orderList.get();
+			List<Map<DBSchema,String>> orders = orderList.get();
 			
-			for(Map<DataBaseSchema,String> order : orders)
+			for(Map<DBSchema,String> order : orders)
 			{
-				if(orderStatus.status(order.get(DataBaseSchema.ORD_ORDER_ID))==PickeableStatus.PICKEABLE 
-						&& TimeStampCompare.olderThan(30, order.get(DataBaseSchema.ORD_CREATED_TIME))==false)
+				if(orderStatus.status(order.get(DBSchema.ORD_ORDER_ID))==PickeableStatus.PICKEABLE 
+						&& TimeStampCompare.olderThan(30, order.get(DBSchema.ORD_CREATED_TIME))==false)
 				{
-					Invoice invoice = new Invoice(order.get(DataBaseSchema.ORD_ORDER_ID));
+					Invoice invoice = new Invoice(order.get(DBSchema.ORD_ORDER_ID));
 					int invNo = invoice.generate();
 					System.out.println(invNo);
 					invoice.print();
-					invoicedOrders.add(new String[] {order.get(DataBaseSchema.ORD_ORDER_ID), 
-							order.get(DataBaseSchema.ORD_SALES_REC_NO), order.get(DataBaseSchema.ORD_CREATED_TIME),
+					invoicedOrders.add(new String[] {order.get(DBSchema.ORD_ORDER_ID), 
+							order.get(DBSchema.ORD_SALES_REC_NO), order.get(DBSchema.ORD_CREATED_TIME),
 							String.valueOf(invoice.getWeight()), String.valueOf(invNo)});
-					db.updateInvStatus(order.get(DataBaseSchema.ORD_ORDER_ID));
+					db.updateInvStatus(order.get(DBSchema.ORD_ORDER_ID));
 				}
 			}
 			

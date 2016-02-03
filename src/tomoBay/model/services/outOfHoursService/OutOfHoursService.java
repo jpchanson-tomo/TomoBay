@@ -17,6 +17,7 @@ package tomoBay.model.services.outOfHoursService;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import tomoBay.exceptions.ServiceException;
@@ -43,7 +44,7 @@ public class OutOfHoursService implements AbstractService
 			String orders="";
 			for (String[] data : results)
 			{
-				QueryInvoker.execute(QueryType.INSERT_OUT_OF_HOURS, new String[] {data[2]});
+				QueryInvoker.execute(QueryType.INSERT_OUT_OF_HOURS, new String[] {data[2], this.getDate()});
 				orders+=data[2]+", ";
 			}
 			return "Exiting: "+orders+" in Out of Hours table";
@@ -57,8 +58,12 @@ public class OutOfHoursService implements AbstractService
 	 */
 	@Override
 	public <E> void setConfig(AbstractConfiguration<E> config)
-	{
-		// TODO Auto-generated method stub
-
-	}
+	{}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	private String getDate()
+	{return new SimpleDateFormat("yyyy-MM-dd").format(CheckTime.OutOfHoursDate());}
 }

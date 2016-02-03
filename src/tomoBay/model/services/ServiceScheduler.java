@@ -93,5 +93,5 @@ public class ServiceScheduler
 	 * stops the periodic services
 	 */
 	public void stop()
-	{this.serviceScheduler_M.shutdownNow();}
+	{this.serviceScheduler_M.purge();this.serviceScheduler_M.shutdownNow();}
 }

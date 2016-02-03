@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -64,7 +62,7 @@ public class InsertOutOfHoursOrders implements AbstractDBQuery
 		List<String[]> res = new ArrayList<String[]>();
 		this.initQuery();
 		this.statement_M.setString(1, parameter[0]);						//salesRecNo
-		this.statement_M.setDate(2, this.getTodaysDate());					//date
+		this.statement_M.setDate(2, this.toDate(parameter[1]));					//date
 		int resultCode = statement_M.executeUpdate();
 		this.connection_M.commit();
 		this.cleanup();
@@ -95,10 +93,23 @@ public class InsertOutOfHoursOrders implements AbstractDBQuery
 		if (connection_M != null) {connection_M.close();}
 	}
 	
-	private Date getTodaysDate()
+	/**
+	 * converts a string to an sql date if it can otherwise it will return null;
+	 * @param dateString yyyy-mm-dd
+	 * @return java.sql.Date representing the string passed in, if it cannot parse the string
+	 * it will return null.
+	 */
+	private Date toDate(String dateString)
 	{
-		java.util.Date today = new java.util.Date();
-		Date sqlDate = new Date(today.getTime());
-		return sqlDate;
+		try
+		{
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			java.util.Date parsed = format.parse(dateString);
+			Date sqlDate = new Date(parsed.getTime());
+			return sqlDate;
+		} 
+		catch (ParseException e)
+		{e.printStackTrace();return null;}
+		
 	}
 }

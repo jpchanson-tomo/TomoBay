@@ -1,9 +1,13 @@
 package tomoBay;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import tomoBay.helpers.checkTime.CheckTime;
 import tomoBay.model.services.ServiceFactory;
 import tomoBay.model.services.ServiceFactory.ServiceType;
 import tomoBay.model.services.ServiceScheduler;
@@ -33,7 +37,6 @@ public class MAIN
 		server.start(1337);
 		
 		ServiceScheduler services = new ServiceScheduler(6);
-//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.STOPGAP_SERVICE), 0, 1);
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.OUT_OF_HOURS_SERVICE));
@@ -50,7 +53,6 @@ public class MAIN
 				new EmailErrorsConfig().configure(data)
 					));
 		services.start(20);
-		
 		
 		
 //		InvoiceData id = new InvoiceData();

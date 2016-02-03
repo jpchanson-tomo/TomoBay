@@ -14,12 +14,10 @@ package tomoBay.helpers.checkTime;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.Map;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
-
-import tomoBay.helpers.Config;
-import tomoBay.helpers.ConfigReader;
+import java.util.Map;
 /**
  *
  * @author Jan P.C. Hanson
@@ -64,6 +62,19 @@ public class CheckTime
 		
 		if(CheckTime.currentTime() >= startTime && CheckTime.currentTime() <= endTime) 
 		{return true;} else {return false;}
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static Date OutOfHoursDate()
+	{
+		Calendar outOfHoursDate = Calendar.getInstance();
+		if(CheckTime.currentTime() < CheckTime.today_M.get(CheckTime.currentDay()).startTime())
+		{outOfHoursDate.add(Calendar.DATE, -1);}
+		
+		return outOfHoursDate.getTime();
 	}
 	
 	/**
