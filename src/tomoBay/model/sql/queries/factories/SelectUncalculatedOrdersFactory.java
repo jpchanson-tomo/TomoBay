@@ -1,7 +1,7 @@
-package tomoBay.model.services.factories;
+package tomoBay.model.sql.queries.factories;
 
-import tomoBay.model.services.AbstractService;
-import tomoBay.model.services.stopgap.StopGapService;
+import tomoBay.model.sql.queries.AbstractDBQuery;
+import tomoBay.model.sql.queries.AbstractQueryFactory;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -17,23 +17,23 @@ import tomoBay.model.services.stopgap.StopGapService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.model.sql.queries.concreteQueries.SelectUncalculatedOrders;
 
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class StopGapServiceFactory implements AbstractServiceFactory
+public class SelectUncalculatedOrdersFactory implements AbstractQueryFactory
 {
 
 	/* (non-Javadoc)
-	 * @see tomoBay.model.services.factories.AbstractServiceFactory#make()
+	 * @see tomoBay.model.sql.queries.AbstractQueryFactory#make()
 	 */
 	@Override
-	public AbstractService make()
+	public AbstractDBQuery make()
 	{
-		// TODO Auto-generated method stub
-		return new StopGapService();
+		return new SelectUncalculatedOrders();
 	}
 
 }

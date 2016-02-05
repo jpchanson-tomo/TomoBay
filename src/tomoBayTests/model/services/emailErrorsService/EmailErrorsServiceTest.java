@@ -15,8 +15,8 @@ package tomoBayTests.model.services.emailErrorsService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.services.ServiceFactory;
+import tomoBay.model.services.ServiceFactory.ConfiguredServiceType;
 import tomoBay.model.services.TriggerService;
-import tomoBay.model.services.ServiceFactory.ServiceType;
 import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
 /**
  *
@@ -35,7 +35,7 @@ public class EmailErrorsServiceTest
 					+ "<SUBJECT>ERRORS TO FIX!!!!!</SUBJECT>"
 					+ "</EMAIL>";
 		TriggerService.start(ServiceFactory.make(
-												ServiceType.EMAIL_ERRORS_SERVICE,
+												ConfiguredServiceType.EMAIL_ERRORS_SERVICE,
 												new EmailErrorsConfig().configure(data)
 												));
 		

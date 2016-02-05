@@ -7,7 +7,7 @@
  * 
  * everything else is coloured amber
  *********************************************************************************************/
-function colourCode(green, red, selector)
+function colourCode(green, red, amber, selector)
 {
 	var pickeable = $(selector);
 	for (var i = 0 ; i < pickeable.length ; ++i)
@@ -16,8 +16,27 @@ function colourCode(green, red, selector)
 		{pickeable[i].parentElement.style.color="green";}
 		else if (pickeable[i].innerHTML == red)
 		{pickeable[i].parentElement.style.color="red";}
-		else
+		else if (pickeable[i].innerHTML == amber)
 		{pickeable[i].parentElement.style.color="orange";}
+		else
+		{
+			pickeable[i].parentElement.style.color="red";
+			blink(pickeable[i]);
+		}
 	}
 }
 //////////////////////////////////////ENDOF COLOURCODE/////////////////////////////////////////
+
+function blink(element)
+{
+	setInterval(function()
+	{
+		if(element.style.color=="purple")
+		{element.style.color="red";}
+		else if (element.style.color=="red")
+		{element.style.color="orange";}
+		else
+		{element.style.color="purple";}
+	}
+	,100)
+}

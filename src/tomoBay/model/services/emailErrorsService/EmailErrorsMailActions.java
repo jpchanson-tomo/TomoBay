@@ -19,11 +19,8 @@ import java.util.Map;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
-import javax.mail.NoSuchProviderException;
 import javax.mail.internet.AddressException;
 
-import tomoBay.exceptions.NullEmailObjectException;
-import tomoBay.exceptions.NullEmailServerObjectException;
 import tomoBay.exceptions.ServiceException;
 import tomoBay.helpers.Config;
 import tomoBay.helpers.ConfigReader;

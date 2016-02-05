@@ -24,19 +24,11 @@ import tomoBay.helpers.ConfigReader;
  */
 public class WinstockConfig
 {
-	/**the path to the config file**/
-	private static final String pathToFile= "./config/";
-	/**the actual filename**/
-	private static final String fileName = "winstock.conf";
-	/**the contents of the config file as an String[] where elements correspond to line-1**/
-	private static String[] configContents_M;
-	
 	/**
-	 * default constructor, initialises this object so that it contains the information in the
-	 * config file.
+	 * default constructor
 	 */
 	public WinstockConfig()
-	{configContents_M = ConfigReader.read(pathToFile, fileName);}
+	{super();}
 	
 	/**
 	 * method used to get the string representing the name of the machine on which winstock is

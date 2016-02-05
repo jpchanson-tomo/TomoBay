@@ -31,7 +31,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 public class ConnectionManager
 {
 	/**Singleton instance with eager instanciation**/
-	private static ConnectionManager test = new ConnectionManager();
+	private static ConnectionManager connMan_M = new ConnectionManager();
 	/**C3P0 Data pool**/
 	private ComboPooledDataSource cpds;
 	
@@ -61,7 +61,7 @@ public class ConnectionManager
 	 * @return ConnectionManager instance
 	 */
 	public static ConnectionManager instance()
-	{return test;}
+	{return connMan_M;}
 	
 	/**
 	 * retrieves a database connection from the pool of available connections. When

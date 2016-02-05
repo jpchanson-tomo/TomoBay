@@ -17,11 +17,6 @@ package tomoBay.presenters.root;
 import java.util.HashMap;
 import java.util.Map;
 
-import tomoBay.model.services.ServiceFactory;
-import tomoBay.model.services.TriggerService;
-import tomoBay.model.services.ServiceFactory.ServiceType;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 import tomoBay.presenters.presenterActions.MarkAsInvoiced;

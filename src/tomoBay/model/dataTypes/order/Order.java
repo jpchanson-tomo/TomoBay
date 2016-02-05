@@ -15,7 +15,6 @@ package tomoBay.model.dataTypes.order;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -149,23 +148,6 @@ public class Order
 	 */
 	private List<String[]> grabRawData(String orderID)
 	{return QueryInvoker.execute(QueryType.SELECT_FULL_ORDER_LINE, new String[] {orderID});}
-	
-	/**
-	 * populate the prices_M map with the price data stored in rawData_M
-	 */
-	private void populatePriceFields()
-	{
-		for(int i = 0 ; i < this.rawData_M.size() ; ++i)
-		{
-			this.prices_M.add(new HashMap<OrderDataFields, Double>());
-			this.prices_M.get(i)
-			.put(OrderDataFields.ORDER_TOTAL      , Double.parseDouble(this.rawData_M.get(0)[9]));
-			this.prices_M.get(i)
-			.put(OrderDataFields.TRANSACTION_PRICE, Double.parseDouble(this.rawData_M.get(i)[19]));
-			this.prices_M.get(i)
-			.put(OrderDataFields.SHIPPING_COST    , Double.parseDouble(this.rawData_M.get(0)[18]));
-		}
-	}
 	
 	/**
 	 * populate the PartInfo_M list of maps with data stored in rawData_M

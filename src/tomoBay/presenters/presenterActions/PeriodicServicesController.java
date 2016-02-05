@@ -1,5 +1,4 @@
 package tomoBay.presenters.presenterActions;
-import tomoBay.model.services.ServiceFactory;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -15,9 +14,7 @@ import tomoBay.model.services.ServiceFactory;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.services.ServiceScheduler;
-import tomoBay.model.services.ServiceFactory.ServiceType;
-import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
+import tomoBay.model.dataTypes.ServerStatus;
 /**
  *
  * @author Jan P.C. Hanson
@@ -25,8 +22,6 @@ import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
  */
 public class PeriodicServicesController implements AbstractPresenterAction
 {
-	private static ServiceScheduler services_M;
-	
 	public PeriodicServicesController()
 	{super();}
 
@@ -46,43 +41,17 @@ public class PeriodicServicesController implements AbstractPresenterAction
 	 */
 	private static synchronized String executeStatic(String data)
 	{
-		if(data.equals("START"))
+		if(data.toUpperCase().equals("START"))
 		{
-//			System.out.println("started");
-//			PeriodicServicesController.services_M = new ServiceScheduler(5);
-//			PeriodicServicesController.addServices();
-//			PeriodicServicesController.services_M.start(20);
+			ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
 			return "Services Started";
 		}
-		else if(data.equals("STOP"))
+		else if(data.toUpperCase().equals("PAUSE"))
 		{
-//			System.out.println("stopped");
-//			PeriodicServicesController.services_M.clear();
-//			PeriodicServicesController.services_M = null;
+			ServerStatus.instance().setStatus(ServerStatus.RunLevel.PAUSED);
 			return "Services Stopped";
 		}
 		
 		return "data does not contain a valid command";
-	}
-	
-	/**
-	 * 
-	 */
-	private static void addServices()
-	{
-		services_M.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
-		services_M.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
-		services_M.add(ServiceFactory.make(ServiceFactory.ServiceType.CHECK_ERRORS));
-		String data = "<EMAIL>"
-				+ "<TO>tomomotorbay@gmail.com</TO>"
-				+ "<TO>paul@tomoparts.co.uk</TO>"
-				+ "<TO>steve@tomoparts.co.uk</TO>"
-				+ "<SUBJECT>ERRORS TO FIX!!!!!</SUBJECT>"
-				+ "</EMAIL>";
-		services_M.add(ServiceFactory.make(
-				ServiceType.EMAIL_ERRORS_SERVICE,
-				new EmailErrorsConfig().configure(data)
-					));
-//		services_M.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
 	}
 }

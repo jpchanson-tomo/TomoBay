@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tomoBay.helpers.ShippingPriority;
-import tomoBay.model.services.helpers.PickeableStatus;
 /**
  * This class contains functionality for performing a category based sorting algorithm first 
  * ordering the data passed in by shipping type and the now sorted data by Pickeability. this 

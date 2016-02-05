@@ -37,12 +37,14 @@ public class SelectUncalculatedInvoices implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="SELECT orderID ebay_orders.orderID, ebay_transactions.transactionID, "
-						+ "ebay_transactions.quantity, ebay_transactions.price, ebay_items.partNo, ebay_items.brand "
-						+ "FROM ebay_orders "
-						+ "INNER JOIN ebay_transactions ON ebay_orders.orderID=ebay_transactions.orderID "
-						+ "ORDER BY ebay_orders.orderID ASC "
-						+ "WHERE invoiceID=0 LIMIT 10000;";
+	private String query ="SELECT ebay_transactions.orderID, ebay_transactions.transactionID, "
+						+ "ebay_transactions.quantity, ebay_transactions.price, ebay_items.partNo, "
+						+ "ebay_items.brand, ebay_items.title, ebay_transactions.shippingCost "
+						+ "FROM ebay_transactions "
+						+ "INNER JOIN ebay_items ON ebay_transactions.itemID=ebay_items.itemID "
+						+ "LEFT JOIN ebay_orders ON ebay_transactions.orderID= ebay_orders.orderID "
+						+ "WHERE ebay_orders.invoiced=0 AND (ebay_items.notes NOT LIKE '%ERROR%' OR ebay_items.notes IS NULL) "
+						+ "ORDER BY ebay_transactions.orderID ASC;";
 	//
 	/**
 	 * default constructor
@@ -90,13 +92,15 @@ public class SelectUncalculatedInvoices implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[6];
+			String[] cols = new String[8];
 			cols[0] = results.getString("orderID");
-			cols[0] = results.getString("transactionID");
-			cols[0] = results.getString("quantity");
-			cols[0] = results.getString("price");
-			cols[0] = results.getString("partNo");
-			cols[0] = results.getString("brand");
+			cols[1] = results.getString("transactionID");
+			cols[2] = results.getString("quantity");
+			cols[3] = results.getString("price");
+			cols[4] = results.getString("partNo");
+			cols[5] = results.getString("brand");
+			cols[6] = results.getString("title");
+			cols[7] = results.getString("shippingCost");
 			rows.add(cols);
 		}
 		return rows;

@@ -1,16 +1,4 @@
 package tomoBay.presenters.admin;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import tomoBay.presenters.AbstractPresenter;
-import tomoBay.presenters.presenterActions.AbstractPresenterAction;
-import tomoBay.presenters.presenterActions.LogFileViewer;
-import tomoBay.presenters.presenterActions.MarkAsInvoiced;
-import tomoBay.presenters.presenterActions.MarkAsUninvoiced;
-import tomoBay.presenters.presenterActions.PeriodicServicesController;
-import tomoBay.presenters.presenterActions.ReScanListing;
-import tomoBay.presenters.root.RootPresenter;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -28,7 +16,13 @@ import tomoBay.presenters.root.RootPresenter;
  */
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
+import java.util.HashMap;
+import java.util.Map;
 
+import tomoBay.presenters.AbstractPresenter;
+import tomoBay.presenters.presenterActions.AbstractPresenterAction;
+import tomoBay.presenters.presenterActions.LogFileViewer;
+import tomoBay.presenters.presenterActions.PeriodicServicesController;
 /**
  *
  * @author Jan P.C. Hanson

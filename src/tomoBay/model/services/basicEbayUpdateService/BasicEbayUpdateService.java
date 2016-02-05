@@ -14,59 +14,49 @@ package tomoBay.model.services.basicEbayUpdateService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import org.apache.log4j.Logger;
-import org.eclipse.jetty.util.thread.ThreadPool;
-
-import tomoBay.helpers.Config;
-import tomoBay.helpers.ConfigReader;
-import tomoBay.helpers.StackTraceToString;
-import tomoBay.model.eBayAPI.OrdersCall;
+import tomoBay.exceptions.ServiceException;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
-
-import com.ebay.soap.eBLBaseComponents.OrderType;
 /**
  * This class represents the start of the execution flow for the eBay Service, The service 
  * quereies the eBay API for Order and Item information and 
  * @author Jan P.C. Hanson
  *
  */
-public class BasicEbayUpdateService implements AbstractService
+public final class BasicEbayUpdateService extends AbstractService
 {
-	static private Logger log = Logger.getLogger(BasicEbayUpdateService.class.getName());
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Runnable#run()
-	 */
-	@Override
-	public String call()
-	{
-		try
-		{
-			log.warn("ebay update started");
-			String usrKey = ConfigReader.getConf(Config.EBAY_PROD_KEY);
-			String server =  ConfigReader.getConf(Config.EBAY_PROD_SRV);
-			OrdersCall oCall = new OrdersCall(usrKey, server);
-			OrderType[] orders = oCall.call(Integer.parseInt(ConfigReader.getConf(Config.EBAY_LOOKBCK)));
-			
-			OrdersTable.populate(orders);
-			TransactionsTable.populate(orders);
-			BuyersTable.populate(orders);
-			ItemsTable.populate(new String[] {usrKey,server}, orders);
-			return "finished ebay update";
-			
-		} 
-		catch (Exception e)
-		{
-			log.error("could not perform ebayUpdate: "+StackTraceToString.toString(e));
-			return "error";
-		}
-	}
-
 	/* (non-Javadoc)
 	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)
 	 */
 	@Override
 	public <E> void setConfig(AbstractConfiguration<E> config)
 	{}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onRunning()
+	 */
+	@Override
+	protected String onRunning() throws ServiceException
+	{return new OnRunning().execute();}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onPaused()
+	 */
+	@Override
+	protected String onPaused() throws ServiceException
+	{return this.onRunning();}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onStopped()
+	 */
+	@Override
+	protected String onStopped() throws ServiceException
+	{return "Stopped";}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onError()
+	 */
+	@Override
+	protected String onError() throws ServiceException
+	{return "Error";}
 }

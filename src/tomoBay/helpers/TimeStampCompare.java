@@ -3,7 +3,6 @@ package tomoBay.helpers;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.ZonedDateTime;
-import java.util.Calendar;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +19,6 @@ import java.util.Calendar;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 import tomoBay.exceptions.ServiceException;
 

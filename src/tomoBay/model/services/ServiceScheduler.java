@@ -18,14 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 
 import tomoBay.helpers.StackTraceToString;
-import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
 /**
  * This class defines a service scheduler, it runs services intervalicaly, with the interval 
  * being defined from the previous termination of that service thread. Contains a threadpool
@@ -43,7 +40,7 @@ public class ServiceScheduler
 	private List<AbstractService> services_M; 
 	/**List of Scheduled futures representing service threads return values**/
 //	private List<ScheduledFuture<?>> servicesResults_M;
-	private List<Future<?>> servicesResults_M;
+	private List<Future<String>> servicesResults_M;
 	
 	/**
 	 * constructor creates a thread pool with the number of threads specified in the arguments.
@@ -54,7 +51,7 @@ public class ServiceScheduler
 		this.serviceScheduler_M = new ScheduledThreadPoolExecutor(noOfThreads);
 		this.services_M = new ArrayList<AbstractService>();
 //		this.servicesResults_M = new ArrayList<ScheduledFuture<?>>();
-		this.servicesResults_M = new ArrayList<Future<?>>();
+		this.servicesResults_M = new ArrayList<Future<String>>();
 	}
 	
 	/**
@@ -93,5 +90,14 @@ public class ServiceScheduler
 	 * stops the periodic services
 	 */
 	public void stop()
-	{this.serviceScheduler_M.purge();this.serviceScheduler_M.shutdownNow();}
+	{
+		for (Future<String> result : this.servicesResults_M)
+		{
+			if(result.isCancelled()==false && result.isDone()==false)
+			{result.cancel(true);}
+		}
+		this.serviceScheduler_M.purge();
+		this.clear();
+		this.serviceScheduler_M.shutdownNow();
+	}
 }

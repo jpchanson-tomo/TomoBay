@@ -16,6 +16,7 @@ package tomoBay.model.services.stockUpdateService;
  */
 import java.util.List;
 
+import tomoBay.exceptions.ServiceException;
 import tomoBay.helpers.BrandToCode;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
@@ -29,7 +30,7 @@ import tomoBay.model.winstock.Stock;
  * @author Jan P.C. Hanson
  *
  */
-public class StockUpdateService implements AbstractService
+public class StockUpdateService extends AbstractService
 {
 	
 	/**
@@ -39,10 +40,17 @@ public class StockUpdateService implements AbstractService
 	{super();}
 	
 	/* (non-Javadoc)
-	 * @see openDMS.model.services.AbstractService#run()
+	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)
 	 */
 	@Override
-	public String call()
+	public <E> void setConfig(AbstractConfiguration<E> config)
+	{}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onRunning()
+	 */
+	@Override
+	public String onRunning() throws ServiceException
 	{
 		StockRequired req = new StockRequired();
 		req.calculate();
@@ -72,6 +80,26 @@ public class StockUpdateService implements AbstractService
 		return "";
 	}
 
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onPaused()
+	 */
+	@Override
+	public String onPaused() throws ServiceException
+	{return "Paused";}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onStopped()
+	 */
+	@Override
+	public String onStopped() throws ServiceException
+	{return "Stopped";}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onError()
+	 */
+	@Override
+	public String onError() throws ServiceException
+	{return "Error";}
 	
 	/**
 	 * retreive the available stock level from winstock
@@ -115,11 +143,4 @@ public class StockUpdateService implements AbstractService
 		
 		QueryInvoker.execute(query, queryPayload);
 	}
-
-	/* (non-Javadoc)
-	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)
-	 */
-	@Override
-	public <E> void setConfig(AbstractConfiguration<E> config)
-	{}
 }

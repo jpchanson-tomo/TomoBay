@@ -1,13 +1,4 @@
 package tomoBay.presenters.sales;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import tomoBay.helpers.SortOrders;
-import tomoBay.helpers.TimeStampCompare;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.presenters.AbstractPresenter;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -25,7 +16,12 @@ import tomoBay.presenters.AbstractPresenter;
  */
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
+import java.util.ArrayList;
+import java.util.List;
 
+import tomoBay.helpers.TimeStampCompare;
+import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.presenters.AbstractPresenter;
 /**
  *
  * @author Jan P.C. Hanson

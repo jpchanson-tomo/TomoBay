@@ -15,13 +15,10 @@ package tomoBay.model.services.basicEbayUpdateService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.Arrays;
 
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 
-import com.ebay.soap.eBLBaseComponents.InternationalShippingServiceOptionsType;
 import com.ebay.soap.eBLBaseComponents.OrderType;
 /**
  * updates the buyers table of the database with the information gleaned from an ebay api call

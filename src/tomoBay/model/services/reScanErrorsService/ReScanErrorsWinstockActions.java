@@ -14,8 +14,6 @@ package tomoBay.model.services.reScanErrorsService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.Arrays;
-
 import tomoBay.helpers.BrandToCode;
 import tomoBay.model.services.helpers.PartList;
 import tomoBay.model.winstock.Stock;

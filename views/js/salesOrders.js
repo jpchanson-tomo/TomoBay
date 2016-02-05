@@ -31,7 +31,7 @@ $(document).ready(function(){
  */
 function ajaxCallbacks()
 {
-	colourCode("Pickeable","Unpickeable", ".Status");
+	colourCode("Pickeable","Unpickeable", "Partial",".Status");
 	selectAllPickeableItems();
 	itemCount();
 }

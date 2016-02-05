@@ -14,24 +14,17 @@ package tomoBay.model.services.checkErrorsService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.List;
-
 import org.apache.log4j.Logger;
 
-import tomoBay.helpers.BrandToCode;
+import tomoBay.exceptions.ServiceException;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
-import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
-import tomoBay.model.services.helpers.PartList;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
-import tomoBay.model.winstock.Stock;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class CheckErrorsService implements AbstractService
+public final class CheckErrorsService extends AbstractService
 {
 	static Logger log = Logger.getLogger(CheckErrorsService.class.getName());
 	
@@ -39,37 +32,37 @@ public class CheckErrorsService implements AbstractService
 	{super();}
 
 	/* (non-Javadoc)
-	 * @see tomoBay.model.services.AbstractService#run()
-	 */
-	@Override
-	public String call()
-	{
-		log.warn("check errors started");
-		PartList partlist;
-		Stock errorCheck = new Stock();
-		List<String[]> orders = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS, new String[] {});
-		for (String[] order: orders)
-		{
-			partlist = new PartList(order[4]);
-			for (String partNo : partlist.getPartNumbers())
-			{
-				int result = errorCheck.requestStockLevel(partNo, BrandToCode.convert(order[3]));
-				String errorMsg = "ERROR("+order[0]+"): check part numbers and brand";
-				if (result == -8008135)
-				{QueryInvoker.execute(QueryType.UPDATE_ITEM_NOTE, new String[] {errorMsg, order[0]});log.warn(errorMsg);}
-			}
-		}
-		return "check errors finished";
-	}
-
-	/* (non-Javadoc)
 	 * @see tomoBay.model.services.AbstractService#setConfig(tomoBay.model.services.AbstractConfiguration)
 	 */
 	@Override
 	public <E> void setConfig(AbstractConfiguration<E> config)
-	{
-		// TODO Auto-generated method stub
+	{}
 
-	}
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onRunning()
+	 */
+	@Override
+	protected String onRunning() throws ServiceException
+	{return new OnRunning().execute();}
 
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onPaused()
+	 */
+	@Override
+	protected String onPaused() throws ServiceException
+	{return "Check Errors Paused";}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onStopped()
+	 */
+	@Override
+	protected String onStopped() throws ServiceException
+	{return "Server Stopped";}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onError()
+	 */
+	@Override
+	protected String onError() throws ServiceException
+	{return "Server Error";}
 }

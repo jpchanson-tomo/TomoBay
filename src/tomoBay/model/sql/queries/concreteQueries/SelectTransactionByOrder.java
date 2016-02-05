@@ -90,15 +90,12 @@ public class SelectTransactionByOrder implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[8];
+			String[] cols = new String[5];
 			cols[0] = results.getString("transactionID");
 			cols[1] = results.getString("orderID");
 			cols[2] = results.getString("itemID");
 			cols[3] = results.getString("quantity");
 			cols[4] = results.getString("price");
-			cols[5] = results.getString("picked");
-			cols[6] = results.getString("packed");
-			cols[7] = results.getString("shipped");
 			rows.add(cols);
 		}
 		return rows;

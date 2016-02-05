@@ -44,7 +44,7 @@ public class Prices
 	/****/
 	private double totalCost_M;
 	/****/
-	private double shippingCost=0.00;
+//	private double shippingCost=0.00;
 	
 	/**
 	 * constructor, uses a populated parts list an itemPrice and a brandCode
@@ -56,7 +56,7 @@ public class Prices
 	(PartList parts, String itemPrice, String brandCode, String orderQty, double postage)
 	{
 		super();
-		this.shippingCost = postage;
+//		this.shippingCost = postage;
 		this.orderQty_M = Integer.parseInt(orderQty);
 		this.winstock_M = new Stock();
 		this.prices_M = new int[parts.size()];
@@ -143,8 +143,8 @@ public class Prices
 		return toDecimal.format(amount);
 	}
 	
-	private double priceIncVat(double itemPriceIncVat)
-	{return itemPriceIncVat * this.orderQty_M;}
+//	private double priceIncVat(double itemPriceIncVat)
+//	{return itemPriceIncVat * this.orderQty_M;}
 	
 	private double priceExVat(double itemPriceIncVat)
 	{return itemPriceIncVat -this.vat(itemPriceIncVat);}

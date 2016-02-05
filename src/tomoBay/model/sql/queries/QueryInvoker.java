@@ -43,6 +43,7 @@ import tomoBay.model.sql.queries.factories.SelectPSAStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectPrestigeStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectTransactionByOrderIDFactory;
 import tomoBay.model.sql.queries.factories.SelectUncalculatedInvoicesFactory;
+import tomoBay.model.sql.queries.factories.SelectUncalculatedOrdersFactory;
 import tomoBay.model.sql.queries.factories.SelectUninvoicedOrdersFactory;
 import tomoBay.model.sql.queries.factories.SelectUninvoicedOrdersNoErrorsFactory;
 import tomoBay.model.sql.queries.factories.UpdateAvailableStockFordFactory;
@@ -120,6 +121,8 @@ public class QueryInvoker
 			SELECT_UNCALCULATED_INVOICES,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectOutOfHoursOrders}**/
 			SELECT_OUT_OF_HOURS_ORDERS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectUncalculatedOrders}**/
+			SELECT_UNCALCULATED_ORDERS,
 			
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo}**/
 			UPDATE_ITEM_BRAND_AND_PARTNO,
@@ -183,6 +186,7 @@ public class QueryInvoker
 			put(QueryType.SELECT_INVOICED_ORDERS, new SelectInvoicedOrdersFactory());
 			put(QueryType.SELECT_UNCALCULATED_INVOICES, new SelectUncalculatedInvoicesFactory());
 			put(QueryType.SELECT_OUT_OF_HOURS_ORDERS, new SelectOutOfHoursOrdersFactory());
+			put(QueryType.SELECT_UNCALCULATED_ORDERS, new SelectUncalculatedOrdersFactory());
 
 			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
 			put(QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, new UpdateTotalItemsRequiredFactory());

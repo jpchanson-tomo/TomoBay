@@ -15,7 +15,6 @@ package tomoBay.model.services.basicEbayUpdateService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
-import java.util.Arrays;
 
 import tomoBay.model.services.helpers.EbayOrderCancellationStatus;
 import tomoBay.model.sql.queries.QueryInvoker;

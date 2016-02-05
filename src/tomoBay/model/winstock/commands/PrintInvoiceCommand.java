@@ -52,7 +52,8 @@ public class PrintInvoiceCommand extends AbstractWinstockCommand
 	 * @see tomoBay.model.winstock.commands.AbstractWinstockCommand#execute()
 	 */
 	@Override
-	public PrintInvoiceResponse execute(DualList<String, PayloadType> commandInfo) throws IOException, PayloadException
+	public PrintInvoiceResponse execute(DualList<String, PayloadType> commandInfo) 
+			throws IOException, PayloadException
 	{
 		byte[] payload = payload_M.getPayload(commandInfo);
 		this.response_M.setSentBytes(payload);

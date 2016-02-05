@@ -14,16 +14,11 @@ package tomoBay.model.services.invoiceOrdersService.invoice;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.util.Arrays;
 import java.util.List;
 
 import tomoBay.helpers.BrandToCode;
 import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.services.helpers.PartList;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.model.winstock.Stock;
 import tomoBay.model.winstock.payloads.PayloadType;
 /**

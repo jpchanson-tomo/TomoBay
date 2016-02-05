@@ -14,6 +14,7 @@ package tomoBay.model.services.testService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.exceptions.ServiceException;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
 /**
@@ -21,24 +22,42 @@ import tomoBay.model.services.AbstractService;
  * @author Jan P.C. Hanson
  *
  */
-public class TestService implements AbstractService
+public class TestService extends AbstractService
 {
 	int i = 0;
-	/* (non-Javadoc)
-	 * @see java.lang.Runnable#run()
-	 */
-	@Override
-	public String call()
-	{
-		System.out.println("another sheduled task" +i);
-		++i;
-		return "";
-	}
 	/* (non-Javadoc)
 	 * @see openDMS.model.services.AbstractService#setConfig(openDMS.model.services.AbstractConfiguration)
 	 */
 	@Override
 	public <E> void setConfig(AbstractConfiguration<E> config)
 	{}
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onRunning()
+	 */
+	@Override
+	public String onRunning() throws ServiceException
+	{
+		System.out.println("another sheduled task" +i);
+		++i;
+		return "";
+	}
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onPaused()
+	 */
+	@Override
+	public String onPaused() throws ServiceException
+	{return null;}
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onStopped()
+	 */
+	@Override
+	public String onStopped() throws ServiceException
+	{return null;}
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onError()
+	 */
+	@Override
+	public String onError() throws ServiceException
+	{return null;}
 
 }

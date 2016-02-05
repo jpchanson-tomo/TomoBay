@@ -14,18 +14,14 @@ package tomoBay.model.services.invoiceOrdersService.invoice;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.io.IOException;
-import java.net.UnknownHostException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import tomoBay.exceptions.PayloadException;
 import tomoBay.exceptions.ServiceException;
 import tomoBay.helpers.BrandToCode;
 import tomoBay.helpers.StackTraceToString;
 import tomoBay.model.dataTypes.DualList;
-import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.model.winstock.WinstockCommandInvoker;

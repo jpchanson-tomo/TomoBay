@@ -1,8 +1,4 @@
 package tomoBay.model.dataTypes.order;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -19,7 +15,8 @@ import java.util.List;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.util.Map;
-
+import java.util.HashMap;
+import java.util.List;
 /**
  *
  * @author Jan P.C. Hanson
@@ -39,7 +36,6 @@ public class PopulateBuyersInfo
 	{
 		super();
 		this.rawData_M = rawData;
-		for(String[] data : this.rawData_M)
 		this.populateBuyerFields();
 	}
 	

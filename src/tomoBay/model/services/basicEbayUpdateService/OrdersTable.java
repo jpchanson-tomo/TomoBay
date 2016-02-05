@@ -17,16 +17,9 @@ package tomoBay.model.services.basicEbayUpdateService;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
-
-
-import java.util.Arrays;
-
 import tomoBay.model.services.helpers.EbayOrderCancellationStatus;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
-
-
-
 
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 

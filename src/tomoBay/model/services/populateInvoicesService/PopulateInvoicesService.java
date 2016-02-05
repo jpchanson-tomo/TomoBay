@@ -15,22 +15,17 @@ package tomoBay.model.services.populateInvoicesService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import java.util.List;
-
 import org.apache.log4j.Logger;
 
 import tomoBay.exceptions.ServiceException;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
-import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class PopulateInvoicesService implements AbstractService
+public class PopulateInvoicesService extends AbstractService
 {
 	static private Logger log = Logger.getLogger(PopulateInvoicesService.class.getName());
 	
@@ -41,24 +36,40 @@ public class PopulateInvoicesService implements AbstractService
 	{super();}
 
 	/* (non-Javadoc)
-	 * @see tomoBay.model.services.AbstractService#call()
-	 */
-	@Override
-	public String call() throws ServiceException
-	{
-		log.warn("started PopulateInvoicesService");
-		
-		
-		return null;
-	}
-
-	/* (non-Javadoc)
 	 * @see tomoBay.model.services.AbstractService#setConfig(tomoBay.model.services.AbstractConfiguration)
 	 */
 	@Override
 	public <E> void setConfig(AbstractConfiguration<E> config)
+	{}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onRunning()
+	 */
+	@Override
+	public String onRunning() throws ServiceException
 	{
-		// TODO Auto-generated method stub
-		
+		log.warn("started PopulateInvoicesService");
+		return null;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onPaused()
+	 */
+	@Override
+	public String onPaused() throws ServiceException
+	{return null;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onStopped()
+	 */
+	@Override
+	public String onStopped() throws ServiceException
+	{return null;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onError()
+	 */
+	@Override
+	public String onError() throws ServiceException
+	{return null;}
 }

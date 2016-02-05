@@ -14,7 +14,9 @@ package tomoBay.view.views;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.model.dataTypes.ServerStatus;
 import tomoBay.view.AbstractView;
+
 import java.util.List;
 /**
  * This class is responsible for formatting the data passed to it by the SalesOrderPresenter and
@@ -69,10 +71,11 @@ public class SalesOrderView implements AbstractView
 	private String pickeability(String invoiced)
 	{
 		String pickeability="";
-		if(Integer.parseInt(invoiced)==3){pickeability = "ERROR";}
-		if(Integer.parseInt(invoiced)==2){pickeability = "Unpickeable";}
-		if(Integer.parseInt(invoiced)==1){pickeability = "Partial";}
-		if(Integer.parseInt(invoiced)==0){pickeability = "Pickeable";}
+		if(ServerStatus.getStatus()!=ServerStatus.RunLevel.RUNNING) {pickeability = "Services Not Running";}
+		else if(Integer.parseInt(invoiced)==3){pickeability = "ERROR";}
+		else if(Integer.parseInt(invoiced)==2){pickeability = "Unpickeable";}
+		else if(Integer.parseInt(invoiced)==1){pickeability = "Partial";}
+		else if(Integer.parseInt(invoiced)==0){pickeability = "Pickeable";}
 		
 		return pickeability;
 	}

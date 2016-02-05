@@ -17,27 +17,24 @@ package tomoBay.model.services.emailErrorsService;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
 import org.w3c.dom.NodeList;
 
 import tomoBay.exceptions.ServiceException;
 import tomoBay.helpers.XMLParser;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
-import tomoBay.model.services.checkErrorsService.CheckErrorsService;
 /**
  * This service is responsible for generating a list of erroneous items that exist within the 
  * database and emailing it to appropriate parties.
  * @author Jan P.C. Hanson
  *
  */
-public class EmailErrorsService implements AbstractService
+public final class EmailErrorsService extends AbstractService
 {
-	static Logger log = Logger.getLogger(EmailErrorsService.class.getName());
 	/****/
 	private Map<String, emailDataType> mailData_M;
 	/****/
-	enum emailDataType
+	protected enum emailDataType
 							{
 								TO,
 								CC,
@@ -48,32 +45,6 @@ public class EmailErrorsService implements AbstractService
 
 	public EmailErrorsService()
 	{super();}
-	
-	/* (non-Javadoc)
-	 * @see tomoBay.model.services.AbstractService#run()
-	 */
-	@Override
-	public String call() throws ServiceException
-	{	//make sure the service has been configured
-		
-		log.warn("email errors started");
-		if (this.mailData_M == null) {throw new ServiceException("no AbstractConfiguration object set");}
-		ErrorsList errors = new ErrorsList();
-		
-		if (errors.exist())
-		{
-			EmailErrorsMailActions email = new EmailErrorsMailActions();
-			EmailErrorsDataFormat format = new EmailErrorsDataFormat();
-			
-			email.loadData(this.mailData_M);
-			String message = format.asHTML(errors.get());
-			email.addMessage(message);
-			
-			email.send();
-			log.warn("Email containing errors sent");
-		}
-		return "email errors finished";
-	}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.services.AbstractService#setConfig(tomoBay.model.services.AbstractConfiguration)
@@ -95,4 +66,31 @@ public class EmailErrorsService implements AbstractService
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onRunning()
+	 */
+	@Override
+	protected String onRunning() throws ServiceException
+	{return new OnRunning(this.mailData_M).execute();}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onPaused()
+	 */
+	@Override
+	protected String onPaused() throws ServiceException
+	{return "Email Errors Paused";}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onStopped()
+	 */
+	@Override
+	protected String onStopped() throws ServiceException
+	{return "Server Stopped";}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onError()
+	 */
+	@Override
+	protected String onError() throws ServiceException
+	{return "Server Error";}
 }

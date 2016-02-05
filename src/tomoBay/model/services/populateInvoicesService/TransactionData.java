@@ -15,50 +15,71 @@ package tomoBay.model.services.populateInvoicesService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /**
- *
+ * This class provides functionality to retrieve transaction data 
  * @author Jan P.C. Hanson
  *
  */
-public class InvoiceData
+public class TransactionData
 {
 	private Map<String, List<String[]>> OrderToTransactions_M;
+	
+	private final DBActions db;
 	
 	
 	/**
 	 * default ctor
 	 */
-	public InvoiceData()
+	public TransactionData()
 	{
 		super();
+		db = new DBActions();
 		this.OrderToTransactions_M = new HashMap<String, List<String[]>>();
 		this.populateOrderToTransactionMap();
 	}
 	
-	public List<String[]> getMap(String orderID)
+	/**
+	 * retrieve the transactions associated with a particular orderID
+	 * @param orderID
+	 * @return
+	 */
+	public List<String[]> get(String orderID)
 	{
 		return this.OrderToTransactions_M.get(orderID);
 	}
+	
 	/**
 	 * populate the OrderToTransactions_M map where the key is the transactionID and the value is 
 	 * the orderID, as one orderID can be associated with multiple unique transactions.
 	 */
-	public void populateOrderToTransactionMap()
+	private void populateOrderToTransactionMap()
 	{
-		List<String[]> uncalculatedInvoices = QueryInvoker.execute(QueryType.SELECT_UNCALCULATED_INVOICES, new String[] {});
-		
-		for(String[] order : uncalculatedInvoices)
+		final List<String[]> orders = db.getTransactionData();
+		String previousOrderID="";
+		for(String[] order : orders)
 		{
-			List<String[]> transactions = QueryInvoker.execute(QueryType.SELECT_TRANSACTION_BY_ORDERID, order);
-			
-			this.OrderToTransactions_M.put(order[0], transactions);
+			if(previousOrderID.equals(order[0])==false)
+			{
+				this.OrderToTransactions_M.put(order[0], new ArrayList<String[]>());
+				this.populateOrderDataArray(order);
+				previousOrderID = order[0];
+			}
+			else
+				{this.populateOrderDataArray(order);}
 		}
+	}
+	
+	/**
+	 * populate the map for the given orderID key with the rest of the data.
+	 * @param order
+	 */
+	private void populateOrderDataArray(String[] order)
+	{
+		this.OrderToTransactions_M.get(order[0])
+			.add(new String[] {order[1],order[2],order[3],order[4],order[5],order[6], order[7]});
 	}
 }

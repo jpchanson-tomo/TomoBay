@@ -1,22 +1,8 @@
 package tomoBay.model.services;
 import java.util.concurrent.Callable;
 
-/** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 import tomoBay.exceptions.ServiceException;
+import tomoBay.model.dataTypes.ServerStatus;
 /**
  * Allows the system to only accept runnable's that implement this
  * interface rather than all runnables. As well as providing an interface that all abstract 
@@ -31,17 +17,32 @@ import tomoBay.exceptions.ServiceException;
  * @author Jan P.C. Hanson
  *
  */
-public interface AbstractService extends Callable<String>
+public abstract class AbstractService implements Callable<String>
 {
 	/**
 	 * The individual services equivalent of main
 	 */
-	public String call() throws ServiceException;
+	public String call() throws ServiceException
+	{
+		ServerStatus.RunLevel runLevel = ServerStatus.getStatus();
+		if(runLevel == ServerStatus.RunLevel.RUNNING) {return this.onRunning();}
+		else if(runLevel == ServerStatus.RunLevel.PAUSED) {return this.onPaused();}
+		else if(runLevel == ServerStatus.RunLevel.STOPPED) {return this.onStopped();}
+		else {return this.onError();}
+	}
 	
 	/**
 	 * sets the configuration for this service. Not all services require configuration, see the
 	 * documentation for individual services.
 	 * @param config the AbstractConfiguration concrete object applicable to the concrete service.
 	 */
-	public <E> void setConfig(AbstractConfiguration<E> config);
+	public abstract <E> void setConfig(AbstractConfiguration<E> config);
+	
+	protected abstract String onRunning() throws ServiceException;
+	
+	protected abstract String onPaused() throws ServiceException;
+	
+	protected abstract String onStopped() throws ServiceException;
+	
+	protected abstract String onError() throws ServiceException;
 }

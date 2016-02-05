@@ -18,6 +18,7 @@ import java.util.List;
 
 import tomoBay.helpers.SortOrders;
 import tomoBay.model.dataTypes.Pickeablity;
+import tomoBay.model.dataTypes.ServerStatus;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.view.AbstractView;
@@ -45,9 +46,11 @@ public class SalesOrderPresenter implements AbstractPresenter
 		String output = "";
 		List<String[]> rows = QueryInvoker.execute
 				(QueryInvoker.QueryType.SELECT_UNINVOICED_ORDERS,new String[] {""});
-		this.checkPickability(rows);
-		rows = new SortOrders().sortDefault(rows);
-
+		if(ServerStatus.getStatus()== ServerStatus.RunLevel.RUNNING)
+		{
+			this.checkPickability(rows);
+			rows = new SortOrders().sortDefault(rows);
+		}
 		output += view.format(rows);
 		
 		return output;

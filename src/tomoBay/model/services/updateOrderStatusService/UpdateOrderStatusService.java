@@ -14,6 +14,7 @@ package tomoBay.model.services.updateOrderStatusService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.exceptions.ServiceException;
 import tomoBay.model.services.AbstractConfiguration;
 import tomoBay.model.services.AbstractService;
 /**
@@ -22,26 +23,41 @@ import tomoBay.model.services.AbstractService;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateOrderStatusService implements AbstractService
+public class UpdateOrderStatusService extends AbstractService
 {
-	/* (non-Javadoc)
-	 * @see tomoBay.model.services.AbstractService#run()
-	 */
-	@Override
-	public String call()
-	{
-		// TODO Auto-generated method stub
-		return "";
-	}
-
 	/* (non-Javadoc)
 	 * @see tomoBay.model.services.AbstractService#setConfig(tomoBay.model.services.AbstractConfiguration)
 	 */
 	@Override
 	public <E> void setConfig(AbstractConfiguration<E> config)
-	{
-		// TODO Auto-generated method stub
+	{}
 
-	}
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onRunning()
+	 */
+	@Override
+	public String onRunning() throws ServiceException
+	{return "";}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onPaused()
+	 */
+	@Override
+	public String onPaused() throws ServiceException
+	{return null;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onStopped()
+	 */
+	@Override
+	public String onStopped() throws ServiceException
+	{return null;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.services.AbstractService#onError()
+	 */
+	@Override
+	public String onError() throws ServiceException
+	{return null;}
 
 }
