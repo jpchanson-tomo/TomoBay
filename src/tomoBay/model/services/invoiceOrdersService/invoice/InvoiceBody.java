@@ -108,8 +108,8 @@ public class InvoiceBody
 	{
 		String result = winstock_M
 					.requestDescription(parts.getPartNumber(index), BrandToCode.convert(brand));
-		int endOfString = result.indexOf("�");
-//		int endOfString = result.indexOf("œ");
+//		int endOfString = result.indexOf("�");
+		int endOfString = result.indexOf("œ");
 		result = result.substring(0, endOfString);
 		return result;
 	}
