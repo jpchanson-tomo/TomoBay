@@ -69,8 +69,8 @@ public final class OnRunning implements AbstractServiceState
 			}
 		}
 		
-//		if(invoicedOrders.size() > 0)
-//		{new Mail().send(invoicedOrders);}
+		if(invoicedOrders.size() > 0)
+		{new Mail().send(invoicedOrders);}
 		return "invoicing finished: "+invoicedOrders.size() +" invoices raised.";
 	}
 }
