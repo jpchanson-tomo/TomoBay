@@ -95,10 +95,7 @@ public class SelectInvoicedOrders implements AbstractDBQuery
 			cols[2] = results.getString("salesRecNo");
 			cols[3] = results.getString("shippingType");
 			cols[4] = results.getString("createdTime");
-			cols[5] = results.getString("picked");
-			cols[6] = results.getString("packed");
-			cols[7] = results.getString("shipped");
-			cols[8] = results.getString("invoiced");
+			cols[5] = results.getString("invoiced");
 			rows.add(cols);
 		}
 		return rows;

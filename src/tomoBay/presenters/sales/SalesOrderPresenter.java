@@ -73,7 +73,7 @@ public class SalesOrderPresenter implements AbstractPresenter
 		Pickeablity pickeableStatus = new Pickeablity();
 		for(String[] order : orders)
 		{
-			order[8] = String.valueOf(pickeableStatus.status(order[0]).getStatusCode());
+			order[5] = String.valueOf(pickeableStatus.status(order[0]).getStatusCode());
 		}
 	}
 }

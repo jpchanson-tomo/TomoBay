@@ -58,10 +58,7 @@ public class SelectUninvoicedOrders implements AbstractDBQuery
 	 * - String[2] = salesRecNo
 	 * - String[3] = shippingType
 	 * - String[4] = createdTime
-	 * - String[5] = picked
-	 * - String[6] = packed
-	 * - String[7] = shipped
-	 * - String[8] = invoiced
+	 * - String[5] = invoiced
 	 * 
 	 * @throws SQLException
 	 */
@@ -89,16 +86,13 @@ public class SelectUninvoicedOrders implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[9];
+			String[] cols = new String[6];
 			cols[0] = results.getString("orderID");
 			cols[1] = results.getString("buyerID");
 			cols[2] = results.getString("salesRecNo");
 			cols[3] = results.getString("shippingType");
 			cols[4] = results.getString("createdTime");
-			cols[5] = results.getString("picked");
-			cols[6] = results.getString("packed");
-			cols[7] = results.getString("shipped");
-			cols[8] = results.getString("invoiced");
+			cols[5] = results.getString("invoiced");
 			rows.add(cols);
 		}
 		return rows;

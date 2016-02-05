@@ -61,7 +61,7 @@ public class SortOrders
 		
 		for (int i = 0 ; i < input.size() ; ++i)
 		{
-			categoryList.get(Integer.parseInt((input.get(i)[8])))
+			categoryList.get(Integer.parseInt((input.get(i)[5])))
 						.add(input.get(i));
 		}
 		return reAssembleCategories(categoryList, PickeableStatus.size());

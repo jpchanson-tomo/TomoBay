@@ -52,7 +52,7 @@ public class SalesOrderView implements AbstractView
 				result+=" \"SalesRecNo\": \""+cols[2].trim()+"\", ";
 				result+=" \"ShippingType\": \""+cols[3].trim()+"\", ";
 				result+=" \"Details\": \""+"<button class='btn btn-primary' value='"+cols[0].trim()+"'>View</button>"+"\" ,";
-				result+=" \"Status\": \""+this.pickeability(cols[8])+"\" ";
+				result+=" \"Status\": \""+this.pickeability(cols[5])+"\" ";
 				result+="}, \n";
 				n++;
 			}
