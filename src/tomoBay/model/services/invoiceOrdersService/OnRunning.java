@@ -65,13 +65,12 @@ public final class OnRunning implements AbstractServiceState
 				invoicedOrders.add(new String[] {order.get(DBSchema.ORD_ORDER_ID), 
 						order.get(DBSchema.ORD_SALES_REC_NO), order.get(DBSchema.ORD_CREATED_TIME),
 						String.valueOf(invoice.getWeight()), String.valueOf(invNo)});
-				db.updateInvStatus(order.get(DBSchema.ORD_ORDER_ID));
+//				db.updateInvStatus(order.get(DBSchema.ORD_ORDER_ID));
 			}
 		}
 		
-		if(invoicedOrders.size() > 0)
-		{new Mail().send(invoicedOrders);
-		}
+//		if(invoicedOrders.size() > 0)
+//		{new Mail().send(invoicedOrders);}
 		return "invoicing finished: "+invoicedOrders.size() +" invoices raised.";
 	}
 }

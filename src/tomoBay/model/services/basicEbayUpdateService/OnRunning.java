@@ -56,7 +56,7 @@ public final class OnRunning implements AbstractServiceState
 			OrdersTable.populate(orders);
 			TransactionsTable.populate(orders);
 			BuyersTable.populate(orders);
-			ItemsTable.populate(new String[] {usrKey,server}, orders);
+			ItemsAndPartsTable.populate(new String[] {usrKey,server}, orders);
 			return "finished ebay update";
 			
 		} 

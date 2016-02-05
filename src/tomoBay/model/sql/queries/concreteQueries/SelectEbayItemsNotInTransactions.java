@@ -29,14 +29,14 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectEbayItemsNotInTransactions implements AbstractDBQuery
+public final class SelectEbayItemsNotInTransactions implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
 	private PreparedStatement selectStatement_M = null;
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="SELECT DISTINCT ebay_transactions.itemID "
+	private final String query ="SELECT DISTINCT ebay_transactions.itemID "
 			+ "FROM ebay_transactions "
 			+ "WHERE ebay_transactions.itemID "
 			+ "NOT IN (SELECT DISTINCT ebay_items.itemID FROM ebay_items);";

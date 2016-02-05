@@ -33,12 +33,12 @@ import com.ebay.soap.eBLBaseComponents.OrderType;
  * @author Jan P.C. Hanson
  *
  */
-public class ItemsTable
+public final class ItemsAndPartsTable
 {
 	/**
 	 * default ctor
 	 */
-	public ItemsTable()
+	public ItemsAndPartsTable()
 	{super();}
 	
 	/**
@@ -58,7 +58,9 @@ public class ItemsTable
 			
 			ItemCall itemreq = new ItemCall(credentials[0], credentials[1]);
 			ItemType itemType = itemreq.call(item[0]);
-			Map<String, String> specifics = ItemsTable.getSpecifics(itemType);
+			Map<String, String> specifics = ItemsAndPartsTable.getSpecifics(itemType);
+			
+			ItemsAndPartsTable.populatePartsTable(itemType, specifics);
 			
 			String[] result = 
 					{
@@ -71,7 +73,6 @@ public class ItemsTable
 					};
 			QueryInvoker.execute(QueryType.INSERT_EBAY_ITEMS,result);
 		}
-		ItemsTable.requiredQty();
 	}
 	
 	/**
@@ -102,19 +103,9 @@ public class ItemsTable
 		}
 		return itemSpecifics;
 	}
-
-	/**
-	 * add up all the distinct items and update with the total number of those items on order
-	 * taken from the transactions table.
-	 * @throws SQLException
-	 */
-	private static void requiredQty() throws SQLException
+	
+	private static void populatePartsTable(ItemType itemType, Map<String, String> specifics)
 	{
-		List<String[]> items = QueryInvoker.execute(QueryInvoker.QueryType.SELECT_EBAY_ITEMS, new String[] {});
 		
-		for (String[] item : items)
-		{
-			QueryInvoker.execute(QueryInvoker.QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, item);
-		}
 	}
 }
