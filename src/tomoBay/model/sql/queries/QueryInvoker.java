@@ -29,6 +29,8 @@ import tomoBay.model.sql.queries.factories.InsertEbayTransactionsFactory;
 import tomoBay.model.sql.queries.factories.InsertFordStockReqFactory;
 import tomoBay.model.sql.queries.factories.InsertOutOfHoursFactory;
 import tomoBay.model.sql.queries.factories.InsertPSAStockReqFactory;
+import tomoBay.model.sql.queries.factories.InsertPartFactory;
+import tomoBay.model.sql.queries.factories.InsertPartMappingFactory;
 import tomoBay.model.sql.queries.factories.InsertPrestigeStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemSpecificFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemsErrorFactory;
@@ -90,6 +92,10 @@ public class QueryInvoker
 			INSERT_PRESTIGE_STOCK_REQ,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertOutOfHours}**/
 			INSERT_OUT_OF_HOURS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertPart}**/
+			INSERT_PART,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertPartMapping}**/
+			INSERT_PART_MAPPING,
 			
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayItemsNotInTransactions}**/
 			SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS,
@@ -169,6 +175,8 @@ public class QueryInvoker
 			put(QueryType.INSERT_FORD_STOCK_REQ, new InsertFordStockReqFactory());
 			put(QueryType.INSERT_PRESTIGE_STOCK_REQ, new InsertPrestigeStockReqFactory());
 			put(QueryType.INSERT_OUT_OF_HOURS, new InsertOutOfHoursFactory());
+			put(QueryType.INSERT_PART, new InsertPartFactory());
+			put(QueryType.INSERT_PART_MAPPING, new InsertPartMappingFactory());
 
 			put(QueryType.SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS, new SelectEbayItemsNotInTransactionsFactory());
 			put(QueryType.SELECT_EBAY_ORDERS, new SelectEbayOrdersFactory());

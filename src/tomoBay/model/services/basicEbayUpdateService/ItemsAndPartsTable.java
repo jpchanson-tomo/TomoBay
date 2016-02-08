@@ -68,8 +68,8 @@ public final class ItemsAndPartsTable
 						itemType.getTitle(),
 						itemType.getConditionDisplayName(),
 						specifics.get("Brand"),
-						specifics.get("Manufacturer Part Number"),
-						String.valueOf(itemType.getBuyItNowPrice().getValue())
+						specifics.get("Manufacturer Part Number")
+//						String.valueOf(itemType.getBuyItNowPrice().getValue())
 					};
 			QueryInvoker.execute(QueryType.INSERT_EBAY_ITEMS,result);
 		}

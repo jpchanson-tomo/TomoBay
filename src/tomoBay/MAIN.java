@@ -1,12 +1,15 @@
 package tomoBay;
 import org.apache.log4j.Logger;
 
+import tomoBay.helpers.BrandToCode;
 import tomoBay.model.dataTypes.ServerStatus;
 import tomoBay.model.services.ServiceFactory;
 import tomoBay.model.services.ServiceFactory.ConfiguredServiceType;
 import tomoBay.model.services.ServiceScheduler;
 import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
+import tomoBay.model.services.helpers.PartList;
 import tomoBay.model.services.invoiceOrdersService.invoice.Invoice;
+import tomoBay.model.winstock.Stock;
 import tomoBay.view.HttpServer;
 /**
  * The entry point into the program, this is a stopgap solution to get invoices ,of orders that
@@ -45,11 +48,49 @@ public class MAIN
 										new EmailErrorsConfig().configure(data)
 										));
 		services.start(20);
+
 		
-//		TransactionData id = new TransactionData();
-//		for(String[] transaction : id.get("200636949016"))
+//		List<String[]> items = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS, new String[]{});
+//		int n = 0;
+//		for (String[] item : items)
 //		{
-//			System.out.println(Arrays.toString(transaction));
+//			PartList parts = new PartList(item[4]);
+//			for (int i = 0 ; i < parts.size() ; ++i)
+//			{
+//				String[] input = {
+//									parts.getPartNumber(i),
+//									getDescription(i,parts,item[3]),
+//									item[3]
+//								};
+//				QueryInvoker.execute(QueryType.INSERT_PART, input);
+//				
+//				String[] input2 = {
+//									item[0],
+//									parts.getPartNumber(i),
+//									getDescription(i,parts,item[3]),
+//									item[3]
+//								};
+//				System.out.println(Arrays.toString(input));
+//				System.out.println(Arrays.toString(input2));
+//				QueryInvoker.execute(QueryType.INSERT_PART_MAPPING, input2);
+//			}
+//			n++;
 //		}
+//		
+//		System.out.println(n);
+		
+		
+		
+		
+	}
+	
+	private static String getDescription(int index, PartList parts, String brand)
+	{
+		String result = new Stock()
+					.requestDescription(parts.getPartNumber(index), BrandToCode.convert(brand));
+		int endOfString = result.indexOf("�");
+//		int endOfString = result.indexOf("œ");
+		result = result.substring(0, endOfString);
+		return result;
 	}
 }

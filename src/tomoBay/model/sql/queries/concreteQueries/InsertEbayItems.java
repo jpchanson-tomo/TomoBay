@@ -52,8 +52,8 @@ public class InsertEbayItems implements AbstractDBQuery
 	private Connection connection_M = null;
 	/**SQL query string**/
 	private String query ="INSERT IGNORE INTO ebay_items "
-			+ "(itemID, title, sellCondition, brand, partNo, cost)"
-			+ "VALUES (?,?,?,?,?,?);";
+			+ "(itemID, title, sellCondition, brand, partNo)"
+			+ "VALUES (?,?,?,?,?);";
 	
 	/**
 	 * default constructor
@@ -84,7 +84,6 @@ public class InsertEbayItems implements AbstractDBQuery
 		this.statement_M.setString(3, parameter[2]);//sellCondition
 		this.statement_M.setString(4, parameter[3]);//brand
 		this.statement_M.setString(5, parameter[4]);//partNo
-		this.statement_M.setFloat(6, Float.parseFloat(parameter[5]));//price
 		int resultCode = statement_M.executeUpdate();
 		this.connection_M.commit();
 		this.cleanup();

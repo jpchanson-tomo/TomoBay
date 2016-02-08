@@ -56,9 +56,7 @@ public class SelectEbayItems implements AbstractDBQuery
 	 * - String[2] = sellCondition
 	 * - String[3] = brand
 	 * - String[4] = partNo
-	 * - String[5] = noRequired
-	 * - String[6] = cost
-	 * - String[7] = notes
+	 * - String[5] = notes
 	 * 
 	 * @throws SQLException
 	 */
