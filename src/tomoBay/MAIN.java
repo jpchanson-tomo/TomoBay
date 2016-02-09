@@ -28,15 +28,15 @@ public class MAIN
 	
 	public static void main(String[] args) throws Exception
 	{
-//		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
-//		
+		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
+		
 		log.warn("*******************************PROGRAM START*******************************");
 		final HttpServer server = new HttpServer();
 		server.start(1337);
 		ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
 		
 		final ServiceScheduler services = new ServiceScheduler(6);
-//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
+		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.OUT_OF_HOURS_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
