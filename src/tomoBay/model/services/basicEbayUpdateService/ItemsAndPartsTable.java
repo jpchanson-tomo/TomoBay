@@ -69,7 +69,6 @@ public final class ItemsAndPartsTable
 						itemType.getConditionDisplayName(),
 						specifics.get("Brand"),
 						specifics.get("Manufacturer Part Number")
-//						String.valueOf(itemType.getBuyItNowPrice().getValue())
 					};
 			QueryInvoker.execute(QueryType.INSERT_EBAY_ITEMS,result);
 		}

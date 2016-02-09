@@ -55,7 +55,7 @@ public class EmailErrorsDataFormat
 			result += "<td>"+error[1]+"</td>";
 			result += "<td>"+error[3]+"</td>";
 			result += "<td>"+error[4]+"</td>";
-			result += "<td>"+error[7]+"</td>";
+			result += "<td>"+error[5]+"</td>";
 			result += "</tr>";
 		}
 		result += FOOTER;

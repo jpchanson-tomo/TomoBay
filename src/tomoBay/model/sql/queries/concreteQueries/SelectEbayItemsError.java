@@ -57,8 +57,6 @@ public class SelectEbayItemsError implements AbstractDBQuery
 	 * - String[2] = sellCondition
 	 * - String[3] = brand
 	 * - String[4] = partNo
-	 * - String[5] = noRequired
-	 * - String[6] = cost
 	 * - String[7] = notes
 	 * 
 	 * @throws SQLException
@@ -88,15 +86,13 @@ public class SelectEbayItemsError implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[8];
+			String[] cols = new String[6];
 			cols[0] = String.valueOf(results.getLong("itemID"));
 			cols[1] = results.getString("title");
 			cols[2] = results.getString("sellCondition");
 			cols[3] = results.getString("brand");
 			cols[4] = results.getString("partNo");
-			cols[5] = String.valueOf(results.getInt("noRequired"));
-			cols[6] = String.valueOf(results.getFloat("cost"));
-			cols[7] = results.getString("notes");
+			cols[5] = results.getString("notes");
 			rows.add(cols);
 		}
 		return rows;

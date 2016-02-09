@@ -3,6 +3,10 @@ import org.apache.log4j.Logger;
 
 import tomoBay.helpers.BrandToCode;
 import tomoBay.model.dataTypes.ServerStatus;
+import tomoBay.model.dataTypes.financial.GBP;
+import tomoBay.model.dataTypes.financial.VAT;
+import tomoBay.model.dataTypes.order.Order;
+import tomoBay.model.dataTypes.order.OrderDataFields;
 import tomoBay.model.services.ServiceFactory;
 import tomoBay.model.services.ServiceFactory.ConfiguredServiceType;
 import tomoBay.model.services.ServiceScheduler;
@@ -24,15 +28,15 @@ public class MAIN
 	
 	public static void main(String[] args) throws Exception
 	{
-		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
-		
+//		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
+//		
 		log.warn("*******************************PROGRAM START*******************************");
 		final HttpServer server = new HttpServer();
 		server.start(1337);
 		ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
 		
 		final ServiceScheduler services = new ServiceScheduler(6);
-		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
+//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.OUT_OF_HOURS_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
@@ -79,18 +83,24 @@ public class MAIN
 //		
 //		System.out.println(n);
 		
+//		Order order = new Order("331614897832-1241551309014");
+//		System.out.println(order.buyerID());
+//		System.out.println(order.buyerName());
+//		System.out.println(order.noOfTransactions());
+//		System.out.println(order.orderPrice());
+//		System.out.println(order.orderID());
 		
 		
 		
 	}
 	
-	private static String getDescription(int index, PartList parts, String brand)
-	{
-		String result = new Stock()
-					.requestDescription(parts.getPartNumber(index), BrandToCode.convert(brand));
-		int endOfString = result.indexOf("�");
-//		int endOfString = result.indexOf("œ");
-		result = result.substring(0, endOfString);
-		return result;
-	}
+//	private static String getDescription(int index, PartList parts, String brand)
+//	{
+//		String result = new Stock()
+//					.requestDescription(parts.getPartNumber(index), BrandToCode.convert(brand));
+//		int endOfString = result.indexOf("�");
+////		int endOfString = result.indexOf("œ");
+//		result = result.substring(0, endOfString);
+//		return result;
+//	}
 }

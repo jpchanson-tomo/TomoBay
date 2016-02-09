@@ -22,38 +22,29 @@ import java.util.List;
  * @author Jan P.C. Hanson
  *
  */
-public class PopulateBuyersInfo
+public final class PopulateBuyersInfo
 {
-	/**raw data**/
-	private List<String[]> rawData_M;
-	/**map to hold the address data**/
-	private Map<OrderDataFields, String> address_M;
-	
 	/**
 	 * 
 	 */
-	public PopulateBuyersInfo(List<String[]> rawData)
-	{
-		super();
-		this.rawData_M = rawData;
-		this.populateBuyerFields();
-	}
-	
-	public Map<OrderDataFields, String> getInfo()
-	{return this.address_M;}
+	public PopulateBuyersInfo()
+	{super();}
 	
 	/**
-	 * populate the address_M map with the address data stored in rawData_M
+	 * 
+	 * @param rawData
+	 * @return
 	 */
-	private void populateBuyerFields()
+	public static final Map<OrderDataFields, String> getInfo(List<String[]> rawData)
 	{
-		this.address_M = new HashMap<OrderDataFields, String>();
-		this.address_M.put(OrderDataFields.EBAY_ID , this.rawData_M.get(0)[11]);
-		this.address_M.put(OrderDataFields.NAME    , this.rawData_M.get(0)[12]);
-		this.address_M.put(OrderDataFields.STREET1 , this.rawData_M.get(0)[13]);
-		this.address_M.put(OrderDataFields.STREET2 , this.rawData_M.get(0)[14]);
-		this.address_M.put(OrderDataFields.CITY    , this.rawData_M.get(0)[15]);
-		this.address_M.put(OrderDataFields.COUNTY  , this.rawData_M.get(0)[16]);
-		this.address_M.put(OrderDataFields.POSTCODE, this.rawData_M.get(0)[17]);
+		Map<OrderDataFields, String> address = new HashMap<OrderDataFields, String>();
+		address.put(OrderDataFields.EBAY_ID , rawData.get(0)[11]);
+		address.put(OrderDataFields.NAME    , rawData.get(0)[12]);
+		address.put(OrderDataFields.STREET1 , rawData.get(0)[13]);
+		address.put(OrderDataFields.STREET2 , rawData.get(0)[14]);
+		address.put(OrderDataFields.CITY    , rawData.get(0)[15]);
+		address.put(OrderDataFields.COUNTY  , rawData.get(0)[16]);
+		address.put(OrderDataFields.POSTCODE, rawData.get(0)[17]);
+		return address;
 	}
 }

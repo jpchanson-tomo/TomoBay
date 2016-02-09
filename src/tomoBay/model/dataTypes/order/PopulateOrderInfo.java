@@ -22,34 +22,26 @@ import java.util.Map;
  * @author Jan P.C. Hanson
  *
  */
-public class PopulateOrderInfo
+public final class PopulateOrderInfo
 {
-	/**raw data**/
-	private List<String[]> rawData_M;
-	/**map to hold the address data**/
-	private Map<OrderDataFields, String> order_M;
-	
 	/**
 	 * 
 	 */
-	public PopulateOrderInfo(List<String[]> rawData)
-	{
-		super();
-		this.rawData_M = rawData;
-		this.populateOrderFields();
-	}
-	
-	public Map<OrderDataFields, String> getInfo()
-	{return this.order_M;}
+	public PopulateOrderInfo()
+	{super();}
 	
 	/**
-	 * populate the address_M map with the address data stored in rawData_M
+	 * 
+	 * @param rawData
+	 * @return
 	 */
-	private void populateOrderFields()
+	public static final Map<OrderDataFields, String> getInfo(List<String[]> rawData)
 	{
-		this.order_M = new HashMap<OrderDataFields, String>();
-		this.order_M.put(OrderDataFields.SALES_REC_NO, this.rawData_M.get(0)[2]);
-		this.order_M.put(OrderDataFields.ORDER_DATE, this.rawData_M.get(0)[3]);
-		this.order_M.put(OrderDataFields.SHIPPING_TYPE, this.rawData_M.get(0)[1]);
+		Map<OrderDataFields, String> order = new HashMap<OrderDataFields, String>();
+		order.put(OrderDataFields.ORDER_ID, rawData.get(0)[0]);
+		order.put(OrderDataFields.SALES_REC_NO, rawData.get(0)[2]);
+		order.put(OrderDataFields.ORDER_DATE, rawData.get(0)[3]);
+		order.put(OrderDataFields.SHIPPING_TYPE, rawData.get(0)[1]);
+		return order;
 	}
 }

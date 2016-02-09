@@ -1,9 +1,4 @@
 package tomoBay.model.dataTypes.order;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -19,47 +14,37 @@ import java.util.Map;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class PopulatePricesInfo
+public final class PopulatePricesInfo
 {
-	/**raw data**/
-	private List<String[]> rawData_M;
-	/**map to hold quantity data**/
-	private List<Map<OrderDataFields, Double>> prices_M;
-	
 	/**
-	 * 
+	 * default ctor
 	 */
-	public PopulatePricesInfo(List<String[]> rawData)
-	{
-		super();
-		this.prices_M = new ArrayList<Map<OrderDataFields, Double>>();
-		this.rawData_M = rawData;
-		this.populateOrderFields();
-	}
+	public PopulatePricesInfo()
+	{super();}
 	
-	public List<Map<OrderDataFields, Double>> getInfo()
-	{return this.prices_M;}
-	
-	/**
-	 * populate the address_M map with the address data stored in rawData_M
-	 */
-	private void populateOrderFields()
+	public final static List<Map<OrderDataFields, Double>> getInfo(List<String[]> rawData)
 	{
-		for(int i = 0 ; i < this.rawData_M.size() ; ++i)
+		List<Map<OrderDataFields, Double>> prices = new ArrayList<Map<OrderDataFields, Double>>();
+		for(int i = 0 ; i < rawData.size() ; ++i)
 		{
-			this.prices_M.add(new HashMap<OrderDataFields, Double>());
-			this.prices_M.get(i)
-			.put(OrderDataFields.ORDER_TOTAL      , Double.parseDouble(this.rawData_M.get(0)[9]));
-			this.prices_M.get(i)
-			.put(OrderDataFields.TRANSACTION_PRICE, Double.parseDouble(this.rawData_M.get(i)[19]));
-			this.prices_M.get(i)
-			.put(OrderDataFields.SHIPPING_COST    , Double.parseDouble(this.rawData_M.get(0)[18]));
+			prices.add(new HashMap<OrderDataFields, Double>());
+			prices.get(i)
+			.put(OrderDataFields.ORDER_TOTAL      , Double.parseDouble(rawData.get(0)[9]));
+			prices.get(i)
+			.put(OrderDataFields.TRANSACTION_PRICE, Double.parseDouble(rawData.get(i)[19]));
+			prices.get(i)
+			.put(OrderDataFields.SHIPPING_COST    , Double.parseDouble(rawData.get(0)[18]));
 		}
+		return prices;
 	}
 }

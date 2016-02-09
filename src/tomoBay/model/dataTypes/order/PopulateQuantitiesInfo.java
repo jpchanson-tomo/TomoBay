@@ -25,39 +25,32 @@ import java.util.Map;
  * @author Jan P.C. Hanson
  *
  */
-public class PopulateQuantitiesInfo
+public final class PopulateQuantitiesInfo
 {
-	/**raw data**/
-	private List<String[]> rawData_M;
-	/**map to hold quantity data**/
-	private List<Map<OrderDataFields, Integer>> quantities_M;
+	/**
+	 * default ctor
+	 */
+	public PopulateQuantitiesInfo()
+	{super();}
 	
 	/**
 	 * 
+	 * @param rawData
+	 * @return
 	 */
-	public PopulateQuantitiesInfo(List<String[]> rawData)
+	public static final List<Map<OrderDataFields, Integer>> getInfo(List<String[]> rawData)
 	{
-		super();
-		this.quantities_M = new ArrayList<Map<OrderDataFields, Integer>>();
-		this.rawData_M = rawData;
-		this.populateOrderFields();
-	}
-	
-	public List<Map<OrderDataFields, Integer>> getInfo()
-	{return this.quantities_M;}
-	
-	/**
-	 * populate the address_M map with the address data stored in rawData_M
-	 */
-	private void populateOrderFields()
-	{
-		for (int i = 0 ; i < this.rawData_M.size() ; ++i)
+		List<Map<OrderDataFields, Integer>> quantities = new ArrayList<Map<OrderDataFields, Integer>>();
+		
+		for (int i = 0 ; i < rawData.size() ; ++i)
 		{
-			this.quantities_M.add(new HashMap<OrderDataFields, Integer>());
-			this.quantities_M.get(i)
-			.put(OrderDataFields.TRANSACTION_QUANTITY, this.rawData_M.size());
-			this.quantities_M.get(i)
-			.put(OrderDataFields.PURCHASED_QUANTITY  , Integer.parseInt(this.rawData_M.get(i)[8]));
+			quantities.add(new HashMap<OrderDataFields, Integer>());
+			quantities.get(i)
+			.put(OrderDataFields.TRANSACTION_QUANTITY, rawData.size());
+			quantities.get(i)
+			.put(OrderDataFields.PURCHASED_QUANTITY  , Integer.parseInt(rawData.get(i)[8]));
 		}
+		
+		return quantities;
 	}
 }
