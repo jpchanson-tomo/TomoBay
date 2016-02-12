@@ -37,7 +37,8 @@ public class SelectTransactionByOrder implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private static final String query = "SELECT * FROM ebay_transactions WHERE orderID=?;";
+//	private static final String query = "SELECT * FROM ebay_transactions WHERE orderID=?;";
+	private static final String query = "SELECT transactionID FROM ebay_transactions WHERE orderID=?;";
 	
 	/**
 	 * default constructor
@@ -90,12 +91,12 @@ public class SelectTransactionByOrder implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[5];
+			String[] cols = new String[1];
 			cols[0] = results.getString("transactionID");
-			cols[1] = results.getString("orderID");
-			cols[2] = results.getString("itemID");
-			cols[3] = results.getString("quantity");
-			cols[4] = results.getString("price");
+//			cols[1] = results.getString("orderID");
+//			cols[2] = results.getString("itemID");
+//			cols[3] = results.getString("quantity");
+//			cols[4] = results.getString("price");
 			rows.add(cols);
 		}
 		return rows;

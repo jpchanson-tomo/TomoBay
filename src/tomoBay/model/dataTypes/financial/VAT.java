@@ -16,7 +16,8 @@ package tomoBay.model.dataTypes.financial;
  */
 
 /**
- * This class provides methods that allow the manipulation of values to do with VAT.
+ * This class provides methods that allow the manipulation of values to do with VAT. This class
+ * does not care about sign and all methods will use the absolute value of the value provided.
  * @author Jan P.C. Hanson
  *
  */
@@ -35,7 +36,7 @@ public final class VAT
 	 * @return double representing the original value with VAT added.
 	 */
 	public static final double add(double value)
-	{return value*1.2;}
+	{return Math.abs(value)*1.2;}
 	
 	/**
 	 * add vat to the value provided as argument
@@ -43,7 +44,7 @@ public final class VAT
 	 * @return int representing the original value with VAT added.
 	 */
 	public static final int add(int value)
-	{return VAT.doubleToInt(value*1.2);}
+	{return VAT.doubleToInt(Math.abs(value)*1.2);}
 	
 	/**
 	 * subtract vat to the value provided as argument
@@ -51,7 +52,7 @@ public final class VAT
 	 * @return double representing the initial value with the VAT removed
 	 */
 	public static final double subtract(double value)
-	{return value/1.2;}
+	{return Math.abs(value)/1.2;}
 	
 	/**
 	 * subtract vat to the value provided as argument
@@ -59,7 +60,7 @@ public final class VAT
 	 * @return int representing the initial value with the VAT removed
 	 */
 	public static final int subtract(int value)
-	{return VAT.doubleToInt(value/1.2);}
+	{return VAT.doubleToInt(Math.abs(value)/1.2);}
 	
 	/**
 	 * provides the value for VAT due on a particular value
@@ -67,7 +68,7 @@ public final class VAT
 	 * @return the VAT that should be applied to the given value
 	 */
 	public static final double due(double value)
-	{return value/6;}
+	{return Math.abs(value)/6;}
 	
 	/**
 	 * provides the value for VAT due on a particular value
@@ -75,7 +76,7 @@ public final class VAT
 	 * @return the VAT that should be applied to the given value.
 	 */
 	public static final int due(int value)
-	{return VAT.doubleToInt(value/6);}
+	{return VAT.doubleToInt(Math.abs(value)/6);}
 	
 	/**
 	 * 

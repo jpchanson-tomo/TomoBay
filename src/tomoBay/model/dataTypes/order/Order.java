@@ -14,10 +14,13 @@ package tomoBay.model.dataTypes.order;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.List;
-import java.util.Map;
 
-import tomoBay.model.dataTypes.Part;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import tomoBay.exceptions.OrderException;
+import tomoBay.helpers.StackTraceToString;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /**
@@ -27,226 +30,128 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
  */
 public class Order
 {
-	/**the order data straight from the database**/
-	List<String[]> rawData_M;
-	/**map to hold the address data**/
-	private Map<OrderDataFields, String> address_M;
-	/**list of maps to hold the price data**/
-	private List<Map<OrderDataFields, Double>> prices_M;
-	/**list of maps to hold quantity data**/
-	private List<Map<OrderDataFields, Integer>> quantities_M;
-	/** list of maps to hold the part data**/
-	private List<Part> partInfo_M;
-	/**map to hold order specific information**/
-	private Map<OrderDataFields, String> order_M;
-	/** list of maps to hold the listing data**/
-	private List<Map<OrderDataFields, String>> listing_M;
+	static Logger log = Logger.getLogger(Order.class.getName());
+	/**the buyer of this order**/
+	private final Buyer buyer_M;
+	/**the transactions associated with this order**/
+	private final Transaction[] transactions_M;
+	/**the sales record number of this order**/
+	private final int salesRecNo_M;
+	/**the shipping type used for this order**/
+	private final String shippingType_M;
+	/**the orderID identifying this order**/
+	private final String orderID_M;
+	/**the time this order was created**/
+	private final String createdTime_M;
+	/**the total sale price of this order**/
+	private final double orderTotal_M;
+	
 	/**
-	 * default ctor
+	 * initialise this order using the orderID provided
+	 * @param orderID
 	 */
 	public Order(String orderID)
 	{
 		super();
-		this.rawData_M = this.grabRawData(orderID);
-		this.grabRawData(orderID);
-		
-		this.order_M = PopulateOrderInfo.getInfo(this.rawData_M);
-		this.address_M = PopulateBuyersInfo.getInfo(this.rawData_M);
-		this.quantities_M = PopulateQuantitiesInfo.getInfo(this.rawData_M);
-		this.prices_M = PopulatePricesInfo.getInfo(this.rawData_M);
-		this.partInfo_M = PopulatePartInfo.getInfo(this.rawData_M);
-		this.listing_M = PopulateListingFields.getInfo(this.rawData_M);
-		
-		rawData_M.clear();
-		rawData_M = null;
+		try
+		{
+			this.orderID_M = orderID;
+			this.transactions_M = Order.getTransactionList(orderID);
+			String[] orderInfo = Order.getOrderInfo(orderID);
+			this.buyer_M = new Buyer(orderInfo[4]);
+			this.salesRecNo_M = Integer.parseInt(orderInfo[0]);
+			this.shippingType_M = orderInfo[1];
+			this.createdTime_M = orderInfo[2];
+			this.orderTotal_M = Double.parseDouble(orderInfo[3]);
+		}
+		catch (Exception e)
+		{
+			log.warn("could not instantitate Order:"+orderID +" "+StackTraceToString.toString(e));
+			throw new OrderException("could not instantiate Order: "+orderID,e);
+		}
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * The order ID is a string(numerical) that uniquely identifies this order from all others
+	 * @return String containing the orderID
 	 */
-	public String buyerName()
-	{return this.address_M.get(OrderDataFields.NAME);}
+	public String orderID() {return this.orderID_M;}
 	
 	/**
-	 * 
-	 * @return
+	 * Retrieve the Buyer that placed this order.
+	 * @return Buyer object containing all the information on the buyer
 	 */
-	public String buyerID()
-	{return this.address_M.get(OrderDataFields.EBAY_ID);}
+	public Buyer buyer() {return this.buyer_M;}
 	
 	/**
-	 * 
-	 * @return
+	 * An order is made up of transactions, this method retrieves the specified transaction, given
+	 * the index parameter. Should you select a transaction that does not exist you'll probably
+	 * get an IndexOutOfBounds exception
+	 * @param index the index of the transaction you wish to return
+	 * @return Transaction object containing all pertinent information to do with that transaction.
 	 */
-	public String street1()
-	{return this.address_M.get(OrderDataFields.STREET1);}
+	public Transaction transaction(int index) {return this.transactions_M[index];}
 	
 	/**
-	 * 
-	 * @return
+	 * use this method to find out how many transactions are associated with this order, 
+	 * @return int representing the number of transactions available in this order.
 	 */
-	public String street2()
-	{return this.address_M.get(OrderDataFields.STREET2);}
+	public int noOfTransactions() {return this.transactions_M.length;}
 	
 	/**
-	 * 
-	 * @return
+	 * retrieve the sales record number associated with this order
+	 * @return int representing the salesRecordNumber
 	 */
-	public String city() 
-	{return this.address_M.get(OrderDataFields.CITY);}
+	public int salesRecNo() {return this.salesRecNo_M;}
 	
 	/**
-	 * 
-	 * @return
+	 * retrieve the shipping type used for this order as a string
+	 * @return String representing the shipping type
 	 */
-	public String county() 
-	{return this.address_M.get(OrderDataFields.COUNTY);}
+	public String shippingType() {return this.shippingType_M;}
 	
 	/**
-	 * 
-	 * @return
+	 * retrieve the time at which this order was created
+	 * @return String representing the time at which the order was created.
 	 */
-	public String postCode() 
-	{return this.address_M.get(OrderDataFields.POSTCODE);}
+	public String createdTime() {return this.createdTime_M;}
 	
 	/**
-	 * 
-	 * @return
+	 * retrieve the total price associated with this order, i.e. how much the customer paid.
+	 * @return double representing the amount the customer paid for this order.
 	 */
-	public String orderID() 
-	{return this.order_M.get(OrderDataFields.ORDER_ID);}
+	public double totalPrice() {return this.orderTotal_M;}
 	
 	/**
-	 * 
-	 * @return
+	 * helper method, retrieves the order specific information from the database, in order to 
+	 * be able to populate the properties of this object.
+	 * @param orderID the orderID associated with this order
+	 * @return String[] containing the information specific to this order.
 	 */
-	public int SalesRecNo() 
-	{return Integer.parseInt(this.order_M.get(OrderDataFields.SALES_REC_NO));}
+	private static final String[] getOrderInfo(String orderID)
+	{
+		return QueryInvoker.execute(
+									QueryType.SELECT_EBAY_ORDER_BY_ID, 
+									new String[] {orderID}
+									).get(0);
+	}
 	
 	/**
-	 * 
-	 * @return
+	 * helper method, retrieves the transactions associated with this order by querying the
+	 * database and using the results to generate Transaction objects.
+	 * @param orderID the orderID associated with this order
+	 * @return Transaction[] that can be used to populate the final Transaction[] member variable.
 	 */
-	public String shippingType() 
-	{return this.order_M.get(OrderDataFields.SHIPPING_TYPE);}
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public double orderPrice() 
-	{return this.prices_M.get(0).get(OrderDataFields.ORDER_TOTAL);}
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public double shippingCost() 
-	{return this.prices_M.get(0).get(OrderDataFields.SHIPPING_COST);}
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public int noOfTransactions() 
-	{return this.quantities_M.get(0).get(OrderDataFields.TRANSACTION_QUANTITY);}
-	
-	/**
-	 * 
-	 * @param transaction
-	 * @return
-	 */
-	public double transactionCost(int transaction) 
-	{return this.prices_M.get(transaction).get(OrderDataFields.TRANSACTION_PRICE);}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @return
-	 */
-	public int purchasedQuantity(int transactionNo) 
-	{return this.quantities_M.get(transactionNo).get(OrderDataFields.PURCHASED_QUANTITY);}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @return
-	 */
-	public String listingID(int transactionNo) 
-	{return this.listing_M.get(transactionNo).get(OrderDataFields.LISTING_ID);}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @return
-	 */
-	public String listingTitle(int transactionNo) 
-	{return this.listing_M.get(transactionNo).get(OrderDataFields.LISTING_TITLE);}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @return
-	 */
-	public String listingPartNos(int transactionNo) 
-	{return this.listing_M.get(transactionNo).get(OrderDataFields.PART_NUMBER);}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @return
-	 */
-	public String listingBrand(int transactionNo) 
-	{return this.listing_M.get(transactionNo).get(OrderDataFields.BRAND);}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @return
-	 */
-	public int listingSize(int transactionNo) 
-	{return this.partInfo_M.;}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param partIndex
-	 * @return
-	 */
-	public String partNo(int transactionNo, int partIndex)
-	{return this.partInfo_M.get(transactionNo).get(OrderDataFields.PART_NUMBER)[partIndex];}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param partIndex
-	 * @return
-	 */
-	public String partDescription(int transactionNo, int partIndex)
-	{return this.partInfo_M.get(transactionNo).get(OrderDataFields.PART_DESCRIPTION)[partIndex];}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param partIndex
-	 * @return
-	 */
-	public int partQuantity(int transactionNo, int partIndex)
-	{return Integer.parseInt(this.partInfo_M.get(transactionNo).get(OrderDataFields.PART_QUANTITY)[partIndex]);}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param partIndex
-	 * @return
-	 */
-	public double partCost(int transactionNo, int partIndex)
-	{return Double.parseDouble(this.partInfo_M.get(transactionNo).get(OrderDataFields.PART_COSTS)[partIndex]);}
-	
-	/**
-	 * populate the rawData_M List with data from the database
-	 */
-	private List<String[]> grabRawData(String orderID)
-	{return QueryInvoker.execute(QueryType.SELECT_FULL_ORDER_LINE, new String[] {orderID});}
+	private static final Transaction[] getTransactionList(String orderID)
+	{
+		List<String[]> query = QueryInvoker.execute(
+									QueryType.SELECT_TRANSACTION_BY_ORDERID, 
+									new String[] {orderID}
+									);
+		Transaction[] result = new Transaction[query.size()];
+		
+		for(int i=0 ; i < query.size() ; ++i) {result[i]=new Transaction(query.get(i)[0]);}
+		
+		return result;
+	}
 }

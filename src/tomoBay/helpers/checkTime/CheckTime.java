@@ -14,6 +14,7 @@ package tomoBay.helpers.checkTime;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -75,6 +76,17 @@ public class CheckTime
 		{outOfHoursDate.add(Calendar.DATE, -1);}
 		
 		return outOfHoursDate.getTime();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static String currentTimeStamp()
+	{
+		Date result = new Date();
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+		return dateFormatter.format(result);
 	}
 	
 	/**

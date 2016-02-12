@@ -15,6 +15,7 @@ package tomoBay.model.dataTypes;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import tomoBay.exceptions.DualListException;
@@ -25,7 +26,7 @@ import tomoBay.exceptions.DualListException;
  * @author Jan P.C. Hanson
  *
  */
-public class DualList<K,V>
+public class DualList<K,V> implements Iterable
 {
 	/**the key list**/
 	private List<K> key_M;
@@ -131,4 +132,11 @@ public class DualList<K,V>
 		{result+= "["+this.key_M.get(i) + ":" + this.value_M.get(i) +"]</br>";}
 		return result;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Iterable#iterator()
+	 */
+	@Override
+	public Iterator<V> iterator()
+	{return this.value_M.iterator();}
 }

@@ -18,8 +18,6 @@ import java.text.DecimalFormat;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import tomoBay.model.services.invoiceOrdersService.invoice.Prices;
-
 /**
  * This class provides methods that allow the mainpulation of money from great british pounds
  * to pennies, and from pennies to pounds.

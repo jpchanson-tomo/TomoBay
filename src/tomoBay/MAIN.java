@@ -1,20 +1,10 @@
 package tomoBay;
 import org.apache.log4j.Logger;
 
-import tomoBay.helpers.BrandToCode;
-import tomoBay.model.dataTypes.ServerStatus;
-import tomoBay.model.dataTypes.financial.GBP;
-import tomoBay.model.dataTypes.financial.VAT;
-import tomoBay.model.dataTypes.order.Order;
-import tomoBay.model.dataTypes.order.OrderDataFields;
-import tomoBay.model.services.ServiceFactory;
-import tomoBay.model.services.ServiceFactory.ConfiguredServiceType;
-import tomoBay.model.services.ServiceScheduler;
-import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
-import tomoBay.model.services.helpers.PartList;
-import tomoBay.model.services.invoiceOrdersService.invoice.Invoice;
-import tomoBay.model.winstock.Stock;
-import tomoBay.view.HttpServer;
+import tomoBay.model.dataTypes.json.JSONentity;
+import tomoBay.model.dataTypes.json.JSONentity_array;
+import tomoBay.model.dataTypes.json.JSONentity_object;
+import tomoBay.model.dataTypes.json.JSONentity_string;
 /**
  * The entry point into the program, this is a stopgap solution to get invoices ,of orders that
  * are completely fulfillable, printed automatically
@@ -24,34 +14,34 @@ import tomoBay.view.HttpServer;
  */
 public class MAIN
 {
-	static private Logger log = Logger.getLogger(Invoice.class.getName());
+	static private Logger log = Logger.getLogger(MAIN.class.getName());
 	
 	public static void main(String[] args) throws Exception
 	{
-		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
-		
-		log.warn("*******************************PROGRAM START*******************************");
-		final HttpServer server = new HttpServer();
-		server.start(1337);
-		ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
-		
-		final ServiceScheduler services = new ServiceScheduler(6);
-		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
-		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
-		services.add(ServiceFactory.make(ServiceFactory.ServiceType.OUT_OF_HOURS_SERVICE));
-		services.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
-		services.add(ServiceFactory.make(ServiceFactory.ServiceType.CHECK_ERRORS));
-		final String data = "<EMAIL>"
-				+ "<TO>tomomotorbay@gmail.com</TO>"
-				+ "<TO>paul@tomoparts.co.uk</TO>"
-				+ "<TO>steve@tomoparts.co.uk</TO>"
-				+ "<SUBJECT>ERRORS TO FIX!!!!!</SUBJECT>"
-				+ "</EMAIL>";
-		services.add(ServiceFactory.make(
-										ConfiguredServiceType.EMAIL_ERRORS_SERVICE,
-										new EmailErrorsConfig().configure(data)
-										));
-		services.start(20);
+//		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
+//		
+//		log.warn("*******************************PROGRAM START*******************************");
+//		final HttpServer server = new HttpServer();
+//		server.start(1337);
+//		ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
+//		
+//		final ServiceScheduler services = new ServiceScheduler(6);
+////		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
+//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
+//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.OUT_OF_HOURS_SERVICE));
+//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
+//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.CHECK_ERRORS));
+//		final String data = "<EMAIL>"
+//				+ "<TO>tomomotorbay@gmail.com</TO>"
+//				+ "<TO>paul@tomoparts.co.uk</TO>"
+//				+ "<TO>steve@tomoparts.co.uk</TO>"
+//				+ "<SUBJECT>ERRORS TO FIX!!!!!</SUBJECT>"
+//				+ "</EMAIL>";
+//		services.add(ServiceFactory.make(
+//										ConfiguredServiceType.EMAIL_ERRORS_SERVICE,
+//										new EmailErrorsConfig().configure(data)
+//										));
+//		services.start(20);
 
 		
 //		List<String[]> items = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS, new String[]{});
@@ -82,16 +72,52 @@ public class MAIN
 //		}
 //		
 //		System.out.println(n);
+////		Order order = new Order("201752468016");
+//		Order order = new Order("331548764167-1222649327014");
+////		Order order = new Order("331549945006-1231178167014");
+//		AbstractSalesDayBookLine invoice = new StandardInvoice(order);
+//		
+//		System.out.println(invoice.totalIncVat());
+//		System.out.println(invoice.totalExVat());
+//		
+//		
+//		System.out.println(order.transaction(0).listing().listingCost());
+//		System.out.println(invoice.getLineItem(0).partNo(invoice));
+//		System.out.println(invoice.getLineItem(0).description(invoice));
+//		System.out.println(invoice.getLineItem(0).quantity(invoice));
+//		System.out.println(invoice.getLineItem(0).price()+"\n");
+//		
+////		System.out.println(order.transaction(1).listing().listingCost());
+//		System.out.println(invoice.getLineItem(1).partNo(invoice));
+//		System.out.println(invoice.getLineItem(1).description(invoice));
+//		System.out.println(invoice.getLineItem(1).quantity(invoice));
+//		System.out.println(invoice.getLineItem(1).price());
 		
-//		Order order = new Order("331614897832-1241551309014");
-//		System.out.println(order.buyerID());
-//		System.out.println(order.buyerName());
-//		System.out.println(order.noOfTransactions());
-//		System.out.println(order.orderPrice());
-//		System.out.println(order.orderID());
+		String result =
+		new JSONentity_object().add
+			("invoice", new JSONentity_object().add
+					
+				("orderInfo", new JSONentity_object().add
+					("test",new JSONentity_string("bob")).add
+					("test1", new JSONentity_string("kevin"))
+				).add
+				
+				("buyerInfo", new JSONentity_object().add
+					("dopey", new JSONentity_string("alfred")).add
+					("array", new JSONentity_array().add
+						(null, new JSONentity_string("jupter")).add
+						(null, new JSONentity_string("hermes")).add
+						(null, new JSONentity_string("apollo")).add
+						("test", new JSONentity_object().add
+							("test",new JSONentity_string("bob")).add
+							("test",new JSONentity_string("bob"))
+						)
+					).add
+					("dopey", new JSONentity_string("alfred"))
+				)
+			).toString();
 		
-		
-		
+		System.out.println(result);
 	}
 	
 //	private static String getDescription(int index, PartList parts, String brand)

@@ -32,11 +32,14 @@ import tomoBay.model.sql.queries.factories.InsertPSAStockReqFactory;
 import tomoBay.model.sql.queries.factories.InsertPartFactory;
 import tomoBay.model.sql.queries.factories.InsertPartMappingFactory;
 import tomoBay.model.sql.queries.factories.InsertPrestigeStockReqFactory;
+import tomoBay.model.sql.queries.factories.SelectEbayBuyerFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemSpecificFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemsErrorFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemsFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemsNotInTransactionsFactory;
+import tomoBay.model.sql.queries.factories.SelectEbayOrderByIDFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayOrdersFactory;
+import tomoBay.model.sql.queries.factories.SelectEbayTransactionByIDFactory;
 import tomoBay.model.sql.queries.factories.SelectFordStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectFullOrderLineFactory;
 import tomoBay.model.sql.queries.factories.SelectInvoicedOrdersFactory;
@@ -129,6 +132,12 @@ public class QueryInvoker
 			SELECT_OUT_OF_HOURS_ORDERS,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectUncalculatedOrders}**/
 			SELECT_UNCALCULATED_ORDERS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayBuyer}**/
+			SELECT_EBAY_BUYER,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayTransactionByID}**/
+			SELECT_EBAY_TRANSACTION_BY_ID,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayOrderByID}**/
+			SELECT_EBAY_ORDER_BY_ID,
 			
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo}**/
 			UPDATE_ITEM_BRAND_AND_PARTNO,
@@ -160,7 +169,7 @@ public class QueryInvoker
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsFord}**/
 			CLEAR_PARTS_FORD,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsPrestige}**/
-			CLEAR_PARTS_PRESTIGE
+			CLEAR_PARTS_PRESTIGE, 
 		}
 	/**internal map holds factory objects created static final to make threadsafe**/
 	@SuppressWarnings("serial")
@@ -195,7 +204,10 @@ public class QueryInvoker
 			put(QueryType.SELECT_UNCALCULATED_INVOICES, new SelectUncalculatedInvoicesFactory());
 			put(QueryType.SELECT_OUT_OF_HOURS_ORDERS, new SelectOutOfHoursOrdersFactory());
 			put(QueryType.SELECT_UNCALCULATED_ORDERS, new SelectUncalculatedOrdersFactory());
-
+			put(QueryType.SELECT_EBAY_BUYER, new SelectEbayBuyerFactory());
+			put(QueryType.SELECT_EBAY_TRANSACTION_BY_ID, new SelectEbayTransactionByIDFactory());
+			put(QueryType.SELECT_EBAY_ORDER_BY_ID, new SelectEbayOrderByIDFactory());
+			
 			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
 			put(QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, new UpdateTotalItemsRequiredFactory());
 			put(QueryType.UPDATE_PSA_STOCK_REQ, new UpdatePSAStockReqFactory());

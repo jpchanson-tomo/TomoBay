@@ -103,5 +103,4 @@ public class ViewFactory
 	 */
 	public AbstractView visit(OutOfHoursPresenter outOfHoursPresenter)
 	{return new OutOfHoursView();}
-
 }

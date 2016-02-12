@@ -53,7 +53,7 @@ public final class ComponentPrice
 			int[] prices = new int[childCosts.length];
 			for(int i = 0 ; i < childCosts.length ; ++i)
 			{
-				Double tmp = new Double(((childCosts[i]/totalCost)*(parentPrice)/childQuantities[i]));
+				Double tmp = new Double(((childCosts[i]/totalCost)*(parentPrice/childQuantities[i])));
 				prices[i] = tmp.intValue();
 			}
 			
@@ -83,7 +83,7 @@ public final class ComponentPrice
 			
 			double[] prices = new double[childCosts.length];
 			for(int i = 0 ; i < childCosts.length ; ++i)
-			{prices[i] =  (((childCosts[i]/totalCost)*(parentPrice)/childQuantities[i]));}
+			{prices[i] =  (((childCosts[i]/totalCost)*(parentPrice/childQuantities[i])));}
 			
 			return prices;
 		}

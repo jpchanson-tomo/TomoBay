@@ -1,9 +1,14 @@
 package tomoBay.presenters.orderDetails;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.presenters.AbstractPresenter;
+import tomoBay.presenters.presenterActions.AbstractPresenterAction;
+import tomoBay.presenters.presenterActions.LogFileViewer;
+import tomoBay.presenters.presenterActions.PeriodicServicesController;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -29,7 +34,15 @@ import tomoBay.view.ViewFactory;
  */
 public class OrderDetailsPresenter implements AbstractPresenter
 {
-
+	/**maps the type string to an action**/
+	@SuppressWarnings("serial")
+	private static final Map<String, AbstractPresenterAction> actionMap_M
+				= new HashMap<String, AbstractPresenterAction>()
+				{{
+					put("PeriodicServices", new PeriodicServicesController());
+					put("LOGFILE", new LogFileViewer());
+				}};
+	
 	/* (non-Javadoc)
 	 * @see tomoBay.presenters.AbstractPresenter#present(tomoBay.view.AbstractView)
 	 */
