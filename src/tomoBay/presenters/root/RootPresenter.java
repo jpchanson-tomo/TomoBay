@@ -19,9 +19,9 @@ import java.util.Map;
 
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
-import tomoBay.presenters.presenterActions.MarkAsInvoiced;
-import tomoBay.presenters.presenterActions.MarkAsUninvoiced;
-import tomoBay.presenters.presenterActions.ReScanListing;
+import tomoBay.presenters.presenterActions.concreteActions.MarkAsInvoiced;
+import tomoBay.presenters.presenterActions.concreteActions.MarkAsUninvoiced;
+import tomoBay.presenters.presenterActions.concreteActions.ReScanListing;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
 /**

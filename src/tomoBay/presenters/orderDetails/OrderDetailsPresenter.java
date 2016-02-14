@@ -1,14 +1,4 @@
 package tomoBay.presenters.orderDetails;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.presenters.AbstractPresenter;
-import tomoBay.presenters.presenterActions.AbstractPresenterAction;
-import tomoBay.presenters.presenterActions.LogFileViewer;
-import tomoBay.presenters.presenterActions.PeriodicServicesController;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -24,39 +14,43 @@ import tomoBay.presenters.presenterActions.PeriodicServicesController;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.HashMap;
+import java.util.Map;
+
+import tomoBay.presenters.AbstractPresenter;
+import tomoBay.presenters.presenterActions.AllowedPresenterActions;
+import tomoBay.presenters.presenterActions.PresenterActionFactory;
+import tomoBay.presenters.presenterActions.factories.AbstractPresenterActionFactory;
+import tomoBay.presenters.presenterActions.factories.OrderInfoFactory;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
-
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class OrderDetailsPresenter implements AbstractPresenter
+public final class OrderDetailsPresenter implements AbstractPresenter
 {
 	/**maps the type string to an action**/
 	@SuppressWarnings("serial")
-	private static final Map<String, AbstractPresenterAction> actionMap_M
-				= new HashMap<String, AbstractPresenterAction>()
+	private static final Map<String, AbstractPresenterActionFactory> actionMap_M
+				= new HashMap<String, AbstractPresenterActionFactory>()
 				{{
-					put("PeriodicServices", new PeriodicServicesController());
-					put("LOGFILE", new LogFileViewer());
+					put("OrderInfo", new OrderInfoFactory());
 				}};
 	
+	private static final AllowedPresenterActions allowedList
+				= new AllowedPresenterActions()
+				{{
+					add(PresenterActionFactory.PresenterActions.ORDER_INFO);
+				}};
+				
 	/* (non-Javadoc)
 	 * @see tomoBay.presenters.AbstractPresenter#present(tomoBay.view.AbstractView)
 	 */
 	@Override
 	public String present(AbstractView view, String type, String data)
-	{
-		String output = "";
-		List<String[]> rows = QueryInvoker.execute
-				(QueryInvoker.QueryType.SELECT_FULL_ORDER_LINE,new String[] {data});
-		
-		output += view.format(rows);
-		
-		return output;
-	}
+	{return OrderDetailsPresenter.actionMap_M.get(type).make().execute(data);}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.presenters.AbstractPresenter#accept(tomoBay.view.ViewFactory)

@@ -38,7 +38,7 @@ public class SelectTransactionByOrder implements AbstractDBQuery
 	private Connection connection_M = null;
 	/**SQL query string**/
 //	private static final String query = "SELECT * FROM ebay_transactions WHERE orderID=?;";
-	private static final String query = "SELECT transactionID FROM ebay_transactions WHERE orderID=?;";
+	private static final String query = "SELECT transactionID, itemID FROM ebay_transactions WHERE orderID=?;";
 	
 	/**
 	 * default constructor
@@ -55,13 +55,7 @@ public class SelectTransactionByOrder implements AbstractDBQuery
 	 * 
 	 * The available fields for each element of the string[] are:
 	 * - String[0] = transactionID
-	 * - String[1] = orderID
-	 * - String[2] = itemID
-	 * - String[3] = quantity
-	 * - String[4] = price
-	 * - String[5] = picked
-	 * - String[6] = packed
-	 * - String[7] = shipped
+	 * - String[1] = itemID
 	 * 
 	 * @throws SQLException
 	 */
@@ -91,10 +85,10 @@ public class SelectTransactionByOrder implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[1];
+			String[] cols = new String[2];
 			cols[0] = results.getString("transactionID");
 //			cols[1] = results.getString("orderID");
-//			cols[2] = results.getString("itemID");
+			cols[1] = results.getString("itemID");
 //			cols[3] = results.getString("quantity");
 //			cols[4] = results.getString("price");
 			rows.add(cols);

@@ -16,13 +16,14 @@ package tomoBay.presenters.admin;
  */
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
-import tomoBay.presenters.presenterActions.LogFileViewer;
-import tomoBay.presenters.presenterActions.PeriodicServicesController;
+import tomoBay.presenters.presenterActions.concreteActions.LogFileViewer;
+import tomoBay.presenters.presenterActions.concreteActions.PeriodicServicesController;
 /**
  *
  * @author Jan P.C. Hanson

@@ -1,10 +1,8 @@
 package tomoBay;
 import org.apache.log4j.Logger;
 
-import tomoBay.model.dataTypes.json.JSONentity;
-import tomoBay.model.dataTypes.json.JSONentity_array;
-import tomoBay.model.dataTypes.json.JSONentity_object;
-import tomoBay.model.dataTypes.json.JSONentity_string;
+import tomoBay.model.dataTypes.ServerStatus;
+import tomoBay.view.HttpServer;
 /**
  * The entry point into the program, this is a stopgap solution to get invoices ,of orders that
  * are completely fulfillable, printed automatically
@@ -18,12 +16,12 @@ public class MAIN
 	
 	public static void main(String[] args) throws Exception
 	{
-//		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
-//		
-//		log.warn("*******************************PROGRAM START*******************************");
-//		final HttpServer server = new HttpServer();
-//		server.start(1337);
-//		ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
+		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
+		
+		log.warn("*******************************PROGRAM START*******************************");
+		final HttpServer server = new HttpServer();
+		server.start(1337);
+		ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
 //		
 //		final ServiceScheduler services = new ServiceScheduler(6);
 ////		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
@@ -92,32 +90,11 @@ public class MAIN
 //		System.out.println(invoice.getLineItem(1).description(invoice));
 //		System.out.println(invoice.getLineItem(1).quantity(invoice));
 //		System.out.println(invoice.getLineItem(1).price());
-		
-		String result =
-		new JSONentity_object().add
-			("invoice", new JSONentity_object().add
-					
-				("orderInfo", new JSONentity_object().add
-					("test",new JSONentity_string("bob")).add
-					("test1", new JSONentity_string("kevin"))
-				).add
-				
-				("buyerInfo", new JSONentity_object().add
-					("dopey", new JSONentity_string("alfred")).add
-					("array", new JSONentity_array().add
-						(null, new JSONentity_string("jupter")).add
-						(null, new JSONentity_string("hermes")).add
-						(null, new JSONentity_string("apollo")).add
-						("test", new JSONentity_object().add
-							("test",new JSONentity_string("bob")).add
-							("test",new JSONentity_string("bob"))
-						)
-					).add
-					("dopey", new JSONentity_string("alfred"))
-				)
-			).toString();
-		
-		System.out.println(result);
+//		
+//		OrderInfo test = new OrderInfo();
+//		System.out.println(test.execute("202228298016"));
+//		
+//		System.out.println(result);
 	}
 	
 //	private static String getDescription(int index, PartList parts, String brand)

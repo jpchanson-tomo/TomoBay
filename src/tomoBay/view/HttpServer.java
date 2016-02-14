@@ -18,13 +18,18 @@ import java.net.MalformedURLException;
 
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.server.HttpConfiguration;
+import org.eclipse.jetty.server.HttpConnectionFactory;
+import org.eclipse.jetty.server.SecureRequestCustomizer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.server.SslConnectionFactory;
 import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.util.resource.Resource;
+import org.eclipse.jetty.util.ssl.SslContextFactory;
 /**
  * This class defines the setup of the Jetty embedded http server, servlets, resources, security
  * and many other features can be introduced from here.
@@ -51,8 +56,25 @@ public class HttpServer
 	public void start(int port) throws MalformedURLException
     {
 		Server server = new Server();
-		ServerConnector connector = new ServerConnector(server);
-		connector.setPort(port);
+//		ServerConnector connector = new ServerConnector(server);
+//		connector.setPort(port);
+		
+		
+		HttpConfiguration https = new HttpConfiguration();
+		https.addCustomizer(new SecureRequestCustomizer());
+		SslContextFactory sslContextFactory = new SslContextFactory();
+		sslContextFactory.setKeyStorePath("./keystore/keystore.jks");
+		sslContextFactory.setKeyStorePassword("h4l1but3.14159_+-=");
+		sslContextFactory.setKeyManagerPassword("h4l1but3.14159_+-=");
+		ServerConnector sslConnector = new ServerConnector(server,
+										new SslConnectionFactory(sslContextFactory, "http/1.1"),
+										new HttpConnectionFactory(https));
+		sslConnector.setPort(443);
+		
+		
+		
+		
+		
 		//set up context handlers
 		ContextHandler dataServlet = setUpDataServletHandler();
 		ContextHandler guiHandler = setUpGuiHandler();
@@ -61,7 +83,7 @@ public class HttpServer
 		contexts.setHandlers(new Handler[] { guiHandler, dataServlet});
 		//give handler collection to server
 		server.setHandler(contexts);
-		server.setConnectors(new Connector[] {connector});
+		server.setConnectors(new Connector[] {sslConnector});
 		
         try
         {

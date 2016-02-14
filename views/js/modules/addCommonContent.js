@@ -5,6 +5,6 @@
 $(document).ready(function()
 {
 	/**load the navbar**/
-	$(".navibar").load("templates/navbar.html");
+	$(".navibar").load("/templates/navbar.html");
 });
 //////////////////////////////////ENDOF ADD COMMON CONTENT/////////////////////////////////////

@@ -12,3 +12,27 @@ table
 	margin-left:10px;
 }
 
+.transactionTable
+{
+	margin-bottom:0px;
+	background:lightblue;
+}
+
+.partsTable
+{
+	background:lightgreen;
+}
+
+body
+{
+	bottom:0px;
+}
+
+.content
+{
+	position:absolute;
+	top:60px;
+	bottom:350px;
+	right:0px;
+	left:0px;
+}

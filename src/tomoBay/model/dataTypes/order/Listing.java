@@ -34,6 +34,8 @@ public class Listing
 	private final Part[] parts_M;
 	/**the quantities fo the parts stored in parts_M**/
 	private final int[] partQtys_M;
+	/**the composite part number**/
+	private final String partNos;
 	
 	
 	public Listing(long listingID)
@@ -41,6 +43,7 @@ public class Listing
 		String[] listingInfo = Listing.getListingInfo(listingID);
 		this.listingID_M = listingID;
 		this.title_M = listingInfo[1];
+		this.partNos = listingInfo[4];
 		
 		PartList partsTmp = new PartList(listingInfo[4]);
 		Part[] partsArray = new Part[partsTmp.size()];
@@ -73,6 +76,14 @@ public class Listing
 	 * @return int representing the number of parts associated with this listing.
 	 */
 	public int noOfParts() {return this.parts_M.length;}
+	
+	/**
+	 * retrieve the part specified in the parameter
+	 * @param index the index of the part to retrieve, you can check how many parts exist in
+	 * this listing by calling noOfParts();
+	 * @return Part representing the specified part.
+	 */
+	public String partNos() {return this.partNos;}
 	
 	/**
 	 * retrieve the part specified in the parameter

@@ -21,7 +21,7 @@ import java.util.Iterator;
  * @author Jan P.C. Hanson
  *
  */
-public class JSONentity_object extends JSONentity
+public final class JSONentity_object extends JSONentity
 {
 	
 	/**
@@ -37,11 +37,11 @@ public class JSONentity_object extends JSONentity
 	public String toString()
 	{
 		String objBody="{\n";
-		Iterator<JSONentity> jsonIter = super.children_M.iterator();
+		Iterator<String> jsonIter = super.children_M.iterator();
 		for(int i = 0 ; i < super.children_M.size() ; ++i)
 		{
-			objBody+=super.children_M.getKeybyIndex(i) + ":";
-			objBody+=super.children_M.getValueByIndex(i).toString();
+			objBody+=super.children_M.getKeybyIndex(i);
+			objBody+=super.children_M.getValueByIndex(i);
 			jsonIter.next();
 			if(jsonIter.hasNext()){objBody+=",\n";}
 		}

@@ -61,7 +61,6 @@ public class Pickeablity
 		else if (itemStatus.size()==1 && itemStatus.contains(false)) {result=PickeableStatus.UNPICKEABLE;}
 		else if (itemStatus.size()==2){result = PickeableStatus.PARTIAL;}
 		else {result = PickeableStatus.ERROR;}
-		
 		return result;
 	}
 	
@@ -76,7 +75,7 @@ public class Pickeablity
 	{
 		for (int i = 0 ; i < transactionVar.size() ; ++i)
 		{
-			String tmpID = String.valueOf(transactionVar.get(i)[2]);
+			String tmpID = String.valueOf(transactionVar.get(i)[1]);
 			
 			List<String[]> tmpList 
 			= QueryInvoker.execute(QueryType.SELECT_EBAY_ITEM_SPECIFIC, 

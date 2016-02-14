@@ -51,6 +51,7 @@ public class DataServlet extends HttpServlet
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException
 	{
+		System.out.println(request.getHeader("referer"));
 		PrintWriter out = response.getWriter();
 		String data = request.getParameter("data");
 		String type = request.getParameter("type");

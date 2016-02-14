@@ -47,8 +47,8 @@ public class StandardInvoiceLine extends AbstractLineItem
 		double priceExVat = VAT.subtract(invoice.orderInfo().transaction(super.transactionIndex_M).transactionPrice());
 		
 		double result = (costOfItem/totalCost)*(priceExVat/super.quantity(invoice));
-		System.out.println("("+costOfItem +"/"+totalCost+") * ("+priceExVat+" / "+super.quantity(invoice)+") = "+result);
-		System.out.println("=>"+result*super.quantity(invoice));
+//		System.out.println("("+costOfItem +"/"+totalCost+") * ("+priceExVat+" / "+super.quantity(invoice)+") = "+result);
+//		System.out.println("=>"+result*super.quantity(invoice));
 		return GBP.toPennies(result);
 	}
 }

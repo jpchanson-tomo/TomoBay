@@ -22,7 +22,7 @@ import tomoBay.model.dataTypes.DualList;
  */
 public abstract class JSONentity
 {
-	protected DualList<String, JSONentity> children_M;
+	protected DualList<String, String> children_M;
 	
 	/**
 	 * 
@@ -30,7 +30,33 @@ public abstract class JSONentity
 	public JSONentity()
 	{
 		super();
-		this.children_M = new DualList<String, JSONentity>();
+		this.children_M = new DualList<String, String>();
+	}
+	
+	/**
+	 * 
+	 * @param key
+	 * @param value
+	 * @return
+	 */
+	public JSONentity addPreFormatted(String key, String value)
+	{
+		if(key.isEmpty() || key==null) {this.children_M.put("", value);}
+		else{this.children_M.put("\""+key+"\":",value);}
+		return this;
+	}
+	
+	/**
+	 * 
+	 * @param key
+	 * @param value
+	 * @return
+	 */
+	public JSONentity addLeaf(String key, String value)
+	{
+		if(key.isEmpty() || key==null) {this.children_M.put("", "\""+value+"\"");}
+		else{this.children_M.put("\""+key+"\":", "\""+value+"\"");}
+		return this;
 	}
 	
 	/**
@@ -38,8 +64,12 @@ public abstract class JSONentity
 	 * @param key
 	 * @param value
 	 */
-	public JSONentity add(String key, JSONentity value)
-	{this.children_M.put("\""+key+"\"", value);return this;}
+	public JSONentity addBranch(String key, JSONentity value)
+	{
+		if(key.isEmpty() || key==null) {this.children_M.put("", value.toString());}
+		else{this.children_M.put("\""+key+"\":", value.toString());}
+		return this;
+	}
 	
 	/**
 	 * 
