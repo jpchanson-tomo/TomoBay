@@ -25,7 +25,7 @@ import com.ebay.soap.eBLBaseComponents.CancelStatusCodeType;
  * @author Jan P.C. Hanson
  *
  */
-public class EbayOrderCancellationStatus
+public final class EbayOrderCancellationStatus
 {
 	/**
 	 * map of status codes to boolean values, used to define the types of cancellation status

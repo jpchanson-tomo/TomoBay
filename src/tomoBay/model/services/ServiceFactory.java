@@ -24,6 +24,7 @@ import tomoBay.model.services.factories.EmailErrorsServiceFactory;
 import tomoBay.model.services.factories.IndividualItemRefreshServiceFactory;
 import tomoBay.model.services.factories.InvoiceServiceFactory;
 import tomoBay.model.services.factories.OutOfHoursServiceFactory;
+import tomoBay.model.services.factories.ReScanBuyerServiceFactory;
 import tomoBay.model.services.factories.ReScanErrorsServiceFactory;
 import tomoBay.model.services.factories.StockUpdateServiceFactory;
 import tomoBay.model.services.factories.TestServiceFactory;
@@ -35,17 +36,17 @@ import tomoBay.model.services.factories.TestServiceFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class ServiceFactory
+public final class ServiceFactory
 {
 	/**defensive enum to limit the inputs to the make method**/
 	public enum ServiceType 
 			{
 				EBAY_SERVICE, TEST_SERVICE, STOCK_UPDATE_SERVICE, INVOICE_SERVICE, CHECK_ERRORS,
-				RESCAN_ERRORS_SERVICE, OUT_OF_HOURS_SERVICE,
+				RESCAN_ERRORS_SERVICE, OUT_OF_HOURS_SERVICE
 			}
 	public enum ConfiguredServiceType
 			{
-				INDVIDUAL_ITEM_REFRESH_SERVICE, EMAIL_ERRORS_SERVICE
+				INDVIDUAL_ITEM_REFRESH_SERVICE, EMAIL_ERRORS_SERVICE, RE_SCAN_BUYER_SERVICE
 			}
 	/**internal map holds service factories**/
 	@SuppressWarnings("serial")
@@ -67,6 +68,7 @@ public class ServiceFactory
 	{{
 		put(ConfiguredServiceType.INDVIDUAL_ITEM_REFRESH_SERVICE, new IndividualItemRefreshServiceFactory());
 		put(ConfiguredServiceType.EMAIL_ERRORS_SERVICE, new EmailErrorsServiceFactory());
+		put(ConfiguredServiceType.RE_SCAN_BUYER_SERVICE, new ReScanBuyerServiceFactory());
 	}};		
 
 	/**

@@ -20,7 +20,7 @@ function colourCode(green, red, amber, selector)
 		{pickeable[i].parentElement.style.color="orange";}
 		else
 		{
-			pickeable[i].parentElement.style.color="red";
+			pickeable[i].parentElement.style.color="purple";
 			blink(pickeable[i]);
 		}
 	}

@@ -1,4 +1,4 @@
-package tomoBay.model.dataTypes.financial.SalesOrderDayBook;
+package tomoBay.model.dataTypes.financial.SalesOrderDayBook.factories;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,27 +14,20 @@ package tomoBay.model.dataTypes.financial.SalesOrderDayBook;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.model.dataTypes.order.Order;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class InvoiceFactory
+public interface AbstractSalesDayBookLineFactory
 {
-	/**
-	 * default ctor
-	 */
-	public InvoiceFactory()
-	{super();}
 
 	/**
-	 * 
-	 * @param orderID
-	 * @return
+	 * make an AbstractSalesDayBookLine specific to this child class.
+	 * @return AbstractSalesDayBookLine specified by the derived class
 	 */
-	public AbstractSalesDayBookLine make(String orderID)
-	{
-		return null;
-	}
+	public AbstractSalesDayBookLine make(Order order);
+	
 }

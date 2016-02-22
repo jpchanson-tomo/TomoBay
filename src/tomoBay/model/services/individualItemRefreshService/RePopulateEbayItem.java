@@ -28,7 +28,7 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
  * @author Jan P.C. Hanson
  *
  */
-public class RePopulateEbayItem
+public final class RePopulateEbayItem
 {
 	/**
 	 * default ctor

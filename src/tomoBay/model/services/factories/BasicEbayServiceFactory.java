@@ -21,7 +21,7 @@ import tomoBay.model.services.basicEbayUpdateService.BasicEbayUpdateService;
  * @author Jan P.C. Hanson
  *
  */
-public class BasicEbayServiceFactory implements AbstractServiceFactory
+public final class BasicEbayServiceFactory implements AbstractServiceFactory
 {
 	/* (non-Javadoc)
 	 * @see openDMS.model.services.factories.AbstractServiceFactory#make()

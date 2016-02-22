@@ -21,7 +21,7 @@ import tomoBay.model.services.invoiceOrdersService.InvoiceService;
  * @author Jan P.C. Hanson
  *
  */
-public class InvoiceServiceFactory implements AbstractServiceFactory
+public final class InvoiceServiceFactory implements AbstractServiceFactory
 {
 
 	/* (non-Javadoc)

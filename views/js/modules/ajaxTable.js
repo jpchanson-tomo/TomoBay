@@ -1,32 +1,12 @@
 //////////////////////////////////STARTOF AJAX TABLE///////////////////////////////////////////
-/**********************************************************************************************
- * 
- * @param resultSelector
- * @param tableColumns
- * @param sortableColumns
- * @param queryString
- * @param headerContent
- * @param footerContent
- * @returns void
- *********************************************************************************************/
-function ajaxTable(resultSelector, tableColumns, sortableColumns, queryString, footerContent, headerContent)
+
+function ajaxTable2(resultSelector, tableColumns, sortableColumns, json, footerContent, headerContent, callback)
 {
 	insertHTMLTemplate(resultSelector, tableColumns, sortableColumns, footerContent, headerContent);
-	var options;
-	var values;
-	var hackerList;
-	
-
-	$(".spinnerDiv").html("<img class='spinner' src='images/ajax-loader.gif' alt='Wait' />");
-	$(".spinnerDiv").append("<p class='spinner-text'><big>Loading data from Server</big></p>");
-	$.get(queryString, function(data, textStatus)
-	{
-		$(".spinner").hide();
-		$(".spinner-text").hide();
-		options = {item: 'hacker-item'};
-		values = JSON.parse(data);
-		hackerList = new List('hacker-list', options, values.tableData);
-	});
+	var options= {item: 'hacker-item'};
+	var values = json;
+	var hackerList = new List('hacker-list', options, values.tableData);
+	if(callback!=null){callback();}
 }
 
 /**
@@ -51,13 +31,15 @@ function ajaxTable(resultSelector, tableColumns, sortableColumns, queryString, f
 	$(".spinnerDiv").append("<p class='spinner-text'><big>Loading data from Server</big></p>");
 	$.get(queryString, function(data, textStatus)
 	{
-		$(".spinner").hide();
-		$(".spinner-text").hide();
+		
 		options = {item: 'hacker-item'};
 		values = JSON.parse(data);
+		$(".spinner").hide();
+		$(".spinner-text").hide();
 		hackerList = new List('hacker-list', options, values.tableData);
-		callback();
+		if(callback!=null){callback();}
 	});
+	return values;
 }
 
 /**********************************************************************************************

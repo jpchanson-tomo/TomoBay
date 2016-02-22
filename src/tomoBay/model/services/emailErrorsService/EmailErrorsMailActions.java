@@ -34,7 +34,7 @@ import tomoBay.model.services.emailErrorsService.EmailErrorsService.emailDataTyp
  * @author Jan P.C. Hanson
  *
  */
-public class EmailErrorsMailActions
+public final class EmailErrorsMailActions
 {
 	/**the email Director**/
 	private EmailDirector mailManager_M;

@@ -32,7 +32,7 @@ import tomoBay.model.net.email.MailServerSend;
  * @author Jan P.C. Hanson
  *
  */
-public class Mail
+public final class Mail
 {
 	public Mail()
 	{super();}

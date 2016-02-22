@@ -22,7 +22,7 @@ import tomoBay.model.winstock.Stock;
  * @author Jan P.C. Hanson
  *
  */
-public class ReScanErrorsWinstockActions
+public final class ReScanErrorsWinstockActions
 {
 	/**
 	 * default ctor

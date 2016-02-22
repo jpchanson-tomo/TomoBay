@@ -1,6 +1,5 @@
 package tomoBay.exceptions;
 
-import com.sun.tools.ws.wsdl.document.jaxws.Exception;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -16,12 +15,13 @@ import com.sun.tools.ws.wsdl.document.jaxws.Exception;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public class JSONentityException extends RuntimeException
 {
 

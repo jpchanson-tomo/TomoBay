@@ -21,7 +21,7 @@ import tomoBay.model.services.testService.TestService;
  * @author Jan P.C. Hanson
  *
  */
-public class TestServiceFactory implements AbstractServiceFactory
+public final class TestServiceFactory implements AbstractServiceFactory
 {
 	/* (non-Javadoc)
 	 * @see openDMS.model.services.factories.AbstractServiceFactory#make()

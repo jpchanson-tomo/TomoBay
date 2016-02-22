@@ -21,7 +21,7 @@ import tomoBay.model.services.stockUpdateService.StockUpdateService;
  * @author Jan P.C. Hanson
  *
  */
-public class StockUpdateServiceFactory implements AbstractServiceFactory
+public final class StockUpdateServiceFactory implements AbstractServiceFactory
 {
 	/**
 	 * default ctor

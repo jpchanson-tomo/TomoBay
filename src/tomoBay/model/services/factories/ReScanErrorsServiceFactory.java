@@ -23,7 +23,7 @@ import tomoBay.model.services.reScanErrorsService.ReScanErrorsService;
  * @author Jan P.C. Hanson
  *
  */
-public class ReScanErrorsServiceFactory implements AbstractServiceFactory
+public final class ReScanErrorsServiceFactory implements AbstractServiceFactory
 {
 	/**
 	 * default ctor

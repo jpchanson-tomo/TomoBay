@@ -25,7 +25,7 @@ import tomoBay.model.services.AbstractService;
  * @author Jan P.C. Hanson
  *
  */
-public class PopulateInvoicesService extends AbstractService
+public final class PopulateInvoicesService extends AbstractService
 {
 	static private Logger log = Logger.getLogger(PopulateInvoicesService.class.getName());
 	

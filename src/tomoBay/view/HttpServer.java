@@ -56,12 +56,36 @@ public class HttpServer
 	public void start(int port) throws MalformedURLException
     {
 		Server server = new Server();
-//		ServerConnector connector = new ServerConnector(server);
-//		connector.setPort(port);
 		
+		//set up context handlers
+		ContextHandler dataServlet = setUpDataServletHandler();
+		ContextHandler guiHandler = setUpGuiHandler();
+		ServerConnector connector = sslConnector(server, port);
+		//add handlers to collection
+		ContextHandlerCollection contexts = new ContextHandlerCollection();
+		contexts.setHandlers(new Handler[] { guiHandler, dataServlet});
+		//give handler collection to server
+		server.setHandler(contexts);
+		server.setConnectors(new Connector[] {connector});
 		
+        try{server.start();/**server.join();**/}
+        
+        catch(InterruptedException ie){ie.printStackTrace();}
+        catch(Exception e){e.printStackTrace();}
+    }
+	
+	/**
+	 * set up the ssl server connector
+	 * @param server the server that this connector should connect to
+	 * @param port the port that this connector should listen on
+	 * @return ServerConnector the server connector
+	 */
+	private static ServerConnector sslConnector(Server server, int port)
+	{
 		HttpConfiguration https = new HttpConfiguration();
 		https.addCustomizer(new SecureRequestCustomizer());
+		https.setSendServerVersion(false);
+		https.setSendXPoweredBy(false);
 		SslContextFactory sslContextFactory = new SslContextFactory();
 		sslContextFactory.setKeyStorePath("./keystore/keystore.jks");
 		sslContextFactory.setKeyStorePassword("h4l1but3.14159_+-=");
@@ -69,37 +93,9 @@ public class HttpServer
 		ServerConnector sslConnector = new ServerConnector(server,
 										new SslConnectionFactory(sslContextFactory, "http/1.1"),
 										new HttpConnectionFactory(https));
-		sslConnector.setPort(443);
-		
-		
-		
-		
-		
-		//set up context handlers
-		ContextHandler dataServlet = setUpDataServletHandler();
-		ContextHandler guiHandler = setUpGuiHandler();
-		//add handlers to collection
-		ContextHandlerCollection contexts = new ContextHandlerCollection();
-		contexts.setHandlers(new Handler[] { guiHandler, dataServlet});
-		//give handler collection to server
-		server.setHandler(contexts);
-		server.setConnectors(new Connector[] {sslConnector});
-		
-        try
-        {
-        	server.start();
-//        	server.join();
-        }
-        catch(InterruptedException ie)
-        {
-        	ie.printStackTrace();
-        }
-        
-        catch(Exception e)
-        {
-        	e.printStackTrace();
-        }
-    }
+		sslConnector.setPort(port);
+		return sslConnector;
+	}
 	
 	/**
      * do setup for the servlet handler
@@ -108,7 +104,7 @@ public class HttpServer
     private static ContextHandler setUpDataServletHandler()
     {
     	ContextHandler context0 = new ContextHandler();
-		context0.setContextPath("/");        
+		context0.setContextPath("/");
 		ServletContextHandler serv = new ServletContextHandler();
 		serv.addServlet(DataServlet.class, "/res/*");
 		context0.setHandler(serv);
@@ -122,7 +118,7 @@ public class HttpServer
     private static ContextHandler setUpGuiHandler() throws MalformedURLException
     {
     	ContextHandler context1 = new ContextHandler();
-		context1.setContextPath("/");        
+		context1.setContextPath("/");
 		ResourceHandler res = new ResourceHandler();
 		res.setBaseResource(Resource.newResource("./views/"));
 		context1.setHandler(res);

@@ -65,7 +65,7 @@ public class Transaction
 	 * retrieve the price associated with this transaction
 	 * @return double representing the transaction price
 	 */
-	public double transactionPrice() {return this.price_M;}
+	public double transactionPrice() {return this.price_M*this.qty_M;}
 	
 	/**
 	 * retrieve the shipping cost associated with this transaction

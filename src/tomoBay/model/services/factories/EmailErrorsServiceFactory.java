@@ -21,7 +21,7 @@ import tomoBay.model.services.emailErrorsService.EmailErrorsService;
  * @author Jan P.C. Hanson
  *
  */
-public class EmailErrorsServiceFactory implements AbstractServiceFactory
+public final class EmailErrorsServiceFactory implements AbstractServiceFactory
 {
 	/**
 	 * default ctor

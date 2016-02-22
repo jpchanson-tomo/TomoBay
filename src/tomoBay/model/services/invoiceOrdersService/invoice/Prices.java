@@ -29,7 +29,7 @@ import tomoBay.model.winstock.Stock;
  * @author Jan P.C. Hanson
  *
  */
-public class Prices
+public final class Prices
 {
 	static private Logger log = Logger.getLogger(Prices.class.getName());
 	

@@ -42,7 +42,7 @@ import com.ebay.soap.eBLBaseComponents.OrderType;
  * @author Jan P.C. Hanson
  *
  */
-public class OrdersTable
+public final class OrdersTable
 {
 	/**
 	 * default ctor

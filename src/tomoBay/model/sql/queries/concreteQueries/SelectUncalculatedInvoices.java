@@ -30,7 +30,7 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectUncalculatedInvoices implements AbstractDBQuery
+public  final class SelectUncalculatedInvoices implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
 	private PreparedStatement selectStatement_M = null;

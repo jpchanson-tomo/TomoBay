@@ -30,7 +30,7 @@ import tomoBay.model.eBayAPI.ItemCall;
  * @author Jan P.C. Hanson
  *
  */
-public class ItemSpecifics
+public final class ItemSpecifics
 {
 	/**holder containing the credentials to access the eBay API**/
 	private final String[]credentials_M;

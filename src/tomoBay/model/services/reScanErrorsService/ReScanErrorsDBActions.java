@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
  * @author Jan P.C. Hanson
  *
  */
-public class ReScanErrorsDBActions
+public final class ReScanErrorsDBActions
 {
 	/**
 	 * default ctor

@@ -36,7 +36,7 @@ public final class JSONentity_object extends JSONentity
 	 */
 	public String toString()
 	{
-		String objBody="{\n";
+		String objBody="\n{";
 		Iterator<String> jsonIter = super.children_M.iterator();
 		for(int i = 0 ; i < super.children_M.size() ; ++i)
 		{

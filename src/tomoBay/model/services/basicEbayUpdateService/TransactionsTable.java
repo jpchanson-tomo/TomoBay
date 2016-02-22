@@ -27,7 +27,7 @@ import com.ebay.soap.eBLBaseComponents.TransactionType;
  * @author Jan P.C. Hanson
  *
  */
-public class TransactionsTable
+public final class TransactionsTable
 {
 	/**
 	 * default ctor

@@ -30,7 +30,7 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
  * @author Jan P.C. Hanson
  *
  */
-public class ValidUninvoicedOrderList
+public final class ValidUninvoicedOrderList
 {
 	/**the list of orders**/
 	private List<String[]> orderList_M;

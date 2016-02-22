@@ -31,7 +31,7 @@ import com.ebay.soap.eBLBaseComponents.ItemType;
  * @author Jan P.C. Hanson
  *
  */
-public class ReCalculateRequiredStock
+public final class ReCalculateRequiredStock
 {
 	/**
 	 * default ctor

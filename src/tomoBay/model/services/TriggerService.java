@@ -41,7 +41,7 @@ import java.util.concurrent.TimeUnit;
  * @author Jan P.C. Hanson
  *
  */
-public class TriggerService
+public final class TriggerService
 {
 	/**the number of core threads**/
 	private static final int INITIALTHREADS = 2;
@@ -72,5 +72,31 @@ public class TriggerService
 //		TriggerService.THREADPOOLEXECUTOR.execute(service);
 		Future<String> result = TriggerService.THREADPOOLEXECUTOR.submit(service);
 		return result;
+	}
+
+	/**
+	 * tries to gracefully shutdown until the number of seconds in the first timeout has elapsed.
+	 * if this fails it then waits until the second timeout has elapsed and tries an immediate
+	 * shutdown. if both of these fail this method will return false
+	 * @param firstTimeout the number of seconds to allow the threadpool to shutdown gracefully
+	 * @param secondTimeout the number of seconds after the first timeout to allow before
+	 * shutting down aggressively.
+	 * @return false if fails to shutdown, true if threadpool shuts down.
+	 * @throws InterruptedException
+	 */
+	public static boolean shutdown(int firstInterval, int secondInterval) throws InterruptedException
+	{
+		TriggerService.THREADPOOLEXECUTOR.shutdown();
+		if(TriggerService.THREADPOOLEXECUTOR.awaitTermination(30, TimeUnit.SECONDS)==true)
+		{
+			TriggerService.THREADPOOL.clear();return true;
+		}
+		else if(TriggerService.THREADPOOLEXECUTOR.awaitTermination(31, TimeUnit.SECONDS)==true)
+		{
+			TriggerService.THREADPOOLEXECUTOR.shutdownNow();
+			TriggerService.THREADPOOL.clear();
+			return true;
+		}
+		else {return false;}
 	}
 }

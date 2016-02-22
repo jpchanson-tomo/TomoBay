@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -52,6 +53,13 @@ public class DataServlet extends HttpServlet
 			throws ServletException, IOException
 	{
 		System.out.println(request.getHeader("referer"));
+		Cookie c = new Cookie("test", "testing 123");
+		c.setMaxAge(60*60);
+		c.setHttpOnly(true);
+		c.setSecure(true);
+		response.addCookie(c);
+		
+		
 		PrintWriter out = response.getWriter();
 		String data = request.getParameter("data");
 		String type = request.getParameter("type");

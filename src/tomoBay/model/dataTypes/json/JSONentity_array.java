@@ -16,8 +16,6 @@ package tomoBay.model.dataTypes.json;
  */
 
 import java.util.Iterator;
-
-import tomoBay.model.dataTypes.DualList;
 /**
  *
  * @author Jan P.C. Hanson

@@ -93,7 +93,7 @@ public class Part
 		String result = this.winstock_M.requestDescription(partNo, BrandToCode.convert(brand));
 		int endOfString = result.indexOf("�");
 //		int endOfString = result.indexOf("œ");
-		result = result.substring(0, endOfString);
+		if (result.contains("�")) {result = result.substring(0, endOfString);}
 		return result;
 		
 	}

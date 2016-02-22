@@ -73,6 +73,13 @@ public abstract class JSONentity
 	
 	/**
 	 * 
+	 * @return
+	 */
+	public JSONentity clear()
+	{this.children_M.clear();return this;}
+	
+	/**
+	 * 
 	 */
 	@Override
 	public abstract String toString();

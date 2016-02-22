@@ -24,7 +24,7 @@ import java.util.Map;
  * @author Jan P.C. Hanson
  *
  */
-public class TransactionData
+public final class TransactionData
 {
 	private Map<String, List<String[]>> OrderToTransactions_M;
 	

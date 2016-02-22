@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
  * @author Jan P.C. Hanson
  *
  */
-public class DB
+public final class DB
 {
 	/**
 	 * default ctor

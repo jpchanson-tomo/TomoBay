@@ -29,7 +29,7 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectEbayItems implements AbstractDBQuery
+public  final class SelectEbayItems implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
 	private PreparedStatement selectStatement_M = null;

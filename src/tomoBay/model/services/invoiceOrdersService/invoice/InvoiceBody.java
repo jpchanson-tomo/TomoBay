@@ -26,7 +26,7 @@ import tomoBay.model.winstock.payloads.PayloadType;
  * @author Jan P.C. Hanson
  *
  */
-public class InvoiceBody
+public final class InvoiceBody
 {
 	/****/
 	private List<String[]> dataFields_M;

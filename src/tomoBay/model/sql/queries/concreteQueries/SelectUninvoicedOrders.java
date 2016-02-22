@@ -31,7 +31,7 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectUninvoicedOrders implements AbstractDBQuery
+public  final class SelectUninvoicedOrders implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
 	private PreparedStatement statement_M = null;

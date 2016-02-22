@@ -57,7 +57,7 @@ function LogFile(minRefreshTime, logViewSelector, statusSelector)
 		{
 			setTimeout(function()
 			{
-				$.get("/res/?page=ADMIN_PRESENTER&type=LOGFILE", function(data, textStatus)
+				$.get("/res/?page=ADMIN_PRESENTER&type=LOG_FILE_VIEWER", function(data, textStatus)
 				{
 					logFile_M = JSON.parse("{\"log\":["+data+"]}");
 					$(logViewSelector).html(enumerateLogFile(logFile_M));

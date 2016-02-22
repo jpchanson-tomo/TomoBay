@@ -25,7 +25,7 @@ import com.ebay.soap.eBLBaseComponents.OrderType;
  * @author Jan P.C. Hanson
  *
  */
-public class BuyersTable
+public final class BuyersTable
 {
 	/**
 	 * default ctor
@@ -88,11 +88,11 @@ public class BuyersTable
 		String[] insertVals = 
 			{
 				order.getBuyerUserID(),
-				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getReferenceID()+"\n",
-				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getName()+"\n",
-				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStreet1()+"\n",
-				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getCityName()+"\n",
-				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStateOrProvince()+"\n",
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getReferenceID(),
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getName(),
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStreet1(),
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getCityName(),
+				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStateOrProvince(),
 				order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getPostalCode(),
 				order.getTransactionArray().getTransaction(0).getBuyer().getEmail(),
 				order.getShippingAddress().getPhone()

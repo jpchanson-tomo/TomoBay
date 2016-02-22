@@ -26,7 +26,7 @@ import tomoBay.exceptions.DualListException;
  * @author Jan P.C. Hanson
  *
  */
-public class DualList<K,V> implements Iterable
+public class DualList<K,V> implements Iterable<V>
 {
 	/**the key list**/
 	private List<K> key_M;

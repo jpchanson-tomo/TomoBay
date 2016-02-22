@@ -32,7 +32,7 @@ import tomoBay.model.winstock.response.AbstractWinstockCommandResponse;
  * @author Jan P.C. Hanson
  *
  */
-public class Invoice
+public final class Invoice
 {
 	/**internal var holding all items in a particular order to be invoiced**/
 	static private Logger log = Logger.getLogger(Invoice.class.getName());

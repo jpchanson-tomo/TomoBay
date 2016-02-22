@@ -11,11 +11,12 @@ $(document).ready(function(){
 	var orderId = window.location.href;
 	var start = orderId.indexOf("?");
 	var end = orderId.lastIndexOf("?");
-	$.get("/res/?page=ORDER_DETAILS_PRESENTER&type=OrderInfo&data="+orderId.slice(start+1, end), function(data, textStatus)
+	$.get("/res/?page=ORDER_DETAILS_PRESENTER&type=ORDER_INFO&data="+orderId.slice(start+1, end), function(data, textStatus)
 	{
 		var json = JSON.parse(data);
 		insertCommonJSON(json);
 		insertTransactionData(json);
+		grandTotal();
 	});
 	
 	
@@ -43,61 +44,90 @@ function insertCommonJSON(json)
 
 function insertTransactionData(json)
 {
+	var tableBody="";
 	for(var i = 0 ; i < json.order.transactionInfo.length ; ++i)
 	{
 		var transactionHeader =
-		"<table class='table table-condensed transactionTable'>"+
-			"<tr>"+
+		"<table class='table table-condensed '><thead>"+
+			"<tr class='transactionTable'>"+
 			"<th>itemID</th>"+
 			"<th>PartNo's</th>"+
-			"<th>Purchased Qty</th>"+
 			"<th>Title</th>"+
 			"<th>Brand</th>"+
+			"<th>Purchased Qty</th>"+
 			"<th>SubTotal</th>"+
 			"<th>Total</th>"+
 			"</tr>"+
-			"";
+			"</thead>";
 		
 		var transactionLine =
-			"<tr>"+
-			"<td>"+json.order.transactionInfo[i].itemID+"</td>"+
+			"<tr class='transactionTable'>"+
+			"<td><a href='http://www.ebay.co.uk/itm/"+json.order.transactionInfo[i].itemID+"' target='_blank' class='listingLink'>"
+			+json.order.transactionInfo[i].itemID+
+			"</a></td>"+
 			"<td>"+json.order.transactionInfo[i].partNo+"</td>"+
-			"<td>"+json.order.transactionInfo[i].purchasedQty+"</td>"+
 			"<td>"+json.order.transactionInfo[i].title+"</td>"+
 			"<td>"+json.order.transactionInfo[i].brand+"</td>"+
+			"<td>"+json.order.transactionInfo[i].purchasedQty+"</td>"+
 			"<td>"+json.order.transactionInfo[i].purchasedPriceExVAT+"</td>"+
 			"<td>"+json.order.transactionInfo[i].purchasedPriceIncVAT+"</td>"+
-			"</tr>"+
-		"</table>";
+			"</tr>";
 		
 		var partsHeader =
-		"<table class='table table-condensed partsTable'>"+
-			"<tr>"+
+			"<thead><tr class='partsTable'>"+
+			"<th></th>"+
 			"<th>PartNo</th>"+
 			"<th>Description</th>"+
-			"<th>Part Qty</th>"+
 			"<th>Unit Cost</th>"+
+			"<th>Part Qty</th>"+
 			"<th>Unit Price</th>"+
 			"<th>Line Total</th>"+
-			"</tr>"+
+			"</tr></thead>"+
 			"";
 		
 		var partLines="";
-		
+		var sumOfLines=0;
 			for(var j = 0 ; j < json.order.transactionInfo[i].parts.length; ++j)
 			{
 				 partLines +=
-					"<tr>"+
+					"<tr class='partsTable'>"+
+					"<td></td>"+
 					"<td>"+json.order.transactionInfo[i].parts[j]+"</td>"+
 					"<td>"+json.order.transactionInfo[i].partDescs[j]+"</td>"+
-					"<td>"+json.order.transactionInfo[i].partQtys[j]+"</td>"+
 					"<td>"+json.order.transactionInfo[i].partCosts[j]+"</td>"+
+					"<td>"+json.order.transactionInfo[i].partQtys[j]+"</td>"+
 					"<td>"+json.order.transactionInfo[i].partPrices[j]+"</td>"+
-					"<td>"+(json.order.transactionInfo[i].partQtys[j])*(json.order.transactionInfo[i].partPrices[j])+"</td>"+
+					"<td>"+((json.order.transactionInfo[i].partQtys[j])*(json.order.transactionInfo[i].partPrices[j])).toFixed(2)+"</td>"+
 					"</tr>"+
 					"";
+				 sumOfLines+=(json.order.transactionInfo[i].partQtys[j])*(json.order.transactionInfo[i].partPrices[j])
 			}
-//			$(".transactionData").append(partLines +"</div></br>");
-			$(".table-responsive").append(transactionHeader+transactionLine+partsHeader+partLines +"</table>");
+			
+			sumOfLines=	"<tr><td></td><td></td><td></td><td></td><td></td>" +
+						"<th class='partsTable'>&Sigma;(Lines):</th>" +
+						"<td class='partsTable sumOfLines'>"+sumOfLines.toFixed(2)+"</td></tr>"
+		
+		
+			tableBody += transactionHeader+transactionLine+partsHeader+partLines +sumOfLines+"</hr>";
 	}
+	
+	var shippingLine = "<tr class='shippingLine'> " +
+						"<td></td>" +
+						"<td>"+json.order.shipping.shipPart+"</td>" +
+						"<td>"+json.order.shipping.shipDesc+"</td> <td></td> " +
+						"<td>"+json.order.shipping.shipQty+"</td> " +
+						"<td class='sumOfLines'>"+json.order.shipping.shipSubTotal+"</td>" +
+						"<td >"+json.order.shipping.shipTotal+"</td></tr>";
+	
+	var grandTotal = "<tr> <td></td> <td></td> <td></td> <td></td> <td></td>" +
+					"<th class='grandTotal'>GrandTotal:</th>" +
+					"<td class='grandTotal grandResult'></td></tr>";
+	$(".table-responsive").append(tableBody+shippingLine+grandTotal+"</table>");
+}
+
+function grandTotal()
+{
+	var sum = 0;
+	$('.sumOfLines').each(function(){sum += parseFloat($(this).text());});
+	$(".grandResult").append((sum*1.2).toFixed(2));
 }

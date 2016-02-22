@@ -23,7 +23,7 @@ import tomoBay.model.services.AbstractService;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateOrderStatusService extends AbstractService
+public final class UpdateOrderStatusService extends AbstractService
 {
 	/* (non-Javadoc)
 	 * @see tomoBay.model.services.AbstractService#setConfig(tomoBay.model.services.AbstractConfiguration)

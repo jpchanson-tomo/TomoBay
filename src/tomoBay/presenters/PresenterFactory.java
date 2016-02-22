@@ -19,6 +19,8 @@ import java.util.Map;
 
 import tomoBay.presenters.factories.AbstractPresenterFactory;
 import tomoBay.presenters.factories.AdminServicePresenterFactory;
+import tomoBay.presenters.factories.CRMDetailPresenterFactory;
+import tomoBay.presenters.factories.CRMOverviewPresenterFactory;
 import tomoBay.presenters.factories.ErrorPresenterFactory;
 import tomoBay.presenters.factories.OrderDetailsPresenterFactory;
 import tomoBay.presenters.factories.OutOfHoursPresenterFactory;
@@ -50,7 +52,11 @@ public class PresenterFactory
 				/**@see {@link tomoBay.presenters.sales.AdminServicePresenter}**/
 				ADMIN_PRESENTER,
 				/**@see {@link tomoBay.presenters.orderDetails.OrderDetailsPresenter}**/
-				ORDER_DETAILS_PRESENTER
+				ORDER_DETAILS_PRESENTER,
+				/**@see {@link tomoBay.presenters.crm.CRMOverviewPresenter}**/
+				CRM_OVERVIEW_PRESENTER,
+				/**@see {@link tomoBay.presenters.crm.CRMDetailPresenter}**/
+				CRM_DETAIL_PRESENTER
 			}
 	
 	/****/
@@ -65,6 +71,8 @@ public class PresenterFactory
 				put(PresenterFactory.PresenterType.OUT_OF_HOURS_PRESENTER, new OutOfHoursPresenterFactory());
 				put(PresenterFactory.PresenterType.ADMIN_PRESENTER, new AdminServicePresenterFactory());
 				put(PresenterFactory.PresenterType.ORDER_DETAILS_PRESENTER, new OrderDetailsPresenterFactory());
+				put(PresenterFactory.PresenterType.CRM_OVERVIEW_PRESENTER, new CRMOverviewPresenterFactory());
+				put(PresenterFactory.PresenterType.CRM_DETAIL_PRESENTER, new CRMDetailPresenterFactory());
 			}};
 	/**
 	 * default constructor

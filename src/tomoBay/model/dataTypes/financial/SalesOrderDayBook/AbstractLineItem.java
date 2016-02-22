@@ -31,15 +31,17 @@ public abstract class AbstractLineItem
 
 	/**
 	 * create an AbstractLineItem using the parameters provided
-	 * @param transactionNo transaction number that this lineItem corresponds to
-	 * @param partIndex the part(within a transaction) that this lineItem corresponds to
+	 * @param line The AbstractSalesDayBookLine that this lineItem belongs to.
+	 * @param transactionNo the transactionNo associated with this lineItem.
+	 * @param partIndex the index of the part (within the order listing) that is associated with 
+	 * this line item.
 	 */
-	public AbstractLineItem(AbstractSalesDayBookLine invoice, int transactionNo, int partIndex)
+	public AbstractLineItem(AbstractSalesDayBookLine line, int transactionNo, int partIndex)
 	{
 		super();
 		this.partIndex = partIndex;
 		this.transactionIndex_M = transactionNo;
-		this.price_M = this.unitPrice(invoice);
+		this.price_M = this.unitPrice(line);
 	}
 	
 	/**
@@ -85,5 +87,5 @@ public abstract class AbstractLineItem
 	 * implementation specific code used to work out the unit price for a specific line item
 	 * @return int representing the unit price(in pennies) of this line item. 
 	 */
-	protected abstract int unitPrice(AbstractSalesDayBookLine invoice);
+	protected abstract int unitPrice(AbstractSalesDayBookLine line);
 }

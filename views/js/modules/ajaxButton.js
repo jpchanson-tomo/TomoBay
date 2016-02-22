@@ -17,6 +17,13 @@ function ajaxButton(inputSelector, queryString, resultSelector)
 	{display(data, resultSelector);});
 }
 
+
+function ajaxButtonDI(directInput, queryString, resultSelector)
+{
+	$(resultSelector).html("<img src='images/ajax-loader-small-grey.gif' alt='Wait' />");
+	$.get(queryString+directInput, function(data, textStatus)
+	{display(data, resultSelector);});
+}
 /**********************************************************************************************
  * This function is a helper function for ajaxButton, it is responsible for fading the old
  * result out and fading the new result in, as well as removing the spinner.

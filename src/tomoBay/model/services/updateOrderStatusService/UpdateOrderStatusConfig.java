@@ -20,7 +20,7 @@ import tomoBay.model.services.AbstractConfiguration;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateOrderStatusConfig implements AbstractConfiguration<OrderStatus>
+public final class UpdateOrderStatusConfig implements AbstractConfiguration<OrderStatus>
 {
 
 	private OrderStatus status_M;

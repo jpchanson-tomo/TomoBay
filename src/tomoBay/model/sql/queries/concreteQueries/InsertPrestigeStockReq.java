@@ -29,7 +29,7 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class InsertPrestigeStockReq implements AbstractDBQuery
+public  final class InsertPrestigeStockReq implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
 	private PreparedStatement statement_M = null;

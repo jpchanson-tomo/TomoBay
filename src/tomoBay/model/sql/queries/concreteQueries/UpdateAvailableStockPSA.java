@@ -29,7 +29,7 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateAvailableStockPSA implements AbstractDBQuery
+public  final class UpdateAvailableStockPSA implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
 	private PreparedStatement statement1_M = null;

@@ -30,7 +30,7 @@ import tomoBay.model.winstock.Stock;
  * @author Jan P.C. Hanson
  *
  */
-public class StockUpdateService extends AbstractService
+public final class StockUpdateService extends AbstractService
 {
 	
 	/**

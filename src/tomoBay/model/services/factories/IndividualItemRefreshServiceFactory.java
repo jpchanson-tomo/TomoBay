@@ -22,7 +22,7 @@ import tomoBay.model.services.individualItemRefreshService.IndividualItemRefresh
  * @author Jan P.C. Hanson
  *
  */
-public class IndividualItemRefreshServiceFactory implements
+public final class IndividualItemRefreshServiceFactory implements
 		AbstractServiceFactory
 {
 

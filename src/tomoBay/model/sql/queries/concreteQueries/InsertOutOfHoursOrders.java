@@ -32,7 +32,7 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class InsertOutOfHoursOrders implements AbstractDBQuery
+public  final class InsertOutOfHoursOrders implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
 	private PreparedStatement statement_M = null;

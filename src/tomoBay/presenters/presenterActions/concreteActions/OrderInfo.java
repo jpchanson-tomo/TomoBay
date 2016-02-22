@@ -3,7 +3,8 @@ package tomoBay.presenters.presenterActions.concreteActions;
 import tomoBay.model.dataTypes.financial.GBP;
 import tomoBay.model.dataTypes.financial.VAT;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
-import tomoBay.model.dataTypes.financial.SalesOrderDayBook.StandardInvoice;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory.SalesDayBookLineType;
 import tomoBay.model.dataTypes.json.JSONentity;
 import tomoBay.model.dataTypes.json.JSONentity_array;
 import tomoBay.model.dataTypes.json.JSONentity_object;
@@ -25,6 +26,7 @@ import tomoBay.model.dataTypes.order.Order;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
+import tomoBay.security.SaneInput;
 
 /**
  *
@@ -46,7 +48,10 @@ public final class OrderInfo implements AbstractPresenterAction
 	@Override
 	public String execute(String data)
 	{
-		AbstractSalesDayBookLine invoice = new StandardInvoice(new Order(data));
+		AbstractSalesDayBookLine invoice = SalesDayBookLineFactory.make(
+																SalesDayBookLineType.INVOICE, 
+																new Order(data)
+																		); //new StandardInvoice(new Order(data));
 		return new JSONentity_object()
 					.addPreFormatted("order", this.formatResults(invoice)).toString();
 	}
@@ -62,6 +67,7 @@ public final class OrderInfo implements AbstractPresenterAction
 					.addPreFormatted("summaryInfo", this.summaryInfo(input.orderInfo()))
 					.addPreFormatted("buyerInfo", this.buyerInfo(input.orderInfo().buyer()))
 					.addPreFormatted("transactionInfo", this.transactionInfo(input))
+					.addPreFormatted("shipping", this.shippingInfo(input))
 					.toString();	
 	}
 	
@@ -77,9 +83,9 @@ public final class OrderInfo implements AbstractPresenterAction
 			.addLeaf("salesRecNo",GBP.toString(order.salesRecNo()) )
 			.addLeaf("shippingType",order.shippingType())
 			.addLeaf("createdTime",order.createdTime())
-			.addLeaf("orderTotalIncVAT",order.totalPrice()+"")
-			.addLeaf("orderTotalExVAT",GBP.toString(VAT.subtract(order.totalPrice())) )
-			.addLeaf("VAT", GBP.toString(VAT.due(order.totalPrice())) ).toString();
+			.addLeaf("orderTotalIncVAT",(order.totalPrice())+"")
+			.addLeaf("orderTotalExVAT",GBP.toString((VAT.subtract(order.totalPrice()))))
+			.addLeaf("VAT", GBP.toPennies(VAT.due(order.totalPrice()))+"" ).toString();
 	}
 	
 	/**
@@ -109,121 +115,81 @@ public final class OrderInfo implements AbstractPresenterAction
 	private String transactionInfo(AbstractSalesDayBookLine invoice)
 	{
 		JSONentity transactionArray = new JSONentity_array();
+		JSONentity transactionObject;
+		JSONentity part;
+		JSONentity partQty;
+		JSONentity partCost;
+		JSONentity partPrice;
+		JSONentity partDesc;
+		
+		
+		int lineItemCount = 0;
 		for(int i = 0 ; i < invoice.orderInfo().noOfTransactions() ; ++i)
 		{
-			transactionArray.addBranch
-				("", new JSONentity_object()
-					.addLeaf("itemID", invoice.orderInfo().transaction(i).listing().listingID()+"")
-					.addLeaf("title", invoice.orderInfo().transaction(i).listing().title())
-					.addLeaf("purchasedPriceIncVAT", invoice.orderInfo().transaction(i).transactionPrice()+"")
-					.addLeaf("purchasedPriceExVAT", VAT.subtract(invoice.orderInfo().transaction(i).transactionPrice())+"" )
-					.addLeaf("shippingCost", invoice.orderInfo().transaction(i).shippingCost()+"")
-					.addLeaf("purchasedQty", invoice.orderInfo().transaction(i).qtyPurchased()+"")
-					.addLeaf("brand", invoice.orderInfo().transaction(i).listing().part(0).brand())
-					.addLeaf("partNo", invoice.orderInfo().transaction(i).listing().partNos())
-					.addPreFormatted("parts", this.parts(i, invoice))
-					.addPreFormatted("partQtys", this.partQtys(i, invoice))
-					.addPreFormatted("partPrices", this.partPrices(i, invoice))
-					.addPreFormatted("partCosts", this.partcosts(i, invoice))
-					.addPreFormatted("partDescs", this.partDescs(i, invoice))
-				);
+			int noOfParts = invoice.orderInfo().transaction(i).listing().noOfParts();
+			
+			transactionObject = new JSONentity_object();
+			part= new JSONentity_array();
+			partQty= new JSONentity_array();
+			partCost= new JSONentity_array();
+			partPrice= new JSONentity_array();
+			partDesc= new JSONentity_array();
+			
+			
+			transactionObject
+			.addLeaf("itemID", invoice.orderInfo().transaction(i).listing().listingID()+"")
+			.addLeaf("title", SaneInput.json(invoice.orderInfo().transaction(i).listing().title()))
+			.addLeaf("purchasedPriceIncVAT", (invoice.orderInfo().transaction(i).transactionPrice())+"")
+			.addLeaf("purchasedPriceExVAT", GBP.toString((VAT.subtract(invoice.orderInfo().transaction(i).transactionPrice()))))
+			.addLeaf("shippingCost", (invoice.orderInfo().transaction(i).shippingCost())+"")
+			.addLeaf("purchasedQty", invoice.orderInfo().transaction(i).qtyPurchased()+"")
+			.addLeaf("brand", SaneInput.json(invoice.orderInfo().transaction(i).listing().part(0).brand()))
+			.addLeaf("partNo", invoice.orderInfo().transaction(i).listing().partNos());
+			
+			for(int j = lineItemCount ; j < (lineItemCount + noOfParts) ; ++j)
+			{
+				part.addLeaf("", invoice.getLineItem(j).partNo(invoice));
+				partQty.addLeaf("", invoice.getLineItem(j).quantity(invoice)+"");
+				partCost.addLeaf("", (invoice.orderInfo().transaction(i).listing().part(j-lineItemCount).cost())+"");
+				partPrice.addLeaf("", GBP.fromPennies(invoice.getLineItem(j).price())+"");
+				partDesc.addLeaf("", SaneInput.json(invoice.getLineItem(j).description(invoice)));
+			}
+			
+			transactionObject.addBranch("parts", part);
+			transactionObject.addBranch("partQtys", partQty);
+			transactionObject.addBranch("partCosts", partCost);
+			transactionObject.addBranch("partPrices", partPrice);
+			transactionObject.addBranch("partDescs", partDesc);
+			
+			transactionArray.addBranch("", transactionObject);
+			lineItemCount += noOfParts;
 		}
 		return transactionArray.toString();
 	}
 	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param invoice
-	 * @return
-	 */
-	private String asArray(int transactionNo, AbstractSalesDayBookLine invoice)
-	{
-		JSONentity result= new JSONentity_array();
+	private String shippingInfo(AbstractSalesDayBookLine invoice)
+	{ 
+		if(invoice.orderInfo().shippingCost() > 0)
+		{
+			return new JSONentity_object()
+			.addLeaf("shipPart",invoice.getLineItem(invoice.size()-1).partNo(invoice))
+			.addLeaf("shipDesc",invoice.getLineItem(invoice.size()-1).description(invoice))
+			.addLeaf("shipQty",invoice.getLineItem(invoice.size()-1).quantity(invoice)+"")
+			.addLeaf("shipSubTotal",GBP.fromPennies(invoice.getLineItem(invoice.size()-1).price())+"")
+			.addLeaf("shipTotal", invoice.orderInfo().shippingCost()+"")
+			.toString();
+		}
 		
-		for (int i = 0 ; i <  invoice.orderInfo().transaction(transactionNo).listing().noOfParts() ; ++i)
-		{result.addLeaf("", invoice.getLineItem(i).partNo(invoice));}
-		
-		return result.toString();
-	}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param invoice
-	 * @return
-	 */
-	private String parts(int transactionNo, AbstractSalesDayBookLine invoice)
-	{
-		JSONentity result= new JSONentity_array();
-		
-		for (int i = 0 ; i <  invoice.orderInfo().transaction(transactionNo).listing().noOfParts() ; ++i)
-		{result.addLeaf("", invoice.getLineItem(i).partNo(invoice));}
-		
-		return result.toString();
-	}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param invoice
-	 * @return
-	 */
-	private String partQtys(int transactionNo, AbstractSalesDayBookLine invoice)
-	{
-		JSONentity result= new JSONentity_array();
-		
-		for (int i = 0 ; i <  invoice.orderInfo().transaction(transactionNo).listing().noOfParts() ; ++i)
-		{result.addLeaf("", invoice.getLineItem(i).quantity(invoice)+"");}
-		
-		return result.toString();
-	}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param invoice
-	 * @return
-	 */
-	private String partcosts(int transactionNo, AbstractSalesDayBookLine invoice)
-	{
-		JSONentity result= new JSONentity_array();
-		
-		for (int i = 0 ; i <  invoice.orderInfo().transaction(transactionNo).listing().noOfParts() ; ++i)
-		{result.addLeaf("", invoice.orderInfo().transaction(transactionNo).listing().part(i).cost()+"");}
-		
-		return result.toString();
-	}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param invoice
-	 * @return
-	 */
-	private String partPrices(int transactionNo, AbstractSalesDayBookLine invoice)
-	{
-		JSONentity result= new JSONentity_array();
-		
-		for (int i = 0 ; i <  invoice.orderInfo().transaction(transactionNo).listing().noOfParts() ; ++i)
-		{result.addLeaf("", invoice.getLineItem(i).price()+"");}
-		
-		return result.toString();
-	}
-	
-	/**
-	 * 
-	 * @param transactionNo
-	 * @param invoice
-	 * @return
-	 */
-	private String partDescs(int transactionNo, AbstractSalesDayBookLine invoice)
-	{
-		JSONentity pqtys= new JSONentity_array();
-		
-		for (int i = 0 ; i <  invoice.orderInfo().transaction(transactionNo).listing().noOfParts() ; ++i)
-		{pqtys.addLeaf("", invoice.getLineItem(i).description(invoice));}
-		
-		return pqtys.toString();
+		else 
+		{
+			String res = "N/A";
+			return new JSONentity_object()
+			.addLeaf("shipPart", res)
+			.addLeaf("shipDesc", res)
+			.addLeaf("shipQty", res)
+			.addLeaf("shipSubTotal", "0")
+			.addLeaf("shipTotal", "0")
+			.toString();
+		}
 	}
 }

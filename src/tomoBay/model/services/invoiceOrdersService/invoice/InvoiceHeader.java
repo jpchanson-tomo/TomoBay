@@ -26,7 +26,7 @@ import tomoBay.model.winstock.payloads.PayloadType;
  * @author Jan P.C. Hanson
  *
  */
-public class InvoiceHeader
+public final class InvoiceHeader
 {
 	private List<String[]> dataFields_M;
 	private Map<AddressType_M, String> addressLines_M;

@@ -14,16 +14,11 @@ package tomoBay.presenters.admin;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.presenters.AbstractPresenter;
+import tomoBay.presenters.presenterActions.PresenterActionFactory;
+import tomoBay.presenters.presenterActions.PresenterActionFactory.PresenterActions;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import tomoBay.presenters.AbstractPresenter;
-import tomoBay.presenters.presenterActions.AbstractPresenterAction;
-import tomoBay.presenters.presenterActions.concreteActions.LogFileViewer;
-import tomoBay.presenters.presenterActions.concreteActions.PeriodicServicesController;
 /**
  *
  * @author Jan P.C. Hanson
@@ -31,21 +26,17 @@ import tomoBay.presenters.presenterActions.concreteActions.PeriodicServicesContr
  */
 public class AdminPresenter implements AbstractPresenter
 {
-
-	/**maps the type string to an action**/
-	@SuppressWarnings("serial")
-	private static final Map<String, AbstractPresenterAction> actionMap_M
-				= new HashMap<String, AbstractPresenterAction>()
-				{{
-					put("PeriodicServices", new PeriodicServicesController());
-					put("LOGFILE", new LogFileViewer());
-				}};
+	/**
+	 * default ctor
+	 */
+	public AdminPresenter()
+	{super();}
 	/* (non-Javadoc)
 	 * @see tomoBay.presenters.AbstractPresenter#present(tomoBay.view.AbstractView, java.lang.String, java.lang.String)
 	 */
 	@Override
 	public String present(AbstractView view, String type, String data)
-	{return AdminPresenter.actionMap_M.get(type).execute(data);}
+	{return PresenterActionFactory.make(PresenterActions.valueOf(type)).execute(data);}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.presenters.AbstractPresenter#accept(tomoBay.view.ViewFactory)

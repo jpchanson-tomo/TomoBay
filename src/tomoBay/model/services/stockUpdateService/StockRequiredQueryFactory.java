@@ -25,7 +25,7 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
  * @author Jan P.C. Hanson
  *
  */
-public class StockRequiredQueryFactory
+public final class StockRequiredQueryFactory
 {
 	/**Enum used to contain brand options**/
 	public enum BrandCode {C /**Citroen**/, F/**ford**/ , P /**prestige**/}

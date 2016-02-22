@@ -1,4 +1,4 @@
-package tomoBay.model.dataTypes.financial.SalesOrderDayBook;
+package tomoBay.model.dataTypes.financial.SalesOrderDayBook.concreteLineTypes;
 
 import tomoBay.model.dataTypes.financial.GBP;
 import tomoBay.model.dataTypes.financial.VAT;
@@ -17,6 +17,8 @@ import tomoBay.model.dataTypes.financial.VAT;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractLineItem;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
 
 /**
  *
@@ -47,8 +49,6 @@ public class StandardInvoiceLine extends AbstractLineItem
 		double priceExVat = VAT.subtract(invoice.orderInfo().transaction(super.transactionIndex_M).transactionPrice());
 		
 		double result = (costOfItem/totalCost)*(priceExVat/super.quantity(invoice));
-//		System.out.println("("+costOfItem +"/"+totalCost+") * ("+priceExVat+" / "+super.quantity(invoice)+") = "+result);
-//		System.out.println("=>"+result*super.quantity(invoice));
 		return GBP.toPennies(result);
 	}
 }

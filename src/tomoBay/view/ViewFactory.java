@@ -15,6 +15,8 @@ package tomoBay.view;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.presenters.admin.AdminPresenter;
+import tomoBay.presenters.crm.CRMDetailPresenter;
+import tomoBay.presenters.crm.CRMOverviewPresenter;
 import tomoBay.presenters.error.ErrorPresenter;
 import tomoBay.presenters.orderDetails.OrderDetailsPresenter;
 import tomoBay.presenters.root.RootPresenter;
@@ -23,6 +25,8 @@ import tomoBay.presenters.sales.SalesHistoryPresenter;
 import tomoBay.presenters.sales.SalesOrderPresenter;
 import tomoBay.presenters.warehouse.WarehouseOrderPresenter;
 import tomoBay.view.views.AdminServiceView;
+import tomoBay.view.views.CRMDetailView;
+import tomoBay.view.views.CRMOverviewView;
 import tomoBay.view.views.ErrorView;
 import tomoBay.view.views.OrderView;
 import tomoBay.view.views.OutOfHoursView;
@@ -103,4 +107,20 @@ public class ViewFactory
 	 */
 	public AbstractView visit(OutOfHoursPresenter outOfHoursPresenter)
 	{return new OutOfHoursView();}
+	
+	/**
+	 * 
+	 * @param outOfHoursPresenter
+	 * @return
+	 */
+	public AbstractView visit(CRMOverviewPresenter crmOverviewPresenter)
+	{return new CRMOverviewView();}
+	
+	/**
+	 * 
+	 * @param outOfHoursPresenter
+	 * @return
+	 */
+	public AbstractView visit(CRMDetailPresenter crmDetailPresenter)
+	{return new CRMDetailView();}
 }

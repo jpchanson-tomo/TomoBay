@@ -18,19 +18,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tomoBay.presenters.presenterActions.factories.AbstractPresenterActionFactory;
+import tomoBay.presenters.presenterActions.factories.BuyerDetailsFactory;
+import tomoBay.presenters.presenterActions.factories.BuyerListFactory;
+import tomoBay.presenters.presenterActions.factories.InvoiceOrdersFactory;
 import tomoBay.presenters.presenterActions.factories.LogFileViewerFactory;
 import tomoBay.presenters.presenterActions.factories.MarkAsInvoicedFactory;
 import tomoBay.presenters.presenterActions.factories.MarkAsUninvoicedFactory;
 import tomoBay.presenters.presenterActions.factories.OrderInfoFactory;
 import tomoBay.presenters.presenterActions.factories.PeriodicServicesControllerFactory;
+import tomoBay.presenters.presenterActions.factories.ReScanBuyerFactory;
 import tomoBay.presenters.presenterActions.factories.ReScanListingFactory;
 
 /**
- *
+ * This class provides static functionality for creating AbstractPresenterActions
  * @author Jan P.C. Hanson
  *
  */
-public class PresenterActionFactory
+public final class PresenterActionFactory
 {
 	public enum PresenterActions
 				{
@@ -44,7 +48,15 @@ public class PresenterActionFactory
 					
 					PERIODIC_SERVICES_CONTROLLER,
 					
-					RE_SCAN_LISTING
+					RE_SCAN_LISTING,
+					
+					BUYER_DETAILS,
+					
+					BUYER_LIST,
+					
+					RE_SCAN_BUYER,
+					
+					INVOICE_ORDERS
 				}
 	
 	/**maps the type string to an action**/
@@ -58,6 +70,10 @@ public class PresenterActionFactory
 					put(PresenterActions.ORDER_INFO, new OrderInfoFactory());
 					put(PresenterActions.PERIODIC_SERVICES_CONTROLLER, new PeriodicServicesControllerFactory());
 					put(PresenterActions.RE_SCAN_LISTING, new ReScanListingFactory());
+					put(PresenterActions.BUYER_DETAILS, new BuyerDetailsFactory());
+					put(PresenterActions.BUYER_LIST, new BuyerListFactory());
+					put(PresenterActions.RE_SCAN_BUYER, new ReScanBuyerFactory());
+					put(PresenterActions.INVOICE_ORDERS, new InvoiceOrdersFactory());
 				}};
 
 	/**
@@ -72,6 +88,6 @@ public class PresenterActionFactory
 	 * @param action PresenterAction enum const specifying the AbstractPresenterAction to provide.
 	 * @return AbstractPresenterAction requested.
 	 */
-	public static AbstractPresenterAction make(PresenterActionFactory.PresenterActions action)
+	public static final AbstractPresenterAction make(PresenterActionFactory.PresenterActions action)
 	{return PresenterActionFactory.actionMap_M.get(action).make();}
 }

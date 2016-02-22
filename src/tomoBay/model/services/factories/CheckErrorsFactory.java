@@ -8,7 +8,7 @@ import tomoBay.model.services.checkErrorsService.CheckErrorsService;
  * @author Jan P.C. Hanson
  *
  */
-public class CheckErrorsFactory implements AbstractServiceFactory
+public final class CheckErrorsFactory implements AbstractServiceFactory
 {
 	/**
 	 * default ctor

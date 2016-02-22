@@ -21,7 +21,7 @@ import java.util.Arrays;
  * @author Jan P.C. Hanson
  *
  */
-public class PartList
+public final class PartList
 {
 	/**internal holder for part numbers**/
 	private String[] partNos_M;

@@ -28,7 +28,7 @@ import tomoBay.helpers.ShippingPriority;
  * @author Jan P.C. Hanson
  *
  */
-public class SortOrders
+public final class SortOrders
 {
 	/**
 	 * default ctor

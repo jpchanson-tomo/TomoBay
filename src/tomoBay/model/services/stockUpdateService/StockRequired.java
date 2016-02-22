@@ -28,7 +28,7 @@ import tomoBay.model.sql.queries.QueryInvoker;
  * @author Jan P.C. Hanson
  *
  */
-public class StockRequired
+public final class StockRequired
 {
 	/**
 	 * default ctor

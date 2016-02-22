@@ -16,11 +16,25 @@ table
 {
 	margin-bottom:0px;
 	background:lightblue;
+	font-size:10pt;
 }
 
 .partsTable
 {
 	background:lightgreen;
+	font-size:10pt;
+}
+
+.shippingLine
+{
+	background:yellow;
+	font-size:10pt;
+}
+
+.grandTotal
+{
+	background:#337AB7;
+	color:white;
 }
 
 body
@@ -35,4 +49,9 @@ body
 	bottom:350px;
 	right:0px;
 	left:0px;
+}
+
+.listingLink
+{
+	color:darkblue;
 }

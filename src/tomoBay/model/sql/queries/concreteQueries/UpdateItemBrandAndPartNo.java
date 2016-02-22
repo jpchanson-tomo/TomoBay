@@ -30,7 +30,7 @@ import tomoBay.model.sql.queries.AbstractDBQuery;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateItemBrandAndPartNo implements AbstractDBQuery
+public  final class UpdateItemBrandAndPartNo implements AbstractDBQuery
 {
 	/**reference to the JDBC Statement**/
 	private PreparedStatement statement_M = null;

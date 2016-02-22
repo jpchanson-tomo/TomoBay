@@ -22,7 +22,7 @@ import tomoBay.model.services.AbstractConfiguration;
  * @author Jan P.C. Hanson
  *
  */
-public class EmailErrorsConfig implements AbstractConfiguration<String>
+public final class EmailErrorsConfig implements AbstractConfiguration<String>
 {
 	/**String[] containing the data needed for this service formatted as XML**/
 	private String EmailConfigData_M;

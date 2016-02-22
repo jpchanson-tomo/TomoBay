@@ -31,7 +31,7 @@ import tomoBay.model.winstock.Stock;
  * @author Jan P.C. Hanson
  *
  */
-public class CalculateInvoiceStatus
+public final class CalculateInvoiceStatus
 {
 	/**
 	 * default ctor

@@ -31,7 +31,7 @@ import tomoBay.helpers.StackTraceToString;
  * @author Jan P.C. Hanson
  *
  */
-public class ServiceScheduler
+public final class ServiceScheduler
 {
 	static Logger log = Logger.getLogger(ServiceScheduler.class.getName());
 	/**Scheduled thread pool**/

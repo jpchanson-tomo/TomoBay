@@ -20,7 +20,7 @@ import java.util.List;
  * @author Jan P.C. Hanson
  *
  */
-public class EmailErrorsDataFormat
+public final class EmailErrorsDataFormat
 {
 	/**The static HTML that start off the string**/
 	private static final String HEADER = "<h1>Listing Errors</h1>"

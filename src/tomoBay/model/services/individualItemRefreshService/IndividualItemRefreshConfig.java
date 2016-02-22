@@ -23,7 +23,7 @@ import tomoBay.model.services.AbstractConfiguration;
  *
  *
  */
-public class IndividualItemRefreshConfig implements AbstractConfiguration<Long>
+public final class IndividualItemRefreshConfig implements AbstractConfiguration<Long>
 {
 	private long listingID_M;
 	

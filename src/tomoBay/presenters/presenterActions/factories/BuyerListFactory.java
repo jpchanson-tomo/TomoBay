@@ -1,4 +1,6 @@
-package tomoBay.model.dataTypes.financial.SalesOrderDayBook;
+package tomoBay.presenters.presenterActions.factories;
+
+import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,39 +16,27 @@ package tomoBay.model.dataTypes.financial.SalesOrderDayBook;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.presenters.presenterActions.concreteActions.BuyerList;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import tomoBay.model.dataTypes.order.Order;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public class StandardInvoice extends AbstractSalesDayBookLine
+public final class BuyerListFactory implements AbstractPresenterActionFactory
 {
-	/**
-	 * @param orderID
-	 */
-	public StandardInvoice(Order order)
-	{super(order);}
-	
+
 	/**
 	 * 
-	 * @param order
-	 * @return
 	 */
-	protected final List<AbstractLineItem> generateLineItems()
-	{
-		List<AbstractLineItem> result = new ArrayList<AbstractLineItem>();
-		for(int i = 0 ; i < super.orderInfo().noOfTransactions(); ++i)
-		{
-			for(int j = 0 ; j < super.orderInfo().transaction(i).listing().noOfParts() ; ++j)
-			{
-				result.add(new StandardInvoiceLine(this, i, j));
-			}
-		}
-		return result;
-	}
+	public BuyerListFactory()
+	{super();}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.presenters.presenterActions.factories.AbstractPresenterActionFactory#make()
+	 */
+	@Override
+	public AbstractPresenterAction make()
+	{return new BuyerList();}
+
 }

@@ -14,6 +14,7 @@ package tomoBay.model.dataTypes.financial.SalesOrderDayBook;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.util.Iterator;
 import java.util.List;
 
 import tomoBay.helpers.checkTime.CheckTime;
@@ -26,7 +27,7 @@ import tomoBay.model.dataTypes.order.Order;
  * @author Jan P.C. Hanson
  *
  */
-public abstract class AbstractSalesDayBookLine
+public abstract class AbstractSalesDayBookLine implements Iterable<AbstractLineItem>
 {
 	/**the order that this SalesDayBookLine applies to**/
 	private final Order order_M;
@@ -44,6 +45,7 @@ public abstract class AbstractSalesDayBookLine
 		super();
 		this.order_M =  order;
 		this.lineItems_M = this.generateLineItems();
+		this.adjustPrices();
 	}
 	
 	/**
@@ -86,9 +88,20 @@ public abstract class AbstractSalesDayBookLine
 	public int totalExVat(){return VAT.subtract(this.totalIncVat());}
 	
 	/**
+	 * iterator method makes this class iterable i.e. it is possible to loop over all
+	 * AbstractLineItems contained within this AbstractSalesDayBookLine
+	 * @return Iterator to a list of AbstractLineItem(s)
+	 */
+	public Iterator<AbstractLineItem> iterator()
+	{return this.lineItems_M.iterator();}
+	
+	/**
 	 * Implementation specific code for the generation of AbstractLineItems from the data 
 	 * found in the Order that this object refers to.
 	 * @return List<AbstractLineItems> the list of line items that make up this SalesDayBookLine.
 	 */
 	protected abstract List<AbstractLineItem> generateLineItems();
+	
+	private void adjustPrices()
+	{new PriceAdjustment().adjust(this);}
 }

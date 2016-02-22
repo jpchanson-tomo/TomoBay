@@ -23,7 +23,7 @@ import tomoBay.model.services.outOfHoursService.OutOfHoursService;
  * @author Jan P.C. Hanson
  *
  */
-public class OutOfHoursServiceFactory implements AbstractServiceFactory
+public final class OutOfHoursServiceFactory implements AbstractServiceFactory
 {
 
 	/* (non-Javadoc)

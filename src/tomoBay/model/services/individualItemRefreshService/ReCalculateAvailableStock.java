@@ -25,7 +25,7 @@ import tomoBay.model.winstock.Stock;
  * @author Jan P.C. Hanson
  *
  */
-public class ReCalculateAvailableStock
+public final class ReCalculateAvailableStock
 {
 	/**
 	 * default ctor

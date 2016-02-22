@@ -24,6 +24,7 @@ import com.ebay.sdk.SdkException;
 import com.ebay.sdk.call.GetOrdersCall;
 import com.ebay.soap.eBLBaseComponents.DetailLevelCodeType;
 import com.ebay.soap.eBLBaseComponents.GetOrdersRequestType;
+import com.ebay.soap.eBLBaseComponents.OrderIDArrayType;
 import com.ebay.soap.eBLBaseComponents.OrderType;
 import com.ebay.soap.eBLBaseComponents.PaginationType;
 import com.ebay.soap.eBLBaseComponents.SortOrderCodeType;
@@ -81,6 +82,22 @@ public class OrdersCall extends AbstractAPIcall
         while(this.order_M.getReturnedHasMoreOrders());
         
         return this.reformResults(results);
+	}
+	
+	/**
+	 * this method performs a call to the API grabbing the order associated with the ID passed in.
+	 * @param orderID
+	 * @return
+	 * @throws ApiException
+	 * @throws SdkException
+	 * @throws Exception
+	 */
+	public OrderType[] call(String orderID) throws ApiException, SdkException, Exception
+	{
+		OrderIDArrayType order = new OrderIDArrayType();
+		order.setOrderID(new String[] {orderID});
+		this.order_M.setOrderIDArray(order);
+		return this.order_M.getOrders();
 	}
 	
 	/**

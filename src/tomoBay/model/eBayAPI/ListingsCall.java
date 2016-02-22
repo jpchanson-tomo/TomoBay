@@ -29,7 +29,7 @@ import com.ebay.soap.eBLBaseComponents.ItemType;
 public class ListingsCall extends AbstractAPIcall
 {
 	
-	GetSellerListCall listingsCall_M;
+	private GetSellerListCall listingsCall_M;
 
 	/**
 	 * initialise the ListingsCall

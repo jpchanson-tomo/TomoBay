@@ -33,10 +33,12 @@ import tomoBay.model.sql.queries.factories.InsertPartFactory;
 import tomoBay.model.sql.queries.factories.InsertPartMappingFactory;
 import tomoBay.model.sql.queries.factories.InsertPrestigeStockReqFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayBuyerFactory;
+import tomoBay.model.sql.queries.factories.SelectEbayBuyersFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemSpecificFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemsErrorFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemsFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemsNotInTransactionsFactory;
+import tomoBay.model.sql.queries.factories.SelectEbayOrderByBuyerFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayOrderByIDFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayOrdersFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayTransactionByIDFactory;
@@ -54,6 +56,7 @@ import tomoBay.model.sql.queries.factories.SelectUninvoicedOrdersNoErrorsFactory
 import tomoBay.model.sql.queries.factories.UpdateAvailableStockFordFactory;
 import tomoBay.model.sql.queries.factories.UpdateAvailableStockPSAFactory;
 import tomoBay.model.sql.queries.factories.UpdateAvailableStockPrestigeFactory;
+import tomoBay.model.sql.queries.factories.UpdateEbayBuyerFactory;
 import tomoBay.model.sql.queries.factories.UpdateFordStockReqFactory;
 import tomoBay.model.sql.queries.factories.UpdateInvoiceStatusFactory;
 import tomoBay.model.sql.queries.factories.UpdateInvoiceStatusSRNFactory;
@@ -74,7 +77,7 @@ import tomoBay.model.sql.queries.factories.UpdateTotalItemsRequiredFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class QueryInvoker
+public final class QueryInvoker
 {
 	/** Defensive enum defines the acceptable inputs to the factory**/
 	public enum QueryType 
@@ -134,10 +137,14 @@ public class QueryInvoker
 			SELECT_UNCALCULATED_ORDERS,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayBuyer}**/
 			SELECT_EBAY_BUYER,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayBuyers}**/
+			SELECT_EBAY_BUYERS,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayTransactionByID}**/
 			SELECT_EBAY_TRANSACTION_BY_ID,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayOrderByID}**/
 			SELECT_EBAY_ORDER_BY_ID,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayOrderByBuyer}**/
+			SELECT_EBAY_ORDER_BY_BUYER,
 			
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo}**/
 			UPDATE_ITEM_BRAND_AND_PARTNO,
@@ -163,6 +170,8 @@ public class QueryInvoker
 			UPDATE_ITEM_ERROR,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemNote}**/
 			UPDATE_ITEM_NOTE,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateEbayBuyer}**/
+			UPDATE_EBAY_BUYER,
 			
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsPSA}**/
 			CLEAR_PARTS_PSA,
@@ -205,8 +214,10 @@ public class QueryInvoker
 			put(QueryType.SELECT_OUT_OF_HOURS_ORDERS, new SelectOutOfHoursOrdersFactory());
 			put(QueryType.SELECT_UNCALCULATED_ORDERS, new SelectUncalculatedOrdersFactory());
 			put(QueryType.SELECT_EBAY_BUYER, new SelectEbayBuyerFactory());
+			put(QueryType.SELECT_EBAY_BUYERS, new SelectEbayBuyersFactory());
 			put(QueryType.SELECT_EBAY_TRANSACTION_BY_ID, new SelectEbayTransactionByIDFactory());
 			put(QueryType.SELECT_EBAY_ORDER_BY_ID, new SelectEbayOrderByIDFactory());
+			put(QueryType.SELECT_EBAY_ORDER_BY_BUYER, new SelectEbayOrderByBuyerFactory());
 			
 			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
 			put(QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, new UpdateTotalItemsRequiredFactory());
@@ -220,6 +231,7 @@ public class QueryInvoker
 			put(QueryType.UPDATE_ITEM_ERROR, new UpdateItemErrorFactory());
 			put(QueryType.UPDATE_ITEM_NOTE, new UpdateItemNoteFactory());
 			put(QueryType.UPDATE_INVOICE_STATUS_SRN, new UpdateInvoiceStatusSRNFactory());
+			put(QueryType.UPDATE_EBAY_BUYER, new UpdateEbayBuyerFactory());
 			
 			put(QueryType.CLEAR_PARTS_PSA, new ClearPartsPSAFactory());
 			put(QueryType.CLEAR_PARTS_FORD, new ClearPartsFordFactory());

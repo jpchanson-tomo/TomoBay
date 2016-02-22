@@ -67,7 +67,8 @@ public class Order
 		catch (Exception e)
 		{
 			log.warn("could not instantitate Order:"+orderID +" "+StackTraceToString.toString(e));
-			throw new OrderException("could not instantiate Order: "+orderID,e);
+			e.printStackTrace();
+			throw new OrderException("could not instantiate Order: "+orderID +"\n"+StackTraceToString.toString(e));
 		}
 	}
 	
@@ -121,6 +122,21 @@ public class Order
 	 * @return double representing the amount the customer paid for this order.
 	 */
 	public double totalPrice() {return this.orderTotal_M;}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public double shippingCost()
+	{
+		double result=0.0;
+		for(int i = 0 ; i < this.noOfTransactions() ; ++i)
+		{
+			if(this.transactions_M[i].shippingCost() > result)
+			{result = this.transactions_M[i].shippingCost();}
+		}
+		return result;
+	}
 	
 	/**
 	 * helper method, retrieves the order specific information from the database, in order to 

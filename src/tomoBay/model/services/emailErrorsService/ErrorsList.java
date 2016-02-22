@@ -25,7 +25,7 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
  * @author Jan P.C. Hanson
  *
  */
-public class ErrorsList
+public final class ErrorsList
 {
 	/**the list of errors**/
 	private List<String[]> errorList_M;

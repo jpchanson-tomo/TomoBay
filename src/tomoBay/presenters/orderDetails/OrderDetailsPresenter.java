@@ -14,14 +14,9 @@ package tomoBay.presenters.orderDetails;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.HashMap;
-import java.util.Map;
-
 import tomoBay.presenters.AbstractPresenter;
-import tomoBay.presenters.presenterActions.AllowedPresenterActions;
 import tomoBay.presenters.presenterActions.PresenterActionFactory;
-import tomoBay.presenters.presenterActions.factories.AbstractPresenterActionFactory;
-import tomoBay.presenters.presenterActions.factories.OrderInfoFactory;
+import tomoBay.presenters.presenterActions.PresenterActionFactory.PresenterActions;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
 /**
@@ -31,26 +26,12 @@ import tomoBay.view.ViewFactory;
  */
 public final class OrderDetailsPresenter implements AbstractPresenter
 {
-	/**maps the type string to an action**/
-	@SuppressWarnings("serial")
-	private static final Map<String, AbstractPresenterActionFactory> actionMap_M
-				= new HashMap<String, AbstractPresenterActionFactory>()
-				{{
-					put("OrderInfo", new OrderInfoFactory());
-				}};
-	
-	private static final AllowedPresenterActions allowedList
-				= new AllowedPresenterActions()
-				{{
-					add(PresenterActionFactory.PresenterActions.ORDER_INFO);
-				}};
-				
 	/* (non-Javadoc)
 	 * @see tomoBay.presenters.AbstractPresenter#present(tomoBay.view.AbstractView)
 	 */
 	@Override
 	public String present(AbstractView view, String type, String data)
-	{return OrderDetailsPresenter.actionMap_M.get(type).make().execute(data);}
+	{return PresenterActionFactory.make(PresenterActions.valueOf(type)).execute(data);}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.presenters.AbstractPresenter#accept(tomoBay.view.ViewFactory)
