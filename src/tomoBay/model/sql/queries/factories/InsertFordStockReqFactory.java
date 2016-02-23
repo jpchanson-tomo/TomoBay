@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.InsertFordStockReq;
  * @author Jan P.C. Hanson
  *
  */
-public class InsertFordStockReqFactory implements AbstractQueryFactory
+public final class InsertFordStockReqFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

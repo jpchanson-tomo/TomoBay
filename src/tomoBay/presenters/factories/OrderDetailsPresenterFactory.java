@@ -21,7 +21,7 @@ import tomoBay.presenters.AbstractPresenter;
  * @author Jan P.C. Hanson
  *
  */
-public class OrderDetailsPresenterFactory implements AbstractPresenterFactory
+public final class OrderDetailsPresenterFactory implements AbstractPresenterFactory
 {
 
 	/**

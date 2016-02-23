@@ -20,7 +20,7 @@ package tomoBay.model.dataTypes;
  * @author Jan P.C. Hanson
  *
  */
-public class ServerStatus
+public final class ServerStatus
 {
 	/**singleton instance variable**/
 	private static final ServerStatus instance_M = new ServerStatus();

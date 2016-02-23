@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.InvoiceNoComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class InvoiceNoComponentFactory implements AbstractComponentFactory
+public final class InvoiceNoComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

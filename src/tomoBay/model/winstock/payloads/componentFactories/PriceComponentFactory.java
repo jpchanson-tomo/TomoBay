@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.PriceComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class PriceComponentFactory implements AbstractComponentFactory
+public final class PriceComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

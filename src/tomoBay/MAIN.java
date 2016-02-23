@@ -10,11 +10,11 @@ import tomoBay.view.HttpServer;
  * @author Jan P.C. Hanson
  *
  */
-public class MAIN
+public final class MAIN
 {
-	static private Logger log = Logger.getLogger(MAIN.class.getName());
+	static final private Logger log = Logger.getLogger(MAIN.class.getName());
 	
-	public static void main(String[] args) throws Exception
+	public static final void main(String[] args) throws Exception
 	{
 		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
 		

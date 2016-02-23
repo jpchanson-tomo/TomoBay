@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrders;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectUninvoicedOrdersFactory implements AbstractQueryFactory
+public final class SelectUninvoicedOrdersFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

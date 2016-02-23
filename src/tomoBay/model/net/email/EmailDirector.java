@@ -29,7 +29,7 @@ import tomoBay.exceptions.NullEmailServerObjectException;
  * @author Jan P.C. Hanson
  *
  */
-public class EmailDirector
+public final class EmailDirector
 {	
 	/**holder for the builder that determines the specific email server to connect to**/
 	AbstractEmailBuilder builder_M;

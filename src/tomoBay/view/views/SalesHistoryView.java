@@ -24,7 +24,7 @@ import tomoBay.view.AbstractView;
  * @author Jan P.C. Hanson
  *
  */
-public class SalesHistoryView implements AbstractView
+public final class SalesHistoryView implements AbstractView
 {
 
 	/* (non-Javadoc)

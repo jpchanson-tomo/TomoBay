@@ -24,7 +24,7 @@ import tomoBay.exceptions.PayloadException;
  * @author Jan P.C. Hanson
  *
  */
-public class PartNoComponent extends AbstractPayloadComponent
+public final class PartNoComponent extends AbstractPayloadComponent
 {
 	/**the total length of the component**/
 	private static final byte LENGTH = 17;

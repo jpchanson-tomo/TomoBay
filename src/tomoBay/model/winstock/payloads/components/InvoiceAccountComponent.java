@@ -22,7 +22,7 @@ import tomoBay.exceptions.PayloadException;
  * @author Jan P.C. Hanson
  *
  */
-public class InvoiceAccountComponent extends AbstractPayloadComponent
+public final class InvoiceAccountComponent extends AbstractPayloadComponent
 {
 	/**the total length of the component**/
 	private static final byte LENGTH = 9;

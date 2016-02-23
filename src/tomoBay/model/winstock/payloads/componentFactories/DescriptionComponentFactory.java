@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.DescriptionComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class DescriptionComponentFactory implements AbstractComponentFactory
+public final class DescriptionComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

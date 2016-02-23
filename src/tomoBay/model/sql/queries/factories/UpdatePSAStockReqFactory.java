@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.concreteQueries.UpdatePSAStockReq;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdatePSAStockReqFactory implements AbstractQueryFactory
+public final class UpdatePSAStockReqFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

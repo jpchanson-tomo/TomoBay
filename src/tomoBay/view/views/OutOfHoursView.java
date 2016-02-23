@@ -24,7 +24,7 @@ import tomoBay.view.AbstractView;
  * @author Jan P.C. Hanson
  *
  */
-public class OutOfHoursView implements AbstractView
+public final class OutOfHoursView implements AbstractView
 {
 
 	/* (non-Javadoc)

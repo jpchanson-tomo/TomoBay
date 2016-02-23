@@ -23,7 +23,7 @@ import tomoBay.presenters.sales.SalesHistoryPresenter;
  * @author Jan P.C. Hanson
  *
  */
-public class SalesHistoryPresenterFactory implements AbstractPresenterFactory
+public final class SalesHistoryPresenterFactory implements AbstractPresenterFactory
 {
 
 	/* (non-Javadoc)

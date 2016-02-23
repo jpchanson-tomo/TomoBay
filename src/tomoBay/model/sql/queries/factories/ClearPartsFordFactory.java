@@ -25,7 +25,7 @@ import tomoBay.model.sql.queries.concreteQueries.ClearPartsFord;
  * @author Jan P.C. Hanson
  *
  */
-public class ClearPartsFordFactory implements AbstractQueryFactory
+public final class ClearPartsFordFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

@@ -38,7 +38,7 @@ import org.eclipse.jetty.util.ssl.SslContextFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class HttpServer
+public final class HttpServer
 {
 	/**
 	 * default ctor

@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.InsertPartMapping;
  * @author Jan P.C. Hanson
  *
  */
-public class InsertPartMappingFactory implements AbstractQueryFactory
+public final class InsertPartMappingFactory implements AbstractQueryFactory
 {
 
 	/**

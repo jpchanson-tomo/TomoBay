@@ -66,7 +66,7 @@ import tomoBay.model.winstock.payloads.componentFactories.TypeComponentFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class PutInvoicePayload extends AbstractPayload
+public final class PutInvoicePayload extends AbstractPayload
 {
 	
 	

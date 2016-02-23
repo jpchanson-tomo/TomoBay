@@ -34,7 +34,7 @@ import tomoBay.presenters.factories.SalesOrderPresenterFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class PresenterFactory
+public final class PresenterFactory
 {
 	/** defencive enum limits the number of inputs to the make method**/
 	public enum PresenterType 

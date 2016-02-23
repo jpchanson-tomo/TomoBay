@@ -27,7 +27,7 @@ import tomoBay.model.winstock.response.PrintInvoiceResponse;
  * @author Jan P.C. Hanson
  *
  */
-public class PrintInvoiceCommand extends AbstractWinstockCommand
+public final class PrintInvoiceCommand extends AbstractWinstockCommand
 {
 	/**constant holding the the length of the response in bytes**/
 	private static final int RESPONSE_LENGTH = 7;

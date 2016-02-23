@@ -26,7 +26,7 @@ import com.ebay.soap.eBLBaseComponents.ItemType;
  * @author Jan P.C. Hanson
  *
  */
-public class ListingsCall extends AbstractAPIcall
+public final class ListingsCall extends AbstractAPIcall
 {
 	
 	private GetSellerListCall listingsCall_M;

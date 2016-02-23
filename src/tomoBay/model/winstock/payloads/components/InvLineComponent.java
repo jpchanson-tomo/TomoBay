@@ -22,7 +22,7 @@ import java.util.List;
  * @author Jan P.C. Hanson
  *
  */
-public class InvLineComponent extends AbstractPayloadComponent
+public final class InvLineComponent extends AbstractPayloadComponent
 {
 
 	public InvLineComponent()

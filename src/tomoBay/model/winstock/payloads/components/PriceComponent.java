@@ -22,7 +22,7 @@ import java.util.List;
  * @author Jan P.C. Hanson
  *
  */
-public class PriceComponent extends AbstractPayloadComponent
+public final class PriceComponent extends AbstractPayloadComponent
 {
 	/**
 	 * default ctor

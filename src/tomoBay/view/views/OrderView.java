@@ -24,7 +24,7 @@ import tomoBay.view.AbstractView;
  * @author Jan P.C. Hanson
  *
  */
-public class OrderView implements AbstractView
+public final class OrderView implements AbstractView
 {
 
 	/* (non-Javadoc)

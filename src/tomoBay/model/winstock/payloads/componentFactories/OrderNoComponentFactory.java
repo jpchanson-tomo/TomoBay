@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.OrderNoComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class OrderNoComponentFactory implements AbstractComponentFactory
+public final class OrderNoComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

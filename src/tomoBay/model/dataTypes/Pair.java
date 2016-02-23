@@ -20,7 +20,7 @@ package tomoBay.model.dataTypes;
  * @author Jan P.C. Hanson
  *
  */
-public final class Pair<X,Y>
+public class Pair<X,Y>
 {
 	/**the x-value of this pair**/
 	private X xValue_M;

@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.CityComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class CityComponentFactory implements AbstractComponentFactory
+public final class CityComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

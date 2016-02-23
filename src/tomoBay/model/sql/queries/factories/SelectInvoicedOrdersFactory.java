@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectInvoicedOrders;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectInvoicedOrdersFactory implements AbstractQueryFactory
+public final class SelectInvoicedOrdersFactory implements AbstractQueryFactory
 {
 
 	/* (non-Javadoc)

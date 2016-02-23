@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.UpdateInvoiceStatusSRN;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateInvoiceStatusSRNFactory implements AbstractQueryFactory
+public final class UpdateInvoiceStatusSRNFactory implements AbstractQueryFactory
 {
 
 	/* (non-Javadoc)

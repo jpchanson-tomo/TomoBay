@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockFord;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateAvailableStockFordFactory implements AbstractQueryFactory
+public final class UpdateAvailableStockFordFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

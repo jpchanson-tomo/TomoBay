@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.concreteQueries.InsertEbayTransactions;
  * @author Jan P.C. Hanson
  *
  */
-public class InsertEbayTransactionsFactory implements AbstractQueryFactory
+public final class InsertEbayTransactionsFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

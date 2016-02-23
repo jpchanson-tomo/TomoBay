@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.PackingListsComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class PackingListsComponentFactory implements AbstractComponentFactory
+public final class PackingListsComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

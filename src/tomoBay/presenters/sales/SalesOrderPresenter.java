@@ -29,7 +29,7 @@ import tomoBay.view.ViewFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class SalesOrderPresenter implements AbstractPresenter
+public final class SalesOrderPresenter implements AbstractPresenter
 {
 	/**
 	 * default constructor

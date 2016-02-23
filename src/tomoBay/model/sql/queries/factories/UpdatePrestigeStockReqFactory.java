@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.UpdatePrestigeStockReq;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdatePrestigeStockReqFactory implements AbstractQueryFactory
+public final class UpdatePrestigeStockReqFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

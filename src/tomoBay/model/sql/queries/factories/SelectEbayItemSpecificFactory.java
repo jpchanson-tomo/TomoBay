@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectEbayItemSpecific;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectEbayItemSpecificFactory implements AbstractQueryFactory
+public final class SelectEbayItemSpecificFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

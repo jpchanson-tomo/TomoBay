@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.PrintCopiesComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class PrintCopiesComponentFactory implements AbstractComponentFactory
+public final class PrintCopiesComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

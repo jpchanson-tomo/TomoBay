@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectEbayItemsNotInTransaction
  * @author Jan P.C. Hanson
  *
  */
-public class SelectEbayItemsNotInTransactionsFactory implements AbstractQueryFactory
+public final class SelectEbayItemsNotInTransactionsFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.QuantityComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class QuantityComponentFactory implements AbstractComponentFactory
+public final class QuantityComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.UpdateInvoiceStatus;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateInvoiceStatusFactory implements AbstractQueryFactory
+public final class UpdateInvoiceStatusFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

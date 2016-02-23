@@ -26,7 +26,7 @@ import tomoBay.view.ViewFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class RootPresenter implements AbstractPresenter
+public final class RootPresenter implements AbstractPresenter
 {
 	/**
 	 * default constructor

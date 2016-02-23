@@ -24,7 +24,7 @@ import tomoBay.exceptions.PayloadException;
  * @author Jan P.C. Hanson
  *
  */
-public class PrintCopiesComponent extends AbstractPayloadComponent
+public final class PrintCopiesComponent extends AbstractPayloadComponent
 {
 	/**
 	 * default ctor

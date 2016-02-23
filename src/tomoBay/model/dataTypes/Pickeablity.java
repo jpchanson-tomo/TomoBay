@@ -32,7 +32,7 @@ import tomoBay.model.winstock.Stock;
  * @author Jan P.C. Hanson
  *
  */
-public class Pickeablity
+public final class Pickeablity
 {
 	/**
 	 * default ctor

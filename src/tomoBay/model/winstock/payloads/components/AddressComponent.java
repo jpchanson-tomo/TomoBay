@@ -25,7 +25,7 @@ import tomoBay.exceptions.PayloadException;
  * @author Jan P.C. Hanson
  *
  */
-public class AddressComponent extends AbstractPayloadComponent
+public final class AddressComponent extends AbstractPayloadComponent
 {
 	/**the total length of the component**/
 	private static final byte LENGTH = 51;

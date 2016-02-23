@@ -24,7 +24,7 @@ import tomoBay.exceptions.PayloadException;
  * @author Jan P.C. Hanson
  *
  */
-public class PackingListsComponent extends AbstractPayloadComponent
+public final class PackingListsComponent extends AbstractPayloadComponent
 {
 
 	/* (non-Javadoc)

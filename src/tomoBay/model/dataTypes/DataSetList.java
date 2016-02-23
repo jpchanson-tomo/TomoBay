@@ -30,8 +30,11 @@ import java.util.Map;
 public class DataSetList<K, V> implements Iterable<Map<K,V>>
 {
 	/**internal List of maps, holds the data**/
-	List<Map<K,V>> dataSet_M;
+	private List<Map<K,V>> dataSet_M;
 
+	/**
+	 * 
+	 */
 	public DataSetList()
 	{
 		super();

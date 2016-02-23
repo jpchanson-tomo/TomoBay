@@ -24,7 +24,7 @@ import tomoBay.view.AbstractView;
  * @author Jan P.C. Hanson
  *
  */
-public class ErrorView implements AbstractView
+public final class ErrorView implements AbstractView
 {
 
 	/* (non-Javadoc)

@@ -33,7 +33,7 @@ import tomoBay.presenters.PresenterFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class DataServlet extends HttpServlet
+public final class DataServlet extends HttpServlet
 {	
 	/**needed to avoid warnings**/
 	private static final long serialVersionUID = -417534770555839323L;

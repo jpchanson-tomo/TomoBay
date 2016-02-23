@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectFullOrderLine;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectFullOrderLineFactory implements
+public final class SelectFullOrderLineFactory implements
 		AbstractQueryFactory
 {
 	/**

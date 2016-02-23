@@ -24,7 +24,7 @@ import tomoBay.view.ViewFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class ErrorPresenter implements AbstractPresenter
+public final class ErrorPresenter implements AbstractPresenter
 {
 	/**
 	 * default ctor

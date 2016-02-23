@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.PostCodeComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class PostCodeComponentFactory implements AbstractComponentFactory
+public final class PostCodeComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

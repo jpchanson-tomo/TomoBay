@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.InvLineComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class InvLinesComponentFactory implements AbstractComponentFactory
+public final class InvLinesComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

@@ -24,7 +24,7 @@ import tomoBay.model.net.HttpResponse;
  * @author Jan P.C. Hanson
  *
  */
-public class Stock
+public final class Stock
 {
 	/**the first part of the winstock url up to the first variable**/
 	private static final String URL_PT1_M=ConfigReader.getConf(Config.WIN_URL1);

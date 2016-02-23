@@ -20,7 +20,7 @@ import tomoBay.exceptions.NotAValidResultCodeException;
  * @author Jan P.C. Hanson
  *
  */
-public class PrintInvoiceResponse implements AbstractWinstockCommandResponse
+public final class PrintInvoiceResponse implements AbstractWinstockCommandResponse
 {
 	/**internal storage for the raw byte[] that comes back as a response from the socket**/
 	private byte[] responseBytes_M;

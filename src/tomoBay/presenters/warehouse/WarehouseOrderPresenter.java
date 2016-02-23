@@ -10,7 +10,7 @@ import tomoBay.view.ViewFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class WarehouseOrderPresenter implements AbstractPresenter
+public final class WarehouseOrderPresenter implements AbstractPresenter
 {
 	/**
 	 * default ctor

@@ -26,7 +26,7 @@ import tomoBay.model.winstock.commands.PrintInvoiceCommand;
  * @author Jan P.C. Hanson
  *
  */
-public class PrintInvoiceCommandFactory implements
+public final class PrintInvoiceCommandFactory implements
 		AbstractWinstockCommandFactory
 {
 	/**

@@ -61,7 +61,7 @@ import tomoBay.model.winstock.response.PutInvoiceResponse;
  * @see https://dzone.com/articles/design-patterns-command
  *
  */
-public class PutInvoiceCommand extends AbstractWinstockCommand
+public final class PutInvoiceCommand extends AbstractWinstockCommand
 {
 	/**constant holding the the length of the response in bytes**/
 	private static final int RESPONSE_LENGTH = 15;

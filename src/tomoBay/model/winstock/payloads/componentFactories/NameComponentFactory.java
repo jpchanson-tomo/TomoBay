@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.NameComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class NameComponentFactory implements AbstractComponentFactory
+public final class NameComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

@@ -24,7 +24,7 @@ import tomoBay.exceptions.PayloadException;
  * @author Jan P.C. Hanson
  *
  */
-public class TypeComponent extends AbstractPayloadComponent
+public final class TypeComponent extends AbstractPayloadComponent
 {
 
 	/**

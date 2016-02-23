@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.concreteQueries.UpdateTotalItemsRequired;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateTotalItemsRequiredFactory implements AbstractQueryFactory
+public final class UpdateTotalItemsRequiredFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

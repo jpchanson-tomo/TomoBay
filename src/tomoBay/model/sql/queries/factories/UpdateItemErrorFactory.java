@@ -22,7 +22,7 @@ import tomoBay.model.sql.queries.concreteQueries.UpdateItemError;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateItemErrorFactory implements AbstractQueryFactory
+public final class UpdateItemErrorFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

@@ -22,7 +22,7 @@ import tomoBay.presenters.sales.SalesOrderPresenter;
  * @author Jan P.C. Hanson
  *
  */
-public class SalesOrderPresenterFactory implements AbstractPresenterFactory
+public final class SalesOrderPresenterFactory implements AbstractPresenterFactory
 {
 	/**
 	 * default constructor

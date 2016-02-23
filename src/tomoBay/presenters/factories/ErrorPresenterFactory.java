@@ -22,7 +22,7 @@ import tomoBay.presenters.error.ErrorPresenter;
  * @author Jan P.C. Hanson
  *
  */
-public class ErrorPresenterFactory implements AbstractPresenterFactory
+public final class ErrorPresenterFactory implements AbstractPresenterFactory
 {
 	/**
 	 * default constructor

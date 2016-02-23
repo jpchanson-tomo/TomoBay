@@ -38,7 +38,7 @@ import tomoBay.model.winstock.response.AbstractWinstockCommandResponse;
  * @see https://dzone.com/articles/design-patterns-factory
  *
  */
-public class WinstockCommandInvoker
+public final class WinstockCommandInvoker
 {
 	/**defensive enum used to limit the amount of acceptable inputs to this invoker**/
 	public enum WinstockCommandTypes

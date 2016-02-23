@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.InsertPSAStockReq;
  * @author Jan P.C. Hanson
  *
  */
-public class InsertPSAStockReqFactory implements AbstractQueryFactory
+public final class InsertPSAStockReqFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

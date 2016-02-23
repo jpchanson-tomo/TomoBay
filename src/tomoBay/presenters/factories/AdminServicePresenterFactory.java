@@ -23,7 +23,7 @@ import tomoBay.presenters.admin.AdminPresenter;
  * @author Jan P.C. Hanson
  *
  */
-public class AdminServicePresenterFactory implements AbstractPresenterFactory
+public final class AdminServicePresenterFactory implements AbstractPresenterFactory
 {
 
 	/* (non-Javadoc)

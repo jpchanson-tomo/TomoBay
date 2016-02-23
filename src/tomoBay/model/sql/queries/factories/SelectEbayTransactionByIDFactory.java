@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectEbayTransactionByID;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectEbayTransactionByIDFactory implements AbstractQueryFactory
+public final class SelectEbayTransactionByIDFactory implements AbstractQueryFactory
 {
 
 	/* (non-Javadoc)

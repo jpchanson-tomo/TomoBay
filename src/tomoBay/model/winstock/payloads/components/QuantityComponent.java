@@ -22,7 +22,7 @@ import java.util.List;
  * @author Jan P.C. Hanson
  *
  */
-public class QuantityComponent extends AbstractPayloadComponent
+public final class QuantityComponent extends AbstractPayloadComponent
 {
 
 	/* (non-Javadoc)

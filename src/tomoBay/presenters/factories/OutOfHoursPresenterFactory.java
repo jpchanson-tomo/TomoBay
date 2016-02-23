@@ -23,7 +23,7 @@ import tomoBay.presenters.sales.OutOfHoursPresenter;
  * @author Jan P.C. Hanson
  *
  */
-public class OutOfHoursPresenterFactory implements AbstractPresenterFactory
+public final class OutOfHoursPresenterFactory implements AbstractPresenterFactory
 {
 
 	/* (non-Javadoc)

@@ -22,7 +22,7 @@ import tomoBay.presenters.root.RootPresenter;
  * @author Jan P.C. Hanson
  *
  */
-public class RootPresenterFactory implements AbstractPresenterFactory
+public final class RootPresenterFactory implements AbstractPresenterFactory
 {
 	/**
 	 * default constructor

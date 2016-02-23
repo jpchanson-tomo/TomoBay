@@ -24,7 +24,7 @@ import tomoBay.view.AbstractView;
  * @author Jan P.C. Hanson
  *
  */
-public class AdminServiceView implements AbstractView
+public final class AdminServiceView implements AbstractView
 {
 
 	/* (non-Javadoc)

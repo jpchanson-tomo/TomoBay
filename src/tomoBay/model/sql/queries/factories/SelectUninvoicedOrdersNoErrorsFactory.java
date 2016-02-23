@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrdersNoErrors;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectUninvoicedOrdersNoErrorsFactory implements
+public final class SelectUninvoicedOrdersNoErrorsFactory implements
 		AbstractQueryFactory
 {
 	/**

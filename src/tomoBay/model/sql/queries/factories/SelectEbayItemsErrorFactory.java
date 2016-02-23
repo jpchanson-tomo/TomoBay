@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectEbayItemsError;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectEbayItemsErrorFactory implements AbstractQueryFactory
+public final class SelectEbayItemsErrorFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

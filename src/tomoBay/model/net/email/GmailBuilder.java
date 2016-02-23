@@ -21,7 +21,7 @@ import java.util.Map;
  * @author Jan P.C. Hanson
  *
  */
-public class GmailBuilder extends AbstractEmailBuilder
+public final class GmailBuilder extends AbstractEmailBuilder
 {
 	/**This map contains all the values to be input into the MailServerSend properties**/
 	@SuppressWarnings("serial")

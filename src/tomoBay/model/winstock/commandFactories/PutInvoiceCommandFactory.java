@@ -24,7 +24,7 @@ import tomoBay.model.winstock.commands.PutInvoiceCommand;
  * @author Jan P.C. Hanson
  *
  */
-public class PutInvoiceCommandFactory implements AbstractWinstockCommandFactory
+public final class PutInvoiceCommandFactory implements AbstractWinstockCommandFactory
 {
 	/**
 	 * default ctor

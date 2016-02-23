@@ -33,7 +33,7 @@ import com.ebay.soap.eBLBaseComponents.SortOrderCodeType;
  * @author Jan P.C. Hanson
  *
  */
-public class OrdersCall extends AbstractAPIcall
+public final class OrdersCall extends AbstractAPIcall
 {
 	static Logger log = Logger.getLogger(OrdersCall.class.getName());
 	/**holder for the call object**/

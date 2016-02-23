@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectTransactionByOrder;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectTransactionByOrderIDFactory implements AbstractQueryFactory
+public final class SelectTransactionByOrderIDFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateItemBrandAndPartNoFactory implements AbstractQueryFactory
+public final class UpdateItemBrandAndPartNoFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.InsertOutOfHoursOrders;
  * @author Jan P.C. Hanson
  *
  */
-public class InsertOutOfHoursFactory implements AbstractQueryFactory
+public final class InsertOutOfHoursFactory implements AbstractQueryFactory
 {
 
 	/* (non-Javadoc)

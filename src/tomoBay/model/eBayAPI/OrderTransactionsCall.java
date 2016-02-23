@@ -27,7 +27,7 @@ import com.ebay.soap.eBLBaseComponents.OrderIDArrayType;
  * @author Jan P.C. Hanson
  *
  */
-public class OrderTransactionsCall extends AbstractAPIcall
+public final class OrderTransactionsCall extends AbstractAPIcall
 {
 	private GetOrderTransactionsCall call;
 	

@@ -24,7 +24,7 @@ import tomoBay.view.ViewFactory;
  * @author Jan P.C. Hanson
  *
  */
-public class AdminPresenter implements AbstractPresenter
+public final class AdminPresenter implements AbstractPresenter
 {
 	/**
 	 * default ctor

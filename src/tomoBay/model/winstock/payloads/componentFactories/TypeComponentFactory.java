@@ -21,7 +21,7 @@ import tomoBay.model.winstock.payloads.components.TypeComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class TypeComponentFactory implements AbstractComponentFactory
+public final class TypeComponentFactory implements AbstractComponentFactory
 {
 	/**
 	 * default ctor

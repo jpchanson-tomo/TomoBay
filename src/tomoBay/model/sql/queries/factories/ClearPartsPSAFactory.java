@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.concreteQueries.ClearPartsPSA;
  * @author Jan P.C. Hanson
  *
  */
-public class ClearPartsPSAFactory implements AbstractQueryFactory
+public final class ClearPartsPSAFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

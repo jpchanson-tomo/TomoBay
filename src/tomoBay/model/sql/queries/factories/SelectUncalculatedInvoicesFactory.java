@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectUncalculatedInvoices;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectUncalculatedInvoicesFactory implements AbstractQueryFactory
+public final class SelectUncalculatedInvoicesFactory implements AbstractQueryFactory
 {
 
 	/* (non-Javadoc)

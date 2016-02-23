@@ -27,7 +27,7 @@ import tomoBay.presenters.AbstractPresenter;
  * @author Jan P.C. Hanson
  *
  */
-public class OutOfHoursPresenter implements AbstractPresenter
+public final class OutOfHoursPresenter implements AbstractPresenter
 {
 	
 	private static final int OLD_ORDER_LIMIT = 30;

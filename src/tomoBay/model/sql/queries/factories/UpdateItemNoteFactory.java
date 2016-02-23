@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.UpdateItemNote;
  * @author Jan P.C. Hanson
  *
  */
-public class UpdateItemNoteFactory implements AbstractQueryFactory
+public final class UpdateItemNoteFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.InsertEbayItems;
  * @author Jan P.C. Hanson
  *
  */
-public class InsertEbayItemsFactory implements AbstractQueryFactory
+public final class InsertEbayItemsFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor

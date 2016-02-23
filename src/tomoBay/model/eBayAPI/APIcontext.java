@@ -23,7 +23,7 @@ import com.ebay.sdk.ApiCredential;
  * @author Jan P.C. Hanson
  *
  */
-public class APIcontext
+public final class APIcontext
 {
 	/**instance variable holds singleton instance**/
 	private static final APIcontext instance_M = new APIcontext();

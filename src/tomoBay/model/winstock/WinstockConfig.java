@@ -22,7 +22,7 @@ import tomoBay.helpers.ConfigReader;
  * @author Jan P.C. Hanson
  *
  */
-public class WinstockConfig
+public final class WinstockConfig
 {
 	/**
 	 * default constructor

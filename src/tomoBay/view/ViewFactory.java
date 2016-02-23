@@ -43,7 +43,7 @@ import tomoBay.view.views.WarehouseOrderView;
  * @author Jan P.C. Hanson
  *
  */
-public class ViewFactory
+public final class ViewFactory
 {
 	/**
 	 * factory method for ErrorView

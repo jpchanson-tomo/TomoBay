@@ -23,7 +23,7 @@ import tomoBay.model.winstock.payloads.components.AddressComponent;
  * @author Jan P.C. Hanson
  *
  */
-public class AddressComponentFactory implements AbstractComponentFactory
+public final class AddressComponentFactory implements AbstractComponentFactory
 {
 
 	/* (non-Javadoc)

@@ -23,7 +23,7 @@ import tomoBay.helpers.NoImports;
  *
  */
 @SuppressWarnings("unused")
-public class PutInvoiceResponse implements AbstractWinstockCommandResponse
+public final class PutInvoiceResponse implements AbstractWinstockCommandResponse
 {
 	/**internal storage for the raw byte[] that comes back as a response from the socket**/
 	private byte[] responseBytes_M;

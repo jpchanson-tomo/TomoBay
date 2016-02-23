@@ -24,7 +24,7 @@ import tomoBay.view.AbstractView;
  * @author Jan P.C. Hanson
  *
  */
-public class RootView implements AbstractView
+public final class RootView implements AbstractView
 {
 
 	/* (non-Javadoc)

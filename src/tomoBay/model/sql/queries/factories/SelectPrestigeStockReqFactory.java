@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.SelectPrestigeStockReqByPart;
  * @author Jan P.C. Hanson
  *
  */
-public class SelectPrestigeStockReqFactory implements AbstractQueryFactory
+public final class SelectPrestigeStockReqFactory implements AbstractQueryFactory
 {
 	/**
 	 * default ctor
