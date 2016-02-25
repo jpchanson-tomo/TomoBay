@@ -64,7 +64,7 @@ public final class OrderInfo implements AbstractPresenterAction
 	private String formatResults(AbstractSalesDayBookLine input)
 	{
 		return new JSONentity_object()
-					.addPreFormatted("summaryInfo", this.summaryInfo(input.orderInfo()))
+					.addPreFormatted("summaryInfo", this.summaryInfo(input))
 					.addPreFormatted("buyerInfo", this.buyerInfo(input.orderInfo().buyer()))
 					.addPreFormatted("transactionInfo", this.transactionInfo(input))
 					.addPreFormatted("shipping", this.shippingInfo(input))
@@ -76,16 +76,17 @@ public final class OrderInfo implements AbstractPresenterAction
 	 * @param order
 	 * @return
 	 */
-	private String summaryInfo(Order order)
+	private String summaryInfo(AbstractSalesDayBookLine input)
 	{
 		return new JSONentity_object()
-			.addLeaf("orderID",order.orderID())
-			.addLeaf("salesRecNo",GBP.toString(order.salesRecNo()) )
-			.addLeaf("shippingType",order.shippingType())
-			.addLeaf("createdTime",order.createdTime())
-			.addLeaf("orderTotalIncVAT",(order.totalPrice())+"")
-			.addLeaf("orderTotalExVAT",GBP.toString((VAT.subtract(order.totalPrice()))))
-			.addLeaf("VAT", GBP.toPennies(VAT.due(order.totalPrice()))+"" ).toString();
+			.addLeaf("orderID",input.orderInfo().orderID())
+			.addLeaf("invoiceNo", String.valueOf(input.invoiceNumber()))
+			.addLeaf("salesRecNo",GBP.toString(input.orderInfo().salesRecNo()) )
+			.addLeaf("shippingType",input.orderInfo().shippingType())
+			.addLeaf("createdTime",input.orderInfo().createdTime())
+			.addLeaf("orderTotalIncVAT",(input.orderInfo().totalPrice())+"")
+			.addLeaf("orderTotalExVAT",GBP.toString((VAT.subtract(input.orderInfo().totalPrice()))))
+			.addLeaf("VAT", GBP.toPennies(VAT.due(input.orderInfo().totalPrice()))+"" ).toString();
 	}
 	
 	/**

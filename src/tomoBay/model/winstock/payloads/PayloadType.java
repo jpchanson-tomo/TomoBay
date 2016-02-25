@@ -55,12 +55,11 @@ public enum PayloadType
 	
 	/**map of the constant values to the enum constants**/
 	private static final Map<PayloadType, Integer> payloadTypeByValue = new HashMap<PayloadType, Integer>();
-	/**initialiser for the codesByValue map**/
-	static
-	{
-		for(PayloadType type : PayloadType.values())
-		{payloadTypeByValue.put(type, type.value_M);}
-	}
+		static
+		{
+			for(PayloadType type : PayloadType.values())
+			{payloadTypeByValue.put(type, type.value_M);}
+		};
 	
 	/**
 	 * private ctor to allow integer values to be associated with enum constants

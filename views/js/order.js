@@ -17,15 +17,19 @@ $(document).ready(function(){
 		insertCommonJSON(json);
 		insertTransactionData(json);
 		grandTotal();
+		formatInvNo();
 	});
 	
 	
 });
 /////////////////////////////////////////////////////////////////////////////////////ENDOF MAIN
-
+/**
+ * 
+ */
 function insertCommonJSON(json)
 {
-	$("#orderID").text("OrderID: "+json.order.summaryInfo.orderID);
+	$("#orderID").text("OrderID: ["+json.order.summaryInfo.orderID+"]");
+	$("#invoiceNo").text("Invoice: ["+json.order.summaryInfo.invoiceNo+"]");
 	$("#street1").text(json.order.buyerInfo.street1);
 	$("#street2").text(json.order.buyerInfo.street2);
 	$("#city").text(json.order.buyerInfo.city);
@@ -42,6 +46,10 @@ function insertCommonJSON(json)
 	$("#orderTotalExVAT").text(json.order.summaryInfo.orderTotalExVAT);
 }
 
+/**
+ * 
+ * @param json
+ */
 function insertTransactionData(json)
 {
 	var tableBody="";
@@ -125,9 +133,22 @@ function insertTransactionData(json)
 	$(".table-responsive").append(tableBody+shippingLine+grandTotal+"</table>");
 }
 
+/**
+ * 
+ */
 function grandTotal()
 {
 	var sum = 0;
 	$('.sumOfLines').each(function(){sum += parseFloat($(this).text());});
 	$(".grandResult").append((sum*1.2).toFixed(2));
+}
+
+/**
+ * 
+ */
+function formatInvNo()
+{
+	var test = $("#invoiceNo").text();
+	if(test.indexOf("Invoice: [1]")!=-1){$("#invoiceNo").text("Invoiced");}
+	if(test.indexOf("Invoice: [0]")!=-1){$("#invoiceNo").text("Not Invoiced");}
 }

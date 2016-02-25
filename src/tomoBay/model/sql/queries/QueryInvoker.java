@@ -32,6 +32,7 @@ import tomoBay.model.sql.queries.factories.InsertPSAStockReqFactory;
 import tomoBay.model.sql.queries.factories.InsertPartFactory;
 import tomoBay.model.sql.queries.factories.InsertPartMappingFactory;
 import tomoBay.model.sql.queries.factories.InsertPrestigeStockReqFactory;
+import tomoBay.model.sql.queries.factories.SelectBrandByInvNoFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayBuyerFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayBuyersFactory;
 import tomoBay.model.sql.queries.factories.SelectEbayItemSpecificFactory;
@@ -145,6 +146,8 @@ public final class QueryInvoker
 			SELECT_EBAY_ORDER_BY_ID,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayOrderByBuyer}**/
 			SELECT_EBAY_ORDER_BY_BUYER,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectBrandByInvNo}**/
+			SELECT_BRAND_BY_INV_NO,
 			
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo}**/
 			UPDATE_ITEM_BRAND_AND_PARTNO,
@@ -218,6 +221,7 @@ public final class QueryInvoker
 			put(QueryType.SELECT_EBAY_TRANSACTION_BY_ID, new SelectEbayTransactionByIDFactory());
 			put(QueryType.SELECT_EBAY_ORDER_BY_ID, new SelectEbayOrderByIDFactory());
 			put(QueryType.SELECT_EBAY_ORDER_BY_BUYER, new SelectEbayOrderByBuyerFactory());
+			put(QueryType.SELECT_BRAND_BY_INV_NO, new SelectBrandByInvNoFactory());
 			
 			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
 			put(QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, new UpdateTotalItemsRequiredFactory());

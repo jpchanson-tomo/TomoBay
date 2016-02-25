@@ -14,22 +14,38 @@ package tomoBay.presenters.presenterActions.concreteActions;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.io.IOException;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+
+import org.apache.log4j.Logger;
+
+import tomoBay.exceptions.NotAValidResultCodeException;
+import tomoBay.exceptions.OrderException;
+import tomoBay.exceptions.PayloadException;
+import tomoBay.helpers.TimeStampCompare;
 import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.concreteLineTypes.StandardInvoice;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.formats.WinstockFormat;
 import tomoBay.model.dataTypes.order.Order;
+import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.winstock.WinstockCommandInvoker;
 import tomoBay.model.winstock.payloads.PayloadType;
+import tomoBay.model.winstock.response.AbstractWinstockCommandResponse;
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 /**
  * This AbstractPresenterAction provides functionality to invoice a number of orders based on the 
  * order numbers provided as the data string to the execute method. This string should be a comma
- * seperated string of valid order numbers i.e. real order numbers that are less than 90 days old.
+ * separated string of valid order numbers i.e. real order numbers that are less than 90 days old.
  * @author Jan P.C. Hanson
  *
  */
 public final class InvoiceOrders implements AbstractPresenterAction
 {
-
+	static final Logger log = Logger.getLogger(InvoiceOrders.class.getName());
+	
 	/**
 	 * default ctor
 	 */
@@ -42,13 +58,32 @@ public final class InvoiceOrders implements AbstractPresenterAction
 	@Override
 	public String execute(String data)
 	{
+
 		String[] orderIDs = this.splitOrderNoString(data);
+		String result="";
 		for(String orderId : orderIDs)
 		{
-			AbstractSalesDayBookLine invoice = new StandardInvoice(new Order(orderId));
-			DualList<String, PayloadType> winstockInv = this.formatAsDualList(invoice);
+			try
+			{
+				AbstractSalesDayBookLine invoice = new StandardInvoice(new Order(orderId));
+				if(invoice.invoiceNumber()==0 && TimeStampCompare.olderThan(30, invoice.orderInfo().createdTime())==false)
+				{
+					DualList<String, PayloadType> winstockInv = this.formatAsDualList(invoice);
+					AbstractWinstockCommandResponse res;
+					res = WinstockCommandInvoker.execute(WinstockCommandInvoker.WinstockCommandTypes.PutInvoice, winstockInv);
+//					log.warn("raise Invoice: "+Integer.parseInt(res.getRecieved()[0])+" is "+res.isSuccess());
+					result+=res.getRecieved()[0]+",";
+					this.updateDB(res.getRecieved()[0], orderId);
+				}
+				else {result+="("+invoice.orderInfo().salesRecNo()+" already Invoiced or too old"+")";}
+			}
+			catch (UnknownHostException e){e.printStackTrace(); result+= "(Error with "+orderId+"),";} 
+			catch (IOException e){e.printStackTrace(); result+= "(Error with "+orderId+"),";}
+			catch (PayloadException e){e.printStackTrace(); result+= "(Error with "+orderId+"),";}
+//			catch (NotAValidResultCodeException e){e.printStackTrace(); result+= "(Error with "+orderId+"),";}
+			catch (RuntimeException e) {result+= "(Error with "+orderId+"),";}
 		}
-		return null;
+		return result;
 	}
 	
 	/**
@@ -60,13 +95,19 @@ public final class InvoiceOrders implements AbstractPresenterAction
 	{return orderNos.split(",");}
 	
 	/**
+	 * update the database entry for a particular order to include the invoice number in the 
+	 * invoiced column of the orders table.
+	 * @param invNo
+	 * @param OrderNo
+	 */
+	private void updateDB(String invNo, String orderNo)
+	{QueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS, new String[] {invNo,orderNo});}
+	
+	/**
 	 * formats the AbstractSalesDayBookLine into a format that can be passed to the WinstockCommandInvoker.
 	 * @param invoice the invoice to be formatted
 	 * @return DualList<String, PayloadType> accepted by the WinstockCommandInvoker
 	 */
 	private DualList<String, PayloadType> formatAsDualList(AbstractSalesDayBookLine invoice)
-	{
-		return null;
-	}
-
+	{return invoice.format(new WinstockFormat());}
 }

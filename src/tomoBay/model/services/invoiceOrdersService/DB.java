@@ -32,8 +32,6 @@ public final class DB
 	public DB()
 	{super();}
 	
-	public void updateInvStatus(String orderNo)
-	{
-		QueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS, new String[] {"1",orderNo});
-	}
+	public void updateInvStatus(String orderNo, String invNo)
+	{QueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS, new String[] {invNo,orderNo});}
 }

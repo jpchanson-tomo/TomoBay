@@ -18,9 +18,14 @@ import java.util.Iterator;
 import java.util.List;
 
 import tomoBay.helpers.checkTime.CheckTime;
+import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.dataTypes.financial.GBP;
 import tomoBay.model.dataTypes.financial.VAT;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.formats.AbstractFormat;
 import tomoBay.model.dataTypes.order.Order;
+import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.winstock.payloads.PayloadType;
 /**
  * This class represents an Abstract sales day book entry, i.e. either a credit note or an invoice
  * and provides functionality to create these entries.
@@ -86,6 +91,27 @@ public abstract class AbstractSalesDayBookLine implements Iterable<AbstractLineI
 	 * @return int representing the price (excluding vat)
 	 */
 	public int totalExVat(){return VAT.subtract(this.totalIncVat());}
+	
+	/**
+	 * returns the invoice number of this invoice, if it exists.
+	 * @return int representing the invoice number. If this invoice has not yet been processed
+	 * then this method will return 0 as no invoice number has yet been generated.
+	 */
+	public int invoiceNumber()
+	{
+		String res = QueryInvoker.execute(QueryType.SELECT_EBAY_ORDER_BY_ID,
+											new String[] {this.order_M.orderID()}
+										).get(0)[5];
+		return Integer.parseInt(res);
+	}
+	
+	/**
+	 * converts this invoice into the format requested
+	 * @param format the format to convert this invoice to
+	 * @return DualList<String
+	 */
+	public DualList<String,PayloadType> format(AbstractFormat format)
+	{return format.format(this);}
 	
 	/**
 	 * iterator method makes this class iterable i.e. it is possible to loop over all

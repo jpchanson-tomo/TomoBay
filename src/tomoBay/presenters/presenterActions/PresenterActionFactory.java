@@ -26,6 +26,7 @@ import tomoBay.presenters.presenterActions.factories.MarkAsInvoicedFactory;
 import tomoBay.presenters.presenterActions.factories.MarkAsUninvoicedFactory;
 import tomoBay.presenters.presenterActions.factories.OrderInfoFactory;
 import tomoBay.presenters.presenterActions.factories.PeriodicServicesControllerFactory;
+import tomoBay.presenters.presenterActions.factories.PrintInvoicesFactory;
 import tomoBay.presenters.presenterActions.factories.ReScanBuyerFactory;
 import tomoBay.presenters.presenterActions.factories.ReScanListingFactory;
 
@@ -56,7 +57,9 @@ public final class PresenterActionFactory
 					
 					RE_SCAN_BUYER,
 					
-					INVOICE_ORDERS
+					INVOICE_ORDERS,
+					
+					PRINT_INVOICES
 				}
 	
 	/**maps the type string to an action**/
@@ -74,6 +77,7 @@ public final class PresenterActionFactory
 					put(PresenterActions.BUYER_LIST, new BuyerListFactory());
 					put(PresenterActions.RE_SCAN_BUYER, new ReScanBuyerFactory());
 					put(PresenterActions.INVOICE_ORDERS, new InvoiceOrdersFactory());
+					put(PresenterActions.PRINT_INVOICES, new PrintInvoicesFactory());
 				}};
 
 	/**

@@ -134,11 +134,8 @@ public final class Invoice
 	private String brandToCode(String brand)
 	{
 		String brandCode = BrandToCode.convert(brand);
-		if(brandCode.equals("F"))
-		{return "0";}
-		else if(brandCode.equals("C"))
-		{return "3";}
-		else
-		{return "8";}
+		if(brandCode.equals("F")){return "0";}
+		else if(brandCode.equals("C")){return "3";}
+		else{return "8";}
 	}
 }

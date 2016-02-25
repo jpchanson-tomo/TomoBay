@@ -16,7 +16,7 @@ $(document).ready(function(){
 	var tableColumns=["Select", "Name","Date","SalesRecNo", "ShippingType","Details","Status"];
 	var sortableColumns=["Select", "Name","Date","SalesRecNo", "ShippingType","Status"];
 	var queryString="/res/?page=SALES_ORDER_PRESENTER";
-	var footerContent=	"<a class='btn btn-primary' onclick='invoice()'>Send to Warehouse</a>"+
+	var footerContent=	"<a class='btn btn-primary' onclick='invoiceAndPrint()'>Send to Warehouse</a>"+
 	"<a class='btn btn-primary' href='/sales_orders.html'>Refresh</a>"+
 	"<button onclick='printScreen()' class='btn btn-primary'>Print</button>";
 	var headerContent="<h2>Sales - Orders </h2>";
@@ -65,15 +65,14 @@ function itemCount()
 /**
  * 
  */
-function invoice()
+function invoiceAndPrint()
 {
 	var orderNos="";
 
 	$("#autoTable").find("tr").each(function()
 	{
 		if($(this).find('input[type="checkbox"]').is(':checked'))
-		{orderNos += $(this).find(".Details>button").prop('value')+" ";}
+		{orderNos += $(this).find('input[type="checkbox"]').prop('id')+",";}
 	});
-	
 	invoiceOrders(orderNos);
 }

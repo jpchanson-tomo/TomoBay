@@ -46,7 +46,7 @@ public final class SalesOrderView implements AbstractView
 			for (String[] cols : input)
 			{
 				result+="{";
-				result+=" \"Select\": \"<input type='checkbox' class='chcktbl'/><div style='visibility:hidden;'>"+n+"</div>\" ,";
+				result+=" \"Select\": \"<input type='checkbox' class='chcktbl' id='"+cols[0].trim()+"'/><div style='visibility:hidden;'>"+n+"</div>\" ,";
 				result+=" \"Name\": \""+cols[1].trim()+"\", ";
 				result+=" \"Date\": \""+cols[4].trim()+"\", ";
 				result+=" \"SalesRecNo\": \""+cols[2].trim()+"\", ";

@@ -53,7 +53,6 @@ public final class PriceAdjustment
 		int adjustAmount = this.adjustmentAmt(initialDiscrepancy);
 		int fitness = this.fitness(line, initialDiscrepancy);
 		
-		System.out.println(initialDiscrepancy +" / "+ smallestQty +" = "+(initialDiscrepancy/smallestQty));
 		for(int i = 0 ; i < ((initialDiscrepancy)/smallestQty) ; ++i)
 		{
 			int bestChoice = PriceAdjustment.PLACEHOLDER;
