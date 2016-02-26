@@ -68,6 +68,7 @@ public final class PrintInvoices implements AbstractPresenterAction
 			}
 			catch(RuntimeException e) {result+="could not print ("+orderNo+" probably ancient order),";}
 		}
+		log.warn(result+"-----PRINTED");
 		return result;
 	}
 

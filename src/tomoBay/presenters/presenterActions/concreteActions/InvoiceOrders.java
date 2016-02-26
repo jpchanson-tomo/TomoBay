@@ -83,6 +83,7 @@ public final class InvoiceOrders implements AbstractPresenterAction
 //			catch (NotAValidResultCodeException e){e.printStackTrace(); result+= "(Error with "+orderId+"),";}
 			catch (RuntimeException e) {result+= "(Error with "+orderId+"),";}
 		}
+		log.warn(result+"-----INVOICED");
 		return result;
 	}
 	
