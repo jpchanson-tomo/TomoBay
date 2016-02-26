@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>console</headerType>
+  <jar>/home/orpheus/projects/TomoMotorParts/StopGap/StopGapNew.jar</jar>
+  <outfile>/home/orpheus/projects/TomoMotorParts/StopGap/tomoBay.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>true</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>/home/orpheus/projects/TomoMotorParts/StopGap/TomoBay.ico</icon>
+  <singleInstance>
+    <mutexName>Main</mutexName>
+    <windowTitle>TomoBay</windowTitle>
+  </singleInstance>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0_66</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+    <maxHeapSize>1024</maxHeapSize>
+    <opt>-XX:GCTimeRatio=4</opt>
+  </jre>
+  <versionInfo>
+    <fileVersion>0.0.1.0</fileVersion>
+    <txtFileVersion>0.0.1</txtFileVersion>
+    <fileDescription>TomoBay</fileDescription>
+    <copyright>Jan P.C. Hanson &amp; Tomo Prestige Ltd</copyright>
+    <productVersion>0.0.1.0</productVersion>
+    <txtProductVersion>0.0.1</txtProductVersion>
+    <productName>TomoBay</productName>
+    <companyName></companyName>
+    <internalName>TomoBay</internalName>
+    <originalFilename>TomoBay.exe</originalFilename>
+  </versionInfo>
+</launch4jConfig>

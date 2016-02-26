@@ -1,2 +1,6 @@
 #!/bin/bash
-ant && git add . && git commit && git push origin stopgap
+ant && 
+/opt/launch4j/launch4j exeConf.xml  && 
+git add . && 
+git commit && 
+git push origin stopgap
