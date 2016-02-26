@@ -35,6 +35,9 @@ public class Part
 	/**connection to winstock stock info**/
 	private Stock winstock_M;
 	
+	private static final String BADCHAR = "œ";//windows
+//	private static final String BADCHAR = "�";//linux
+	
 	/**
 	 * default ctor
 	 */
@@ -91,9 +94,8 @@ public class Part
 	private String getDescription(String partNo, String brand)
 	{
 		String result = this.winstock_M.requestDescription(partNo, BrandToCode.convert(brand));
-		int endOfString = result.indexOf("�");
-//		int endOfString = result.indexOf("œ");
-		if (result.contains("�")) {result = result.substring(0, endOfString);}
+		int endOfString = result.indexOf(BADCHAR);
+		if (result.contains(BADCHAR)) {result = result.substring(0, endOfString);}
 		return result;
 		
 	}

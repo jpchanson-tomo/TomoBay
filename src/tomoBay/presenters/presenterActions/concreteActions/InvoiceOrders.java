@@ -23,6 +23,8 @@ import tomoBay.exceptions.PayloadException;
 import tomoBay.helpers.TimeStampCompare;
 import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory.SalesDayBookLineType;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.concreteLineTypes.StandardInvoice;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.formats.WinstockFormat;
 import tomoBay.model.dataTypes.order.Order;
@@ -68,7 +70,7 @@ public final class InvoiceOrders implements AbstractPresenterAction
 		{
 			try
 			{
-				AbstractSalesDayBookLine invoice = new StandardInvoice(new Order(orderId));
+				AbstractSalesDayBookLine invoice = SalesDayBookLineFactory.make(SalesDayBookLineType.INVOICE, new Order(orderId));
 				if(invoice.invoiceNumber()==0 && TimeStampCompare.olderThan(30, invoice.orderInfo().createdTime())==false)
 				{
 					DualList<String, PayloadType> winstockInv = this.formatAsDualList(invoice);
@@ -130,7 +132,7 @@ public final class InvoiceOrders implements AbstractPresenterAction
 	private void emailResults(String result)
 	{
 		MailClient.send(InvoiceOrders.EMAILHEADER + result + InvoiceOrders.EMAILFOOTER, 
-				"INVOICED ORDERS TEST TEST TEST",
+				"INVOICED ORDERS",
 				new String[] {"tomomotorbay@gmail.com","steve@tomoparts.co.uk","paul@tomoparts.co.uk"}, 
 				new String[] {}, 
 				new String[] {}, 

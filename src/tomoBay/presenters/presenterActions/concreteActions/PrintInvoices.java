@@ -21,6 +21,8 @@ import tomoBay.helpers.BrandToCode;
 import tomoBay.helpers.StackTraceToString;
 import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory.SalesDayBookLineType;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.concreteLineTypes.StandardInvoice;
 import tomoBay.model.dataTypes.order.Order;
 import tomoBay.model.winstock.WinstockCommandInvoker;
@@ -53,7 +55,7 @@ public final class PrintInvoices implements AbstractPresenterAction
 		{
 			try
 			{
-				AbstractSalesDayBookLine line = new StandardInvoice(new Order(orderNo));
+				AbstractSalesDayBookLine line = SalesDayBookLineFactory.make(SalesDayBookLineType.INVOICE, new Order(orderNo));
 				if(line.invoiceNumber()!=0 && line.invoiceNumber()!=1)
 				{
 					DualList<String, PayloadType> printThis 
