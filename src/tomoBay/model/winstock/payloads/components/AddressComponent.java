@@ -41,14 +41,15 @@ public final class AddressComponent extends AbstractPayloadComponent
 	@Override
 	public List<Byte> convert(String input) throws PayloadException
 	{
-		List<Byte> output = super.addString(input);
+		
 		if (input.length() < LENGTH)
 		{
 			byte b = 0;
+			List<Byte> output = super.addString(input);
 			for(int i = input.length() ; i < LENGTH ; ++i) {output.add(b);}
 			return output;
 		}
 		else
-		{return output.subList(0, 49);}
+		{throw new PayloadException("address is too long: \""+input+"\"");}
 	}
 }

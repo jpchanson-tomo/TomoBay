@@ -46,14 +46,14 @@ public final class WinstockFormat extends AbstractFormat
 		result.put("34", PayloadType.TYPE);
 		result.put(this.brandToCode(line.orderInfo().transaction(0).listing().part(0).brand()), PayloadType.COMPANY);
 		result.put("EBAY", PayloadType.INVOICE_ACCOUNT);
-		result.put(line.orderInfo().buyer().name(), PayloadType.NAME);
-		result.put(line.orderInfo().buyer().street1(),PayloadType.ADDRESS1);
-		result.put(line.orderInfo().buyer().street2(),PayloadType.ADDRESS2);
-		result.put(line.orderInfo().buyer().city(),PayloadType.CITY);
-		result.put(line.orderInfo().buyer().county(),PayloadType.COUNTY);
-		result.put(line.orderInfo().buyer().postcode(),PayloadType.POSTCODE);
-		result.put(String.valueOf(line.orderInfo().salesRecNo()),PayloadType.ORDER_NO);
-		result.put(String.valueOf(line.size()), PayloadType.INV_LINES);
+		result.put(this.shorten(line.orderInfo().buyer().name()), PayloadType.NAME);
+		result.put(this.shorten(line.orderInfo().buyer().street1()),PayloadType.ADDRESS1);
+		result.put(this.shorten(line.orderInfo().buyer().street2()),PayloadType.ADDRESS2);
+		result.put(this.shorten(line.orderInfo().buyer().city()),PayloadType.CITY);
+		result.put(this.shorten(line.orderInfo().buyer().county()),PayloadType.COUNTY);
+		result.put(this.shorten(line.orderInfo().buyer().postcode()),PayloadType.POSTCODE);
+		result.put(this.shorten(String.valueOf(line.orderInfo().salesRecNo())),PayloadType.ORDER_NO);
+		result.put(this.shorten(String.valueOf(line.size())), PayloadType.INV_LINES);
 		
 		for (AbstractLineItem item : line)
 		{
@@ -80,4 +80,7 @@ public final class WinstockFormat extends AbstractFormat
 		else if(brandCode.equals("C")){return "3";}
 		else{return "8";}
 	}
+	
+	private String shorten(String input)
+	{if(input.length()>=51) {return input.substring(0, 50);} else {return input;}}
 }
