@@ -49,6 +49,6 @@ public final class AddressComponent extends AbstractPayloadComponent
 			return output;
 		}
 		else
-		{return output.subList(0, 50);}
+		{return output.subList(0, 49);}
 	}
 }
