@@ -2,10 +2,10 @@ package tomoBay;
 import org.apache.log4j.Logger;
 
 import tomoBay.model.dataTypes.ServerStatus;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
-import tomoBay.presenters.presenterActions.concreteActions.InvoiceOrders;
-import tomoBay.presenters.presenterActions.concreteActions.PrintInvoices;
+import tomoBay.model.services.ServiceFactory;
+import tomoBay.model.services.ServiceFactory.ConfiguredServiceType;
+import tomoBay.model.services.ServiceScheduler;
+import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
 import tomoBay.view.HttpServer;
 /**
  * The entry point into the program, this is a stopgap solution to get invoices ,of orders that
@@ -27,23 +27,23 @@ public final class MAIN
 		server.start(1337);
 		ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
 //		
-//		final ServiceScheduler services = new ServiceScheduler(5);
-////		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
-//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
-//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.OUT_OF_HOURS_SERVICE));
-//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
-//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.CHECK_ERRORS));
-//		final String data = "<EMAIL>"
-//				+ "<TO>tomomotorbay@gmail.com</TO>"
-//				+ "<TO>paul@tomoparts.co.uk</TO>"
-//				+ "<TO>steve@tomoparts.co.uk</TO>"
-//				+ "<SUBJECT>ERRORS TO FIX!!!!!</SUBJECT>"
-//				+ "</EMAIL>";
-//		services.add(ServiceFactory.make(
-//										ConfiguredServiceType.EMAIL_ERRORS_SERVICE,
-//										new EmailErrorsConfig().configure(data)
-//										));
-//		services.start(20);
+		final ServiceScheduler services = new ServiceScheduler(5);
+//		services.add(ServiceFactory.make(ServiceFactory.ServiceType.INVOICE_SERVICE));
+		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
+		services.add(ServiceFactory.make(ServiceFactory.ServiceType.OUT_OF_HOURS_SERVICE));
+		services.add(ServiceFactory.make(ServiceFactory.ServiceType.RESCAN_ERRORS_SERVICE));
+		services.add(ServiceFactory.make(ServiceFactory.ServiceType.CHECK_ERRORS));
+		final String data = "<EMAIL>"
+				+ "<TO>tomomotorbay@gmail.com</TO>"
+				+ "<TO>paul@tomoparts.co.uk</TO>"
+				+ "<TO>steve@tomoparts.co.uk</TO>"
+				+ "<SUBJECT>ERRORS TO FIX!!!!!</SUBJECT>"
+				+ "</EMAIL>";
+		services.add(ServiceFactory.make(
+										ConfiguredServiceType.EMAIL_ERRORS_SERVICE,
+										new EmailErrorsConfig().configure(data)
+										));
+		services.start(20);
 //		new InvoiceOrders().execute("331710471405-1246826047014");
 //		System.out.println(new PrintInvoices().execute("331555744715-1245423889014"));
 //		System.out.println
