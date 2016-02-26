@@ -16,12 +16,9 @@ package tomoBay.presenters.presenterActions.concreteActions;
  */
 import java.io.IOException;
 import java.net.UnknownHostException;
-import java.util.Arrays;
 
 import org.apache.log4j.Logger;
 
-import tomoBay.exceptions.NotAValidResultCodeException;
-import tomoBay.exceptions.OrderException;
 import tomoBay.exceptions.PayloadException;
 import tomoBay.helpers.TimeStampCompare;
 import tomoBay.model.dataTypes.DualList;
@@ -29,6 +26,8 @@ import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookL
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.concreteLineTypes.StandardInvoice;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.formats.WinstockFormat;
 import tomoBay.model.dataTypes.order.Order;
+import tomoBay.model.net.email.GmailBuilder;
+import tomoBay.model.net.email.MailClient;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 import tomoBay.model.winstock.WinstockCommandInvoker;
@@ -45,6 +44,10 @@ import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 public final class InvoiceOrders implements AbstractPresenterAction
 {
 	static final Logger log = Logger.getLogger(InvoiceOrders.class.getName());
+	private static final String EMAILHEADER="<table border='1' style='width:100%'><thead><th>salesRecordNo</th>"
+				+ "</th><th>created time</th><th>weight</th><th>Invoice Number</th></thead><tbody>";
+	private static final String EMAILFOOTER="</tbody></table>";
+	
 	
 	/**
 	 * default ctor
@@ -72,7 +75,8 @@ public final class InvoiceOrders implements AbstractPresenterAction
 					AbstractWinstockCommandResponse res;
 					res = WinstockCommandInvoker.execute(WinstockCommandInvoker.WinstockCommandTypes.PutInvoice, winstockInv);
 //					log.warn("raise Invoice: "+Integer.parseInt(res.getRecieved()[0])+" is "+res.isSuccess());
-					result+=res.getRecieved()[0]+",";
+//					result+=res.getRecieved()[0]+",";
+					result+=this.formatMailResult(res.getRecieved()[0], res.getRecieved()[1], invoice);
 					this.updateDB(res.getRecieved()[0], orderId);
 				}
 				else {result+="("+invoice.orderInfo().salesRecNo()+" already Invoiced or too old"+")";}
@@ -84,7 +88,8 @@ public final class InvoiceOrders implements AbstractPresenterAction
 			catch (RuntimeException e) {result+= "(Error with "+orderId+"),";}
 		}
 		log.warn(result+"-----INVOICED");
-		return result;
+		this.emailResults(result);
+		return InvoiceOrders.EMAILHEADER + result + InvoiceOrders.EMAILFOOTER;
 	}
 	
 	/**
@@ -111,4 +116,24 @@ public final class InvoiceOrders implements AbstractPresenterAction
 	 */
 	private DualList<String, PayloadType> formatAsDualList(AbstractSalesDayBookLine invoice)
 	{return invoice.format(new WinstockFormat());}
+	
+	private String formatMailResult(String invNo, String weight, AbstractSalesDayBookLine invoice)
+	{
+		return "<tr>"
+				+ "<td>"+invoice.orderInfo().salesRecNo()+"</td>"
+				+ "<td>"+invoice.orderInfo().createdTime()+"</td>"
+				+ "<td>"+weight+"</td>"
+				+ "<td>"+invNo+"</td>"
+			+ "</tr>";
+	}
+	
+	private void emailResults(String result)
+	{
+		MailClient.send(InvoiceOrders.EMAILHEADER + result + InvoiceOrders.EMAILFOOTER, 
+				"INVOICED ORDERS TEST TEST TEST",
+				new String[] {"tomomotorbay@gmail.com","steve@tomoparts.co.uk","paul@tomoparts.co.uk"}, 
+				new String[] {}, 
+				new String[] {}, 
+				new GmailBuilder());
+	}
 }

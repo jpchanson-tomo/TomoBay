@@ -26,6 +26,7 @@ import tomoBay.model.dataTypes.order.Order;
 import tomoBay.model.winstock.WinstockCommandInvoker;
 import tomoBay.model.winstock.payloads.PayloadType;
 import tomoBay.model.winstock.response.AbstractWinstockCommandResponse;
+import tomoBay.model.winstock.response.ResultCodes;
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 /**
  *
@@ -123,8 +124,9 @@ public final class PrintInvoices implements AbstractPresenterAction
 		{
 			AbstractWinstockCommandResponse response = 
 					WinstockCommandInvoker.execute(WinstockCommandInvoker.WinstockCommandTypes.PrintInvoice, printThis);
-//			log.warn("print: "+response.isSuccess());
-			result+=line.invoiceNumber()+",";
+			if(response.isSuccess()==ResultCodes.SUCCESS)
+			{result+=line.invoiceNumber()+",";}
+			else {result+="(did not print "+line.invoiceNumber()+")";}
 		} 
 		catch (Exception e)
 		{
