@@ -25,7 +25,6 @@ import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory.SalesDayBookLineType;
-import tomoBay.model.dataTypes.financial.SalesOrderDayBook.concreteLineTypes.StandardInvoice;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.formats.WinstockFormat;
 import tomoBay.model.dataTypes.order.Order;
 import tomoBay.model.net.email.GmailBuilder;

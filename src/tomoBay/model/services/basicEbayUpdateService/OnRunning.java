@@ -7,6 +7,7 @@ import com.ebay.soap.eBLBaseComponents.OrderType;
 import tomoBay.helpers.Config;
 import tomoBay.helpers.ConfigReader;
 import tomoBay.helpers.StackTraceToString;
+import tomoBay.model.eBayAPI.EbayAccounts;
 import tomoBay.model.eBayAPI.OrdersCall;
 import tomoBay.model.services.AbstractServiceState;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
@@ -33,6 +34,7 @@ import tomoBay.model.services.AbstractServiceState;
 public final class OnRunning implements AbstractServiceState
 {
 	static private Logger log = Logger.getLogger(OnRunning.class.getName());
+	
 	/**
 	 * default ctor
 	 */
@@ -48,17 +50,23 @@ public final class OnRunning implements AbstractServiceState
 		try
 		{
 			log.warn("ebay update started");
-			String usrKey = ConfigReader.getConf(Config.EBAY_PROD_KEY);
-			String server =  ConfigReader.getConf(Config.EBAY_PROD_SRV);
-			OrdersCall oCall = new OrdersCall(usrKey, server);
-			OrderType[] orders = oCall.call(Integer.parseInt(ConfigReader.getConf(Config.EBAY_LOOKBCK)));
-			
-			OrdersTable.populate(orders);
-			TransactionsTable.populate(orders);
-			BuyersTable.populate(orders);
-			ItemsAndPartsTable.populate(new String[] {usrKey,server}, orders);
+			for(String account : EbayAccounts.accounts())
+			{
+				log.warn("updating: "+account);
+				String usrKey = EbayAccounts.get(account, EbayAccounts.AccountInfo.API_KEY);
+				String server =  EbayAccounts.get(account, EbayAccounts.AccountInfo.SERVER_ADDRESS);
+				int lookbackDays = Integer.parseInt(EbayAccounts.get(account, EbayAccounts.AccountInfo.LOOKBACK_DAYS));
+				int accID = Integer.parseInt(EbayAccounts.get(account, EbayAccounts.AccountInfo.ID));
+				
+				OrdersCall oCall = new OrdersCall(usrKey, server);
+				OrderType[] orders = oCall.call(lookbackDays);
+				
+				OrdersTable.populate(orders, accID);
+				TransactionsTable.populate(orders);
+				BuyersTable.populate(orders);
+				ItemsAndPartsTable.populate(new String[] {usrKey,server}, orders);
+			}
 			return "finished ebay update";
-			
 		} 
 		catch (Exception e)
 		{
@@ -66,5 +74,4 @@ public final class OnRunning implements AbstractServiceState
 			return "error";
 		}
 	}
-
 }

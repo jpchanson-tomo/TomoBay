@@ -13,8 +13,8 @@ $("head").append("<script src='js/modules/colourCodeByStatus.js'></script>");
  */
 $(document).ready(function(){
 	var resultSelector=".sortable";
-	var tableColumns=["Select", "Name","Date","SalesRecNo", "ShippingType","Details","Status"];
-	var sortableColumns=["Select", "Name","Date","SalesRecNo", "ShippingType","Status"];
+	var tableColumns=["Select", "Name","Date","SalesRecNo", "Account" , "ShippingType","Details","Status"];
+	var sortableColumns=["Select", "Name","Date","SalesRecNo", "Account", "ShippingType","Status"];
 	var queryString="/res/?page=SALES_ORDER_PRESENTER";
 	var footerContent=	"<a class='btn btn-primary' onclick='invoiceAndPrint()'>Send to Warehouse</a>"+
 	"<a class='btn btn-primary' href='/sales_orders.html'>Refresh</a>"+

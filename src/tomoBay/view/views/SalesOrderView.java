@@ -15,6 +15,7 @@ package tomoBay.view.views;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.dataTypes.ServerStatus;
+import tomoBay.model.eBayAPI.EbayAccounts;
 import tomoBay.view.AbstractView;
 
 import java.util.List;
@@ -50,6 +51,7 @@ public final class SalesOrderView implements AbstractView
 				result+=" \"Name\": \""+cols[1].trim()+"\", ";
 				result+=" \"Date\": \""+cols[4].trim()+"\", ";
 				result+=" \"SalesRecNo\": \""+cols[2].trim()+"\", ";
+				result+="\"Account\":\""+EbayAccounts.name(Integer.parseInt(cols[6]))+"\",";
 				result+=" \"ShippingType\": \""+cols[3].trim()+"\", ";
 				result+=" \"Details\": \""+"<a href='/order.html?"+cols[0].trim()+"?' class='btn btn-primary'>View</button>"+"\" ,";
 				result+=" \"Status\": \""+this.pickeability(cols[5])+"\" ";
