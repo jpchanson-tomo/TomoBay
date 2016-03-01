@@ -48,9 +48,10 @@ public final class ItemSpecifics
 	public ItemSpecifics(String itemID, String account)
 	{
 		super();
+		String accName = EbayAccounts.name(Integer.parseInt(account));
 		this.itemID_M = itemID;
-		this.apiKey_M = EbayAccounts.get(account, AccountInfo.API_KEY);
-		this.server_M = EbayAccounts.get(account, AccountInfo.SERVER_ADDRESS);
+		this.apiKey_M = EbayAccounts.get(accName, AccountInfo.API_KEY);
+		this.server_M = EbayAccounts.get(accName, AccountInfo.SERVER_ADDRESS);
 		this.itemSpecifics_M = new HashMap<String,String>();
 		
 		this.populateMap(this.performAPIcall(itemID));
