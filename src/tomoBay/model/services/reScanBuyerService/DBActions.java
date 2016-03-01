@@ -33,10 +33,11 @@ public final class DBActions
 	/**
 	 * get the latest orderID for the buyer passed in as an argument
 	 * @param buyerID identifier for the buyer
-	 * @return String containing the orderID of the latest order.
+	 * @return String containing the orderID = String[0] of the latest order as well as the account
+	 * associated with this order String[1].
 	 */
-	public static String getLatestOrderID(String buyerID)
-	{return QueryInvoker.execute(QueryType.SELECT_EBAY_ORDER_BY_BUYER, new String[] {buyerID}).get(0)[0];}
+	public static String[] getLatestOrderID(String buyerID)
+	{return QueryInvoker.execute(QueryType.SELECT_EBAY_ORDER_BY_BUYER, new String[] {buyerID}).get(0);}
 	
 	/**
 	 * updates the buyer table in the database with the new buyer information.

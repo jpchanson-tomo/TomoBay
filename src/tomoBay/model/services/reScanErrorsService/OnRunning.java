@@ -49,7 +49,7 @@ public final class OnRunning implements AbstractServiceState
 		
 		for (String[] error : errorList)
 		{
-			ItemSpecifics item = new ItemSpecifics(error[0]);
+			ItemSpecifics item = new ItemSpecifics(error[0], error[6]);
 			if (winstock.partNoHasError(item) == false)
 			{database.updateDBwithCorrectedInfo(item);}
 		}

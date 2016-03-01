@@ -28,7 +28,8 @@ $(document).ready(function(){
  */
 function insertCommonJSON(json)
 {
-	$("#orderID").text("OrderID: ["+json.order.summaryInfo.orderID+"]");
+	$("#account").text(" - "+json.order.summaryInfo.account+"");
+	$("#orderID").text("OrderID: "+json.order.summaryInfo.orderID+"");
 	$("#invoiceNo").text("Invoice: ["+json.order.summaryInfo.invoiceNo+"]");
 	$("#street1").text(json.order.buyerInfo.street1);
 	$("#street2").text(json.order.buyerInfo.street2);

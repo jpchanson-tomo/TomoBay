@@ -5,14 +5,12 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.ebay.soap.eBLBaseComponents.ItemType;
-import com.ebay.soap.eBLBaseComponents.NameValueListType;
-
-import tomoBay.helpers.Config;
-import tomoBay.helpers.ConfigReader;
 import tomoBay.helpers.StackTraceToString;
+import tomoBay.model.eBayAPI.EbayAccounts;
+import tomoBay.model.eBayAPI.EbayAccounts.AccountInfo;
 import tomoBay.model.eBayAPI.ItemCall;
 import tomoBay.model.services.AbstractServiceState;
+import tomoBay.model.sql.queries.QueryInvoker;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -28,6 +26,10 @@ import tomoBay.model.services.AbstractServiceState;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+
+import com.ebay.soap.eBLBaseComponents.ItemType;
+import com.ebay.soap.eBLBaseComponents.NameValueListType;
 
 /**
  *
@@ -56,7 +58,10 @@ public final class OnRunning implements AbstractServiceState
 	{
 		try
 		{
-			ItemType item = this.getItemData(String.valueOf(this.listingID_M));
+			String account = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEM_SPECIFIC,
+																new String[] {this.listingID_M.toString()})
+															.get(0)[6];
+			ItemType item = this.getItemData(String.valueOf(this.listingID_M), account);
 			Map<String, String> specifics = this.getSpecifics(item);
 			String brand = specifics.get("Brand");
 			String partNo = specifics.get("Manufacturer Part Number");
@@ -76,12 +81,13 @@ public final class OnRunning implements AbstractServiceState
 	 * @param itemID the ID of a particular eBay Item (listing)
 	 * @return ItemType eBay API datatype containing the details of a particular item.
 	 */
-	private ItemType getItemData(String itemID)
+	private ItemType getItemData(String itemID, String account)
 	{
 		try
 		{
-			String APIkey = ConfigReader.getConf(Config.EBAY_PROD_KEY);
-			String server = ConfigReader.getConf(Config.EBAY_PROD_SRV);
+			int acc = Integer.parseInt(account);
+			String APIkey = EbayAccounts.get(EbayAccounts.name(acc), AccountInfo.API_KEY);
+			String server = EbayAccounts.get(EbayAccounts.name(acc), AccountInfo.SERVER_ADDRESS);
 			ItemCall item = new ItemCall(APIkey, server);
 			return item.call(itemID);
 		}

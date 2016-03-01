@@ -37,7 +37,7 @@ public  final class SelectEbayOrderByBuyer implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query = "SELECT orderID from ebay_orders WHERE buyerID=? ORDER BY createdTime DESC";
+	private String query = "SELECT orderID, account from ebay_orders WHERE buyerID=? ORDER BY createdTime DESC";
 	//
 	/**
 	 * default constructor
@@ -82,8 +82,9 @@ public  final class SelectEbayOrderByBuyer implements AbstractDBQuery
 		List<String[]> rows = new ArrayList<String[]>();
 		while (results.next())
 		{
-			String[] cols = new String[1];
+			String[] cols = new String[2];
 			cols[0] = results.getString("orderID");
+			cols[1] = results.getString("account");
 			rows.add(cols);
 		}
 		return rows;

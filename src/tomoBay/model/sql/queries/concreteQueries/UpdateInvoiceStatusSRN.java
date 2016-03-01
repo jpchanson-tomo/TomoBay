@@ -36,7 +36,7 @@ public  final class UpdateInvoiceStatusSRN implements AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	private Connection connection_M = null;
 	/**SQL query string**/
-	private String query ="UPDATE ebay_orders SET invoiced=? WHERE salesRecNo=?";
+	private String query ="UPDATE ebay_orders SET invoiced=? WHERE salesRecNo=? AND account=?";
 	
 	/**
 	 * default constructor
@@ -59,6 +59,7 @@ public  final class UpdateInvoiceStatusSRN implements AbstractDBQuery
 		this.initQuery();
 		this.statement_M.setInt(1, Integer.parseInt(parameter[0]));	//invoiced status code
 		this.statement_M.setString(2, parameter[1]);//orderID
+		this.statement_M.setString(3, parameter[2]);//account
 		int resultCode = statement_M.executeUpdate();
 		this.connection_M.commit();
 		this.cleanup();

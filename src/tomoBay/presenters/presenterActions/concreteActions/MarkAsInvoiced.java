@@ -1,5 +1,7 @@
 package tomoBay.presenters.presenterActions.concreteActions;
 
+import tomoBay.model.eBayAPI.EbayAccounts;
+import tomoBay.model.eBayAPI.EbayAccounts.AccountInfo;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
@@ -38,16 +40,22 @@ public class MarkAsInvoiced implements AbstractPresenterAction
 	@Override
 	public String execute(String data)
 	{
-		String invoiced = "1";
-		
-		String result= 
-		QueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS_SRN, new String[] {invoiced,data})
-		.get(0)[0];
-		
-		if (result.equalsIgnoreCase("1")) {result = "DONE";}
-		else {result = "Sales Record Number does not exist .... or Jans done something wrong :(";}
-		
-		return result;
+		try 
+		{
+			String invoiced = "1";
+			String listingID = data.split("\\|")[0];
+			String accountID = EbayAccounts.get(data.split("\\|")[1], AccountInfo.ID);
+			String result= 
+						QueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS_SRN, 
+														new String[] {invoiced,listingID,accountID})
+						.get(0)[0];
+			
+			if (result.equalsIgnoreCase("1")) {result = "DONE";}
+			else {result = "SalesRecNo or account does not exist .... or Jans done something wrong 8(";}
+			
+			return result;
+		}
+		catch(NullPointerException e){return "account probably does not exist, check spelling";}
 	}
 
 }

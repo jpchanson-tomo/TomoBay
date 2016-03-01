@@ -45,8 +45,8 @@ import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 public final class InvoiceOrders implements AbstractPresenterAction
 {
 	static final Logger log = Logger.getLogger(InvoiceOrders.class.getName());
-	private static final String EMAILHEADER="<table border='1' style='width:100%'><thead><th>salesRecordNo</th>"
-				+ "</th><th>created time</th><th>weight</th><th>Invoice Number</th></thead><tbody>";
+	private static final String EMAILHEADER="<table border='1' style='width:100%'><thead><th>Account</th>"
+				+ "<th>SalesRecordNo</th><th>Created time</th><th>Weight</th><th>Invoice Number</th></thead><tbody>";
 	private static final String EMAILFOOTER="</tbody></table>";
 	
 	
@@ -75,18 +75,15 @@ public final class InvoiceOrders implements AbstractPresenterAction
 					DualList<String, PayloadType> winstockInv = this.formatAsDualList(invoice);
 					AbstractWinstockCommandResponse res;
 					res = WinstockCommandInvoker.execute(WinstockCommandInvoker.WinstockCommandTypes.PutInvoice, winstockInv);
-//					log.warn("raise Invoice: "+Integer.parseInt(res.getRecieved()[0])+" is "+res.isSuccess());
-//					result+=res.getRecieved()[0]+",";
 					result+=this.formatMailResult(res.getRecieved()[0], res.getRecieved()[1], invoice);
 					this.updateDB(res.getRecieved()[0], orderId);
 				}
 				else {result+="("+invoice.orderInfo().salesRecNo()+" already Invoiced or too old"+")";}
 			}
-			catch (UnknownHostException e){e.printStackTrace(); result+= "(Error with "+orderId+"),";} 
-			catch (IOException e){e.printStackTrace(); result+= "(Error with "+orderId+"),";}
-			catch (PayloadException e){e.printStackTrace(); result+= "(Error with "+orderId+"),";}
-//			catch (NotAValidResultCodeException e){e.printStackTrace(); result+= "(Error with "+orderId+"),";}
-			catch (RuntimeException e) {result+= "(Error with "+orderId+"),";}
+			catch (UnknownHostException e){e.printStackTrace(); result+= "(UnKnownHost Error with "+orderId+"),";} 
+			catch (IOException e){e.printStackTrace(); result+= "(IO Error with "+orderId+"),";}
+			catch (PayloadException e){e.printStackTrace(); result+= "(Payload Error with "+orderId+"),";}
+			catch (RuntimeException e) {e.printStackTrace(); result+= "(Runtime Error with "+orderId+"),";}
 		}
 		log.warn(result+"-----INVOICED");
 		this.emailResults(result);
@@ -121,6 +118,7 @@ public final class InvoiceOrders implements AbstractPresenterAction
 	private String formatMailResult(String invNo, String weight, AbstractSalesDayBookLine invoice)
 	{
 		return "<tr>"
+				+ "<td>"+invoice.orderInfo().account()+"</td>"
 				+ "<td>"+invoice.orderInfo().salesRecNo()+"</td>"
 				+ "<td>"+invoice.orderInfo().createdTime()+"</td>"
 				+ "<td>"+weight+"</td>"

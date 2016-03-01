@@ -82,5 +82,8 @@ public final class WinstockFormat extends AbstractFormat
 	}
 	
 	private String shorten(String input)
-	{if(input.length()>=51) {return input.substring(0, 50);} else {return input;}}
+	{
+		if(input==null) {return "";}
+		if(input.length()>=51) {return input.substring(0, 50);} else {return input;}
+	}
 }

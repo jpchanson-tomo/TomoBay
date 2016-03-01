@@ -2,10 +2,6 @@ package tomoBay.model.services.basicEbayUpdateService;
 
 import org.apache.log4j.Logger;
 
-import com.ebay.soap.eBLBaseComponents.OrderType;
-
-import tomoBay.helpers.Config;
-import tomoBay.helpers.ConfigReader;
 import tomoBay.helpers.StackTraceToString;
 import tomoBay.model.eBayAPI.EbayAccounts;
 import tomoBay.model.eBayAPI.OrdersCall;
@@ -25,6 +21,8 @@ import tomoBay.model.services.AbstractServiceState;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+import com.ebay.soap.eBLBaseComponents.OrderType;
 
 /**
  *
@@ -60,11 +58,13 @@ public final class OnRunning implements AbstractServiceState
 				
 				OrdersCall oCall = new OrdersCall(usrKey, server);
 				OrderType[] orders = oCall.call(lookbackDays);
+//				
+//				for(OrderType o : orders) {System.out.println(o.getOrderID());}
 				
 				OrdersTable.populate(orders, accID);
 				TransactionsTable.populate(orders);
 				BuyersTable.populate(orders);
-				ItemsAndPartsTable.populate(new String[] {usrKey,server}, orders);
+				ItemsAndPartsTable.populate(usrKey, server, accID, orders);
 			}
 			return "finished ebay update";
 		} 

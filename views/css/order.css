@@ -1,10 +1,8 @@
-.panel-footer
-{<!--background:#99ff99;-->}
+.panel-footer{<!--background:#99ff99;-->}
 
-td
-{padding-left:10px;}
-table
-{margin-left:10px;}
+td{padding-left:10px;}
+
+table{margin-left:10px;}
 
 .transactionTable
 {
@@ -31,8 +29,7 @@ table
 	color:white;
 }
 
-body
-{bottom:0px;}
+body{bottom:0px;}
 
 .content
 {
@@ -49,8 +46,7 @@ body
 #shippingType
 {font-size:11px;}
 
-#orderID
-{float:left;}
-
-#invoiceNo
-{text-align:right;}
+#title{display:inline-block;width:100%;}
+#account{display:inline-block; margin-left:10px;}
+#orderID{display:inline-block; float:left;}
+#invoiceNo{display:inline-block; float:right;}

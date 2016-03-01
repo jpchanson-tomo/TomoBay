@@ -21,6 +21,7 @@ import org.apache.log4j.Logger;
 
 import tomoBay.exceptions.OrderException;
 import tomoBay.helpers.StackTraceToString;
+import tomoBay.model.eBayAPI.EbayAccounts;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /**
@@ -45,6 +46,8 @@ public class Order
 	private final String createdTime_M;
 	/**the total sale price of this order**/
 	private final double orderTotal_M;
+	/**the ebay account that this order is associated with**/
+	private final String account_M;
 	
 	/**
 	 * initialise this order using the orderID provided
@@ -63,6 +66,7 @@ public class Order
 			this.shippingType_M = orderInfo[1];
 			this.createdTime_M = orderInfo[2];
 			this.orderTotal_M = Double.parseDouble(orderInfo[3]);
+			this.account_M = EbayAccounts.name(Integer.parseInt(orderInfo[6]));
 		}
 		catch (Exception e)
 		{
@@ -104,6 +108,12 @@ public class Order
 	 * @return int representing the salesRecordNumber
 	 */
 	public int salesRecNo() {return this.salesRecNo_M;}
+	
+	/**
+	 * retrieve the account that this order is associated with
+	 * @return String containing the name of the ebay account
+	 */
+	public String account() {return this.account_M;}
 	
 	/**
 	 * retrieve the shipping type used for this order as a string

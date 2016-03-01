@@ -1,7 +1,6 @@
 package tomoBay.model.services.reScanBuyerService;
 
-import tomoBay.helpers.Config;
-import tomoBay.helpers.ConfigReader;
+import tomoBay.model.eBayAPI.EbayAccounts;
 import tomoBay.model.eBayAPI.OrdersCall;
 import tomoBay.model.services.AbstractServiceState;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
@@ -49,12 +48,14 @@ public final class OnRunning implements AbstractServiceState
 	@Override
 	public String execute()
 	{
-		String usrKey = ConfigReader.getConf(Config.EBAY_PROD_KEY);
-		String server =  ConfigReader.getConf(Config.EBAY_PROD_SRV);
 		try
 		{
-			String orderID = DBActions.getLatestOrderID(this.buyerID_M);
-			OrderType buyerInfo = new OrdersCall(usrKey, server).call(orderID)[0];
+			String[] order = DBActions.getLatestOrderID(this.buyerID_M);
+			String account = EbayAccounts.name(Integer.parseInt(order[1]));
+			String usrKey = EbayAccounts.get(account, EbayAccounts.AccountInfo.API_KEY);
+			String server = EbayAccounts.get(account, EbayAccounts.AccountInfo.SERVER_ADDRESS);
+			
+			OrderType buyerInfo = new OrdersCall(usrKey, server).call(order[0])[0];
 			String[]  updateInfo;
 				
 			if(buyerInfo.isIsMultiLegShipping()==true){updateInfo = this.getGSPaddress(buyerInfo);}
@@ -94,7 +95,7 @@ public final class OnRunning implements AbstractServiceState
 				buyerInfo.getShippingAddress().getStreet1(),
 				buyerInfo.getShippingAddress().getStreet2(),
 				buyerInfo.getShippingAddress().getCityName(),
-				buyerInfo.getShippingAddress().getCounty(),
+				buyerInfo.getShippingAddress().getStateOrProvince(),
 				buyerInfo.getShippingAddress().getPostalCode(),
 				buyerInfo.getTransactionArray().getTransaction(0).getBuyer().getEmail(),
 				buyerInfo.getShippingAddress().getPhone()

@@ -26,17 +26,17 @@
 					
 					<div style="position:relative;left:35%;">
 					<input class="srn" placeholder="Sales record Number" style="color:#337AB7;"/>
-					
+					<input class="account" placeholder="account" style="color:#337AB7;"/>
 					<button class="markInvoiced" 
-							onclick="ajaxButton('.srn', 
-												'/res/?page=ROOT_PRESENTER&type=MARK_AS_INVOICED&data=',
-												'.result')" 
+							onclick="ajaxButtonMultiInput(markAsArray , 
+														'/res/?page=ROOT_PRESENTER&type=MARK_AS_INVOICED&data=',
+														'.result')" 
 							style="color:#337AB7;">
 						Mark as Invoiced
 					</button>
   					
   					<button class="markUninvoiced" 
-  							onclick="ajaxButton('.srn',
+  							onclick="ajaxButtonMultiInput(markAsArray,
   												'/res/?page=ROOT_PRESENTER&type=MARK_AS_UNINVOICED&data=',
   												'.result')"
   							style="color:#337AB7;">
@@ -48,7 +48,7 @@
 				
 				
 				<div class="panel-footer panel-primary">
-					<big>Enter the sales record number into the box and press the appropriate button</big>
+					<big>Enter the sales record number and account (psa/ford) into the box and press the appropriate button</big>
 				</div>
 				
 				
@@ -111,4 +111,5 @@
 		
 		
 	</body>
+	<script type="text/javascript">var markAsArray = ['.srn','.account'];</script>
 </html>

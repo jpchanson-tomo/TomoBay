@@ -18,12 +18,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import tomoBay.model.eBayAPI.EbayAccounts;
+import tomoBay.model.eBayAPI.EbayAccounts.AccountInfo;
+import tomoBay.model.eBayAPI.ItemCall;
+
 import com.ebay.soap.eBLBaseComponents.ItemType;
 import com.ebay.soap.eBLBaseComponents.NameValueListType;
-
-import tomoBay.helpers.Config;
-import tomoBay.helpers.ConfigReader;
-import tomoBay.model.eBayAPI.ItemCall;
 /**
  * This class represents the item specifics (Brand, ManufacturerPartNumber etc), it takes care
  * of retrieving the information from the eBay API and making it easily accessible.
@@ -33,7 +33,9 @@ import tomoBay.model.eBayAPI.ItemCall;
 public final class ItemSpecifics
 {
 	/**holder containing the credentials to access the eBay API**/
-	private final String[]credentials_M;
+	private final String apiKey_M;
+	
+	private final String server_M;
 	/**map containing the item Specifics, this is what the user uses indirectly**/
 	private Map<String, String> itemSpecifics_M;
 	/**String containing the itemID**/
@@ -43,11 +45,12 @@ public final class ItemSpecifics
 	 * constructor creates an ItemSpecifics object for the itemID passed in as an argument.
 	 * @param itemID the id of the item that you need the specifics of
 	 */
-	public ItemSpecifics(String itemID)
+	public ItemSpecifics(String itemID, String account)
 	{
 		super();
 		this.itemID_M = itemID;
-		credentials_M = new String[]{ConfigReader.getConf(Config.EBAY_PROD_KEY), ConfigReader.getConf(Config.EBAY_PROD_SRV)};
+		this.apiKey_M = EbayAccounts.get(account, AccountInfo.API_KEY);
+		this.server_M = EbayAccounts.get(account, AccountInfo.SERVER_ADDRESS);
 		this.itemSpecifics_M = new HashMap<String,String>();
 		
 		this.populateMap(this.performAPIcall(itemID));
@@ -76,7 +79,7 @@ public final class ItemSpecifics
 	 */
 	private ItemType performAPIcall(String itemID)
 	{
-		ItemCall itemscan = new ItemCall(this.credentials_M[0],this.credentials_M[1]);
+		ItemCall itemscan = new ItemCall(this.apiKey_M,this.server_M);
 		try
 		{return itemscan.call(itemID);} 
 		

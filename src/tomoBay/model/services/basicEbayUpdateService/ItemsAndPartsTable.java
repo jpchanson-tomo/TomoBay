@@ -48,14 +48,14 @@ public final class ItemsAndPartsTable
 	 * @throws SdkException 
 	 * @throws ApiException 
 	 */
-	public static void populate(String[] credentials, OrderType[] orders) throws ApiException, SdkException, Exception
+	public static void populate(String apiKey, String server, int accID, OrderType[] orders) 
+			throws ApiException, SdkException, Exception
 	{
 		List<String[]> items = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS,new String[] {});
 		
 		for (String[] item : items)
 		{
-			
-			ItemCall itemreq = new ItemCall(credentials[0], credentials[1]);
+			ItemCall itemreq = new ItemCall(apiKey, server);
 			ItemType itemType = itemreq.call(item[0]);
 			Map<String, String> specifics = ItemsAndPartsTable.getSpecifics(itemType);
 			
@@ -67,7 +67,8 @@ public final class ItemsAndPartsTable
 						itemType.getTitle(),
 						itemType.getConditionDisplayName(),
 						specifics.get("Brand"),
-						specifics.get("Manufacturer Part Number")
+						specifics.get("Manufacturer Part Number"),
+						String.valueOf(accID)
 					};
 			QueryInvoker.execute(QueryType.INSERT_EBAY_ITEMS,result);
 		}
