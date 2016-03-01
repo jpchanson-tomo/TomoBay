@@ -54,4 +54,10 @@ public final class ServerStatus
 	 */
 	public static synchronized ServerStatus.RunLevel getStatus()
 	{return ServerStatus.status_M;}
+	
+	/**
+	 * returns the name of the os that the server is being run on.
+	 * @return String containing the os name.
+	 */
+	public static String os() {return System.getProperty("os.name");}
 }

@@ -17,6 +17,7 @@ package tomoBay.model.dataTypes.order;
 import java.util.HashMap;
 import java.util.Map;
 
+import tomoBay.model.dataTypes.ServerStatus;
 import tomoBay.model.winstock.Stock;
 import tomoBay.helpers.BrandToCode;
 /**
@@ -34,9 +35,8 @@ public class Part
 	private final Map<stringTypes, String> stringProperties_M;
 	/**connection to winstock stock info**/
 	private Stock winstock_M;
-	
-	private static final String BADCHAR = "œ";//windows
-//	private static final String BADCHAR = "�";//linux
+	/****/
+	private static final String BADCHAR = Part.badChar();
 	
 	/**
 	 * default ctor
@@ -97,6 +97,13 @@ public class Part
 		int endOfString = result.indexOf(BADCHAR);
 		if (result.contains(BADCHAR)) {result = result.substring(0, endOfString);}
 		return result;
-		
 	}
+	
+	/**
+	 * depending on whether the OS is linux or windows depends on which char this returns as a bad char
+	 * used when filtering the description from winstock. THIS IS A HACK
+	 * @return linux = �, windows = œ
+	 */
+	private static String badChar()
+	{if (ServerStatus.os().toLowerCase().contains("linux")){return "�";} else {return "œ";}}
 }
