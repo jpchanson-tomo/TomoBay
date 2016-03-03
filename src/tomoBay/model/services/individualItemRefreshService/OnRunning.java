@@ -63,9 +63,10 @@ public final class OnRunning implements AbstractServiceState
 															.get(0)[6];
 			ItemType item = this.getItemData(String.valueOf(this.listingID_M), account);
 			Map<String, String> specifics = this.getSpecifics(item);
-			String brand = specifics.get("Brand");
+			String brand = specifics.get("Brand"); 
 			String partNo = specifics.get("Manufacturer Part Number");
-		
+			System.out.println(brand+" : "+partNo);
+			
 			new RePopulateEbayItem().populate(partNo, brand, Long.parseLong(item.getItemID()));
 		
 			log.warn(this.listingID_M+" refreshed");
@@ -116,7 +117,7 @@ public final class OnRunning implements AbstractServiceState
 				for(String itemSpecific : tmp[i].getValue())
 				{res+= itemSpecific;}
 				itemSpecifics.put(tmp[i].getName(), res);
-				item.getBuyItNowPrice().getValue();
+				System.out.println(tmp[i].getName());
 			}
 		}
 		catch (NullPointerException e)

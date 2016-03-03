@@ -19,55 +19,39 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import tomoBay.model.sql.queries.factories.ClearPartsFordFactory;
-import tomoBay.model.sql.queries.factories.ClearPartsPSAFactory;
-import tomoBay.model.sql.queries.factories.ClearPartsPrestigeFactory;
-import tomoBay.model.sql.queries.factories.InsertEbayBuyersFactory;
-import tomoBay.model.sql.queries.factories.InsertEbayItemsFactory;
-import tomoBay.model.sql.queries.factories.InsertEbayOrdersFactory;
-import tomoBay.model.sql.queries.factories.InsertEbayTransactionsFactory;
-import tomoBay.model.sql.queries.factories.InsertFordStockReqFactory;
-import tomoBay.model.sql.queries.factories.InsertOutOfHoursFactory;
-import tomoBay.model.sql.queries.factories.InsertPSAStockReqFactory;
-import tomoBay.model.sql.queries.factories.InsertPartFactory;
-import tomoBay.model.sql.queries.factories.InsertPartMappingFactory;
-import tomoBay.model.sql.queries.factories.InsertPrestigeStockReqFactory;
-import tomoBay.model.sql.queries.factories.SelectAccountsFactory;
-import tomoBay.model.sql.queries.factories.SelectBrandByInvNoFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayBuyerFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayBuyersFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayItemSpecificFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayItemsErrorFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayItemsFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayItemsNotInTransactionsFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayOrderByBuyerFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayOrderByIDFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayOrdersFactory;
-import tomoBay.model.sql.queries.factories.SelectEbayTransactionByIDFactory;
-import tomoBay.model.sql.queries.factories.SelectFordStockReqFactory;
-import tomoBay.model.sql.queries.factories.SelectFullOrderLineFactory;
-import tomoBay.model.sql.queries.factories.SelectInvoicedOrdersFactory;
-import tomoBay.model.sql.queries.factories.SelectOutOfHoursOrdersFactory;
-import tomoBay.model.sql.queries.factories.SelectPSAStockReqFactory;
-import tomoBay.model.sql.queries.factories.SelectPrestigeStockReqFactory;
-import tomoBay.model.sql.queries.factories.SelectTransactionByOrderIDFactory;
-import tomoBay.model.sql.queries.factories.SelectUncalculatedInvoicesFactory;
-import tomoBay.model.sql.queries.factories.SelectUncalculatedOrdersFactory;
-import tomoBay.model.sql.queries.factories.SelectUninvoicedOrdersFactory;
-import tomoBay.model.sql.queries.factories.SelectUninvoicedOrdersNoErrorsFactory;
-import tomoBay.model.sql.queries.factories.UpdateAvailableStockFordFactory;
-import tomoBay.model.sql.queries.factories.UpdateAvailableStockPSAFactory;
-import tomoBay.model.sql.queries.factories.UpdateAvailableStockPrestigeFactory;
-import tomoBay.model.sql.queries.factories.UpdateEbayBuyerFactory;
-import tomoBay.model.sql.queries.factories.UpdateFordStockReqFactory;
-import tomoBay.model.sql.queries.factories.UpdateInvoiceStatusFactory;
-import tomoBay.model.sql.queries.factories.UpdateInvoiceStatusSRNFactory;
-import tomoBay.model.sql.queries.factories.UpdateItemBrandAndPartNoFactory;
-import tomoBay.model.sql.queries.factories.UpdateItemErrorFactory;
-import tomoBay.model.sql.queries.factories.UpdateItemNoteFactory;
-import tomoBay.model.sql.queries.factories.UpdatePSAStockReqFactory;
-import tomoBay.model.sql.queries.factories.UpdatePrestigeStockReqFactory;
-import tomoBay.model.sql.queries.factories.UpdateTotalItemsRequiredFactory;
+import tomoBay.model.sql.queries.factories.insert.InsertEbayBuyersFactory;
+import tomoBay.model.sql.queries.factories.insert.InsertEbayItemsFactory;
+import tomoBay.model.sql.queries.factories.insert.InsertEbayOrdersFactory;
+import tomoBay.model.sql.queries.factories.insert.InsertEbayTransactionsFactory;
+import tomoBay.model.sql.queries.factories.insert.InsertOutOfHoursFactory;
+import tomoBay.model.sql.queries.factories.insert.InsertPartFactory;
+import tomoBay.model.sql.queries.factories.insert.InsertPartMappingFactory;
+import tomoBay.model.sql.queries.factories.select.SelectAccountsFactory;
+import tomoBay.model.sql.queries.factories.select.SelectBrandByInvNoFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayBuyerFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayBuyersFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayItemSpecificFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayItemsErrorFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayItemsFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayItemsNotInTransactionsFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayOrderByBuyerFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayOrderByIDFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayOrdersFactory;
+import tomoBay.model.sql.queries.factories.select.SelectEbayTransactionByIDFactory;
+import tomoBay.model.sql.queries.factories.select.SelectFullOrderLineFactory;
+import tomoBay.model.sql.queries.factories.select.SelectInvoicedOrdersFactory;
+import tomoBay.model.sql.queries.factories.select.SelectOutOfHoursOrdersFactory;
+import tomoBay.model.sql.queries.factories.select.SelectTransactionByOrderIDFactory;
+import tomoBay.model.sql.queries.factories.select.SelectUncalculatedInvoicesFactory;
+import tomoBay.model.sql.queries.factories.select.SelectUncalculatedOrdersFactory;
+import tomoBay.model.sql.queries.factories.select.SelectUninvoicedOrdersFactory;
+import tomoBay.model.sql.queries.factories.select.SelectUninvoicedOrdersNoErrorsFactory;
+import tomoBay.model.sql.queries.factories.update.UpdateEbayBuyerFactory;
+import tomoBay.model.sql.queries.factories.update.UpdateInvoiceStatusFactory;
+import tomoBay.model.sql.queries.factories.update.UpdateInvoiceStatusSRNFactory;
+import tomoBay.model.sql.queries.factories.update.UpdateItemBrandAndPartNoFactory;
+import tomoBay.model.sql.queries.factories.update.UpdateItemErrorFactory;
+import tomoBay.model.sql.queries.factories.update.UpdateItemNoteFactory;
 /**
  * This object is responsible for providing the user with Query objects as specified by the
  * internal enum, which defines all possible queries that can be executed on the database.
@@ -84,107 +68,74 @@ public final class QueryInvoker
 	/** Defensive enum defines the acceptable inputs to the factory**/
 	public enum QueryType 
 		{
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertEbayBuyers}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertEbayBuyers}**/
 			INSERT_EBAY_BUYERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertEbayItems}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertEbayItems}**/
 			INSERT_EBAY_ITEMS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertEbayOrders}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertEbayOrders}**/
 			INSERT_EBAY_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertEbayTransactions}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertEbayTransactions}**/
 			INSERT_EBAY_TRANSACTIONS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertPSAStockReq}**/
-			INSERT_PSA_STOCK_REQ,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertFordStockReq}**/
-			INSERT_FORD_STOCK_REQ,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertPrestigeStockReq}**/
-			INSERT_PRESTIGE_STOCK_REQ,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertOutOfHours}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertOutOfHours}**/
 			INSERT_OUT_OF_HOURS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertPart}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertPart}**/
 			INSERT_PART,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.InsertPartMapping}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertPartMapping}**/
 			INSERT_PART_MAPPING,
 			
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayItemsNotInTransactions}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItemsNotInTransactions}**/
 			SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayOrders}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayOrders}**/
 			SELECT_EBAY_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayItems}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItems}**/
 			SELECT_EBAY_ITEMS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectPSAStockReqByPart}**/
-			SELECT_PSA_STOCK_REQ,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectFordStockReqByPart}**/
-			SELECT_FORD_STOCK_REQ,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectPrestigeStockReqByPart}**/
-			SELECT_PRESTIGE_STOCK_REQ,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayItemSpecific}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItemSpecific}**/
 			SELECT_EBAY_ITEM_SPECIFIC,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectTransactionByOrder}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectTransactionByOrder}**/
 			SELECT_TRANSACTION_BY_ORDERID,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrders}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectUninvoicedOrders}**/
 			SELECT_UNINVOICED_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrdersNoErrors}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectUninvoicedOrdersNoErrors}**/
 			SELECT_UNINVOICED_ORDERS_NO_ERRORS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayItemsError}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItemsError}**/
 			SELECT_EBAY_ITEMS_ERROR,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectFullOrderLine}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectFullOrderLine}**/
 			SELECT_FULL_ORDER_LINE,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectInvoicedOrders}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectInvoicedOrders}**/
 			SELECT_INVOICED_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectUncalculatedInvoices}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectUncalculatedInvoices}**/
 			SELECT_UNCALCULATED_INVOICES,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectOutOfHoursOrders}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectOutOfHoursOrders}**/
 			SELECT_OUT_OF_HOURS_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectUncalculatedOrders}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectUncalculatedOrders}**/
 			SELECT_UNCALCULATED_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayBuyer}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayBuyer}**/
 			SELECT_EBAY_BUYER,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayBuyers}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayBuyers}**/
 			SELECT_EBAY_BUYERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayTransactionByID}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayTransactionByID}**/
 			SELECT_EBAY_TRANSACTION_BY_ID,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayOrderByID}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayOrderByID}**/
 			SELECT_EBAY_ORDER_BY_ID,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectEbayOrderByBuyer}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayOrderByBuyer}**/
 			SELECT_EBAY_ORDER_BY_BUYER,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectBrandByInvNo}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectBrandByInvNo}**/
 			SELECT_BRAND_BY_INV_NO,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.SelectAccounts}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectAccounts}**/
 			SELECT_ACCOUNTS,
 			
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemBrandAndPartNo}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.update.UpdateItemBrandAndPartNo}**/
 			UPDATE_ITEM_BRAND_AND_PARTNO,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateTotalItemsRequired}**/
-			UPDATE_TOTAL_ITEMS_REQUIRED,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdatePSAStockReq}**/
-			UPDATE_PSA_STOCK_REQ,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateFordStockReq}**/
-			UPDATE_FORD_STOCK_REQ,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdatePrestigeStockReq}**/
-			UPDATE_PRESTIGE_STOCK_REQ,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPSA}**/
-			UPDATE_AVAILABLE_STOCK_PSA,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockFord}**/
-			UPDATE_AVAILABLE_STOCK_FORD,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPrestige}**/
-			UPDATE_AVAILABLE_STOCK_PRESTIGE,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateInvoiceStatus}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.update.UpdateInvoiceStatus}**/
 			UPDATE_INVOICE_STATUS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateInvoiceStatusSRN}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.update.UpdateInvoiceStatusSRN}**/
 			UPDATE_INVOICE_STATUS_SRN,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemError}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.update.UpdateItemError}**/
 			UPDATE_ITEM_ERROR,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateItemNote}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.update.UpdateItemNote}**/
 			UPDATE_ITEM_NOTE,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.UpdateEbayBuyer}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.update.UpdateEbayBuyer}**/
 			UPDATE_EBAY_BUYER,
-			
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsPSA}**/
-			CLEAR_PARTS_PSA,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsFord}**/
-			CLEAR_PARTS_FORD,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.ClearPartsPrestige}**/
-			CLEAR_PARTS_PRESTIGE, 
 		}
 	/**internal map holds factory objects created static final to make threadsafe**/
 	@SuppressWarnings("serial")
@@ -195,9 +146,6 @@ public final class QueryInvoker
 			put(QueryType.INSERT_EBAY_ITEMS, new InsertEbayItemsFactory());
 			put(QueryType.INSERT_EBAY_ORDERS, new InsertEbayOrdersFactory());
 			put(QueryType.INSERT_EBAY_TRANSACTIONS, new InsertEbayTransactionsFactory());
-			put(QueryType.INSERT_PSA_STOCK_REQ, new InsertPSAStockReqFactory());
-			put(QueryType.INSERT_FORD_STOCK_REQ, new InsertFordStockReqFactory());
-			put(QueryType.INSERT_PRESTIGE_STOCK_REQ, new InsertPrestigeStockReqFactory());
 			put(QueryType.INSERT_OUT_OF_HOURS, new InsertOutOfHoursFactory());
 			put(QueryType.INSERT_PART, new InsertPartFactory());
 			put(QueryType.INSERT_PART_MAPPING, new InsertPartMappingFactory());
@@ -205,10 +153,6 @@ public final class QueryInvoker
 			put(QueryType.SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS, new SelectEbayItemsNotInTransactionsFactory());
 			put(QueryType.SELECT_EBAY_ORDERS, new SelectEbayOrdersFactory());
 			put(QueryType.SELECT_EBAY_ITEMS, new SelectEbayItemsFactory());
-			put(QueryType.SELECT_PSA_STOCK_REQ, new SelectPSAStockReqFactory());
-			put(QueryType.SELECT_PSA_STOCK_REQ, new SelectPSAStockReqFactory());
-			put(QueryType.SELECT_FORD_STOCK_REQ, new SelectFordStockReqFactory());
-			put(QueryType.SELECT_PRESTIGE_STOCK_REQ, new SelectPrestigeStockReqFactory());
 			put(QueryType.SELECT_EBAY_ITEM_SPECIFIC, new SelectEbayItemSpecificFactory());
 			put(QueryType.SELECT_TRANSACTION_BY_ORDERID, new SelectTransactionByOrderIDFactory());
 			put(QueryType.SELECT_UNINVOICED_ORDERS, new SelectUninvoicedOrdersFactory());
@@ -228,22 +172,11 @@ public final class QueryInvoker
 			put(QueryType.SELECT_ACCOUNTS, new SelectAccountsFactory());
 			
 			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
-			put(QueryType.UPDATE_TOTAL_ITEMS_REQUIRED, new UpdateTotalItemsRequiredFactory());
-			put(QueryType.UPDATE_PSA_STOCK_REQ, new UpdatePSAStockReqFactory());
-			put(QueryType.UPDATE_FORD_STOCK_REQ, new UpdateFordStockReqFactory());
-			put(QueryType.UPDATE_PRESTIGE_STOCK_REQ, new UpdatePrestigeStockReqFactory());
-			put(QueryType.UPDATE_AVAILABLE_STOCK_PSA, new UpdateAvailableStockPSAFactory());
-			put(QueryType.UPDATE_AVAILABLE_STOCK_FORD, new UpdateAvailableStockFordFactory());
-			put(QueryType.UPDATE_AVAILABLE_STOCK_PRESTIGE, new UpdateAvailableStockPrestigeFactory());
 			put(QueryType.UPDATE_INVOICE_STATUS, new UpdateInvoiceStatusFactory());
 			put(QueryType.UPDATE_ITEM_ERROR, new UpdateItemErrorFactory());
 			put(QueryType.UPDATE_ITEM_NOTE, new UpdateItemNoteFactory());
 			put(QueryType.UPDATE_INVOICE_STATUS_SRN, new UpdateInvoiceStatusSRNFactory());
 			put(QueryType.UPDATE_EBAY_BUYER, new UpdateEbayBuyerFactory());
-			
-			put(QueryType.CLEAR_PARTS_PSA, new ClearPartsPSAFactory());
-			put(QueryType.CLEAR_PARTS_FORD, new ClearPartsFordFactory());
-			put(QueryType.CLEAR_PARTS_PRESTIGE, new ClearPartsPrestigeFactory());
 		}};
 	
 	/**

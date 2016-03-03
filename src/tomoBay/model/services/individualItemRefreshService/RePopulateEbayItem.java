@@ -14,12 +14,6 @@ package tomoBay.model.services.individualItemRefreshService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.List;
-
-import tomoBay.helpers.BrandToCode;
-import tomoBay.model.services.helpers.PartList;
-import tomoBay.model.services.stockUpdateService.StockRequiredQueryFactory;
-import tomoBay.model.services.stockUpdateService.StockRequiredQueryFactory.StockQueryType;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /**
@@ -42,46 +36,10 @@ public final class RePopulateEbayItem
 	 * @param brand the brand string associated with this eBay Item
 	 * @param itemID the eBay ItemID.
 	 */
-	public void populate(String partNo, String brand, long itemID)
+	public void populate(String brand, String partNo, long itemID)
 	{
-		
+		System.out.println(brand + " : " + partNo + " : " + itemID);
 		QueryInvoker.execute(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, 
-				new String[] {brand,partNo,String.valueOf(itemID)});
-	}
-	
-	/**
-	 * This method resets the databases brand specific parts table.
-	 * @param parts the partlist to use
-	 * @param partNoDB String representing the database table associated with this part number
-	 * @param brand the brand of the part number
-	 * @param itemID the itemID of the listing as a whole.
-	 */
-	public void resetBrandTable(PartList parts, String partNoDB, String brand, long itemID)
-	{
-		/**
-		 * select specific ebay item 
-		 * use partlist to parse partNo
-		 * use required value and partlist to calculate decomposed stock level for this item
-		 * remove above stock level from brand tables
-		 */
-
-		String[] item = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEM_SPECIFIC, new String[] {String.valueOf(itemID)}).get(0);
-
-		StockRequiredQueryFactory enumFactory = new StockRequiredQueryFactory();
-		enumFactory.setBrand(BrandToCode.convert(brand));
-		PartList partlist = new PartList(item[4]);
-
-		for(int i = 0 ; i < parts.size() ; ++i)
-		{
-			List<String[]> original = QueryInvoker.execute
-					(enumFactory.make(StockQueryType.SELECT), 
-							new String[] {partlist.getPartNumber(i)});
-			
-			String updateQty = String.valueOf(Integer.parseInt(original.get(0)[1]) 
-											- (Integer.parseInt(item[5])
-											* partlist.getPartQty(i))
-											 );
-			QueryInvoker.execute(enumFactory.make(StockQueryType.UPDATE), new String[] {updateQty, partlist.getPartNumber(i)});
-		}
+				new String[] {partNo,brand,String.valueOf(itemID)});
 	}
 }

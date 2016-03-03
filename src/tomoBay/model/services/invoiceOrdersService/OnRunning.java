@@ -16,12 +16,15 @@ package tomoBay.model.services.invoiceOrdersService;
  */
 import tomoBay.model.services.helpers.PickeableStatus;
 import tomoBay.model.services.invoiceOrdersService.invoice.Invoice;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.log4j.Logger;
+
 import tomoBay.helpers.TimeStampCompare;
-import tomoBay.model.dataTypes.dbType.DBSchema;
+import tomoBay.model.dataTypes.dbSchema.DatabaseSchema;
 import tomoBay.model.services.AbstractServiceState;
 
 /**
@@ -51,21 +54,21 @@ public final class OnRunning implements AbstractServiceState
 		DB db = new DB();
 		List<String[]> invoicedOrders = new ArrayList<String[]>();
 		orderList.sortList();
-		List<Map<DBSchema,String>> orders = orderList.get();
+		List<Map<DatabaseSchema,String>> orders = orderList.get();
 		
-		for(Map<DBSchema,String> order : orders)
+		for(Map<DatabaseSchema,String> order : orders)
 		{
-			if(orderStatus.status(order.get(DBSchema.ORD_ORDER_ID))==PickeableStatus.PICKEABLE 
-					&& TimeStampCompare.olderThan(30, order.get(DBSchema.ORD_CREATED_TIME))==false)
+			if(orderStatus.status(order.get(DatabaseSchema.ORD_ORDER_ID))==PickeableStatus.PICKEABLE 
+					&& TimeStampCompare.olderThan(30, order.get(DatabaseSchema.ORD_CREATED_TIME))==false)
 			{
-				Invoice invoice = new Invoice(order.get(DBSchema.ORD_ORDER_ID));
+				Invoice invoice = new Invoice(order.get(DatabaseSchema.ORD_ORDER_ID));
 				int invNo = invoice.generate();
 				System.out.println(invNo);
 				invoice.print();
-				invoicedOrders.add(new String[] {order.get(DBSchema.ORD_ORDER_ID), 
-						order.get(DBSchema.ORD_SALES_REC_NO), order.get(DBSchema.ORD_CREATED_TIME),
+				invoicedOrders.add(new String[] {order.get(DatabaseSchema.ORD_ORDER_ID), 
+						order.get(DatabaseSchema.ORD_SALES_REC_NO), order.get(DatabaseSchema.ORD_CREATED_TIME),
 						String.valueOf(invoice.getWeight()), String.valueOf(invNo)});
-				db.updateInvStatus(order.get(DBSchema.ORD_ORDER_ID), String.valueOf(invNo));
+				db.updateInvStatus(order.get(DatabaseSchema.ORD_ORDER_ID), String.valueOf(invNo));
 			}
 		}
 		

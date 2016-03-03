@@ -14,6 +14,8 @@ package tomoBay.model.sql.queries;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -38,13 +40,29 @@ import java.util.List;
  * @author Jan P.C. Hanson
  *
  */
-public interface AbstractDBQuery
+public abstract class AbstractDBQuery
 {
+	/**reference to the JDBC Statement**/
+	protected PreparedStatement statement_M = null;
+	/**reference to the JDBC Database connection**/
+	protected Connection connection_M = null;
+	
 	/**
 	 * executes the query.
 	 * @param Parameters to use in the query, see concrete type's class documentation for more
 	 * information
 	 * @return String representing the output of a particular query.
 	 */
-	public  List<String[]> execute(String[] Parameters) throws SQLException;
+	public abstract List<String[]> execute(String[] Parameters) throws SQLException;
+	
+	/**
+	 * do cleanup after the query has been executed
+	 * @throws SQLException
+	 */
+	protected void cleanup() throws SQLException
+	{
+		this.connection_M.commit();
+		if (this.statement_M != null) {this.statement_M.close();}
+		if (connection_M != null) {connection_M.close();}
+	}
 }

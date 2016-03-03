@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import tomoBay.model.dataTypes.dbType.DBSchema;
+import tomoBay.model.dataTypes.dbSchema.DatabaseSchema;
 import tomoBay.model.sql.queries.QueryInvoker;
 import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 /**
@@ -48,17 +48,17 @@ public final class ValidUninvoicedOrderList
 	 * returns the list of orders.
 	 * @return list of orders.
 	 */
-	public List<Map<DBSchema,String>> get()
+	public List<Map<DatabaseSchema,String>> get()
 	{
 		
-		List<Map<DBSchema, String>> results = new ArrayList<Map<DBSchema, String>>();
+		List<Map<DatabaseSchema, String>> results = new ArrayList<Map<DatabaseSchema, String>>();
 		for(String[] order : this.orderList_M)
 		{
-			Map<DBSchema, String> result = new HashMap<DBSchema, String>();
-			result.put(DBSchema.ORD_ORDER_ID, order[0]);
-			result.put(DBSchema.ORD_SHIPPING_TYPE, order[3]);
-			result.put(DBSchema.ORD_SALES_REC_NO, order[2]);
-			result.put(DBSchema.ORD_CREATED_TIME, order[4]);
+			Map<DatabaseSchema, String> result = new HashMap<DatabaseSchema, String>();
+			result.put(DatabaseSchema.ORD_ORDER_ID, order[0]);
+			result.put(DatabaseSchema.ORD_SHIPPING_TYPE, order[3]);
+			result.put(DatabaseSchema.ORD_SALES_REC_NO, order[2]);
+			result.put(DatabaseSchema.ORD_CREATED_TIME, order[4]);
 			results.add(result);
 		}
 		

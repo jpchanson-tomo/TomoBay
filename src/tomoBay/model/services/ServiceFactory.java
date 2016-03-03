@@ -26,7 +26,6 @@ import tomoBay.model.services.factories.InvoiceServiceFactory;
 import tomoBay.model.services.factories.OutOfHoursServiceFactory;
 import tomoBay.model.services.factories.ReScanBuyerServiceFactory;
 import tomoBay.model.services.factories.ReScanErrorsServiceFactory;
-import tomoBay.model.services.factories.StockUpdateServiceFactory;
 import tomoBay.model.services.factories.TestServiceFactory;
 /**
  * This factory is responsible for creating services which can be passed to the TriggerService
@@ -41,7 +40,7 @@ public final class ServiceFactory
 	/**defensive enum to limit the inputs to the make method**/
 	public enum ServiceType 
 			{
-				EBAY_SERVICE, TEST_SERVICE, STOCK_UPDATE_SERVICE, INVOICE_SERVICE, CHECK_ERRORS,
+				EBAY_SERVICE, TEST_SERVICE, INVOICE_SERVICE, CHECK_ERRORS,
 				RESCAN_ERRORS_SERVICE, OUT_OF_HOURS_SERVICE
 			}
 	public enum ConfiguredServiceType
@@ -55,7 +54,6 @@ public final class ServiceFactory
 	{{
 		put(ServiceType.EBAY_SERVICE, new BasicEbayServiceFactory());
 		put(ServiceType.TEST_SERVICE, new TestServiceFactory());
-		put(ServiceType.STOCK_UPDATE_SERVICE, new StockUpdateServiceFactory());
 		put(ServiceType.INVOICE_SERVICE, new InvoiceServiceFactory());
 		put(ServiceType.CHECK_ERRORS, new CheckErrorsFactory());
 		put(ServiceType.RESCAN_ERRORS_SERVICE, new ReScanErrorsServiceFactory());
