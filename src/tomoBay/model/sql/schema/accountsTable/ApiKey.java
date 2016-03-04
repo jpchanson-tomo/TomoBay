@@ -14,14 +14,17 @@ package tomoBay.model.sql.schema.accountsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * This represents the apiKey field in the ebay_accounts table of the database. This field stores the
+ * api key associated with this account. needed for authenticating ebay api calls
+ * - Type: VARCHAR
+ * - Size: 900
  * @author Jan P.C. Hanson
  *
  */
-final class ApiKey implements AbstractDBField
+final class ApiKey implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 900;
@@ -37,7 +40,7 @@ final class ApiKey implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

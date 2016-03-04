@@ -14,17 +14,18 @@ package tomoBay.model.sql.schema.transactionsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
  * This class represents the shippingCost field of the ebay_transactions table in the database
  * 
  * - Type: FLOAT
  * - Size: N/A
+ * 
  * @author Jan P.C. Hanson
  *
  */
-final class ShippingCost implements AbstractDBField
+final class ShippingCost implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = -1;
@@ -40,7 +41,7 @@ final class ShippingCost implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.FLOAT;}
+	{return TypeDef.FLOAT;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

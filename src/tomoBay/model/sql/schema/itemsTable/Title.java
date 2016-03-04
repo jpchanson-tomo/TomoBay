@@ -14,15 +14,18 @@ package tomoBay.model.sql.schema.itemsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 
 /**
- *
+ * This is the title field of the ebay_items table in the database. it represents the title of the 
+ * ebay listing that this database row is associated with.
+ * - Type: VARCHAR
+ * - Size: 83
  * @author Jan P.C. Hanson
  *
  */
-final class Title implements AbstractDBField
+final class Title implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 83;
@@ -38,7 +41,7 @@ final class Title implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

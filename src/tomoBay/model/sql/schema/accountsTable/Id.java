@@ -14,14 +14,20 @@ package tomoBay.model.sql.schema.accountsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * This represents the id field of the ebay_accounts table in the database. This is the primary key 
+ * of this table and is an arbitrary auto incremented integer with no physical significance other than
+ * uniquely identifying a database record
+ * - Primary Key
+ * - Type: INT
+ * - Size: 3
+ * 
  * @author Jan P.C. Hanson
  *
  */
-final class Id implements AbstractDBField
+final class Id implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 3;
@@ -37,7 +43,7 @@ final class Id implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.INTEGER;}
+	{return TypeDef.INTEGER;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

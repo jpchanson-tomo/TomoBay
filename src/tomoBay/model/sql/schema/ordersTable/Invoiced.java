@@ -14,14 +14,20 @@ package tomoBay.model.sql.schema.ordersTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * this is the invoiced field of the ebay_orders table in the database. it is a numerical value 
+ * that defines whether this order has been invoiced or not. If the order has not been invoiced
+ * then it will have a value of 0, if it has been invoiced then the value contained will be the 
+ * invoice number.
+ * - Type: INT
+ * - Size: 11
+ * 
  * @author Jan P.C. Hanson
  *
  */
-final class Invoiced implements AbstractDBField
+final class Invoiced implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 11;
@@ -37,7 +43,7 @@ final class Invoiced implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

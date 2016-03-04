@@ -1,6 +1,4 @@
 package tomoBay.model.sql.schema.ordersTable;
-
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -16,14 +14,19 @@ import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
 
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * this is the createdTime field of the ebay_orders table in the database. The value of this field
+ * is grabbed using the ebayAPI and is the time and date at which this order was created.
+ * - Type: TIMESTAMP
+ * - Size: N/A
+ * 
  * @author Jan P.C. Hanson
  *
  */
-final class CreatedTime implements AbstractDBField
+final class CreatedTime implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = -1;
@@ -39,7 +42,7 @@ final class CreatedTime implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.TIMESTAMP;}
+	{return TypeDef.TIMESTAMP;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

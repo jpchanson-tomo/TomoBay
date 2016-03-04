@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.outOfHoursTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBSchema;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.AbstractTypeSchema;
 
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
@@ -24,17 +24,33 @@ import tomoBay.model.sql.schema.ordersTable.OrdersTable;
  * @author Jan P.C. Hanson
  *
  */
-public class OutOfHoursTable implements AbstractDBSchema
+public class OutOfHoursTable implements AbstractTypeSchema
 {
 	/**
-	 * the salesRecNo field in the out_of_hours table INT(10) [PK]
-	 * @see {@link tomoBay.model.sql.schema.outOfHoursTable.SalesRecNo}
+	 * the salesRecNo field in the out_of_hours table of the database, this is part of a composite 
+	 * primary key for the out_of_hours table and a foreign key for the ebay_orders table.
+	 * - INTEGER(10)
+	 * - Primary Key
+	 * - Foreign Key ebay_orders table
+	 * 
+	 * @see tomoBay.model.sql.schema.ordersTable.SalesRecNo
+	 * @see tomoBay.model.sql.schema.ordersTable.OrdersTable
 	 **/
-	public static final AbstractDBField SALES_REC_NO = OrdersTable.SALES_REC_NO;
+	public static final AbstractField SALES_REC_NO = OrdersTable.SALES_REC_NO;
 	
 	/**
-	 * the date field in the out_of_hours table DATE [PK]
-	 * @see {@link tomoBay.model.sql.schema.outOfHoursTable.Date}
+	 * the date field in the out_of_hours table of the database. This is the second part of the composite
+	 * primary key for this table.
+	 * - DATE()
+	 * - Primary Key
+	 * 
+	 * @see tomoBay.model.sql.schema.outOfHoursTable.Date
 	 **/
 	public static final Date DATE = new Date();
+	
+	/**
+	 * private ctor ensures this class is NEVER INSTANTIATED
+	 */
+	private OutOfHoursTable()
+	{super();}
 }

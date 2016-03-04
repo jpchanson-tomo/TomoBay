@@ -14,35 +14,82 @@ package tomoBay.model.sql.schema.buyerTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractDBSchema;
+import tomoBay.model.dataTypes.dbSchema.AbstractTypeSchema;
 /**
- *
+ * This represents the structure of the ebay_buyers table in the database. The static values 
+ * contained inside this class are for use with the tomoBay.model.dataTypes.dbSchema.HeteroFieldContainer
  * @author Jan P.C. Hanson
  *
  */
-public final class BuyerTable implements AbstractDBSchema
+public final class BuyerTable implements AbstractTypeSchema
 {
-	/**The buyerID column of the ebay_buyers table**/
+	/**
+	 * The buyerID column of the ebay_buyers table
+	 * - VARCHAR(40)
+	 * - Primary Key
+	 * 
+	 * @see tomoBay.model.sql.schema.buyerTable.BuyerID
+	 **/
 	public static final BuyerID BUYERID = new BuyerID();
-	/**The name column of the ebay_buyers table**/
+	/**
+	 * The name column of the ebay_buyers table
+	 * - VARCHAR(45)
+	 * 
+	 * @see tomoBay.model.sql.schema.buyerTable.Name
+	 **/
 	public static final Name NAME = new Name();
-	/**The street1 column of the ebay_buyers table**/
+	/**
+	 * The street1 column of the ebay_buyers table
+	 * - VARCHAR(80)
+	 * 
+	 * @see tomoBay.model.sql.schema.buyerTable.Street
+	 **/
 	public static final Street STREET1 = new Street();
-	/**The street2 column of the ebay_buyers table**/
+	/**
+	 * The street2 column of the ebay_buyers table
+	 * - VARCHAR(80)
+	 * 
+	 * @see tomoBay.model.sql.schema.buyerTable.Street
+	 **/
 	public static final Street STREET2 = STREET1;
-	/**The city column of the ebay_buyers table**/
+	/**
+	 * The city column of the ebay_buyers table
+	 * - VARCHAR(80)
+	 * 
+	 * @see tomoBay.model.sql.schema.buyerTable.City
+	 **/
 	public static final City CITY = new City();
-	/**The county column of the ebay_buyers table**/
+	/**
+	 * The county column of the ebay_buyers table
+	 * - VARCHAR(80)
+	 * 
+	 * @see tomoBay.model.sql.schema.buyerTable.County
+	 **/
 	public static final County COUNTY = new County();
-	/**The postcode column of the ebay_buyers table**/
+	/**
+	 * The postcode column of the ebay_buyers table
+	 * - VARCHAR(15)
+	 * 
+	 * @see tomoBay.model.sql.schema.buyerTable.Postcode
+	 **/
 	public static final Postcode POSTCODE = new Postcode();
-	/**The email column of the ebay_buyers table**/
+	/**
+	 * The email column of the ebay_buyers table
+	 * - VARCHAR(100)
+	 * 
+	 * @see tomoBay.model.sql.schema.buyerTable.Email
+	 **/
 	public static final Email EMAIL = new Email();
-	/**The phoneNo column of the ebay_buyers table**/
+	/**
+	 * The phoneNo column of the ebay_buyers table
+	 * - VARCHAR(16)
+	 * 
+	 * @see tomoBay.model.sql.schema.buyerTable.Phone
+	 **/
 	public static final Phone PHONE = new Phone();
 	
 	/**
-	 * private ctor ensures this class is never instantiated
+	 * private ctor ensures this class is NEVER INSTANTIATED
 	 */
 	private BuyerTable()
 	{super();}

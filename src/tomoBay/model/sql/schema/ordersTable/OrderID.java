@@ -14,14 +14,18 @@ package tomoBay.model.sql.schema.ordersTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * this is the orderID field of the ebay_orders table in the database, and is the primary key for
+ * this table.
+ * - Type: VARCHAR
+ * - Size: 30 
+ * 
  * @author Jan P.C. Hanson
  *
  */
-final class OrderID implements AbstractDBField
+final class OrderID implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 30;
@@ -37,7 +41,7 @@ final class OrderID implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

@@ -14,14 +14,18 @@ package tomoBay.model.sql.schema.ordersTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * this is the shippingType field of the ebay_orders table of the database and is a textual 
+ * representation of the shipping service used to dispatch this order.
+ * - Type: VARCHAR
+ * - Size: 200
+ * 
  * @author Jan P.C. Hanson
  *
  */
-final class ShippingType implements AbstractDBField
+final class ShippingType implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 200;
@@ -37,7 +41,7 @@ final class ShippingType implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

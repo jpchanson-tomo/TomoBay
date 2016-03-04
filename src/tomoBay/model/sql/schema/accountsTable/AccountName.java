@@ -14,14 +14,17 @@ package tomoBay.model.sql.schema.accountsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * This represents the name field in the ebay_accounts table of the database. this field stores the 
+ * name of an ebay account that the system should use.
+ * - Type: VARCHAR
+ * - Size: 45
  * @author Jan P.C. Hanson
  *
  */
-final class AccountName implements AbstractDBField
+final class AccountName implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 45;
@@ -37,7 +40,7 @@ final class AccountName implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

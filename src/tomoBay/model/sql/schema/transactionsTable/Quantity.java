@@ -14,16 +14,17 @@ package tomoBay.model.sql.schema.transactionsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
  * This class represents the quantity field of the ebay_transactions table in the database
  * - Type: BIGINT
  * - Size: 7
+ * 
  * @author Jan P.C. Hanson
  * 
  */
-final class Quantity implements AbstractDBField
+final class Quantity implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 7;
@@ -39,7 +40,7 @@ final class Quantity implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.BIGINT;}
+	{return TypeDef.LONG;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

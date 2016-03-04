@@ -2,7 +2,7 @@ package tomoBay;
 import org.apache.log4j.Logger;
 
 import tomoBay.model.dataTypes.ServerStatus;
-import tomoBay.model.dataTypes.dbSchema.DBFieldContainer;
+import tomoBay.model.dataTypes.dbSchema.HeteroFieldContainer;
 import tomoBay.model.dataTypes.dbSchema.DatabaseSchema;
 import tomoBay.model.services.ServiceFactory;
 import tomoBay.model.services.ServiceFactory.ConfiguredServiceType;

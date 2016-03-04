@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.outOfHoursTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
  * This class represents the date field of the out_of_hours table in the database
  * - Type: DATE
@@ -24,7 +24,7 @@ import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
  * @author Jan P.C. Hanson
  *
  */
-final class Date implements AbstractDBField
+final class Date implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 20;
@@ -40,7 +40,7 @@ final class Date implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.DATE;}
+	{return TypeDef.DATE;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

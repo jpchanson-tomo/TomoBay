@@ -1,6 +1,4 @@
 package tomoBay.model.sql.schema.buyerTable;
-
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -16,14 +14,19 @@ import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * This represents the buyerID field of the ebay_buyers table in the database. This is the unique 
+ * identifier that eBay assigns to a particular user. This is the primary key of the ebay_buyers 
+ * table.
+ * - Type: VARCHAR
+ * - Size: 40
+ * - Primary Key
  * @author Jan P.C. Hanson
  *
  */
-final class BuyerID implements AbstractDBField
+final class BuyerID implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 40;
@@ -39,7 +42,7 @@ final class BuyerID implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

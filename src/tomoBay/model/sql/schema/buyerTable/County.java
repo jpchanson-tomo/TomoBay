@@ -14,14 +14,16 @@ package tomoBay.model.sql.schema.buyerTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * the county field of the ebay_buyers table in the database. i.e. the county that the buyer lives in.
+ * - Type: VARCHAR
+ * - Size: 80
  * @author Jan P.C. Hanson
  *
  */
-public class County implements AbstractDBField
+public class County implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 80;
@@ -37,7 +39,7 @@ public class County implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

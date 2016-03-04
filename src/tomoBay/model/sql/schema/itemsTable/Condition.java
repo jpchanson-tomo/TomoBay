@@ -14,14 +14,17 @@ package tomoBay.model.sql.schema.itemsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
-import tomoBay.model.dataTypes.dbSchema.DBType;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * this is the condition field of the ebay_items table, this field represents the selling condition
+ * of the listing.
+ * - Type: VARCHAR
+ * - Size: 15
  * @author Jan P.C. Hanson
  *
  */
-final class Condition implements AbstractDBField
+final class Condition implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 15;
@@ -37,7 +40,7 @@ final class Condition implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

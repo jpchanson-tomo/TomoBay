@@ -14,14 +14,20 @@ package tomoBay.model.sql.schema.itemsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
-import tomoBay.model.dataTypes.dbSchema.DBType;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * this is the brand field of the ebay_items table in the database. This field represents the brand 
+ * of the part being sold.
+ * 
+ * It is worth noting that the information for this field comes from the eBay API, under ItemType -> item
+ * specifics. The system will not pick up brand information unless it is in the Brand field of the 
+ * eBay listing
+ * - Type: VARCHAR
+ * - Size: 50
  * @author Jan P.C. Hanson
- *
  */
-final class Brand implements AbstractDBField
+final class Brand implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 50;
@@ -37,7 +43,7 @@ final class Brand implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

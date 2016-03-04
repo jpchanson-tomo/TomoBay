@@ -14,14 +14,18 @@ package tomoBay.model.sql.schema.ordersTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * his is the salesRecNo field of the ebay_orders table in the database, it is a number generated
+ * by ebay chronologically i.e. the first sale would be 1 the second 2 and so on.
+ * - Type: INTEGER
+ * - Size: 10
+ * 
  * @author Jan P.C. Hanson
  *
  */
-final class SalesRecNo implements AbstractDBField
+final class SalesRecNo implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 10;
@@ -37,7 +41,7 @@ final class SalesRecNo implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.INTEGER;}
+	{return TypeDef.INTEGER;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

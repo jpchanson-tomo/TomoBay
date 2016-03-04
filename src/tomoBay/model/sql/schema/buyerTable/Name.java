@@ -14,14 +14,16 @@ package tomoBay.model.sql.schema.buyerTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ *the name field of the ebay_buyers table in the database. i.e. the name that the buyer goes buy.
+ *- Type: VARCHAR
+ *- Size: 100
  * @author Jan P.C. Hanson
  *
  */
-public class Name implements AbstractDBField
+public class Name implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 45;
@@ -34,7 +36,7 @@ public class Name implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

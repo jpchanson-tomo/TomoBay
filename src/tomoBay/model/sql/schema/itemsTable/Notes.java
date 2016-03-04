@@ -14,14 +14,22 @@ package tomoBay.model.sql.schema.itemsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.DBType;
-import tomoBay.model.dataTypes.dbSchema.AbstractDBField;
+import tomoBay.model.dataTypes.dbSchema.AbstractField;
+import tomoBay.model.dataTypes.dbSchema.TypeDef;
 /**
- *
+ * This is the notes field of the ebay_items table in the database. This field represents whether
+ * there is an error with a particular listing or not, and if there is; what type of error it is.
+ * This field could potentially be used for other information as well. 
+ * - Type: VARCHAR
+ * - Size: 60
+ * 
+ * @note it is probably worth(at some point) making this field an integer value as a foreign key to
+ * to a notes table.
+ * 
  * @author Jan P.C. Hanson
  *
  */
-final class Notes implements AbstractDBField
+final class Notes implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 60;
@@ -37,7 +45,7 @@ final class Notes implements AbstractDBField
 	 */
 	@Override
 	public String type()
-	{return DBType.VARCHAR;}
+	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()
