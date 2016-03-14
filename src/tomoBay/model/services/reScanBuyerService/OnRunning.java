@@ -1,5 +1,7 @@
 package tomoBay.model.services.reScanBuyerService;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.eBayAPI.EbayAccounts;
 import tomoBay.model.eBayAPI.OrdersCall;
 import tomoBay.model.services.AbstractServiceState;
@@ -18,6 +20,10 @@ import tomoBay.model.services.AbstractServiceState;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+import tomoBay.model.sql.schema.buyerTable.BuyerTable;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 
 import com.ebay.sdk.ApiException;
 import com.ebay.sdk.SdkException;
@@ -50,18 +56,20 @@ public final class OnRunning implements AbstractServiceState
 	{
 		try
 		{
-			String[] order = DBActions.getLatestOrderID(this.buyerID_M);
-			String account = EbayAccounts.name(Integer.parseInt(order[1]));
-			String usrKey = EbayAccounts.get(account, EbayAccounts.AccountInfo.API_KEY);
-			String server = EbayAccounts.get(account, EbayAccounts.AccountInfo.SERVER_ADDRESS);
+			HeteroFieldContainer order = DBActions.getLatestOrderID(this.buyerID_M);
+			String account = EbayAccounts.name(order.get(OrdersTable.ACCOUNT, ClassRef.INTEGER));
+			String usrKey = EbayAccounts.apiKey(account);
+			String server = EbayAccounts.serverAddress(account);
 			
-			OrderType buyerInfo = new OrdersCall(usrKey, server).call(order[0])[0];
-			String[]  updateInfo;
+			OrderType buyerInfo = new OrdersCall(usrKey, server)
+													.call(order.get(OrdersTable.ORDER_ID, ClassRef.STRING))[0];
+			
+			HeteroFieldContainer  updateInfo = new HeteroFieldContainer();
 				
-			if(buyerInfo.isIsMultiLegShipping()==true){updateInfo = this.getGSPaddress(buyerInfo);}
-			else{updateInfo = this.getAddress(buyerInfo);}
+			if(buyerInfo.isIsMultiLegShipping()==true){OnRunning.getGSPaddress(buyerInfo, updateInfo);}
+			else{OnRunning.getAddress(buyerInfo, updateInfo);}
 			
-			if(DBActions.updateBuyerTable(updateInfo).equals("1")) 
+			if(DBActions.updateBuyerTable(updateInfo).get(NonDBFields.RESULT_CODE, ClassRef.INTEGER)==1) 
 			{return "Buyer '"+this.buyerID_M+"' refreshed";}
 			
 			else {return "Buyer '"+this.buyerID_M+"' refresh error";}
@@ -73,66 +81,41 @@ public final class OnRunning implements AbstractServiceState
 	}
 	
 	/**
-	 * get the address of the buyer and convert it to a string array
-	 * @param buyerInfo the raw OrderType taken frm the API call
-	 * @return String[] containing the buyer information
-	 * col[0] - buyerID
-	 * col[1] - name
-	 * col[2] - street1
-	 * col[3] - street2
-	 * col[4] - city
-	 * col[5] - county
-	 * col[6] - postcode
-	 * col[7] - email
-	 * col[8] - phone number
+	 * retrieves the personal address associated with the order passed in as an argument.
+	 * @param order the OrderType representing a particular order (from ebay API)
+	 * @return HeteroFieldContainer containing the address fields for this buyer
 	 */
-	private String[] getAddress(OrderType buyerInfo)
+	private static void getAddress(OrderType order, HeteroFieldContainer container)
 	{
-		String[]  updateInfo =
-			{
-				this.buyerID_M,
-				buyerInfo.getShippingAddress().getName(),
-				buyerInfo.getShippingAddress().getStreet1(),
-				buyerInfo.getShippingAddress().getStreet2(),
-				buyerInfo.getShippingAddress().getCityName(),
-				buyerInfo.getShippingAddress().getStateOrProvince(),
-				buyerInfo.getShippingAddress().getPostalCode(),
-				buyerInfo.getTransactionArray().getTransaction(0).getBuyer().getEmail(),
-				buyerInfo.getShippingAddress().getPhone()
-			};
-		return updateInfo;
+		
+		container.add(BuyerTable.BUYERID, order.getBuyerUserID());
+		container.add(BuyerTable.NAME, order.getShippingAddress().getName());
+		container.add(BuyerTable.STREET1, order.getShippingAddress().getStreet1());
+		container.add(BuyerTable.STREET2, order.getShippingAddress().getStreet2());
+		container.add(BuyerTable.CITY, order.getShippingAddress().getCityName());
+		container.add(BuyerTable.COUNTY, order.getShippingAddress().getStateOrProvince());
+		container.add(BuyerTable.POSTCODE, order.getShippingAddress().getPostalCode());
+		container.add(BuyerTable.EMAIL, order.getTransactionArray().getTransaction(0).getBuyer().getEmail());
+		container.add(BuyerTable.PHONE, order.getShippingAddress().getPhone());
 	}
 	
 	/**
-	 * get the GSP (global shipping program) address of the buyer specified and convert it to 
-	 * a string array.
-	 * @param buyerInfo the raw OrderType taken frm the API call
-	 * @return String[] containing the GSP buyer information
-	 * col[0] - buyerID
-	 * col[1] - name
-	 * col[2] - street1
-	 * col[3] - street2
-	 * col[4] - city
-	 * col[5] - county
-	 * col[6] - postcode
-	 * col[7] - email
-	 * col[8] - phone number
+	 * retrieves the global shipping program address associated with the order passed in as an argument.
+	 * This method will return a null pointer if the order is not applicable to the global shipping program
+	 * @param order the OrderType representing a particular order (from ebay API)
+	 * @return HeteroFieldContainer containing the address fields for this buyer
 	 */
-	private String[] getGSPaddress(OrderType buyerInfo)
+	private static void getGSPaddress(OrderType order, HeteroFieldContainer container)
 	{
-		String[]  updateInfo =
-			{
-				this.buyerID_M,
-				buyerInfo.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getReferenceID(),
-				buyerInfo.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getName(),
-				buyerInfo.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStreet1(),
-				buyerInfo.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getCityName(),
-				buyerInfo.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStateOrProvince(),
-				buyerInfo.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getPostalCode(),
-				buyerInfo.getTransactionArray().getTransaction(0).getBuyer().getEmail(),
-				buyerInfo.getShippingAddress().getPhone()
-			};	
-		return updateInfo;
+		container.add(BuyerTable.BUYERID, order.getBuyerUserID());
+		container.add(BuyerTable.NAME, order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getReferenceID());
+		container.add(BuyerTable.STREET1, order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getName());
+		container.add(BuyerTable.STREET2, order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStreet1());
+		container.add(BuyerTable.CITY, order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getCityName());
+		container.add(BuyerTable.COUNTY, order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getStateOrProvince());
+		container.add(BuyerTable.POSTCODE, order.getMultiLegShippingDetails().getSellerShipmentToLogisticsProvider().getShipToAddress().getPostalCode());
+		container.add(BuyerTable.EMAIL, order.getTransactionArray().getTransaction(0).getBuyer().getEmail());
+		container.add(BuyerTable.PHONE, order.getShippingAddress().getPhone());
 	}
 
 }

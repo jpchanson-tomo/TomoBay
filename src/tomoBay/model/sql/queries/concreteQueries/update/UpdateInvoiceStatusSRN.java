@@ -1,8 +1,9 @@
 package tomoBay.model.sql.queries.concreteQueries.update;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -18,13 +19,15 @@ import java.util.List;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractUpdateQuery;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public  final class UpdateInvoiceStatusSRN extends AbstractUpdateQuery
+public  final class UpdateInvoiceStatusSRN extends AbstractModifyQuery
 {
 	/**SQL query string**/
 	private String query ="UPDATE ebay_orders SET invoiced=? WHERE salesRecNo=? AND account=?";
@@ -44,18 +47,17 @@ public  final class UpdateInvoiceStatusSRN extends AbstractUpdateQuery
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
 		super.initQuery(query);
-		super.statement_M.setInt(1, Integer.parseInt(parameter[0]));	//invoiced status code
-		super.statement_M.setString(2, parameter[1]);//orderID
-		super.statement_M.setString(3, parameter[2]);//account
+		super.statement_M.setInt(1, parameter.get(OrdersTable.INVOICED, ClassRef.INTEGER));
+		super.statement_M.setInt(2, parameter.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER));
+		super.statement_M.setInt(3, parameter.get(OrdersTable.ACCOUNT, ClassRef.INTEGER));
 		
 		int resultCode = super.statement_M.executeUpdate();
 		super.cleanup();
 		
-		res.add(new String[] {resultCode+""});
-		return res;
+		parameter.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameter;
 	}
 }

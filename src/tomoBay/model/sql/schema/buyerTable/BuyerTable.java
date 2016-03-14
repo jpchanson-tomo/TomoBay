@@ -14,7 +14,7 @@ package tomoBay.model.sql.schema.buyerTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractTypeSchema;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractTypeSchema;
 /**
  * This represents the structure of the ebay_buyers table in the database. The static values 
  * contained inside this class are for use with the tomoBay.model.dataTypes.dbSchema.HeteroFieldContainer
@@ -51,7 +51,7 @@ public final class BuyerTable implements AbstractTypeSchema
 	 * 
 	 * @see tomoBay.model.sql.schema.buyerTable.Street
 	 **/
-	public static final Street STREET2 = STREET1;
+	public static final Street STREET2 = new Street();
 	/**
 	 * The city column of the ebay_buyers table
 	 * - VARCHAR(80)

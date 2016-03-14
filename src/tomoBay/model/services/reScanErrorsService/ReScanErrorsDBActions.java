@@ -16,8 +16,12 @@ package tomoBay.model.services.reScanErrorsService;
  */
 import java.util.List;
 
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.ModifyQueryInvoker;
+import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 /**
  * This class encapsulates all the interactions that this class has with the database.
  * @author Jan P.C. Hanson
@@ -36,8 +40,8 @@ public final class ReScanErrorsDBActions
 	 * ebay_items table.
 	 * @return List<String[]> where each 
 	 */
-	public List<String[]> retrieveAllErrorItems()
-	{return QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS_ERROR, new String[] {});}
+	public List<HeteroFieldContainer> retrieveAllErrorItems()
+	{return SelectQueryInvoker.execute(SelectQueryTypeNoParams.SELECT_EBAY_ITEMS_ERROR);}
 	
 	/**
 	 * updates the database with corrected information, as provided in the ItemSpecifics passed
@@ -46,12 +50,13 @@ public final class ReScanErrorsDBActions
 	 */
 	public void updateDBwithCorrectedInfo(ItemSpecifics item)
 	{
-		String[] correctedInfo= {
-									item.get("Brand"), 
-									item.get("ManufacturerPartNumber"),
-									"",//blank note indicates no error.
-									item.getID()
-								};		
-		QueryInvoker.execute(QueryType.UPDATE_ITEM_ERROR,correctedInfo);
+		HeteroFieldContainer params = new HeteroFieldContainer();
+		
+		params.add(ItemsTable.BRAND, item.get("Brand")); 
+		params.add(ItemsTable.PART_NO, item.get("ManufacturerPartNumber"));
+		params.add(ItemsTable.NOTES, "");//blank note indicates no error.
+		params.add(ItemsTable.ITEM_ID, item.getID());
+									
+		ModifyQueryInvoker.execute(QueryType.UPDATE_ITEM_ERROR,params);
 	}
 }

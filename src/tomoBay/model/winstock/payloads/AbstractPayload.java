@@ -56,8 +56,8 @@ public class AbstractPayload
 				
 		for (int i = 0 ; i < input.size() ; ++i)
 		{
-			this.result_M.addAll(this.payloadBuilder_M.get(input.getValueByIndex(i)).make()
-													.convert(input.getKeybyIndex(i)));
+			this.result_M.addAll(this.payloadBuilder_M.get(input.getValue2(i)).make()
+													.convert(input.getValue1(i)));
 		}
 				
 		this.result_M.add(AbstractPayload.FOOTER_M); // add footer to the end of the List<Byte>

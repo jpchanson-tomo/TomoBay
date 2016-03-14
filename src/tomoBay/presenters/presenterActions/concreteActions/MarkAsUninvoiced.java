@@ -1,9 +1,12 @@
 package tomoBay.presenters.presenterActions.concreteActions;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.eBayAPI.EbayAccounts;
-import tomoBay.model.eBayAPI.EbayAccounts.AccountInfo;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.ModifyQueryInvoker;
+import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -42,15 +45,20 @@ public class MarkAsUninvoiced implements AbstractPresenterAction
 	{
 		try 
 		{
-			String invoiced = "0";
-			String listingID = data.split("\\|")[0];
-			String accountID = EbayAccounts.get(data.split("\\|")[1], AccountInfo.ID);
+			int invoiced = 0;
+			int listingID = Integer.parseInt(data.split("\\|")[0]);
+			int accountID = EbayAccounts.id(data.split("\\|")[1]);
 			
-			String result= 
-			QueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS_SRN, new String[] {invoiced,listingID,accountID})
-			.get(0)[0];
+			HeteroFieldContainer params = new HeteroFieldContainer();
+			params.add(OrdersTable.SALES_REC_NO, listingID);
+			params.add(OrdersTable.ACCOUNT, accountID);
+			params.add(OrdersTable.INVOICED, invoiced);
 			
-			if (result.equalsIgnoreCase("1")) {result = "DONE";}
+			int resultCode= 
+						ModifyQueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS_SRN, params)
+																	.get(NonDBFields.RESULT_CODE, ClassRef.INTEGER);
+			String result="";
+			if (resultCode==1) {result = "DONE";}
 			else {result = "SalesRecNo or account does not exist .... or Jans done something wrong 8(";}
 			
 			return result;

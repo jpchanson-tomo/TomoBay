@@ -15,7 +15,9 @@ package tomoBay.presenters.sales;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.util.List;
-import tomoBay.model.sql.queries.QueryInvoker;
+
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
@@ -39,8 +41,8 @@ public final class SalesHistoryPresenter implements AbstractPresenter
 	public String present(AbstractView view, String type, String data)
 	{
 		String output = "";
-		List<String[]> rows = QueryInvoker.execute
-				(QueryInvoker.QueryType.SELECT_INVOICED_ORDERS,new String[] {""});
+		List<HeteroFieldContainer> rows = SelectQueryInvoker.execute
+				(SelectQueryInvoker.SelectQueryTypeNoParams.SELECT_INVOICED_ORDERS);
 		
 		output += view.format(rows);
 		

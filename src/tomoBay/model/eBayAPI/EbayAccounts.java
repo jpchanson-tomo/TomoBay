@@ -14,12 +14,13 @@ package tomoBay.model.eBayAPI;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.schema.accountsTable.AccountsTable;
 
 /**
  * This class provides static access to information on the ebay accounts that have been registered
@@ -29,11 +30,9 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
  */
 public final class EbayAccounts
 {
-	/**internal map of maps holding the account info**/
-	private static Map<String, Map<AccountInfo,String>> accountMap_M
-						= EbayAccounts.listToMap(QueryInvoker.execute(QueryType.SELECT_ACCOUNTS, null));
-	/**public enum defining the data fields**/
-	public enum AccountInfo {ID, API_KEY, SERVER_ADDRESS, LOOKBACK_DAYS}
+	/**heterofieldcontainer holding the account information**/
+	private static List<HeteroFieldContainer> accountInfo_M 
+										= SelectQueryInvoker.execute(SelectQueryTypeNoParams.SELECT_ACCOUNTS);
 	
 	/**
 	 * private ctor so that this class can never be instantiated
@@ -47,29 +46,115 @@ public final class EbayAccounts
 	 */
 	public static String[] accounts()
 	{
-		String[] accountNames = new String[EbayAccounts.accountMap_M.size()];
-		accountNames = EbayAccounts.accountMap_M.keySet().toArray(accountNames);
+		String[] accountNames = new String[EbayAccounts.accountInfo_M.size()];
+		for(int i=0 ; i<accountInfo_M.size() ; ++i) 
+		{accountNames[i]=EbayAccounts.accountInfo_M.get(i).get(AccountsTable.ACCOUNT_NAME, ClassRef.STRING);}
 		return accountNames;
 	}
 	
+	/**
+	 * convert an account ID to a textual name value.
+	 * @param id the id of the account as it is on the database
+	 * @return String containg a textual name for this account
+	 */
 	public static String name(int id)
 	{
-		for(Map.Entry<String,Map<AccountInfo, String>> entry : EbayAccounts.accountMap_M.entrySet()) 
-		{if(entry.getValue().containsValue(String.valueOf(id)))	{return entry.getKey();}}
-		return"ID not found";
+		for(int i=0 ; i<accountInfo_M.size() ; ++i) 
+		{
+			if(EbayAccounts.accountInfo_M.get(i).get(AccountsTable.ID, ClassRef.INTEGER)==id)	
+			{return EbayAccounts.accountInfo_M.get(i).get(AccountsTable.ACCOUNT_NAME, ClassRef.STRING);}
+		}
+		throw new IllegalArgumentException("accountID "+id+" not found");
 	}
-	/**
-	 * allows for the retrieval of specific data fields for accounts that are currently registered on
-	 * the system. the public enum EbayAccounts.AccountInfo contains the fields that can be retrieved
-	 * @param accountName the name of the account to fetch info from. If you need a list of account
-	 * names please refer to EbayAccounts.accounts()
-	 * @param field the data field to retrieve, as defined in the EbayAccounts.AccountInfo enum type
-	 * @return String containing the requested data field.
-	 */
-	public static String get(String accountName, AccountInfo field)
-	{return EbayAccounts.accountMap_M.get(accountName.toLowerCase()).get(field);}
-
 	
+	/**
+	 * retrieve the id for the account name specified
+	 * @param accountName the account name to find the id of
+	 * @return int the id of the account specified
+	 */
+	public static int id (String accountName)
+	{
+		for(int i=0 ; i<accountInfo_M.size() ; ++i) 
+		{
+			if(EbayAccounts.accountInfo_M.get(i).get(AccountsTable.ACCOUNT_NAME, ClassRef.STRING).equalsIgnoreCase(accountName.trim()))	
+			{return EbayAccounts.accountInfo_M.get(i).get(AccountsTable.ID, ClassRef.INTEGER);}
+		}
+		throw new IllegalArgumentException("account "+accountName+" not found");
+	}
+	
+	/**
+	 * retrieve the ebay api key for the account name specified
+	 * @param the account name to find the api key of
+	 * @return String containing the ebay api key for the account specified
+	 */
+	public static String apiKey (String accountName)
+	{
+		String targetAccount = accountName.trim();
+		String currentAccount;
+		
+		for(int i=0 ; i<accountInfo_M.size() ; ++i) 
+		{
+			currentAccount 
+			= EbayAccounts.accountInfo_M.get(i).get(AccountsTable.ACCOUNT_NAME, ClassRef.STRING).trim();
+			
+			if(currentAccount.equalsIgnoreCase(targetAccount))	
+			{return EbayAccounts.accountInfo_M.get(i).get(AccountsTable.API_KEY, ClassRef.STRING);}
+		}
+		throw new IllegalArgumentException("account "+accountName+" not found");
+	}
+
+	/**
+	 * retrieve the ebay server address for the account name specified
+	 * @param accountName the account name to find the ebay server address of
+	 * @return String containing the ebay server address for the account specified
+	 */
+	public static String serverAddress(String accountName)
+	{
+		String targetAccount = accountName.trim();
+		String currentAccount;
+		
+		for(int i=0 ; i<accountInfo_M.size() ; ++i) 
+		{
+			currentAccount 
+			= EbayAccounts.accountInfo_M.get(i).get(AccountsTable.ACCOUNT_NAME, ClassRef.STRING).trim();
+			
+			if(currentAccount.equalsIgnoreCase(targetAccount))	
+			{return EbayAccounts.accountInfo_M.get(i).get(AccountsTable.SERVER_ADDR, ClassRef.STRING);}
+		}
+		throw new IllegalArgumentException("account "+accountName+" not found");
+	}
+	
+	/**
+	 * retrieve the number of days previous to the current day that the system should retrieve orders
+	 * from the ebay API for. 
+	 * @param accountName the account name to find this value for
+	 * @return int representing the number of lookback days
+	 */
+	public static int lookbackDays(String accountName)
+	{
+		String targetAccount = accountName.trim();
+		String currentAccount;
+		
+		for(int i=0 ; i<accountInfo_M.size() ; ++i) 
+		{
+			currentAccount 
+			= EbayAccounts.accountInfo_M.get(i).get(AccountsTable.ACCOUNT_NAME, ClassRef.STRING).trim();
+			
+			if(currentAccount.equalsIgnoreCase(targetAccount))	
+			{return EbayAccounts.accountInfo_M.get(i).get(AccountsTable.LOOKBACK_DAYS, ClassRef.INTEGER);}
+		}
+		throw new IllegalArgumentException("account "+accountName+" not found");
+	}
+	
+	/**
+	 * register a new account on the system
+	 * @param accountName the name of the new account, must be distinct from any other account name
+	 * @param apiKey the api key associated with this account
+	 * @param server the server address that this account should use when performing api calls
+	 * @param lookback the number of days prior to the current day that the system should use when 
+	 * looking for new orders.
+	 * @return
+	 */
 	public static boolean registerAccount(String accountName, String apiKey, String server, int lookback) 
 	{
 		/**@TODO use query to add account to database**/
@@ -81,26 +166,5 @@ public final class EbayAccounts
 	 * refresh the account information.
 	 */
 	public static void refresh()
-	{accountMap_M = EbayAccounts.listToMap(QueryInvoker.execute(QueryType.SELECT_ACCOUNTS, null));}
-	
-	/**
-	 * 
-	 * @param rawInput
-	 * @return
-	 */
-	private static Map<String,Map<AccountInfo,String>> listToMap(List<String[]> rawInput)
-	{
-		Map<String,Map<AccountInfo,String>> result = new HashMap<String,Map<AccountInfo,String>>();
-		for (String[] input : rawInput) 
-		{
-			Map<AccountInfo, String> info = new HashMap<AccountInfo,String>();
-			info.put(AccountInfo.ID, input[0]);
-			info.put(AccountInfo.API_KEY, input[2]);
-			info.put(AccountInfo.SERVER_ADDRESS, input[3]);
-			info.put(AccountInfo.LOOKBACK_DAYS, input[4]);
-			
-			result.put(input[1], info);
-		}
-		return result;
-	}
+	{accountInfo_M = SelectQueryInvoker.execute(SelectQueryTypeNoParams.SELECT_ACCOUNTS);}
 }

@@ -17,6 +17,7 @@ import java.util.List;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.view.AbstractView;
 
 /**
@@ -31,7 +32,7 @@ public final class ErrorView implements AbstractView
 	 * @see tomoBay.view.AbstractView#format(java.util.List)
 	 */
 	@Override
-	public String format(List<String[]> input)
+	public String format(List<HeteroFieldContainer> input)
 	{
 		// TODO Auto-generated method stub
 		return null;

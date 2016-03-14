@@ -78,6 +78,12 @@ public abstract class JSONentity
 	public JSONentity clear()
 	{this.children_M.clear();return this;}
 	
+	public void finalize() throws Throwable
+	{
+		super.finalize();
+		this.children_M.clear();
+		this.children_M=null;
+	}
 	/**
 	 * 
 	 */

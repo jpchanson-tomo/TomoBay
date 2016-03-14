@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.transactionsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /**
  * This class represents the price field in the ebay_transactions table of the database
  * 
@@ -25,7 +25,7 @@ import tomoBay.model.dataTypes.dbSchema.TypeDef;
  * @author Jan P.C. Hanson
  *
  */
-final class Price implements AbstractField
+public final class Price implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = -1;

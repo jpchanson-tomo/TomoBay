@@ -15,10 +15,12 @@ package tomoBay.model.sql.queries.concreteQueries.update;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import tomoBay.model.sql.queries.AbstractUpdateQuery;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
  * This class represents a query that updates the 'invoiced' field of particular order on the 
  * orders table of the database with appropriate data:
@@ -28,7 +30,7 @@ import tomoBay.model.sql.queries.AbstractUpdateQuery;
  * @author Jan P.C. Hanson
  *
  */
-public  final class UpdateInvoiceStatus extends AbstractUpdateQuery
+public  final class UpdateInvoiceStatus extends AbstractModifyQuery
 {
 	/**SQL query string**/
 	private String query ="UPDATE ebay_orders SET invoiced=? WHERE orderID=?";
@@ -48,17 +50,16 @@ public  final class UpdateInvoiceStatus extends AbstractUpdateQuery
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
 		super.initQuery(query);
-		super.statement_M.setInt(1, Integer.parseInt(parameter[0]));	//invoiced status code
-		super.statement_M.setString(2, parameter[1]);//orderID
+		super.statement_M.setInt(1, parameter.get(OrdersTable.INVOICED, ClassRef.INTEGER));
+		super.statement_M.setString(2, parameter.get(OrdersTable.ORDER_ID, ClassRef.STRING));
 		
 		int resultCode = statement_M.executeUpdate();
 		super.cleanup();
 		
-		res.add(new String[] {resultCode+""});
-		return res;
+		parameter.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameter;
 	}
 }

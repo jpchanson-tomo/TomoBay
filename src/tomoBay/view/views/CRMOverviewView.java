@@ -2,6 +2,7 @@ package tomoBay.view.views;
 
 import java.util.List;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.view.AbstractView;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -37,7 +38,7 @@ public final class CRMOverviewView implements AbstractView
 	 * @see tomoBay.view.AbstractView#format(java.util.List)
 	 */
 	@Override
-	public String format(List<String[]> input)
+	public String format(List<HeteroFieldContainer> input)
 	{
 		// TODO Auto-generated method stub
 		return null;

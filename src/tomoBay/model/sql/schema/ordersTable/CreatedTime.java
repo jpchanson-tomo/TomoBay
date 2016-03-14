@@ -15,8 +15,8 @@ package tomoBay.model.sql.schema.ordersTable;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /**
  * this is the createdTime field of the ebay_orders table in the database. The value of this field
  * is grabbed using the ebayAPI and is the time and date at which this order was created.
@@ -26,7 +26,7 @@ import tomoBay.model.dataTypes.dbSchema.TypeDef;
  * @author Jan P.C. Hanson
  *
  */
-final class CreatedTime implements AbstractField
+public final class CreatedTime implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = -1;

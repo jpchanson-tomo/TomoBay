@@ -1,15 +1,19 @@
 package tomoBay.model.dataTypes;
 
+import gnu.trove.set.hash.THashSet;
+
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import tomoBay.helpers.BrandToCode;
-import tomoBay.model.services.helpers.PartList;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.services.helpers.PickeableStatus;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.model.winstock.Stock;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -47,10 +51,13 @@ public final class Pickeablity
 	 */
 	public PickeableStatus status(String orderNo)
 	{
-		List<String[]> orderTransactions 
-		= QueryInvoker.execute(QueryType.SELECT_TRANSACTION_BY_ORDERID, new String[] {orderNo});
+		HeteroFieldContainer param = new HeteroFieldContainer();
+		param.add(OrdersTable.ORDER_ID, orderNo);
+		
+		List<HeteroFieldContainer> orderTransactions 
+		= SelectQueryInvoker.execute(SelectQueryTypeParams.SELECT_TRANSACTION_BY_ORDERID, param);
 
-		List<String[]> items = new ArrayList<String[]>();
+		List<HeteroFieldContainer> items = new ArrayList<HeteroFieldContainer>();
 		
 		this.assembleItemsList(orderTransactions, items);
 		
@@ -71,15 +78,15 @@ public final class Pickeablity
 	 * @param itemsVar
 	 */
 	private void assembleItemsList
-	(List<String[]> transactionVar, List<String[]> itemsVar)
+	(List<HeteroFieldContainer> transactionVar, List<HeteroFieldContainer> itemsVar)
 	{
 		for (int i = 0 ; i < transactionVar.size() ; ++i)
 		{
-			String tmpID = String.valueOf(transactionVar.get(i)[1]);
-			
-			List<String[]> tmpList 
-			= QueryInvoker.execute(QueryType.SELECT_EBAY_ITEM_SPECIFIC, 
-									new String[] {tmpID});
+			HeteroFieldContainer itemID = new HeteroFieldContainer();
+			itemID.add(ItemsTable.ITEM_ID, transactionVar.get(i).get(ItemsTable.ITEM_ID, ClassRef.LONG));
+			List<HeteroFieldContainer> tmpList 
+			= SelectQueryInvoker.execute(SelectQueryTypeParams.SELECT_EBAY_ITEM_SPECIFIC, 
+									itemID);
 			itemsVar.addAll(tmpList);
 		}
 	}
@@ -95,18 +102,18 @@ public final class Pickeablity
 	 * @return Set<Boolean> in stock - size=1 value={true}; out of stock - size=1 values={false};
 	 * partial stock - size = 2 values = {true,false}
 	 */
-	private Set<Boolean> checkStockLevelOfItems(List<String[]> itemsVar)
+	private Set<Boolean> checkStockLevelOfItems(List<HeteroFieldContainer> itemsVar)
 	{
-		Set<Boolean> itemStatus = new HashSet<Boolean>();
-		for (String[] item : itemsVar)
+		Set<Boolean> itemStatus = new THashSet<Boolean>();
+		for (HeteroFieldContainer item : itemsVar)
 		{
 			Stock stockAvailable = new Stock();
-			PartList partlist = new PartList(item[4]);
+			PartList partlist = new PartList(item.get(ItemsTable.PART_NO, ClassRef.STRING));
 			
 			for (int i = 0 ; i < partlist.size() ; ++i)
 			{
 				int available = stockAvailable.requestStockLevel(partlist.getPartNumber(i), 
-						BrandToCode.convert(item[3]));
+						BrandToCode.convert(item.get(ItemsTable.BRAND, ClassRef.STRING)));
 				
 				int required = partlist.getPartQty(i);
 				

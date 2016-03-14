@@ -57,7 +57,7 @@ public final class WinstockFormat extends AbstractFormat
 		
 		for (AbstractLineItem item : line)
 		{
-			result.put(item.partNo(line), PayloadType.PART_NO);
+			result.put(item.partNo(line).toUpperCase(), PayloadType.PART_NO);
 			result.put(item.description(line), PayloadType.DESCRIPTION);
 			result.put(String.valueOf(item.quantity(line)), PayloadType.QUANTITY);
 			result.put(String.valueOf(item.price()), PayloadType.PRICE);

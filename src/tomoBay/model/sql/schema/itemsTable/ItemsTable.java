@@ -1,5 +1,4 @@
 package tomoBay.model.sql.schema.itemsTable;
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -15,7 +14,8 @@ import tomoBay.model.dataTypes.dbSchema.AbstractField;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractTypeSchema;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractTypeSchema;
 import tomoBay.model.sql.schema.accountsTable.AccountsTable;
 /**
  * This represents the structure of the ebay_items table of the database. This table is a representation

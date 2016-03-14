@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.buyerTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /**
  * The email field of the ebay_buyers table in the database. i.e. the email address that the buyer
  * registered with eBay.

@@ -3,10 +3,13 @@ package tomoBay.presenters.presenterActions.concreteActions;
 import java.util.Iterator;
 import java.util.List;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.dataTypes.json.JSONentity_array;
 import tomoBay.model.dataTypes.json.JSONentity_object;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.schema.buyerTable.BuyerTable;
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -54,23 +57,23 @@ public final class BuyerList implements AbstractPresenterAction
 	 * @return List<String[]> containing the list each buyer is an element in the list, each 
 	 * element in the string array is a data field for that buyer.
 	 */
-	private static final List<String[]> getRawData()
-	{return QueryInvoker.execute(QueryType.SELECT_EBAY_BUYERS, new String[] {});}
+	private static final List<HeteroFieldContainer> getRawData()
+	{return SelectQueryInvoker.execute(SelectQueryTypeNoParams.SELECT_EBAY_BUYERS);}
 	
 	/**
 	 * format the results of the query as a JSON string
 	 * @param buyers the results from the query
 	 * @return String JSON encoded results.
 	 */
-	private static final String formatResults(List<String[]> buyers)
+	private static final String formatResults(List<HeteroFieldContainer> buyers)
 	{
 		String results="";
-		Iterator<String[]> iter = buyers.iterator();
-		for(String[] buyer : buyers)
+		Iterator<HeteroFieldContainer> iter = buyers.iterator();
+		for(HeteroFieldContainer buyer : buyers)
 		{
 			results += new JSONentity_object()
-							.addLeaf("BuyerID", SaneInput.json(buyer[0]))
-							.addLeaf("Name", SaneInput.json(buyer[1]))
+							.addLeaf("BuyerID", SaneInput.json(buyer.get(BuyerTable.BUYERID, ClassRef.STRING)))
+							.addLeaf("Name", SaneInput.json(buyer.get(BuyerTable.NAME, ClassRef.STRING)))
 							.toString();
 			iter.next();
 			if(iter.hasNext()) {results+= ",";}

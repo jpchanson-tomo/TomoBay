@@ -6,11 +6,11 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import tomoBay.helpers.StackTraceToString;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.eBayAPI.EbayAccounts;
-import tomoBay.model.eBayAPI.EbayAccounts.AccountInfo;
 import tomoBay.model.eBayAPI.ItemCall;
 import tomoBay.model.services.AbstractServiceState;
-import tomoBay.model.sql.queries.QueryInvoker;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,9 @@ import tomoBay.model.sql.queries.QueryInvoker;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 
 import com.ebay.soap.eBLBaseComponents.ItemType;
 import com.ebay.soap.eBLBaseComponents.NameValueListType;
@@ -58,14 +60,17 @@ public final class OnRunning implements AbstractServiceState
 	{
 		try
 		{
-			String account = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEM_SPECIFIC,
-																new String[] {this.listingID_M.toString()})
-															.get(0)[6];
-			ItemType item = this.getItemData(String.valueOf(this.listingID_M), account);
+			HeteroFieldContainer param = new HeteroFieldContainer();
+			param.add(ItemsTable.ITEM_ID, this.listingID_M);
+			
+			int account = SelectQueryInvoker.execute(SelectQueryTypeParams.SELECT_EBAY_ITEM_SPECIFIC,param)
+															.get(0).get(ItemsTable.ACCOUNT, ClassRef.INTEGER);
+			
+			ItemType item = this.getItemData(this.listingID_M, account);
+			
 			Map<String, String> specifics = this.getSpecifics(item);
 			String brand = specifics.get("Brand"); 
 			String partNo = specifics.get("Manufacturer Part Number");
-			System.out.println(brand+" : "+partNo);
 			
 			new RePopulateEbayItem().populate(partNo, brand, Long.parseLong(item.getItemID()));
 		
@@ -82,13 +87,12 @@ public final class OnRunning implements AbstractServiceState
 	 * @param itemID the ID of a particular eBay Item (listing)
 	 * @return ItemType eBay API datatype containing the details of a particular item.
 	 */
-	private ItemType getItemData(String itemID, String account)
+	private ItemType getItemData(Long itemID, int account)
 	{
 		try
 		{
-			int acc = Integer.parseInt(account);
-			String APIkey = EbayAccounts.get(EbayAccounts.name(acc), AccountInfo.API_KEY);
-			String server = EbayAccounts.get(EbayAccounts.name(acc), AccountInfo.SERVER_ADDRESS);
+			String APIkey = EbayAccounts.apiKey(EbayAccounts.name(account));
+			String server = EbayAccounts.serverAddress(EbayAccounts.name(account));
 			ItemCall item = new ItemCall(APIkey, server);
 			return item.call(itemID);
 		}

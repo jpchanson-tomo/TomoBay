@@ -14,15 +14,15 @@ package tomoBay.model.sql.schema.accountsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-final class ServerAddr implements AbstractField
+public final class ServerAddr implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 45;
@@ -37,7 +37,7 @@ final class ServerAddr implements AbstractField
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#type()
 	 */
 	@Override
-	public String type()
+	public String type ()
 	{return TypeDef.STRING;}
 
 	/* (non-Javadoc)

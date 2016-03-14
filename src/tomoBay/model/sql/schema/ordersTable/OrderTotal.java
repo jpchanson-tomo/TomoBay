@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.ordersTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /**
  * this is the account field of the ebay_orders table in the database. it is a foreign key to the 
  * ebay_accounts table and represents the account that this order is associated with.
@@ -25,7 +25,7 @@ import tomoBay.model.dataTypes.dbSchema.TypeDef;
  * @author Jan P.C. Hanson
  *
  */
-final class OrderTotal implements AbstractField
+public final class OrderTotal implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = -1;

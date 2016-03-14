@@ -1,7 +1,7 @@
 package tomoBay.model.sql.queries.factories.update;
 
-import tomoBay.model.sql.queries.AbstractDBQuery;
-import tomoBay.model.sql.queries.AbstractQueryFactory;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.queries.AbstractModifyQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.update.UpdateItemNote;
 
 /**
@@ -9,7 +9,7 @@ import tomoBay.model.sql.queries.concreteQueries.update.UpdateItemNote;
  * @author Jan P.C. Hanson
  *
  */
-public final class UpdateItemNoteFactory implements AbstractQueryFactory
+public final class UpdateItemNoteFactory implements AbstractModifyQueryFactory
 {
 	/**
 	 * default ctor
@@ -21,7 +21,7 @@ public final class UpdateItemNoteFactory implements AbstractQueryFactory
 	 * @see tomoBay.model.sql.queries.AbstractQueryFactory#make()
 	 */
 	@Override
-	public AbstractDBQuery make()
+	public AbstractModifyQuery make()
 	{
 		return new UpdateItemNote();
 	}

@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.accountsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /**
  * This represents the name field in the ebay_accounts table of the database. this field stores the 
  * name of an ebay account that the system should use.
@@ -24,7 +24,7 @@ import tomoBay.model.dataTypes.dbSchema.TypeDef;
  * @author Jan P.C. Hanson
  *
  */
-final class AccountName implements AbstractField
+public final class AccountName implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 45;

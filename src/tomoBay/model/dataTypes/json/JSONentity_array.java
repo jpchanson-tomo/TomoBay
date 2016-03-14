@@ -36,10 +36,10 @@ public final class JSONentity_array extends JSONentity
 	public String toString()
 	{
 		String objBody="[ ";
-		Iterator<String> jsonIter = super.children_M.iterator();
-		for(int i = 0 ; i < super.children_M.size() ; ++i)
+		Iterator<Integer> jsonIter = super.children_M.iterator();
+		for(int i : super.children_M)
 		{
-			objBody+=super.children_M.getValueByIndex(i);
+			objBody+=super.children_M.getValue2(i);
 			jsonIter.next();
 			if(jsonIter.hasNext()){objBody+=", ";}
 		}

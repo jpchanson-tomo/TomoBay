@@ -20,12 +20,12 @@ package tomoBay.model.dataTypes;
  * @author Jan P.C. Hanson
  *
  */
-public class Pair<X,Y>
+public final class Pair<X,Y>
 {
 	/**the x-value of this pair**/
-	private X xValue_M;
+	private final X xValue_M;
 	/**the y-value of this pair**/
-	private Y yValue_M;
+	private final Y yValue_M;
 	
 	/**
 	 * Instantiates the pair with the x and y values provided, where x is of type <X> and y is of 
@@ -44,24 +44,11 @@ public class Pair<X,Y>
 	 * retrieve the x-value
 	 * @return <X> the value of x
 	 */
-	public X xVal() {return this.xValue_M;}
-	
-	/**
-	 * set the x-value
-	 * @param value <X> representing the value to set
-	 */
-	public void xVal(X value) {this.xValue_M = value;}
+	public final X xVal() {return this.xValue_M;}
 	
 	/**
 	 * retrieve the y-value
 	 * @return <Y> the value of y
 	 */
-	public Y yVal() {return this.yValue_M;}
-	
-	/**
-	 * set the y-value
-	 * @param value <Y> representing the value to set  
-	 */
-	public void yVal(Y value) {this.yValue_M = value;}
-	
+	public final Y yVal() {return this.yValue_M;}
 }

@@ -17,7 +17,10 @@ package tomoBay.helpers;
 import java.util.ArrayList;
 import java.util.List;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.services.helpers.PickeableStatus;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
  * This class contains functionality for performing a category based sorting algorithm first 
  * ordering the data passed in by shipping type and the now sorted data by Pickeability. this 
@@ -42,26 +45,26 @@ public class SortOrders
 	/**
 	 * sort an input list of Strings i.e. the results of an eBay orders query, by shipping type
 	 * and then by date.
-	 * @param input
+	 * @param rows
 	 * @return sorted list of strings.
 	 */
-	public List<String[]> sortDefault(List<String[]> input)
-	{return this.sortByPickeability(this.sortByShipping(input));}
+	public List<HeteroFieldContainer> sortDefault(List<HeteroFieldContainer> rows)
+	{return this.sortByPickeability(this.sortByShipping(rows));}
 	
 	/**
 	 * sort the list<String> by Invoice status descending (see InvoiceableStatus enum)
 	 * @param input list of strings unordered
 	 * @return List<String> sorted by date descending
 	 */
-	private List<String[]> sortByPickeability(List<String[]> input)
+	private List<HeteroFieldContainer> sortByPickeability(List<HeteroFieldContainer> input)
 	{
-		List<List<String[]>> categoryList = new ArrayList<List<String[]>>(PickeableStatus.size());
+		List<List<HeteroFieldContainer>> categoryList = new ArrayList<List<HeteroFieldContainer>>(PickeableStatus.size());
 		
-		for(int i = 0 ; i < PickeableStatus.size() ; ++i) {categoryList.add(new ArrayList<String[]>());}
+		for(int i = 0 ; i < PickeableStatus.size() ; ++i) {categoryList.add(new ArrayList<HeteroFieldContainer>());}
 		
 		for (int i = 0 ; i < input.size() ; ++i)
 		{
-			categoryList.get(Integer.parseInt((input.get(i)[5])))
+			categoryList.get(input.get(i).get(OrdersTable.INVOICED, ClassRef.INTEGER))
 						.add(input.get(i));
 		}
 		return reAssembleCategories(categoryList, PickeableStatus.size());
@@ -72,15 +75,15 @@ public class SortOrders
 	 * @param input list of strings sorted by date descending.
 	 * @return List<String> sorted by ShippingPriority then date
 	 */
-	private List<String[]> sortByShipping(List<String[]> input)
+	private List<HeteroFieldContainer> sortByShipping(List<HeteroFieldContainer> input)
 	{
-		List<List<String[]>> categoryList = new ArrayList<List<String[]>>(ShippingPriority.size());
+		List<List<HeteroFieldContainer>> categoryList = new ArrayList<List<HeteroFieldContainer>>(ShippingPriority.size());
 		
-		for(int i = 0 ; i < ShippingPriority.size() ; ++i) {categoryList.add(new ArrayList<String[]>());}
+		for(int i = 0 ; i < ShippingPriority.size() ; ++i) {categoryList.add(new ArrayList<HeteroFieldContainer>());}
 		
 		for (int i = 0 ; i < input.size() ; ++i)
 		{
-			categoryList.get( ShippingPriority.valueOf(input.get(i)[3]).getPriority() )
+			categoryList.get( ShippingPriority.valueOf(input.get(i).get(OrdersTable.SHIPPING_TYPE, ClassRef.STRING)).getPriority() )
 						.add(input.get(i));
 		}
 		return reAssembleCategories(categoryList, ShippingPriority.size());
@@ -92,9 +95,9 @@ public class SortOrders
 	 * @param size the size of the shipping priority enum
 	 * @return category sorted list of strings with previous sort order preserved
 	 */
-	private List<String[]> reAssembleCategories(List<List<String[]>> input, int size)
+	private List<HeteroFieldContainer> reAssembleCategories(List<List<HeteroFieldContainer>> input, int size)
 	{
-		List<String[]> result = new ArrayList<String[]>();
+		List<HeteroFieldContainer> result = new ArrayList<HeteroFieldContainer>();
 		
 		for (int i = 0 ; i < size ; ++i)
 		{

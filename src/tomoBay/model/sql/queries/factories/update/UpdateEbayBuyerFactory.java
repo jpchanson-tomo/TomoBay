@@ -1,7 +1,7 @@
 package tomoBay.model.sql.queries.factories.update;
 
-import tomoBay.model.sql.queries.AbstractDBQuery;
-import tomoBay.model.sql.queries.AbstractQueryFactory;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.queries.AbstractModifyQueryFactory;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.update.UpdateEbayBuyer;
  * @author Jan P.C. Hanson
  *
  */
-public final class UpdateEbayBuyerFactory implements AbstractQueryFactory
+public final class UpdateEbayBuyerFactory implements AbstractModifyQueryFactory
 {
 
 	/**
@@ -37,7 +37,7 @@ public final class UpdateEbayBuyerFactory implements AbstractQueryFactory
 	 * @see tomoBay.model.sql.queries.AbstractQueryFactory#make()
 	 */
 	@Override
-	public AbstractDBQuery make()
+	public AbstractModifyQuery make()
 	{return new UpdateEbayBuyer();}
 
 }

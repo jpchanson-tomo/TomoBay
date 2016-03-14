@@ -14,9 +14,10 @@ package tomoBay.model.winstock;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import gnu.trove.map.hash.THashMap;
+
 import java.io.IOException;
 import java.net.UnknownHostException;
-import java.util.HashMap;
 import java.util.Map;
 
 import tomoBay.exceptions.PayloadException;
@@ -53,9 +54,8 @@ public final class WinstockCommandInvoker
 	 * internal Map responsible for associating a WinstockCommandTypes with its corresponding
 	 * AbstractWinstockCommandFactory object.
 	 **/
-	@SuppressWarnings("serial")
 	private static final Map<WinstockCommandTypes, AbstractWinstockCommandFactory> factoryMap_M
-	= new HashMap<WinstockCommandTypes, AbstractWinstockCommandFactory>()
+	= new THashMap<WinstockCommandTypes, AbstractWinstockCommandFactory>()
 		{{
 			put(WinstockCommandInvoker.WinstockCommandTypes.PutInvoice, new PutInvoiceCommandFactory());
 			put(WinstockCommandInvoker.WinstockCommandTypes.PrintInvoice, new PrintInvoiceCommandFactory());

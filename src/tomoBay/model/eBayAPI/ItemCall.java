@@ -54,7 +54,7 @@ public final class ItemCall extends AbstractAPIcall
 	 * @throws SdkException 
 	 * @throws ApiException 
 	 */
-	public ItemType call(String itemId) throws ApiException, SdkException, Exception
+	public ItemType call(long itemId) throws ApiException, SdkException, Exception
 	{     
 		DetailLevelCodeType[] detail = {DetailLevelCodeType.RETURN_ALL};
         

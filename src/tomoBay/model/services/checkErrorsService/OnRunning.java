@@ -5,6 +5,9 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import tomoBay.helpers.BrandToCode;
+import tomoBay.model.dataTypes.PartList;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.services.AbstractServiceState;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -21,9 +24,11 @@ import tomoBay.model.services.AbstractServiceState;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.services.helpers.PartList;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.ModifyQueryInvoker;
+import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 import tomoBay.model.winstock.Stock;
 
 /**
@@ -49,18 +54,38 @@ public final class OnRunning implements AbstractServiceState
 		log.warn("check errors started");
 		PartList partlist;
 		Stock errorCheck = new Stock();
-		List<String[]> orders = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS, new String[] {});
-		for (String[] order: orders)
+		List<HeteroFieldContainer> orders = SelectQueryInvoker.execute(SelectQueryTypeNoParams.SELECT_EBAY_ITEMS);
+		for (HeteroFieldContainer order: orders)
 		{
-			partlist = new PartList(order[4]);
+			partlist = new PartList(order.get(ItemsTable.PART_NO, ClassRef.STRING));
 			for (String partNo : partlist.getPartNumbers())
 			{
-				int result = errorCheck.requestStockLevel(partNo, BrandToCode.convert(order[3]));
-				String errorMsg = "ERROR("+order[0]+"): check part numbers and brand";
+				int result = errorCheck.requestStockLevel(partNo, 
+											BrandToCode.convert(order.get(ItemsTable.BRAND, ClassRef.STRING)));
+				
 				if (result == -8008135)
-				{QueryInvoker.execute(QueryType.UPDATE_ITEM_NOTE, new String[] {errorMsg, order[0]});log.warn(errorMsg);}
+				{this.updateItemNote(order);}
 			}
 		}
 		return "check errors finished";
+	}
+	
+	/**
+	 * this method updates the notes field in the database to reflect the error that has been found
+	 * @param order HeteroFieldcontainer containing the values taken from the select query in the 
+	 * execute method.
+	 */
+	private void updateItemNote(HeteroFieldContainer order)
+	{
+		String errorMsg = "ERROR("+order.get(ItemsTable.ITEM_ID, ClassRef.LONG)
+								+"): check part numbers and brand";
+		
+		HeteroFieldContainer insertVals = new HeteroFieldContainer();
+		insertVals.add(ItemsTable.ITEM_ID, order.get(ItemsTable.ITEM_ID, ClassRef.LONG));
+		insertVals.add(ItemsTable.NOTES, errorMsg);
+		
+		ModifyQueryInvoker.execute(QueryType.UPDATE_ITEM_NOTE, insertVals);
+		
+		log.warn(errorMsg);
 	}
 }

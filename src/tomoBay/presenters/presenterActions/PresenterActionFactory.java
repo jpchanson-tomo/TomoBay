@@ -14,7 +14,8 @@ package tomoBay.presenters.presenterActions;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.HashMap;
+import gnu.trove.map.hash.THashMap;
+
 import java.util.Map;
 
 import tomoBay.presenters.presenterActions.factories.AbstractPresenterActionFactory;
@@ -63,9 +64,8 @@ public final class PresenterActionFactory
 				}
 	
 	/**maps the type string to an action**/
-	@SuppressWarnings("serial")
 	private static final Map<PresenterActions, AbstractPresenterActionFactory> actionMap_M
-				= new HashMap<PresenterActions, AbstractPresenterActionFactory>()
+				= new THashMap<PresenterActions, AbstractPresenterActionFactory>()
 				{{
 					put(PresenterActions.LOG_FILE_VIEWER, new LogFileViewerFactory());
 					put(PresenterActions.MARK_AS_INVOICED, new MarkAsInvoicedFactory());

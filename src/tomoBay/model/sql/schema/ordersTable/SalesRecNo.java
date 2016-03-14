@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.ordersTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /**
  * his is the salesRecNo field of the ebay_orders table in the database, it is a number generated
  * by ebay chronologically i.e. the first sale would be 1 the second 2 and so on.
@@ -25,7 +25,7 @@ import tomoBay.model.dataTypes.dbSchema.TypeDef;
  * @author Jan P.C. Hanson
  *
  */
-final class SalesRecNo implements AbstractField
+public final class SalesRecNo implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 10;

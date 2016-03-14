@@ -14,124 +14,111 @@ package tomoBay.model.dataTypes.order;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.Map;
-import java.util.HashMap;
 import java.util.InputMismatchException;
 
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.schema.buyerTable.BuyerTable;
 
 /**
- *
+ * This class represents an eBay buyer and once instantiated contains all the pertinent information
+ * on the particular buyer instance.
  * @author Jan P.C. Hanson
  *
  */
 public class Buyer
 {
-	private static final String ERRORMSG ="a Buyer must be created with 7 elements: "
+	/**the error message that will be displayed should the incorrect no of arguments be used to create the Buyer**/
+	private static final String ERRORMSG ="a Buyer must be created with 8 elements: "
 											+ "ID, NAME, STREET1, STREE2, CITY, COUNTY, "
-											+ "POSTCODE and a phone number";
-	/**enum for access to the map**/
-	private enum stringTypes {ID,NAME,STREET1,STREET2,CITY,COUNTY,POSTCODE,EMAIL,PHONE}
-	/**map holding string properties of this part, partNo, brand, description**/
-	private final Map<stringTypes, String> stringProperties_M;
+											+ "POSTCODE, EMAIL and a PHONE";
+	/****/
+	private final HeteroFieldContainer buyerInfo_M;
 	
 	/**
 	 * CONSTRUCTOR, initialises object by grabbing the relevant information from the database,
 	 * requires a valid buyerID in order to function properly
 	 * @param buyerID
 	 */
-	@SuppressWarnings("serial")
 	public Buyer(String buyerID)
 	{
-		String[] buyerInfo = QueryInvoker.execute(QueryType.SELECT_EBAY_BUYER, new String[] {buyerID}).get(0);
-		this.stringProperties_M = new HashMap<stringTypes,String>()
-		{{
-			put(stringTypes.ID, buyerInfo[0]);
-			put(stringTypes.NAME, buyerInfo[1]);
-			put(stringTypes.STREET1, buyerInfo[2]);
-			put(stringTypes.STREET2, buyerInfo[3]);
-			put(stringTypes.CITY, buyerInfo[4]);
-			put(stringTypes.COUNTY, buyerInfo[5]);
-			put(stringTypes.POSTCODE, buyerInfo[6]);
-			put(stringTypes.EMAIL, buyerInfo[7]);
-			put(stringTypes.PHONE, buyerInfo[8]);
-		}};
+		HeteroFieldContainer param = new HeteroFieldContainer();
+		param.add(BuyerTable.BUYERID, buyerID);
+		buyerInfo_M = SelectQueryInvoker.execute(SelectQueryTypeParams.SELECT_EBAY_BUYER, param).get(0);
 	}
 
 	/**
 	 * 
 	 * @param buyerInfo
 	 */
-	@SuppressWarnings("serial")
-	public Buyer(String[] buyerInfo)
+	public Buyer(HeteroFieldContainer buyerInfo)
 	{
-		if(buyerInfo.length!=8) {throw new InputMismatchException(ERRORMSG);}
-		this.stringProperties_M = new HashMap<stringTypes,String>()
-		{{
-			put(stringTypes.ID, buyerInfo[0]);
-			put(stringTypes.NAME, buyerInfo[1]);
-			put(stringTypes.STREET1, buyerInfo[2]);
-			put(stringTypes.STREET2, buyerInfo[3]);
-			put(stringTypes.CITY, buyerInfo[4]);
-			put(stringTypes.COUNTY, buyerInfo[5]);
-			put(stringTypes.POSTCODE, buyerInfo[6]);
-			put(stringTypes.EMAIL, buyerInfo[7]);
-			put(stringTypes.PHONE, buyerInfo[8]);
-		}};
+		if(buyerInfo.size()!=8) {throw new InputMismatchException(ERRORMSG);}
+		buyerInfo_M = buyerInfo;
 	}
 	
 	/**
 	 * retrieve the BuyerID for this buyer
 	 * @return String containing the BuyerID
 	 */
-	public String buyerID() {return this.stringProperties_M.get(stringTypes.ID);}
+	public String buyerID() 
+	{return this.buyerInfo_M.get(BuyerTable.BUYERID, ClassRef.STRING);}
 	
 	/**
 	 * retrieve the name of this buyer
 	 * @return String containing the name of this buyer
 	 */
-	public String name() {return this.stringProperties_M.get(stringTypes.NAME);}
+	public String name() 
+	{return this.buyerInfo_M.get(BuyerTable.NAME, ClassRef.STRING);}
 	
 	/**
 	 * retrieve the first street line of the address of this buyer
 	 * @return String containing the first street line
 	 */
-	public String street1() {return this.stringProperties_M.get(stringTypes.STREET1);}
+	public String street1() 
+	{return this.buyerInfo_M.get(BuyerTable.STREET1, ClassRef.STRING);}
 	
 	/**
 	 * retrieve the second street line of the address of this buyer
 	 * @return String containing the second street line
 	 */
-	public String street2() {return this.stringProperties_M.get(stringTypes.STREET2);}
+	public String street2() 
+	{return this.buyerInfo_M.get(BuyerTable.STREET2, ClassRef.STRING);}
 	
 	/**
 	 * retrieve the county that this buyers address is associated with
 	 * @return String containing the county
 	 */
-	public String county() {return this.stringProperties_M.get(stringTypes.COUNTY);}
+	public String county() 
+	{return this.buyerInfo_M.get(BuyerTable.COUNTY, ClassRef.STRING);}
 	
 	/**
 	 * retrieve the city for this buyers listed address
 	 * @return String containing the city for this buyer
 	 */
-	public String city() {return this.stringProperties_M.get(stringTypes.CITY);}
+	public String city() 
+	{return this.buyerInfo_M.get(BuyerTable.CITY, ClassRef.STRING);}
 	
 	/**
 	 * retreive the postcode for this buyers address
 	 * @return String containing the postcode of this buyer
 	 */
-	public String postcode() {return this.stringProperties_M.get(stringTypes.POSTCODE);}
+	public String postcode() 
+	{return this.buyerInfo_M.get(BuyerTable.POSTCODE, ClassRef.STRING);}
 	
 	/**
 	 * retrieve the email address associated with this buyer
 	 * @return String containing the email address of this buyer
 	 */
-	public String email() {return this.stringProperties_M.get(stringTypes.EMAIL);}
+	public String email() 
+	{return this.buyerInfo_M.get(BuyerTable.EMAIL, ClassRef.STRING);}
 	
 	/**
 	 * retrieve the phone number of this buyer
 	 * @return long representing the phone number of this buyer
 	 */
-	public String phoneNo() {return this.stringProperties_M.get(stringTypes.PHONE);}
+	public String phoneNo() 
+	{return this.buyerInfo_M.get(BuyerTable.PHONE, ClassRef.STRING);}
 }

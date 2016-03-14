@@ -51,19 +51,17 @@ public final class OnRunning implements AbstractServiceState
 			for(String account : EbayAccounts.accounts())
 			{
 				log.warn("updating: "+account);
-				String usrKey = EbayAccounts.get(account, EbayAccounts.AccountInfo.API_KEY);
-				String server =  EbayAccounts.get(account, EbayAccounts.AccountInfo.SERVER_ADDRESS);
-				int lookbackDays = Integer.parseInt(EbayAccounts.get(account, EbayAccounts.AccountInfo.LOOKBACK_DAYS));
-				int accID = Integer.parseInt(EbayAccounts.get(account, EbayAccounts.AccountInfo.ID));
+				String usrKey = EbayAccounts.apiKey(account);
+				String server =  EbayAccounts.serverAddress(account);
+				int lookbackDays = EbayAccounts.lookbackDays(account);
+				int accID = EbayAccounts.id(account);
 				
 				OrdersCall oCall = new OrdersCall(usrKey, server);
 				OrderType[] orders = oCall.call(lookbackDays);
-//				
-//				for(OrderType o : orders) {System.out.println(o.getOrderID());}
 				
-				OrdersTable.populate(orders, accID);
-				TransactionsTable.populate(orders);
-				BuyersTable.populate(orders);
+				Orders_Table.populate(orders, accID);
+				Transactions_Table.populate(orders);
+				Buyers_Table.populate(orders);
 				ItemsAndPartsTable.populate(usrKey, server, accID, orders);
 			}
 			return "finished ebay update";

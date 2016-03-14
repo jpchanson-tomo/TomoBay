@@ -76,6 +76,7 @@ public final class ServiceScheduler
 				for(int i = 0 ; i < this.services_M.size() ; ++i)
 				{
 					log.warn(this.serviceScheduler_M.submit(this.services_M.get(i)).get().toString());
+					System.runFinalization();
 				}
 				Thread.sleep(rateInMins*60*1000);
 			}

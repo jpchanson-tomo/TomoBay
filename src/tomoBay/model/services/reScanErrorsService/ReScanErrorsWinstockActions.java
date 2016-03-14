@@ -15,7 +15,7 @@ package tomoBay.model.services.reScanErrorsService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.helpers.BrandToCode;
-import tomoBay.model.services.helpers.PartList;
+import tomoBay.model.dataTypes.PartList;
 import tomoBay.model.winstock.Stock;
 /**
  * This class encapsulates all CheckErrorsService interactions with Winstock. 

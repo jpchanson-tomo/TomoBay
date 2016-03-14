@@ -19,7 +19,10 @@ import java.util.List;
 import tomoBay.helpers.SortOrders;
 import tomoBay.model.dataTypes.Pickeablity;
 import tomoBay.model.dataTypes.ServerStatus;
-import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
@@ -44,8 +47,8 @@ public final class SalesOrderPresenter implements AbstractPresenter
 	public String present(AbstractView view, String type, String data)
 	{
 		String output = "";
-		List<String[]> rows = QueryInvoker.execute
-				(QueryInvoker.QueryType.SELECT_UNINVOICED_ORDERS,new String[] {""});
+		List<HeteroFieldContainer> rows = SelectQueryInvoker.execute
+				(SelectQueryInvoker.SelectQueryTypeNoParams.SELECT_UNINVOICED_ORDERS);
 		if(ServerStatus.getStatus()== ServerStatus.RunLevel.RUNNING)
 		{
 			this.checkPickability(rows);
@@ -66,14 +69,14 @@ public final class SalesOrderPresenter implements AbstractPresenter
 	/**
 	 * this method checks the pickeability of the uninvoiced orders and modifies the invoiced
 	 * column of the data appropriately col[8].
-	 * @param orders the list of orders to be examined.
+	 * @param rows the list of orders to be examined.
 	 */
-	private void checkPickability(List<String[]> orders)
+	private void checkPickability(List<HeteroFieldContainer> rows)
 	{
 		Pickeablity pickeableStatus = new Pickeablity();
-		for(String[] order : orders)
+		for(HeteroFieldContainer order : rows)
 		{
-			order[5] = String.valueOf(pickeableStatus.status(order[0]).getStatusCode());
+			order.add(OrdersTable.INVOICED, pickeableStatus.status(order.get(OrdersTable.ORDER_ID, ClassRef.STRING)).getStatusCode());
 		}
 	}
 }

@@ -14,11 +14,14 @@ package tomoBay.view.views;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.ServerStatus;
-import tomoBay.model.eBayAPI.EbayAccounts;
-import tomoBay.view.AbstractView;
-
 import java.util.List;
+
+import tomoBay.model.dataTypes.ServerStatus;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.eBayAPI.EbayAccounts;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
+import tomoBay.view.AbstractView;
 /**
  * This class is responsible for formatting the data passed to it by the SalesOrderPresenter and
  * providing a string that can be displayed by the AJAX requestor. The data is formatted as a 
@@ -40,21 +43,24 @@ public final class SalesOrderView implements AbstractView
 	 * @see openDMS.view.views.AbstractView#format(openDMS.view.views.AbstractView)
 	 */
 	@Override
-	public String format(List<String[]> input) 
+	public String format(List<HeteroFieldContainer> input) 
 	{
 		String result = "{ \"tableData\":[\n";
 		int n = 0;	
-			for (String[] cols : input)
+			for (HeteroFieldContainer cols : input)
 			{
 				result+="{";
-				result+=" \"Select\": \"<input type='checkbox' class='chcktbl' id='"+cols[0].trim()+"'/><div style='visibility:hidden;'>"+n+"</div>\" ,";
-				result+=" \"Name\": \""+cols[1].trim()+"\", ";
-				result+=" \"Date\": \""+cols[4].trim()+"\", ";
-				result+=" \"SalesRecNo\": \""+cols[2].trim()+"\", ";
-				result+="\"Account\":\""+EbayAccounts.name(Integer.parseInt(cols[6]))+"\",";
-				result+=" \"ShippingType\": \""+cols[3].trim()+"\", ";
-				result+=" \"Details\": \""+"<a href='/order.html?"+cols[0].trim()+"?' class='btn btn-primary'>View</button>"+"\" ,";
-				result+=" \"Status\": \""+this.pickeability(cols[5])+"\" ";
+				result+=" \"Select\": \"<input type='checkbox' class='chcktbl' id='"
+								+cols.get(OrdersTable.ORDER_ID, ClassRef.STRING).trim()
+								+"'/><div style='visibility:hidden;'>"+n+"</div>\" ,";
+				
+				result+=" \"Name\": \""+cols.get(OrdersTable.BUYERID, ClassRef.STRING).trim()+"\", ";
+				result+=" \"Date\": \""+cols.get(OrdersTable.CREATED_TIME, ClassRef.TIMESTAMP).toString().trim()+"\", ";
+				result+=" \"SalesRecNo\": \""+cols.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER).toString().trim()+"\", ";
+				result+="\"Account\":\""+EbayAccounts.name(cols.get(OrdersTable.ACCOUNT, ClassRef.INTEGER))+"\",";
+				result+=" \"ShippingType\": \""+cols.get(OrdersTable.SHIPPING_TYPE, ClassRef.STRING).trim()+"\", ";
+				result+=" \"Details\": \""+"<a href='/order.html?"+cols.get(OrdersTable.ORDER_ID, ClassRef.STRING).trim()+"?' class='btn btn-primary'>View</button>"+"\" ,";
+				result+=" \"Status\": \""+this.pickeability(cols.get(OrdersTable.INVOICED, ClassRef.INTEGER))+"\" ";
 				result+="}, \n";
 				n++;
 			}
@@ -70,14 +76,14 @@ public final class SalesOrderView implements AbstractView
 	 * pickable', 2='Unpickeable', 3='ERROR'.
 	 * @return one of the above string values Pickeable/Partial/Unpickeable/ERROR.
 	 */
-	private String pickeability(String invoiced)
+	private String pickeability(int invoiced)
 	{
 		String pickeability="";
 		if(ServerStatus.getStatus()!=ServerStatus.RunLevel.RUNNING) {pickeability = "Services Not Running";}
-		else if(Integer.parseInt(invoiced)==3){pickeability = "ERROR";}
-		else if(Integer.parseInt(invoiced)==2){pickeability = "Unpickeable";}
-		else if(Integer.parseInt(invoiced)==1){pickeability = "Partial";}
-		else if(Integer.parseInt(invoiced)==0){pickeability = "Pickeable";}
+		else if(invoiced==3){pickeability = "ERROR";}
+		else if(invoiced==2){pickeability = "Unpickeable";}
+		else if(invoiced==1){pickeability = "Partial";}
+		else if(invoiced==0){pickeability = "Pickeable";}
 		
 		return pickeability;
 	}

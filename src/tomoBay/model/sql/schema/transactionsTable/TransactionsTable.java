@@ -14,9 +14,8 @@ package tomoBay.model.sql.schema.transactionsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.AbstractTypeSchema;
-
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractTypeSchema;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**

@@ -15,10 +15,9 @@ package tomoBay.model.sql.queries.concreteQueries.insert;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import tomoBay.model.sql.queries.AbstractInsertQuery;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -34,13 +33,16 @@ import tomoBay.model.sql.queries.AbstractInsertQuery;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 
 /**
  * This class represents a query that inserts item details into the items table of the database.
  * @author Jan P.C. Hanson
  *
  */
-public  final class InsertEbayItems extends AbstractInsertQuery
+public  final class InsertEbayItems extends AbstractModifyQuery
 {
 	/**SQL query string**/
 	private String query ="INSERT IGNORE INTO ebay_items "
@@ -67,22 +69,20 @@ public  final class InsertEbayItems extends AbstractInsertQuery
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
 		this.initQuery(query);
-		this.statement_M.setLong(1, Long.parseLong(parameter[0]));//itemID
-		this.statement_M.setString(2, parameter[1]);//title
-		this.statement_M.setString(3, parameter[2]);//sellCondition
-		this.statement_M.setString(4, parameter[3]);//brand
-		this.statement_M.setString(5, parameter[4]);//partNo
-		this.statement_M.setInt(6, Integer.parseInt(parameter[5]));//account
+		this.statement_M.setLong(1, parameter.get(ItemsTable.ITEM_ID, ClassRef.LONG));
+		this.statement_M.setString(2, parameter.get(ItemsTable.TITLE, ClassRef.STRING));
+		this.statement_M.setString(3, parameter.get(ItemsTable.CONDITION, ClassRef.STRING));
+		this.statement_M.setString(4, parameter.get(ItemsTable.BRAND, ClassRef.STRING));
+		this.statement_M.setString(5, parameter.get(ItemsTable.PART_NO, ClassRef.STRING));
+		this.statement_M.setInt(6, parameter.get(ItemsTable.ACCOUNT, ClassRef.INTEGER));
 		
 		int resultCode = statement_M.executeUpdate();
 		this.cleanup();
 		
-		res.add(new String[] {resultCode+""});
-		
-		return res;
+		parameter.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameter;
 	}
 }

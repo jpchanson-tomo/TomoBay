@@ -15,16 +15,18 @@ package tomoBay.model.sql.queries.concreteQueries.update;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import tomoBay.model.sql.queries.AbstractUpdateQuery;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.schema.buyerTable.BuyerTable;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public final class UpdateEbayBuyer extends AbstractUpdateQuery
+public final class UpdateEbayBuyer extends AbstractModifyQuery
 {
 	/**SQL query string**/
 	private String query = "UPDATE ebay_buyers SET name=?,street1=?,street2=?, city=?,county=?,"
@@ -47,25 +49,23 @@ public final class UpdateEbayBuyer extends AbstractUpdateQuery
 	 * 
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
 	{
 		this.initQuery(query);
-		this.statement_M.setString(1, parameter[1]);
-		this.statement_M.setString(2, parameter[2]);
-		this.statement_M.setString(3, parameter[3]);
-		this.statement_M.setString(4, parameter[4]);
-		this.statement_M.setString(5, parameter[5]);
-		this.statement_M.setString(6, parameter[6]);
-		this.statement_M.setString(7, parameter[7]);
-		this.statement_M.setString(8, parameter[8]);
-		this.statement_M.setString(9, parameter[0]);
+		this.statement_M.setString(1, parameter.get(BuyerTable.NAME, ClassRef.STRING));
+		this.statement_M.setString(2, parameter.get(BuyerTable.STREET1, ClassRef.STRING));
+		this.statement_M.setString(3, parameter.get(BuyerTable.STREET2, ClassRef.STRING));
+		this.statement_M.setString(4, parameter.get(BuyerTable.CITY, ClassRef.STRING));
+		this.statement_M.setString(5, parameter.get(BuyerTable.COUNTY, ClassRef.STRING));
+		this.statement_M.setString(6, parameter.get(BuyerTable.POSTCODE, ClassRef.STRING));
+		this.statement_M.setString(7, parameter.get(BuyerTable.EMAIL, ClassRef.STRING));
+		this.statement_M.setString(8, parameter.get(BuyerTable.PHONE, ClassRef.STRING));
+		this.statement_M.setString(9, parameter.get(BuyerTable.BUYERID, ClassRef.STRING));
 		
 		int resultCode = this.statement_M.executeUpdate();
 		this.cleanup();
 		
-		List<String[]> res = new ArrayList<String[]>();
-		res.add(new String[] {resultCode+""});
-		
-		return res;
+		parameter.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameter;
 	}
 }

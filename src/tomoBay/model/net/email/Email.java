@@ -14,7 +14,8 @@ package tomoBay.model.net.email;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.HashMap;
+import gnu.trove.map.hash.THashMap;
+
 import java.util.Map;
 
 import javax.mail.Message;
@@ -41,7 +42,7 @@ public class Email
 	protected Email()
 	{
 		super();
-		this.recipients_M = new HashMap<String, Message.RecipientType>();
+		this.recipients_M = new THashMap<String, Message.RecipientType>();
 	}
 	
 	/**

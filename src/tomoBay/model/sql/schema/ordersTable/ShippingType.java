@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.ordersTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /**
  * this is the shippingType field of the ebay_orders table of the database and is a textual 
  * representation of the shipping service used to dispatch this order.
@@ -25,7 +25,7 @@ import tomoBay.model.dataTypes.dbSchema.TypeDef;
  * @author Jan P.C. Hanson
  *
  */
-final class ShippingType implements AbstractField
+public final class ShippingType implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 200;

@@ -14,14 +14,19 @@ package tomoBay.presenters.sales;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.view.AbstractView;
-import tomoBay.view.ViewFactory;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import tomoBay.helpers.TimeStampCompare;
-import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.helpers.TimeStampFunctions;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.schema.outOfHoursTable.OutOfHoursTable;
 import tomoBay.presenters.AbstractPresenter;
+import tomoBay.view.AbstractView;
+import tomoBay.view.ViewFactory;
 /**
  *
  * @author Jan P.C. Hanson
@@ -39,8 +44,11 @@ public final class OutOfHoursPresenter implements AbstractPresenter
 	public String present(AbstractView view, String type, String data)
 	{
 		String output = "";
-		List<String[]> rows = QueryInvoker.execute
-				(QueryInvoker.QueryType.SELECT_OUT_OF_HOURS_ORDERS,new String[] {type, data});
+		HeteroFieldContainer param = new HeteroFieldContainer();
+		param.add(OutOfHoursTable.DATE, this.ToDate(type));
+		param.add(NonDBFields.DATE_COMPARISON, this.ToDate(data));
+		List<HeteroFieldContainer> rows = SelectQueryInvoker.execute
+				(SelectQueryInvoker.SelectQueryTypeParams.SELECT_OUT_OF_HOURS_ORDERS, param);
 		rows = this.removeOldOrders(rows);
 		output += view.format(rows);
 		
@@ -59,16 +67,23 @@ public final class OutOfHoursPresenter implements AbstractPresenter
 	 * @param orderList
 	 * @return
 	 */
-	private List<String[]> removeOldOrders(List<String[]> orderList)
+	private List<HeteroFieldContainer> removeOldOrders(List<HeteroFieldContainer> orderList)
 	{
-		List<String[]> result = new ArrayList<String[]>();
-		for(String[] order : orderList)
+		List<HeteroFieldContainer> result = new ArrayList<HeteroFieldContainer>();
+		for(HeteroFieldContainer order : orderList)
 		{
-			if(TimeStampCompare.olderThan(OLD_ORDER_LIMIT, order[2])==false)
+			if(TimeStampFunctions.olderThan(OLD_ORDER_LIMIT, order.get(NonDBFields.DATE_COMPARISON, ClassRef.DATE))==true)
 			{result.add(order);}
 		}
-		
 		return result;
 	}
+	
+	/**
+	 * 
+	 * @param stringDate
+	 * @return
+	 */
+	private Date ToDate(String stringDate)
+	{return Date.valueOf(stringDate);}
 
 }

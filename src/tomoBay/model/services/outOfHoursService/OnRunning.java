@@ -4,7 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import tomoBay.helpers.checkTime.CheckTime;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.services.AbstractServiceState;
+import tomoBay.model.sql.queries.ModifyQueryInvoker;
+import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -20,8 +24,10 @@ import tomoBay.model.services.AbstractServiceState;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
+import tomoBay.model.sql.schema.outOfHoursTable.OutOfHoursTable;
 
 /**
  *
@@ -43,12 +49,15 @@ public final class OnRunning implements AbstractServiceState
 	@Override
 	public String execute()
 	{
-		final List<String[]> results = QueryInvoker.execute(QueryType.SELECT_UNINVOICED_ORDERS, new String[] {});
+		final List<HeteroFieldContainer> results = SelectQueryInvoker.execute(SelectQueryTypeNoParams.SELECT_UNINVOICED_ORDERS);
 		String orders="";
-		for (String[] data : results)
+		for (HeteroFieldContainer data : results)
 		{
-			QueryInvoker.execute(QueryType.INSERT_OUT_OF_HOURS, new String[] {data[2], this.getDate()});
-			orders+=data[2]+", ";
+			HeteroFieldContainer params = new HeteroFieldContainer();
+			params.add(OutOfHoursTable.SALES_REC_NO, data.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER));
+			params.add(OutOfHoursTable.DATE, this.getDate());
+			ModifyQueryInvoker.execute(QueryType.INSERT_OUT_OF_HOURS, params);
+			orders+=data.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER)+", ";
 		}
 		return "Exiting: "+orders+" in Out of Hours table";
 	}

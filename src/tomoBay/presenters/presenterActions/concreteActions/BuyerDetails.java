@@ -2,9 +2,12 @@ package tomoBay.presenters.presenterActions.concreteActions;
 
 import java.util.List;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.dataTypes.json.JSONentity_object;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.schema.buyerTable.BuyerTable;
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -43,22 +46,30 @@ public final class BuyerDetails implements AbstractPresenterAction
 	@Override
 	public String execute(String data)
 	{
-		List<String[]> rawData = BuyerDetails.getRawData(data);
+		List<HeteroFieldContainer> db = BuyerDetails.getRawData(data);
 		
 		return new JSONentity_object()
-									.addLeaf("buyerID", SaneInput.json(rawData.get(0)[0]))
-									.addLeaf("name", SaneInput.json(rawData.get(0)[1]))
-									.addLeaf("street1", SaneInput.json(rawData.get(0)[2]))
-									.addLeaf("street2", SaneInput.json(rawData.get(0)[3]))
-									.addLeaf("county", SaneInput.json(rawData.get(0)[4]))
-									.addLeaf("city", SaneInput.json(rawData.get(0)[5]))
-									.addLeaf("postcode", SaneInput.json(rawData.get(0)[6]))
-									.addLeaf("email", SaneInput.json(rawData.get(0)[7]))
-									.addLeaf("phone", SaneInput.json(rawData.get(0)[8]))
+									.addLeaf("buyerID", SaneInput.json(db.get(0).get(BuyerTable.BUYERID, ClassRef.STRING)))
+									.addLeaf("name", SaneInput.json(db.get(0).get(BuyerTable.NAME, ClassRef.STRING)))
+									.addLeaf("street1", SaneInput.json(db.get(0).get(BuyerTable.STREET1, ClassRef.STRING)))
+									.addLeaf("street2", SaneInput.json(db.get(0).get(BuyerTable.STREET2, ClassRef.STRING)))
+									.addLeaf("county", SaneInput.json(db.get(0).get(BuyerTable.COUNTY, ClassRef.STRING)))
+									.addLeaf("city", SaneInput.json(db.get(0).get(BuyerTable.CITY, ClassRef.STRING)))
+									.addLeaf("postcode", SaneInput.json(db.get(0).get(BuyerTable.POSTCODE, ClassRef.STRING)))
+									.addLeaf("email", SaneInput.json(db.get(0).get(BuyerTable.EMAIL, ClassRef.STRING)))
+									.addLeaf("phone", SaneInput.json(db.get(0).get(BuyerTable.PHONE, ClassRef.STRING)))
 									.toString();
 	}
-
 	
-	private static final List<String[]> getRawData(String buyerID)
-	{return QueryInvoker.execute(QueryType.SELECT_EBAY_BUYER, new String[] {buyerID});}
+	/**
+	 * 
+	 * @param buyerID
+	 * @return
+	 */
+	private static final List<HeteroFieldContainer> getRawData(String buyerID)
+	{
+		HeteroFieldContainer param = new HeteroFieldContainer();
+		param.add(BuyerTable.BUYERID, buyerID);
+		return SelectQueryInvoker.execute(SelectQueryTypeParams.SELECT_EBAY_BUYER, param);
+	}
 }

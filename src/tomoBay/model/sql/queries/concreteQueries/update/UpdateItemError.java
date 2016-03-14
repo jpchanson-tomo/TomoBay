@@ -15,10 +15,12 @@ package tomoBay.model.sql.queries.concreteQueries.update;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import tomoBay.model.sql.queries.AbstractUpdateQuery;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 
 /**
  * This class represents a query that updates the brand and partNo of a particular item in the 
@@ -27,7 +29,7 @@ import tomoBay.model.sql.queries.AbstractUpdateQuery;
  * @author Jan P.C. Hanson
  *
  */
-public  final class UpdateItemError extends AbstractUpdateQuery
+public  final class UpdateItemError extends AbstractModifyQuery
 {
 	/**SQL query string**/
 	private String query ="UPDATE ebay_items "
@@ -53,19 +55,18 @@ public  final class UpdateItemError extends AbstractUpdateQuery
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
 		super.initQuery(query);
-		super.statement_M.setString(1, parameter[0]);	//brand
-		super.statement_M.setString(2, parameter[1]);	//partNo
-		super.statement_M.setString(3, parameter[2]);
-		super.statement_M.setLong(4, Long.parseLong(parameter[3]));	//itemID
+		super.statement_M.setString(1, parameter.get(ItemsTable.BRAND, ClassRef.STRING));
+		super.statement_M.setString(2, parameter.get(ItemsTable.PART_NO, ClassRef.STRING));
+		super.statement_M.setString(3, parameter.get(ItemsTable.NOTES, ClassRef.STRING));
+		super.statement_M.setLong(4, parameter.get(ItemsTable.ITEM_ID, ClassRef.LONG));
 		
 		int resultCode = super.statement_M.executeUpdate();
 		super.cleanup();
 		
-		res.add(new String[] {resultCode+""});
-		return res;
+		parameter.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameter;
 	}
 }

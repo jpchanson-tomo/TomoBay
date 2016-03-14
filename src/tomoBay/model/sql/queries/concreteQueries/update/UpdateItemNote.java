@@ -17,16 +17,18 @@ package tomoBay.model.sql.queries.concreteQueries.update;
  */
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import tomoBay.model.sql.queries.AbstractUpdateQuery;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public  final class UpdateItemNote extends AbstractUpdateQuery
+public  final class UpdateItemNote extends AbstractModifyQuery
 {
 	/**SQL query string**/
 	private String query ="UPDATE ebay_items "
@@ -50,17 +52,16 @@ public  final class UpdateItemNote extends AbstractUpdateQuery
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
 		super.initQuery(query);
-		super.statement_M.setString(1, parameter[0]);	//notes
-		super.statement_M.setLong(2, Long.parseLong(parameter[1]));	//itemID
+		super.statement_M.setString(1, parameter.get(ItemsTable.NOTES, ClassRef.STRING));
+		super.statement_M.setLong(2, parameter.get(ItemsTable.ITEM_ID, ClassRef.LONG));
 		
 		int resultCode = super.statement_M.executeUpdate();
 		super.cleanup();
 		
-		res.add(new String[] {resultCode+""});
-		return res;
+		parameter.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameter;
 	}
 }

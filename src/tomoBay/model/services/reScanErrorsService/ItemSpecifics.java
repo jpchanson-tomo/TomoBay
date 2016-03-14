@@ -19,7 +19,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tomoBay.model.eBayAPI.EbayAccounts;
-import tomoBay.model.eBayAPI.EbayAccounts.AccountInfo;
 import tomoBay.model.eBayAPI.ItemCall;
 
 import com.ebay.soap.eBLBaseComponents.ItemType;
@@ -39,19 +38,19 @@ public final class ItemSpecifics
 	/**map containing the item Specifics, this is what the user uses indirectly**/
 	private Map<String, String> itemSpecifics_M;
 	/**String containing the itemID**/
-	private final String itemID_M;
+	private final long itemID_M;
 	
 	/**
 	 * constructor creates an ItemSpecifics object for the itemID passed in as an argument.
 	 * @param itemID the id of the item that you need the specifics of
 	 */
-	public ItemSpecifics(String itemID, String account)
+	public ItemSpecifics(long itemID, int account)
 	{
 		super();
-		String accName = EbayAccounts.name(Integer.parseInt(account));
+		String accName = EbayAccounts.name(account);
 		this.itemID_M = itemID;
-		this.apiKey_M = EbayAccounts.get(accName, AccountInfo.API_KEY);
-		this.server_M = EbayAccounts.get(accName, AccountInfo.SERVER_ADDRESS);
+		this.apiKey_M = EbayAccounts.apiKey(accName);
+		this.server_M = EbayAccounts.serverAddress(accName);
 		this.itemSpecifics_M = new HashMap<String,String>();
 		
 		this.populateMap(this.performAPIcall(itemID));
@@ -61,7 +60,7 @@ public final class ItemSpecifics
 	 * provides the itemID associated with this ItemSpecifics object
 	 * @return String itemID.
 	 */
-	public String getID()
+	public long getID()
 	{return this.itemID_M;}
 	
 	/**
@@ -78,7 +77,7 @@ public final class ItemSpecifics
 	 * printed to the console.
 	 * @param itemID the itemID for the item that you wish to find information on.
 	 */
-	private ItemType performAPIcall(String itemID)
+	private ItemType performAPIcall(long itemID)
 	{
 		ItemCall itemscan = new ItemCall(this.apiKey_M,this.server_M);
 		try

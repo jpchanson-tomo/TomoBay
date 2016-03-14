@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.itemsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /**
  * this is the itemID field of the ebay_items table, this is the primary key for the ebay_items table
  * and the value is retrieved using the eBay API. 
@@ -27,7 +27,7 @@ import tomoBay.model.dataTypes.dbSchema.TypeDef;
  * @author Jan P.C. Hanson
  *
  */
-final class ItemID implements AbstractField
+public final class ItemID implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 13;

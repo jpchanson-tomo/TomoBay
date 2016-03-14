@@ -14,7 +14,8 @@ package tomoBay.presenters;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.HashMap;
+import gnu.trove.map.hash.THashMap;
+
 import java.util.Map;
 
 import tomoBay.presenters.factories.AbstractPresenterFactory;
@@ -60,9 +61,8 @@ public final class PresenterFactory
 			}
 	
 	/****/
-	@SuppressWarnings("serial")
 	private static final Map<PresenterType, AbstractPresenterFactory> presenterMap_M 
-						= new HashMap<PresenterType, AbstractPresenterFactory>()
+						= new THashMap<PresenterType, AbstractPresenterFactory>()
 			{{
 				put(PresenterFactory.PresenterType.ERROR_PRESENTER, new ErrorPresenterFactory());
 				put(PresenterFactory.PresenterType.ROOT_PRESENTER, new RootPresenterFactory());

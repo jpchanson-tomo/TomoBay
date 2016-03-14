@@ -15,21 +15,19 @@ package tomoBay.model.sql.queries.concreteQueries.insert;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 
-import tomoBay.model.sql.queries.AbstractInsertQuery;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 
 /**
  * This class represents a class that inserts order data into the orders table of the database.
  * @author Jan P.C. Hanson
  *
  */
-public  final class InsertEbayOrders extends AbstractInsertQuery
+public  final class InsertEbayOrders extends AbstractModifyQuery
 {
 	/**SQL query string**/
 	private String query ="INSERT IGNORE INTO ebay_orders (orderID, buyerID, salesRecNo, shippingType, createdTime, orderTotal, account)"
@@ -55,44 +53,21 @@ public  final class InsertEbayOrders extends AbstractInsertQuery
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
-		try
-		{
-			this.initQuery(query);
-			this.statement_M.setString(1, parameter[0]);						//orderID
-			this.statement_M.setString(2, parameter[1]);						//buyerID
-			this.statement_M.setInt(3, Integer.parseInt(parameter[2]));			//salesRecNo
-			this.statement_M.setString(4, parameter[3]);						//shippingType
-			this.statement_M.setTimestamp(5, this.makeTimestamp(parameter[4]));	//createdTime
-			this.statement_M.setFloat(6, Float.parseFloat(parameter[5]));		//orderTotal
-			this.statement_M.setInt(7, Integer.parseInt(parameter[6]));	 		//account
+		this.initQuery(query);
+		this.statement_M.setString(1, parameter.get(OrdersTable.ORDER_ID, ClassRef.STRING));
+		this.statement_M.setString(2, parameter.get(OrdersTable.BUYERID, ClassRef.STRING));
+		this.statement_M.setInt(3, parameter.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER));
+		this.statement_M.setString(4, parameter.get(OrdersTable.SHIPPING_TYPE, ClassRef.STRING));
+		this.statement_M.setTimestamp(5, parameter.get(OrdersTable.CREATED_TIME, ClassRef.TIMESTAMP));
+		this.statement_M.setFloat(6, parameter.get(OrdersTable.ORDER_TOTAL, ClassRef.FLOAT));
+		this.statement_M.setInt(7, parameter.get(OrdersTable.ACCOUNT, ClassRef.INTEGER));
 			
-			int resultCode = statement_M.executeUpdate();
-			this.cleanup();
+		int resultCode = statement_M.executeUpdate();
+		this.cleanup();
 			
-			res.add(new String[] {resultCode+""});
-			return res;
-		} 
-		catch (ParseException e)
-		{
-			e.printStackTrace();
-			res.add(new String[] {"Something went wrong with the query, please seek help!!!"});
-			return res;
-		}
-	}
-	
-	/**
-	 * turns the string passed in in yyyy-MM-dd HH:mm:ss.S format into a timestamp
-	 * @param dateTime string in yyyy-MM-dd HH:mm:ss.S format
-	 * @return Timestamp
-	 * @throws ParseException
-	 */
-	private Timestamp makeTimestamp(String dateTime) throws ParseException
-	{
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
-		java.util.Date date = df.parse(dateTime);
-		return new Timestamp(date.getTime());
+		parameter.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameter;
 	}
 }

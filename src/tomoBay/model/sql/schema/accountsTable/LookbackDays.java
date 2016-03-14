@@ -14,19 +14,19 @@ package tomoBay.model.sql.schema.accountsTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 
 /**
  * This represents the lookbackDays field of the ebay_accounts table in the database. This field 
  * represents the how many days previous to the current date that the system should use to look for
  * orders, necessary for the tomoBay.model.eBayAPI.OrdersCall
- * - Type: VARCHAR
+ * - Type: INTEGER
  * - Size: 3
  * @author Jan P.C. Hanson
  *
  */
-final class LookbackDays implements AbstractField
+public final class LookbackDays implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 3;
@@ -42,7 +42,7 @@ final class LookbackDays implements AbstractField
 	 */
 	@Override
 	public String type()
-	{return TypeDef.STRING;}
+	{return TypeDef.INTEGER;}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.dbSchema.AbstractDBField#size()

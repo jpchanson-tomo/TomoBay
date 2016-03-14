@@ -2,6 +2,9 @@ package tomoBay.view.views;
 
 import java.util.List;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.view.AbstractView;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -31,18 +34,18 @@ public final class SalesHistoryView implements AbstractView
 	 * @see tomoBay.view.AbstractView#format(java.util.List)
 	 */
 	@Override
-	public String format(List<String[]> input)
+	public String format(List<HeteroFieldContainer> input)
 	{
 		String result = "{ \"tableData\":[\n";
 		
-		for (String[] cols : input)
+		for (HeteroFieldContainer cols : input)
 		{
 			result+="{";
 			result+="\"Select\":\"<input type='checkbox' class = 'chcktbl filterable-cell ' />\", ";
-			result+="\"Name\":\""+cols[1].trim()+"\", ";
-			result+="\"Date\":\""+cols[4].trim()+"\", ";
-			result+="\"SalesRecNo\":\""+cols[2].trim()+"\", ";
-			result+="\"Details\":\"<button class='btn btn-primary' value='"+cols[0].trim()+"'>View</button>\"";
+			result+="\"Name\":\""+cols.get(OrdersTable.BUYERID, ClassRef.STRING).trim()+"\", ";
+			result+="\"Date\":\""+cols.get(OrdersTable.CREATED_TIME, ClassRef.TIMESTAMP)+"\", ";
+			result+="\"SalesRecNo\":\""+cols.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER)+"\", ";
+			result+="\"Details\":\"<button class='btn btn-primary' value='"+cols.get(OrdersTable.ORDER_ID, ClassRef.STRING).trim()+"'>View</button>\"";
 			result+="},\n";
 		}
 		

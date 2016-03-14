@@ -2,6 +2,10 @@ package tomoBay.view.views;
 
 import java.util.List;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
+import tomoBay.model.sql.schema.outOfHoursTable.OutOfHoursTable;
 import tomoBay.view.AbstractView;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -31,19 +35,19 @@ public final class OutOfHoursView implements AbstractView
 	 * @see tomoBay.view.AbstractView#format(java.util.List)
 	 */
 	@Override
-	public String format(List<String[]> input)
+	public String format(List<HeteroFieldContainer> input)
 	{
 		String result = "{ \"tableData\":[\n";
 		int n = 0;	
-			for (String[] cols : input)
+			for (HeteroFieldContainer cols : input)
 			{
 				result+="{";
 				result+=" \"No.\": \""+n+"\", ";
-				result+=" \"OutOfHours\": \""+cols[0].trim()+"\", ";
-				result+=" \"SalesRecNo\": \""+cols[1].trim()+"\", ";
-				result+=" \"CreatedTime\": \""+cols[2].trim()+"\", ";
-				result+=" \"OrderTotal\": \"<div class='price'>"+cols[3].trim()+"</div>\", ";
-				result+=" \"Details\": \""+"<button class='btn btn-primary' value='"+cols[1].trim()+"'>View</button>"+"\"";
+				result+=" \"OutOfHours\": \""+cols.get(OutOfHoursTable.DATE, ClassRef.DATE).toString()+"\", ";
+				result+=" \"SalesRecNo\": \""+cols.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER)+"\", ";
+				result+=" \"CreatedTime\": \""+cols.get(OrdersTable.CREATED_TIME, ClassRef.TIMESTAMP).toString()+"\", ";
+				result+=" \"OrderTotal\": \"<div class='price'>"+cols.get(OrdersTable.ORDER_TOTAL, ClassRef.FLOAT)+"</div>\", ";
+				result+=" \"Details\": \""+"<button class='btn btn-primary' value='"+cols.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER)+"'>View</button>"+"\"";
 				result+="}, \n";
 				n++;
 			}

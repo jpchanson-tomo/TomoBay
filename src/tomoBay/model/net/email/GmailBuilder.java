@@ -14,7 +14,8 @@ package tomoBay.model.net.email;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.HashMap;
+import gnu.trove.map.hash.THashMap;
+
 import java.util.Map;
 /**
  * This class represents the specifics necessary for initialising a Gmail send connection.
@@ -24,8 +25,7 @@ import java.util.Map;
 public final class GmailBuilder extends AbstractEmailBuilder
 {
 	/**This map contains all the values to be input into the MailServerSend properties**/
-	@SuppressWarnings("serial")
-	private static final Map<String, String> properties = new HashMap<String, String>()
+	private static final Map<String, String> properties = new THashMap<String, String>()
 			{{
 				put("mail.smtp.port", "587");
 				put("mail.smtp.auth", "true");

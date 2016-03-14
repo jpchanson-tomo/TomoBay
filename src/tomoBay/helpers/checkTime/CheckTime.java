@@ -14,10 +14,11 @@ package tomoBay.helpers.checkTime;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import gnu.trove.map.hash.THashMap;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 /**
  *
@@ -26,8 +27,7 @@ import java.util.Map;
  */
 public class CheckTime
 {
-	@SuppressWarnings("serial")
-	private static Map<Integer, Day> today_M = new HashMap<Integer, Day>()
+	private static Map<Integer, Day> today_M = new THashMap<Integer, Day>()
 			{{
 				put(Calendar.MONDAY, new Monday());
 				put(Calendar.TUESDAY, new Tuesday());
@@ -58,8 +58,8 @@ public class CheckTime
 	 */
 	public static boolean isInRange()
 	{
-		int startTime = CheckTime.today_M.get(CheckTime.currentDay()).startTime();
-		int endTime = CheckTime.today_M.get(CheckTime.currentDay()).endTime();
+		final int startTime = CheckTime.today_M.get(CheckTime.currentDay()).startTime();
+		final int endTime = CheckTime.today_M.get(CheckTime.currentDay()).endTime();
 		
 		if(CheckTime.currentTime() >= startTime && CheckTime.currentTime() <= endTime) 
 		{return true;} else {return false;}
@@ -71,7 +71,7 @@ public class CheckTime
 	 */
 	public static Date OutOfHoursDate()
 	{
-		Calendar outOfHoursDate = Calendar.getInstance();
+		final Calendar outOfHoursDate = Calendar.getInstance();
 		if(CheckTime.currentTime() < CheckTime.today_M.get(CheckTime.currentDay()).startTime())
 		{outOfHoursDate.add(Calendar.DATE, -1);}
 		
@@ -84,7 +84,7 @@ public class CheckTime
 	 */
 	public static String currentTimeStamp()
 	{
-		Date result = new Date();
+		final Date result = new Date();
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
 		return dateFormatter.format(result);
 	}
@@ -95,7 +95,7 @@ public class CheckTime
 	 */
 	private static int currentTime()
 	{
-		Calendar now = Calendar.getInstance();
+		final Calendar now = Calendar.getInstance();
 		int currentTime = (now.get(Calendar.HOUR_OF_DAY)*100) + (now.get(Calendar.MINUTE));
 		return currentTime;
 	}

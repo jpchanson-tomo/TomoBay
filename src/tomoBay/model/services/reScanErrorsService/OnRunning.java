@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.services.AbstractServiceState;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -20,6 +22,7 @@ import tomoBay.model.services.AbstractServiceState;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 
 /**
  *
@@ -45,11 +48,14 @@ public final class OnRunning implements AbstractServiceState
 		ReScanErrorsDBActions database = new ReScanErrorsDBActions();
 		ReScanErrorsWinstockActions winstock = new ReScanErrorsWinstockActions();
 		
-		List<String[]> errorList = database.retrieveAllErrorItems();
+		List<HeteroFieldContainer> errorList = database.retrieveAllErrorItems();
 		
-		for (String[] error : errorList)
+		for (HeteroFieldContainer error : errorList)
 		{
-			ItemSpecifics item = new ItemSpecifics(error[0], error[6]);
+			ItemSpecifics item = new ItemSpecifics(
+											error.get(ItemsTable.ITEM_ID, ClassRef.LONG), 
+											error.get(ItemsTable.ACCOUNT, ClassRef.INTEGER)
+																);
 			if (winstock.partNoHasError(item) == false)
 			{database.updateDBwithCorrectedInfo(item);}
 		}

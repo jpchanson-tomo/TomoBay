@@ -15,6 +15,10 @@ package tomoBay.model.services.emailErrorsService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.util.List;
+
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 /**
  *
  * @author Jan P.C. Hanson
@@ -42,20 +46,21 @@ public final class EmailErrorsDataFormat
 	
 	/**
 	 * format the List of strings provided as a HTML string that can be sent as an email.
-	 * @param listOfErrors List<String> containing the data to be formatted
+	 * @param list List<String> containing the data to be formatted
 	 * @return String formatted as HTML that can be sent by email.
 	 */
-	public String asHTML(List<String[]> listOfErrors)
+	public String asHTML(List<HeteroFieldContainer> list)
 	{
 		String result = HEADER;
-		for (String[] error : listOfErrors)
+		for (HeteroFieldContainer error : list)
 		{
 			result += "<tr>";
-			result += "<td><a href='http://www.ebay.co.uk/itm/"+error[0]+"'>"+error[0]+"</a></td>";
-			result += "<td>"+error[1]+"</td>";
-			result += "<td>"+error[3]+"</td>";
-			result += "<td>"+error[4]+"</td>";
-			result += "<td>"+error[5]+"</td>";
+			result += "<td><a href='http://www.ebay.co.uk/itm/"+error.get(ItemsTable.ITEM_ID, ClassRef.LONG)
+												+"'>"+error.get(ItemsTable.ITEM_ID, ClassRef.LONG)+"</a></td>";
+			result += "<td>"+error.get(ItemsTable.TITLE, ClassRef.STRING)+"</td>";
+			result += "<td>"+error.get(ItemsTable.BRAND, ClassRef.STRING)+"</td>";
+			result += "<td>"+error.get(ItemsTable.PART_NO, ClassRef.STRING)+"</td>";
+			result += "<td>"+error.get(ItemsTable.NOTES, ClassRef.STRING)+"</td>";
 			result += "</tr>";
 		}
 		result += FOOTER;

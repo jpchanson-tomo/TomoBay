@@ -15,11 +15,17 @@ package tomoBay.model.dataTypes.order;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.schema.transactionsTable.TransactionsTable;
 
 /**
- *
+ * This class represents an eBay transaction, each transaction contains 1 Listing. This transaction 
+ * contains more general information about the transaction such as price and shipping cost etc 
+ * whereas the Listing object contains information more relevant to the actual product being sold.
+ * 
  * @author Jan P.C. Hanson
  *
  */
@@ -27,26 +33,19 @@ public class Transaction
 {
 	/**the listing associated with this transaction**/
 	private final Listing listing_M;
-	/**the quantity of the listing purchased**/
-	private final int qty_M;
-	/**the price associated with this transaction**/
-	private final double price_M;
-	/**the shipping cost associated with this transaction**/
-	private final double shippingCost_M;
+	/**Container for all the order information retrieved by the query**/
+	private final HeteroFieldContainer transaction_info_M;
 	
 	/**
 	 * CONSTRUCTOR, initialise object using the transactionID provided to query the database for
 	 * the rest of the information.
 	 * @param transactionID
 	 */
-	public Transaction(String transactionID)
+	public Transaction(Long transactionID)
 	{
 		super();
-		String[] transactionInfo = Transaction.getTransactionInfo(transactionID);
-		this.qty_M = Integer.parseInt(transactionInfo[1]);
-		this.price_M = Double.parseDouble(transactionInfo[2]);
-		this.shippingCost_M = Double.parseDouble(transactionInfo[3]);
-		this.listing_M = new Listing(Long.parseLong(transactionInfo[0]));
+		this.transaction_info_M = Transaction.getTransactionInfo(transactionID);
+		this.listing_M = new Listing(this.transaction_info_M.get(TransactionsTable.ITEM_ID, ClassRef.LONG));
 	}
 	
 	/**
@@ -59,19 +58,22 @@ public class Transaction
 	 * retrieve the quantity of this listing purchased
 	 * @return int representing how many of this listing are billed to this transaction
 	 */
-	public int qtyPurchased() {return this.qty_M;}
+	public int qtyPurchased() 
+	{return this.transaction_info_M.get(TransactionsTable.QUANTITY, ClassRef.INTEGER);}
 	
 	/**
 	 * retrieve the price associated with this transaction
 	 * @return double representing the transaction price
 	 */
-	public double transactionPrice() {return this.price_M*this.qty_M;}
+	public double transactionPrice() 
+	{return this.transaction_info_M.get(TransactionsTable.PRICE, ClassRef.FLOAT)*this.qtyPurchased();}
 	
 	/**
 	 * retrieve the shipping cost associated with this transaction
 	 * @return double representing the shipping cost
 	 */
-	public double shippingCost() {return this.shippingCost_M;}
+	public float shippingCost() 
+	{return this.transaction_info_M.get(TransactionsTable.SHIPPING_COST, ClassRef.FLOAT);}
 	
 	/**
 	 * retrieve the transaction information for this order from the database based on the order
@@ -80,11 +82,13 @@ public class Transaction
 	 * found
 	 * @return
 	 */
-	private static final String[] getTransactionInfo(String transactionID)
+	private static final HeteroFieldContainer getTransactionInfo(Long transactionID)
 	{
-		return QueryInvoker.execute(
-									QueryType.SELECT_EBAY_TRANSACTION_BY_ID, 
-									new String[] {transactionID}
+		HeteroFieldContainer params = new HeteroFieldContainer();
+		params.add(TransactionsTable.TRANSACTION_ID, transactionID);
+		return SelectQueryInvoker.execute(
+									SelectQueryTypeParams.SELECT_EBAY_TRANSACTION_BY_ID, 
+									params
 									).get(0);
 	}
 }

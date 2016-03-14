@@ -18,9 +18,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.eBayAPI.ItemCall;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.ModifyQueryInvoker;
+import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 
 import com.ebay.sdk.ApiException;
 import com.ebay.sdk.SdkException;
@@ -51,26 +56,24 @@ public final class ItemsAndPartsTable
 	public static void populate(String apiKey, String server, int accID, OrderType[] orders) 
 			throws ApiException, SdkException, Exception
 	{
-		List<String[]> items = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS,new String[] {});
+		List<HeteroFieldContainer> items = SelectQueryInvoker.execute(SelectQueryTypeNoParams.SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS);
 		
-		for (String[] item : items)
+		for (HeteroFieldContainer item : items)
 		{
 			ItemCall itemreq = new ItemCall(apiKey, server);
-			ItemType itemType = itemreq.call(item[0]);
+			ItemType itemType = itemreq.call(item.get(ItemsTable.ITEM_ID, ClassRef.LONG));
 			Map<String, String> specifics = ItemsAndPartsTable.getSpecifics(itemType);
 			
 			ItemsAndPartsTable.populatePartsTable(itemType, specifics);
 			
-			String[] result = 
-					{
-						itemType.getItemID(),
-						itemType.getTitle(),
-						itemType.getConditionDisplayName(),
-						specifics.get("Brand"),
-						specifics.get("Manufacturer Part Number"),
-						String.valueOf(accID)
-					};
-			QueryInvoker.execute(QueryType.INSERT_EBAY_ITEMS,result);
+			HeteroFieldContainer insertVals = new HeteroFieldContainer(); 
+			insertVals.add(ItemsTable.ITEM_ID, Long.parseLong(itemType.getItemID()));
+			insertVals.add(ItemsTable.TITLE, itemType.getTitle());
+			insertVals.add(ItemsTable.CONDITION, itemType.getConditionDisplayName());
+			insertVals.add(ItemsTable.BRAND, specifics.get("Brand"));
+			insertVals.add(ItemsTable.PART_NO, specifics.get("Manufacturer Part Number"));
+			insertVals.add(ItemsTable.ACCOUNT, accID);
+			ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_ITEMS,insertVals);
 		}
 	}
 	

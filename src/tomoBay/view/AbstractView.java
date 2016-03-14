@@ -1,6 +1,4 @@
 package tomoBay.view;
-
-import java.util.List;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +15,8 @@ import java.util.List;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import java.util.List;
 /**
  * this is the interface that all views must subscribe to. Views are responsible for formatting
  * the information provided to them by the presenters.
@@ -31,5 +31,5 @@ public interface AbstractView
 	 * @param input a List<String[]> containing the data to be formatted.
 	 * @return String that can be output to the AJAX requester.
 	 */
-	public String format(List<String[]> input);
+	public String format(List<HeteroFieldContainer> input);
 }

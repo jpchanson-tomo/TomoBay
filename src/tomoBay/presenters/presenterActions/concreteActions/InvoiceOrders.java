@@ -20,17 +20,19 @@ import java.net.UnknownHostException;
 import org.apache.log4j.Logger;
 
 import tomoBay.exceptions.PayloadException;
-import tomoBay.helpers.TimeStampCompare;
+import tomoBay.helpers.TimeStampFunctions;
 import tomoBay.model.dataTypes.DualList;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.SalesDayBookLineFactory.SalesDayBookLineType;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.formats.WinstockFormat;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.dataTypes.order.Order;
 import tomoBay.model.net.email.GmailBuilder;
 import tomoBay.model.net.email.MailClient;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.ModifyQueryInvoker;
+import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.model.winstock.WinstockCommandInvoker;
 import tomoBay.model.winstock.payloads.PayloadType;
 import tomoBay.model.winstock.response.AbstractWinstockCommandResponse;
@@ -70,7 +72,7 @@ public final class InvoiceOrders implements AbstractPresenterAction
 			try
 			{
 				AbstractSalesDayBookLine invoice = SalesDayBookLineFactory.make(SalesDayBookLineType.INVOICE, new Order(orderId));
-				if(invoice.invoiceNumber()==0 && TimeStampCompare.olderThan(30, invoice.orderInfo().createdTime())==false)
+				if(invoice.invoiceNumber()==0 && TimeStampFunctions.olderThan(30, invoice.orderInfo().createdTime())==false)
 				{
 					DualList<String, PayloadType> winstockInv = this.formatAsDualList(invoice);
 					AbstractWinstockCommandResponse res;
@@ -105,7 +107,12 @@ public final class InvoiceOrders implements AbstractPresenterAction
 	 * @param OrderNo
 	 */
 	private void updateDB(String invNo, String orderNo)
-	{QueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS, new String[] {invNo,orderNo});}
+	{
+		HeteroFieldContainer param = new HeteroFieldContainer();
+		param.add(OrdersTable.INVOICED, invNo);
+		param.add(OrdersTable.ORDER_ID, orderNo);
+		ModifyQueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS, param);
+	}
 	
 	/**
 	 * formats the AbstractSalesDayBookLine into a format that can be passed to the WinstockCommandInvoker.

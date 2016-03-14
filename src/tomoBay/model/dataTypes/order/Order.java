@@ -21,33 +21,31 @@ import org.apache.log4j.Logger;
 
 import tomoBay.exceptions.OrderException;
 import tomoBay.helpers.StackTraceToString;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.eBayAPI.EbayAccounts;
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
+import tomoBay.model.sql.schema.transactionsTable.TransactionsTable;
 /**
- *
+ * This class represents an eBay order, and the relevant information associated with it. Once
+ * instantiated this object will contain a Buyer object and an array of Transaction objects, and while
+ * this Order object will contain general information relevant to this eBay order, in order to gain 
+ * more in depth details of the order i.e. buyer information or detailed information about the items
+ * that have been sold, it is necessary to query these contained objects.
  * @author Jan P.C. Hanson
  *
  */
 public class Order
 {
-	static Logger log = Logger.getLogger(Order.class.getName());
+	static final Logger log = Logger.getLogger(Order.class.getName());
 	/**the buyer of this order**/
 	private final Buyer buyer_M;
 	/**the transactions associated with this order**/
 	private final Transaction[] transactions_M;
-	/**the sales record number of this order**/
-	private final int salesRecNo_M;
-	/**the shipping type used for this order**/
-	private final String shippingType_M;
-	/**the orderID identifying this order**/
-	private final String orderID_M;
-	/**the time this order was created**/
-	private final String createdTime_M;
-	/**the total sale price of this order**/
-	private final double orderTotal_M;
-	/**the ebay account that this order is associated with**/
-	private final String account_M;
+	/**Container for all the order information retrieved by the query**/
+	private final HeteroFieldContainer order_info_M;
 	
 	/**
 	 * initialise this order using the orderID provided
@@ -58,15 +56,9 @@ public class Order
 		super();
 		try
 		{
-			this.orderID_M = orderID;
+			this.order_info_M =Order.getOrderInfo(orderID);
 			this.transactions_M = Order.getTransactionList(orderID);
-			String[] orderInfo = Order.getOrderInfo(orderID);
-			this.buyer_M = new Buyer(orderInfo[4]);
-			this.salesRecNo_M = Integer.parseInt(orderInfo[0]);
-			this.shippingType_M = orderInfo[1];
-			this.createdTime_M = orderInfo[2];
-			this.orderTotal_M = Double.parseDouble(orderInfo[3]);
-			this.account_M = EbayAccounts.name(Integer.parseInt(orderInfo[6]));
+			this.buyer_M = new Buyer(this.order_info_M.get(OrdersTable.BUYERID, ClassRef.STRING));
 		}
 		catch (Exception e)
 		{
@@ -80,7 +72,7 @@ public class Order
 	 * The order ID is a string(numerical) that uniquely identifies this order from all others
 	 * @return String containing the orderID
 	 */
-	public String orderID() {return this.orderID_M;}
+	public String orderID() {return this.order_info_M.get(OrdersTable.ORDER_ID, ClassRef.STRING);}
 	
 	/**
 	 * Retrieve the Buyer that placed this order.
@@ -107,31 +99,45 @@ public class Order
 	 * retrieve the sales record number associated with this order
 	 * @return int representing the salesRecordNumber
 	 */
-	public int salesRecNo() {return this.salesRecNo_M;}
+	public int salesRecNo() 
+	{return this.order_info_M.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER);}
 	
 	/**
 	 * retrieve the account that this order is associated with
 	 * @return String containing the name of the ebay account
 	 */
-	public String account() {return this.account_M;}
+	public String account() 
+	{return EbayAccounts.name(this.order_info_M.get(OrdersTable.ACCOUNT, ClassRef.INTEGER));}
 	
 	/**
 	 * retrieve the shipping type used for this order as a string
 	 * @return String representing the shipping type
 	 */
-	public String shippingType() {return this.shippingType_M;}
+	public String shippingType() 
+	{return this.order_info_M.get(OrdersTable.SHIPPING_TYPE, ClassRef.STRING);}
 	
 	/**
 	 * retrieve the time at which this order was created
 	 * @return String representing the time at which the order was created.
 	 */
-	public String createdTime() {return this.createdTime_M;}
+	public String createdTime() 
+	{return this.order_info_M.get(OrdersTable.CREATED_TIME, ClassRef.TIMESTAMP).toString();}
+	
+	/**
+	 * retrieve the invoice number from this order(if it has one)
+	 * @return 0 if the order is uninvoiced, otherwise an actual invoice number. in some cases this 
+	 * method will return 1, this indicates that the order has been manually invoiced or that it was
+	 * automatically invoiced before this capability was put in place.
+	 */
+	public int invoiceNo()
+	{return this.order_info_M.get(OrdersTable.INVOICED, ClassRef.INTEGER);}
 	
 	/**
 	 * retrieve the total price associated with this order, i.e. how much the customer paid.
 	 * @return double representing the amount the customer paid for this order.
 	 */
-	public double totalPrice() {return this.orderTotal_M;}
+	public float totalPrice() 
+	{return this.order_info_M.get(OrdersTable.ORDER_TOTAL, ClassRef.FLOAT);}
 	
 	/**
 	 * 
@@ -140,10 +146,10 @@ public class Order
 	public double shippingCost()
 	{
 		double result=0.0;
-		for(int i = 0 ; i < this.noOfTransactions() ; ++i)
+		for(final Transaction tran : this.transactions_M)
 		{
-			if(this.transactions_M[i].shippingCost() > result)
-			{result = this.transactions_M[i].shippingCost();}
+			if(tran.shippingCost() > result)
+			{result = tran.shippingCost();}
 		}
 		return result;
 	}
@@ -154,11 +160,13 @@ public class Order
 	 * @param orderID the orderID associated with this order
 	 * @return String[] containing the information specific to this order.
 	 */
-	private static final String[] getOrderInfo(String orderID)
+	private static final HeteroFieldContainer getOrderInfo(String orderID)
 	{
-		return QueryInvoker.execute(
-									QueryType.SELECT_EBAY_ORDER_BY_ID, 
-									new String[] {orderID}
+		HeteroFieldContainer params = new HeteroFieldContainer();
+		params.add(OrdersTable.ORDER_ID, orderID);
+		return SelectQueryInvoker.execute(
+									SelectQueryTypeParams.SELECT_EBAY_ORDER_BY_ID, 
+									params
 									).get(0);
 	}
 	
@@ -170,13 +178,16 @@ public class Order
 	 */
 	private static final Transaction[] getTransactionList(String orderID)
 	{
-		List<String[]> query = QueryInvoker.execute(
-									QueryType.SELECT_TRANSACTION_BY_ORDERID, 
-									new String[] {orderID}
+		HeteroFieldContainer params = new HeteroFieldContainer();
+		params.add(OrdersTable.ORDER_ID, orderID);
+		List<HeteroFieldContainer> query = SelectQueryInvoker.execute(
+									SelectQueryTypeParams.SELECT_TRANSACTION_BY_ORDERID, 
+									params
 									);
 		Transaction[] result = new Transaction[query.size()];
 		
-		for(int i=0 ; i < query.size() ; ++i) {result[i]=new Transaction(query.get(i)[0]);}
+		for(int i=0 ; i < query.size() ; ++i) 
+		{result[i]=new Transaction(query.get(i).get(TransactionsTable.TRANSACTION_ID, ClassRef.LONG));}
 		
 		return result;
 	}

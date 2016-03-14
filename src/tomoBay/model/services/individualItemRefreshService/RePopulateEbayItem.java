@@ -14,8 +14,10 @@ package tomoBay.model.services.individualItemRefreshService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.ModifyQueryInvoker;
+import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 /**
  * This class takes data provided to it and uses this to re populate the database so that
  * the changes can be picked up by the system.
@@ -38,8 +40,11 @@ public final class RePopulateEbayItem
 	 */
 	public void populate(String brand, String partNo, long itemID)
 	{
-		System.out.println(brand + " : " + partNo + " : " + itemID);
-		QueryInvoker.execute(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, 
-				new String[] {partNo,brand,String.valueOf(itemID)});
+		HeteroFieldContainer params = new HeteroFieldContainer();
+		params.add(ItemsTable.BRAND, brand);
+		params.add(ItemsTable.PART_NO, partNo);
+		params.add(ItemsTable.ITEM_ID, itemID);
+		
+		ModifyQueryInvoker.execute(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, params);
 	}
 }

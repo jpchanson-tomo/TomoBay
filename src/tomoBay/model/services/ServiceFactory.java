@@ -14,7 +14,8 @@ package tomoBay.model.services;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.util.HashMap;
+import gnu.trove.map.hash.THashMap;
+
 import java.util.Map;
 
 import tomoBay.model.services.factories.AbstractServiceFactory;
@@ -22,7 +23,6 @@ import tomoBay.model.services.factories.BasicEbayServiceFactory;
 import tomoBay.model.services.factories.CheckErrorsFactory;
 import tomoBay.model.services.factories.EmailErrorsServiceFactory;
 import tomoBay.model.services.factories.IndividualItemRefreshServiceFactory;
-import tomoBay.model.services.factories.InvoiceServiceFactory;
 import tomoBay.model.services.factories.OutOfHoursServiceFactory;
 import tomoBay.model.services.factories.ReScanBuyerServiceFactory;
 import tomoBay.model.services.factories.ReScanErrorsServiceFactory;
@@ -40,7 +40,7 @@ public final class ServiceFactory
 	/**defensive enum to limit the inputs to the make method**/
 	public enum ServiceType 
 			{
-				EBAY_SERVICE, TEST_SERVICE, INVOICE_SERVICE, CHECK_ERRORS,
+				EBAY_SERVICE, TEST_SERVICE, CHECK_ERRORS,
 				RESCAN_ERRORS_SERVICE, OUT_OF_HOURS_SERVICE
 			}
 	public enum ConfiguredServiceType
@@ -48,21 +48,19 @@ public final class ServiceFactory
 				INDVIDUAL_ITEM_REFRESH_SERVICE, EMAIL_ERRORS_SERVICE, RE_SCAN_BUYER_SERVICE
 			}
 	/**internal map holds service factories**/
-	@SuppressWarnings("serial")
 	private static final Map<ServiceType, AbstractServiceFactory> serviceFactoryMap
-					= new HashMap<ServiceType, AbstractServiceFactory>()
+					= new THashMap<ServiceType, AbstractServiceFactory>()
 	{{
 		put(ServiceType.EBAY_SERVICE, new BasicEbayServiceFactory());
 		put(ServiceType.TEST_SERVICE, new TestServiceFactory());
-		put(ServiceType.INVOICE_SERVICE, new InvoiceServiceFactory());
 		put(ServiceType.CHECK_ERRORS, new CheckErrorsFactory());
 		put(ServiceType.RESCAN_ERRORS_SERVICE, new ReScanErrorsServiceFactory());
 		put(ServiceType.OUT_OF_HOURS_SERVICE, new OutOfHoursServiceFactory());
 	}};
-	@SuppressWarnings("serial")
+	
 	private static final 
 	Map<ConfiguredServiceType, AbstractServiceFactory> configuredServiceFactoryMap
-					= new HashMap<ConfiguredServiceType, AbstractServiceFactory>()
+					= new THashMap<ConfiguredServiceType, AbstractServiceFactory>()
 	{{
 		put(ConfiguredServiceType.INDVIDUAL_ITEM_REFRESH_SERVICE, new IndividualItemRefreshServiceFactory());
 		put(ConfiguredServiceType.EMAIL_ERRORS_SERVICE, new EmailErrorsServiceFactory());

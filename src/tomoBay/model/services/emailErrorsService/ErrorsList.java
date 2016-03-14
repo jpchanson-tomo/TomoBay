@@ -16,8 +16,9 @@ package tomoBay.model.services.emailErrorsService;
  */
 import java.util.List;
 
-import tomoBay.model.sql.queries.QueryInvoker;
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
 /**
  * This class represents the list of errors that exist within the ebay_items table in the database,
  * and the functionality to retrieve that list as well as some other bits and bobs like find 
@@ -28,7 +29,7 @@ import tomoBay.model.sql.queries.QueryInvoker.QueryType;
 public final class ErrorsList
 {
 	/**the list of errors**/
-	private List<String[]> errorList_M;
+	private List<HeteroFieldContainer> errorList_M;
 	
 	/**
 	 * default ctor, generates a the list of errors that this object represents
@@ -43,7 +44,7 @@ public final class ErrorsList
 	 * generate a list of items from the database that contain error messages.
 	 * @return List<String[]> containing all items that contain error messages.
 	 */
-	public List<String[]> get()
+	public List<HeteroFieldContainer> get()
 	{return this.errorList_M;}
 	
 	/**
@@ -60,5 +61,5 @@ public final class ErrorsList
 	 * generate the list of errors. this method is only called by the constructor
 	 */
 	private void generateErrorList()
-	{this.errorList_M = QueryInvoker.execute(QueryType.SELECT_EBAY_ITEMS_ERROR, new String[] {});}
+	{this.errorList_M = SelectQueryInvoker.execute(SelectQueryTypeNoParams.SELECT_EBAY_ITEMS_ERROR);}
 }

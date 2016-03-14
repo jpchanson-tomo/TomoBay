@@ -14,8 +14,8 @@ package tomoBay.model.sql.schema.buyerTable;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.dataTypes.dbSchema.AbstractField;
-import tomoBay.model.dataTypes.dbSchema.TypeDef;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /**
  * This represents the buyerID field of the ebay_buyers table in the database. This is the unique 
  * identifier that eBay assigns to a particular user. This is the primary key of the ebay_buyers 
@@ -26,7 +26,7 @@ import tomoBay.model.dataTypes.dbSchema.TypeDef;
  * @author Jan P.C. Hanson
  *
  */
-final class BuyerID implements AbstractField
+public final class BuyerID implements AbstractField
 {
 	/**the size of this field**/
 	private static final int size_M = 40;

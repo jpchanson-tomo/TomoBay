@@ -14,8 +14,12 @@ package tomoBay.model.services.reScanBuyerService;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.QueryInvoker.QueryType;
-import tomoBay.model.sql.queries.QueryInvoker;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.ModifyQueryInvoker;
+import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
  *
  * @author Jan P.C. Hanson
@@ -36,15 +40,19 @@ public final class DBActions
 	 * @return String containing the orderID = String[0] of the latest order as well as the account
 	 * associated with this order String[1].
 	 */
-	public static String[] getLatestOrderID(String buyerID)
-	{return QueryInvoker.execute(QueryType.SELECT_EBAY_ORDER_BY_BUYER, new String[] {buyerID}).get(0);}
+	public static HeteroFieldContainer getLatestOrderID(String buyerID)
+	{
+		HeteroFieldContainer param = new HeteroFieldContainer();
+		param.add(OrdersTable.BUYERID, buyerID);
+		return SelectQueryInvoker.execute(SelectQueryTypeParams.SELECT_EBAY_ORDER_BY_BUYER, param).get(0);
+	}
 	
 	/**
 	 * updates the buyer table in the database with the new buyer information.
 	 * @param updateInfo The new buyer information
 	 * @return String result code.
 	 */
-	public static String updateBuyerTable(String[] updateInfo)
-	{return QueryInvoker.execute(QueryType.UPDATE_EBAY_BUYER, updateInfo).get(0)[0];}
+	public static HeteroFieldContainer updateBuyerTable(HeteroFieldContainer updateInfo)
+	{return ModifyQueryInvoker.execute(QueryType.UPDATE_EBAY_BUYER, updateInfo);}
 
 }

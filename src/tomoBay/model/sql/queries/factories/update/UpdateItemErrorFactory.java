@@ -14,15 +14,15 @@ package tomoBay.model.sql.queries.factories.update;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractDBQuery;
-import tomoBay.model.sql.queries.AbstractQueryFactory;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.queries.AbstractModifyQueryFactory;
 import tomoBay.model.sql.queries.concreteQueries.update.UpdateItemError;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public final class UpdateItemErrorFactory implements AbstractQueryFactory
+public final class UpdateItemErrorFactory implements AbstractModifyQueryFactory
 {
 	/**
 	 * default ctor
@@ -34,7 +34,7 @@ public final class UpdateItemErrorFactory implements AbstractQueryFactory
 	 * @see tomoBay.model.sql.queries.AbstractQueryFactory#make()
 	 */
 	@Override
-	public AbstractDBQuery make()
+	public AbstractModifyQuery make()
 	{
 		return new UpdateItemError();
 	}

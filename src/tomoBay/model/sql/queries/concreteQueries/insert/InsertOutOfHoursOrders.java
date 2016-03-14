@@ -15,20 +15,19 @@ package tomoBay.model.sql.queries.concreteQueries.insert;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import java.sql.Date;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 
-import tomoBay.model.sql.queries.AbstractInsertQuery;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.schema.outOfHoursTable.OutOfHoursTable;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public  final class InsertOutOfHoursOrders extends AbstractInsertQuery
+public  final class InsertOutOfHoursOrders extends AbstractModifyQuery
 {
 	/**SQL query string**/
 	private String query ="INSERT IGNORE INTO out_of_hours (salesRecNo, date)"
@@ -49,35 +48,16 @@ public  final class InsertOutOfHoursOrders extends AbstractInsertQuery
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
 		this.initQuery(query);
-		this.statement_M.setString(1, parameter[0]);						//salesRecNo
-		this.statement_M.setDate(2, this.toDate(parameter[1]));					//date
+		this.statement_M.setInt(1, parameter.get(OutOfHoursTable.SALES_REC_NO, ClassRef.INTEGER));						//salesRecNo
+		this.statement_M.setDate(2, parameter.get(OutOfHoursTable.DATE, ClassRef.DATE));					//date
 		
 		int resultCode = statement_M.executeUpdate();
 		this.cleanup();
 		
-		res.add(new String[] {resultCode+""});
-		return res;
-	}
-	/**
-	 * converts a string to an sql date if it can otherwise it will return null;
-	 * @param dateString yyyy-mm-dd
-	 * @return java.sql.Date representing the string passed in, if it cannot parse the string
-	 * it will return null.
-	 */
-	private Date toDate(String dateString)
-	{
-		try
-		{
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-			java.util.Date parsed = format.parse(dateString);
-			Date sqlDate = new Date(parsed.getTime());
-			return sqlDate;
-		} 
-		catch (ParseException e)
-		{e.printStackTrace();return null;}
+		parameter.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameter;
 	}
 }

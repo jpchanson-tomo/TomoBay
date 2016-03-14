@@ -15,16 +15,18 @@ package tomoBay.model.sql.queries.concreteQueries.insert;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import tomoBay.model.sql.queries.AbstractInsertQuery;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.schema.buyerTable.BuyerTable;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 /**
  * This class represents a query that inserts buyer details into the database
  * @author Jan P.C. Hanson
  *
  */
-public  final class InsertEbayBuyers extends AbstractInsertQuery
+public  final class InsertEbayBuyers extends AbstractModifyQuery
 {
 	/**SQL query string**/
 	private String query ="INSERT IGNORE INTO ebay_buyers "
@@ -53,25 +55,22 @@ public  final class InsertEbayBuyers extends AbstractInsertQuery
 	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
 	 * @throws SQLException
 	 */
-	public List<String[]> execute(String[] parameter) throws SQLException
+	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
 	{
-		List<String[]> res = new ArrayList<String[]>();
 		super.initQuery(query);
-		super.statement_M.setString(1, parameter[0]);//buyerID
-		super.statement_M.setString(2, parameter[1]);//name
-		super.statement_M.setString(3, parameter[2]);//street1
-		super.statement_M.setString(4, parameter[3]);//street2
-		super.statement_M.setString(5, parameter[4]);//city
-		super.statement_M.setString(6, parameter[5]);//county
-		super.statement_M.setString(7, parameter[6]);//postcode
-		super.statement_M.setString(8, parameter[7]);//email
-		super.statement_M.setString(9, parameter[8]);//phoneNo
-		
+		super.statement_M.setString(1, parameter.get(BuyerTable.BUYERID, ClassRef.STRING));
+		super.statement_M.setString(2, parameter.get(BuyerTable.NAME, ClassRef.STRING));
+		super.statement_M.setString(3, parameter.get(BuyerTable.STREET1, ClassRef.STRING));
+		super.statement_M.setString(4, parameter.get(BuyerTable.STREET2, ClassRef.STRING));
+		super.statement_M.setString(5, parameter.get(BuyerTable.CITY, ClassRef.STRING));
+		super.statement_M.setString(6, parameter.get(BuyerTable.COUNTY, ClassRef.STRING));
+		super.statement_M.setString(7, parameter.get(BuyerTable.POSTCODE, ClassRef.STRING));
+		super.statement_M.setString(8, parameter.get(BuyerTable.EMAIL, ClassRef.STRING));
+		super.statement_M.setString(9, parameter.get(BuyerTable.PHONE, ClassRef.STRING));
 		int resultCode = statement_M.executeUpdate();
 		super.cleanup();
 		
-		res.add(new String[] {resultCode+""});
-		
-		return res;
+		parameter.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameter;
 	}
 }
