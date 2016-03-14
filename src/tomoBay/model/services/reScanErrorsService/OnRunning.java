@@ -50,6 +50,9 @@ public final class OnRunning implements AbstractServiceState
 		
 		List<HeteroFieldContainer> errorList = database.retrieveAllErrorItems();
 		
+//		for(HeteroFieldContainer error : errorList)
+//		{System.out.println(error.get(ItemsTable.ITEM_ID, ClassRef.LONG)+" : "+error.get(ItemsTable.ACCOUNT, ClassRef.INTEGER));}
+		
 		for (HeteroFieldContainer error : errorList)
 		{
 			ItemSpecifics item = new ItemSpecifics(

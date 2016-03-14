@@ -81,6 +81,7 @@ public  final class SelectEbayItemsError extends AbstractSelectNoParamsQuery
 			cols.add(ItemsTable.BRAND, results.getString("brand"));
 			cols.add(ItemsTable.PART_NO, results.getString("partNo"));
 			cols.add(ItemsTable.NOTES, results.getString("notes"));
+			cols.add(ItemsTable.ACCOUNT, results.getInt("account"));
 			rows.add(cols);
 		}
 		return rows;
