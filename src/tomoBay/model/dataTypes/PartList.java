@@ -27,8 +27,10 @@ public class PartList
 	private String[] partNos_M;
 	/**internal holder for part quantities**/
 	private int[] partQty_M;
-	
-	private static final String singlequant = "(?<=[0-9])\\s+(?=[^()]\\w)";
+	/**
+	 * 
+	 */
+	private static final String singlequant = "(?<=\\w)\\s+(?=[^()]\\w)|(?<=\\w)\\s*+$";
 	/**
 	 * creates an empty PartList
 	 */
@@ -137,6 +139,7 @@ public class PartList
 	private void convert(String compositePartNo)
 	{
 		compositePartNo = compositePartNo.replaceAll(singlequant, "(1)").replace(" ", "");
+//		System.out.println(compositePartNo);
 		String[] res = compositePartNo.split("\\)");
 		String partNo;
 		int partQty;

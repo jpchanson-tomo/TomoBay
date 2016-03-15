@@ -57,6 +57,7 @@ public final class OnRunning implements AbstractServiceState
 		List<HeteroFieldContainer> orders = SelectQueryInvoker.execute(SelectQueryTypeNoParams.SELECT_EBAY_ITEMS);
 		for (HeteroFieldContainer order: orders)
 		{
+//			System.out.println(order.get(ItemsTable.PART_NO, ClassRef.STRING)+" : "+order.get(ItemsTable.ACCOUNT, ClassRef.INTEGER));
 			partlist = new PartList(order.get(ItemsTable.PART_NO, ClassRef.STRING));
 			for (String partNo : partlist.getPartNumbers())
 			{

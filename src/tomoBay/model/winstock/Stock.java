@@ -101,6 +101,7 @@ public final class Stock
 		if(this.currentPartNo_M != partNo || this.currentBrandCode_M != brandCode)
 		{
 			HttpGET get = new HttpGET();
+//			System.out.println(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo.toUpperCase());
 			this.response_M = get.request(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo.toUpperCase());
 		}
 	}

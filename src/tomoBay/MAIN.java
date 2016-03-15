@@ -1,6 +1,7 @@
 package tomoBay;
 import org.apache.log4j.Logger;
 
+import tomoBay.model.dataTypes.PartList;
 import tomoBay.model.dataTypes.ServerStatus;
 import tomoBay.model.services.ServiceFactory;
 import tomoBay.model.services.ServiceFactory.ConfiguredServiceType;
@@ -43,5 +44,7 @@ public final class MAIN
 										new EmailErrorsConfig().configure(data)
 										));
 		services.start(20);
+		
+//		PartList p = new PartList("1234sdf1 1231232 2343klj434 1234123kl");
 	}
 }
