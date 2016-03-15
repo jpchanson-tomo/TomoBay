@@ -1,10 +1,4 @@
 package tomoBay.model.dataTypes.financial.SalesOrderDayBook.concreteLineTypes;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractLineItem;
-import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -21,7 +15,11 @@ import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookL
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.dataTypes.order.Order;
+import java.util.ArrayList;
+import java.util.List;
 
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractLineItem;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
 /**
  *
  * @author Jan P.C. Hanson
@@ -29,12 +27,12 @@ import tomoBay.model.dataTypes.order.Order;
  */
 public final class StandardInvoiceWithShipping extends AbstractSalesDayBookLine
 {
-
 	/**
 	 * @param order
 	 */
 	public StandardInvoiceWithShipping(Order order)
 	{super(order);}
+	
 	
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine#generateLineItems()

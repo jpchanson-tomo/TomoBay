@@ -109,7 +109,7 @@ public final class InvoiceOrders implements AbstractPresenterAction
 	private void updateDB(String invNo, String orderNo)
 	{
 		HeteroFieldContainer param = new HeteroFieldContainer();
-		param.add(OrdersTable.INVOICED, invNo);
+		param.add(OrdersTable.INVOICED, Integer.parseInt(invNo));
 		param.add(OrdersTable.ORDER_ID, orderNo);
 		ModifyQueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS, param);
 	}

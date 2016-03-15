@@ -51,7 +51,7 @@ public final class WinstockFormat extends AbstractFormat
 		result.put(this.shorten(line.orderInfo().buyer().street2()),PayloadType.ADDRESS2);
 		result.put(this.shorten(line.orderInfo().buyer().city()),PayloadType.CITY);
 		result.put(this.shorten(line.orderInfo().buyer().county()),PayloadType.COUNTY);
-		result.put(this.shorten(line.orderInfo().buyer().postcode()),PayloadType.POSTCODE);
+		result.put(this.shorten(line.orderInfo().buyer().postcode().toUpperCase()),PayloadType.POSTCODE);
 		result.put(this.shorten(String.valueOf(line.orderInfo().salesRecNo())),PayloadType.ORDER_NO);
 		result.put(this.shorten(String.valueOf(line.size())), PayloadType.INV_LINES);
 		

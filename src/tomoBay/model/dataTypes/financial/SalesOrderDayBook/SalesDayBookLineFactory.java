@@ -60,6 +60,9 @@ public class SalesDayBookLineFactory
 		if(order.shippingCost() == 0) 
 		{result = SalesDayBookLineFactory.lineMap_M.get(SalesDayBookLineType_M.STANDARD_INVOICE);}
 		
+		else if(order.buyer().street2().toUpperCase().contains("GSP"))
+		{result = SalesDayBookLineFactory.lineMap_M.get(SalesDayBookLineType_M.STANDARD_INVOICE);}
+		
 		else if(order.shippingCost() > 0 ) 
 		{result = SalesDayBookLineFactory.lineMap_M.get(SalesDayBookLineType_M.STANDARD_INVOICE_WITH_SHIPPING);}
 		

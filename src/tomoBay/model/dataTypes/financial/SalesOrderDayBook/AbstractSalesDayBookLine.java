@@ -121,6 +121,9 @@ public abstract class AbstractSalesDayBookLine implements Iterable<AbstractLineI
 	 */
 	protected abstract List<AbstractLineItem> generateLineItems();
 	
+	/**
+	 * 
+	 */
 	private void adjustPrices()
 	{new PriceAdjustment().adjust(this);}
 }

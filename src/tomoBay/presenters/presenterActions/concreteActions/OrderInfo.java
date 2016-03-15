@@ -171,7 +171,7 @@ public final class OrderInfo implements AbstractPresenterAction
 	
 	private String shippingInfo(AbstractSalesDayBookLine invoice)
 	{ 
-		if(invoice.orderInfo().shippingCost() > 0)
+		if(invoice.orderInfo().shippingCost() > 0 && invoice.orderInfo().buyer().street2().toUpperCase().contains("GSP")==false)
 		{
 			return new JSONentity_object()
 			.addLeaf("shipPart",invoice.getLineItem(invoice.size()-1).partNo(invoice))

@@ -1,7 +1,4 @@
 package tomoBay.model.dataTypes.financial.SalesOrderDayBook.concreteLineTypes;
-
-import tomoBay.model.dataTypes.financial.GBP;
-import tomoBay.model.dataTypes.financial.VAT;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -19,7 +16,8 @@ import tomoBay.model.dataTypes.financial.VAT;
  */
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractLineItem;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
-
+import tomoBay.model.dataTypes.financial.GBP;
+import tomoBay.model.dataTypes.financial.VAT;
 /**
  *
  * @author Jan P.C. Hanson
