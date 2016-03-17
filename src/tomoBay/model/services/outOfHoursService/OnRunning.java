@@ -1,6 +1,5 @@
 package tomoBay.model.services.outOfHoursService;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import tomoBay.helpers.checkTime.CheckTime;
@@ -66,6 +65,6 @@ public final class OnRunning implements AbstractServiceState
 	 * 
 	 * @return
 	 */
-	private String getDate()
-	{return new SimpleDateFormat("yyyy-MM-dd").format(CheckTime.OutOfHoursDate());}
+	private java.sql.Date getDate()
+	{return new java.sql.Date(CheckTime.OutOfHoursDate().getTime());}
 }
