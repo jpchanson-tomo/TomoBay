@@ -47,24 +47,27 @@ final class Transactions_Table
 	{
 		for (OrderType order : orders)
 		{
-			TransactionType[] transactionArray = order.getTransactionArray().getTransaction();
-			for(TransactionType transaction : transactionArray)
+			if(order != null)
 			{
-				double shippingCost = 0.00;
-				try {shippingCost = transaction.getActualShippingCost().getValue();}
-				catch (Exception e){}
-				
-				HeteroFieldContainer insertVals = new HeteroFieldContainer(); 
-				
-				insertVals.add(TransactionsTable.TRANSACTION_ID, Long.parseLong(transaction.getTransactionID()));
-				insertVals.add(TransactionsTable.ORDER_ID, order.getOrderID());
-				insertVals.add(TransactionsTable.ITEM_ID, Long.parseLong(transaction.getItem().getItemID()));
-				insertVals.add(TransactionsTable.QUANTITY, transaction.getQuantityPurchased());
-				insertVals.add(TransactionsTable.PRICE, (float)transaction.getTransactionPrice().getValue());
-				insertVals.add(TransactionsTable.SHIPPING_COST, (float)shippingCost);
-
-				if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
-				{ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_TRANSACTIONS,insertVals);}
+				TransactionType[] transactionArray = order.getTransactionArray().getTransaction();
+				for(TransactionType transaction : transactionArray)
+				{
+					double shippingCost = 0.00;
+					try {shippingCost = transaction.getActualShippingCost().getValue();}
+					catch (Exception e){}
+					
+					HeteroFieldContainer insertVals = new HeteroFieldContainer(); 
+					
+					insertVals.add(TransactionsTable.TRANSACTION_ID, Long.parseLong(transaction.getTransactionID()));
+					insertVals.add(TransactionsTable.ORDER_ID, order.getOrderID());
+					insertVals.add(TransactionsTable.ITEM_ID, Long.parseLong(transaction.getItem().getItemID()));
+					insertVals.add(TransactionsTable.QUANTITY, transaction.getQuantityPurchased());
+					insertVals.add(TransactionsTable.PRICE, (float)transaction.getTransactionPrice().getValue());
+					insertVals.add(TransactionsTable.SHIPPING_COST, (float)shippingCost);
+	
+					if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
+					{ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_TRANSACTIONS,insertVals);}
+				}
 			}
 		}
 	}

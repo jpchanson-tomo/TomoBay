@@ -133,6 +133,10 @@ public final class InvoiceOrders implements AbstractPresenterAction
 			+ "</tr>";
 	}
 	
+	/**
+	 * 
+	 * @param result
+	 */
 	private void emailResults(String result)
 	{
 		MailClient.send(InvoiceOrders.EMAILHEADER + result + InvoiceOrders.EMAILFOOTER, 

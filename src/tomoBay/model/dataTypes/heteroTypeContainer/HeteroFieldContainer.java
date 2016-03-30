@@ -17,6 +17,8 @@ package tomoBay.model.dataTypes.heteroTypeContainer;
 import gnu.trove.map.hash.THashMap;
 
 import java.util.Map;
+
+import tomoBay.model.dataTypes.DualList;
 /**
  * This class represents a container of AbstractField types and a value associated with this field.
  * If you REALLY need to store heterogenous types in a container then this class may be useful, but 
@@ -88,9 +90,7 @@ public class HeteroFieldContainer
 	{
 		int size=0;
 		for(Map<AbstractField, Object> field : this.fieldMap_M.values())
-		{
-			size += field.size();
-		}
+		{size += field.size();}
 		return size;
 	}
 	

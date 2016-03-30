@@ -28,8 +28,8 @@ import tomoBay.view.ViewFactory;
 import tomoBay.view.views.ErrorView;
 import tomoBay.view.views.RootView;
 import tomoBay.view.views.SalesHistoryView;
-import tomoBay.view.views.SalesOrderView;
 import tomoBay.view.views.WarehouseOrderView;
+import tomoBay.view.views.salesOrderView.SalesOrderView;
 /**
  * Tests the ViewFactory class
  * @author Jan P.C. Hanson

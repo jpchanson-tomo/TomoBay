@@ -32,8 +32,8 @@ import tomoBay.view.views.OrderView;
 import tomoBay.view.views.OutOfHoursView;
 import tomoBay.view.views.RootView;
 import tomoBay.view.views.SalesHistoryView;
-import tomoBay.view.views.SalesOrderView;
 import tomoBay.view.views.WarehouseOrderView;
+import tomoBay.view.views.salesOrderView.SalesOrderView;
 /**
  * This class is the visitor in a visitor/double dispatch type setup where the AbstractPresenter
  * concrete classes are the visitables and contain the corresponding accept() methods. This 

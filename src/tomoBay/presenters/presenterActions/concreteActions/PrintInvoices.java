@@ -137,4 +137,4 @@ public final class PrintInvoices implements AbstractPresenterAction
 		}
 		return result;
 	}
-}
+ }

@@ -45,15 +45,18 @@ final class Buyers_Table
 	{
 		for (OrderType order : orders)
 		{
-			HeteroFieldContainer insertVals = new HeteroFieldContainer();
-			
-			if(order.isIsMultiLegShipping()==true)
-			{Buyers_Table.getGSPaddress(order, insertVals);}
-			
-			else
-			{Buyers_Table.getAddress(order, insertVals);}
-			
-			ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_BUYERS,insertVals);
+			if(order != null)
+			{
+				HeteroFieldContainer insertVals = new HeteroFieldContainer();
+				
+				if(order.isIsMultiLegShipping()==true)
+				{Buyers_Table.getGSPaddress(order, insertVals);}
+				
+				else
+				{Buyers_Table.getAddress(order, insertVals);}
+				
+				ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_BUYERS,insertVals);
+			}
 		}
 	}
 	

@@ -63,19 +63,22 @@ final class Orders_Table
 	{
 		for (OrderType order : orders)
 		{
-			Timestamp ts = new Timestamp(order.getCreatedTime().getTime().getTime());
-			HeteroFieldContainer insertVals = new HeteroFieldContainer(); 
-			
-			insertVals.add(OrdersTable.ORDER_ID, order.getOrderID());
-			insertVals.add(OrdersTable.BUYERID, order.getBuyerUserID());
-			insertVals.add(OrdersTable.SALES_REC_NO, order.getShippingDetails().getSellingManagerSalesRecordNumber());
-			insertVals.add(OrdersTable.SHIPPING_TYPE, order.getShippingServiceSelected().getShippingService());
-			insertVals.add(OrdersTable.CREATED_TIME, ts);
-			insertVals.add(OrdersTable.ORDER_TOTAL, (float)order.getTotal().getValue());
-			insertVals.add(OrdersTable.ACCOUNT, accountID);
-
-			if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
-			{ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_ORDERS, insertVals);}
+			if(order != null)
+			{
+				Timestamp ts = new Timestamp(order.getCreatedTime().getTime().getTime());
+				HeteroFieldContainer insertVals = new HeteroFieldContainer(); 
+				
+				insertVals.add(OrdersTable.ORDER_ID, order.getOrderID());
+				insertVals.add(OrdersTable.BUYERID, order.getBuyerUserID());
+				insertVals.add(OrdersTable.SALES_REC_NO, order.getShippingDetails().getSellingManagerSalesRecordNumber());
+				insertVals.add(OrdersTable.SHIPPING_TYPE, order.getShippingServiceSelected().getShippingService());
+				insertVals.add(OrdersTable.CREATED_TIME, ts);
+				insertVals.add(OrdersTable.ORDER_TOTAL, (float)order.getTotal().getValue());
+				insertVals.add(OrdersTable.ACCOUNT, accountID);
+				
+				if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
+				{ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_ORDERS, insertVals);}
+			}
 		}
 	}
 }

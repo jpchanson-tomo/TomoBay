@@ -54,7 +54,6 @@ public  final class SelectEbayOrderByBuyer extends AbstractSelectParamsQuery
 	{
 		super.initQuery(query);
 		super.statement_M.setString(1, parameter.get(OrdersTable.BUYERID, ClassRef.STRING));
-		
 		ResultSet rs = super.statement_M.executeQuery();
 		List<HeteroFieldContainer> selectResults = this.format(rs);
 
