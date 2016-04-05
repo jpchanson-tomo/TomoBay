@@ -26,14 +26,14 @@ import java.util.Map;
  */
 public enum PickeableStatus 
 {
-	/**an invoice is fully invoiceable or already invoiced**/
-	PICKEABLE(0), 
-	/**this order is partially invoiceable, probably due to some parts being out of stock**/
-	PARTIAL(1), 
-	/**it is not possible to invoice this order at the present time**/
-	UNPICKEABLE(2), 
 	/**there has been an error somewhere along the line.....dufus**/
-	ERROR(3),
+	ERROR(0),
+	/**an invoice is fully invoiceable or already invoiced**/
+	PICKEABLE(1), 
+	/**this order is partially invoiceable, probably due to some parts being out of stock**/
+	PARTIAL(2), 
+	/**it is not possible to invoice this order at the present time**/
+	UNPICKEABLE(3), 
 	/**this order is fully pickeable and is currently being processed**/
 	PICKEABLE_PROCESSING(-1),
 	/**this order is partially pickeable and is currently being processed**/

@@ -26,6 +26,9 @@ import tomoBay.model.net.HttpResponse;
  */
 public final class Stock
 {
+	public static final int ERROR = -8008135;  
+	
+	private static final String HTTP_HEADER = "HTTP/1.1 ";
 	/**the first part of the winstock url up to the first variable**/
 	private static final String URL_PT1_M=ConfigReader.getConf(Config.WIN_URL1);
 	/**the second part of the winstock url up to the second variable**/
@@ -60,7 +63,7 @@ public final class Stock
 		result = XMLParser.parse("QTY_EXIST", result);
 
 		try{return Integer.parseInt(result);}
-		catch(NumberFormatException nfe) {return -8008135;}
+		catch(NumberFormatException nfe) {return Stock.ERROR;}
 	}
 	
 	/**
@@ -93,7 +96,7 @@ public final class Stock
 		result = this.postFormatXMLString(this.response_M);
 		result = XMLParser.parse("COST", result);
 		try{return Double.parseDouble(result);}
-		catch(NumberFormatException nfe) {return -8008135;}
+		catch(NumberFormatException nfe) {return Stock.ERROR;}
 	}
 	
 	private void queryWinstockURL(String partNo, String brandCode)
@@ -112,5 +115,5 @@ public final class Stock
 	 * @return String containing just the XML
 	 */
 	private String postFormatXMLString(HttpResponse xmlResponse)
-	{return xmlResponse.getResponseMessage().split("HTTP/1.1 ")[0];}
+	{return xmlResponse.getResponseMessage().split(Stock.HTTP_HEADER)[0];}
 }

@@ -15,7 +15,6 @@ package tomoBay.presenters.helpers.pickeability;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import gnu.trove.set.hash.THashSet;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import tomoBay.helpers.BrandToCode;
@@ -50,35 +49,14 @@ final class ItemStockLevel
 		HeteroFieldContainer param = new HeteroFieldContainer();
 		param.add(OrdersTable.ORDER_ID, orderId);
 
-		List<HeteroFieldContainer> items = new ArrayList<HeteroFieldContainer>();
-		ItemStockLevel.assembleItemsList(
-				SelectQueryInvoker.execute(SelectQueryTypeParams.SELECT_TRANSACTION_BY_ORDERID, param),
-				items
-									);
-
+		List<HeteroFieldContainer> items 
+									= SelectQueryInvoker.execute	(
+														SelectQueryTypeParams.SELECT_BRAND_AND_PARTNO_BY_ORDERID, 
+														param
+																			);
 		return  ItemStockLevel.checkStockLevelOfItems(items);
 	}
 	
-	/**
-	 * modifies the transactionVar list passed in as an argument so that it contains the list
-	 * of transactions associated with this order.
-	 * @param transactionVar
-	 * @param itemsVar
-	 */
-	private static void assembleItemsList
-	(List<HeteroFieldContainer> transactionVar, List<HeteroFieldContainer> itemsVar)
-	{
-		for (int i = 0 ; i < transactionVar.size() ; ++i)
-		{
-			final HeteroFieldContainer itemID = new HeteroFieldContainer();
-			itemID.add(ItemsTable.ITEM_ID, transactionVar.get(i).get(ItemsTable.ITEM_ID, ClassRef.LONG));
-			List<HeteroFieldContainer> tmpList 
-			= SelectQueryInvoker.execute(SelectQueryTypeParams.SELECT_EBAY_ITEM_SPECIFIC, 
-									itemID);
-			itemsVar.addAll(tmpList);
-		}
-	}
-
 	/**
 	 * Takes the list of items generated in this.assembleItemsList and checks a PartList 
 	 * associated with each item against Stock held in winstock. For every item with enough
@@ -105,7 +83,8 @@ final class ItemStockLevel
 				
 				final int required = partlist.getPartQty(i);
 				
-				final boolean status = available >= required ? true : false;
+				boolean status = available >= required ? true : false;
+				if(available == Stock.ERROR) {return null;}
 				
 				itemStatus.add(status);
 			}

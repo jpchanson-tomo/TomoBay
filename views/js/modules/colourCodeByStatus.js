@@ -31,12 +31,12 @@ function blink(element)
 {
 	setInterval(function()
 	{
-		if(element.style.color=="purple")
-		{element.style.color="red";}
-		else if (element.style.color=="red")
-		{element.style.color="orange";}
+		if(element.parentElement.style.color=="purple")
+		{element.parentElement.style.color="red";}
+		else if (element.parentElement.style.color=="red")
+		{element.parentElement.style.color="orange";}
 		else
-		{element.style.color="purple";}
+		{element.parentElement.style.color="purple";}
 	}
 	,100)
 }

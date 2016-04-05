@@ -44,12 +44,12 @@ public final class Pickeablity extends Conditional<PickeableStatus>
 	 */
 	@Override
 	public Condition startCondition()
-	{return new AllPickeable(this.itemStatus_M);}
+	{return new Error(this.itemStatus_M);}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.conditionalStatement.Conditional#startResult()
 	 */
 	@Override
 	public Result<PickeableStatus> startResult()
-	{return new AllPickeableResult(this.itemStatus_M, this.orderNo_M, this);}
+	{return new ErrorResult(this.itemStatus_M, this.orderNo_M, this);}
 }

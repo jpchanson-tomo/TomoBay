@@ -101,6 +101,8 @@ public final class SelectQueryInvoker
 		SELECT_OUT_OF_HOURS_ORDERS,
 		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayTransactionByID}**/
 		SELECT_EBAY_TRANSACTION_BY_ID,
+		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectBrandAndPartNoByOrderID}**/
+		SELECT_BRAND_AND_PARTNO_BY_ORDERID,
 	}
 	/**internal map holds factory objects created static final to make threadsafe**/
 	private static final Map<SelectQueryTypeNoParams, AbstractSelectNoParamsQueryFactory> noParamsMap_M
@@ -131,6 +133,7 @@ public final class SelectQueryInvoker
 			put(SelectQueryTypeParams.SELECT_EBAY_ORDER_BY_ID, new SelectEbayOrderByIDFactory());
 			put(SelectQueryTypeParams.SELECT_EBAY_ORDER_BY_BUYER, new SelectEbayOrderByBuyerFactory());
 			put(SelectQueryTypeParams.SELECT_BRAND_BY_INV_NO, new SelectBrandByInvNoFactory());
+			put(SelectQueryTypeParams.SELECT_BRAND_AND_PARTNO_BY_ORDERID, new SelectBrandAndPartNoByOrderIDFactory());
 		}};
 	
 	/**
