@@ -39,6 +39,7 @@ public final class SaneInput
 		if(result==null) {return "";}
 		if(result.contains("\n")) {result = result.replace("\n", "");}
 		if(result.contains("\"")) {result = result.replace("\"","");}
+		if(result.contains("\\")) {result = result.replace("\\","");}
 		return result.trim();
 	}
 

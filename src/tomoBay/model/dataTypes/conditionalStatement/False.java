@@ -22,7 +22,6 @@ package tomoBay.model.dataTypes.conditionalStatement;
  */
 public final class False implements AbstractTruth
 {
-
 	/**
 	 * 
 	 */

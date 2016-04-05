@@ -22,5 +22,10 @@ package tomoBay.model.dataTypes.conditionalStatement;
  */
 interface AbstractTruth
 {
+	/**
+	 * 
+	 * @param result
+	 * @return
+	 */
 	<T> T dispatch(Result<T> result);
 }

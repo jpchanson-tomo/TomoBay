@@ -19,8 +19,8 @@ import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.services.helpers.PickeableStatus;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
+import tomoBay.presenters.helpers.pickeability.PickeableStatus;
 /**
  * This class contains functionality for performing a category based sorting algorithm first 
  * ordering the data passed in by shipping type and the now sorted data by Pickeability. this 

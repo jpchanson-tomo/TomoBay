@@ -17,13 +17,13 @@ package tomoBay.presenters.sales;
 import java.util.List;
 
 import tomoBay.helpers.SortOrders;
-import tomoBay.model.dataTypes.Pickeablity;
 import tomoBay.model.dataTypes.ServerStatus;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.sql.queries.SelectQueryInvoker;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.presenters.AbstractPresenter;
+import tomoBay.presenters.helpers.pickeability.Pickeablity;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;
 /**
@@ -73,10 +73,10 @@ public final class SalesOrderPresenter implements AbstractPresenter
 	 */
 	private void checkPickability(List<HeteroFieldContainer> rows)
 	{
-		Pickeablity pickeableStatus = new Pickeablity();
 		for(HeteroFieldContainer order : rows)
 		{
-			order.add(OrdersTable.INVOICED, pickeableStatus.status(order.get(OrdersTable.ORDER_ID, ClassRef.STRING)).getStatusCode());
+			Pickeablity pickeableStatus = new Pickeablity(order.get(OrdersTable.ORDER_ID, ClassRef.STRING));
+			order.add(OrdersTable.INVOICED, pickeableStatus.evaluate().getStatusCode());
 		}
 	}
 }

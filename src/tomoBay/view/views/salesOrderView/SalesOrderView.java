@@ -21,6 +21,7 @@ import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.eBayAPI.EbayAccounts;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
+import tomoBay.presenters.helpers.pickeability.PickeableStatus;
 import tomoBay.view.AbstractView;
 /**
  * This class is responsible for formatting the data passed to it by the SalesOrderPresenter and
@@ -80,10 +81,7 @@ public final class SalesOrderView implements AbstractView
 	{
 		String pickeability="";
 		if(ServerStatus.getStatus()!=ServerStatus.RunLevel.RUNNING) {pickeability = "Services Not Running";}
-		else if(invoiced==3){pickeability = "ERROR";}
-		else if(invoiced==2){pickeability = "Unpickeable";}
-		else if(invoiced==1){pickeability = "Partial";}
-		else if(invoiced==0){pickeability = "Pickeable";}
+		else {pickeability = OrderStatusContext.get(invoiced);}
 		
 		return pickeability;
 	}

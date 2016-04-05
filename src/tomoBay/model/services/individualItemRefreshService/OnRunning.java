@@ -72,7 +72,7 @@ public final class OnRunning implements AbstractServiceState
 			String brand = specifics.get("Brand"); 
 			String partNo = specifics.get("Manufacturer Part Number");
 			
-			new RePopulateEbayItem().populate(partNo, brand, Long.parseLong(item.getItemID()));
+			new RePopulateEbayItem().populate(brand, partNo, Long.parseLong(item.getItemID()));
 		
 			log.warn(this.listingID_M+" refreshed");
 			return this.listingID_M+" refreshed";
