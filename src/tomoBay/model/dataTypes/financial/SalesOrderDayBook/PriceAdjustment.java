@@ -99,8 +99,8 @@ public final class PriceAdjustment
 	/**
 	 * calculate the total cost (EX VAT) of the testPrices array. The AbstractSalesDayBookLine
 	 * is necessary in case this AbstractSalesDayBookLine contains a POST part
-	 * @param noOfItems the number of items minus any postage lines
 	 * @param testPrices the array of prices to calculate the total (ex vat) from
+	 * @param line AbstractSalesDayBookLine in question
 	 * @return int representing the total price in pennies (ex VAT)
 	 */
 	private int calculateTotal(int[] testPrices, AbstractSalesDayBookLine line)
@@ -135,7 +135,7 @@ public final class PriceAdjustment
 	 * the AbstractSalesDayBookLine. it is based around the difference between the actual total
 	 * (as taken from eBay), and the calculated total, as worked out by the AbstractSalesDayBookLine
 	 * object and this price adjustment class.
-	 * @param actualTotal the total as exists on ebay
+	 * @param line the AbstractSalesDayBookLine that this method applies to.
 	 * @param calculatedTotal the total as calculated by the AbstractSalesDayBookLine object
 	 * and this price Adjustment class
 	 * @return int the number of pennies difference between the actualTotal and the calculatedTotal

@@ -45,15 +45,7 @@ public class CheckTime
 	{super();}
 	
 	/**
-	 * tells you whether the current time is within the range specified. the times specified
-	 * must be in 24hour format with no separators and no leading zeroes. i.e. 08:00 AM would 
-	 * be 800, 01:30 PM would be 1330 etc.
-	 * 
-	 * this checks whether the current time is greater than or equal to the start time AND less
-	 * than or equal to the end time. if these conditions are true it returns a value of true.
-	 * otherwise it returns a value of false.
-	 * @param startTime the start time for the time range
-	 * @param endTime the end time for the time range.
+	 * tells you whether the current time is within the range specified in the config file.
 	 * @return true iff time is within range(inclusive), false otherwise.
 	 */
 	public static boolean isInRange()

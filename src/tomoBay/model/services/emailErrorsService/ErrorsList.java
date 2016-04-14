@@ -17,8 +17,8 @@ package tomoBay.model.services.emailErrorsService;
 import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeNoParams;
 /**
  * This class represents the list of errors that exist within the ebay_items table in the database,
  * and the functionality to retrieve that list as well as some other bits and bobs like find 

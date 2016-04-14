@@ -21,21 +21,21 @@ import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractLineItem;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.AbstractSalesDayBookLine;
 import tomoBay.model.dataTypes.order.Order;
 /**
- * 
+ * This class represents a standard invoice without extra shipping.
  * @author Jan P.C. Hanson
  *
  */
 public class StandardInvoice extends AbstractSalesDayBookLine
 {
 	/**
-	 * @param orderID
+	 * Constructor creates a StandardInvoice object using the order parameter passed in here
+	 * @param order the Order object to create this StandardInvoice from.
 	 */
 	public StandardInvoice(Order order)
 	{super(order);}
 	
 	/**
 	 * This method generates the array of AbstractLineItems that make up this StandardInvoice.
-	 * @param order The Order object used to generate this Invoice.
 	 * @return List<AbstractLineItem> the Contents of the invoice. 
 	 */
 	protected final List<AbstractLineItem> generateLineItems()

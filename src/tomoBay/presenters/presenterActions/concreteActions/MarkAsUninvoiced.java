@@ -3,8 +3,8 @@ package tomoBay.presenters.presenterActions.concreteActions;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.eBayAPI.EbayAccounts;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
 import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
@@ -55,7 +55,7 @@ public class MarkAsUninvoiced implements AbstractPresenterAction
 			params.add(OrdersTable.INVOICED, invoiced);
 			
 			int resultCode= 
-						ModifyQueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS_SRN, params)
+						ModifyQueryInvoker.execute(ModifyQueryTypeParams.UPDATE_INVOICE_STATUS_SRN, params)
 																	.get(NonDBFields.RESULT_CODE, ClassRef.INTEGER);
 			String result="";
 			if (resultCode==1) {result = "DONE";}

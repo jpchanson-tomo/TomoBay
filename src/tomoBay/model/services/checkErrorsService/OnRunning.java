@@ -24,10 +24,10 @@ import tomoBay.model.services.AbstractServiceState;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeNoParams;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 import tomoBay.model.winstock.Stock;
 
@@ -62,7 +62,7 @@ public final class OnRunning implements AbstractServiceState
 			for (String partNo : partlist.getPartNumbers())
 			{
 				int result = errorCheck.requestStockLevel(partNo, 
-											BrandToCode.convert(order.get(ItemsTable.BRAND, ClassRef.STRING)));
+											BrandToCode.convertToInt(order.get(ItemsTable.BRAND, ClassRef.STRING))+"");
 				
 				if (result == -8008135)
 				{this.updateItemNote(order);}
@@ -85,7 +85,7 @@ public final class OnRunning implements AbstractServiceState
 		insertVals.add(ItemsTable.ITEM_ID, order.get(ItemsTable.ITEM_ID, ClassRef.LONG));
 		insertVals.add(ItemsTable.NOTES, errorMsg);
 		
-		ModifyQueryInvoker.execute(QueryType.UPDATE_ITEM_NOTE, insertVals);
+		ModifyQueryInvoker.execute(ModifyQueryTypeParams.UPDATE_ITEM_NOTE, insertVals);
 		
 		log.warn(errorMsg);
 	}

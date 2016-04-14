@@ -15,25 +15,39 @@ package tomoBay.model.sql.queries.concreteQueries.select.params;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractSelectParamsQuery;
-import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
-import tomoBay.model.sql.schema.ordersTable.OrdersTable;
-import tomoBay.model.sql.schema.outOfHoursTable.OutOfHoursTable;
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
-import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.schema.ordersTable.OrdersTable;
+import tomoBay.model.sql.schema.outOfHoursTable.OutOfHoursTable;
 /**
- *
+ * this class represents a query that selects the sales record number, order total, created time 
+ * and date for an order(via salesRecNo) that remains unsold after business hours on the date range
+ * passed as parameters to the execute(HeteroFieldContainer parameter) method.
+ * 
+ * This query takes the following parameter:
+ * - OutOfHoursTable.DATE
+ * - NonDBFields.DATE_COMPARISON
+ * 
+ * The query returns a List<HeteroFieldContainer> containing the following fields:
+ * - OutOfHoursTable.DATE
+ * - OrdersTable.SALES_REC_NO
+ * - OrdersTable.CREATED_TIME
+ * - OrdersTable.ORDER_TOTAL
+ * 
  * @author Jan P.C. Hanson
  *
  */
 public  final class SelectOutOfHoursOrders extends AbstractSelectParamsQuery
 {
 	/**SQL query string**/
-	private String query ="SELECT out_of_hours.date, ebay_orders.salesRecNo, ebay_orders.createdTime, ebay_orders.orderTotal "
+	private static final String query ="SELECT out_of_hours.date, ebay_orders.salesRecNo, ebay_orders.createdTime, ebay_orders.orderTotal "
 						+ "FROM out_of_hours "
 						+ "INNER JOIN ebay_orders ON out_of_hours.salesRecNo=ebay_orders.salesRecNo "
 						+ "WHERE date>=? AND date<=?; ";
@@ -43,39 +57,6 @@ public  final class SelectOutOfHoursOrders extends AbstractSelectParamsQuery
 	 */
 	public SelectOutOfHoursOrders()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param startAndEnd define the date range to look for orders in:
-	 * 
-	 * The available fields are:
-	 * - cols[0] = start date (inclusive) 'yyyy-mm-dd'
-	 * - cols[1] = end date (inclusive) 'yyyy-mm-dd'
-	 * 
-	 * @return List<HeteroFieldContainer> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the HeteroFieldContainer represents a field.
-	 * 
-	 * The available fields for each element of the HeteroFieldContainer are:
-	 * - cols[0] = Date of out of hours 
-	 * - cols[1] = sales record number (integer)
-	 * - cols[2] = createdTime (timestamp/string)
-	 * - cols[3] = orderTotalPrice double/float;
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute(HeteroFieldContainer startAndEnd) throws SQLException
-	{
-		super.initQuery(query);
-		
-		super.statement_M.setDate(1, startAndEnd.get(OutOfHoursTable.DATE, ClassRef.DATE));
-		super.statement_M.setDate(2, startAndEnd.get(NonDBFields.DATE_COMPARISON, ClassRef.DATE));
-		
-		ResultSet rs = this.statement_M.executeQuery();
-		List<HeteroFieldContainer> selectResults = this.format(rs);
-
-		super.cleanup();
-		
-		return selectResults;
-	}
 	
 	/* (non-Javadoc)
 	 * @see tomoBay.model.sql.queries.AbstractSelectQueryWithParams#format(java.sql.ResultSet)
@@ -95,4 +76,21 @@ public  final class SelectOutOfHoursOrders extends AbstractSelectParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
+	{
+		QueryUtility.setDATEParam(this, parameter, OutOfHoursTable.DATE, 1);
+		QueryUtility.setDATEParam(this, parameter, NonDBFields.DATE_COMPARISON, 2);
+	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectOutOfHoursOrders.query;}
 }

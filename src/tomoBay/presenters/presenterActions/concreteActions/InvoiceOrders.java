@@ -30,8 +30,8 @@ import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.dataTypes.order.Order;
 import tomoBay.model.net.email.GmailBuilder;
 import tomoBay.model.net.email.MailClient;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.model.winstock.WinstockCommandInvoker;
 import tomoBay.model.winstock.payloads.PayloadType;
@@ -111,7 +111,7 @@ public final class InvoiceOrders implements AbstractPresenterAction
 		HeteroFieldContainer param = new HeteroFieldContainer();
 		param.add(OrdersTable.INVOICED, Integer.parseInt(invNo));
 		param.add(OrdersTable.ORDER_ID, orderNo);
-		ModifyQueryInvoker.execute(QueryType.UPDATE_INVOICE_STATUS, param);
+		ModifyQueryInvoker.execute(ModifyQueryTypeParams.UPDATE_INVOICE_STATUS, param);
 	}
 	
 	/**

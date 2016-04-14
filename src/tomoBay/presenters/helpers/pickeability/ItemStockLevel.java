@@ -15,14 +15,16 @@ package tomoBay.presenters.helpers.pickeability;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import gnu.trove.set.hash.THashSet;
+
 import java.util.List;
 import java.util.Set;
+
 import tomoBay.helpers.BrandToCode;
 import tomoBay.model.dataTypes.PartList;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeParams;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.model.winstock.Stock;
@@ -79,7 +81,7 @@ final class ItemStockLevel
 			for (int i = 0 ; i < partlist.size() ; ++i)
 			{
 				final int available = stockAvailable.requestStockLevel(partlist.getPartNumber(i), 
-						BrandToCode.convert(item.get(ItemsTable.BRAND, ClassRef.STRING)));
+						BrandToCode.convertToInt(item.get(ItemsTable.BRAND, ClassRef.STRING))+"");
 				
 				final int required = partlist.getPartQty(i);
 				

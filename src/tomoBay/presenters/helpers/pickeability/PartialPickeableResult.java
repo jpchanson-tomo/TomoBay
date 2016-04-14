@@ -29,17 +29,9 @@ import tomoBay.model.dataTypes.conditionalStatement.True;
  */
 public final class PartialPickeableResult extends Result<PickeableStatus>
 {
-	private final Set<Boolean> itemStatus_M;
-	private final String orderNo_M;
-	private final Conditional<PickeableStatus> nextHandler_M;
 	
 	public PartialPickeableResult(Set<Boolean> itemStatus, String orderNo, Conditional<PickeableStatus> nextHandler)
-	{
-		super();
-		this.itemStatus_M=itemStatus;
-		this.orderNo_M = orderNo;
-		this.nextHandler_M = nextHandler;
-	}
+	{super();}
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.dataTypes.conditionalStatement.Result#result(tomoBay.model.dataTypes.conditionalStatement.True)

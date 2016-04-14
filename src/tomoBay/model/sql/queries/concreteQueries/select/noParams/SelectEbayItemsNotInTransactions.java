@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectNoParamsQuery;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectNoParamsQuery;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 /**
  * This class represents a query that selects all items (from the transactions table) that do 
@@ -31,7 +31,7 @@ import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 public final class SelectEbayItemsNotInTransactions extends AbstractSelectNoParamsQuery
 {
 	/**SQL query string**/
-	private final String query ="SELECT DISTINCT ebay_transactions.itemID "
+	private static final String query ="SELECT DISTINCT ebay_transactions.itemID "
 			+ "FROM ebay_transactions "
 			+ "WHERE ebay_transactions.itemID "
 			+ "NOT IN (SELECT DISTINCT ebay_items.itemID FROM ebay_items);";
@@ -42,21 +42,6 @@ public final class SelectEbayItemsNotInTransactions extends AbstractSelectNoPara
 	 */
 	public SelectEbayItemsNotInTransactions()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param NotUsed NOT USED
-	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * column the itemID, so each list element contains a String[1] which contains an itemID.
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute() throws SQLException
-	{
-		List<HeteroFieldContainer> selectResults = this.format(this.initQuery(query));
-		this.cleanup();
-		
-		return selectResults;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -76,4 +61,11 @@ public final class SelectEbayItemsNotInTransactions extends AbstractSelectNoPara
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectEbayItemsNotInTransactions.query;}
 }

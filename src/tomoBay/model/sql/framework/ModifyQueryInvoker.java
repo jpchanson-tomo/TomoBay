@@ -1,4 +1,4 @@
-package tomoBay.model.sql.queries;
+package tomoBay.model.sql.framework;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -21,10 +21,14 @@ import java.sql.SQLException;
 import java.util.Map;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.framework.queryFactories.AbstractModifyQueryNoParamsFactory;
+import tomoBay.model.sql.framework.queryFactories.AbstractModifyQueryParamsFactory;
+import tomoBay.model.sql.queries.factories.delete.DeleteOrderFromOrderStatusFactory;
 import tomoBay.model.sql.queries.factories.insert.InsertEbayBuyersFactory;
 import tomoBay.model.sql.queries.factories.insert.InsertEbayItemsFactory;
 import tomoBay.model.sql.queries.factories.insert.InsertEbayOrdersFactory;
 import tomoBay.model.sql.queries.factories.insert.InsertEbayTransactionsFactory;
+import tomoBay.model.sql.queries.factories.insert.InsertOrderInOrderStatusFactory;
 import tomoBay.model.sql.queries.factories.insert.InsertOutOfHoursFactory;
 import tomoBay.model.sql.queries.factories.update.UpdateEbayBuyerFactory;
 import tomoBay.model.sql.queries.factories.update.UpdateInvoiceStatusFactory;
@@ -46,7 +50,7 @@ import tomoBay.model.sql.queries.factories.update.UpdateItemNoteFactory;
 public final class ModifyQueryInvoker
 {
 	/** Defensive enum defines the acceptable inputs to the factory**/
-	public enum QueryType 
+	public enum ModifyQueryTypeParams 
 		{
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertEbayBuyers}**/
 			INSERT_EBAY_BUYERS,
@@ -56,8 +60,10 @@ public final class ModifyQueryInvoker
 			INSERT_EBAY_ORDERS,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertEbayTransactions}**/
 			INSERT_EBAY_TRANSACTIONS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertOutOfHours}**/
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertOutOfHoursOrders}**/
 			INSERT_OUT_OF_HOURS,
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.insert.InsertOrderInOrderStatus}**/
+			INSERT_ORDER_IN_ORDER_STATUS,
 			
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.update.UpdateItemBrandAndPartNo}**/
 			UPDATE_ITEM_BRAND_AND_PARTNO,
@@ -71,45 +77,68 @@ public final class ModifyQueryInvoker
 			UPDATE_ITEM_NOTE,
 			/**@see {@link tomoBay.model.sql.queries.concreteQueries.update.UpdateEbayBuyer}**/
 			UPDATE_EBAY_BUYER,
+			
+			/**@see {@link tomoBay.model.sql.queries.concreteQueries.delete.DeleteOrderFromOrderStatus}**/
+			DELETE_ORDER_FROM_ORDER_STATUS,
+		}
+	
+	public enum ModifyQueryTypeNoParams
+		{
+			
 		}
 	/**internal map holds factory objects created static final to make threadsafe**/
-	private static final Map<QueryType, AbstractModifyQueryFactory> factoryMap_M
-											= new THashMap<QueryType, AbstractModifyQueryFactory>()
+	private static final Map<ModifyQueryTypeParams, AbstractModifyQueryParamsFactory> factoryMap_M
+											= new THashMap<ModifyQueryTypeParams, AbstractModifyQueryParamsFactory>()
 		{{
-			put(QueryType.INSERT_EBAY_BUYERS, new InsertEbayBuyersFactory());
-			put(QueryType.INSERT_EBAY_ITEMS, new InsertEbayItemsFactory());
-			put(QueryType.INSERT_EBAY_ORDERS, new InsertEbayOrdersFactory());
-			put(QueryType.INSERT_EBAY_TRANSACTIONS, new InsertEbayTransactionsFactory());
-			put(QueryType.INSERT_OUT_OF_HOURS, new InsertOutOfHoursFactory());
+			put(ModifyQueryTypeParams.INSERT_EBAY_BUYERS, new InsertEbayBuyersFactory());
+			put(ModifyQueryTypeParams.INSERT_EBAY_ITEMS, new InsertEbayItemsFactory());
+			put(ModifyQueryTypeParams.INSERT_EBAY_ORDERS, new InsertEbayOrdersFactory());
+			put(ModifyQueryTypeParams.INSERT_EBAY_TRANSACTIONS, new InsertEbayTransactionsFactory());
+			put(ModifyQueryTypeParams.INSERT_OUT_OF_HOURS, new InsertOutOfHoursFactory());
+			put(ModifyQueryTypeParams.INSERT_ORDER_IN_ORDER_STATUS, new InsertOrderInOrderStatusFactory());
 			
-			put(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
-			put(QueryType.UPDATE_INVOICE_STATUS, new UpdateInvoiceStatusFactory());
-			put(QueryType.UPDATE_ITEM_ERROR, new UpdateItemErrorFactory());
-			put(QueryType.UPDATE_ITEM_NOTE, new UpdateItemNoteFactory());
-			put(QueryType.UPDATE_INVOICE_STATUS_SRN, new UpdateInvoiceStatusSRNFactory());
-			put(QueryType.UPDATE_EBAY_BUYER, new UpdateEbayBuyerFactory());
+			put(ModifyQueryTypeParams.UPDATE_ITEM_BRAND_AND_PARTNO, new UpdateItemBrandAndPartNoFactory());
+			put(ModifyQueryTypeParams.UPDATE_INVOICE_STATUS, new UpdateInvoiceStatusFactory());
+			put(ModifyQueryTypeParams.UPDATE_ITEM_ERROR, new UpdateItemErrorFactory());
+			put(ModifyQueryTypeParams.UPDATE_ITEM_NOTE, new UpdateItemNoteFactory());
+			put(ModifyQueryTypeParams.UPDATE_INVOICE_STATUS_SRN, new UpdateInvoiceStatusSRNFactory());
+			put(ModifyQueryTypeParams.UPDATE_EBAY_BUYER, new UpdateEbayBuyerFactory());
+			
+			put(ModifyQueryTypeParams.DELETE_ORDER_FROM_ORDER_STATUS, new DeleteOrderFromOrderStatusFactory());
 		}};
 	
+	private static final Map<ModifyQueryTypeNoParams, AbstractModifyQueryNoParamsFactory> noParamsFactoryMap_M
+											= new THashMap<ModifyQueryTypeNoParams, AbstractModifyQueryNoParamsFactory>()
+		{{
+												
+		}};
 	/**
-	 * make the requested data base query.
-	 * @param query
+	 * @param query one of the enum values provided by ModifyQueryTypeNoParams enum.
 	 * @return
 	 */
-	public static AbstractModifyQuery make(QueryType query)
-	{return ModifyQueryInvoker.factoryMap_M.get(query).make();}
+	public static HeteroFieldContainer execute(ModifyQueryTypeParams query)
+	{
+		try
+		{return ModifyQueryInvoker.noParamsFactoryMap_M.get(query).make().execute();}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 	/**
 	 * execute a requested query
-	 * @param query one of the enum values provided by QueryType enum.
+	 * @param query one of the enum values provided by ModifyQueryTypeParams enum.
 	 * @param parameters String[] of parameters specific to the query you are using, see
 	 * individual query docs.
 	 * @return List<String[]>
 	 * @throws SQLException
 	 */
-	public static HeteroFieldContainer execute(QueryType query, HeteroFieldContainer parameters)
+	public static HeteroFieldContainer execute(ModifyQueryTypeParams query, HeteroFieldContainer parameters)
 	{
 		try
-		{return ModifyQueryInvoker.make(query).execute(parameters);}
+		{return ModifyQueryInvoker.factoryMap_M.get(query).make().execute(parameters);}
 		catch(SQLException e)
 		{
 			e.printStackTrace();

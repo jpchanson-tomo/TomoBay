@@ -1,4 +1,4 @@
-package tomoBay.model.sql.queries;
+package tomoBay.model.sql.framework.queryTypes.modify;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,54 +14,55 @@ package tomoBay.model.sql.queries;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.sql.ConnectionManager;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 /**
- * This class defines the Abstract base for all Select queries that do not require paramteres
+ * This is the Abstract Base Class for all queries that modify the database in some way
+ * (INSERT/UPDATE/DELETE) but do not require any parameters in order to run.
  * @author Jan P.C. Hanson
  *
  */
-public abstract class AbstractSelectNoParamsQuery extends AbstractSelectQuery
+public abstract class AbstractModifyQueryNoParams extends AbstractModifyQuery
 {
-
 	/**
 	 * default ctor
 	 */
-	public AbstractSelectNoParamsQuery()
+	public AbstractModifyQueryNoParams()
 	{super();}
 
 	/**
-	 * executes the query.
-	 * @param NOT_USED
-	 * @return String representing the output of a particular query.
+	 * Executes the query and returns a HeteroFieldContainer containing the result fields
+	 * @return HeteroFieldContainer containing a NonDBFields.RESULT_CODE field only.
+	 * @throws SQLException
 	 */
-	public abstract List<HeteroFieldContainer> execute() throws SQLException;
-	
+	public HeteroFieldContainer execute() throws SQLException
+	{
+		int resultCode = this.initQuery(this.queryString());
+		super.cleanup();
+		HeteroFieldContainer result = new HeteroFieldContainer();
+		result.add(NonDBFields.RESULT_CODE, resultCode);
+		return result;
+	}
 	
 	/**
-	 * the results from a select query come in the form of a ResultSet object, this needs to be closed
-	 * before the connection can be closed, however once the Resultset is closed it is impossible to
-	 * get any data from it, so before it is closed the data needs transferring to a DBFieldContainer
-	 * object.
-	 * @param resultSet the ResultSet to format
-	 * @return DBFieldContainer containing the relevant data
+	 * Used by derived classes to define the Query string to be used in the query.
+	 * @return String containing the JDBC query string
 	 */
-	protected abstract List<HeteroFieldContainer> format(ResultSet resultSet)throws SQLException;
+	protected abstract String queryString();
 	
 	/**
 	 * initialise the connection and statement and set transaction variables.
 	 * @param query String containing the sql query
 	 * @throws SQLException
 	 */
-	protected ResultSet initQuery(String query) throws SQLException
+	private int initQuery(String query) throws SQLException
 	{
 		this.connection_M = ConnectionManager.instance().getConnection();
 		this.connection_M.setAutoCommit(false);
 		this.statement_M = this.connection_M.prepareStatement(query);
-		return super.statement_M.executeQuery();
+		return this.statement_M.executeUpdate();
 	}
 }

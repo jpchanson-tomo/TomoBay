@@ -60,7 +60,7 @@ public final class PrintInvoices implements AbstractPresenterAction
 					DualList<String, PayloadType> printThis 
 								= this.formatAsDualList(
 														String.valueOf(line.invoiceNumber()), 
-														this.brandToCode(line.orderInfo().transaction(0).listing().part(0).brand()), 
+														BrandToCode.convertToInt(line.orderInfo().transaction(0).listing().part(0).brand())+"", 
 														"1"
 														);
 					
@@ -85,6 +85,8 @@ public final class PrintInvoices implements AbstractPresenterAction
 	/**
 	 * formats the AbstractSalesDayBookLine into a format that can be passed to the WinstockCommandInvoker.
 	 * @param invoice the invoice to be formatted
+	 * @param brand the brand code associated with the invoice to be printed
+	 * @param packingList the number of packing lists you wish printed (as a string)
 	 * @return DualList<String, PayloadType> accepted by the WinstockCommandInvoker
 	 */
 	private DualList<String, PayloadType> formatAsDualList(String invoiceNo, String brand, String packingList)
@@ -96,20 +98,6 @@ public final class PrintInvoices implements AbstractPresenterAction
 		result.put("1", PayloadType.PRINT_COPIES);
 		result.put(packingList, PayloadType.PACKING_LISTS);
 		return result;
-	}
-	
-	/**
-	 * convert a brandCode to a number winstock will accept in its company field
-	 * @param brand the brand string from the invoice
-	 * @return String containing one of the three value "0" for ford, "3" for citroen, "8" for
-	 * prestige.
-	 */
-	private String brandToCode(String brand)
-	{
-		String brandCode = BrandToCode.convert(brand);
-		if(brandCode.equals("F")){return "0";}
-		else if(brandCode.equals("C")){return "3";}
-		else{return "8";}
 	}
 	
 	/**

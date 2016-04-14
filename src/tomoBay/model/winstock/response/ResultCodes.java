@@ -57,7 +57,7 @@ public enum ResultCodes
 	
 	/**
 	 * this method allows the user to retrieve the enum const based on an integer value.
-	 * @param errorCode
+	 * @param codeNumber the numerical value to equate to an enum constant 
 	 * @return ResultCodes appropriate to the integer passed in.
 	 * @throws NotAValidResultCodeException 
 	 */

@@ -16,23 +16,31 @@ package tomoBay.model.sql.queries.concreteQueries.update;
  */
 import java.sql.SQLException;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
-import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 
 /**
  * This class represents a query that updates the brand and partNo of a particular item in the 
  * items table of the database.
  * 
+ * This query takes the following parameters:
+ * - ItemsTable.BRAND
+ * - ItemsTable.PART_NO
+ * - ItemsTable.NOTES
+ * - ItemsTable.ITEM_ID
+ * 
+ * These should be stored in a HeteroFieldContainer and passed to the execute(HeteroFieldContainer parameters) 
+ * method in order to run the query.
+ * 
  * @author Jan P.C. Hanson
  *
  */
-public  final class UpdateItemError extends AbstractModifyQuery
+public  final class UpdateItemError extends AbstractModifyQueryParams
 {
 	/**SQL query string**/
-	private String query ="UPDATE ebay_items "
+	private static final String query ="UPDATE ebay_items "
 					+ "SET brand=?,partNo=?,notes=?"
 					+ "WHERE itemID=?";
 	
@@ -41,32 +49,23 @@ public  final class UpdateItemError extends AbstractModifyQuery
 	 */
 	public UpdateItemError()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter an array of strings where the 0th element is the parameter for the 
-	 * first column, the 1st element is the parameter for the 2nd column and so on. 
-	 * This query only requires 2 inputs so any element above the 1st element will be ignored.
-	 * - col1 = brand:varchar(20)
-	 * - col2 = partNo:varchar(100)
-	 * - col3 = notes:varchar(60) 
-	 * - col3 = itemID:bigint(13)
-	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
-	 * @throws SQLException
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#queryString()
 	 */
-	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
+	@Override
+	protected String queryString()
+	{return UpdateItemError.query;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
 	{
-		super.initQuery(query);
-		super.statement_M.setString(1, parameter.get(ItemsTable.BRAND, ClassRef.STRING));
-		super.statement_M.setString(2, parameter.get(ItemsTable.PART_NO, ClassRef.STRING));
-		super.statement_M.setString(3, parameter.get(ItemsTable.NOTES, ClassRef.STRING));
-		super.statement_M.setLong(4, parameter.get(ItemsTable.ITEM_ID, ClassRef.LONG));
-		
-		int resultCode = super.statement_M.executeUpdate();
-		super.cleanup();
-		
-		parameter.add(NonDBFields.RESULT_CODE, resultCode);
-		return parameter;
+		QueryUtility.setVARCHARParam(this, parameter, ItemsTable.BRAND, 1);
+		QueryUtility.setVARCHARParam(this, parameter, ItemsTable.PART_NO, 2);
+		QueryUtility.setVARCHARParam(this, parameter, ItemsTable.NOTES, 3);
+		QueryUtility.setBIGINTParam(this, parameter, ItemsTable.ITEM_ID, 4);
 	}
 }

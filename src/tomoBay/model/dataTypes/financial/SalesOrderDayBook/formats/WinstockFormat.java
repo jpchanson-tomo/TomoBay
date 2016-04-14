@@ -44,7 +44,7 @@ public final class WinstockFormat extends AbstractFormat
 	{
 		DualList<String,PayloadType> result = new DualList<String,PayloadType>();
 		result.put("34", PayloadType.TYPE);
-		result.put(this.brandToCode(line.orderInfo().transaction(0).listing().part(0).brand()), PayloadType.COMPANY);
+		result.put(BrandToCode.convertToInt(line.orderInfo().transaction(0).listing().part(0).brand())+"", PayloadType.COMPANY);
 		result.put("EBAY", PayloadType.INVOICE_ACCOUNT);
 		result.put(this.shorten(line.orderInfo().buyer().name()), PayloadType.NAME);
 		result.put(this.shorten(line.orderInfo().buyer().street1()),PayloadType.ADDRESS1);
@@ -65,20 +65,6 @@ public final class WinstockFormat extends AbstractFormat
 		}
 		
 		return result;
-	}
-
-	/**
-	 * convert a brandCode to a number winstock will accept in its company field
-	 * @param brand the brand string from the invoice
-	 * @return String containing one of the three value "0" for ford, "3" for citroen, "8" for
-	 * prestige.
-	 */
-	private String brandToCode(String brand)
-	{
-		String brandCode = BrandToCode.convert(brand);
-		if(brandCode.equals("F")){return "0";}
-		else if(brandCode.equals("C")){return "3";}
-		else{return "8";}
 	}
 	
 	private String shorten(String input)

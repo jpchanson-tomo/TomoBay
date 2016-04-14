@@ -19,51 +19,37 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectParamsQuery;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery;
 import tomoBay.model.sql.schema.transactionsTable.TransactionsTable;
 /**
- *
+ * This class represents a query that selects the itemId, quantity, price and shippingCost field from
+ * the ebay_transactions table in the database, that correspond to the transactionId passed in as a 
+ * parameter to the execute(HeteroFieldContainer parameter) method.
+ * 
+ * This query takes the following parameter:
+ * - TransactionsTable.TRANSACTION_ID
+ * 
+ * The query returns a List<HeteroFieldContainer> containing the following fields:
+ * - TransactionsTable.ITEM_ID
+ * - TransactionsTable.QUANTITY
+ * - TransactionsTable.PRICE
+ * - TransactionsTable.SHIPPING_COST
+ * 
  * @author Jan P.C. Hanson
  *
  */
 public  final class SelectEbayTransactionByID extends AbstractSelectParamsQuery
 {
 	/**SQL query string**/
-	private String query ="SELECT itemID,quantity,price,shippingCost FROM ebay_transactions WHERE transactionID=?";
-	//
+	private static final String query ="SELECT itemID,quantity,price,shippingCost FROM ebay_transactions WHERE transactionID=?";
+	
 	/**
 	 * default constructor
 	 */
 	public SelectEbayTransactionByID()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameters single element array containing the transactrionID
-	 * @return List<HeteroFieldContainer> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the HeteroFieldContainer represents a field.
-	 * 
-	 * The available fields for each element of the HeteroFieldContainer are:
-	 * - String[0] = itemID
-	 * - String[1] = quantity
-	 * - String[2] = price
-	 * - String[3] = shippingCost
-	 * 
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute(HeteroFieldContainer parameters) throws SQLException
-	{
-		super.initQuery(query);
-		super.statement_M.setLong(1, parameters.get(TransactionsTable.TRANSACTION_ID, ClassRef.LONG));
-		
-		ResultSet rs = super.statement_M.executeQuery();
-		List<HeteroFieldContainer> selectResults = this.format(rs);
-
-		super.cleanup();
-		return selectResults;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -86,4 +72,18 @@ public  final class SelectEbayTransactionByID extends AbstractSelectParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
+	{QueryUtility.setBIGINTParam(this, parameter, TransactionsTable.TRANSACTION_ID, 1);}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectEbayTransactionByID.query;}
 }

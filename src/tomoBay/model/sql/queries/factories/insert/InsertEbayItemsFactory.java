@@ -14,8 +14,8 @@ package tomoBay.model.sql.queries.factories.insert;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractModifyQuery;
-import tomoBay.model.sql.queries.AbstractModifyQueryFactory;
+import tomoBay.model.sql.framework.queryFactories.AbstractModifyQueryParamsFactory;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.queries.concreteQueries.insert.InsertEbayItems;
 
 /**
@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.insert.InsertEbayItems;
  * @author Jan P.C. Hanson
  *
  */
-public final class InsertEbayItemsFactory implements AbstractModifyQueryFactory
+public final class InsertEbayItemsFactory implements AbstractModifyQueryParamsFactory
 {
 	/**
 	 * default ctor
@@ -36,6 +36,6 @@ public final class InsertEbayItemsFactory implements AbstractModifyQueryFactory
 	 * make the query
 	 * @return the query
 	 */
-	public AbstractModifyQuery make()
+	public AbstractModifyQueryParams make()
 	{return new InsertEbayItems();}
 }

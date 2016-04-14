@@ -1,7 +1,4 @@
 package tomoBay.model.sql.queries.factories.insert;
-
-import tomoBay.model.sql.queries.AbstractModifyQuery;
-import tomoBay.model.sql.queries.AbstractModifyQueryFactory;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -18,20 +15,21 @@ import tomoBay.model.sql.queries.AbstractModifyQueryFactory;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.sql.queries.concreteQueries.insert.InsertOutOfHoursOrders;
-
+import tomoBay.model.sql.framework.queryFactories.AbstractModifyQueryParamsFactory;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public final class InsertOutOfHoursFactory implements AbstractModifyQueryFactory
+public final class InsertOutOfHoursFactory implements AbstractModifyQueryParamsFactory
 {
 
 	/* (non-Javadoc)
 	 * @see tomoBay.model.sql.queries.AbstractQueryFactory#make()
 	 */
 	@Override
-	public AbstractModifyQuery make()
+	public AbstractModifyQueryParams make()
 	{
 		return new InsertOutOfHoursOrders();
 	}

@@ -1,4 +1,4 @@
-package tomoBay.model.sql.queries;
+package tomoBay.model.sql.framework.queryFactories;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,14 +14,16 @@ package tomoBay.model.sql.queries;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
+import tomoBay.model.sql.framework.queryTypes.AbstractDBQuery;
 /**
- *
+ * all Queries are instantiated using a factory and each of these factories must conform to this
+ * interface. 
  * @author Jan P.C. Hanson
  *
  */
-public interface AbstractModifyQueryFactory extends AbstractQueryFactory
+@SuppressWarnings("unused")
+public interface AbstractQueryFactory
 {
-	@Override
-	public AbstractModifyQuery make();
+	public AbstractDBQuery make();
 }

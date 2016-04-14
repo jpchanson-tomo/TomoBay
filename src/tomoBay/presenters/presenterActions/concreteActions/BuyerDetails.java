@@ -5,8 +5,8 @@ import java.util.List;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.dataTypes.json.JSONentity_object;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeParams;
 import tomoBay.model.sql.schema.buyerTable.BuyerTable;
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited

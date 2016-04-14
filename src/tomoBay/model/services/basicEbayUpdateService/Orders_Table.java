@@ -19,10 +19,10 @@ import java.sql.Timestamp;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.services.helpers.EbayOrderCancellationStatus;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
-
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
+
 
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -55,7 +55,7 @@ final class Orders_Table
 	
 	/**
 	 * populates the Orders Table in the database with data grabbed from the ebay API
-	 * @param credentials API credentials.
+	 * @param accountID The accountId representing the account whose orders to search for.
 	 * @param orders list of orders.
 	 * @throws SQLException 
 	 */
@@ -77,7 +77,7 @@ final class Orders_Table
 				insertVals.add(OrdersTable.ACCOUNT, accountID);
 				
 				if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
-				{ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_ORDERS, insertVals);}
+				{ModifyQueryInvoker.execute(ModifyQueryTypeParams.INSERT_EBAY_ORDERS, insertVals);}
 			}
 		}
 	}

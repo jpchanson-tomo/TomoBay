@@ -21,7 +21,7 @@ import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractSelectNoParamsQuery;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectNoParamsQuery;
 import tomoBay.model.sql.schema.accountsTable.AccountsTable;
 
 /**
@@ -32,36 +32,13 @@ import tomoBay.model.sql.schema.accountsTable.AccountsTable;
 public final class SelectAccounts extends AbstractSelectNoParamsQuery
 {
 	/**SQL query string**/
-	private String query ="SELECT * FROM ebay_accounts;";
+	private static final String query ="SELECT * FROM ebay_accounts;";
 	//
 	/**
 	 * default constructor
 	 */
 	public SelectAccounts()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param NOTUSED
-	 * @return List<String[]> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the String[] represents a field.
-	 * 
-	 * The available fields for each element of the string[] are:
-	 * - String[0] = id
-	 * - String[1] = accountName
-	 * - String[2] = apiKey
-	 * - String[3] = serverAddr
-	 * - String[4] = lookbackDays
-	 * 
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute() throws SQLException
-	{
-		List<HeteroFieldContainer> selectResults = this.format(super.initQuery(query));
-		super.cleanup();
-		
-		return selectResults;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -85,4 +62,11 @@ public final class SelectAccounts extends AbstractSelectNoParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectAccounts.query;}
 }

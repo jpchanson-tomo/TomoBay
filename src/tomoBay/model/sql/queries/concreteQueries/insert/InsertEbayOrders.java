@@ -16,21 +16,32 @@ package tomoBay.model.sql.queries.concreteQueries.insert;
  */
 import java.sql.SQLException;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractModifyQuery;
-import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 
 /**
  * This class represents a class that inserts order data into the orders table of the database.
+ * 
+ * this query takes the following paramters:
+ * - OrdersTable.ORDER_ID
+ * - OrdersTable.BUYERID
+ * - OrdersTable.SALES_REC_NO
+ * - OrdersTable.SHIPPING_TYPE
+ * - OrdersTable.CREATED_TIME
+ * - OrdersTable.ORDER_TOTAL
+ * - OrdersTable.ACCOUNT
+ * 
+ * Which must be passed to the execute(HeteroFieldContainer parameters) method when running the query
+ * 
  * @author Jan P.C. Hanson
  *
  */
-public  final class InsertEbayOrders extends AbstractModifyQuery
+public  final class InsertEbayOrders extends AbstractModifyQueryParams
 {
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay_orders (orderID, buyerID, salesRecNo, shippingType, createdTime, orderTotal, account)"
+	private static final String query ="INSERT IGNORE INTO ebay_orders (orderID, buyerID, salesRecNo, shippingType, createdTime, orderTotal, account)"
 			+ "VALUES (?,?,?,?,?,?,?);";
 	
 	/**
@@ -38,36 +49,26 @@ public  final class InsertEbayOrders extends AbstractModifyQuery
 	 */
 	public InsertEbayOrders()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter an array of strings where the 0th element is the parameter for the 
-	 * first column, the 1st element is the parameter for the 2nd column and so on. 
-	 * The Ebay Orders Table only has 5 columns so any element above the 4th element will be ignored.
-	 * - col1 = orderID:int(30)
-	 * - col2 = buyerID:varchar(40)
-	 * - col3 = salesRecNo:int(10)
-	 * - col4 = shippingType:varchar(200)
-	 * - col5 = createdTime:datetime 
-	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
-	 * @throws SQLException
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#queryString()
 	 */
-	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
+	@Override
+	protected String queryString()
+	{return InsertEbayOrders.query;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#setParameters()
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
 	{
-		this.initQuery(query);
-		this.statement_M.setString(1, parameter.get(OrdersTable.ORDER_ID, ClassRef.STRING));
-		this.statement_M.setString(2, parameter.get(OrdersTable.BUYERID, ClassRef.STRING));
-		this.statement_M.setInt(3, parameter.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER));
-		this.statement_M.setString(4, parameter.get(OrdersTable.SHIPPING_TYPE, ClassRef.STRING));
-		this.statement_M.setTimestamp(5, parameter.get(OrdersTable.CREATED_TIME, ClassRef.TIMESTAMP));
-		this.statement_M.setFloat(6, parameter.get(OrdersTable.ORDER_TOTAL, ClassRef.FLOAT));
-		this.statement_M.setInt(7, parameter.get(OrdersTable.ACCOUNT, ClassRef.INTEGER));
-			
-		int resultCode = statement_M.executeUpdate();
-		this.cleanup();
-			
-		parameter.add(NonDBFields.RESULT_CODE, resultCode);
-		return parameter;
+		QueryUtility.setVARCHARParam(this, parameter, OrdersTable.ORDER_ID, 1);
+		QueryUtility.setVARCHARParam(this, parameter, OrdersTable.BUYERID, 2);
+		QueryUtility.setINTEGERParam(this, parameter, OrdersTable.SALES_REC_NO, 3);
+		QueryUtility.setVARCHARParam(this, parameter, OrdersTable.SHIPPING_TYPE, 4);
+		QueryUtility.setTIMESTAMPParam(this, parameter, OrdersTable.CREATED_TIME, 5);
+		QueryUtility.setFLOATParam(this, parameter, OrdersTable.ORDER_TOTAL, 6);
+		QueryUtility.setINTEGERParam(this, parameter, OrdersTable.ACCOUNT, 7);
 	}
 }

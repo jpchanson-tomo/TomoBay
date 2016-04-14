@@ -21,10 +21,10 @@ import java.util.Map;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.eBayAPI.ItemCall;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeNoParams;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 
 import com.ebay.sdk.ApiException;
@@ -46,12 +46,14 @@ public final class ItemsAndPartsTable
 	{super();}
 	
 	/**
-	 * populates the Orders Table in the database with data grabbed from the ebay API
-	 * @param credentials API credentials.
-	 * @param orders list of orders.
-	 * @throws Exception 
-	 * @throws SdkException 
-	 * @throws ApiException 
+	 *  populates the Orders Table in the database with data grabbed from the ebay API
+	 * @param apiKey the apiKey to use when performing eBay API calls
+	 * @param server the eBay server to make API calls to
+	 * @param accID the accountID referencing the account that is to be queried
+	 * @param orders the OrderType[] to find items for
+	 * @throws ApiException
+	 * @throws SdkException
+	 * @throws Exception
 	 */
 	public static void populate(String apiKey, String server, int accID, OrderType[] orders) 
 			throws ApiException, SdkException, Exception
@@ -73,7 +75,7 @@ public final class ItemsAndPartsTable
 			insertVals.add(ItemsTable.BRAND, specifics.get("Brand"));
 			insertVals.add(ItemsTable.PART_NO, specifics.get("Manufacturer Part Number"));
 			insertVals.add(ItemsTable.ACCOUNT, accID);
-			ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_ITEMS,insertVals);
+			ModifyQueryInvoker.execute(ModifyQueryTypeParams.INSERT_EBAY_ITEMS,insertVals);
 		}
 	}
 	

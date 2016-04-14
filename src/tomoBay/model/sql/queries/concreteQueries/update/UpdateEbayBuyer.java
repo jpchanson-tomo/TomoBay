@@ -16,20 +16,35 @@ package tomoBay.model.sql.queries.concreteQueries.update;
  */
 import java.sql.SQLException;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.schema.buyerTable.BuyerTable;
-import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 /**
- *
+ * This class represents an sql query that updates a record the buyer table in the database with new
+ * information.
+ * 
+ *  This query requires the following parameters:
+ *  - BuyerTable.NAME
+ *  - BuyerTable.STREET1
+ *  - BuyerTable.STREET2
+ *  - BuyerTable.CITY
+ *  - BuyerTable.COUNTY
+ *  - BuyerTable.POSTCODE
+ *  - BuyerTable.EMAIL
+ *  - BuyerTable.PHONE
+ *  - BuyerTable.BUYERID
+ *  
+ *  These should be stored in a HeteroFieldContainer and passed to the execute(HeteroFieldContainer parameters)
+ *  in order to run the query.
+ *  
  * @author Jan P.C. Hanson
  *
  */
-public final class UpdateEbayBuyer extends AbstractModifyQuery
+public final class UpdateEbayBuyer extends AbstractModifyQueryParams
 {
 	/**SQL query string**/
-	private String query = "UPDATE ebay_buyers SET name=?,street1=?,street2=?, city=?,county=?,"
+	private static final String query = "UPDATE ebay_buyers SET name=?,street1=?,street2=?, city=?,county=?,"
 							+ "postcode=?, email=?, phoneNo=? WHERE buyerID=?;";
 	//
 	/**
@@ -37,35 +52,28 @@ public final class UpdateEbayBuyer extends AbstractModifyQuery
 	 */
 	public UpdateEbayBuyer()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter 8 element array 
-	 * @return List<String[]> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the String[] represents a field.
-	 * 
-	 * The available fields for each element of the string[] are:
-	 * - col[0] = resultCode
-	 * 
-	 * @throws SQLException
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#queryString()
 	 */
-	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
+	@Override
+	protected String queryString()
+	{return UpdateEbayBuyer.query;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
 	{
-		this.initQuery(query);
-		this.statement_M.setString(1, parameter.get(BuyerTable.NAME, ClassRef.STRING));
-		this.statement_M.setString(2, parameter.get(BuyerTable.STREET1, ClassRef.STRING));
-		this.statement_M.setString(3, parameter.get(BuyerTable.STREET2, ClassRef.STRING));
-		this.statement_M.setString(4, parameter.get(BuyerTable.CITY, ClassRef.STRING));
-		this.statement_M.setString(5, parameter.get(BuyerTable.COUNTY, ClassRef.STRING));
-		this.statement_M.setString(6, parameter.get(BuyerTable.POSTCODE, ClassRef.STRING));
-		this.statement_M.setString(7, parameter.get(BuyerTable.EMAIL, ClassRef.STRING));
-		this.statement_M.setString(8, parameter.get(BuyerTable.PHONE, ClassRef.STRING));
-		this.statement_M.setString(9, parameter.get(BuyerTable.BUYERID, ClassRef.STRING));
-		
-		int resultCode = this.statement_M.executeUpdate();
-		this.cleanup();
-		
-		parameter.add(NonDBFields.RESULT_CODE, resultCode);
-		return parameter;
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.NAME, 1);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.STREET1, 2);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.STREET2, 3);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.CITY, 4);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.COUNTY, 5);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.POSTCODE, 6);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.EMAIL, 7);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.PHONE, 8);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.BUYERID, 9);
 	}
 }

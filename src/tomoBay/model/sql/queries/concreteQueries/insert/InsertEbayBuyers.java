@@ -16,20 +16,34 @@ package tomoBay.model.sql.queries.concreteQueries.insert;
  */
 import java.sql.SQLException;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractModifyQuery;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.schema.buyerTable.BuyerTable;
-import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 /**
  * This class represents a query that inserts buyer details into the database
+ * 
+ * This query requires the following parameters:
+ * - BuyerTable.BUYERID
+ * - BuyerTable.NAME
+ * - BuyerTable.STREET1
+ * - BuyerTable.STREET2
+ * - BuyerTable.CITY
+ * - BuyerTable.COUNTY
+ * - BuyerTable.POSTCODE
+ * - BuyerTable.EMAIL
+ * - BuyerTable.PHONE
+ * 
+ * These parameters should be stored in a HeteroFieldContainer and passed to the execute(HeteroFieldContainer parameters) 
+ * method when you wish to run the query
+ * 
  * @author Jan P.C. Hanson
  *
  */
-public  final class InsertEbayBuyers extends AbstractModifyQuery
+public final class InsertEbayBuyers extends AbstractModifyQueryParams
 {
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay_buyers "
+	private static final String query ="INSERT IGNORE INTO ebay_buyers "
 			+ "(buyerID, name, street1, street2, city, county, postcode, email, phoneNo)"
 			+ "VALUES (?,?,?,?,?,?,?,?,?) "
 			+ "ON DUPLICATE KEY UPDATE buyerID=values(buyerID), name=values(name), "
@@ -43,34 +57,27 @@ public  final class InsertEbayBuyers extends AbstractModifyQuery
 	public InsertEbayBuyers()
 	{super();}
 	
-	/**
-	 * execute the query
-	 * @param parameter an array of strings where the 0th element is the parameter for the 
-	 * first column, the 1st element is the parameter for the 2nd column and so on. 
-	 * The Ebay Orders Table only has 3 columns so any element above the 2nd element will be ignored:
-	 * - col1 =buyerID:varchar(40) 
-	 * - col2=name:varchar(45) 
-	 * - col3=address:varchar(150),  
-	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
-	 * @throws SQLException
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#queryString()
 	 */
-	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
+	@Override
+	protected String queryString()
+	{return InsertEbayBuyers.query;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
 	{
-		super.initQuery(query);
-		super.statement_M.setString(1, parameter.get(BuyerTable.BUYERID, ClassRef.STRING));
-		super.statement_M.setString(2, parameter.get(BuyerTable.NAME, ClassRef.STRING));
-		super.statement_M.setString(3, parameter.get(BuyerTable.STREET1, ClassRef.STRING));
-		super.statement_M.setString(4, parameter.get(BuyerTable.STREET2, ClassRef.STRING));
-		super.statement_M.setString(5, parameter.get(BuyerTable.CITY, ClassRef.STRING));
-		super.statement_M.setString(6, parameter.get(BuyerTable.COUNTY, ClassRef.STRING));
-		super.statement_M.setString(7, parameter.get(BuyerTable.POSTCODE, ClassRef.STRING));
-		super.statement_M.setString(8, parameter.get(BuyerTable.EMAIL, ClassRef.STRING));
-		super.statement_M.setString(9, parameter.get(BuyerTable.PHONE, ClassRef.STRING));
-		int resultCode = statement_M.executeUpdate();
-		super.cleanup();
-		
-		parameter.add(NonDBFields.RESULT_CODE, resultCode);
-		return parameter;
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.BUYERID, 1);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.NAME, 2);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.STREET1, 3);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.STREET2, 4);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.CITY, 5);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.COUNTY, 6);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.POSTCODE, 7);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.EMAIL, 8);
+		QueryUtility.setVARCHARParam(this, parameter, BuyerTable.PHONE, 9);
 	}
 }

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectNoParamsQuery;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectNoParamsQuery;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 import tomoBay.model.sql.schema.transactionsTable.TransactionsTable;
 /**
@@ -33,7 +33,7 @@ import tomoBay.model.sql.schema.transactionsTable.TransactionsTable;
 public  final class SelectUncalculatedInvoices extends AbstractSelectNoParamsQuery
 {
 	/**SQL query string**/
-	private String query ="SELECT ebay_transactions.orderID, ebay_transactions.transactionID, "
+	private static final String query ="SELECT ebay_transactions.orderID, ebay_transactions.transactionID, "
 						+ "ebay_transactions.quantity, ebay_transactions.price, ebay_items.partNo, "
 						+ "ebay_items.brand, ebay_items.title, ebay_transactions.shippingCost "
 						+ "FROM ebay_transactions "
@@ -47,28 +47,6 @@ public  final class SelectUncalculatedInvoices extends AbstractSelectNoParamsQue
 	 */
 	public SelectUncalculatedInvoices()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param NotUsed NOT USED
-	 * @return List<String[]> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the String[] represents a field.
-	 * 
-	 * The available fields for each element of the string[] are:
-	 * cols[0] = results.getString("orderID");
-	 * cols[0] = results.getString("transactionID");
-	 * cols[0] = results.getString("quantity");
-	 * cols[0] = results.getString("price");
-	 * Cols[0] = results.getString("partNo");
-	 * cols[0] = results.getString("brand");
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute() throws SQLException
-	{
-		List<HeteroFieldContainer> selectResults = this.format(super.initQuery(query));
-		super.cleanup();
-		return selectResults;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -95,4 +73,11 @@ public  final class SelectUncalculatedInvoices extends AbstractSelectNoParamsQue
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectUncalculatedInvoices.query;}
 }

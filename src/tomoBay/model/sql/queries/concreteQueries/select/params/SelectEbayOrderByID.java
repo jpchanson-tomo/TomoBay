@@ -19,59 +19,45 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectParamsQuery;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
- *
+ * This class represents a query that selects all the fields from the ebay_orders table where the 
+ * orderID is equal to the parameter passed in to the execute(HeteroFieldContainer parameter) method.
+ * 
+ * This query takes the following parameter field:
+ * - OrdersTable.ORDER_ID
+ * 
+ * The query returns a List<HeteroFieldContainer> containing the following fields:
+ * - OrdersTable.ORDER_ID
+ * - OrdersTable.BUYERID
+ * - OrdersTable.SALES_REC_NO
+ * - OrdersTable.SHIPPING_TYPE
+ * - OrdersTable.CREATED_TIME
+ * - OrdersTable.INVOICED
+ * - OrdersTable.ORDER_TOTAL
+ * - OrdersTable.ACCOUNT
+ * 
  * @author Jan P.C. Hanson
  *
  */
 public  final class SelectEbayOrderByID extends AbstractSelectParamsQuery
 {
 	/**SQL query string**/
-	private String query ="SELECT * "
+	private static final String query ="SELECT * "
 			+ "FROM ebay_orders WHERE orderID=?";
-	//
+	
 	/**
 	 * default constructor
 	 */
 	public SelectEbayOrderByID()
 	{super();}
 	
-	/**
-	 * execute the query
-	 * @param parameter single element array containing the orderID
-	 * @return List<HeteroFieldContainer> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the HeteroFieldContainer represents a field.
-	 * 
-	 * The available fields for each element of the HeteroFieldContainer are:
-	 * - String[0] = salesRecNo
-	 * - String[1] = shippingType
-	 * - String[2] = createdTime
-	 * - String[3] = orderTotal
-	 * - String[4] = buyerID
-	 * 
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute(HeteroFieldContainer parameter) throws SQLException
-	{
-		super.initQuery(query);
-		super.statement_M.setString(1, parameter.get(OrdersTable.ORDER_ID, ClassRef.STRING));
-		
-		ResultSet rs = super.statement_M.executeQuery();
-		List<HeteroFieldContainer> selectResults = this.format(rs);
 
-		super.cleanup();
-		return selectResults;
-	}
-	
-	/**
-	 * formats the ResultSet (returned from the executed query) as a string
-	 * @param results the ResultSet (post query execution)
-	 * @return String containing the formatted results.
-	 * @throws SQLException
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery#format(java.sql.ResultSet)
 	 */
 	@Override
 	protected List<HeteroFieldContainer> format(ResultSet results) throws SQLException
@@ -92,4 +78,18 @@ public  final class SelectEbayOrderByID extends AbstractSelectParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
+	{QueryUtility.setVARCHARParam(this, parameter, OrdersTable.ORDER_ID, 1);}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectEbayOrderByID.query;}
 }

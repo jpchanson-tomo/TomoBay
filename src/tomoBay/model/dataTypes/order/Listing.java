@@ -17,8 +17,8 @@ package tomoBay.model.dataTypes.order;
 import tomoBay.model.dataTypes.PartList;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeParams;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 /**
  * This class represents an eBay Listing and once instantiated, contains all the information pertinent
@@ -89,9 +89,7 @@ public class Listing
 	public int noOfParts() {return this.parts_M.length;}
 	
 	/**
-	 * retrieve the part specified in the parameter
-	 * @param index the index of the part to retrieve, you can check how many parts exist in
-	 * this listing by calling noOfParts();
+	 * retrieve the composite part no for this listing
 	 * @return Part representing the specified part.
 	 */
 	public String partNos() 

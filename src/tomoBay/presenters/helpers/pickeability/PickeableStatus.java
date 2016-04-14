@@ -16,7 +16,6 @@ package tomoBay.presenters.helpers.pickeability;
  */
 import gnu.trove.map.hash.THashMap;
 
-import java.util.HashMap;
 import java.util.Map;
 /**
  * this enum defines the different status's and status codes for the state of an order with 

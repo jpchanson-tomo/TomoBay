@@ -78,8 +78,8 @@ public final class TriggerService
 	 * tries to gracefully shutdown until the number of seconds in the first timeout has elapsed.
 	 * if this fails it then waits until the second timeout has elapsed and tries an immediate
 	 * shutdown. if both of these fail this method will return false
-	 * @param firstTimeout the number of seconds to allow the threadpool to shutdown gracefully
-	 * @param secondTimeout the number of seconds after the first timeout to allow before
+	 * @param firstInterval the number of seconds to allow the threadpool to shutdown gracefully
+	 * @param secondInterval the number of seconds after the first timeout to allow before
 	 * shutting down aggressively.
 	 * @return false if fails to shutdown, true if threadpool shuts down.
 	 * @throws InterruptedException

@@ -1,4 +1,7 @@
-package tomoBay.model.sql.queries;
+package tomoBay.model.sql.framework.queryTypes.modify;
+
+import tomoBay.model.sql.framework.queryTypes.AbstractDBQuery;
+
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,16 +17,17 @@ package tomoBay.model.sql.queries;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 /**
- *
+ * This class defines the abstract base for all insert and update queries. i.e. all queries that 
+ * modify the database
  * @author Jan P.C. Hanson
  *
  */
-public interface AbstractSelectParamsQueryFactory extends AbstractQueryFactory
+public abstract class AbstractModifyQuery extends AbstractDBQuery
 {
-
-	@Override
-	public AbstractSelectParamsQuery make();
-
+	/**
+	 * default ctor
+	 */
+	public AbstractModifyQuery()
+	{super();}
 }

@@ -15,8 +15,8 @@ package tomoBay.model.services.individualItemRefreshService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 /**
  * This class takes data provided to it and uses this to re populate the database so that
@@ -45,6 +45,6 @@ public final class RePopulateEbayItem
 		params.add(ItemsTable.PART_NO, partNo);
 		params.add(ItemsTable.ITEM_ID, itemID);
 		
-		ModifyQueryInvoker.execute(QueryType.UPDATE_ITEM_BRAND_AND_PARTNO, params);
+		ModifyQueryInvoker.execute(ModifyQueryTypeParams.UPDATE_ITEM_BRAND_AND_PARTNO, params);
 	}
 }

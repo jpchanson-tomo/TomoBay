@@ -6,8 +6,10 @@ import tomoBay.helpers.checkTime.CheckTime;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.services.AbstractServiceState;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeNoParams;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -23,8 +25,6 @@ import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.model.sql.schema.outOfHoursTable.OutOfHoursTable;
 
@@ -55,7 +55,7 @@ public final class OnRunning implements AbstractServiceState
 			HeteroFieldContainer params = new HeteroFieldContainer();
 			params.add(OutOfHoursTable.SALES_REC_NO, data.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER));
 			params.add(OutOfHoursTable.DATE, this.getDate());
-			ModifyQueryInvoker.execute(QueryType.INSERT_OUT_OF_HOURS, params);
+			ModifyQueryInvoker.execute(ModifyQueryTypeParams.INSERT_OUT_OF_HOURS, params);
 			orders+=data.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER)+", ";
 		}
 		return "Exiting: "+orders+" in Out of Hours table";

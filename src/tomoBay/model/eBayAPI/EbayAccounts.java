@@ -18,8 +18,8 @@ import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeNoParams;
 import tomoBay.model.sql.schema.accountsTable.AccountsTable;
 
 /**

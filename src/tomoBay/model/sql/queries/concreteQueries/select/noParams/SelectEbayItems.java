@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectNoParamsQuery;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectNoParamsQuery;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 
 /**
@@ -31,37 +31,13 @@ import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 public  final class SelectEbayItems extends AbstractSelectNoParamsQuery
 {
 	/**SQL query string**/
-	private String query ="SELECT * FROM ebay_items;";
+	private static final String query ="SELECT * FROM ebay_items;";
 	//
 	/**
 	 * default constructor
 	 */
 	public SelectEbayItems()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param NotUsed NOT USED
-	 * @return List<String[]> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the String[] represents a field.
-	 * 
-	 * The available fields for each element of the string[] are:
-	 * - String[0] = itemID
-	 * - String[1] = title
-	 * - String[2] = sellCondition
-	 * - String[3] = brand
-	 * - String[4] = partNo
-	 * - String[5] = notes
-	 * 
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute() throws SQLException
-	{
-		List<HeteroFieldContainer> selectResults = this.format(this.initQuery(query));
-		this.cleanup();
-		
-		return selectResults;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -87,4 +63,11 @@ public  final class SelectEbayItems extends AbstractSelectNoParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectEbayItems.query;}
 }

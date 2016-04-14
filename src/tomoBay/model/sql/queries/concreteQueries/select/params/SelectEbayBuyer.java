@@ -19,59 +19,42 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectParamsQuery;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery;
 import tomoBay.model.sql.schema.buyerTable.BuyerTable;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
- *
+ * This class represents a query that selects all the information contained within the ebay_buyers
+ * table, where the buyerID corresponds to the parameter provided to the execute(HeteroFieldContainer parameter) method.
+ * 
+ * This query takes the following parameter:
+ * - OrdersTable.BUYERID
+ * 
+ * The query returns a List<HeteroFieldContainer> containing the following fields:
+ * - BuyerTable.BUYERID
+ * - BuyerTable.NAME
+ * - BuyerTable.STREET1
+ * - BuyerTable.STREET2
+ * - BuyerTable.COUNTY
+ * - BuyerTable.CITY
+ * - BuyerTable.POSTCODE
+ * - BuyerTable.EMAIL
+ * - BuyerTable.PHONE
+ * 
  * @author Jan P.C. Hanson
  *
  */
 public  final class SelectEbayBuyer extends AbstractSelectParamsQuery
 {
 	/**SQL query string**/
-	private String query ="SELECT * FROM ebay_buyers WHERE buyerID=?";
-	//
+	private static final String query ="SELECT * FROM ebay_buyers WHERE buyerID=?";
+	
 	/**
 	 * default constructor
 	 */
 	public SelectEbayBuyer()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter single element array containing the buyerID
-	 * @return List<String[]> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the String[] represents a field.
-	 * 
-	 * The available fields for each element of the string[] are:
-	 * - String[0] = buyerID
-	 * - String[1] = name
-	 * - String[2] = street1
-	 * - String[3] = street2
-	 * - String[4] = county
-	 * - String[5] = city
-	 * - String[6] = postcode
-	 * - String[7] = email
-	 * - String[8] = phone no
-	 * 
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute(HeteroFieldContainer parameter) throws SQLException
-	{
-		super.initQuery(query);
-		
-		super.statement_M.setString(1, parameter.get(OrdersTable.BUYERID, ClassRef.STRING));
-		
-		ResultSet rs = super.statement_M.executeQuery();
-		List<HeteroFieldContainer> selectResults = this.format(rs);
-
-		super.cleanup();
-		
-		return selectResults;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -99,4 +82,18 @@ public  final class SelectEbayBuyer extends AbstractSelectParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
+	{QueryUtility.setVARCHARParam(this, parameter, OrdersTable.BUYERID, 1);}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectEbayBuyer.query;}
 }

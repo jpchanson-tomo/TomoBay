@@ -14,8 +14,8 @@ package tomoBay.model.sql.queries.factories.update;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractModifyQuery;
-import tomoBay.model.sql.queries.AbstractModifyQueryFactory;
+import tomoBay.model.sql.framework.queryFactories.AbstractModifyQueryParamsFactory;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.queries.concreteQueries.update.UpdateInvoiceStatus;
 
 /**
@@ -24,7 +24,7 @@ import tomoBay.model.sql.queries.concreteQueries.update.UpdateInvoiceStatus;
  * @author Jan P.C. Hanson
  *
  */
-public final class UpdateInvoiceStatusFactory implements AbstractModifyQueryFactory
+public final class UpdateInvoiceStatusFactory implements AbstractModifyQueryParamsFactory
 {
 	/**
 	 * default ctor
@@ -36,7 +36,7 @@ public final class UpdateInvoiceStatusFactory implements AbstractModifyQueryFact
 	 * @see openDMS.model.sql.queries.AbstractQueryFactory#make()
 	 */
 	@Override
-	public AbstractModifyQuery make()
+	public AbstractModifyQueryParams make()
 	{
 		return new UpdateInvoiceStatus();
 	}

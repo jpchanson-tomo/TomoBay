@@ -17,8 +17,8 @@ package tomoBay.model.dataTypes.order;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeParams;
 import tomoBay.model.sql.schema.transactionsTable.TransactionsTable;
 
 /**
@@ -78,9 +78,11 @@ public class Transaction
 	/**
 	 * retrieve the transaction information for this order from the database based on the order
 	 * ID passed in as a parameter.
-	 * @param orderID String containing the orderID for the order that should have info on it 
+	 * @param transactionID Long containing the transactionID for the order that should have info on it 
 	 * found
-	 * @return
+	 * @return HeteroFieldContainer containing the transaction information.
+	 * 
+	 * @see tomoBay.model.sql.queries.concreteQueries.select.params.SelectEbayTransactionByID
 	 */
 	private static final HeteroFieldContainer getTransactionInfo(Long transactionID)
 	{

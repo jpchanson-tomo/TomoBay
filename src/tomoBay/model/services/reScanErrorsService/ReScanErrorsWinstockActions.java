@@ -46,7 +46,7 @@ public final class ReScanErrorsWinstockActions
 			Stock errorCheck = new Stock();
 			for (String partNo : partList.getPartNumbers())
 			{
-					int result = errorCheck.requestStockLevel(partNo, BrandToCode.convert(item.get("Brand")));
+					int result = errorCheck.requestStockLevel(partNo, BrandToCode.convertToInt(item.get("Brand"))+"");
 					if(result == -8008135) {return true;}
 			}
 		}

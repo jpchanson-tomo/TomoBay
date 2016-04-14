@@ -17,7 +17,7 @@ package tomoBay.presenters.sales;
 import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.view.AbstractView;
 import tomoBay.view.ViewFactory;

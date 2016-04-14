@@ -29,7 +29,8 @@ import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 import tomoBay.security.SaneInput;
 
 /**
- *
+ * This presenter action takes an orderID string in its execute(String data) method, and returns
+ * nicely formatted JSON that can then be passed back to the requestor.
  * @author Jan P.C. Hanson
  *
  */
@@ -37,7 +38,7 @@ public final class OrderInfo implements AbstractPresenterAction
 {
 
 	/**
-	 * 
+	 * Default CTOR
 	 */
 	public OrderInfo()
 	{super();}
@@ -57,9 +58,9 @@ public final class OrderInfo implements AbstractPresenterAction
 	}
 	
 	/**
-	 * 
-	 * @param input
-	 * @return
+	 * assembles the various parts of the order and outputs it as a fully formed JSON string.
+	 * @param input the AbstractSalesDayBookLine to format as JSON.
+	 * @return JSON formatted String.
 	 */
 	private String formatResults(AbstractSalesDayBookLine input)
 	{
@@ -72,9 +73,9 @@ public final class OrderInfo implements AbstractPresenterAction
 	}
 	
 	/**
-	 * 
-	 * @param order
-	 * @return
+	 * formats the summary information for this Order
+	 * @param input the AbstractSalesDayBookLine that summary info needs to be extracted from.
+	 * @return JSON formatted string representing the summary information
 	 */
 	private String summaryInfo(AbstractSalesDayBookLine input)
 	{
@@ -91,9 +92,9 @@ public final class OrderInfo implements AbstractPresenterAction
 	}
 	
 	/**
-	 * 
-	 * @param buyer
-	 * @return
+	 * formats the buyer information associated with this order
+	 * @param buyer Buyer object associated with this order
+	 * @return JSON formatted string containing the buyer information
 	 */
 	private String buyerInfo(Buyer buyer)
 	{
@@ -110,9 +111,9 @@ public final class OrderInfo implements AbstractPresenterAction
 	}
 	
 	/**
-	 * 
-	 * @param invoice
-	 * @return
+	 * formats the transaction information associated with this order 
+	 * @param invoice The AbstractSalesDayBookLine that transaction info needs to be extracted from
+	 * @return JSON formatted String containing the transaction information
 	 */
 	private String transactionInfo(AbstractSalesDayBookLine invoice)
 	{
@@ -169,6 +170,11 @@ public final class OrderInfo implements AbstractPresenterAction
 		return transactionArray.toString();
 	}
 	
+	/**
+	 * formats the shipping information associated with this order
+	 * @param invoice the AbstractSalesDayBookLine containing the shipping information to be extracted
+	 * @return JSON formatted String containing the shipping information.
+	 */
 	private String shippingInfo(AbstractSalesDayBookLine invoice)
 	{ 
 		if(invoice.orderInfo().shippingCost() > 0 && invoice.orderInfo().buyer().street2().toUpperCase().contains("GSP")==false)

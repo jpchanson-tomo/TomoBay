@@ -1,4 +1,4 @@
-package tomoBay.model.sql.queries;
+package tomoBay.model.sql.framework;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.Map;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.framework.queryFactories.AbstractSelectNoParamsQueryFactory;
+import tomoBay.model.sql.framework.queryFactories.AbstractSelectParamsQueryFactory;
 import tomoBay.model.sql.queries.factories.select.noParams.SelectAccountsFactory;
 import tomoBay.model.sql.queries.factories.select.noParams.SelectEbayBuyersFactory;
 import tomoBay.model.sql.queries.factories.select.noParams.SelectEbayItemsErrorFactory;
@@ -32,6 +34,7 @@ import tomoBay.model.sql.queries.factories.select.noParams.SelectUncalculatedInv
 import tomoBay.model.sql.queries.factories.select.noParams.SelectUncalculatedOrdersFactory;
 import tomoBay.model.sql.queries.factories.select.noParams.SelectUninvoicedOrdersFactory;
 import tomoBay.model.sql.queries.factories.select.noParams.SelectUninvoicedOrdersNoErrorsFactory;
+import tomoBay.model.sql.queries.factories.select.params.SelectBrandAndPartNoByOrderIDFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectBrandByInvNoFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectEbayBuyerFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectEbayItemSpecificFactory;

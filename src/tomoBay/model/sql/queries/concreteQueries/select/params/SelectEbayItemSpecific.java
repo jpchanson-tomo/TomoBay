@@ -19,48 +19,40 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectParamsQuery;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 
 /**
- * This class represents a query that selects a specific item from the items table of the 
- * database, based on the itemID.
+ * This class represents a query that selects all fields related to a specific item from the items 
+ * table of the database, based on the itemID provided as a parameter to the execute(HeteroFieldContainer parameter) method.
+ * 
+ * This query takes the following parameter:
+ * - ItemsTable.ITEM_ID
+ * 
+ * The query returns a List<HeteroFieldContainer> containing the following fields:
+ * - ItemsTable.ITEM_ID
+ * - ItemsTable.TITLE
+ * - ItemsTable.CONDITION
+ * - ItemsTable.BRAND
+ * - ItemsTable.PART_NO
+ * - ItemsTable.NOTES
+ * - ItemsTable.ACCOUNT
+ * 
  * @author Jan P.C. Hanson
  *
  */
 public  final class SelectEbayItemSpecific extends AbstractSelectParamsQuery
 {
 	/**SQL query string**/
-	private String query ="SELECT * FROM ebay_items WHERE itemID=?;";
-	//
+	private static final String query ="SELECT * FROM ebay_items WHERE itemID=?;";
+	
 	/**
 	 * default constructor
 	 */
 	public SelectEbayItemSpecific()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter single element array where that single element corresponds to the 
-	 * itemID you wish to query. (all further elements will be ignored)
-	 * @return List<HeteroFieldContainer> representing the results of the query. The list contains only 1 
-	 * column the itemID, so each list element contains a String[1] which contains an itemID.
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute(HeteroFieldContainer parameter) throws SQLException
-	{
-		this.initQuery(query);
-		
-		this.statement_M.setLong(1, parameter.get(ItemsTable.ITEM_ID, ClassRef.LONG));
-		
-		ResultSet rs = this.statement_M.executeQuery();
-		List<HeteroFieldContainer> selectResults = this.format(rs);
-
-		this.cleanup();
-		return selectResults;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -86,4 +78,18 @@ public  final class SelectEbayItemSpecific extends AbstractSelectParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
+	{QueryUtility.setBIGINTParam(this, parameter, ItemsTable.ITEM_ID, 1);}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectEbayItemSpecific.query;}
 }

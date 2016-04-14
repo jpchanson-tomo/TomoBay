@@ -19,15 +19,43 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectParamsQuery;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery;
 import tomoBay.model.sql.schema.buyerTable.BuyerTable;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.model.sql.schema.transactionsTable.TransactionsTable;
 /**
- *
+ * This class represents a query that provides the majority of information associated with a particular
+ * orderID as passed to the execute(HeteroFieldContainer parameter) method.
+ * 
+ * This query takes the following parameter:
+ * - OrdersTable.ORDER_ID
+ * 
+ * The query returns a List<HeteroFieldContainer> containing the following fields:
+ * - OrdersTable.ORDER_ID
+ * - OrdersTable.SHIPPING_TYPE
+ * - OrdersTable.SALES_REC_NO
+ * - OrdersTable.CREATED_TIME
+ * - OrdersTable.ORDER_TOTAL
+ * - OrdersTable.INVOICED
+ * - ItemsTable.ITEM_ID
+ * - ItemsTable.TITLE
+ * - ItemsTable.BRAND
+ * - ItemsTable.PART_NO
+ * - ItemsTable.NOTES
+ * - TransactionsTable.QUANTITY
+ * - TransactionsTable.PRICE
+ * - TransactionsTable.SHIPPING_COST
+ * - BuyerTable.BUYERID
+ * - BuyerTable.NAME
+ * - BuyerTable.STREET1
+ * - BuyerTable.STREET2
+ * - BuyerTable.CITY
+ * - BuyerTable.COUNTY
+ * - BuyerTable.POSTCODE
+ * 
  * @author Jan P.C. Hanson
  *
  */
@@ -52,49 +80,6 @@ public  final class SelectFullOrderLine extends AbstractSelectParamsQuery
 	 */
 	public SelectFullOrderLine()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter orderId (1 element array only)
-	 * @return List<HeteroFieldContainer> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the HeteroFieldContainer represents a field.
-	 * 
-	 * The available fields for each element of the HeteroFieldContainer are:
-	 * - String[0] = orderID
-	 * - String[1] = shippingType
-	 * - String[2] = salesRecNo
-	 * - String[3] = createdTime
-	 * - String[4] = itemID
-	 * - String[5] = title
-	 * - String[6] = brand
-	 * - String[7] = partNo
-	 * - String[8] = quantity
-	 * - String[9] = price
-	 * - String[10] = notes
-	 * - String[11] = buyerID
-	 * - String[12] = name
-	 * - String[13] = street1
-	 * - String[14] = street2
-	 * - String[15] = city
-	 * - String[16] = county
-	 * - String[17] = postcode
-	 * - String[18] = shippingCost 
-	 * - String[19] = orderTotal
-	 * - String[20] = invoiced
-	 * 
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute(HeteroFieldContainer parameter) throws SQLException
-	{
-		super.initQuery(query);
-		super.statement_M.setString(1, parameter.get(OrdersTable.ORDER_ID, ClassRef.STRING));
-		
-		ResultSet resultset = super.statement_M.executeQuery();
-		List<HeteroFieldContainer> result = this.format(resultset);
-		
-		this.cleanup();
-		return result;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -134,4 +119,18 @@ public  final class SelectFullOrderLine extends AbstractSelectParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
+	{QueryUtility.setVARCHARParam(this, parameter, OrdersTable.ORDER_ID, 1);}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectFullOrderLine.query;}
 }

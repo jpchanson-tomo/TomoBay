@@ -1,0 +1,80 @@
+package tomoBay.model.sql.framework.queryTypes.modify;
+/** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+import tomoBay.model.sql.ConnectionManager;
+import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import java.sql.SQLException;
+
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+/**
+ * This is the Abstract Base class for all queries that modify the database in some way
+ * (INSERT/UPDATE/DELETE) and require some parameter(s) in order to function properly.
+ * @author Jan P.C. Hanson
+ *
+ */
+public abstract class AbstractModifyQueryParams extends AbstractModifyQuery
+{
+
+	/**
+	 * default CTOR
+	 */
+	public AbstractModifyQueryParams()
+	{super();}
+
+	
+	
+	/**
+	 * Executes the query using the provided parameters and returns a HeteroFieldContainer containing 
+	 * the result fields (refer to the specific derived class docs for individual info)
+	 * @param parameters HeteroFieldContainer containing the parameters that this query needs.
+	 * @return HeteroFieldContainer containing a NonDBFields.RESULT_CODE field only.
+	 * @throws SQLException
+	 */
+	public HeteroFieldContainer execute(HeteroFieldContainer parameters) throws SQLException
+	{
+		this.initQuery(this.queryString());
+		this.setParameters(parameters);
+		int resultCode = super.statement().executeUpdate();
+		super.cleanup();
+		parameters.add(NonDBFields.RESULT_CODE, resultCode);
+		return parameters;
+	}
+	
+	/**
+	 * Used by derived classes to define the Query string to be used in the query.
+	 * @return String containing the JDBC query string
+	 */
+	protected abstract String queryString();
+	
+	/**
+	 * Used by derived classes to set the parameters for this particular query
+	 * @throws SQLException 
+	 * @throws ClassCastException 
+	 */
+	protected abstract void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException;
+	
+	/**
+	 * initialise the connection and statement and set transaction variables.
+	 * @param query String containing the sql query
+	 * @throws SQLException
+	 */
+	private void initQuery(String query) throws SQLException
+	{
+		this.connection_M = ConnectionManager.instance().getConnection();
+		this.connection_M.setAutoCommit(false);
+		this.statement_M = this.connection_M.prepareStatement(query);
+	}
+}

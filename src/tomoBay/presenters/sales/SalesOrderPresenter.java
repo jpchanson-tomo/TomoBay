@@ -20,7 +20,7 @@ import tomoBay.helpers.SortOrders;
 import tomoBay.model.dataTypes.ServerStatus;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 import tomoBay.presenters.AbstractPresenter;
 import tomoBay.presenters.helpers.pickeability.Pickeablity;

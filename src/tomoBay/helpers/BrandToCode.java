@@ -15,6 +15,10 @@ package tomoBay.helpers;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.helpers.NoImports;
+import gnu.trove.map.hash.THashMap;
+
+import java.util.Map;
+
 /**
  * This helper class converts a generic brand string into a brand code specific to the winstock
  * http api.
@@ -24,6 +28,23 @@ import tomoBay.helpers.NoImports;
 @SuppressWarnings("unused")
 public class BrandToCode
 {
+	/**definition of the Citroes brandCode**/
+	private static final String PSA = "C";
+	/**definition of the Ford brandCode**/
+	private static final String FORD = "F";
+	/**definition of the prestige brandCode**/
+	private static final String PRESTIGE = "P";
+	
+	/**
+	 * mapping of string brandcode to integer brandcode
+	 */
+	private static final Map<String, Integer> intMap_M = new THashMap<String, Integer>()
+	{{
+		put("C", 3);
+		put("F", 0);
+		put("P", 8);
+	}};
+	
 	/**
 	 * defualt ctor
 	 */
@@ -33,18 +54,28 @@ public class BrandToCode
 	/**
 	 * converts a string like "citroen" or "fOrd" to a brandcode specific to winstock.
 	 * @param brand String like "Citroen" or "Ford" to a brandcode
-	 * @return char brand identifier, C for peugeot/citroen/psa, F for ford, P for everything 
+	 * @return String brand identifier, C for peugeot/citroen/psa, F for ford, P for everything 
 	 * else.
 	 */
+	@Deprecated
 	public static String convert(String brand)
 	{
 		if (brand.toLowerCase().contains("citroen")
 			|| brand.toLowerCase().contains("peugeot")
 			|| brand.toLowerCase().contains("psa"))
-		{return "C";}
+		{return BrandToCode.PSA;}
 		else if (brand.toLowerCase().contains("ford"))
-		{return "F";}
+		{return BrandToCode.FORD;}
 		else
-		{return "P";}
+		{return BrandToCode.PRESTIGE;}
 	}
+	
+	/**
+	 * converts converts a string like "citroen" or "fOrd" to a brandcode integer specific to winstock.
+	 * @param brand brand String like "Citroen" or "Ford" to a brandcode
+	 * @return String brand identifier, C for peugeot/citroen/psa, F for ford, P for everything 
+	 * else.
+	 */
+	public static int convertToInt(String brand)
+	{return BrandToCode.intMap_M.get(BrandToCode.convert(brand));}
 }

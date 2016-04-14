@@ -17,20 +17,27 @@ package tomoBay.model.sql.queries.concreteQueries.insert;
 
 import java.sql.SQLException;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractModifyQuery;
-import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.schema.outOfHoursTable.OutOfHoursTable;
 /**
- *
+ * This class represents a query that inserts a new entry into the outOfHours table in the database.
+ * 
+ * This query takes the following parameters:
+ * - OutOfHoursTable.SALES_REC_NO
+ * - OutOfHoursTable.DATE
+ * 
+ * These should be wrapped in a HeteroFieldContainer and passed to the execute(HeteroFieldContainer parameters)
+ * method in order to run the query.
+ * 
  * @author Jan P.C. Hanson
  *
  */
-public  final class InsertOutOfHoursOrders extends AbstractModifyQuery
+public  final class InsertOutOfHoursOrders extends AbstractModifyQueryParams
 {
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO out_of_hours (salesRecNo, date)"
+	private static final String query ="INSERT IGNORE INTO out_of_hours (salesRecNo, date)"
 			+ "VALUES (?,?);";
 	
 	/**
@@ -38,26 +45,21 @@ public  final class InsertOutOfHoursOrders extends AbstractModifyQuery
 	 */
 	public InsertOutOfHoursOrders()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter an array of strings where the 0th element is the parameter for the 
-	 * first column
-	 * - col1 = int(10):salesRecNo
-	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
-	 * @throws SQLException
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#queryString()
 	 */
-	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
+	@Override
+	protected String queryString()
+	{return InsertOutOfHoursOrders.query;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
 	{
-		this.initQuery(query);
-		this.statement_M.setInt(1, parameter.get(OutOfHoursTable.SALES_REC_NO, ClassRef.INTEGER));						//salesRecNo
-		this.statement_M.setDate(2, parameter.get(OutOfHoursTable.DATE, ClassRef.DATE));					//date
-		
-		int resultCode = statement_M.executeUpdate();
-		this.cleanup();
-		
-		parameter.add(NonDBFields.RESULT_CODE, resultCode);
-		return parameter;
+		QueryUtility.setINTEGERParam(this, parameter, OutOfHoursTable.SALES_REC_NO, 1);
+		QueryUtility.setDATEParam(this, parameter, OutOfHoursTable.DATE, 2);
 	}
 }

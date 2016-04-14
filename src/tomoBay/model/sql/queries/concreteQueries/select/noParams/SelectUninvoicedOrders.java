@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectNoParamsQuery;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectNoParamsQuery;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
  * This class represents a query that selects all data from the orders table that is not
@@ -40,31 +40,6 @@ public  final class SelectUninvoicedOrders extends AbstractSelectNoParamsQuery
 	 */
 	public SelectUninvoicedOrders()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter NOT USED for this query.
-	 * @return List<String[]> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the String[] represents a field.
-	 * 
-	 * The available fields for each element of the string[] are:
-	 * - String[0] = orderID
-	 * - String[1] = buyerID
-	 * - String[2] = salesRecNo
-	 * - String[3] = shippingType
-	 * - String[4] = createdTime
-	 * - String[5] = invoiced
-	 * - String[6] = account
-	 * 
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute() throws SQLException
-	{
-		List<HeteroFieldContainer> result = this.format(super.initQuery(query));
-		super.cleanup();
-		
-		return result;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -91,4 +66,11 @@ public  final class SelectUninvoicedOrders extends AbstractSelectNoParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectUninvoicedOrders.query;}
 }

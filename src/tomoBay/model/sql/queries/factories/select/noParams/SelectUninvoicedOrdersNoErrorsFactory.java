@@ -1,7 +1,7 @@
 package tomoBay.model.sql.queries.factories.select.noParams;
 
-import tomoBay.model.sql.queries.AbstractSelectNoParamsQuery;
-import tomoBay.model.sql.queries.AbstractSelectNoParamsQueryFactory;
+import tomoBay.model.sql.framework.queryFactories.AbstractSelectNoParamsQueryFactory;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectNoParamsQuery;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify

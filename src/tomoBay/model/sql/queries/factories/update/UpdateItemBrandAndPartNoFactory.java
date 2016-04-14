@@ -14,8 +14,8 @@ package tomoBay.model.sql.queries.factories.update;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractModifyQuery;
-import tomoBay.model.sql.queries.AbstractModifyQueryFactory;
+import tomoBay.model.sql.framework.queryFactories.AbstractModifyQueryParamsFactory;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.queries.concreteQueries.update.UpdateItemBrandAndPartNo;
 /**
  * create an UpdateItemBrandAndPartNo query object
@@ -23,7 +23,7 @@ import tomoBay.model.sql.queries.concreteQueries.update.UpdateItemBrandAndPartNo
  * @author Jan P.C. Hanson
  *
  */
-public final class UpdateItemBrandAndPartNoFactory implements AbstractModifyQueryFactory
+public final class UpdateItemBrandAndPartNoFactory implements AbstractModifyQueryParamsFactory
 {
 	/**
 	 * default ctor
@@ -35,6 +35,6 @@ public final class UpdateItemBrandAndPartNoFactory implements AbstractModifyQuer
 	 * make the query
 	 * @return the query
 	 */
-	public AbstractModifyQuery make()
+	public AbstractModifyQueryParams make()
 	{return new UpdateItemBrandAndPartNo();}
 }

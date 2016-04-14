@@ -21,7 +21,7 @@ import java.util.List;
 import tomoBay.helpers.TimeStampFunctions;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
 import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 import tomoBay.model.sql.schema.outOfHoursTable.OutOfHoursTable;
 import tomoBay.presenters.AbstractPresenter;

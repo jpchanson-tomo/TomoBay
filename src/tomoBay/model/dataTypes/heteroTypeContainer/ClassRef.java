@@ -40,6 +40,8 @@ public final class ClassRef
 	public static final Class<Byte> BYTE = Byte.class;
 	/**a java.util.Date**/
 	public static final Class<Date> DATE = Date.class;
+	/**a Boolean**/
+	public static final Class<Boolean> BOOLEAN = Boolean.class;
 	/**
 	 * private ctor
 	 */

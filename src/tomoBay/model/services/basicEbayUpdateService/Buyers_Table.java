@@ -17,8 +17,8 @@ package tomoBay.model.services.basicEbayUpdateService;
 import java.sql.SQLException;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
 import tomoBay.model.sql.schema.buyerTable.BuyerTable;
 
 import com.ebay.soap.eBLBaseComponents.OrderType;
@@ -37,7 +37,6 @@ final class Buyers_Table
 	
 	/**
 	 * populates the Orders Table in the database with data grabbed from the ebay API
-	 * @param credentials API credentials.
 	 * @param orders list of orders.
 	 * @throws SQLException 
 	 */
@@ -55,7 +54,7 @@ final class Buyers_Table
 				else
 				{Buyers_Table.getAddress(order, insertVals);}
 				
-				ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_BUYERS,insertVals);
+				ModifyQueryInvoker.execute(ModifyQueryTypeParams.INSERT_EBAY_BUYERS,insertVals);
 			}
 		}
 	}

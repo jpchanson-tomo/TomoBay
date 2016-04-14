@@ -21,7 +21,6 @@ import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.eBayAPI.EbayAccounts;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
-import tomoBay.presenters.helpers.pickeability.PickeableStatus;
 import tomoBay.view.AbstractView;
 /**
  * This class is responsible for formatting the data passed to it by the SalesOrderPresenter and

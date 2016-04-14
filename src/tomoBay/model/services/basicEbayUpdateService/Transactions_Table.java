@@ -18,8 +18,8 @@ import java.sql.SQLException;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.services.helpers.EbayOrderCancellationStatus;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
 import tomoBay.model.sql.schema.transactionsTable.TransactionsTable;
 
 import com.ebay.soap.eBLBaseComponents.OrderType;
@@ -39,7 +39,6 @@ final class Transactions_Table
 	
 	/**
 	 * populates the Orders Table in the database with data grabbed from the ebay API
-	 * @param credentials API credentials.
 	 * @param orders list of orders.
 	 * @throws SQLException 
 	 */
@@ -66,7 +65,7 @@ final class Transactions_Table
 					insertVals.add(TransactionsTable.SHIPPING_COST, (float)shippingCost);
 	
 					if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
-					{ModifyQueryInvoker.execute(QueryType.INSERT_EBAY_TRANSACTIONS,insertVals);}
+					{ModifyQueryInvoker.execute(ModifyQueryTypeParams.INSERT_EBAY_TRANSACTIONS,insertVals);}
 				}
 			}
 		}

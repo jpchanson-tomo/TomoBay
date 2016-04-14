@@ -38,11 +38,13 @@ public final class TypeDef
 	public static final String BYTE = TypeDef.nameOf(ClassRef.BYTE);
 	/**a java.util.Date**/
 	public static final String DATE = TypeDef.nameOf(ClassRef.DATE);
+	/**a Boolean**/
+	public static final String BOOLEAN = TypeDef.nameOf(ClassRef.BOOLEAN);
 	
 	/**
 	 * helper method, converts a class object to its name
-	 * @param cla$$ the class to find the name of
+	 * @param clazz the class to find the name of
 	 * @return String representing the name of the class
 	 */
-	private static final String nameOf(Class<?> cla$$) {return cla$$.getCanonicalName();}
+	private static final String nameOf(Class<?> clazz) {return clazz.getCanonicalName();}
 }

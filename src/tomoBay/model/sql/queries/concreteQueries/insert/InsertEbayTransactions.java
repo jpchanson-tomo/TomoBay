@@ -16,21 +16,32 @@ package tomoBay.model.sql.queries.concreteQueries.insert;
  */
 import java.sql.SQLException;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractModifyQuery;
-import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.schema.transactionsTable.TransactionsTable;
 /**
  * This class represents a query that inserts transaction data into the transactions table of
  * the database.
+ * 
+ * This query requires the following parameters:
+ * - TransactionsTable.TRANSACTION_ID
+ * - TransactionsTable.ORDER_ID
+ * - TransactionsTable.ITEM_ID
+ * - TransactionsTable.QUANTITY
+ * - TransactionsTable.PRICE
+ * - TransactionsTable.SHIPPING_COST
+ * 
+ * These should be stored in a HeteroFieldContainer and passed to the execute(HeteroFieldContainer parameters) 
+ * method when you wish to run the query.
+ * 
  * @author Jan P.C. Hanson
  *
  */
-public  final class InsertEbayTransactions extends AbstractModifyQuery
+public  final class InsertEbayTransactions extends AbstractModifyQueryParams
 {
 	/**SQL query string**/
-	private String query ="INSERT IGNORE INTO ebay_transactions "
+	private static final String query ="INSERT IGNORE INTO ebay_transactions "
 			+ "(transactionID, orderID, itemID, quantity, price, shippingCost)"
 			+ "VALUES (?,?,?,?,?,?);";
 	
@@ -39,35 +50,25 @@ public  final class InsertEbayTransactions extends AbstractModifyQuery
 	 */
 	public InsertEbayTransactions()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter an array of strings where the 0th element is the parameter for the 
-	 * first column, the 1st element is the parameter for the 2nd column and so on. 
-	 * The Ebay Orders Table only has 4 columns so any element above the 3rd element will be ignored.
-	 * - col1 = transactionID:bigint(20)
-	 * - col2 = orderID:varchar(30)
-	 * - col3 = itemID:bigint(20) 
-	 * - col4 = quantity:int(7) 
-	 * - col5 = price:float
-	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
-	 * @throws SQLException
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#queryString()
 	 */
-	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
+	@Override
+	protected String queryString()
+	{return InsertEbayTransactions.query;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
 	{
-		this.initQuery(query);
-		this.statement_M.setLong(1, parameter.get(TransactionsTable.TRANSACTION_ID, ClassRef.LONG));
-		this.statement_M.setString(2, parameter.get(TransactionsTable.ORDER_ID, ClassRef.STRING));
-		this.statement_M.setLong(3, parameter.get(TransactionsTable.ITEM_ID, ClassRef.LONG));
-		this.statement_M.setInt(4, parameter.get(TransactionsTable.QUANTITY, ClassRef.INTEGER));
-		this.statement_M.setFloat(5, parameter.get(TransactionsTable.PRICE, ClassRef.FLOAT));
-		this.statement_M.setFloat(6, parameter.get(TransactionsTable.SHIPPING_COST, ClassRef.FLOAT));
-		
-		int resultCode = statement_M.executeUpdate();
-		this.cleanup();
-		
-		parameter.add(NonDBFields.RESULT_CODE, resultCode);
-		return parameter;
+		QueryUtility.setBIGINTParam(this, parameter, TransactionsTable.TRANSACTION_ID, 1);
+		QueryUtility.setVARCHARParam(this, parameter, TransactionsTable.ORDER_ID, 2);
+		QueryUtility.setBIGINTParam(this, parameter, TransactionsTable.ITEM_ID, 3);
+		QueryUtility.setINTEGERParam(this, parameter, TransactionsTable.QUANTITY, 4);
+		QueryUtility.setFLOATParam(this, parameter, TransactionsTable.PRICE, 5);
+		QueryUtility.setFLOATParam(this, parameter, TransactionsTable.SHIPPING_COST, 6);
 	}
 }

@@ -17,10 +17,10 @@ package tomoBay.model.services.reScanErrorsService;
 import java.util.List;
 
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeNoParams;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeNoParams;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 /**
  * This class encapsulates all the interactions that this class has with the database.
@@ -57,6 +57,6 @@ public final class ReScanErrorsDBActions
 		params.add(ItemsTable.NOTES, "");//blank note indicates no error.
 		params.add(ItemsTable.ITEM_ID, item.getID());
 									
-		ModifyQueryInvoker.execute(QueryType.UPDATE_ITEM_ERROR,params);
+		ModifyQueryInvoker.execute(ModifyQueryTypeParams.UPDATE_ITEM_ERROR,params);
 	}
 }

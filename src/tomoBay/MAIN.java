@@ -21,12 +21,12 @@ public final class MAIN
 	public static final void main(String[] args) throws Exception
 	{
 		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
-//		
+		
 		log.warn("*******************************PROGRAM START*******************************");
 		final HttpServer server = new HttpServer();
 		server.start(1337);
-		ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
 		
+		ServerStatus.instance().setStatus(ServerStatus.RunLevel.RUNNING);
 		final ServiceScheduler services = new ServiceScheduler(5);
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.EBAY_SERVICE));
 		services.add(ServiceFactory.make(ServiceFactory.ServiceType.OUT_OF_HOURS_SERVICE));
@@ -44,5 +44,15 @@ public final class MAIN
 										));
 		services.start(20);
 		
+//		HeteroFieldContainer parameters = new HeteroFieldContainer();
+//		parameters.add(OrderStatusTable.ORDER_ID, "331710471405-1263043868014");
+//		ModifyQueryInvoker.execute(ModifyQueryTypeParams.INSERT_ORDER_IN_ORDER_STATUS, parameters);
+//		ModifyQueryInvoker.execute(QueryType.DELETE_ORDER_FROM_ORDER_STATUS, parameters);
+//		List<HeteroFieldContainer> t = SelectQueryInvoker.execute(SelectQueryTypeParams.SELECT_EBAY_ORDER_BY_ID, parameters);
+//		for(HeteroFieldContainer f : t)
+//		{
+//			System.out.println(f.get(OrdersTable.INVOICED, ClassRef.INTEGER));
+//		}
+//		System.out.println(parameters.get(NonDBFields.RESULT_CODE, ClassRef.INTEGER));
 	}
 }

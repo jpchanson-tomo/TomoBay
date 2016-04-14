@@ -1,4 +1,7 @@
-package tomoBay.model.sql.queries;
+package tomoBay.model.sql.schema.orderStatusTable;
+
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,20 +17,33 @@ package tomoBay.model.sql.queries;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.concreteQueries.select.params.SelectBrandAndPartNoByOrderID;
+
 /**
- *
+ * this is the picking field of the order_status table in the database. It takes a binary value, 
+ * 0 means that this order has not yet been picked, 1 indicates that it has been picked.
+ * - TINYINT(1)
  * @author Jan P.C. Hanson
  *
  */
-public final class SelectBrandAndPartNoByOrderIDFactory implements AbstractSelectParamsQueryFactory
+public final class Picking implements AbstractField
 {
+	/**
+	 * 
+	 */
+	public Picking()
+	{super();}
 
 	/* (non-Javadoc)
-	 * @see tomoBay.model.sql.queries.AbstractSelectParamsQueryFactory#make()
+	 * @see tomoBay.model.dataTypes.heteroTypeContainer.AbstractField#type()
 	 */
 	@Override
-	public AbstractSelectParamsQuery make()
-	{return new SelectBrandAndPartNoByOrderID();}
+	public String type()
+	{return TypeDef.BOOLEAN;}
 
+	/* (non-Javadoc)
+	 * @see tomoBay.model.dataTypes.heteroTypeContainer.AbstractField#size()
+	 */
+	@Override
+	public int size()
+	{return 1;}
 }

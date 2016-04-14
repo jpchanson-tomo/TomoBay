@@ -1,10 +1,6 @@
-package tomoBay.model.sql.queries;
+package tomoBay.model.sql.schema.orderStatusTable;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-
-import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.dataTypes.heteroTypeContainer.AbstractField;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -20,29 +16,34 @@ import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
 
 /**
- *
+ * this is the packing field of the order_status table in the database. It takes a binary value, 
+ * 0 means that this order has not yet been packed, 1 indicates that it has been packed.
+ * - TINYINT(1)
  * @author Jan P.C. Hanson
  *
  */
-public abstract class AbstractSelectQuery extends AbstractDBQuery
+public final class Packing implements AbstractField
 {
-
 	/**
 	 * default ctor
 	 */
-	public AbstractSelectQuery()
+	public Packing()
 	{super();}
-	
-	/**
-	 * the results from a select query come in the form of a ResultSet object, this needs to be closed
-	 * before the connection can be closed, however once the Resultset is closed it is impossible to
-	 * get any data from it, so before it is closed the data needs transferring to a DBFieldContainer
-	 * object.
-	 * @param resultSet the ResultSet to format
-	 * @return DBFieldContainer containing the relevant data
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.dataTypes.heteroTypeContainer.AbstractField#type()
 	 */
-	protected abstract List<HeteroFieldContainer> format(ResultSet resultSet)throws SQLException;
-	
+	@Override
+	public String type()
+	{return TypeDef.BOOLEAN;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.dataTypes.heteroTypeContainer.AbstractField#size()
+	 */
+	@Override
+	public int size()
+	{return 1;}
 }

@@ -17,8 +17,6 @@ package tomoBay.model.dataTypes.heteroTypeContainer;
 import gnu.trove.map.hash.THashMap;
 
 import java.util.Map;
-
-import tomoBay.model.dataTypes.DualList;
 /**
  * This class represents a container of AbstractField types and a value associated with this field.
  * If you REALLY need to store heterogenous types in a container then this class may be useful, but 
@@ -62,7 +60,7 @@ public class HeteroFieldContainer
 	 * retrieve the the value of an AbstractField from this HeteroFieldContainer, the field should be 
 	 * of the same type as the type field.
 	 * @param field AbstractField to retrieve the value of
-	 * @param classDef the type of the field you wish to retrieve
+	 * @param classRef the type of the field you wish to retrieve
 	 * @return <T> the value of the AbstractDBField of Type type.
 	 * @throws ClassCastException due to mismatched types
 	 */

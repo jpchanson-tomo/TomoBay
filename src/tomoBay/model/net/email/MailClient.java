@@ -68,11 +68,14 @@ public final class MailClient
 	}
 	
 	/**
-	 * 
-	 * @param invoicedOrders
-	 * @param mailmanager
-	 * @param mailServer
-	 * @return
+	 * set up the email ready to use in the rest of the mail client
+	 * @param message The message that is the main body of the email
+	 * @param subject the subject line of the email
+	 * @param to array of email addresses that this email should be sent to
+	 * @param cc array of email addresses that should be CC'd in this email
+	 * @param bcc array of email addresses that should be BCC'd in this email
+	 * @param mailmanager The EmailDirector that is responsible for this email
+	 * @return Email completely se up email object that is ready to send
 	 * @throws AddressException
 	 * @throws MessagingException
 	 * @throws NullEmailObjectException

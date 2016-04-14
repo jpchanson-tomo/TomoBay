@@ -14,8 +14,8 @@ package tomoBay.model.sql.queries.factories.select.params;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractSelectParamsQuery;
-import tomoBay.model.sql.queries.AbstractSelectParamsQueryFactory;
+import tomoBay.model.sql.framework.queryFactories.AbstractSelectParamsQueryFactory;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery;
 import tomoBay.model.sql.queries.concreteQueries.select.params.SelectTransactionByOrder;
 
 /**

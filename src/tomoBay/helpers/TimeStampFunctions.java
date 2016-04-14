@@ -34,7 +34,7 @@ public class TimeStampFunctions
 	/**
 	 * this method compares the timestamp provided, with the current date to see if it is older
 	 * than the specified number of days.
-	 * @param daysAgo the number of days 
+	 * @param days the number of days 
 	 * @param timestamp the timestamp to compare, yyyy-MM-dd
 	 * @return true iff timestamp is older than the specified number of days ELSE false.
 	 * @throws ParseException 

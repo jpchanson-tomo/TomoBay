@@ -1,4 +1,4 @@
-package tomoBay.model.sql.queries;
+package tomoBay.model.sql.queries.factories.insert;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,16 +14,30 @@ package tomoBay.model.sql.queries;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.model.sql.framework.queryFactories.AbstractModifyQueryParamsFactory;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
+import tomoBay.model.sql.queries.concreteQueries.insert.InsertOrderInOrderStatus;
 /**
  *
  * @author Jan P.C. Hanson
  *
  */
-public interface AbstractSelectQueryFactory extends AbstractQueryFactory
+public final class InsertOrderInOrderStatusFactory implements AbstractModifyQueryParamsFactory
 {
 
+	/**
+	 * default CTOR
+	 */
+	public InsertOrderInOrderStatusFactory()
+	{super();}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.queries.AbstractModifyQueryFactory#make()
+	 */
 	@Override
-	public AbstractSelectQuery make();
+	public AbstractModifyQueryParams make()
+	{
+		return new InsertOrderInOrderStatus();
+	}
 
 }

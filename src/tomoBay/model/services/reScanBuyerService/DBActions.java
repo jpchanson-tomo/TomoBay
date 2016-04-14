@@ -15,10 +15,10 @@ package tomoBay.model.services.reScanBuyerService;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.ModifyQueryInvoker;
-import tomoBay.model.sql.queries.ModifyQueryInvoker.QueryType;
-import tomoBay.model.sql.queries.SelectQueryInvoker;
-import tomoBay.model.sql.queries.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.framework.ModifyQueryInvoker;
+import tomoBay.model.sql.framework.SelectQueryInvoker;
+import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
+import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeParams;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
  *
@@ -53,6 +53,6 @@ public final class DBActions
 	 * @return String result code.
 	 */
 	public static HeteroFieldContainer updateBuyerTable(HeteroFieldContainer updateInfo)
-	{return ModifyQueryInvoker.execute(QueryType.UPDATE_EBAY_BUYER, updateInfo);}
+	{return ModifyQueryInvoker.execute(ModifyQueryTypeParams.UPDATE_EBAY_BUYER, updateInfo);}
 
 }

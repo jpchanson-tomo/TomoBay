@@ -14,8 +14,8 @@ package tomoBay.model.sql.queries.factories.select.noParams;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractSelectNoParamsQuery;
-import tomoBay.model.sql.queries.AbstractSelectNoParamsQueryFactory;
+import tomoBay.model.sql.framework.queryFactories.AbstractSelectNoParamsQueryFactory;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectNoParamsQuery;
 import tomoBay.model.sql.queries.concreteQueries.select.noParams.SelectEbayItems;
 
 /**

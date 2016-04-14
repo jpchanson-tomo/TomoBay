@@ -1,9 +1,4 @@
 package tomoBay.model.sql.queries.concreteQueries.update;
-
-import java.sql.SQLException;
-
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
-import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -19,45 +14,50 @@ import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import tomoBay.model.sql.queries.AbstractModifyQuery;
-import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
+import java.sql.SQLException;
+
+import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
- *
+ * This class represents a query that updates the invoice status of a particular order.
+ * 
+ * This query takes the following parameters:
+ * - OrdersTable.INVOICED
+ * - OrdersTable.SALES_REC_NO
+ * 
+ * These should be stored in a HeteroFieldContainer and passed to the execute(HeteroFieldContainer parameters) 
+ * method in order to run the query.
+ * 
  * @author Jan P.C. Hanson
  *
  */
-public  final class UpdateInvoiceStatusSRN extends AbstractModifyQuery
+public  final class UpdateInvoiceStatusSRN extends AbstractModifyQueryParams
 {
 	/**SQL query string**/
-	private String query ="UPDATE ebay_orders SET invoiced=? WHERE salesRecNo=? AND account=?";
+	private static final String query ="UPDATE ebay_orders SET invoiced=? WHERE salesRecNo=? AND account=?";
 	
 	/**
 	 * default constructor
 	 */
 	public UpdateInvoiceStatusSRN()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter The list contains only 2
-	 * elements 1st element is invoiced status (0=not invoiceable, 1=partially invoiceable,
-	 * 3=invoiced), the second element is the orderID
-	 * @return List<String[]> representing the results of the query. The list contains only 1 
-	 * String[] which in turn contains only 1 element, this is the resultcode for the query.
-	 * @throws SQLException
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#queryString()
 	 */
-	public HeteroFieldContainer execute(HeteroFieldContainer parameter) throws SQLException
+	@Override
+	protected String queryString()
+	{return UpdateInvoiceStatusSRN.query;}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.modify.AbstractModifyQueryParams#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
 	{
-		super.initQuery(query);
-		super.statement_M.setInt(1, parameter.get(OrdersTable.INVOICED, ClassRef.INTEGER));
-		super.statement_M.setInt(2, parameter.get(OrdersTable.SALES_REC_NO, ClassRef.INTEGER));
-		super.statement_M.setInt(3, parameter.get(OrdersTable.ACCOUNT, ClassRef.INTEGER));
-		
-		int resultCode = super.statement_M.executeUpdate();
-		super.cleanup();
-		
-		parameter.add(NonDBFields.RESULT_CODE, resultCode);
-		return parameter;
+		QueryUtility.setINTEGERParam(this, parameter, OrdersTable.INVOICED, 1);
+		QueryUtility.setINTEGERParam(this, parameter, OrdersTable.SALES_REC_NO, 2);
 	}
 }

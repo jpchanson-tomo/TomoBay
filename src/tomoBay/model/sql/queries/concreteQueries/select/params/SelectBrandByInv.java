@@ -14,26 +14,33 @@ package tomoBay.model.sql.queries.concreteQueries.select.params;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.sql.queries.AbstractSelectParamsQuery;
+import tomoBay.model.sql.framework.QueryUtility;
+import tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery;
 import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 /**
- *
+ * This class represents a Query that selects the Brand value associated with a particular invoice
+ * number passed in as a parameter to the execute(HeteroFieldContainer parameter) method.
+ * 
+ * This query takes the following parameter:
+ * - OrdersTable.INVOICED
+ * 
+ * The query returns a List<HeteroFieldContainer> containing the following fields:
+ * - ItemsTable.BRAND
+ * 
  * @author Jan P.C. Hanson
  *
  */
 public final class SelectBrandByInv extends AbstractSelectParamsQuery
 {
 	/**SQL query string**/
-	private String query ="SELECT brand FROM ebay_items "
+	private static final String query ="SELECT brand FROM ebay_items "
 						+ "INNER JOIN ebay_transactions ON ebay_items.itemID=ebay_transactions.itemID "
 						+ "INNER JOIN ebay_orders ON ebay_orders.orderID=ebay_transactions.orderID "
 						+ "WHERE invoiced=?;";
@@ -43,31 +50,7 @@ public final class SelectBrandByInv extends AbstractSelectParamsQuery
 	 */
 	public SelectBrandByInv()
 	{super();}
-	
-	/**
-	 * execute the query
-	 * @param parameter invoice number  
-	 * @return List<String[]> representing the results of the query. Each element in the list
-	 * represents a row of the database and each element of the String[] represents a field.
-	 * 
-	 * The available fields for each element of the string[] are:
-	 * - String[0] = brand
-	 * 
-	 * @throws SQLException
-	 */
-	public List<HeteroFieldContainer> execute(HeteroFieldContainer parameter) throws SQLException
-	{
-		super.initQuery(query);
-		
-		this.statement_M.setInt(1, parameter.get(OrdersTable.INVOICED, ClassRef.INTEGER));
-		
-		ResultSet rs = this.statement_M.executeQuery();
-		List<HeteroFieldContainer> selectResults = this.format(rs);
 
-		this.cleanup();
-		
-		return selectResults;
-	}
 	
 	/**
 	 * formats the ResultSet (returned from the executed query) as a string
@@ -87,4 +70,18 @@ public final class SelectBrandByInv extends AbstractSelectParamsQuery
 		}
 		return rows;
 	}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.select.AbstractSelectParamsQuery#setParameters(tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer)
+	 */
+	@Override
+	protected void setParameters(HeteroFieldContainer parameter) throws ClassCastException, SQLException
+	{QueryUtility.setINTEGERParam(this, parameter, OrdersTable.INVOICED, 1);}
+
+	/* (non-Javadoc)
+	 * @see tomoBay.model.sql.framework.queryTypes.AbstractDBQuery#queryString()
+	 */
+	@Override
+	protected String queryString()
+	{return SelectBrandByInv.query;}
 }

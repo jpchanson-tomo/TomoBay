@@ -1,4 +1,4 @@
-package tomoBay.model.sql.queries;
+package tomoBay.model.sql.framework.queryTypes;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -31,8 +31,22 @@ public abstract class AbstractDBQuery
 	/**reference to the JDBC Database connection**/
 	protected Connection connection_M = null;
 	
+	
 	/**
-	 * do cleanup after the query has been executed
+	 * get the statement object associated with this query
+	 * @return
+	 */
+	public PreparedStatement statement()
+	{return this.statement_M;}
+	
+	/**
+	 * Used by derived classes to define the Query string to be used in the query.
+	 * @return String containing the JDBC query string
+	 */
+	protected abstract String queryString();
+	
+	/**
+	 * commits the transaction and does cleanup after the query has been executed
 	 * @throws SQLException
 	 */
 	protected void cleanup() throws SQLException
