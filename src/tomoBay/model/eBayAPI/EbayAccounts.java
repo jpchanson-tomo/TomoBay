@@ -84,7 +84,7 @@ public final class EbayAccounts
 	
 	/**
 	 * retrieve the ebay api key for the account name specified
-	 * @param the account name to find the api key of
+	 * @param  accountNamethe account name to find the api key of
 	 * @return String containing the ebay api key for the account specified
 	 */
 	public static String apiKey (String accountName)

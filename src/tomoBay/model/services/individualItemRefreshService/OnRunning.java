@@ -85,6 +85,8 @@ public final class OnRunning implements AbstractServiceState
 	/**
 	 * use the itemID passed in to find out information about a specific eBay item.
 	 * @param itemID the ID of a particular eBay Item (listing)
+	 * @param account integer representing the account that is requesting the item data 
+	 * (as defined in the ebay_accounts table of the database)
 	 * @return ItemType eBay API datatype containing the details of a particular item.
 	 */
 	private ItemType getItemData(Long itemID, int account)

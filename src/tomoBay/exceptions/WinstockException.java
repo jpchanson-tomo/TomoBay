@@ -16,6 +16,7 @@ package tomoBay.exceptions;
  */
 
 /**
+ * An Exception that relates to winstock functionality
  * 
  * @author Jan P.C. Hanson
  *

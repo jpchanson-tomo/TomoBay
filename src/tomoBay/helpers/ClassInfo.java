@@ -14,13 +14,15 @@ package tomoBay.helpers;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
  * This Class provides static methods to query the info of the given class. Helper for loggers
- * and the like.
+ * and the like. AVOID USING UNLESS ABSOLUTELY NEEDED.....THIS USES REFLECTION.....ITS FUGLY
+ * 
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public final class ClassInfo
 {
 

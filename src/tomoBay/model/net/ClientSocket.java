@@ -54,6 +54,7 @@ public class ClientSocket
 	/**
 	 * sends the byte array to the socket
 	 * @param payload byte[] containing the information to send to the socket
+	 * @param responseSize integer representing the number of bytes in the response.
 	 * @throws IOException
 	 */
 	public byte[] send(byte[] payload, int responseSize) throws IOException

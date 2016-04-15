@@ -17,7 +17,8 @@ package tomoBay.exceptions;
  */
 import tomoBay.helpers.NoImports;
 /**
- *
+ * Exception that relates to issues with the JSONEntity
+ * 
  * @author Jan P.C. Hanson
  *
  */
@@ -26,34 +27,30 @@ public class JSONentityException extends RuntimeException
 {
 
 	/**
-	 * 
+	 * needed to avoid serialisation issues
 	 */
 	private static final long serialVersionUID = 7731803793751501786L;
 
 	/**
-	 * 
+	 * default ctor
 	 */
 	public JSONentityException()
-	{
-		// TODO Auto-generated constructor stub
-	}
+	{super();}
 
 	/**
-	 * @param name
+	 * ctor that uses the name provided to give a more detailed explanation of the error
+	 * @param name description of the problem
 	 */
 	public JSONentityException(String name)
-	{
-		super(name);
-		// TODO Auto-generated constructor stub
-	}
+	{super(name);}
 	
 	/**
-	 * @param name
+	 * ctor that uses the name provided as well as a throwable object to give a more detailed explanation
+	 * of the exception
+	 * @param name description of the problem
+	 * @param t throweable usually an exception to provide a more detailed error
 	 */
 	public JSONentityException(String name, Throwable t)
-	{
-		super(name, t);
-		// TODO Auto-generated constructor stub
-	}
+	{super(name, t);}
 
 }

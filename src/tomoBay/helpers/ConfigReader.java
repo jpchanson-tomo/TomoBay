@@ -1,5 +1,4 @@
 package tomoBay.helpers;
-
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -32,7 +31,7 @@ import org.w3c.dom.NodeList;
 public class ConfigReader
 {
 	/**
-	 * Ddefault ctor
+	 * Default ctor
 	 */
 	public ConfigReader()
 	{super();}
@@ -55,6 +54,13 @@ public class ConfigReader
 		return tmp;
 	}
 	
+	/**
+	 * reads the whole config file into a string
+	 * @param filePath the path to the config file (without the file name on the end)
+	 * @param fileName the name of the file as it is on the file system
+	 * @param charSet the character set to use to encode the result.
+	 * @return String containing the contents of the config file.
+	 */
 	public static String getConfig(String filePath, String fileName, String charSet)
 	{
 		Charset charset = Charset.forName(charSet);

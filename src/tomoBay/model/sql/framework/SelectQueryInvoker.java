@@ -60,51 +60,51 @@ public final class SelectQueryInvoker
 	/** Defensive enum defines the acceptable inputs to the factory**/
 	public enum SelectQueryTypeNoParams 
 		{
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItemsNotInTransactions}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItemsNotInTransactions**/
 			SELECT_EBAY_ITEMS_NOT_IN_TRANSACTIONS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayOrders}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayOrders}**/
 			SELECT_EBAY_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItems}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItems**/
 			SELECT_EBAY_ITEMS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectUninvoicedOrders}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectUninvoicedOrders**/
 			SELECT_UNINVOICED_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectUninvoicedOrdersNoErrors}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectUninvoicedOrdersNoErrors**/
 			SELECT_UNINVOICED_ORDERS_NO_ERRORS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItemsError}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItemsError**/
 			SELECT_EBAY_ITEMS_ERROR,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectInvoicedOrders}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectInvoicedOrders**/
 			SELECT_INVOICED_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectUncalculatedInvoices}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectUncalculatedInvoices**/
 			SELECT_UNCALCULATED_INVOICES,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectUncalculatedOrders}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectUncalculatedOrders**/
 			SELECT_UNCALCULATED_ORDERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayBuyers}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayBuyers**/
 			SELECT_EBAY_BUYERS,
-			/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectAccounts}**/
+			/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectAccounts**/
 			SELECT_ACCOUNTS,
 		}
 	/** Defensive enum defines the acceptable inputs to the factory**/
 	public enum SelectQueryTypeParams 
 	{
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayOrderByID}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayOrderByID**/
 		SELECT_EBAY_ORDER_BY_ID,
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayOrderByBuyer}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayOrderByBuyer**/
 		SELECT_EBAY_ORDER_BY_BUYER,
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectBrandByInvNo}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectBrandByInvNo**/
 		SELECT_BRAND_BY_INV_NO,
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayBuyer}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayBuyer**/
 		SELECT_EBAY_BUYER,
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItemSpecific}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayItemSpecific**/
 		SELECT_EBAY_ITEM_SPECIFIC,
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectTransactionByOrder}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectTransactionByOrder**/
 		SELECT_TRANSACTION_BY_ORDERID,
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectFullOrderLine}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectFullOrderLine**/
 		SELECT_FULL_ORDER_LINE,
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectOutOfHoursOrders}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectOutOfHoursOrders**/
 		SELECT_OUT_OF_HOURS_ORDERS,
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectEbayTransactionByID}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectEbayTransactionByID**/
 		SELECT_EBAY_TRANSACTION_BY_ID,
-		/**@see {@link tomoBay.model.sql.queries.concreteQueries.select.SelectBrandAndPartNoByOrderID}**/
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectBrandAndPartNoByOrderID**/
 		SELECT_BRAND_AND_PARTNO_BY_ORDERID,
 	}
 	/**internal map holds factory objects created static final to make threadsafe**/
@@ -141,11 +141,10 @@ public final class SelectQueryInvoker
 	
 	/**
 	 * execute a requested query
-	 * @param query one of the enum values provided by QueryType enum.
-	 * @param parameters String[] of parameters specific to the query you are using, see
-	 * individual query docs.
-	 * @return List<String[]>
-	 * @throws SQLException
+	 * @param query one of the enum values provided by noParamsMap_M enum.
+	 * @return List<HeteroFieldContainer> where each element in the list corresponds to a database
+	 * record, and each record (HeteroFieldContainer) contains the fields specific to the query that 
+	 * was called (see individual query documentation)
 	 */
 	public static List<HeteroFieldContainer> execute(SelectQueryTypeNoParams query)
 	{
@@ -160,6 +159,15 @@ public final class SelectQueryInvoker
 		}
 	}
 	
+	/**
+	 * executes the requested query (one that requires parameters)
+	 * @param query one of the enum constants contained in the paramsMap_M Enum
+	 * @param parameters HeteroFiledContainer containing the fields and values that are required for
+	 * the individual query (see individual query documentation)
+	 * @return List<HeteroFieldContainer> where each element in the list corresponds to a database
+	 * record, and each record (HeteroFieldContainer) contains the fields specific to the query that 
+	 * was called (see individual query documentation)
+	 */
 	public static List<HeteroFieldContainer> execute(SelectQueryTypeParams query , HeteroFieldContainer parameters)
 	{
 		try

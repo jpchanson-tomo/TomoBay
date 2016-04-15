@@ -27,6 +27,7 @@ public class StandardInvoiceLine extends AbstractLineItem
 {
 	/**
 	 * creates an invoiceLine using the transactionNo and partIndex provided
+	 * @param invoice the invoice AbstractSalesDayBookLine that this StandardInvoiceLine is contained in.
 	 * @param transactionNo the index of the transaction to use.
 	 * @param partIndex the partIndex within the specified Transaction.
 	 */

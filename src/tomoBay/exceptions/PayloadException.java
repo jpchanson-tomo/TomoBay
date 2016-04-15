@@ -31,25 +31,21 @@ public class PayloadException extends Exception
 	 * default ctor
 	 */
 	public PayloadException()
-	{
-		super();
-	}
+	{super();}
 	
 	/**
 	 * ctor with message
 	 * @param message
 	 */
 	public PayloadException(String message)
-	{
-		super(message);
-	}
+	{super(message);}
 	
 	/**
-	 * ctor with message and cause
-	 * @param message
+	 * ctor that uses the name provided as well as a throwable object to give a more detailed explanation
+	 * of the exception
+	 * @param message description of the problem
+	 * @param e Exception usually an exception to provide a more detailed error
 	 */
 	public PayloadException(String message, Exception e)
-	{
-		super(message, e);
-	}
+	{super(message, e);}
 }

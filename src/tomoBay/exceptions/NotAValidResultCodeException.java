@@ -16,7 +16,8 @@ package tomoBay.exceptions;
  */
 
 /**
- *
+ * Exception that indicates that some functionality that interacts with winstock has passed back a 
+ * resultcode that is not valid.
  * @author Jan P.C. Hanson
  *
  */
@@ -31,16 +32,12 @@ public class NotAValidResultCodeException extends WinstockException
 	 * default ctor
 	 */
 	public NotAValidResultCodeException()
-	{
-		super();
-	}
+	{super();}
 	
 	/**
 	 * ctor with message
 	 * @param message
 	 */
 	public NotAValidResultCodeException(String message)
-	{
-		super(message);
-	}
+	{super(message);}
 }

@@ -31,16 +31,12 @@ public class MailException extends Exception
 	 * default ctor
 	 */
 	public MailException()
-	{
-		super();
-	}
+	{super();}
 	
 	/**
 	 * ctor with message
 	 * @param message
 	 */
 	public MailException(String message)
-	{
-		super(message);
-	}
+	{super(message);}
 }

@@ -61,7 +61,7 @@ public class HeteroFieldContainer
 	 * of the same type as the type field.
 	 * @param field AbstractField to retrieve the value of
 	 * @param classRef the type of the field you wish to retrieve
-	 * @return <T> the value of the AbstractDBField of Type type.
+	 * @return T the value of the AbstractDBField of Type type.
 	 * @throws ClassCastException due to mismatched types
 	 */
 	@SuppressWarnings("unchecked")

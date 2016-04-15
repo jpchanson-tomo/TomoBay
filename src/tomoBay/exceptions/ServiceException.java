@@ -31,23 +31,20 @@ public class ServiceException extends RuntimeException
 	 * default ctor
 	 */
 	public ServiceException()
-	{
-		super();
-	}
+	{super();}
 	
 	/**
 	 * ctor with message
 	 * @param message
 	 */
 	public ServiceException(String message)
-	{
-		super(message);
-	}
+	{super(message);}
 	
 	/**
-	 * ctor with message and cause
-	 * @param message
-	 * @param cause
+	 * ctor that uses the name provided as well as a throwable object to give a more detailed explanation
+	 * of the exception
+	 * @param message description of the problem
+	 * @param cause throweable usually an exception to provide a more detailed error
 	 */
 	public ServiceException(String message, Throwable cause)
 	{super(message, cause);}

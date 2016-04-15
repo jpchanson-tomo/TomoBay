@@ -34,16 +34,12 @@ public class NullEmailServerObjectException extends MailException
  	* default ctor
  	*/
 	public NullEmailServerObjectException()
-	{
-		super();
-	}
+	{super();}
 
 	/**
  	* 	ctor with message
  	* @param message
  	*/
 	public NullEmailServerObjectException(String message)
-	{
-		super(message);
-	}
+	{super(message);}
 }

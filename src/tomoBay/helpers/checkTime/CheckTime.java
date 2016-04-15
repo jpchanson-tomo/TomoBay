@@ -21,12 +21,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 /**
- *
+ * This class provides static access to functions relating time, primarily to see if the current time
+ * is within the range set in the config file.
+ * 
  * @author Jan P.C. Hanson
  *
  */
 public class CheckTime
 {
+	/**static map which equates Calendar enum constants to Day objects**/
 	private static Map<Integer, Day> today_M = new THashMap<Integer, Day>()
 			{{
 				put(Calendar.MONDAY, new Monday());
@@ -39,7 +42,7 @@ public class CheckTime
 			}};
 	
 	/**
-	 * 
+	 * default ctor
 	 */
 	private CheckTime()
 	{super();}
@@ -58,8 +61,8 @@ public class CheckTime
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * if before the start time for today returns yesterdays date otherwise returns todays date.
+	 * @return Calendar object returning the date that any out of hours should be registerd under
 	 */
 	public static Date OutOfHoursDate()
 	{
@@ -71,8 +74,8 @@ public class CheckTime
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * does what it says on the tin.
+	 * @return String containing the current timestamp in the yyyy-mm-dd hh:mm:ss format
 	 */
 	public static String currentTimeStamp()
 	{
@@ -83,7 +86,7 @@ public class CheckTime
 	
 	/**
 	 * queries the current time 
-	 * @return
+	 * @return int containing the current time
 	 */
 	private static int currentTime()
 	{

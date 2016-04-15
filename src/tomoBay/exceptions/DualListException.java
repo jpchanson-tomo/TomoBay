@@ -16,7 +16,8 @@ package tomoBay.exceptions;
  */
 
 /**
- *
+ * An Exception that relates to the DualList data type
+ * 
  * @author Jan P.C. Hanson
  *
  */
@@ -31,16 +32,12 @@ public class DualListException extends RuntimeException
 	 * default ctor
 	 */
 	public DualListException()
-	{
-		super();
-	}
+	{super();}
 	
 	/**
-	 * ctor with message
-	 * @param message
+	 * ctor that uses the name provided to give a more detailed explanation of the error
+	 * @param message description of the problem
 	 */
 	public DualListException(String message)
-	{
-		super(message);
-	}
+	{super(message);}
 }

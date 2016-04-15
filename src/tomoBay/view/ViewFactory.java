@@ -109,16 +109,14 @@ public final class ViewFactory
 	{return new OutOfHoursView();}
 	
 	/**
-	 * 
-	 * @param outOfHoursPresenter
+	 * @param crmOverviewPresenter
 	 * @return
 	 */
 	public AbstractView visit(CRMOverviewPresenter crmOverviewPresenter)
 	{return new CRMOverviewView();}
 	
 	/**
-	 * 
-	 * @param outOfHoursPresenter
+	 * @param crmDetailPresenter
 	 * @return
 	 */
 	public AbstractView visit(CRMDetailPresenter crmDetailPresenter)

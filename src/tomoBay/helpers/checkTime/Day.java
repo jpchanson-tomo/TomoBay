@@ -14,23 +14,24 @@ package tomoBay.helpers.checkTime;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
  * represents a working day on which the system should operate between specific hours.
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public interface Day
 {
 	/**
 	 * defines the start time for this Day derived class
-	 * @return
+	 * @return int representing the start of business hours for this derived Day object
 	 */
 	public int startTime();
 	
 	/**
 	 * defines the end time for this Day derived class
-	 * @return
+	 * @return int representing the end of business hours for this derived Day object
 	 */
 	public int endTime();
 }

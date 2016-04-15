@@ -14,12 +14,13 @@ package tomoBay.helpers;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
- *
+ * This Enum provides constants which refer to tags in the config file
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public enum Config
 {
 	MON_ST("MONDAY_START_TIME"), 

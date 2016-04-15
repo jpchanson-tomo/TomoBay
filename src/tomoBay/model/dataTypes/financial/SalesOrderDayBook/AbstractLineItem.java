@@ -46,6 +46,7 @@ public abstract class AbstractLineItem
 	
 	/**
 	 * add or subtract the given amount of pennies from this line item
+	 * @param invoice the AbstractSalesDayBookLine that this AbstractLineItem is contained in.
 	 * @param pennyAdjustment (+ve) values for positive adjustment (-ve) values for negative adjustment.
 	 */
 	public void adjustPrice(AbstractSalesDayBookLine invoice, int pennyAdjustment)

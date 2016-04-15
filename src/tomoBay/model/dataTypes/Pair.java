@@ -28,10 +28,10 @@ public final class Pair<X,Y>
 	private final Y yValue_M;
 	
 	/**
-	 * Instantiates the pair with the x and y values provided, where x is of type <X> and y is of 
-	 * type <Y>
-	 * @param xVal <X> the x-value of this pair
-	 * @param yVal <Y> the y-value of this pair
+	 * Instantiates the pair with the x and y values provided, where x is of type X and y is of 
+	 * type Y
+	 * @param xVal X the x-value of this pair
+	 * @param yVal Y the y-value of this pair
 	 */
 	public Pair(X xVal, Y yVal)
 	{
@@ -42,13 +42,13 @@ public final class Pair<X,Y>
 
 	/**
 	 * retrieve the x-value
-	 * @return <X> the value of x
+	 * @return X the value of x
 	 */
 	public final X xVal() {return this.xValue_M;}
 	
 	/**
 	 * retrieve the y-value
-	 * @return <Y> the value of y
+	 * @return Y the value of y
 	 */
 	public final Y yVal() {return this.yValue_M;}
 }

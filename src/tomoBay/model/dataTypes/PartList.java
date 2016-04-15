@@ -43,7 +43,7 @@ public class PartList
 	
 	/**
 	 * creates a part list with the partNoString provided.
-	 * @param partNoString a list of part numbers and quantities. acceptable formats are:
+	 * @param compositePartNo a list of part numbers and quantities. acceptable formats are:
 	 * 1234 or 1234(1)567(2)8910(3) or 1234(1)567(2)8910 [if 8910 has qty 1] or 1234 567 [if
 	 * both 1234 AND 567 have qty 1
 	 */

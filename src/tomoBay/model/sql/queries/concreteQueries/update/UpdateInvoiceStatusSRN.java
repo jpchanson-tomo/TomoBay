@@ -59,5 +59,6 @@ public  final class UpdateInvoiceStatusSRN extends AbstractModifyQueryParams
 	{
 		QueryUtility.setINTEGERParam(this, parameter, OrdersTable.INVOICED, 1);
 		QueryUtility.setINTEGERParam(this, parameter, OrdersTable.SALES_REC_NO, 2);
+		QueryUtility.setINTEGERParam(this, parameter, OrdersTable.ACCOUNT, 3);
 	}
 }
