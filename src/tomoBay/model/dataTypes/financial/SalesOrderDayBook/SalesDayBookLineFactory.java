@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.factories.AbstractSalesDayBookLineFactory;
+import tomoBay.model.dataTypes.financial.SalesOrderDayBook.factories.GSPInvoiceFactory;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.factories.StandardInvoiceFactory;
 import tomoBay.model.dataTypes.financial.SalesOrderDayBook.factories.StandardInvoiceWithShippingFactory;
 import tomoBay.model.dataTypes.order.Order;
@@ -30,7 +31,7 @@ public class SalesDayBookLineFactory
 {
 	public enum SalesDayBookLineType {INVOICE, CREDIT}
 	
-	private enum SalesDayBookLineType_M	{STANDARD_INVOICE, STANDARD_INVOICE_WITH_SHIPPING}
+	private enum SalesDayBookLineType_M	{STANDARD_INVOICE, STANDARD_INVOICE_WITH_SHIPPING, GSP_INVOICE}
 
 	/**maps the type string to an action**/
 	@SuppressWarnings("serial")
@@ -39,6 +40,7 @@ public class SalesDayBookLineFactory
 		{{
 			put(SalesDayBookLineType_M.STANDARD_INVOICE, new StandardInvoiceFactory());
 			put(SalesDayBookLineType_M.STANDARD_INVOICE_WITH_SHIPPING, new StandardInvoiceWithShippingFactory());
+			put(SalesDayBookLineType_M.GSP_INVOICE, new GSPInvoiceFactory());
 		}};
 	
 	/**
@@ -61,7 +63,7 @@ public class SalesDayBookLineFactory
 		{result = SalesDayBookLineFactory.lineMap_M.get(SalesDayBookLineType_M.STANDARD_INVOICE);}
 		
 		else if(order.buyer().street2().toUpperCase().contains("GSP"))
-		{result = SalesDayBookLineFactory.lineMap_M.get(SalesDayBookLineType_M.STANDARD_INVOICE);}
+		{result = SalesDayBookLineFactory.lineMap_M.get(SalesDayBookLineType_M.GSP_INVOICE);}
 		
 		else if(order.shippingCost() > 0 ) 
 		{result = SalesDayBookLineFactory.lineMap_M.get(SalesDayBookLineType_M.STANDARD_INVOICE_WITH_SHIPPING);}

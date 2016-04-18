@@ -24,6 +24,7 @@ import tomoBay.model.sql.framework.ModifyQueryInvoker.ModifyQueryTypeParams;
 import tomoBay.model.sql.schema.ordersTable.OrdersTable;
 
 
+
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -65,20 +66,41 @@ final class Orders_Table
 		{
 			if(order != null)
 			{
-				Timestamp ts = new Timestamp(order.getCreatedTime().getTime().getTime());
 				HeteroFieldContainer insertVals = new HeteroFieldContainer(); 
 				
-				insertVals.add(OrdersTable.ORDER_ID, order.getOrderID());
-				insertVals.add(OrdersTable.BUYERID, order.getBuyerUserID());
-				insertVals.add(OrdersTable.SALES_REC_NO, order.getShippingDetails().getSellingManagerSalesRecordNumber());
-				insertVals.add(OrdersTable.SHIPPING_TYPE, order.getShippingServiceSelected().getShippingService());
-				insertVals.add(OrdersTable.CREATED_TIME, ts);
-				insertVals.add(OrdersTable.ORDER_TOTAL, (float)order.getTotal().getValue());
-				insertVals.add(OrdersTable.ACCOUNT, accountID);
+				if(order.isIsMultiLegShipping()==false)
+				{
+					insertVals.add(OrdersTable.ORDER_ID, order.getOrderID());
+					insertVals.add(OrdersTable.BUYERID, order.getBuyerUserID());
+					insertVals.add(OrdersTable.SALES_REC_NO, order.getShippingDetails().getSellingManagerSalesRecordNumber());
+					insertVals.add(OrdersTable.SHIPPING_TYPE, order.getShippingServiceSelected().getShippingService());
+					insertVals.add(OrdersTable.CREATED_TIME, new Timestamp(order.getCreatedTime().getTime().getTime()));
+					insertVals.add(OrdersTable.ORDER_TOTAL, (float)order.getTotal().getValue());
+					insertVals.add(OrdersTable.ACCOUNT, accountID);
+				}
+				else
+				{Orders_Table.populateGSP(order, accountID, insertVals);}
 				
 				if(EbayOrderCancellationStatus.isCancelled(order.getCancelStatus())==true)
 				{ModifyQueryInvoker.execute(ModifyQueryTypeParams.INSERT_EBAY_ORDERS, insertVals);}
 			}
 		}
+	}
+	
+	/**
+	 * @param order
+	 * @param accountID
+	 * @param insertVals
+	 */
+	public static void populateGSP(OrderType order, int accountID, HeteroFieldContainer insertVals)
+	{
+		System.out.println("gsp");
+		insertVals.add(OrdersTable.ORDER_ID, order.getOrderID());
+		insertVals.add(OrdersTable.BUYERID, order.getBuyerUserID());
+		insertVals.add(OrdersTable.SALES_REC_NO, order.getShippingDetails().getSellingManagerSalesRecordNumber());
+		insertVals.add(OrdersTable.SHIPPING_TYPE, order.getShippingServiceSelected().getShippingService());
+		insertVals.add(OrdersTable.CREATED_TIME, new Timestamp(order.getCreatedTime().getTime().getTime()));
+		insertVals.add(OrdersTable.ORDER_TOTAL, (float)order.getSubtotal().getValue());
+		insertVals.add(OrdersTable.ACCOUNT, accountID);
 	}
 }
