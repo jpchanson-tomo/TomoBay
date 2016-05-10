@@ -1,0 +1,57 @@
+<!-- Modal -->
+<div id="EntryListModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" id="ELModalHeader">
+        <h4 class="modal-title">Add Order to CSV</h4>
+      </div>
+      <div class="modal-body" id="ELModalBody">
+      	<div class="input-group">
+      		<span class="input-group-addon" id="accountAddon">Account</span>
+      		<select class="form-control" id="ELMAccount">
+      			<option disabled selected>Choose an account</option>
+		        <option value="Ford">Ford</option>
+		        <option value="PSA">PSA</option>
+		        <option value="Prestige">Prestige</option>
+      		</select>
+      	</div>
+      	<div class="input-group">
+      		<span class="input-group-addon" id="SRNAddon">SalesRecNo</span>
+      		<input id="ELMSRN" type="number" class="form-control" placeholder="" aria-describedby="SRNAddon">
+      	</div>
+      	<div class="input-group">
+      		<span class="input-group-addon" id="serviceAddon">Service</span>
+      		<select class="form-control" id="ELMAccount">
+      			<option disabled selected>Choose a service</option>
+		        <option value="24">24</option>
+		        <option value="48">48</option>
+      		</select>
+      	</div>
+      	<div class="input-group">
+      		<span class="input-group-addon" id="serviceEnhanceAddon">Service</span>
+      		<select class="form-control" id="ELMAccount">
+      			<option disabled selected>Choose a Service Enhancement</option>
+		        <option value="None">None</option>
+		        <option value="SignedFor"> Signed For </option>
+      		</select>
+      	</div>
+      	<div class="input-group">
+      		<span class="input-group-addon" id="serviceFormatAddon">Service</span>
+      		<select class="form-control" id="ELMAccount">#
+      			<option disabled selected>Choose an format</option>
+		        <option value="L">Letter</option>
+		        <option value="P">Parcel</option>
+      		</select>
+      	</div>
+      </div>
+      <div class="modal-footer" id="ELModalFooter">
+      	<button id="ELModalButton" type="button" class="btn btn-success" data-dismiss="modal" onclick="">OK</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        
+      </div>
+    </div>
+
+  </div>
+</div>

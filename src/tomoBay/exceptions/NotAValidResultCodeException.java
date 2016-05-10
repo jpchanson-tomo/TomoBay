@@ -14,13 +14,15 @@ package tomoBay.exceptions;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
  * Exception that indicates that some functionality that interacts with winstock has passed back a 
  * resultcode that is not valid.
+ * 
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public class NotAValidResultCodeException extends WinstockException
 {
 	/**

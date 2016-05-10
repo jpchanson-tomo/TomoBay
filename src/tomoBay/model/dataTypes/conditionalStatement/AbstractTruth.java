@@ -14,18 +14,24 @@ package tomoBay.model.dataTypes.conditionalStatement;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
- *
+ * This class is the abstract base for the True and False objects. These derived AbstractTruth objects
+ * perform the double dispatch necessary to chose the code to execute dependant on the outcome of the
+ * Condition evaluation.
+ * 
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 interface AbstractTruth
 {
 	/**
-	 * 
-	 * @param result
-	 * @return
+	 * dispatch method allows the use of double dispatch to chose the code to execute dependent on the
+	 * outcome of the Condition evaluation. 
+	 * Derived types use \code result.result(this) \endcode to perform this dispatch
+	 * @param result Parameterised result object
+	 * @return T the result value of type T defined in the parameterised Result object.
 	 */
 	<T> T dispatch(Result<T> result);
 }

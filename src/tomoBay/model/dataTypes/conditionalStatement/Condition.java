@@ -1,8 +1,4 @@
 package tomoBay.model.dataTypes.conditionalStatement;
-
-import gnu.trove.map.hash.THashMap;
-
-import java.util.Map;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -18,9 +14,14 @@ import java.util.Map;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import gnu.trove.map.hash.THashMap;
+import java.util.Map;
 /**
- *
+ * This Class encapsulates the condition part of the conditional statement. Derived types implement
+ * the expression() method with the particular expression that this Condition represents. The evaluate()
+ * method returns an AbstractTruth object (True or False) which is then passed to the Result Object via
+ * double dispatch (in the Conditional derived object).
+ * 
  * @author Jan P.C. Hanson
  *
  */

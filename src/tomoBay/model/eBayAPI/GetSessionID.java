@@ -14,12 +14,8 @@ package tomoBay.model.eBayAPI;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import com.ebay.sdk.ApiCall;
 import com.ebay.sdk.ApiException;
 import com.ebay.sdk.SdkException;
-import com.ebay.sdk.call.GetSessionIDCall;
-import com.ebay.soap.eBLBaseComponents.GetSessionIDRequestType;
-import com.ebay.soap.eBLBaseComponents.GetSessionIDResponseType;
 /**
  *
  * @author Jan P.C. Hanson
@@ -28,11 +24,11 @@ import com.ebay.soap.eBLBaseComponents.GetSessionIDResponseType;
 public class GetSessionID extends AbstractAPIcall
 {
 	
-	private GetSessionIDCall sesid;
+//	private GetSessionIDCall sesid;
 	
-	private GetSessionIDRequestType sessidReq;
+//	private GetSessionIDRequestType sessidReq;
 	
-	private ApiCall call;
+//	private ApiCall call;
 
 	/**
 	 * 
@@ -40,9 +36,9 @@ public class GetSessionID extends AbstractAPIcall
 	public GetSessionID(String usrToken, String server)
 	{
 		super(usrToken, server);
-		this.sesid = new GetSessionIDCall(APIcontext.instance().apiContext(super.usrToken_M, super.server_M));
-		this.sessidReq = new GetSessionIDRequestType();
-		call = new ApiCall(APIcontext.instance().apiContext(super.usrToken_M, super.server_M));
+//		this.sesid = new GetSessionIDCall(APIcontext.instance().apiContext(super.usrToken_M, super.server_M));
+//		this.sessidReq = new GetSessionIDRequestType();
+//		call = new ApiCall(APIcontext.instance().apiContext(super.usrToken_M, super.server_M));
 	}
 
 	public String call(String ruName) throws ApiException, SdkException, Exception
@@ -51,8 +47,8 @@ public class GetSessionID extends AbstractAPIcall
 //		GetSessionIDResponseType result = (GetSessionIDResponseType) sesid.execute(sessidReq);
 //		return result.getSessionID();
 		
-		sesid.setRuName(ruName);
-		sesid.getSessionID();
+//		sesid.setRuName(ruName);
+//		sesid.getSessionID();
 		return null;
 	}
 }

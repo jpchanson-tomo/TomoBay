@@ -16,7 +16,8 @@ package tomoBay.model.dataTypes.json;
  */
 import tomoBay.model.dataTypes.DualList;
 /**
- *
+ * This class acts as the abstract base for all derived JSON  classes.
+ * 
  * @author Jan P.C. Hanson
  *
  */
@@ -25,7 +26,7 @@ public abstract class JSONentity
 	protected DualList<String, String> children_M;
 	
 	/**
-	 * 
+	 * default ctor
 	 */
 	public JSONentity()
 	{
@@ -34,10 +35,12 @@ public abstract class JSONentity
 	}
 	
 	/**
-	 * 
-	 * @param key
-	 * @param value
-	 * @return
+	 * add pre-formatted text to this derived JSON entity
+	 * @param key String representing the key for a key value pair containing the preformatted text. 
+	 * If this parameter is null or empty then the pre-formatted text will be added without a key.
+	 * @param value The pre-formatted text to add.
+	 * @return JSONentity allowing the user to chain these class methods to create larger JSON formatted
+	 * strings.
 	 */
 	public JSONentity addPreFormatted(String key, String value)
 	{
@@ -47,9 +50,9 @@ public abstract class JSONentity
 	}
 	
 	/**
-	 * 
-	 * @param key
-	 * @param value
+	 * A leaf node is simply a key value pair
+	 * @param key the string key
+	 * @param value the string value
 	 * @return
 	 */
 	public JSONentity addLeaf(String key, String value)

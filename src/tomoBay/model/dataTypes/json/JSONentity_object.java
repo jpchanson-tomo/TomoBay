@@ -17,7 +17,8 @@ package tomoBay.model.dataTypes.json;
 
 import java.util.Iterator;
 /**
- *
+ * This class represents a general JSON Object.
+ * 
  * @author Jan P.C. Hanson
  *
  */

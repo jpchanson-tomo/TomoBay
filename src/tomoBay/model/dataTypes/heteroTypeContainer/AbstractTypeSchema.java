@@ -17,7 +17,8 @@ package tomoBay.model.dataTypes.heteroTypeContainer;
 import tomoBay.helpers.NoImports;
 /**
  * Derived types of this class represent the schema for a specific database and should only contain 
- * public static final instances of derived AbstractDBField types.
+ * public static final instances of derived AbstractDBField types. 
+ * 
  * @author Jan P.C. Hanson
  *
  */

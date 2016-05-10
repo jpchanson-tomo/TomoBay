@@ -14,24 +14,25 @@ package tomoBay.model.dataTypes.json;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 import java.util.Iterator;
 /**
- *
+ * This class represents a JSON array. 
+ * 
  * @author Jan P.C. Hanson
  *
  */
 public final class JSONentity_array extends JSONentity
 {
 	/**
-	 * 
+	 * default ctor
 	 */
 	public JSONentity_array()
 	{super();}
 	
 	/**
+	 * converts this JSON array to a string.
 	 * 
-	 * @return String
+	 * @return String representing the data in this array as a JSON formatted string.
 	 */
 	public String toString()
 	{

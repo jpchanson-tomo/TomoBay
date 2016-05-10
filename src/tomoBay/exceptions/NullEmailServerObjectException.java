@@ -14,13 +14,15 @@ package tomoBay.exceptions;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
  * exception thrown when the user tries to retrieve an email object that has not yet been 
  * created.
+ * 
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public class NullEmailServerObjectException extends MailException
 {
 	

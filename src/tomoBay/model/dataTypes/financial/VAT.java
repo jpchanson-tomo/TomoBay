@@ -14,13 +14,15 @@ package tomoBay.model.dataTypes.financial;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
  * This class provides methods that allow the manipulation of values to do with VAT. This class
  * does not care about sign and all methods will use the absolute value of the value provided.
+ * 
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public final class VAT
 {
 

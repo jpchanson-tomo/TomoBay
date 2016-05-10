@@ -14,20 +14,25 @@ package tomoBay.model.dataTypes.conditionalStatement;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
- *
+ * This class represents a True outcome to a Condition object, its dispatch() method calls the 
+ * appropriate code in the Result object.
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public final class True implements AbstractTruth
 {
 	/**
-	 * 
+	 * default ctor
 	 */
 	public True()
 	{super();}
 	
+	/* (non-Javadoc)
+	 * @see tomoBay.model.dataTypes.conditionalStatement.AbstractTruth#dispatch(tomoBay.model.dataTypes.conditionalStatement.Result)
+	 */
 	public <T> T dispatch(Result<T> result)
 	{return result.result(this);}
 

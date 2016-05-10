@@ -16,7 +16,8 @@ package tomoBay.exceptions;
  */
 import tomoBay.helpers.NoImports;
 /**
- *
+ * This exception is for use in the model.datatypes.financial package.
+ * 
  * @author Jan P.C. Hanson
  *
  */

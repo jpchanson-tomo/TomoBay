@@ -55,7 +55,7 @@ public class XMLParser
 			return tagContent.trim();
 		}
 		catch(SAXException saxE)
-		{return saxE.getMessage();}
+		{return "XML Parser Error: "+saxE.getMessage();}
 		catch(ParserConfigurationException | IOException e)
 		{return "Internal Error" + e.getMessage();}
 		catch(NullPointerException ne)

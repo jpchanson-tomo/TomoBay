@@ -20,6 +20,7 @@ import tomoBay.helpers.NoImports;
  * a column of a database table. The type method is primarily for the use of the DBFieldContainer.
  * The size method is for the user of a particular derived type to be able to check the stated size
  * of the DB field.
+ * 
  * @author Jan P.C. Hanson
  *
  */

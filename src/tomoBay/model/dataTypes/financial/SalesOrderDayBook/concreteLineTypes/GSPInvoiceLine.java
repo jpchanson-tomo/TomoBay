@@ -46,9 +46,6 @@ public class GSPInvoiceLine extends AbstractLineItem
 		double priceExVat = VAT.subtract(line.orderInfo().transaction(super.transactionIndex_M).transactionPrice());
 		
 		double result = (costOfItem/totalCost)*(priceExVat/super.quantity(line));
-		
-		System.out.println(GBP.fromPennies(GBP.toPennies(result)));
-		System.out.println(line.orderInfo().shippingCost());
 		return GBP.toPennies(result);
 		
 		//

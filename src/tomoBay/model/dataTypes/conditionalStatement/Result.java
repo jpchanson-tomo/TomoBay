@@ -14,27 +14,34 @@ package tomoBay.model.dataTypes.conditionalStatement;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import tomoBay.helpers.NoImports;
 /**
- *
+ * This class defines the Abstract Base class for all derived Result classes. By implementing this 
+ * class the user can define the true and false behaviours by encapsulating them within the appropriate
+ * methods(provided), the calling class (Conditional) will then invoke the correct behaviour when the
+ * Condition object gets evaluated.
+ *  
  * @author Jan P.C. Hanson
  *
  */
+@SuppressWarnings("unused")
 public abstract class Result<T>
 {
 	
 	/**
-	 * 
+	 * default ctor
 	 */
 	public Result()
 	{super();}
 	
 	/**
+	 * This method defines the behaviour to invoke if the Condition object evaluates to True.
 	 * @param yes
 	 */
 	public abstract T result(True yes);
 	
 	/**
+	 * This method defines the behaviour to invoke if the Condition object evaluates to False.
 	 * @param no
 	 */
 	public abstract T result(False no);

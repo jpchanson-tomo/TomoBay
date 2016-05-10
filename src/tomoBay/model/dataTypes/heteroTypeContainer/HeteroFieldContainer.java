@@ -21,6 +21,9 @@ import java.util.Map;
  * This class represents a container of AbstractField types and a value associated with this field.
  * If you REALLY need to store heterogenous types in a container then this class may be useful, but 
  * CONSIDER ALL OTHER OPTIONS FIRST.
+ * 
+ * @see tomoBay.model.dataTypes.heteroTypeContainer
+ * 
  * @author Jan P.C. Hanson
  *
  */

@@ -14,10 +14,11 @@ package tomoBay.model.dataTypes.heteroTypeContainer;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 import java.sql.Date;
 import java.sql.Timestamp;
 /**
+ * This class acts an enum of sorts, and provides access to parameterised Class objects, specifically
+ * for use in conjunction with HeteroFieldContainer objects to retrieve fields.
  * 
  * @author Jan P.C. Hanson
  *

@@ -18,7 +18,8 @@ package tomoBay.helpers;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 /**
- *
+ * This is a helper class that provides functionality to convert an Exception stack trace to a String,
+ * this can be useful when logging exceptions to be visible in the application. 
  * @author Jan P.C. Hanson
  *
  */
@@ -28,11 +29,11 @@ public class StackTraceToString
 	{super();}
 	
 	/**
-	 * 
-	 * @param e
-	 * @return
+	 * Converts the stack trace of the exception provided into a string
+	 * @param e Exception to be converted
+	 * @return String representation of the stack trace.
 	 */
-	public static String toString(Throwable e)
+	public static String toString(Exception e)
 	{
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);

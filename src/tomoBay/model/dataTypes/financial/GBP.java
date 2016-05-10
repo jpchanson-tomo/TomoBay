@@ -1,7 +1,4 @@
 package tomoBay.model.dataTypes.financial;
-
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -17,10 +14,12 @@ import java.text.DecimalFormat;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 /**
- * This class provides methods that allow the mainpulation of money from great british pounds
+ * This class provides methods that allow the manipulation of money from great British pounds
  * to pennies, and from pennies to pounds.
+ * 
  * @author Jan P.C. Hanson
  *
  */
