@@ -35,24 +35,7 @@ public class ConfigReader
 	 */
 	public ConfigReader()
 	{super();}
-	/**
-	 * reads a config file and passes back an list of strings representing different lines 
-	 * in the config file specified. It is important when constructing config files to put the
-	 * correct setting on the correct line. line 1 = sandbox server string, 
-	 * line 2 = sandbox user token, line 3 = production server string, 
-	 * line 4 = production user token.
-	 * @param pathToFile the path to the file including the trailing slash
-	 * @param fileName the actual filename
-	 * @return List<String> containing the various lines of the config file.
-	 * String[0] = blank, String[1] = sandbox server string, String[2] = sandbox user token 
-	 * String[3] = production server string, String[4] = production user token.
-	 */
-	public static String[] read(String pathToFile, String fileName)
-	{		
-		String[] tmp = ConfigReader.getConfig(pathToFile, fileName, "UTF-8").split("#");
-		
-		return tmp;
-	}
+
 	
 	/**
 	 * reads the whole config file into a string
@@ -61,7 +44,7 @@ public class ConfigReader
 	 * @param charSet the character set to use to encode the result.
 	 * @return String containing the contents of the config file.
 	 */
-	public static String getConfig(String filePath, String fileName, String charSet)
+	private static String getConfig(String filePath, String fileName, String charSet)
 	{
 		Charset charset = Charset.forName(charSet);
 		Path file = FileSystems.getDefault().getPath(filePath, fileName);
@@ -93,6 +76,21 @@ public class ConfigReader
 	}
 	
 	/**
+	 * find the value of the config variable specified in the arguments. If multiple instances
+	 * of this variable exist then it will return the first instance. To find all values for
+	 * a config variable with multiple instances use getConfs().
+	 * @param configVar the config variable to find the value of
+	 * @return String containing the value of the config variable.
+	 */
+	public static String getConf(Config configVar, int index)
+	{
+		String stringToParse = ConfigReader.getConfig("config/", "tomoBay.conf", "UTF-8");
+		NodeList rawResult = XMLParser.parseAll(configVar.getVar(), stringToParse);
+		return rawResult.item(index).getTextContent();
+	}
+	
+
+	/**
 	 * Find all values of the specified config variable, if multiple instances exist then the 
 	 * array will be the same size as the number of instances. for single instance variables
 	 * the size with be 1.
@@ -108,5 +106,17 @@ public class ConfigReader
 		{results[i] = rawResult.item(i).getTextContent();}
 		
 		return results;
+	}
+	
+	/**
+	 * find out how many instances of a particular config variable exist within the config file.
+	 * Remember indices should go from 0 to size-1
+	 * @param configVar the config variable to count
+	 * @return int the number instances of the config variable provided
+	 */
+	public static int size(Config configVar)
+	{
+		String stringToParse = ConfigReader.getConfig("config/", "tomoBay.conf", "UTF-8");
+		return XMLParser.parseAll(configVar.getVar(), stringToParse).getLength();
 	}
 }

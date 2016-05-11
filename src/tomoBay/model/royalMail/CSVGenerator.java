@@ -1,4 +1,6 @@
 package tomoBay.model.royalMail;
+import java.io.IOException;
+
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -14,9 +16,7 @@ package tomoBay.model.royalMail;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 import tomoBay.helpers.NoImports;
-
 /**
  * This is the public interface for all CSV generator derived classes and defines the necessary
  * functionality that a concrete CSV generator should implement.
@@ -27,16 +27,16 @@ import tomoBay.helpers.NoImports;
  *
  */
 @SuppressWarnings("unused")
-public interface CSVGenerator 
+public interface CSVGenerator
 {	
 	/**
 	 * set the separators to use when constructing the CSV. This method should be called before the
 	 * generate() method is called should you wish to set custom separators. If this method is not
 	 * called then the separators should default to the form  , , , , ,
-	 * @param seperator the character used to separate entries
+	 * @param separator the character used to separate entries
 	 * @param entryIndicator the character used to indicate an entry.
 	 */
-	public abstract void setseparators(char seperator, char entryIndicator);
+	public abstract void setseparators(char separator, char entryIndicator);
 	
 	/**
 	 * This method adds a rows worth of data to the CSV to be generated. Empty columns should be included.
@@ -52,8 +52,9 @@ public interface CSVGenerator
 	 * @param fileName the name of the file to be generated
 	 * @param filePath the path of the file to be generated
 	 * @param encoding the encoding of the file to be generated
+	 * @throws IOException 
 	 */
-	public abstract void generate(String fileName, String filePath, String encoding);
+	public abstract void generate(String fileName, String filePath, String encoding) throws IOException;
 	
 	/**
 	 * indicates how many columns are required for each row of this CSV.
@@ -65,7 +66,7 @@ public interface CSVGenerator
 	 * informative String representation of the CSV file at the point in time where this method is 
 	 * called. This method should print out the names of the columns as the first line, followed by
 	 * the values of each of those columns in a given row.
-	 * @return String 
+	 * @return String representation of the CSV File in its current state.
 	 */
 	public abstract String toString();
 }
