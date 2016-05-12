@@ -1,0 +1,6 @@
+<map id="city" name="city">
+<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#a0efe6811d772c53811b18a441c11b757" title="formats the buyer information associated with this order " alt="" coords="121,13,401,54"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1WinstockFormat.html#accefd62bc10c59d9ba78937d90a5fa8c" title="tomoBay.model.dataTypes.financial.\lSalesOrderDayBook.formats.WinstockFormat.format" alt="" coords="96,78,427,119"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#afeec1aeda079b77245edea1e74b25f33" title="assembles the various parts of the order and outputs it as a fully formed JSON string. " alt="" coords="475,5,737,61"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="785,13,1057,54"/>
+</map>

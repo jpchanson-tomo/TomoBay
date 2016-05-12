@@ -1,7 +1,0 @@
-<map id="tomoBay.presenters.AbstractPresenter" name="tomoBay.presenters.AbstractPresenter">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1error_1_1ErrorPresenter.html" title="{tomoBay.presenters.error.\lErrorPresenter\n||+ ErrorPresenter()\l+ present()\l}" alt="" coords="5,160,179,267"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1root_1_1RootPresenter.html" title="{tomoBay.presenters.root.\lRootPresenter\n||+ RootPresenter()\l+ present()\l}" alt="" coords="203,160,373,267"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesHistoryPresenter.html" title="{tomoBay.presenters.sales.\lSalesHistoryPresenter\n||+ SalesHistoryPresenter()\l+ present()\l}" alt="" coords="397,160,576,267"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesOrderPresenter.html" title="{tomoBay.presenters.sales.\lSalesOrderPresenter\n||+ SalesOrderPresenter()\l+ present()\l&#45; doStuff()\l&#45; pickeability()\l}" alt="" coords="600,145,779,281"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1warehouse_1_1WarehouseOrderPresenter.html" title="{tomoBay.presenters.warehouse.\lWarehouseOrderPresenter\n||+ WarehouseOrderPresenter()\l+ present()\l}" alt="" coords="803,160,1013,267"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="tomoBay.model.services.individualItemRefresh.ReCalculateRequiredStock.insertOrUpdate" name="tomoBay.model.services.individualItemRefresh.ReCalculateRequiredStock.insertOrUpdate">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1individualItemRefresh_1_1ReCalculateRequiredStock.html#ad98eddf85b6775466de64576a5eff165" title="tomoBay.model.services.individual\lItemRefresh.ReCalculateRequiredStock.updateDB" alt="" coords="345,13,664,54"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1individualItemRefresh_1_1ReCalculateRequiredStock.html#a60d11306692f52091266b66f1c7f03db" title="tomoBay.model.services.individual\lItemRefresh.ReCalculateRequiredStock.calculate" alt="" coords="712,13,1024,54"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1individualItemRefresh_1_1IndividualItemRefreshService.html#a579244b8909621f27fc4871a532f87ee" title="tomoBay.model.services.individual\lItemRefresh.IndividualItemRefreshService.run" alt="" coords="1072,13,1363,54"/>
-</map>

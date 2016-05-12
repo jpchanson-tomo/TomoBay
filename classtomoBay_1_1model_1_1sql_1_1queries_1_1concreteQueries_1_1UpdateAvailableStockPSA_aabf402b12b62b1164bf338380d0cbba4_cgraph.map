@@ -1,6 +1,0 @@
-<map id="tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPSA.execute" name="tomoBay.model.sql.queries.concreteQueries.UpdateAvailableStockPSA.execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1UpdateAvailableStockPSA.html#a7f9e222442c78e976faac161aede4f91" title="tomoBay.model.sql.queries.concrete\lQueries.UpdateAvailableStockPSA.cleanup" alt="" coords="334,5,610,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1UpdateAvailableStockPSA.html#adc8a0ab4b0a5bcb241d28a1d312e4712" title="tomoBay.model.sql.queries.concrete\lQueries.UpdateAvailableStockPSA.initQuery" alt="" coords="331,71,613,112"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#a258fdcb8481c013b1864d6835e5dfaa2" title="tomoBay.model.sql.Connection\lManager.instance" alt="" coords="661,37,865,79"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ae409bc78f5d56de5a3da5dc34b992912" title="tomoBay.model.sql.Connection\lManager.getConnection" alt="" coords="661,103,865,144"/>
-</map>

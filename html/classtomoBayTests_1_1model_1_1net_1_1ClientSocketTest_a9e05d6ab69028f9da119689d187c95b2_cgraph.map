@@ -1,0 +1,6 @@
+<map id="test" name="test">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1winstock_1_1WinstockCommandInvoker.html#af1434b0b82b0016e3a50a6aaecc770c2" title="This method executes the AbstractWinstockCommand that the user has requested. " alt="" coords="131,5,359,47"/>
+<area shape="rect" id="node3" href="$interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a08c6f0c352333a33e51f637c8e34551d" title="method used to retrieve the results of the AbstractWinstockCommand associated with this AbstractWinst..." alt="" coords="111,70,378,126"/>
+<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a67118030d9d2e2b70642882a2964794a" title="method used to retrieve the data sent to the socket. " alt="" coords="97,149,392,191"/>
+<area shape="rect" id="node5" href="$interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a94c43012f032cf0ad0acc1d6a6047cf6" title="method of descerning whether the AbstractWinstockCommand associated with this AbstractWinstockCommand..." alt="" coords="115,214,374,270"/>
+</map>

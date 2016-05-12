@@ -1,0 +1,5 @@
+<map id="SelectEbayItemsErrorFactory" name="SelectEbayItemsErrorFactory">
+<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectNoParamsQueryFactory.html" title="{AbstractSelectNoParamsQuery\lFactory\n||+ make()\l}" alt="" coords="10,256,215,348"/>
+<area shape="rect" id="node3" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectQueryFactory.html" title="{AbstractSelectQueryFactory\n||+ make()\l}" alt="" coords="19,131,206,208"/>
+<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractQueryFactory.html" title="all Queries are instantiated using a factory and each of these factories must conform to this interfa..." alt="" coords="37,5,188,83"/>
+</map>

@@ -1,7 +1,0 @@
-<map id="tomoBay.model.sql.queries.concreteQueries.InsertEbayOrders.execute" name="tomoBay.model.sql.queries.concreteQueries.InsertEbayOrders.execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayOrders.html#a692669edf5526d88bc981d17891d881d" title="tomoBay.model.sql.queries.concrete\lQueries.InsertEbayOrders.cleanup" alt="" coords="308,5,543,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayOrders.html#a1d20e3053f2524d953165950841458a2" title="tomoBay.model.sql.queries.concrete\lQueries.InsertEbayOrders.initQuery" alt="" coords="308,71,543,112"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayOrders.html#a233ca1742da28ab8b1654789efeddeb3" title="tomoBay.model.sql.queries.concrete\lQueries.InsertEbayOrders.makeTimestamp" alt="" coords="288,136,563,177"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#a258fdcb8481c013b1864d6835e5dfaa2" title="tomoBay.model.sql.Connection\lManager.instance" alt="" coords="611,39,815,80"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ae409bc78f5d56de5a3da5dc34b992912" title="tomoBay.model.sql.Connection\lManager.getConnection" alt="" coords="611,104,815,145"/>
-</map>

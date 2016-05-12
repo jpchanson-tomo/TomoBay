@@ -1,7 +1,0 @@
-<map id="tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrders.execute" name="tomoBay.model.sql.queries.concreteQueries.SelectUninvoicedOrders.execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectUninvoicedOrders.html#a8db3a699b1c304dac72ccea099beea09" title="tomoBay.model.sql.queries.concrete\lQueries.SelectUninvoicedOrders.cleanup" alt="" coords="319,5,581,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectUninvoicedOrders.html#a848e622fe29a06a5284c063c078e51f1" title="tomoBay.model.sql.queries.concrete\lQueries.SelectUninvoicedOrders.format\lResults" alt="" coords="323,70,577,126"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1SelectUninvoicedOrders.html#a1fc0797ae40261fa238fb21f1bb92cf1" title="tomoBay.model.sql.queries.concrete\lQueries.SelectUninvoicedOrders.initQuery" alt="" coords="316,149,584,191"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#a258fdcb8481c013b1864d6835e5dfaa2" title="tomoBay.model.sql.Connection\lManager.instance" alt="" coords="632,116,836,157"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ae409bc78f5d56de5a3da5dc34b992912" title="tomoBay.model.sql.Connection\lManager.getConnection" alt="" coords="632,181,836,223"/>
-</map>

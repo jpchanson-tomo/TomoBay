@@ -1,6 +1,0 @@
-<map id="tomoBay.model.sql.queries.concreteQueries.UpdatePSAStockReq.execute" name="tomoBay.model.sql.queries.concreteQueries.UpdatePSAStockReq.execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1UpdatePSAStockReq.html#a9600b2cd37476495bd4c62e309baddd3" title="tomoBay.model.sql.queries.concrete\lQueries.UpdatePSAStockReq.cleanup" alt="" coords="305,5,552,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1UpdatePSAStockReq.html#a83b4351e6374a1289b1c6fe09e68af7e" title="tomoBay.model.sql.queries.concrete\lQueries.UpdatePSAStockReq.initQuery" alt="" coords="301,71,556,112"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#a258fdcb8481c013b1864d6835e5dfaa2" title="tomoBay.model.sql.Connection\lManager.instance" alt="" coords="604,37,808,79"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ae409bc78f5d56de5a3da5dc34b992912" title="tomoBay.model.sql.Connection\lManager.getConnection" alt="" coords="604,103,808,144"/>
-</map>

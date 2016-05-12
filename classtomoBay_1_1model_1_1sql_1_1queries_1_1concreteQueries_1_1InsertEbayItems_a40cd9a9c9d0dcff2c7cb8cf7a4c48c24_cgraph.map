@@ -1,6 +1,0 @@
-<map id="tomoBay.model.sql.queries.concreteQueries.InsertEbayItems.execute" name="tomoBay.model.sql.queries.concreteQueries.InsertEbayItems.execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayItems.html#adf04c1486bbdfdb8e61a9b323337f058" title="tomoBay.model.sql.queries.concrete\lQueries.InsertEbayItems.cleanup" alt="" coords="288,5,523,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1InsertEbayItems.html#aa5a29eb57cfd5abc9d0b09066317e008" title="tomoBay.model.sql.queries.concrete\lQueries.InsertEbayItems.initQuery" alt="" coords="288,71,523,112"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#a258fdcb8481c013b1864d6835e5dfaa2" title="tomoBay.model.sql.Connection\lManager.instance" alt="" coords="571,37,775,79"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ae409bc78f5d56de5a3da5dc34b992912" title="tomoBay.model.sql.Connection\lManager.getConnection" alt="" coords="571,103,775,144"/>
-</map>

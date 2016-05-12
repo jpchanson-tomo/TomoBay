@@ -1,5 +1,0 @@
-<map id="tomoBay.model.services.stockUpdate.StockRequired.clearTables" name="tomoBay.model.services.stockUpdate.StockRequired.clearTables">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#af9783588735e13b18741b48b375ca626" title="tomoBay.model.sql.queries.\lQueryInvoker.execute" alt="" coords="279,39,463,80"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#aff8d54f537b905d5a8b35a20113fd100" title="tomoBay.model.sql.queries.\lQueryInvoker.make" alt="" coords="511,5,695,47"/>
-<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1sql_1_1queries_1_1AbstractDBQuery.html#af2b3eebaeac3f2330d4c4e27182cec48" title="tomoBay.model.sql.queries.\lAbstractDBQuery.execute" alt="" coords="511,71,695,112"/>
-</map>

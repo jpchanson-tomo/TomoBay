@@ -1,9 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1services_1_1AbstractService.html" title="tomoBay.model.services.Abstract\lService" alt="" coords="131,169,349,211"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdate_1_1BasicEbayUpdateService.html" title="tomoBay.model.services.basic\lEbayUpdate.BasicEbayUpdateService" alt="" coords="409,5,655,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1individualItemRefresh_1_1IndividualItemRefreshService.html" title="tomoBay.model.services.individual\lItemRefresh.IndividualItemRefreshService" alt="" coords="397,71,667,112"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1invoiceOrderService_1_1InvoiceService.html" title="tomoBay.model.services.invoice\lOrderService.InvoiceService" alt="" coords="427,136,637,177"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1stockUpdate_1_1StockUpdateService.html" title="tomoBay.model.services.stock\lUpdate.StockUpdateService" alt="" coords="431,201,633,243"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1services_1_1testService_1_1TestService.html" title="tomoBay.model.services.test\lService.TestService" alt="" coords="436,267,628,308"/>
-<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1UpdateOrderStatusService.html" title="tomoBay.model.services.update\lOrderStatusService.UpdateOrderStatus\lService" alt="" coords="406,331,658,387"/>
-</map>

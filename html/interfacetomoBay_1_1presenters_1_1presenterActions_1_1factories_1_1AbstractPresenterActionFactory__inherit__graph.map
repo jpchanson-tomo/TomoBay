@@ -1,0 +1,13 @@
+<map id="AbstractPresenterActionFactory" name="AbstractPresenterActionFactory">
+<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1BuyerDetailsFactory.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="5,145,167,237"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1BuyerListFactory.html" title="{BuyerListFactory\n||+ BuyerListFactory()\l+ make()\l}" alt="" coords="191,145,333,237"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1InvoiceOrdersFactory.html" title="{InvoiceOrdersFactory\n||+ InvoiceOrdersFactory()\l+ make()\l}" alt="" coords="357,145,524,237"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1LogFileViewerFactory.html" title="factory that creates a LogFileViewer object " alt="" coords="549,145,717,237"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1MarkAsInvoicedFactory.html" title="{MarkAsInvoicedFactory\n||+ MarkAsInvoicedFactory()\l+ make()\l}" alt="" coords="741,145,921,237"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1MarkAsUninvoicedFactory.html" title="this is a factory that creates MarkAsUninvoiced objects " alt="" coords="945,145,1141,237"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1OrderInfoFactory.html" title="{OrderInfoFactory\n||+ OrderInfoFactory()\l+ make()\l}" alt="" coords="1165,145,1305,237"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1PeriodicServicesControllerFactory.html" title="this is a factory that creates PeriodicServicesController objects " alt="" coords="1329,131,1517,252"/>
+<area shape="rect" id="node10" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1PrintInvoicesFactory.html" title="{PrintInvoicesFactory\n||+ PrintInvoicesFactory()\l+ make()\l}" alt="" coords="1542,145,1705,237"/>
+<area shape="rect" id="node11" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1ReScanBuyerFactory.html" title="{ReScanBuyerFactory\n||+ ReScanBuyerFactory()\l+ make()\l}" alt="" coords="1729,145,1896,237"/>
+<area shape="rect" id="node12" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1ReScanListingFactory.html" title="this is a factory that creates ReScanListing objects " alt="" coords="1921,145,2091,237"/>
+</map>

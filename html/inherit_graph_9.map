@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1AbstractFormat.html" title="This class represents the abstract base class for a family of objects that format an AbstractSalesDay..." alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1WinstockFormat.html" title="WinstockFormat" alt="" coords="165,5,284,32"/>
+</map>

@@ -1,6 +1,0 @@
-<map id="tomoBay.presenters.helpers.SortOrders.reAssembleCategories" name="tomoBay.presenters.helpers.SortOrders.reAssembleCategories">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1helpers_1_1SortOrders.html#af4a1f2e66b6b9943b7d4577f6d3ec108" title="tomoBay.presenters.helpers.\lSortOrders.sortByPickeability" alt="" coords="275,5,469,47"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1helpers_1_1SortOrders.html#aac7dc3680af2b5d1462a19cd4f262f89" title="tomoBay.presenters.helpers.\lSortOrders.sortByShipping" alt="" coords="277,71,467,112"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1helpers_1_1SortOrders.html#a38a09bf83f65ff656d06b9d45046872c" title="tomoBay.presenters.helpers.\lSortOrders.sortDefault" alt="" coords="517,39,707,80"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesOrderPresenter.html#a31856dda6e4861a1e7be0c6045e54533" title="tomoBay.presenters.sales.\lSalesOrderPresenter.present" alt="" coords="755,39,945,80"/>
-</map>

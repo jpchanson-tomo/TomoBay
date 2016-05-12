@@ -1,8 +1,0 @@
-<map id="tomoBay.model.services.basicEbayUpdate.ItemsTable.populate" name="tomoBay.model.services.basicEbayUpdate.ItemsTable.populate">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1eBayAPI_1_1ItemCall.html#a3fc5341611574d8b3e720e702ebd2f5b" title="tomoBay.model.eBayAPI.Item\lCall.call" alt="" coords="289,5,488,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#af9783588735e13b18741b48b375ca626" title="tomoBay.model.sql.queries.\lQueryInvoker.execute" alt="" coords="556,127,740,168"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdate_1_1ItemsTable.html#ae94ebe7c5f5a47a404a61c4d2afac421" title="tomoBay.model.services.basic\lEbayUpdate.ItemsTable.getSpecifics" alt="" coords="269,123,508,164"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdate_1_1ItemsTable.html#aade14704960979389cae68e4b0c047f0" title="tomoBay.model.services.basic\lEbayUpdate.ItemsTable.requiredQty" alt="" coords="271,188,506,229"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#aff8d54f537b905d5a8b35a20113fd100" title="tomoBay.model.sql.queries.\lQueryInvoker.make" alt="" coords="788,93,972,135"/>
-<area shape="rect" id="node5" href="$interfacetomoBay_1_1model_1_1sql_1_1queries_1_1AbstractDBQuery.html#af2b3eebaeac3f2330d4c4e27182cec48" title="tomoBay.model.sql.queries.\lAbstractDBQuery.execute" alt="" coords="788,159,972,200"/>
-</map>

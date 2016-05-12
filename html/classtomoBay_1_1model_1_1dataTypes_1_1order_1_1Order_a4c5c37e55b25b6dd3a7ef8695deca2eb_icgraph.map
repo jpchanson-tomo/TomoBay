@@ -1,0 +1,5 @@
+<map id="shippingType" name="shippingType">
+<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#a95f980d76c5d92ed97b2aaab0d2d0c21" title="formats the summary information for this Order " alt="" coords="152,13,455,54"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#afeec1aeda079b77245edea1e74b25f33" title="assembles the various parts of the order and outputs it as a fully formed JSON string. " alt="" coords="503,5,765,61"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="813,13,1085,54"/>
+</map>

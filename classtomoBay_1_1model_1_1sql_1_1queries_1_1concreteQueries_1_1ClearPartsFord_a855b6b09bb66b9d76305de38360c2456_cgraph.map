@@ -1,6 +1,0 @@
-<map id="tomoBay.model.sql.queries.concreteQueries.ClearPartsFord.execute" name="tomoBay.model.sql.queries.concreteQueries.ClearPartsFord.execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1ClearPartsFord.html#a88b592f61a2b2f2097f16d4f821aeaf0" title="tomoBay.model.sql.queries.concrete\lQueries.ClearPartsFord.cleanup" alt="" coords="288,5,523,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1ClearPartsFord.html#af5dd6c4ff1d9cb21fc3d4f6beca08261" title="tomoBay.model.sql.queries.concrete\lQueries.ClearPartsFord.initQuery" alt="" coords="288,71,523,112"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#a258fdcb8481c013b1864d6835e5dfaa2" title="tomoBay.model.sql.Connection\lManager.instance" alt="" coords="571,37,775,79"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ae409bc78f5d56de5a3da5dc34b992912" title="tomoBay.model.sql.Connection\lManager.getConnection" alt="" coords="571,103,775,144"/>
-</map>

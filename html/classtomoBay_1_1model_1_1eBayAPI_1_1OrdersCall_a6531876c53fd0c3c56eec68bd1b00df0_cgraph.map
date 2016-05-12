@@ -1,0 +1,5 @@
+<map id="call" name="call">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1eBayAPI_1_1OrdersCall.html#ae29dfd6b4e8a557a849bd0cd8b6c35e2" title="convert the List&lt;OrderType[]&gt; passed in as an argument to a single OrderType[] containing all of the ..." alt="" coords="103,5,207,32"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1eBayAPI_1_1OrdersCall.html#a0636e18f9fb41faa3ba7c00887156b29" title="this method does some setup for the API call " alt="" coords="115,56,195,83"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1eBayAPI_1_1OrdersCall.html#a5c2c034763b51de47c06064da1479d85" title="do setup for the pagination. " alt="" coords="96,107,215,133"/>
+</map>

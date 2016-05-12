@@ -1,0 +1,4 @@
+<map id="noOfItems" name="noOfItems">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#a1b2142782be2899c8c3c19c5b3e05247" title="retrieve a particular AbstractLineItem from the list of items that make up this AbstractSalesDayBookL..." alt="" coords="136,5,417,61"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#af4b57d21919c42d55af03391f91a1c08" title="retrieve the number of line items that make up this SalesDayBookLine. " alt="" coords="136,85,417,141"/>
+</map>

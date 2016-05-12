@@ -1,4 +1,0 @@
-<map id="tomoBay.model.services.AbstractConfiguration&lt; T &gt;" name="tomoBay.model.services.AbstractConfiguration&lt; T &gt;">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1individualItemRefresh_1_1IndividualItemRefreshConfig.html" title="{tomoBay::model::services\l::individualItemRefresh\l::IndividualItemRefreshConfig\l\&lt; Long \&gt;\n|&#45; listingID_M\l|+ configure()\l+ configure()\l}" alt="" coords="5,160,200,296"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1UpdateOrderStatusConfig.html" title="{tomoBay::model::services\l::updateOrderStatusService\l::UpdateOrderStatusConfig\l\&lt; OrderStatus \&gt;\n|&#45; status_M\l|+ configure()\l+ configure()\l}" alt="" coords="225,160,407,296"/>
-</map>

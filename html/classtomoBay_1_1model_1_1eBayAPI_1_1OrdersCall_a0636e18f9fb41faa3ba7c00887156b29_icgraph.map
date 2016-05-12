@@ -1,0 +1,6 @@
+<map id="setUpCall" name="setUpCall">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1eBayAPI_1_1OrdersCall.html#a6531876c53fd0c3c56eec68bd1b00df0" title="This method performs a call to the API grabbing a list of orders for the specified number of days..." alt="" coords="133,20,176,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" title="this method defines what to do in the given derived state " alt="" coords="224,13,481,54"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1BasicEbayUpdateService.html#ae3b0a282dcba7f2d675ca89b1dd48487" title="tomoBay.model.services.basic\lEbayUpdateService.BasicEbayUpdate\lService.onRunning" alt="" coords="529,5,776,61"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1BasicEbayUpdateService.html#afd85cd6baa355d54ab15c19c16c21df9" title="tomoBay.model.services.basic\lEbayUpdateService.BasicEbayUpdate\lService.onPaused" alt="" coords="824,5,1071,61"/>
+</map>

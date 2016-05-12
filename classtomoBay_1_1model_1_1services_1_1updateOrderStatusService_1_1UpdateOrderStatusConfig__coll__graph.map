@@ -1,4 +1,0 @@
-<map id="tomoBay.model.services.updateOrderStatusService.UpdateOrderStatusConfig" name="tomoBay.model.services.updateOrderStatusService.UpdateOrderStatusConfig">
-<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1services_1_1AbstractConfiguration.html" title="{tomoBay::model::services\l::AbstractConfiguration\l\&lt; OrderStatus \&gt;\n||+ configure()\l+ configure()\l}" alt="" coords="5,42,180,163"/>
-<area shape="rect" id="node3" href="$enumtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1OrderStatus.html" title="{tomoBay.model.services.update\lOrderStatusService.OrderStatus\n|+ PICKING_STARTED\l+ PICKING_FINISHED\l+ PACKING_STARTED\l+ PACKING_FINISHED\l+ SHIPPING_STARTED\l+ SHIPPING_FINISHED\l&#45; status_M\l|+ getStatusCode()\l&#45; OrderStatus()\l}" alt="" coords="205,5,415,200"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="tomoBay.model.services.stockUpdate.StockRequired.insertORUpdate" name="tomoBay.model.services.stockUpdate.StockRequired.insertORUpdate">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#af9783588735e13b18741b48b375ca626" title="tomoBay.model.sql.queries.\lQueryInvoker.execute" alt="" coords="348,37,532,79"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1helpers_1_1PartList.html#ad78e5b214d7f6060e461abac7fca9559" title="tomoBay.model.services.helpers.\lPartList.getPartNumber" alt="" coords="332,103,548,144"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1helpers_1_1PartList.html#a554b8b08e0c00b2c094af388611fb318" title="tomoBay.model.services.helpers.\lPartList.getPartQty" alt="" coords="332,168,548,209"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1services_1_1stockUpdate_1_1StockRequiredQueryFactory.html#ae4ab4815160c22e64b4f158349381164" title="tomoBay.model.services.stock\lUpdate.StockRequiredQueryFactory.make" alt="" coords="305,233,575,275"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1queries_1_1QueryInvoker.html#aff8d54f537b905d5a8b35a20113fd100" title="tomoBay.model.sql.queries.\lQueryInvoker.make" alt="" coords="623,5,807,47"/>
-<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1sql_1_1queries_1_1AbstractDBQuery.html#af2b3eebaeac3f2330d4c4e27182cec48" title="tomoBay.model.sql.queries.\lAbstractDBQuery.execute" alt="" coords="623,71,807,112"/>
-</map>

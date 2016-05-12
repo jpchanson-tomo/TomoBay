@@ -1,0 +1,5 @@
+var classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1factories_1_1StandardInvoiceWithShippingFactory =
+[
+    [ "StandardInvoiceWithShippingFactory", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1factories_1_1StandardInvoiceWithShippingFactory.html#a75d431cc555159c5b6feb2b75c13100c", null ],
+    [ "make", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1factories_1_1StandardInvoiceWithShippingFactory.html#ab4b1ec3764547f367b1515c5d7b378fb", null ]
+];

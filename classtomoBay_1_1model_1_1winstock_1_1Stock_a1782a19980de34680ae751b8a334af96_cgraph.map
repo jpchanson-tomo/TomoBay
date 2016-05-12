@@ -1,5 +1,0 @@
-<map id="tomoBay.model.winstock.Stock.requestStockLevel" name="tomoBay.model.winstock.Stock.requestStockLevel">
-<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1XMLParser.html#ac25716dcaf3586b706f71c7354d6626c" title="tomoBay.helpers.XMLParser.parse" alt="" coords="313,5,539,32"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a0b60d421fe27874ceb35c702ffa2483f" title="tomoBay.model.winstock.Stock.post\lFormatXMLString" alt="" coords="308,57,544,98"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1http_1_1HttpResponse.html#a24a810db349f2e0bb6188d836b9ab916" title="tomoBay.model.http.HttpResponse.get\lResponseMessage" alt="" coords="592,57,841,98"/>
-</map>

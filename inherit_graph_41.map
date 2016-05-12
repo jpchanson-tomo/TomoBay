@@ -1,8 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfacetomoBay_1_1presenters_1_1AbstractPresenter.html" title="tomoBay.presenters.Abstract\lPresenter" alt="" coords="5,136,197,177"/>
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1error_1_1ErrorPresenter.html" title="tomoBay.presenters.error.\lErrorPresenter" alt="" coords="264,5,437,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1root_1_1RootPresenter.html" title="tomoBay.presenters.root.\lRootPresenter" alt="" coords="266,71,435,112"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesHistoryPresenter.html" title="tomoBay.presenters.sales.\lSalesHistoryPresenter" alt="" coords="261,136,440,177"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesOrderPresenter.html" title="tomoBay.presenters.sales.\lSalesOrderPresenter" alt="" coords="261,201,440,243"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1warehouse_1_1WarehouseOrderPresenter.html" title="tomoBay.presenters.warehouse.\lWarehouseOrderPresenter" alt="" coords="245,267,456,308"/>
-</map>

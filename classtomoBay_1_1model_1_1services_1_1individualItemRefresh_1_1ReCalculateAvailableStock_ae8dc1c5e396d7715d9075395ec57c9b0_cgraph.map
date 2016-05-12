@@ -1,6 +1,0 @@
-<map id="tomoBay.model.services.individualItemRefresh.ReCalculateAvailableStock.getStockLevel" name="tomoBay.model.services.individualItemRefresh.ReCalculateAvailableStock.getStockLevel">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a1782a19980de34680ae751b8a334af96" title="tomoBay.model.winstock.Stock.request\lStockLevel" alt="" coords="332,35,587,76"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a0b60d421fe27874ceb35c702ffa2483f" title="tomoBay.model.winstock.Stock.post\lFormatXMLString" alt="" coords="635,5,871,47"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1helpers_1_1XMLParser.html#ac25716dcaf3586b706f71c7354d6626c" title="tomoBay.helpers.XMLParser.parse" alt="" coords="640,71,865,98"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1http_1_1HttpResponse.html#a24a810db349f2e0bb6188d836b9ab916" title="tomoBay.model.http.HttpResponse.get\lResponseMessage" alt="" coords="919,5,1168,47"/>
-</map>
