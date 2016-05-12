@@ -2,10 +2,6 @@ package tomoBay;
 import org.apache.log4j.Logger;
 
 import tomoBay.model.dataTypes.ServerStatus;
-import tomoBay.model.services.ServiceFactory;
-import tomoBay.model.services.ServiceFactory.ConfiguredServiceType;
-import tomoBay.model.services.ServiceScheduler;
-import tomoBay.model.services.emailErrorsService.EmailErrorsConfig;
 import tomoBay.view.HttpServer;
 /**
  * The entry point into the program, this is a stopgap solution to get invoices ,of orders that
@@ -16,12 +12,11 @@ import tomoBay.view.HttpServer;
  */
 public final class MAIN
 {
-	static final private Logger log = Logger.getLogger(MAIN.class.getName());
+	static final private Logger log = Logger.getLogger(MAIN.class);
 	
 	public static final void main(String[] args) throws Exception
 	{
 		System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
-		
 		log.warn("*******************************PROGRAM START*******************************");
 		final HttpServer server = new HttpServer();
 		server.start(1337);

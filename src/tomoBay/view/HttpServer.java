@@ -56,7 +56,6 @@ public final class HttpServer
 	public void start(int port) throws MalformedURLException
     {
 		Server server = new Server();
-		
 		//set up context handlers
 		ContextHandler dataServlet = setUpDataServletHandler();
 		ContextHandler guiHandler = setUpGuiHandler();
