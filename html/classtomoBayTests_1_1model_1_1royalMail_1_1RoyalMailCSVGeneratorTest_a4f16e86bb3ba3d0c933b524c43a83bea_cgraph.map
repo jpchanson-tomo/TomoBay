@@ -1,0 +1,7 @@
+<map id="testSetseparators" name="testSetseparators">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a4448e544d88b5d685f92e50cf8c3067d" title="Adds a row of data to the CSV and checks the validity of the data against the specification defined i..." alt="" coords="194,37,411,79"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a5583aa818a0fa00c85f5fd1849149b17" title="This method allows you to set different separators than the default values, it is recommended to leav..." alt="" coords="179,103,427,144"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#ad146fa8579a5f8a876c4688cc5a68520" title="informative String representation of the CSV file at the point in time where this method is called..." alt="" coords="195,168,410,209"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#ac6e1d2426364f8d09ac1c89843b1a0ae" title="make sure that the two arrays are the same length " alt="" coords="475,5,705,47"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#acc1df516e966b1769cf2b4752134ee60" title="Use the validation data pulled from the config file at construction time and make sure that the data ..." alt="" coords="483,71,697,112"/>
+</map>

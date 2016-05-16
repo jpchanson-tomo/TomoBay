@@ -1,4 +1,7 @@
 <map id="validate" name="validate">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a4448e544d88b5d685f92e50cf8c3067d" title="Adds a row of data to the CSV and checks the validity of the data against the specification defined i..." alt="" coords="120,5,191,32"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1royalMail_1_1test.html#a8b260eecbaabcef8473fd87ada040682" title="tomoBay.model.royalMail.test.main" alt="" coords="239,5,465,32"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a4448e544d88b5d685f92e50cf8c3067d" title="Adds a row of data to the CSV and checks the validity of the data against the specification defined i..." alt="" coords="120,111,191,137"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1royalMail_1_1test.html#a8b260eecbaabcef8473fd87ada040682" title="tomoBay.model.royalMail.test.main" alt="" coords="248,5,475,32"/>
+<area shape="rect" id="node4" href="$classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#a4f16e86bb3ba3d0c933b524c43a83bea" title="Test method for tomoBay.model.royalMail.RoyalMailCSVGenerator#setseparators(char, char)..." alt="" coords="239,56,484,112"/>
+<area shape="rect" id="node5" href="$classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#a228f0f1aaa740933e1ee5526464b0d4e" title="Test method for tomoBay.model.royalMail.RoyalMailCSVGenerator#toString(). " alt="" coords="239,136,484,192"/>
+<area shape="rect" id="node6" href="$classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#aa785bc5cc98af5c4ec7210ac0e314af4" title="Test method for tomoBay.model.royalMail.RoyalMailCSVGenerator#toString(). " alt="" coords="239,216,484,272"/>
 </map>

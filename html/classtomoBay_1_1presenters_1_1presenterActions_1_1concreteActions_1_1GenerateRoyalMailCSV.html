@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -109,20 +110,23 @@ $(document).ready(function(){initNavTree('classtomoBay_1_1presenters_1_1presente
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GenerateRoyalMailCSV Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Copyright(C) 2015 Jan P.C.  
+<p>This class represents a presenter action that will generate a CSV file in a format compatible with the Royal Mail DMO, and will generate it in a place that is accessibe to the frontend.  
  <a href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for GenerateRoyalMailCSV:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV__inherit__graph.svg" width="192" height="228"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV__inherit__graph.svg" width="214" height="360"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -130,27 +134,63 @@ $(document).ready(function(){initNavTree('classtomoBay_1_1presenters_1_1presente
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV__coll__graph.svg" width="192" height="228"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c07fb4ec179f58bf3226861131870cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#a5c07fb4ec179f58bf3226861131870cc">GenerateRoyalMailCSV</a> ()</td></tr>
+<tr class="memdesc:a5c07fb4ec179f58bf3226861131870cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">default ctor  <a href="#a5c07fb4ec179f58bf3226861131870cc">More...</a><br /></td></tr>
 <tr class="separator:a5c07fb4ec179f58bf3226861131870cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb3dedf31dc2c7fc796f20406c235ccd"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#adb3dedf31dc2c7fc796f20406c235ccd">execute</a> (String data)</td></tr>
 <tr class="memdesc:adb3dedf31dc2c7fc796f20406c235ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">performs the action specified  <a href="#adb3dedf31dc2c7fc796f20406c235ccd">More...</a><br /></td></tr>
 <tr class="separator:adb3dedf31dc2c7fc796f20406c235ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:acabfc0e48c29931520b2a7518870c992"><td class="memItemLeft" align="right" valign="top">String[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#acabfc0e48c29931520b2a7518870c992">processInput</a> (String input)</td></tr>
+<tr class="memdesc:acabfc0e48c29931520b2a7518870c992"><td class="mdescLeft">&#160;</td><td class="mdescRight">splits the input string into a series of columns containing the input fields at indexes that can be accessed using the private static final ints.  <a href="#acabfc0e48c29931520b2a7518870c992">More...</a><br /></td></tr>
+<tr class="separator:acabfc0e48c29931520b2a7518870c992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a711350268d6a5696b7ea7e92e899e26a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html">HeteroFieldContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#a711350268d6a5696b7ea7e92e899e26a">grabNecessaryDBData</a> (String[] inputData)</td></tr>
+<tr class="memdesc:a711350268d6a5696b7ea7e92e899e26a"><td class="mdescLeft">&#160;</td><td class="mdescRight">grabs the rest of the data necessary for the RoyalMailCSVGenerator to create a CSV file  <a href="#a711350268d6a5696b7ea7e92e899e26a">More...</a><br /></td></tr>
+<tr class="separator:a711350268d6a5696b7ea7e92e899e26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0406330e60449182dba20a75a3d58d19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#a0406330e60449182dba20a75a3d58d19">getInvoiceWeight</a> (int invoiceNo)</td></tr>
+<tr class="memdesc:a0406330e60449182dba20a75a3d58d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">queries winstock for the weight asociated with the invoice number provided as an argument.  <a href="#a0406330e60449182dba20a75a3d58d19">More...</a><br /></td></tr>
+<tr class="separator:a0406330e60449182dba20a75a3d58d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c384a10036840fb9eecd2629a1d8c58"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#a3c384a10036840fb9eecd2629a1d8c58">createCSV</a> (String[] csvData)</td></tr>
+<tr class="memdesc:a3c384a10036840fb9eecd2629a1d8c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">use the information provided to create a CSV file that the frontend can access.  <a href="#a3c384a10036840fb9eecd2629a1d8c58">More...</a><br /></td></tr>
+<tr class="separator:a3c384a10036840fb9eecd2629a1d8c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a38dd66e779f28c2706a7dce3c85dea60"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html">RoyalMailCSVGenerator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#a38dd66e779f28c2706a7dce3c85dea60">csvGen_M</a></td></tr>
+<tr class="separator:a38dd66e779f28c2706a7dce3c85dea60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ae582d1ea9f86e7a7149cceae4f872664"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#ae582d1ea9f86e7a7149cceae4f872664">ACCOUNT</a> = 0</td></tr>
+<tr class="memdesc:ae582d1ea9f86e7a7149cceae4f872664"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines where the Account info is within the input data  <a href="#ae582d1ea9f86e7a7149cceae4f872664">More...</a><br /></td></tr>
+<tr class="separator:ae582d1ea9f86e7a7149cceae4f872664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afda8e8cf5cb90dace0aa754169e55db9"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#afda8e8cf5cb90dace0aa754169e55db9">SALES_REC_NO</a> = 1</td></tr>
+<tr class="memdesc:afda8e8cf5cb90dace0aa754169e55db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines where the sales record number is within the input data  <a href="#afda8e8cf5cb90dace0aa754169e55db9">More...</a><br /></td></tr>
+<tr class="separator:afda8e8cf5cb90dace0aa754169e55db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a086e8b91ba800466b128fdcde0b959"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#a2a086e8b91ba800466b128fdcde0b959">SERVICE</a> = 2</td></tr>
+<tr class="memdesc:a2a086e8b91ba800466b128fdcde0b959"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines where the Service info is within the input data  <a href="#a2a086e8b91ba800466b128fdcde0b959">More...</a><br /></td></tr>
+<tr class="separator:a2a086e8b91ba800466b128fdcde0b959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a154ab8c6f08c07490535d3472db1f71e"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#a154ab8c6f08c07490535d3472db1f71e">SERVICE_ENHANCEMENT</a> = 3</td></tr>
+<tr class="memdesc:a154ab8c6f08c07490535d3472db1f71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines where the service enhancement info is within the input data  <a href="#a154ab8c6f08c07490535d3472db1f71e">More...</a><br /></td></tr>
+<tr class="separator:a154ab8c6f08c07490535d3472db1f71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103af5e4c39d363c5fd9edf8c783551d"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html#a103af5e4c39d363c5fd9edf8c783551d">FORMAT</a> = 4</td></tr>
+<tr class="memdesc:a103af5e4c39d363c5fd9edf8c783551d"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines where the format info is within the input data  <a href="#a103af5e4c39d363c5fd9edf8c783551d">More...</a><br /></td></tr>
+<tr class="separator:a103af5e4c39d363c5fd9edf8c783551d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Copyright(C) 2015 Jan P.C. </p>
-<p>Hanson &amp; Tomo Motor Parts Limited</p>
-<p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
-<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
-<p>You should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
+<div class="textblock"><p>This class represents a presenter action that will generate a CSV file in a format compatible with the Royal Mail DMO, and will generate it in a place that is accessibe to the frontend. </p>
+<p>The format of the input to this PresenterAction is: "Account - SalesRecNo - Service - Service Enhancement - format, "</p>
 <dl class="section author"><dt>Author</dt><dd>Jan P.C. Hanson </dd></dl>
 
-<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00025">25</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00030">30</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5c07fb4ec179f58bf3226861131870cc"></a>
 <div class="memitem">
@@ -165,7 +205,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00031">31</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+<p>default ctor </p>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00048">48</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
 
 </div>
 </div>
@@ -189,12 +231,307 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interfacetomoBay_1_1presenters_1_1presenterActions_1_1AbstractPresenterAction.html#adb3dedf31dc2c7fc796f20406c235ccd">AbstractPresenterAction</a>.</p>
 
-<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00040">40</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00058">58</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+<p>Referenced by <a class="el" href="GenerateRoyalMailCSVTest_8java_source.html#l00046">GenerateRoyalMailCSVTest.idealConditionsTest()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV_adb3dedf31dc2c7fc796f20406c235ccd_icgraph.svg" width="382" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acabfc0e48c29931520b2a7518870c992"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String [][] processInput </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>splits the input string into a series of columns containing the input fields at indexes that can be accessed using the private static final ints. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>the String containing the input data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>List&lt;String[]&gt; containing the indexed input data, can be accessed using the private static finals defining the inputs. </dd></dl>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00072">72</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a711350268d6a5696b7ea7e92e899e26a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html">HeteroFieldContainer</a> grabNecessaryDBData </td>
+          <td>(</td>
+          <td class="paramtype">String[]&#160;</td>
+          <td class="paramname"><em>inputData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>grabs the rest of the data necessary for the RoyalMailCSVGenerator to create a CSV file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputData</td><td>the processed input data that acts as a key to grab the rest of the data from the database. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>HeteroFieldContainer containing the rest of the data necessary for the RoyalMailCSVGenerator </dd></dl>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00094">94</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0406330e60449182dba20a75a3d58d19"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getInvoiceWeight </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>invoiceNo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>queries winstock for the weight asociated with the invoice number provided as an argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">invoiceNo</td><td>the invoice number retrieve the weight of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int representing the weight of the items on the invoice in grams. </dd></dl>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00104">104</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c384a10036840fb9eecd2629a1d8c58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String createCSV </td>
+          <td>(</td>
+          <td class="paramtype">String[]&#160;</td>
+          <td class="paramname"><em>csvData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>use the information provided to create a CSV file that the frontend can access. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">csvData</td><td>the data to include in the CSV file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00115">115</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ae582d1ea9f86e7a7149cceae4f872664"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int ACCOUNT = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>defines where the Account info is within the input data </p>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00033">33</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afda8e8cf5cb90dace0aa754169e55db9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int SALES_REC_NO = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>defines where the sales record number is within the input data </p>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00035">35</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a086e8b91ba800466b128fdcde0b959"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int SERVICE = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>defines where the Service info is within the input data </p>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00037">37</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a154ab8c6f08c07490535d3472db1f71e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int SERVICE_ENHANCEMENT = 3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>defines where the service enhancement info is within the input data </p>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00039">39</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a103af5e4c39d363c5fd9edf8c783551d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int FORMAT = 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>defines where the format info is within the input data </p>
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00041">41</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a38dd66e779f28c2706a7dce3c85dea60"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html">RoyalMailCSVGenerator</a> csvGen_M</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="GenerateRoyalMailCSV_8java_source.html#l00043">43</a> of file <a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/orpheus/projects/TomoMotorParts/StopGap/src/tomoBay/presenters/presenterActions/concreteActions/<a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a></li>
+<li>/home/orpheus/projects/TomoMotorParts/TomoBay/Development/TomoBay/src/tomoBay/presenters/presenterActions/concreteActions/<a class="el" href="GenerateRoyalMailCSV_8java_source.html">GenerateRoyalMailCSV.java</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -202,7 +539,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetomoBay.html">tomoBay</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters.html">presenters</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters_1_1presenterActions.html">presenterActions</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters_1_1presenterActions_1_1concreteActions.html">concreteActions</a></li><li class="navelem"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html">GenerateRoyalMailCSV</a></li>
-    <li class="footer">Generated on Thu May 12 2016 12:49:29 for TomoBay by
+    <li class="footer">Generated on Mon May 16 2016 15:35:08 for TomoBay by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

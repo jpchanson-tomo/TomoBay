@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" href="$interfacetomoBay_1_1presenters_1_1presenterActions_1_1AbstractPresenterAction.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="5,309,169,336"/>
 <area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1BuyerDetails.html" title="BuyerDetails" alt="" coords="257,5,354,32"/>
 <area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1BuyerList.html" title="BuyerList" alt="" coords="267,56,344,83"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="225,107,386,133"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html" title="This class represents a presenter action that will generate a CSV file in a format compatible with th..." alt="" coords="225,107,386,133"/>
 <area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html" title="This AbstractPresenterAction provides functionality to invoice a number of orders based on the order ..." alt="" coords="254,157,357,184"/>
 <area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1LogFileViewer.html" title="LogFileViewer" alt="" coords="253,208,357,235"/>
 <area shape="rect" id="node7" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1MarkAsInvoiced.html" title="MarkAsInvoiced" alt="" coords="247,259,363,285"/>

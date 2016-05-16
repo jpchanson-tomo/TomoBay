@@ -1,6 +1,14 @@
 var searchData=
 [
   ['test',['test',['../classtomoBayTests_1_1model_1_1net_1_1ClientSocketTest.html#a9e05d6ab69028f9da119689d187c95b2',1,'tomoBayTests::model::net::ClientSocketTest']]],
+  ['testaddbatch',['testAddBatch',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#ab20cdf6276354c2559f9b53283174733',1,'tomoBayTests::model::royalMail::RoyalMailCSVGeneratorTest']]],
+  ['testaddrow',['testAddRow',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#a66e66076494011bb61c1f78024b4527c',1,'tomoBayTests::model::royalMail::RoyalMailCSVGeneratorTest']]],
+  ['testgenerate',['testGenerate',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#a1036d4ad1717e3668e1b92b56dbf09df',1,'tomoBayTests::model::royalMail::RoyalMailCSVGeneratorTest']]],
+  ['testroyalmailcsvgenerator',['testRoyalMailCSVGenerator',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#ae73862dd691b931a451ab50ed5992e57',1,'tomoBayTests::model::royalMail::RoyalMailCSVGeneratorTest']]],
+  ['testsetseparators',['testSetseparators',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#a4f16e86bb3ba3d0c933b524c43a83bea',1,'tomoBayTests::model::royalMail::RoyalMailCSVGeneratorTest']]],
+  ['testsize',['testSize',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#a05dfc16869302fa4e497a69059c20301',1,'tomoBayTests::model::royalMail::RoyalMailCSVGeneratorTest']]],
+  ['testtostringbadinput',['testToStringBadInput',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#a228f0f1aaa740933e1ee5526464b0d4e',1,'tomoBayTests::model::royalMail::RoyalMailCSVGeneratorTest']]],
+  ['testtostringgoodinput',['testToStringGoodInput',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html#aa785bc5cc98af5c4ec7210ac0e314af4',1,'tomoBayTests::model::royalMail::RoyalMailCSVGeneratorTest']]],
   ['testvisiterrorpresenter',['testVisitErrorPresenter',['../classtomoBayTests_1_1view_1_1ViewFactoryTest.html#ab418f7ebd7f4287f90d05e47426d0665',1,'tomoBayTests::view::ViewFactoryTest']]],
   ['testvisitrootpresenter',['testVisitRootPresenter',['../classtomoBayTests_1_1view_1_1ViewFactoryTest.html#aa2493f0981e5067963cd27a5bae62b23',1,'tomoBayTests::view::ViewFactoryTest']]],
   ['testvisitsaleshistorypresenter',['testVisitSalesHistoryPresenter',['../classtomoBayTests_1_1view_1_1ViewFactoryTest.html#a591dcd90f616a6c32e58195b2b4b1df9',1,'tomoBayTests::view::ViewFactoryTest']]],
@@ -14,7 +22,7 @@ var searchData=
   ['totalexvat',['totalExVat',['../classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#a596ba0a251d2f86898d7a0a23b4b1140',1,'tomoBay::model::dataTypes::financial::SalesOrderDayBook::AbstractSalesDayBookLine']]],
   ['totalincvat',['totalIncVat',['../classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#aea325f3c68ee2726fc713821e3e2b63c',1,'tomoBay::model::dataTypes::financial::SalesOrderDayBook::AbstractSalesDayBookLine']]],
   ['totalprice',['totalPrice',['../classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#abbc5ea6a986dd37b7239d4c859db9f2b',1,'tomoBay::model::dataTypes::order::Order']]],
-  ['transaction',['transaction',['../classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#a39d4b856c1dcba627c763d60c3be86b0',1,'tomoBay.model.dataTypes.order.Order.transaction()'],['../classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Transaction.html#ab1052d348cb96869921bd11db552d96c',1,'tomoBay.model.dataTypes.order.Transaction.Transaction()']]],
+  ['transaction',['Transaction',['../classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Transaction.html#ab1052d348cb96869921bd11db552d96c',1,'tomoBay.model.dataTypes.order.Transaction.Transaction()'],['../classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#a39d4b856c1dcba627c763d60c3be86b0',1,'tomoBay.model.dataTypes.order.Order.transaction()']]],
   ['transactionid',['TransactionID',['../classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1TransactionID.html#a09878ca95c68dc9c131f79cc17dabc07',1,'tomoBay::model::sql::schema::transactionsTable::TransactionID']]],
   ['transactioninfo',['transactionInfo',['../classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#a703cbb509cdc01530f19b03f573120c9',1,'tomoBay::presenters::presenterActions::concreteActions::OrderInfo']]],
   ['transactionprice',['transactionPrice',['../classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Transaction.html#aaef16cd1e37d2b5b25ca537c9b144bf9',1,'tomoBay::model::dataTypes::order::Transaction']]],

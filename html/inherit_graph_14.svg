@@ -45,7 +45,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html" target="_top" xlink:title="Copyright(C) 2015 Jan P.C. ">
+<g id="a_node4"><a xlink:href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSV.html" target="_top" xlink:title="This class represents a presenter action that will generate a CSV file in a format compatible with th...">
 <polygon fill="white" stroke="black" points="164.5,-380.5 164.5,-399.5 285.5,-399.5 285.5,-380.5 164.5,-380.5"/>
 <text text-anchor="middle" x="225" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">GenerateRoyalMailCSV</text>
 </a>

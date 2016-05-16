@@ -1,3 +1,5 @@
 <map id="GenerateRoyalMailCSV" name="GenerateRoyalMailCSV">
-<area shape="rect" id="node2" href="$interfacetomoBay_1_1presenters_1_1presenterActions_1_1AbstractPresenterAction.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="14,5,178,83"/>
+<area shape="rect" id="node2" href="$interfacetomoBay_1_1presenters_1_1presenterActions_1_1AbstractPresenterAction.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="5,285,169,362"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html" title="This class represents an object that generates CSV files in a format that the Royal Mail Dispatch Man..." alt="" coords="193,204,379,443"/>
+<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1royalMail_1_1CSVGenerator.html" title="This is the public interface for all CSV generator derived classes and defines the necessary function..." alt="" coords="156,5,277,141"/>
 </map>
