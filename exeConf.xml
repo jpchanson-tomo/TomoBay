@@ -2,8 +2,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>console</headerType>
-  <jar>/home/orpheus/projects/TomoMotorParts/StopGap/StopGapNew.jar</jar>
-  <outfile>/home/orpheus/projects/TomoMotorParts/StopGap/tomoBay.exe</outfile>
+  <jar>/home/orpheus/projects/TomoMotorParts/TomoBay/Development/TomoBay/TomoBay.jar</jar>
+  <outfile>/home/orpheus/projects/TomoMotorParts/TomoBay/Development/TomoBay/tomoBay.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -13,7 +13,7 @@
   <stayAlive>true</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>/home/orpheus/projects/TomoMotorParts/StopGap/TomoBay.ico</icon>
+  <icon>/home/orpheus/projects/TomoMotorParts/TomoBay/Development/TomoBay/TomoBay.ico</icon>
   <singleInstance>
     <mutexName>Main</mutexName>
     <windowTitle>TomoBay</windowTitle>
@@ -41,4 +41,11 @@
     <internalName>TomoBay</internalName>
     <originalFilename>TomoBay.exe</originalFilename>
   </versionInfo>
+  <messages>
+    <startupErr>An error occurred while starting the application.</startupErr>
+    <bundledJreErr>This application was configured to use a bundled Java Runtime Environment but the runtime is missing or corrupted.</bundledJreErr>
+    <jreVersionErr>This application requires a Java Runtime Environment</jreVersionErr>
+    <launcherErr>The registry refers to a nonexistent Java Runtime Environment installation or the runtime is corrupted.</launcherErr>
+    <instanceAlreadyExistsMsg>An application instance is already running.</instanceAlreadyExistsMsg>
+  </messages>
 </launch4jConfig>
