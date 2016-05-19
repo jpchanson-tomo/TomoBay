@@ -1,18 +1,22 @@
 #!/bin/bash
 
-echo "please provide a build message(if none is provided will not commit): "
+echo -n "please provide github username: "
+read user
+echo -n "please provide github password: "
+read -s passwd
+echo -n "please provide a build message(if none is provided will not commit): "
 read message
 
-doxygen docs/TomoBay.doxyfile
+doxygen -v docs/TomoBay.doxyfile
 
 ant && 
 /opt/launch4j/launch4j exeConf.xml  && 
 
 git add . && 
 git commit -m "$message" && 
-git push origin stopgap &&
+git push https://$user:$passwd@github.com/jpchanson/TomoBay.git stopgap &&
 
 cd ../../Docs/TomoBay 
 git add . &&
 git commit -m "$message" &&
-git push origin gh-pages
+git push https://$user:$passwd@github.com/jpchanson/TomoBay.git gh-pages
