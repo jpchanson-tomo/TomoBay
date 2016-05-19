@@ -109,9 +109,9 @@ EntryList.prototype.submit = function()
 		}	
 		else
 		{
-			var uriContent = "data:text/octet-stream," + encodeURIComponent(data);
-			window.open(uriContent,"new_shipments");
-//			window.open("./resources/RoyalMail.CSV","new_shipments");  //fallback solution
+//			var uriContent = "data:text/octet-stream," + encodeURIComponent(data);
+//			window.open(uriContent,"new_shipments");
+			window.open("./resources/RoyalMail.CSV","new_shipments");  //fallback solution
 		}
 	});
 	//alert($(this.container_M).text());

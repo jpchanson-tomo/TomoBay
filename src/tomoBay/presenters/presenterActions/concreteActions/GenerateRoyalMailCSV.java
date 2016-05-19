@@ -231,7 +231,7 @@ public final class GenerateRoyalMailCSV implements AbstractPresenterAction
 		this.csvGen_M.addBatch(dataToSend);
 		try
 		{
-			this.csvGen_M.generate("RoyalMail.CSV", "./views/resources/", "UTF-8");
+			this.csvGen_M.generate("RoyalMail.csv", "./views/resources/", "UTF-8");
 			return this.csvGen_M.toString();
 		} 
 		catch (IOException e)
