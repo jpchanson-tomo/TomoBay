@@ -111,7 +111,7 @@ EntryList.prototype.submit = function()
 		{
 //			var uriContent = "data:text/octet-stream," + encodeURIComponent(data);
 //			window.open(uriContent,"new_shipments");
-			window.open("./resources/RoyalMail.CSV","new_shipments");  //fallback solution
+			window.open("./resources/RoyalMail.csv","new_shipments");  //fallback solution
 		}
 	});
 	//alert($(this.container_M).text());

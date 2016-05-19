@@ -195,7 +195,9 @@ public final class GenerateRoyalMailCSV implements AbstractPresenterAction
 		{
 			final int invoiceNo = Integer.parseInt(inputData[i][RoyalMailCSV.REFERENCE]);
 			final int brandCode = BrandToCode.convertToWinstockInt(initialData[i][GenerateRoyalMailCSV.ACCOUNT]);
-			inputData[i][RoyalMailCSV.WEIGHT] = String.valueOf(winstock.requestInvoiceWeight(invoiceNo, brandCode));
+			final String weight = String.valueOf(winstock.requestInvoiceWeight(invoiceNo, brandCode));
+			if(weight.equals("0")) {inputData[i][RoyalMailCSV.WEIGHT]= "1";}
+			else {inputData[i][RoyalMailCSV.WEIGHT]= weight;}
 		}
 		return inputData;
 	}
