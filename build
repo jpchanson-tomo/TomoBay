@@ -4,10 +4,11 @@ echo -n "please provide github username: "
 read user
 echo -n "please provide github password: "
 read -s passwd
+echo ""
 echo -n "please provide a build message(if none is provided will not commit): "
 read message
 
-doxygen -v docs/TomoBay.doxyfile
+doxygen docs/TomoBay.doxyfile
 
 ant && 
 /opt/launch4j/launch4j exeConf.xml  && 
