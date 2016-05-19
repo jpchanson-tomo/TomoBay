@@ -85,7 +85,7 @@ public class Part
 	 * @return double representing the cost of this part in pounds
 	 */
 	private double getCost(String partNo, String brand)
-	{return this.winstock_M.requestLastCost(partNo, BrandToCode.convertToInt(brand)+"");}
+	{return this.winstock_M.requestLastCost(partNo, BrandToCode.convertToWinstockInt(brand)+"");}
 	
 	/**
 	 * find the description of this part, using winstock
@@ -93,7 +93,7 @@ public class Part
 	 */
 	private String getDescription(String partNo, String brand)
 	{
-		String result = this.winstock_M.requestDescription(partNo, BrandToCode.convertToInt(brand)+"");
+		String result = this.winstock_M.requestDescription(partNo, BrandToCode.convertToWinstockInt(brand)+"");
 		int endOfString = result.indexOf(BADCHAR);
 		if (result.contains(BADCHAR)) {result = result.substring(0, endOfString);}
 		return result;

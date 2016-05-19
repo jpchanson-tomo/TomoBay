@@ -18,9 +18,18 @@
 		<div class="navibar"></div>
 		
 		
-		
-		
 		<div class="container-fluid">
+		
+		<div class="alert alert-warning">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>Warning!</strong> If you are using crippled browser like Internet Explorer, then
+			parts of this site may not work properly. Please use a reasonable browser like: Firefox,
+			Chrome, Safari or Opera. Support for Internet Explorer was dropped after realising that
+			it takes too long to write workarounds for all the things Internet Explorer <em>cant do</em>.......
+			..... <strong>You have been warned!</strong>
+		</div>
+		
+		
 			<div class="panel panel-default panel-primary">
 				<div class="panel-heading">
 					<h2 class="" >Mark As Invoiced</h2>
@@ -79,7 +88,7 @@
 					<span style="position:relative;left:35%;" class='addbox' style="width:500px;">
 					
   					</span>
-  					<button class='btn btn-success' onclick=''>Submit</button> 
+  					<button class='btn btn-success' onclick='addBox.submit()'>Submit</button> 
   					<button class='btn btn-warning' onclick='addBox.addEntry()'>Add order</button> 
   					<button class='btn btn-danger' onclick='addBox.removeLastEntry()'>remove last</button>
 				</div>

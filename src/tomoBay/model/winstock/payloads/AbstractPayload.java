@@ -67,8 +67,7 @@ public class AbstractPayload
 	/**
 	 * reassembles the internal list as a byte[] that can be passed straight to the ClientSockets
 	 * object.
-	 * @param listToConvert
-	 * @return
+	 * @return byte[] that can be passed to the client socket
 	 */
 	private byte[] getResult()
 	{

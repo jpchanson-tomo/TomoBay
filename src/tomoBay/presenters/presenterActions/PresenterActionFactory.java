@@ -21,6 +21,7 @@ import java.util.Map;
 import tomoBay.presenters.presenterActions.factories.AbstractPresenterActionFactory;
 import tomoBay.presenters.presenterActions.factories.BuyerDetailsFactory;
 import tomoBay.presenters.presenterActions.factories.BuyerListFactory;
+import tomoBay.presenters.presenterActions.factories.GenerateRoyalMailCSVFactory;
 import tomoBay.presenters.presenterActions.factories.InvoiceOrdersFactory;
 import tomoBay.presenters.presenterActions.factories.LogFileViewerFactory;
 import tomoBay.presenters.presenterActions.factories.MarkAsInvoicedFactory;
@@ -60,7 +61,9 @@ public final class PresenterActionFactory
 					
 					INVOICE_ORDERS,
 					
-					PRINT_INVOICES
+					PRINT_INVOICES,
+					
+					GENERATE_ROYAL_MAIL_CSV
 				}
 	
 	/**maps the type string to an action**/
@@ -78,6 +81,7 @@ public final class PresenterActionFactory
 					put(PresenterActions.RE_SCAN_BUYER, new ReScanBuyerFactory());
 					put(PresenterActions.INVOICE_ORDERS, new InvoiceOrdersFactory());
 					put(PresenterActions.PRINT_INVOICES, new PrintInvoicesFactory());
+					put(PresenterActions.GENERATE_ROYAL_MAIL_CSV, new GenerateRoyalMailCSVFactory());
 				}};
 
 	/**

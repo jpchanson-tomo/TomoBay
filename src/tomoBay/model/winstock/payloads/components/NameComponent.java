@@ -29,7 +29,7 @@ public final class NameComponent extends AbstractPayloadComponent
 	/**the total length of the component**/
 	private static final byte LENGTH = 51;
 	/**
-	 * @param payloadObj
+	 * defautl ctor
 	 */
 	public NameComponent()
 	{super();}

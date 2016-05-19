@@ -84,7 +84,7 @@ public final class EbayAccounts
 	
 	/**
 	 * retrieve the ebay api key for the account name specified
-	 * @param  accountNamethe account name to find the api key of
+	 * @param  accountName the account name to find the api key of
 	 * @return String containing the ebay api key for the account specified
 	 */
 	public static String apiKey (String accountName)
@@ -157,7 +157,7 @@ public final class EbayAccounts
 	 */
 	public static boolean registerAccount(String accountName, String apiKey, String server, int lookback) 
 	{
-		/**@TODO use query to add account to database**/
+		/**@todo use query to add account to database**/
 		EbayAccounts.refresh();
 		return false;
 	}

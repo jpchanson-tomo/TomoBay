@@ -103,8 +103,8 @@ public final class InvoiceOrders implements AbstractPresenterAction
 	/**
 	 * update the database entry for a particular order to include the invoice number in the 
 	 * invoiced column of the orders table.
-	 * @param invNo
-	 * @param OrderNo
+	 * @param invNo the invoice number as a string
+	 * @param orderNo the order number as a string
 	 */
 	private void updateDB(String invNo, String orderNo)
 	{

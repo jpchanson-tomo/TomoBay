@@ -62,6 +62,7 @@ final class Buyers_Table
 	/**
 	 * retrieves the personal address associated with the order passed in as an argument.
 	 * @param order the OrderType representing a particular order (from ebay API)
+	 * @param container the HeterpFieldContainer to add the address fields to.
 	 * @return container containing the address fields for this buyer
 	 */
 	private static void getAddress(OrderType order, HeteroFieldContainer container)
@@ -82,6 +83,7 @@ final class Buyers_Table
 	 * retrieves the global shipping program address associated with the order passed in as an argument.
 	 * This method will return a null pointer if the order is not applicable to the global shipping program
 	 * @param order the OrderType representing a particular order (from ebay API)
+	 * @param container the HeterpFieldContainer to add the address fields to.
 	 * @return container containing the address fields for this buyer
 	 */
 	private static void getGSPaddress(OrderType order, HeteroFieldContainer container)

@@ -60,7 +60,7 @@ public final class PrintInvoices implements AbstractPresenterAction
 					DualList<String, PayloadType> printThis 
 								= this.formatAsDualList(
 														String.valueOf(line.invoiceNumber()), 
-														BrandToCode.convertToInt(line.orderInfo().transaction(0).listing().part(0).brand())+"", 
+														BrandToCode.convertToWinstockInt(line.orderInfo().transaction(0).listing().part(0).brand())+"", 
 														"1"
 														);
 					
@@ -84,7 +84,7 @@ public final class PrintInvoices implements AbstractPresenterAction
 	
 	/**
 	 * formats the AbstractSalesDayBookLine into a format that can be passed to the WinstockCommandInvoker.
-	 * @param invoice the invoice to be formatted
+	 * @param invoiceNo the invoice to be formatted
 	 * @param brand the brand code associated with the invoice to be printed
 	 * @param packingList the number of packing lists you wish printed (as a string)
 	 * @return DualList<String, PayloadType> accepted by the WinstockCommandInvoker

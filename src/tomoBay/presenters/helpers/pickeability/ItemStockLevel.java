@@ -81,7 +81,7 @@ final class ItemStockLevel
 			for (int i = 0 ; i < partlist.size() ; ++i)
 			{
 				final int available = stockAvailable.requestStockLevel(partlist.getPartNumber(i), 
-						BrandToCode.convertToInt(item.get(ItemsTable.BRAND, ClassRef.STRING))+"");
+						BrandToCode.convertToWinstockInt(item.get(ItemsTable.BRAND, ClassRef.STRING))+"");
 				
 				final int required = partlist.getPartQty(i);
 				

@@ -29,7 +29,7 @@ public final class OrderNoComponent extends AbstractPayloadComponent
 	/**the total length of the component**/
 	private static final byte LENGTH = 21;
 	/**
-	 * @param payloadObj
+	 * default ctor
 	 */
 	public OrderNoComponent()
 	{super();}

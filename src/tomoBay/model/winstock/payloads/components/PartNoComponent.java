@@ -29,7 +29,7 @@ public final class PartNoComponent extends AbstractPayloadComponent
 	/**the total length of the component**/
 	private static final byte LENGTH = 17;
 	/**
-	 * @param payloadObj
+	 * default ctor
 	 */
 	public PartNoComponent()
 	{super();}

@@ -27,7 +27,7 @@ public final class InvoiceAccountComponent extends AbstractPayloadComponent
 	/**the total length of the component**/
 	private static final byte LENGTH = 9;
 	/**
-	 * @param payloadObj
+	 * default ctor
 	 */
 	public InvoiceAccountComponent()
 	{super();}

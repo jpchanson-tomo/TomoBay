@@ -29,7 +29,7 @@ public final class DescriptionComponent extends AbstractPayloadComponent
 	/**the total length of the component**/
 	private static final byte LENGTH = 31;
 	/**
-	 * @param payloadObj
+	 * default ctor
 	 */
 	public DescriptionComponent()
 	{super();}

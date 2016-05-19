@@ -62,7 +62,7 @@ public final class OnRunning implements AbstractServiceState
 			for (String partNo : partlist.getPartNumbers())
 			{
 				int result = errorCheck.requestStockLevel(partNo, 
-											BrandToCode.convertToInt(order.get(ItemsTable.BRAND, ClassRef.STRING))+"");
+											BrandToCode.convertToWinstockInt(order.get(ItemsTable.BRAND, ClassRef.STRING))+"");
 				
 				if (result == -8008135)
 				{this.updateItemNote(order);}

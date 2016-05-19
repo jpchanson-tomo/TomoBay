@@ -29,7 +29,7 @@ public final class PostCodeComponent extends AbstractPayloadComponent
 	/**the total length of the component**/
 	private static final byte LENGTH = 10;
 	/**
-	 * @param payloadObj
+	 * default ctor
 	 */
 	public PostCodeComponent()
 	{super();}

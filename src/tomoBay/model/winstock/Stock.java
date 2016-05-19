@@ -20,7 +20,7 @@ import tomoBay.helpers.XMLParser;
 import tomoBay.model.net.HttpGET;
 import tomoBay.model.net.HttpResponse;
 /**
- * This class is responsible for querying stock levels on winstock. 
+ * This class is responsible for querying winstock for information. 
  * @author Jan P.C. Hanson
  *
  */
@@ -33,10 +33,6 @@ public final class Stock
 	private static final String URL_PT1_M=ConfigReader.getConf(Config.WIN_URL1);
 	/**the second part of the winstock url up to the second variable**/
 	private static final String URL_PT2_M= ConfigReader.getConf(Config.WIN_URL2);
-	/**the last part number to have info on it requested**/
-	private String currentPartNo_M;
-	/**the brandCode of the last part number to have info in it requested**/
-	private String currentBrandCode_M;
 	/**the response from winstock for the last part number queried**/
 	private HttpResponse response_M;
 	
@@ -44,11 +40,7 @@ public final class Stock
 	 * default ctor
 	 */
 	public Stock()
-	{
-		super();
-		this.currentBrandCode_M="";
-		this.currentPartNo_M="";
-	}
+	{super();}
 	
 	/**
 	 * query winstock for the stock level of a particular part.
@@ -56,7 +48,7 @@ public final class Stock
 	 * @param brandCode 'C'=citroen/peugeot/psa, 'F'=ford, 'P'=everything else
 	 * @return int the number of the requested part in stock
 	 */
-	public int requestStockLevel(String partNo, String brandCode)
+	public final int requestStockLevel(String partNo, String brandCode)
 	{
 		this.queryWinstockURL(partNo, brandCode);
 		String result = this.postFormatXMLString(this.response_M);
@@ -72,7 +64,7 @@ public final class Stock
 	 * @param brandCode 'C'=citroen/peugeot/psa, 'F'=ford, 'P'=everything else
 	 * @return int the number of the requested part in stock
 	 */
-	public String requestDescription(String partNo, String brandCode)
+	public final String requestDescription(String partNo, String brandCode)
 	{
 		String result;
 		this.queryWinstockURL(partNo, brandCode);
@@ -88,7 +80,7 @@ public final class Stock
 	 * @param brandCode 'C'=citroen/peugeot/psa, 'F'=ford, 'P'=everything else
 	 * @return int the number of the requested part in stock
 	 */
-	public double requestLastCost(String partNo, String brandCode)
+	public final double requestLastCost(String partNo, String brandCode)
 	{
 		String result;
 		this.queryWinstockURL(partNo, brandCode);
@@ -99,14 +91,34 @@ public final class Stock
 		catch(NumberFormatException nfe) {return Stock.ERROR;}
 	}
 	
+	/**
+	 * query winstock for the weight of a particular invoice
+	 * @param invoiceNo the number of the invoice
+	 * @param brandCode brandCode '3'=citroen/peugeot/psa, '0'=ford, '8'=prestige
+	 * @return int representing the invoice weight.
+	 */
+	public final int requestInvoiceWeight( int invoiceNo, int brandCode)
+	{
+		final String weightCallPt1 = ConfigReader.getConf(Config.WIN_WEIGHT_CALL1);
+		final String weightCallPt2 = ConfigReader.getConf(Config.WIN_WEIGHT_CALL2);
+		
+		HttpGET get = new HttpGET();
+		HttpResponse response = get.request(weightCallPt1+invoiceNo+weightCallPt2+brandCode);
+		String result = this.postFormatXMLString(response);
+		result = XMLParser.parse("invoiceweight", result);
+		try{return Integer.parseInt(result);}
+		catch(NumberFormatException nfe) {return Stock.ERROR;}
+	}
+	
+	/**
+	 * @param partNo
+	 * @param brandCode
+	 */
 	private void queryWinstockURL(String partNo, String brandCode)
 	{
-		if(this.currentPartNo_M != partNo || this.currentBrandCode_M != brandCode)
-		{
 			HttpGET get = new HttpGET();
 //			System.out.println(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo.toUpperCase());
 			this.response_M = get.request(Stock.URL_PT1_M+brandCode+Stock.URL_PT2_M+partNo.toUpperCase());
-		}
 	}
 	
 	/**

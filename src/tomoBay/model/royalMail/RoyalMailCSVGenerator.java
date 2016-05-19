@@ -88,14 +88,27 @@ public final class RoyalMailCSVGenerator implements CSVGenerator
 	 *  Adds a row of data to the CSV and checks the validity of the data against the specification
 	 *  defined in the config file (tomoBay.conf)
 	 * @param row String[] of data to be inserted into the CSV
+	 * @throws ArrayIndexOutOfBoundsException if the data array is longer than is specified by this CSV
+	 * (see tomoBay.conf)
+	 * @throws ArrayStoreException if the data is not valid data for a particular column (see tomobay.conf)
 	 */
 	@Override
-	public void addRow(String[] row) throws ArrayIndexOutOfBoundsException
+	public void addRow(String[] row) throws ArrayIndexOutOfBoundsException, ArrayStoreException
 	{
 		RoyalMailCSVGenerator.checkSize(row, this.columnNames_M);
 		RoyalMailCSVGenerator.validate(row, this.columnValidations_M);
 		this.result_M.add(row);
 	}
+	
+	/**
+	 * adds a whole batch of data to the end of the CSV
+	 * @param batch List<String[]> containing the batch information
+	 * @throws ArrayIndexOutOfBoundsException if the data array is longer than is specified by this CSV
+	 * (see tomoBay.conf)
+	 * @throws ArrayStoreException if the data is not valid data for a particular column (see tomobay.conf)
+	 */
+	public void addBatch(List<String[]> batch) throws ArrayIndexOutOfBoundsException
+	{this.result_M.addAll(batch);}
 
 	/**
 	 * Generated the actual CSV file, it will overwrite any file already at that path with the name
@@ -110,7 +123,7 @@ public final class RoyalMailCSVGenerator implements CSVGenerator
 	{
 		List<String> output = new ArrayList<String>();
 		Path fPath = Paths.get(filePath, fileName);
-//		Files.deleteIfExists(fPath);
+		Files.deleteIfExists(fPath);
 		
 		for(int i = 0 ; i < this.result_M.size() ; ++i)
 		{
@@ -174,7 +187,7 @@ public final class RoyalMailCSVGenerator implements CSVGenerator
 	private static void validate(String[] row, String[] columnValidations) throws ArrayStoreException
 	{
 		for(int i = 0 ; i < row.length ; ++i)
-		{ System.out.println(row[i]+":"+columnValidations[i]);
+		{
 			if(row[i].matches(columnValidations[i])==false)
 			{throw new ArrayStoreException("column "+ i+" does not match specification(see tomoBay.conf)");}
 		}

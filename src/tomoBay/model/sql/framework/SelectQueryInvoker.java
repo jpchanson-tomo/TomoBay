@@ -36,6 +36,7 @@ import tomoBay.model.sql.queries.factories.select.noParams.SelectUninvoicedOrder
 import tomoBay.model.sql.queries.factories.select.noParams.SelectUninvoicedOrdersNoErrorsFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectBrandAndPartNoByOrderIDFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectBrandByInvNoFactory;
+import tomoBay.model.sql.queries.factories.select.params.SelectBuyerByAccAndSRNFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectEbayBuyerFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectEbayItemSpecificFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectEbayOrderByBuyerFactory;
@@ -106,6 +107,8 @@ public final class SelectQueryInvoker
 		SELECT_EBAY_TRANSACTION_BY_ID,
 		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectBrandAndPartNoByOrderID**/
 		SELECT_BRAND_AND_PARTNO_BY_ORDERID,
+		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectBuyerByAccAndSRN**/
+		SELECT_EBAY_BUYER_BY_ACCOUNT_AND_SRN
 	}
 	/**internal map holds factory objects created static final to make threadsafe**/
 	private static final Map<SelectQueryTypeNoParams, AbstractSelectNoParamsQueryFactory> noParamsMap_M
@@ -137,6 +140,7 @@ public final class SelectQueryInvoker
 			put(SelectQueryTypeParams.SELECT_EBAY_ORDER_BY_BUYER, new SelectEbayOrderByBuyerFactory());
 			put(SelectQueryTypeParams.SELECT_BRAND_BY_INV_NO, new SelectBrandByInvNoFactory());
 			put(SelectQueryTypeParams.SELECT_BRAND_AND_PARTNO_BY_ORDERID, new SelectBrandAndPartNoByOrderIDFactory());
+			put(SelectQueryTypeParams.SELECT_EBAY_BUYER_BY_ACCOUNT_AND_SRN, new SelectBuyerByAccAndSRNFactory());
 		}};
 	
 	/**

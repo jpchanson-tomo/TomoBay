@@ -44,7 +44,7 @@ public final class WinstockFormat extends AbstractFormat
 	{
 		DualList<String,PayloadType> result = new DualList<String,PayloadType>();
 		result.put("34", PayloadType.TYPE);
-		result.put(BrandToCode.convertToInt(line.orderInfo().transaction(0).listing().part(0).brand())+"", PayloadType.COMPANY);
+		result.put(BrandToCode.convertToWinstockInt(line.orderInfo().transaction(0).listing().part(0).brand())+"", PayloadType.COMPANY);
 		result.put("EBAY", PayloadType.INVOICE_ACCOUNT);
 		result.put(this.shorten(line.orderInfo().buyer().name()), PayloadType.NAME);
 		result.put(this.shorten(line.orderInfo().buyer().street1()),PayloadType.ADDRESS1);

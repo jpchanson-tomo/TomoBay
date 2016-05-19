@@ -9,3 +9,8 @@ function stop()
 	$.get("/res/?page=ADMIN_PRESENTER&type=PERIODIC_SERVICES_CONTROLLER&data=PAUSE", function(data, textStatus)
 			{alert(data);});
 }
+
+$(document).ready(function()
+{
+	
+});

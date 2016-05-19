@@ -50,7 +50,7 @@ public final class PresenterFactory
 				SALES_HISTORY_PRESENTER,
 				/**@see {@link tomoBay.presenters.sales.OutOfHoursPresenter}**/
 				OUT_OF_HOURS_PRESENTER,
-				/**@see {@link tomoBay.presenters.sales.AdminServicePresenter}**/
+				/**@see {@link tomoBay.presenters.admin.AdminPresenter}**/
 				ADMIN_PRESENTER,
 				/**@see {@link tomoBay.presenters.orderDetails.OrderDetailsPresenter}**/
 				ORDER_DETAILS_PRESENTER,

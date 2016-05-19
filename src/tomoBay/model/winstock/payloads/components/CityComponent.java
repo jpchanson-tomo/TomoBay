@@ -30,7 +30,7 @@ public final class CityComponent extends AbstractPayloadComponent
 	/**the total length of the component**/
 	private static final byte LENGTH = 51;
 	/**
-	 * @param payloadObj
+	 * default ctor
 	 */
 	public CityComponent()
 	{super();}

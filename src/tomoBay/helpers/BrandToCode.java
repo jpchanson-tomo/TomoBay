@@ -45,6 +45,7 @@ public class BrandToCode
 		put("P", 8);
 	}};
 	
+	
 	/**
 	 * defualt ctor
 	 */
@@ -57,7 +58,6 @@ public class BrandToCode
 	 * @return String brand identifier, C for peugeot/citroen/psa, F for ford, P for everything 
 	 * else.
 	 */
-	@Deprecated
 	public static String convert(String brand)
 	{
 		if (brand.toLowerCase().contains("citroen")
@@ -73,9 +73,9 @@ public class BrandToCode
 	/**
 	 * converts converts a string like "citroen" or "fOrd" to a brandcode integer specific to winstock.
 	 * @param brand brand String like "Citroen" or "Ford" to a brandcode
-	 * @return String brand identifier, C for peugeot/citroen/psa, F for ford, P for everything 
+	 * @return int brand identifier, 3 for peugeot/citroen/psa, 0 for ford, 8 for everything 
 	 * else.
 	 */
-	public static int convertToInt(String brand)
+	public static int convertToWinstockInt(String brand)
 	{return BrandToCode.intMap_M.get(BrandToCode.convert(brand));}
 }

@@ -1,6 +1,18 @@
 #!/bin/bash
+
+echo "please provide a build message(if none is provided will not commit): "
+read message
+
+doxygen docs/TomoBay.doxyfile
+
 ant && 
 /opt/launch4j/launch4j exeConf.xml  && 
+
 git add . && 
-git commit && 
-git push origin stopgap
+git commit -m "$message" && 
+git push origin stopgap &&
+
+cd ../../Docs/TomoBay 
+git add . &&
+git commit -m "$message" &&
+git push origin gh-pages

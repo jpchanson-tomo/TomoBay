@@ -5,6 +5,7 @@
  * @param container a String containing the CSS selector that you wish the addbox to be created inside
  * @param entryTag the html tag (minus angle brackets) that you would like the entry to be wrapped in.
  * @param callback function to be called once the addbox has been created.
+ * @dependancy ajaxButton
  */
 function EntryList(resultContainer, entryTag, callback)
 {	
@@ -38,7 +39,7 @@ EntryList.prototype.addEntry = function()
 	var closeTag = "</"+this.tag_M+">";
 	var ENTRY = "<span id='entryList_account'>Click me to edit </span> - <span id='entryList_SRN'> </span> - " +
 				"<span id='entryList_Service'> </span> - <span id='entryList_ServEnhance'> </span> - " +
-				"<span id='entryList_Format'> </span>";
+				"<span id='entryList_Format'> </span> <span style='visibility:hidden;'>|</span>";
 	
 	$(this.container_M).append(openTag+ENTRY+closeTag);
 	this.entryCount_M+=1;
@@ -51,7 +52,7 @@ EntryList.prototype.addEntry = function()
 EntryList.prototype.lauchModal = function(entrySelector)
 {
 	//store the current values of the data for the entry clicked on
-	var accCurrent = $("#"+entrySelector+" > #entryList_account").val();
+	var accCurrent = $("#"+entrySelector+" > #entryList_account").text();
 	var srnCurrent = $("#"+entrySelector+" > #entryList_SRN").text();
 	var serviceCurrent = $("#"+entrySelector+" > #entryList_Service").text();
 	var enhanceCurrent = $("#"+entrySelector+" > #entryList_ServEnhance").text();
@@ -67,8 +68,8 @@ EntryList.prototype.lauchModal = function(entrySelector)
 	$("#ELMSRN").val("");
 	
 	
-	$("#EntryListModal").modal('toggle');
-	$("#ELModalBody").html(modalContent);
+	$("#EntryListModal").modal('toggle'); 
+	//$("#ELModalBody").html(modalContent);
 };
 
 /**
@@ -80,6 +81,9 @@ EntryList.prototype.updateList = function(entrySelector)
 	{$("#"+entrySelector+" > #entryList_account").text($("#ELMAccount").val());}
 	if($("#ELMSRN").val()!="")
 	{$("#"+entrySelector+" > #entryList_SRN").text($("#ELMSRN").val());}
+	$("#"+entrySelector+" > #entryList_Service").text($("#ELMService").val());
+	$("#"+entrySelector+" > #entryList_ServEnhance").text($("#ELMServiceEnhance").val());
+	$("#"+entrySelector+" > #entryList_Format").text($("#ELMFormat").val());
 }
 
 /**
@@ -96,6 +100,20 @@ EntryList.prototype.removeLastEntry = function()
  */
 EntryList.prototype.submit = function()
 {
-	
+	var entryData = $(this.container_M).text()
+	$.get("/res/?page=ROOT_PRESENTER&type=GENERATE_ROYAL_MAIL_CSV&data="+entryData, function(data, status)
+	{
+		if(data.search("\"") == -1)
+		{
+			alert(data);
+		}	
+		else
+		{
+			var uriContent = "data:text/octet-stream," + encodeURIComponent(data);
+			window.open(uriContent,"new_shipments");
+//			window.open("./resources/RoyalMail.CSV","new_shipments");  //fallback solution
+		}
+	});
+	//alert($(this.container_M).text());
 }
 /////////////////////////////////////////////////////////////////////////////ENDOF PROTOTYPE METHODS

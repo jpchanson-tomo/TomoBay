@@ -43,6 +43,7 @@ public final class ItemSpecifics
 	/**
 	 * constructor creates an ItemSpecifics object for the itemID passed in as an argument.
 	 * @param itemID the id of the item that you need the specifics of
+	 * @param account the ebay account to use for the query.
 	 */
 	public ItemSpecifics(long itemID, int account)
 	{

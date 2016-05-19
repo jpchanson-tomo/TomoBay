@@ -29,7 +29,7 @@ public final class CountyComponent extends AbstractPayloadComponent
 	/**the total length of the component**/
 	private static final byte LENGTH = 51;
 	/**
-	 * @param payloadObj
+	 * default ctor
 	 */
 	public CountyComponent()
 	{super();}

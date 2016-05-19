@@ -63,7 +63,8 @@ public final class WinstockCommandInvoker
 	
 	/**
 	 * This method executes the AbstractWinstockCommand that the user has requested.
-	 * @param commandType contains the info to @see{@link tomoBay.model.dataTypes.DualList}
+	 * @param commandType contains the type of winstock command that is being called
+	 * @param commandInfo contains the information to perform the command
 	 * @see {@link tomoBay.model.winstock.WinstockCommandInvoker.WinstockCommandTypes}
 	 * @return AbstractWinstockCommandResponse containing the servers response to this command.
 	 * @throws IOException 

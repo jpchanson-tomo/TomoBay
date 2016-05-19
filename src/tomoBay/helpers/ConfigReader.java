@@ -80,6 +80,7 @@ public class ConfigReader
 	 * of this variable exist then it will return the first instance. To find all values for
 	 * a config variable with multiple instances use getConfs().
 	 * @param configVar the config variable to find the value of
+	 * @param index the index of the config variable instance you wish to find.
 	 * @return String containing the value of the config variable.
 	 */
 	public static String getConf(Config configVar, int index)
