@@ -220,7 +220,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="InvoiceOrders_8java_source.html#l00065">65</a> of file <a class="el" href="InvoiceOrders_8java_source.html">InvoiceOrders.java</a>.</p>
 
-<p>References <a class="el" href="Order_8java_source.html#l00123">Order.createdTime()</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00052">InvoiceOrders.EMAILFOOTER</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00050">InvoiceOrders.EMAILHEADER</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00140">InvoiceOrders.emailResults()</a>, <a class="el" href="WinstockCommandInvoker_8java_source.html#l00074">WinstockCommandInvoker.execute()</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00122">InvoiceOrders.formatAsDualList()</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00125">InvoiceOrders.formatMailResult()</a>, <a class="el" href="interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a08c6f0c352333a33e51f637c8e34551d">AbstractWinstockCommandResponse.getRecieved()</a>, <a class="el" href="SalesDayBookLineFactory_8java_source.html#l00032">SalesDayBookLineFactory.SalesDayBookLineType.INVOICE</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00098">AbstractSalesDayBookLine.invoiceNumber()</a>, <a class="el" href="SalesDayBookLineFactory_8java_source.html#l00058">SalesDayBookLineFactory.make()</a>, <a class="el" href="TimeStampFunctions_8java_source.html#l00042">TimeStampFunctions.olderThan()</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00073">AbstractSalesDayBookLine.orderInfo()</a>, <a class="el" href="WinstockCommandInvoker_8java_source.html#l00048">WinstockCommandInvoker.WinstockCommandTypes.PutInvoice</a>, <a class="el" href="Order_8java_source.html#l00102">Order.salesRecNo()</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00100">InvoiceOrders.splitOrderNoString()</a>, and <a class="el" href="InvoiceOrders_8java_source.html#l00109">InvoiceOrders.updateDB()</a>.</p>
+<p>References <a class="el" href="Order_8java_source.html#l00123">Order.createdTime()</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00052">InvoiceOrders.EMAILFOOTER</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00050">InvoiceOrders.EMAILHEADER</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00140">InvoiceOrders.emailResults()</a>, <a class="el" href="WinstockCommandInvoker_8java_source.html#l00075">WinstockCommandInvoker.execute()</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00122">InvoiceOrders.formatAsDualList()</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00125">InvoiceOrders.formatMailResult()</a>, <a class="el" href="interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a08c6f0c352333a33e51f637c8e34551d">AbstractWinstockCommandResponse.getRecieved()</a>, <a class="el" href="SalesDayBookLineFactory_8java_source.html#l00032">SalesDayBookLineFactory.SalesDayBookLineType.INVOICE</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00098">AbstractSalesDayBookLine.invoiceNumber()</a>, <a class="el" href="SalesDayBookLineFactory_8java_source.html#l00058">SalesDayBookLineFactory.make()</a>, <a class="el" href="TimeStampFunctions_8java_source.html#l00042">TimeStampFunctions.olderThan()</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00073">AbstractSalesDayBookLine.orderInfo()</a>, <a class="el" href="WinstockCommandInvoker_8java_source.html#l00048">WinstockCommandInvoker.WinstockCommandTypes.PutInvoice</a>, <a class="el" href="Order_8java_source.html#l00102">Order.salesRecNo()</a>, <a class="el" href="InvoiceOrders_8java_source.html#l00100">InvoiceOrders.splitOrderNoString()</a>, and <a class="el" href="InvoiceOrders_8java_source.html#l00109">InvoiceOrders.updateDB()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -314,8 +314,8 @@ Static Private Attributes</h2></td></tr>
 <p>update the database entry for a particular order to include the invoice number in the invoiced column of the orders table. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">invNo</td><td></td></tr>
-    <tr><td class="paramname">OrderNo</td><td></td></tr>
+    <tr><td class="paramname">invNo</td><td>the invoice number as a string </td></tr>
+    <tr><td class="paramname">orderNo</td><td>the order number as a string </td></tr>
   </table>
   </dd>
 </dl>
@@ -593,7 +593,7 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/orpheus/projects/TomoMotorParts/TomoBay/Development/TomoBay/src/tomoBay/presenters/presenterActions/concreteActions/<a class="el" href="InvoiceOrders_8java_source.html">InvoiceOrders.java</a></li>
+<li>src/tomoBay/presenters/presenterActions/concreteActions/<a class="el" href="InvoiceOrders_8java_source.html">InvoiceOrders.java</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -601,7 +601,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetomoBay.html">tomoBay</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters.html">presenters</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters_1_1presenterActions.html">presenterActions</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters_1_1presenterActions_1_1concreteActions.html">concreteActions</a></li><li class="navelem"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html">InvoiceOrders</a></li>
-    <li class="footer">Generated on Mon May 16 2016 15:46:19 for TomoBay by
+    <li class="footer">Generated on Thu May 19 2016 10:43:44 for TomoBay by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -104,10 +104,10 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="classtomoBay_1_1helpers_1_1BrandToCode.html#ab3e03f7919360bb577b970dfd18b66ff" target="_top" xlink:title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock...">
+<g id="a_node7"><a xlink:href="classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8" target="_top" xlink:title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock...">
 <polygon fill="white" stroke="black" points="91.5,-647.5 91.5,-677.5 279.5,-677.5 279.5,-647.5 91.5,-647.5"/>
 <text text-anchor="start" x="99.5" y="-665.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.helpers.BrandToCode.convert</text>
-<text text-anchor="middle" x="185.5" y="-654.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToInt</text>
+<text text-anchor="middle" x="185.5" y="-654.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToWinstockInt</text>
 </a>
 </g>
 </g>

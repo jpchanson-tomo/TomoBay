@@ -1,8 +1,12 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1ServerStatus.html#a5a970a0f69193c7d515425d3ade75334" title="retrieve an instance of this object " alt="" coords="114,5,297,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1ServerStatus.html#ae8ffecb6ba6ddfc3fab85af64f6350f5" title="tomoBay.model.dataTypes.\lServerStatus.setStatus" alt="" coords="114,71,297,112"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1view_1_1HttpServer.html#ae7f97f1bf228b80bf2c35a1cfe5c8c30" title="This starts the http servlet with 2 context handler: 1 is a resource handler that is responsible for ..." alt="" coords="104,137,307,163"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1view_1_1HttpServer.html#a0c34b163e64bf808b5834997c2734543" title="do setup for the servlet handler " alt="" coords="355,64,549,105"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1view_1_1HttpServer.html#a65b0b81d4aceba0f463e6fe36596760f" title="do setup for the static resource handler " alt="" coords="355,129,549,171"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1view_1_1HttpServer.html#a6b549ec85bbf44d0d9606964cad26097" title="set up the ssl server connector " alt="" coords="355,195,549,236"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1ServiceScheduler.html#a259b81a528ac196bab1eec7e5134f60f" title="add a service to the list of services to run at the periods specified in the method parameters..." alt="" coords="104,5,319,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1ServerStatus.html#a5a970a0f69193c7d515425d3ade75334" title="retrieve an instance of this object " alt="" coords="120,71,303,112"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1ServiceFactory.html#a4c648addaf33322bbaf0cfd983960bd3" title="make the service requested using an ServiceType enum value " alt="" coords="104,136,319,177"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1ServerStatus.html#ae8ffecb6ba6ddfc3fab85af64f6350f5" title="tomoBay.model.dataTypes.\lServerStatus.setStatus" alt="" coords="120,201,303,243"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1view_1_1HttpServer.html#ae7f97f1bf228b80bf2c35a1cfe5c8c30" title="This starts the http servlet with 2 context handler: 1 is a resource handler that is responsible for ..." alt="" coords="110,267,313,294"/>
+<area shape="rect" id="node10" href="$classtomoBay_1_1model_1_1services_1_1ServiceScheduler.html#a46684698b1c0824da9f966a138908bc8" title="starts the periodic services. " alt="" coords="104,321,319,363"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1view_1_1HttpServer.html#a0c34b163e64bf808b5834997c2734543" title="do setup for the servlet handler " alt="" coords="367,161,561,203"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1view_1_1HttpServer.html#a65b0b81d4aceba0f463e6fe36596760f" title="do setup for the static resource handler " alt="" coords="367,227,561,268"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1view_1_1HttpServer.html#a6b549ec85bbf44d0d9606964cad26097" title="set up the ssl server connector " alt="" coords="367,292,561,333"/>
+<area shape="rect" id="node11" href="$classtomoBay_1_1helpers_1_1StackTraceToString.html#acc17f606a32b47fa21910194d3fc44c6" title="Converts the stack trace of the exception provided into a string. " alt="" coords="369,357,559,399"/>
 </map>

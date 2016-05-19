@@ -16,10 +16,10 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="classtomoBay_1_1helpers_1_1BrandToCode.html#ab3e03f7919360bb577b970dfd18b66ff" target="_top" xlink:title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock...">
+<g id="a_node2"><a xlink:href="classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8" target="_top" xlink:title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock...">
 <polygon fill="white" stroke="black" points="88.5,-311.5 88.5,-341.5 276.5,-341.5 276.5,-311.5 88.5,-311.5"/>
 <text text-anchor="start" x="96.5" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.helpers.BrandToCode.convert</text>
-<text text-anchor="middle" x="182.5" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToInt</text>
+<text text-anchor="middle" x="182.5" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToWinstockInt</text>
 </a>
 </g>
 </g>
@@ -58,7 +58,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="classtomoBay_1_1model_1_1winstock_1_1Stock.html#ab5bd9ec559aad43ce24087d3cc7b5cf0" target="_top" xlink:title="query winstock for the stock level of a particular part. ">
+<g id="a_node5"><a xlink:href="classtomoBay_1_1model_1_1winstock_1_1Stock.html#a06d21b6ad2b8a746c52fadb5d4711778" target="_top" xlink:title="query winstock for the stock level of a particular part. ">
 <polygon fill="white" stroke="black" points="87,-164.5 87,-194.5 278,-194.5 278,-164.5 87,-164.5"/>
 <text text-anchor="start" x="95" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.winstock.Stock.request</text>
 <text text-anchor="middle" x="182.5" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">StockLevel</text>

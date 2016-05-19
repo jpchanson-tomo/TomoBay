@@ -1,0 +1,6 @@
+<map id="testGenerate" name="testGenerate">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a4448e544d88b5d685f92e50cf8c3067d" title="Adds a row of data to the CSV and checks the validity of the data against the specification defined i..." alt="" coords="151,37,369,79"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#ac60739d0a2d1d8d69f238b4cc4f4a8de" title="Generated the actual CSV file, it will overwrite any file already at that path with the name specifie..." alt="" coords="151,103,369,144"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#ac6e1d2426364f8d09ac1c89843b1a0ae" title="make sure that the two arrays are the same length " alt="" coords="417,5,648,47"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#acc1df516e966b1769cf2b4752134ee60" title="Use the validation data pulled from the config file at construction time and make sure that the data ..." alt="" coords="425,71,640,112"/>
+</map>

@@ -25,6 +25,9 @@ var dir_47006366826fecc828c5ea3a4a489cce =
     [ "PayloadException.java", "PayloadException_8java.html", [
       [ "PayloadException", "classtomoBay_1_1exceptions_1_1PayloadException.html", "classtomoBay_1_1exceptions_1_1PayloadException" ]
     ] ],
+    [ "PresenterActionException.java", "PresenterActionException_8java.html", [
+      [ "PresenterActionException", "classtomoBay_1_1exceptions_1_1PresenterActionException.html", "classtomoBay_1_1exceptions_1_1PresenterActionException" ]
+    ] ],
     [ "ServiceException.java", "ServiceException_8java.html", [
       [ "ServiceException", "classtomoBay_1_1exceptions_1_1ServiceException.html", "classtomoBay_1_1exceptions_1_1ServiceException" ]
     ] ],

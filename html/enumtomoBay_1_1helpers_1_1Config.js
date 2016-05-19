@@ -27,6 +27,8 @@ var enumtomoBay_1_1helpers_1_1Config =
     [ "WIN_PORT", "enumtomoBay_1_1helpers_1_1Config.html#ad3fc7d95a9d370b06a992314f77048a7", null ],
     [ "WIN_URL1", "enumtomoBay_1_1helpers_1_1Config.html#abd488167b9790a7012737a2984a772d6", null ],
     [ "WIN_URL2", "enumtomoBay_1_1helpers_1_1Config.html#abd76ac376e05d7f5ef4d22e553175079", null ],
+    [ "WIN_WEIGHT_CALL1", "enumtomoBay_1_1helpers_1_1Config.html#a4a93337b011d09c215051f785edac483", null ],
+    [ "WIN_WEIGHT_CALL2", "enumtomoBay_1_1helpers_1_1Config.html#a047bf9880dfdd4beec3eda2881f38d15", null ],
     [ "EBAY_SAND_SRV", "enumtomoBay_1_1helpers_1_1Config.html#a9187f49d1d5ebf90da068ae29166a979", null ],
     [ "EBAY_SAND_KEY", "enumtomoBay_1_1helpers_1_1Config.html#a802e245b7ee93e57dc70500a47a7b16a", null ],
     [ "EBAY_PROD_SRV", "enumtomoBay_1_1helpers_1_1Config.html#a7c79951c129c72131ef53ad8a674ec17", null ],

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['test',['test',['../classtomoBay_1_1model_1_1royalMail_1_1test.html',1,'tomoBay::model::royalMail']]],
   ['testservice',['TestService',['../classtomoBay_1_1model_1_1services_1_1testService_1_1TestService.html',1,'tomoBay::model::services::testService']]],
   ['testservicefactory',['TestServiceFactory',['../classtomoBay_1_1model_1_1services_1_1factories_1_1TestServiceFactory.html',1,'tomoBay::model::services::factories']]],
   ['thursday',['Thursday',['../classtomoBay_1_1helpers_1_1checkTime_1_1Thursday.html',1,'tomoBay::helpers::checkTime']]],

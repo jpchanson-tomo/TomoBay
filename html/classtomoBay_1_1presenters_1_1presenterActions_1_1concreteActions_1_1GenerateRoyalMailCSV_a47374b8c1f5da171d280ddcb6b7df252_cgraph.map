@@ -1,0 +1,10 @@
+<map id="getInvoiceWeight" name="getInvoiceWeight">
+<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8" title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock..." alt="" coords="178,49,429,91"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a4cbeebb8b8e67f9e1478b8b0d77d4228" title="query winstock for the weight of a particular invoice " alt="" coords="176,115,431,156"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1helpers_1_1ConfigReader.html#a310420c6db22982498520c2ad7a2b82f" title="find the value of the config variable specified in the arguments. " alt="" coords="479,71,733,98"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1helpers_1_1XMLParser.html#a9936151017dd4e908cf37d453b22c8ef" title="parses an XML formatted string looking for the first tag specified in the parameters. " alt="" coords="791,122,1017,149"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a42fa652d82ed49749a0ad929a6c798d0" title="remove the header bumpf from the bottom of the response " alt="" coords="488,173,724,215"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1helpers_1_1ConfigReader.html#ab69b4a3a0fc6a7c7440362b06ec4b4d3" title="reads the whole config file into a string " alt="" coords="791,5,1017,47"/>
+<area shape="rect" id="node6" href="$enumtomoBay_1_1helpers_1_1Config.html#a43cb99408ba4f337caad395ca67f9a6c" title="return the string associated with the enum const " alt="" coords="802,71,1006,98"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1model_1_1net_1_1HttpResponse.html#afb798c825935128953439404fb763997" title="get the Response message " alt="" coords="781,173,1027,215"/>
+</map>

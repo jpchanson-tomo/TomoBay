@@ -204,7 +204,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="PrintInvoices_8java_source.html#l00050">50</a> of file <a class="el" href="PrintInvoices_8java_source.html">PrintInvoices.java</a>.</p>
 
-<p>References <a class="el" href="Part_8java_source.html#l00069">Part.brand()</a>, <a class="el" href="BrandToCode_8java_source.html#l00079">BrandToCode.convertToInt()</a>, <a class="el" href="PrintInvoices_8java_source.html#l00092">PrintInvoices.formatAsDualList()</a>, <a class="el" href="SalesDayBookLineFactory_8java_source.html#l00032">SalesDayBookLineFactory.SalesDayBookLineType.INVOICE</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00098">AbstractSalesDayBookLine.invoiceNumber()</a>, <a class="el" href="Transaction_8java_source.html#l00055">Transaction.listing()</a>, <a class="el" href="SalesDayBookLineFactory_8java_source.html#l00058">SalesDayBookLineFactory.make()</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00073">AbstractSalesDayBookLine.orderInfo()</a>, <a class="el" href="Listing_8java_source.html#l00104">Listing.part()</a>, <a class="el" href="PrintInvoices_8java_source.html#l00109">PrintInvoices.print()</a>, <a class="el" href="PrintInvoices_8java_source.html#l00082">PrintInvoices.splitOrderNoString()</a>, and <a class="el" href="Order_8java_source.html#l00090">Order.transaction()</a>.</p>
+<p>References <a class="el" href="Part_8java_source.html#l00069">Part.brand()</a>, <a class="el" href="BrandToCode_8java_source.html#l00079">BrandToCode.convertToWinstockInt()</a>, <a class="el" href="PrintInvoices_8java_source.html#l00092">PrintInvoices.formatAsDualList()</a>, <a class="el" href="SalesDayBookLineFactory_8java_source.html#l00032">SalesDayBookLineFactory.SalesDayBookLineType.INVOICE</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00098">AbstractSalesDayBookLine.invoiceNumber()</a>, <a class="el" href="Transaction_8java_source.html#l00055">Transaction.listing()</a>, <a class="el" href="SalesDayBookLineFactory_8java_source.html#l00058">SalesDayBookLineFactory.make()</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00073">AbstractSalesDayBookLine.orderInfo()</a>, <a class="el" href="Listing_8java_source.html#l00104">Listing.part()</a>, <a class="el" href="PrintInvoices_8java_source.html#l00109">PrintInvoices.print()</a>, <a class="el" href="PrintInvoices_8java_source.html#l00082">PrintInvoices.splitOrderNoString()</a>, and <a class="el" href="Order_8java_source.html#l00090">Order.transaction()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -304,7 +304,7 @@ Private Member Functions</h2></td></tr>
 <p>formats the AbstractSalesDayBookLine into a format that can be passed to the WinstockCommandInvoker. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">invoice</td><td>the invoice to be formatted </td></tr>
+    <tr><td class="paramname">invoiceNo</td><td>the invoice to be formatted </td></tr>
     <tr><td class="paramname">brand</td><td>the brand code associated with the invoice to be printed </td></tr>
     <tr><td class="paramname">packingList</td><td>the number of packing lists you wish printed (as a string) </td></tr>
   </table>
@@ -382,7 +382,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="PrintInvoices_8java_source.html#l00109">109</a> of file <a class="el" href="PrintInvoices_8java_source.html">PrintInvoices.java</a>.</p>
 
-<p>References <a class="el" href="WinstockCommandInvoker_8java_source.html#l00074">WinstockCommandInvoker.execute()</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00098">AbstractSalesDayBookLine.invoiceNumber()</a>, <a class="el" href="interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a94c43012f032cf0ad0acc1d6a6047cf6">AbstractWinstockCommandResponse.isSuccess()</a>, <a class="el" href="WinstockCommandInvoker_8java_source.html#l00050">WinstockCommandInvoker.WinstockCommandTypes.PrintInvoice</a>, <a class="el" href="ResultCodes_8java_source.html#l00032">ResultCodes.SUCCESS</a>, and <a class="el" href="StackTraceToString_8java_source.html#l00036">StackTraceToString.toString()</a>.</p>
+<p>References <a class="el" href="WinstockCommandInvoker_8java_source.html#l00075">WinstockCommandInvoker.execute()</a>, <a class="el" href="AbstractSalesDayBookLine_8java_source.html#l00098">AbstractSalesDayBookLine.invoiceNumber()</a>, <a class="el" href="interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a94c43012f032cf0ad0acc1d6a6047cf6">AbstractWinstockCommandResponse.isSuccess()</a>, <a class="el" href="WinstockCommandInvoker_8java_source.html#l00050">WinstockCommandInvoker.WinstockCommandTypes.PrintInvoice</a>, <a class="el" href="ResultCodes_8java_source.html#l00032">ResultCodes.SUCCESS</a>, and <a class="el" href="StackTraceToString_8java_source.html#l00036">StackTraceToString.toString()</a>.</p>
 
 <p>Referenced by <a class="el" href="PrintInvoices_8java_source.html#l00050">PrintInvoices.execute()</a>.</p>
 
@@ -430,7 +430,7 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/orpheus/projects/TomoMotorParts/TomoBay/Development/TomoBay/src/tomoBay/presenters/presenterActions/concreteActions/<a class="el" href="PrintInvoices_8java_source.html">PrintInvoices.java</a></li>
+<li>src/tomoBay/presenters/presenterActions/concreteActions/<a class="el" href="PrintInvoices_8java_source.html">PrintInvoices.java</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -438,7 +438,7 @@ Private Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetomoBay.html">tomoBay</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters.html">presenters</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters_1_1presenterActions.html">presenterActions</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters_1_1presenterActions_1_1concreteActions.html">concreteActions</a></li><li class="navelem"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1PrintInvoices.html">PrintInvoices</a></li>
-    <li class="footer">Generated on Mon May 16 2016 15:46:19 for TomoBay by
+    <li class="footer">Generated on Thu May 19 2016 10:43:44 for TomoBay by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

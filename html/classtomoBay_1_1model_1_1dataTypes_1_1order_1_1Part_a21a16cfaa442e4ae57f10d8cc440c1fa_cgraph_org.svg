@@ -42,7 +42,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="classtomoBay_1_1model_1_1winstock_1_1Stock.html#a70543974420d7d2cb4a4c0080a2afc07" target="_top" xlink:title="query winstock for the last cost price of a particular part. ">
+<g id="a_node3"><a xlink:href="classtomoBay_1_1model_1_1winstock_1_1Stock.html#a5171bbe1448b8e4840e617ffd75cc261" target="_top" xlink:title="query winstock for the last cost price of a particular part. ">
 <polygon fill="white" stroke="black" points="187,-0.5 187,-30.5 378,-30.5 378,-0.5 187,-0.5"/>
 <text text-anchor="start" x="195" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.winstock.Stock.request</text>
 <text text-anchor="middle" x="282.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">LastCost</text>
@@ -56,10 +56,10 @@
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="classtomoBay_1_1helpers_1_1BrandToCode.html#ab3e03f7919360bb577b970dfd18b66ff" target="_top" xlink:title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock...">
+<g id="a_node8"><a xlink:href="classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8" target="_top" xlink:title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock...">
 <polygon fill="white" stroke="black" points="188.5,-49.5 188.5,-79.5 376.5,-79.5 376.5,-49.5 188.5,-49.5"/>
 <text text-anchor="start" x="196.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.helpers.BrandToCode.convert</text>
-<text text-anchor="middle" x="282.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToInt</text>
+<text text-anchor="middle" x="282.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToWinstockInt</text>
 </a>
 </g>
 </g>
@@ -130,7 +130,7 @@
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="classtomoBay_1_1model_1_1winstock_1_1Stock.html#a2f9ab14be95470a1bcd37a30a7ec90ae" target="_top" xlink:title="query winstock for the description of a particular part. ">
+<g id="a_node10"><a xlink:href="classtomoBay_1_1model_1_1winstock_1_1Stock.html#adaf6c34595911864279e31f375aeedd1" target="_top" xlink:title="query winstock for the description of a particular part. ">
 <polygon fill="white" stroke="black" points="187,-98.5 187,-128.5 378,-128.5 378,-98.5 187,-98.5"/>
 <text text-anchor="start" x="195" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.winstock.Stock.request</text>
 <text text-anchor="middle" x="282.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">Description</text>

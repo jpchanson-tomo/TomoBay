@@ -1,8 +1,8 @@
 <map id="execute" name="execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#ab3e03f7919360bb577b970dfd18b66ff" title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock..." alt="" coords="123,5,374,47"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8" title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock..." alt="" coords="123,5,374,47"/>
 <area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1SelectQueryInvoker.html#a594282bcbcc0731a7d234482717422d7" title="execute a requested query " alt="" coords="147,71,350,112"/>
 <area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1PartList.html#af4aaf5b8fadfc85ebed2a9c4d683fba5" title="get the part numbers as a whole " alt="" coords="157,136,340,177"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#ab5bd9ec559aad43ce24087d3cc7b5cf0" title="query winstock for the stock level of a particular part. " alt="" coords="121,201,376,243"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a06d21b6ad2b8a746c52fadb5d4711778" title="query winstock for the stock level of a particular part. " alt="" coords="121,201,376,243"/>
 <area shape="rect" id="node10" href="$classtomoBay_1_1model_1_1services_1_1checkErrorsService_1_1OnRunning.html#a31cd6cc646f62a47db7edc3f4f8d2da5" title="this method updates the notes field in the database to reflect the error that has been found ..." alt="" coords="191,330,306,357"/>
 <area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a82b5421e7d3a2ba82bdc5d54b09a8069" title="tomoBay.model.winstock.Stock.query\lWinstockURL" alt="" coords="432,107,675,148"/>
 <area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a42fa652d82ed49749a0ad929a6c798d0" title="remove the header bumpf from the bottom of the response " alt="" coords="435,172,671,213"/>

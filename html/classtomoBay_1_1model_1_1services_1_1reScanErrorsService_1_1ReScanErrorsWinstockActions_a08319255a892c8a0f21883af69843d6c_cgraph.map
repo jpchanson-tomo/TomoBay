@@ -1,5 +1,5 @@
 <map id="partNoHasError" name="partNoHasError">
-<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#ab3e03f7919360bb577b970dfd18b66ff" title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock..." alt="" coords="167,5,417,47"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8" title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock..." alt="" coords="167,5,417,47"/>
 <area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ItemSpecifics.html#ad28f052945833b0267c4353afcbf58eb" title="returns a particular Item specific " alt="" coords="173,71,411,112"/>
 <area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1PartList.html#af4aaf5b8fadfc85ebed2a9c4d683fba5" title="get the part numbers as a whole " alt="" coords="201,136,383,177"/>
 </map>

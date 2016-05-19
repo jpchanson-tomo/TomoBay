@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 3189;
+var viewWidth = 3360;
 var viewHeight = 469;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,16 +54,16 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>AbstractSelectQuery</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-465 3184.5,-465 3184.5,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-465 3355.5,-465 3355.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="1563.5,-265.5 1563.5,-333.5 1685.5,-333.5 1685.5,-265.5 1563.5,-265.5"/>
-<text text-anchor="middle" x="1624.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectQuery</text>
-<polyline fill="none" stroke="black" points="1563.5,-314.5 1685.5,-314.5 "/>
-<text text-anchor="middle" x="1624.5" y="-302.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="1563.5,-295.5 1685.5,-295.5 "/>
-<text text-anchor="start" x="1571.5" y="-283.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AbstractSelectQuery()</text>
-<text text-anchor="start" x="1571.5" y="-272.5" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
+<polygon fill="#bfbfbf" stroke="black" points="1569.5,-265.5 1569.5,-333.5 1691.5,-333.5 1691.5,-265.5 1569.5,-265.5"/>
+<text text-anchor="middle" x="1630.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectQuery</text>
+<polyline fill="none" stroke="black" points="1569.5,-314.5 1691.5,-314.5 "/>
+<text text-anchor="middle" x="1630.5" y="-302.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="1569.5,-295.5 1691.5,-295.5 "/>
+<text text-anchor="start" x="1577.5" y="-283.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AbstractSelectQuery()</text>
+<text text-anchor="start" x="1577.5" y="-272.5" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
@@ -81,48 +81,48 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M1553.47,-288.038C1410.56,-266.99 1088.89,-219.612 935.274,-196.986"/>
-<polygon fill="none" stroke="midnightblue" points="1553.04,-291.512 1563.44,-289.507 1554.06,-284.587 1553.04,-291.512"/>
+<path fill="none" stroke="midnightblue" d="M1559.24,-288.085C1415.13,-267.023 1089.69,-219.458 935.098,-196.864"/>
+<polygon fill="none" stroke="midnightblue" points="1558.89,-291.572 1569.29,-289.555 1559.91,-284.645 1558.89,-291.572"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
 <g id="a_node15"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectParamsQuery.html" target="_top" xlink:title="This class defines the abstract base for all Select queries that take parameters. ...">
-<polygon fill="white" stroke="black" points="2252.5,-138.5 2252.5,-228.5 2408.5,-228.5 2408.5,-138.5 2252.5,-138.5"/>
-<text text-anchor="middle" x="2330.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectParamsQuery</text>
-<polyline fill="none" stroke="black" points="2252.5,-209.5 2408.5,-209.5 "/>
-<text text-anchor="middle" x="2330.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2252.5,-190.5 2408.5,-190.5 "/>
-<text text-anchor="start" x="2260.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AbstractSelectParamsQuery()</text>
-<text text-anchor="start" x="2260.5" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ execute()</text>
-<text text-anchor="start" x="2260.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
-<text text-anchor="start" x="2260.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initQuery()</text>
+<polygon fill="white" stroke="black" points="2344.5,-138.5 2344.5,-228.5 2500.5,-228.5 2500.5,-138.5 2344.5,-138.5"/>
+<text text-anchor="middle" x="2422.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectParamsQuery</text>
+<polyline fill="none" stroke="black" points="2344.5,-209.5 2500.5,-209.5 "/>
+<text text-anchor="middle" x="2422.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2344.5,-190.5 2500.5,-190.5 "/>
+<text text-anchor="start" x="2352.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AbstractSelectParamsQuery()</text>
+<text text-anchor="start" x="2352.5" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ execute()</text>
+<text text-anchor="start" x="2352.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="2352.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initQuery()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
 <g id="edge14" class="edge"><title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M1695.7,-287.003C1828.8,-265.511 2114.33,-219.405 2252.47,-197.1"/>
-<polygon fill="none" stroke="midnightblue" points="1694.92,-283.583 1685.61,-288.632 1696.04,-290.493 1694.92,-283.583"/>
+<path fill="none" stroke="midnightblue" d="M1701.56,-288.272C1849.64,-266.957 2190.27,-217.926 2344.32,-195.753"/>
+<polygon fill="none" stroke="midnightblue" points="1701.06,-284.808 1691.66,-289.697 1702.06,-291.736 1701.06,-284.808"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
 <g id="a_node2"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1AbstractDBQuery.html" target="_top" xlink:title="Interface that all database queries must adhere to. ">
-<polygon fill="white" stroke="black" points="1577.5,-370.5 1577.5,-460.5 1671.5,-460.5 1671.5,-370.5 1577.5,-370.5"/>
-<text text-anchor="middle" x="1624.5" y="-448.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractDBQuery</text>
-<polyline fill="none" stroke="black" points="1577.5,-441.5 1671.5,-441.5 "/>
-<text text-anchor="start" x="1585.5" y="-429.5" font-family="Helvetica,sans-Serif" font-size="10.00"># statement_M</text>
-<text text-anchor="start" x="1585.5" y="-418.5" font-family="Helvetica,sans-Serif" font-size="10.00"># connection_M</text>
-<polyline fill="none" stroke="black" points="1577.5,-411.5 1671.5,-411.5 "/>
-<text text-anchor="start" x="1585.5" y="-399.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ statement()</text>
-<text text-anchor="start" x="1585.5" y="-388.5" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
-<text text-anchor="start" x="1585.5" y="-377.5" font-family="Helvetica,sans-Serif" font-size="10.00"># cleanup()</text>
+<polygon fill="white" stroke="black" points="1583.5,-370.5 1583.5,-460.5 1677.5,-460.5 1677.5,-370.5 1583.5,-370.5"/>
+<text text-anchor="middle" x="1630.5" y="-448.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractDBQuery</text>
+<polyline fill="none" stroke="black" points="1583.5,-441.5 1677.5,-441.5 "/>
+<text text-anchor="start" x="1591.5" y="-429.5" font-family="Helvetica,sans-Serif" font-size="10.00"># statement_M</text>
+<text text-anchor="start" x="1591.5" y="-418.5" font-family="Helvetica,sans-Serif" font-size="10.00"># connection_M</text>
+<polyline fill="none" stroke="black" points="1583.5,-411.5 1677.5,-411.5 "/>
+<text text-anchor="start" x="1591.5" y="-399.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ statement()</text>
+<text text-anchor="start" x="1591.5" y="-388.5" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
+<text text-anchor="start" x="1591.5" y="-377.5" font-family="Helvetica,sans-Serif" font-size="10.00"># cleanup()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M1624.5,-360.316C1624.5,-351.285 1624.5,-342.159 1624.5,-333.848"/>
-<polygon fill="none" stroke="midnightblue" points="1621,-360.425 1624.5,-370.425 1628,-360.425 1621,-360.425"/>
+<path fill="none" stroke="midnightblue" d="M1630.5,-360.316C1630.5,-351.285 1630.5,-342.159 1630.5,-333.848"/>
+<polygon fill="none" stroke="midnightblue" points="1627,-360.425 1630.5,-370.425 1634,-360.425 1627,-360.425"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
@@ -352,8 +352,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node15&#45;&gt;Node16 -->
 <g id="edge15" class="edge"><title>Node15&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M2242.11,-176.083C2142.67,-167.012 1977.32,-146.319 1841.5,-102 1836.1,-100.238 1830.63,-98.2179 1825.18,-96.023"/>
-<polygon fill="none" stroke="midnightblue" points="2241.85,-179.573 2252.12,-176.977 2242.47,-172.601 2241.85,-179.573"/>
+<path fill="none" stroke="midnightblue" d="M2333.91,-179.27C2218.25,-173.024 2010.63,-154.815 1841.5,-102 1835.99,-100.278 1830.4,-98.2732 1824.85,-96.0751"/>
+<polygon fill="none" stroke="midnightblue" points="2333.96,-182.777 2344.13,-179.803 2334.33,-175.786 2333.96,-182.777"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node"><title>Node17</title>
@@ -372,168 +372,188 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node15&#45;&gt;Node17 -->
 <g id="edge16" class="edge"><title>Node15&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M2241.84,-173.56C2166.76,-163.484 2057.75,-142.846 1970.5,-102 1966.76,-100.249 1963.03,-98.2539 1959.37,-96.0913"/>
-<polygon fill="none" stroke="midnightblue" points="2241.83,-177.089 2252.2,-174.912 2242.74,-170.147 2241.83,-177.089"/>
+<path fill="none" stroke="midnightblue" d="M2334.45,-179.168C2240.65,-172.847 2089.56,-154.596 1970.5,-102 1966.59,-100.274 1962.71,-98.2661 1958.9,-96.0657"/>
+<polygon fill="none" stroke="midnightblue" points="2334.27,-182.663 2344.48,-179.812 2334.72,-175.678 2334.27,-182.663"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node"><title>Node18</title>
-<g id="a_node18"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayBuyer.html" target="_top" xlink:title="This class represents a query that selects all the information contained within the ebay_buyers table...">
-<polygon fill="white" stroke="black" points="1979,-6 1979,-96 2086,-96 2086,-6 1979,-6"/>
-<text text-anchor="middle" x="2032.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayBuyer</text>
-<polyline fill="none" stroke="black" points="1979,-77 2086,-77 "/>
-<text text-anchor="start" x="1987" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
-<polyline fill="none" stroke="black" points="1979,-58 2086,-58 "/>
-<text text-anchor="start" x="1987" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayBuyer()</text>
-<text text-anchor="start" x="1987" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
-<text text-anchor="start" x="1987" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<g id="a_node18"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectBuyerByAccAndSRN.html" target="_top" xlink:title="Copyright(C) 2015 Jan P.C. ">
+<polygon fill="white" stroke="black" points="1979,-6 1979,-96 2132,-96 2132,-6 1979,-6"/>
+<text text-anchor="middle" x="2055.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectBuyerByAccAndSRN</text>
+<polyline fill="none" stroke="black" points="1979,-77 2132,-77 "/>
+<text text-anchor="start" x="1987" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; QUERY</text>
+<polyline fill="none" stroke="black" points="1979,-58 2132,-58 "/>
+<text text-anchor="start" x="1987" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectBuyerByAccAndSRN()</text>
+<text text-anchor="start" x="1987" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="1987" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
 <text text-anchor="start" x="1987" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node18 -->
 <g id="edge17" class="edge"><title>Node15&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M2242.48,-160.11C2197.03,-146.651 2141.59,-127.206 2095.5,-102 2092.19,-100.191 2088.88,-98.2075 2085.6,-96.1062"/>
-<polygon fill="none" stroke="midnightblue" points="2241.73,-163.539 2252.31,-162.976 2243.69,-156.818 2241.73,-163.539"/>
+<path fill="none" stroke="midnightblue" d="M2334.44,-163.227C2278.07,-149.45 2204.04,-128.649 2141.5,-102 2137.21,-100.172 2132.87,-98.1735 2128.53,-96.0606"/>
+<polygon fill="none" stroke="midnightblue" points="2333.86,-166.686 2344.4,-165.633 2335.5,-159.882 2333.86,-166.686"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node"><title>Node19</title>
-<g id="a_node19"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayItemSpecific.html" target="_top" xlink:title="This class represents a query that selects all fields related to a specific item from the items table...">
-<polygon fill="white" stroke="black" points="2104,-6 2104,-96 2241,-96 2241,-6 2104,-6"/>
-<text text-anchor="middle" x="2172.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayItemSpecific</text>
-<polyline fill="none" stroke="black" points="2104,-77 2241,-77 "/>
-<text text-anchor="start" x="2112" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
-<polyline fill="none" stroke="black" points="2104,-58 2241,-58 "/>
-<text text-anchor="start" x="2112" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayItemSpecific()</text>
-<text text-anchor="start" x="2112" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
-<text text-anchor="start" x="2112" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
-<text text-anchor="start" x="2112" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
+<g id="a_node19"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayBuyer.html" target="_top" xlink:title="This class represents a query that selects all the information contained within the ebay_buyers table...">
+<polygon fill="white" stroke="black" points="2150,-6 2150,-96 2257,-96 2257,-6 2150,-6"/>
+<text text-anchor="middle" x="2203.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayBuyer</text>
+<polyline fill="none" stroke="black" points="2150,-77 2257,-77 "/>
+<text text-anchor="start" x="2158" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
+<polyline fill="none" stroke="black" points="2150,-58 2257,-58 "/>
+<text text-anchor="start" x="2158" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayBuyer()</text>
+<text text-anchor="start" x="2158" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
+<text text-anchor="start" x="2158" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="2158" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node19 -->
 <g id="edge18" class="edge"><title>Node15&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M2269.18,-131.851C2254.91,-120.067 2239.83,-107.613 2225.94,-96.1358"/>
-<polygon fill="none" stroke="midnightblue" points="2267.07,-134.649 2277.01,-138.319 2271.53,-129.252 2267.07,-134.649"/>
+<path fill="none" stroke="midnightblue" d="M2335.24,-141.258C2312.37,-129.434 2288.08,-115.944 2266.5,-102 2263.45,-100.03 2260.37,-97.944 2257.3,-95.7865"/>
+<polygon fill="none" stroke="midnightblue" points="2333.76,-144.435 2344.26,-145.875 2336.95,-138.204 2333.76,-144.435"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node"><title>Node20</title>
-<g id="a_node20"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByBuyer.html" target="_top" xlink:title="This class represents a query that selects the orderID and account from the ebay_orders table where t...">
-<polygon fill="white" stroke="black" points="2259,-6 2259,-96 2402,-96 2402,-6 2259,-6"/>
-<text text-anchor="middle" x="2330.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayOrderByBuyer</text>
-<polyline fill="none" stroke="black" points="2259,-77 2402,-77 "/>
-<text text-anchor="start" x="2267" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
-<polyline fill="none" stroke="black" points="2259,-58 2402,-58 "/>
-<text text-anchor="start" x="2267" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayOrderByBuyer()</text>
-<text text-anchor="start" x="2267" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
-<text text-anchor="start" x="2267" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
-<text text-anchor="start" x="2267" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
+<g id="a_node20"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayItemSpecific.html" target="_top" xlink:title="This class represents a query that selects all fields related to a specific item from the items table...">
+<polygon fill="white" stroke="black" points="2275,-6 2275,-96 2412,-96 2412,-6 2275,-6"/>
+<text text-anchor="middle" x="2343.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayItemSpecific</text>
+<polyline fill="none" stroke="black" points="2275,-77 2412,-77 "/>
+<text text-anchor="start" x="2283" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
+<polyline fill="none" stroke="black" points="2275,-58 2412,-58 "/>
+<text text-anchor="start" x="2283" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayItemSpecific()</text>
+<text text-anchor="start" x="2283" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
+<text text-anchor="start" x="2283" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="2283" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node20 -->
 <g id="edge19" class="edge"><title>Node15&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M2330.5,-128.231C2330.5,-117.54 2330.5,-106.444 2330.5,-96.1358"/>
-<polygon fill="none" stroke="midnightblue" points="2327,-128.319 2330.5,-138.319 2334,-128.319 2327,-128.319"/>
+<path fill="none" stroke="midnightblue" d="M2390.45,-129.552C2383.73,-118.457 2376.72,-106.869 2370.22,-96.1358"/>
+<polygon fill="none" stroke="midnightblue" points="2387.58,-131.577 2395.75,-138.319 2393.57,-127.951 2387.58,-131.577"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node"><title>Node21</title>
-<g id="a_node21"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByID.html" target="_top" xlink:title="This class represents a query that selects all the fields from the ebay_orders table where the orderI...">
-<polygon fill="white" stroke="black" points="2420.5,-6 2420.5,-96 2548.5,-96 2548.5,-6 2420.5,-6"/>
-<text text-anchor="middle" x="2484.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayOrderByID</text>
-<polyline fill="none" stroke="black" points="2420.5,-77 2548.5,-77 "/>
-<text text-anchor="start" x="2428.5" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
-<polyline fill="none" stroke="black" points="2420.5,-58 2548.5,-58 "/>
-<text text-anchor="start" x="2428.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayOrderByID()</text>
-<text text-anchor="start" x="2428.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
-<text text-anchor="start" x="2428.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
-<text text-anchor="start" x="2428.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
+<g id="a_node21"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByBuyer.html" target="_top" xlink:title="This class represents a query that selects the orderID and account from the ebay_orders table where t...">
+<polygon fill="white" stroke="black" points="2430,-6 2430,-96 2573,-96 2573,-6 2430,-6"/>
+<text text-anchor="middle" x="2501.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayOrderByBuyer</text>
+<polyline fill="none" stroke="black" points="2430,-77 2573,-77 "/>
+<text text-anchor="start" x="2438" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
+<polyline fill="none" stroke="black" points="2430,-58 2573,-58 "/>
+<text text-anchor="start" x="2438" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayOrderByBuyer()</text>
+<text text-anchor="start" x="2438" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
+<text text-anchor="start" x="2438" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="2438" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node21 -->
 <g id="edge20" class="edge"><title>Node15&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M2390.27,-131.851C2404.18,-120.067 2418.87,-107.613 2432.42,-96.1358"/>
-<polygon fill="none" stroke="midnightblue" points="2388,-129.183 2382.64,-138.319 2392.53,-134.524 2388,-129.183"/>
+<path fill="none" stroke="midnightblue" d="M2454.55,-129.552C2461.27,-118.457 2468.28,-106.869 2474.78,-96.1358"/>
+<polygon fill="none" stroke="midnightblue" points="2451.43,-127.951 2449.25,-138.319 2457.42,-131.577 2451.43,-127.951"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node"><title>Node22</title>
-<g id="a_node22"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayTransactionByID.html" target="_top" xlink:title="This class represents a query that selects the itemId, quantity, price and shippingCost field from th...">
-<polygon fill="white" stroke="black" points="2567,-6 2567,-96 2722,-96 2722,-6 2567,-6"/>
-<text text-anchor="middle" x="2644.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayTransactionByID</text>
-<polyline fill="none" stroke="black" points="2567,-77 2722,-77 "/>
-<text text-anchor="start" x="2575" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
-<polyline fill="none" stroke="black" points="2567,-58 2722,-58 "/>
-<text text-anchor="start" x="2575" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayTransactionByID()</text>
-<text text-anchor="start" x="2575" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
-<text text-anchor="start" x="2575" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
-<text text-anchor="start" x="2575" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
+<g id="a_node22"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByID.html" target="_top" xlink:title="This class represents a query that selects all the fields from the ebay_orders table where the orderI...">
+<polygon fill="white" stroke="black" points="2591.5,-6 2591.5,-96 2719.5,-96 2719.5,-6 2591.5,-6"/>
+<text text-anchor="middle" x="2655.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayOrderByID</text>
+<polyline fill="none" stroke="black" points="2591.5,-77 2719.5,-77 "/>
+<text text-anchor="start" x="2599.5" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
+<polyline fill="none" stroke="black" points="2591.5,-58 2719.5,-58 "/>
+<text text-anchor="start" x="2599.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayOrderByID()</text>
+<text text-anchor="start" x="2599.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
+<text text-anchor="start" x="2599.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="2599.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node22 -->
 <g id="edge21" class="edge"><title>Node15&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M2418.12,-155.546C2460.88,-141.36 2512.65,-122.635 2557.5,-102 2561.46,-100.18 2565.47,-98.238 2569.49,-96.2161"/>
-<polygon fill="none" stroke="midnightblue" points="2416.98,-152.236 2408.58,-158.686 2419.17,-158.885 2416.98,-152.236"/>
+<path fill="none" stroke="midnightblue" d="M2509.62,-141.327C2533.59,-129.285 2559.35,-115.668 2582.5,-102 2585.67,-100.126 2588.9,-98.1632 2592.13,-96.1458"/>
+<polygon fill="none" stroke="midnightblue" points="2507.91,-138.266 2500.53,-145.862 2511.04,-144.53 2507.91,-138.266"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node"><title>Node23</title>
-<g id="a_node23"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectFullOrderLine.html" target="_top" xlink:title="This class represents a query that provides the majority of information associated with a particular ...">
-<polygon fill="white" stroke="black" points="2740,-6 2740,-96 2857,-96 2857,-6 2740,-6"/>
-<text text-anchor="middle" x="2798.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectFullOrderLine</text>
-<polyline fill="none" stroke="black" points="2740,-77 2857,-77 "/>
-<text text-anchor="start" x="2748" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
-<polyline fill="none" stroke="black" points="2740,-58 2857,-58 "/>
-<text text-anchor="start" x="2748" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectFullOrderLine()</text>
-<text text-anchor="start" x="2748" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
-<text text-anchor="start" x="2748" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
-<text text-anchor="start" x="2748" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
+<g id="a_node23"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayTransactionByID.html" target="_top" xlink:title="This class represents a query that selects the itemId, quantity, price and shippingCost field from th...">
+<polygon fill="white" stroke="black" points="2738,-6 2738,-96 2893,-96 2893,-6 2738,-6"/>
+<text text-anchor="middle" x="2815.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayTransactionByID</text>
+<polyline fill="none" stroke="black" points="2738,-77 2893,-77 "/>
+<text text-anchor="start" x="2746" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
+<polyline fill="none" stroke="black" points="2738,-58 2893,-58 "/>
+<text text-anchor="start" x="2746" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayTransactionByID()</text>
+<text text-anchor="start" x="2746" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
+<text text-anchor="start" x="2746" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="2746" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node23 -->
 <g id="edge22" class="edge"><title>Node15&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M2418.55,-176.051C2502.14,-167.373 2629.77,-147.381 2731.5,-102 2735.34,-100.285 2739.18,-98.3173 2742.95,-96.1756"/>
-<polygon fill="none" stroke="midnightblue" points="2418.18,-172.57 2408.58,-177.054 2418.88,-179.535 2418.18,-172.57"/>
+<path fill="none" stroke="midnightblue" d="M2510.53,-165.814C2572.78,-152.467 2657.47,-131.151 2728.5,-102 2732.85,-100.214 2737.25,-98.2489 2741.65,-96.1619"/>
+<polygon fill="none" stroke="midnightblue" points="2509.79,-162.392 2500.73,-167.887 2511.24,-169.24 2509.79,-162.392"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node"><title>Node24</title>
-<g id="a_node24"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectOutOfHoursOrders.html" target="_top" xlink:title="this class represents a query that selects the sales record number, order total, created time and dat...">
-<polygon fill="white" stroke="black" points="2875,-6 2875,-96 3016,-96 3016,-6 2875,-6"/>
-<text text-anchor="middle" x="2945.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectOutOfHoursOrders</text>
-<polyline fill="none" stroke="black" points="2875,-77 3016,-77 "/>
-<text text-anchor="start" x="2883" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
-<polyline fill="none" stroke="black" points="2875,-58 3016,-58 "/>
-<text text-anchor="start" x="2883" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectOutOfHoursOrders()</text>
-<text text-anchor="start" x="2883" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
-<text text-anchor="start" x="2883" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
-<text text-anchor="start" x="2883" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
+<g id="a_node24"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectFullOrderLine.html" target="_top" xlink:title="This class represents a query that provides the majority of information associated with a particular ...">
+<polygon fill="white" stroke="black" points="2911,-6 2911,-96 3028,-96 3028,-6 2911,-6"/>
+<text text-anchor="middle" x="2969.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectFullOrderLine</text>
+<polyline fill="none" stroke="black" points="2911,-77 3028,-77 "/>
+<text text-anchor="start" x="2919" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
+<polyline fill="none" stroke="black" points="2911,-58 3028,-58 "/>
+<text text-anchor="start" x="2919" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectFullOrderLine()</text>
+<text text-anchor="start" x="2919" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
+<text text-anchor="start" x="2919" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="2919" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node24 -->
 <g id="edge23" class="edge"><title>Node15&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M2419.16,-180.327C2527.79,-175.175 2715.94,-158.098 2866.5,-102 2871.06,-100.3 2875.64,-98.3114 2880.17,-96.1258"/>
-<polygon fill="none" stroke="midnightblue" points="2418.73,-176.843 2408.9,-180.79 2419.04,-183.836 2418.73,-176.843"/>
+<path fill="none" stroke="midnightblue" d="M2511.15,-180.062C2610.21,-174.559 2773.6,-157.051 2902.5,-102 2906.5,-100.29 2910.49,-98.2938 2914.41,-96.1025"/>
+<polygon fill="none" stroke="midnightblue" points="2510.68,-176.582 2500.88,-180.603 2511.05,-183.573 2510.68,-176.582"/>
 </g>
 <!-- Node25 -->
 <g id="node25" class="node"><title>Node25</title>
-<g id="a_node25"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectTransactionByOrder.html" target="_top" xlink:title="This class represents a query that selects all data from the transactions table of the database given...">
-<polygon fill="white" stroke="black" points="3034.5,-6 3034.5,-96 3180.5,-96 3180.5,-6 3034.5,-6"/>
-<text text-anchor="middle" x="3107.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectTransactionByOrder</text>
-<polyline fill="none" stroke="black" points="3034.5,-77 3180.5,-77 "/>
-<text text-anchor="start" x="3042.5" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
-<polyline fill="none" stroke="black" points="3034.5,-58 3180.5,-58 "/>
-<text text-anchor="start" x="3042.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectTransactionByOrder()</text>
-<text text-anchor="start" x="3042.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
-<text text-anchor="start" x="3042.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
-<text text-anchor="start" x="3042.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
+<g id="a_node25"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectOutOfHoursOrders.html" target="_top" xlink:title="this class represents a query that selects the sales record number, order total, created time and dat...">
+<polygon fill="white" stroke="black" points="3046,-6 3046,-96 3187,-96 3187,-6 3046,-6"/>
+<text text-anchor="middle" x="3116.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectOutOfHoursOrders</text>
+<polyline fill="none" stroke="black" points="3046,-77 3187,-77 "/>
+<text text-anchor="start" x="3054" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
+<polyline fill="none" stroke="black" points="3046,-58 3187,-58 "/>
+<text text-anchor="start" x="3054" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectOutOfHoursOrders()</text>
+<text text-anchor="start" x="3054" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
+<text text-anchor="start" x="3054" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="3054" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node25 -->
 <g id="edge24" class="edge"><title>Node15&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M2418.95,-177.001C2580.17,-166.196 2915.36,-139.903 3025.5,-102 3030.39,-100.318 3035.29,-98.3102 3040.14,-96.0801"/>
-<polygon fill="none" stroke="midnightblue" points="2418.33,-173.534 2408.59,-177.69 2418.8,-180.519 2418.33,-173.534"/>
+<path fill="none" stroke="midnightblue" d="M2510.8,-182.763C2632.83,-180.514 2858.25,-166.864 3037.5,-102 3042.23,-100.288 3046.98,-98.2571 3051.66,-96.0101"/>
+<polygon fill="none" stroke="midnightblue" points="2510.7,-179.264 2500.76,-182.926 2510.82,-186.263 2510.7,-179.264"/>
+</g>
+<!-- Node26 -->
+<g id="node26" class="node"><title>Node26</title>
+<g id="a_node26"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectTransactionByOrder.html" target="_top" xlink:title="This class represents a query that selects all data from the transactions table of the database given...">
+<polygon fill="white" stroke="black" points="3205.5,-6 3205.5,-96 3351.5,-96 3351.5,-6 3205.5,-6"/>
+<text text-anchor="middle" x="3278.5" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SelectTransactionByOrder</text>
+<polyline fill="none" stroke="black" points="3205.5,-77 3351.5,-77 "/>
+<text text-anchor="start" x="3213.5" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; query</text>
+<polyline fill="none" stroke="black" points="3205.5,-58 3351.5,-58 "/>
+<text text-anchor="start" x="3213.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectTransactionByOrder()</text>
+<text text-anchor="start" x="3213.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># format()</text>
+<text text-anchor="start" x="3213.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00"># setParameters()</text>
+<text text-anchor="start" x="3213.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00"># queryString()</text>
+</a>
+</g>
+</g>
+<!-- Node15&#45;&gt;Node26 -->
+<g id="edge25" class="edge"><title>Node15&#45;&gt;Node26</title>
+<path fill="none" stroke="midnightblue" d="M2510.84,-178.212C2686.04,-168.909 3071.39,-144.239 3196.5,-102 3201.4,-100.347 3206.31,-98.3604 3211.17,-96.1464"/>
+<polygon fill="none" stroke="midnightblue" points="2510.43,-174.729 2500.62,-178.75 2510.79,-181.719 2510.43,-174.729"/>
 </g>
 </g>
 </svg>

@@ -8,6 +8,7 @@ var namespacetomoBay_1_1exceptions =
     [ "NullEmailServerObjectException", "classtomoBay_1_1exceptions_1_1NullEmailServerObjectException.html", "classtomoBay_1_1exceptions_1_1NullEmailServerObjectException" ],
     [ "OrderException", "classtomoBay_1_1exceptions_1_1OrderException.html", "classtomoBay_1_1exceptions_1_1OrderException" ],
     [ "PayloadException", "classtomoBay_1_1exceptions_1_1PayloadException.html", "classtomoBay_1_1exceptions_1_1PayloadException" ],
+    [ "PresenterActionException", "classtomoBay_1_1exceptions_1_1PresenterActionException.html", "classtomoBay_1_1exceptions_1_1PresenterActionException" ],
     [ "ServiceException", "classtomoBay_1_1exceptions_1_1ServiceException.html", "classtomoBay_1_1exceptions_1_1ServiceException" ],
     [ "WinstockException", "classtomoBay_1_1exceptions_1_1WinstockException.html", "classtomoBay_1_1exceptions_1_1WinstockException" ]
 ];

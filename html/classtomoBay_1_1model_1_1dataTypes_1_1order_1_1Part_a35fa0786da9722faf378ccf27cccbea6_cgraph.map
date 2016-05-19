@@ -1,6 +1,6 @@
 <map id="getDescription" name="getDescription">
-<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#ab3e03f7919360bb577b970dfd18b66ff" title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock..." alt="" coords="162,5,413,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a2f9ab14be95470a1bcd37a30a7ec90ae" title="query winstock for the description of a particular part. " alt="" coords="160,71,415,112"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8" title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock..." alt="" coords="162,5,413,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#adaf6c34595911864279e31f375aeedd1" title="query winstock for the description of a particular part. " alt="" coords="160,71,415,112"/>
 <area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a82b5421e7d3a2ba82bdc5d54b09a8069" title="tomoBay.model.winstock.Stock.query\lWinstockURL" alt="" coords="463,5,705,47"/>
 <area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a42fa652d82ed49749a0ad929a6c798d0" title="remove the header bumpf from the bottom of the response " alt="" coords="466,71,702,112"/>
 <area shape="rect" id="node7" href="$classtomoBay_1_1helpers_1_1XMLParser.html#a9936151017dd4e908cf37d453b22c8ef" title="parses an XML formatted string looking for the first tag specified in the parameters. " alt="" coords="471,137,697,163"/>

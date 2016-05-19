@@ -89,10 +89,10 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="classtomoBay_1_1helpers_1_1BrandToCode.html#ab3e03f7919360bb577b970dfd18b66ff" target="_top" xlink:title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock...">
+<g id="a_node5"><a xlink:href="classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8" target="_top" xlink:title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock...">
 <polygon fill="white" stroke="black" points="314,-49.5 314,-79.5 502,-79.5 502,-49.5 314,-49.5"/>
 <text text-anchor="start" x="322" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.helpers.BrandToCode.convert</text>
-<text text-anchor="middle" x="408" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToInt</text>
+<text text-anchor="middle" x="408" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToWinstockInt</text>
 </a>
 </g>
 </g>

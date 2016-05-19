@@ -10,5 +10,6 @@ var enumtomoBay_1_1presenters_1_1presenterActions_1_1PresenterActionFactory_1_1P
     [ "BUYER_LIST", "enumtomoBay_1_1presenters_1_1presenterActions_1_1PresenterActionFactory_1_1PresenterActions.html#a324f7f0b495c805ea986c4079c443a35", null ],
     [ "RE_SCAN_BUYER", "enumtomoBay_1_1presenters_1_1presenterActions_1_1PresenterActionFactory_1_1PresenterActions.html#a6987f7eb2500ee11c5e90029eb7e7f93", null ],
     [ "INVOICE_ORDERS", "enumtomoBay_1_1presenters_1_1presenterActions_1_1PresenterActionFactory_1_1PresenterActions.html#a24f2453b2ebb96762a2263ca8da6b423", null ],
-    [ "PRINT_INVOICES", "enumtomoBay_1_1presenters_1_1presenterActions_1_1PresenterActionFactory_1_1PresenterActions.html#a3c58115730c5d2654dc6ae520fd65477", null ]
+    [ "PRINT_INVOICES", "enumtomoBay_1_1presenters_1_1presenterActions_1_1PresenterActionFactory_1_1PresenterActions.html#a3c58115730c5d2654dc6ae520fd65477", null ],
+    [ "GENERATE_ROYAL_MAIL_CSV", "enumtomoBay_1_1presenters_1_1presenterActions_1_1PresenterActionFactory_1_1PresenterActions.html#af61a97852f384ecafce4bc0e5cdb7e81", null ]
 ];
