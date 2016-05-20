@@ -22,7 +22,7 @@ import tomoBay.exceptions.PresenterActionException;
 import tomoBay.helpers.BrandToCode;
 import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
-import tomoBay.model.royalMail.RoyalMailCSV;
+import tomoBay.model.royalMail.RoyalMailCSVType;
 import tomoBay.model.royalMail.RoyalMailCSVGenerator;
 import tomoBay.model.sql.framework.SelectQueryInvoker;
 import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeParams;
@@ -126,12 +126,12 @@ public final class GenerateRoyalMailCSV implements AbstractPresenterAction
 		String[][] output = new String[initialData.length][csvGen_M.size()];
 		for(int i = 0 ; i < initialData.length ; ++i)
 		{
-			output[i][RoyalMailCSV.SERVICE] = initialData[i][GenerateRoyalMailCSV.SERVICE];
-			output[i][RoyalMailCSV.SERVICE_ENHANCEMENT] = initialData[i][GenerateRoyalMailCSV.SERVICE_ENHANCEMENT];
-			output[i][RoyalMailCSV.SERVICE_FORMAT] = initialData[i][GenerateRoyalMailCSV.FORMAT];
-			output[i][RoyalMailCSV.SERVICE_REF] = "SR1";
-			output[i][RoyalMailCSV.COUNTRY_CODE] = "GB";
-			output[i][RoyalMailCSV.ITEMS] = "1";
+			output[i][RoyalMailCSVType.SERVICE] = initialData[i][GenerateRoyalMailCSV.SERVICE];
+			output[i][RoyalMailCSVType.SERVICE_ENHANCEMENT] = initialData[i][GenerateRoyalMailCSV.SERVICE_ENHANCEMENT];
+			output[i][RoyalMailCSVType.SERVICE_FORMAT] = initialData[i][GenerateRoyalMailCSV.FORMAT];
+			output[i][RoyalMailCSVType.SERVICE_REF] = "SR1";
+			output[i][RoyalMailCSVType.COUNTRY_CODE] = "GB";
+			output[i][RoyalMailCSVType.ITEMS] = "1";
 		}
 		return output;
 	}
@@ -161,12 +161,12 @@ public final class GenerateRoyalMailCSV implements AbstractPresenterAction
 			//format data
 			if(result.size() != 0)
 			{
-				inputData[i][RoyalMailCSV.RECIPIENT] = result.get(0).get(BuyerTable.NAME, ClassRef.STRING);
-				inputData[i][RoyalMailCSV.ADDRESS_LINE_1] = result.get(0).get(BuyerTable.STREET1, ClassRef.STRING);
-				inputData[i][RoyalMailCSV.ADDRESS_LINE_2] = result.get(0).get(BuyerTable.STREET2, ClassRef.STRING);
-				inputData[i][RoyalMailCSV.POSTCODE] = result.get(0).get(BuyerTable.POSTCODE, ClassRef.STRING).toUpperCase();
-				inputData[i][RoyalMailCSV.POST_TOWN] = result.get(0).get(BuyerTable.CITY, ClassRef.STRING);
-				inputData[i][RoyalMailCSV.REFERENCE] 
+				inputData[i][RoyalMailCSVType.RECIPIENT] = result.get(0).get(BuyerTable.NAME, ClassRef.STRING);
+				inputData[i][RoyalMailCSVType.ADDRESS_LINE_1] = result.get(0).get(BuyerTable.STREET1, ClassRef.STRING);
+				inputData[i][RoyalMailCSVType.ADDRESS_LINE_2] = result.get(0).get(BuyerTable.STREET2, ClassRef.STRING);
+				inputData[i][RoyalMailCSVType.POSTCODE] = result.get(0).get(BuyerTable.POSTCODE, ClassRef.STRING).toUpperCase();
+				inputData[i][RoyalMailCSVType.POST_TOWN] = result.get(0).get(BuyerTable.CITY, ClassRef.STRING);
+				inputData[i][RoyalMailCSVType.REFERENCE] 
 						= result.get(0).get(OrdersTable.INVOICED, ClassRef.INTEGER).toString();
 			}
 			else 
@@ -193,11 +193,11 @@ public final class GenerateRoyalMailCSV implements AbstractPresenterAction
 		Stock winstock = new Stock();
 		for(int i = 0 ; i < inputData.length ; ++i)
 		{
-			final int invoiceNo = Integer.parseInt(inputData[i][RoyalMailCSV.REFERENCE]);
+			final int invoiceNo = Integer.parseInt(inputData[i][RoyalMailCSVType.REFERENCE]);
 			final int brandCode = BrandToCode.convertToWinstockInt(initialData[i][GenerateRoyalMailCSV.ACCOUNT]);
 			final String weight = String.valueOf(winstock.requestInvoiceWeight(invoiceNo, brandCode));
-			if(weight.equals("0")) {inputData[i][RoyalMailCSV.WEIGHT]= "1";}
-			else {inputData[i][RoyalMailCSV.WEIGHT]= weight;}
+			if(weight.equals("0")) {inputData[i][RoyalMailCSVType.WEIGHT]= "1";}
+			else {inputData[i][RoyalMailCSVType.WEIGHT]= weight;}
 		}
 		return inputData;
 	}
@@ -212,8 +212,8 @@ public final class GenerateRoyalMailCSV implements AbstractPresenterAction
 	{
 		for(int i = 0 ; i < inputData.length ; ++i)
 		{
-			inputData[i][RoyalMailCSV.REFERENCE] = BrandToCode.convert(initialData[i][GenerateRoyalMailCSV.ACCOUNT])
-																+ inputData[i][RoyalMailCSV.REFERENCE];
+			inputData[i][RoyalMailCSVType.REFERENCE] = BrandToCode.convert(initialData[i][GenerateRoyalMailCSV.ACCOUNT])
+																+ inputData[i][RoyalMailCSVType.REFERENCE];
 		}
 		return inputData;
 	}

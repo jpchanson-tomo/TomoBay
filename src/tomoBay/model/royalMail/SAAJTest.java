@@ -2,6 +2,8 @@ package tomoBay.model.royalMail;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringBufferInputStream;
 import java.net.URL;
 
 import javax.xml.namespace.QName;
@@ -58,60 +60,60 @@ public final class SAAJTest
 	 */
 	public static void main(String[] args) throws SOAPException, IOException
 	{
-		String url = "https://api.ebay.com/wsapi";
-		String queryString ="?siteid=0"
-								+ "&routing=new"
-								+ "&callname=GeteBayOfficialTime"
-//								+ "&client=java"
-								+ "&version=423"
-								+ "&appid=JanPhill-6fd5-44bb-9622-332d18aba0b6";
+		String url = "https://api.royalmail.net/shipping/v2";
 		
-		URL endPoint = new URL(url+queryString);
+		
+		URL endPoint = new URL(url);
 		URL endPointLocal = new URL("http://192.168.0.234:1234");
-		MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
-		MimeHeaders mimes = new MimeHeaders();
-		mimes.addHeader("Content-Type", SOAPConstants.SOAP_1_1_CONTENT_TYPE);
-		mimes.addHeader("SOAPAction", "zxcfxcfxcf ");
+		
+		MessageFactory factory = MessageFactory.newInstance(SOAPConstants.DEFAULT_SOAP_PROTOCOL);
 		SOAPMessage message = factory.createMessage();
+		
+		message.getMimeHeaders().removeHeader("Accept");
+		message.getMimeHeaders().addHeader("Accept", "application/xml");
+		message.getMimeHeaders().addHeader("Accept-Encoding", "gzip,deflate,sdch");
+		message.getMimeHeaders().addHeader("Accept-Language", "en-US,en;q=0.8,fa;q=0.6,sv;q=0.4");
+		message.getMimeHeaders().addHeader("SOAPAction", "createShipment ");
+		message.getMimeHeaders().addHeader("X-IBM-Client-Id", "34474f61-6e47-463b-8f40-c25a29a27fb6");
+		message.getMimeHeaders().addHeader("X-IBM-Client-Secret", "fS2wI1yU0jE4uP7jN3gR5cD0uX0qB7yF4oG2qY4gI5sL1cD3lV");
 		
 		SOAPPart part = message.getSOAPPart();
 		SOAPEnvelope envelope = part.getEnvelope();
 		SOAPHeader messageHeader = envelope.getHeader();
 		SOAPBody messageBody = envelope.getBody();
 		
-		
-		envelope.removeNamespaceDeclaration("SOAP-ENV");
-		envelope.setPrefix("soapenv");
-		envelope.addNamespaceDeclaration("xsd", "http://www.w3.org/2001/XMLSchema");
-		envelope.addNamespaceDeclaration("xsi", "http://www.w3.org/2001/XMLSchema-instance");
-		
-		
-		messageHeader.setPrefix("soapenv");
-		
-		QName headerName = new QName("urn:ebay:apis:eBLBaseComponents","RequesterCredentials","ebl");
+		//SOAP HEADER
+		QName headerName = new QName("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd","Security","oas");
 		SOAPHeaderElement headElement = messageHeader.addHeaderElement(headerName);
-		QName mustUnderstand = new QName("","mustUnderstand","soapenv");
-		headElement.addAttribute(mustUnderstand, "0");
+		headElement.addTextNode(" ");
+
+		//SOAP BODY
+		//CREATE SHIPMENT REQUEST
+		//INTEGRATION HEADER
+		//REQUESTED SHIPMENT
 		
-		SOAPElement authToken = headElement.addChildElement("eBayAuthToken", "ebl");
-		authToken.addTextNode("AgAAAA**AQAAAA**aAAAAA**0GbQVg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wMk4GnD5GDogSdj6x9nY+seQ**zycDAA**AAMAAA**vuf8mZAWVaWRvLQ3FV/HyJdJ6kfngurBszal33drU7jupoq3YVruEMlZdpeBjxqvkcqyNkMa64UotHZ+2H2Am3yJ7dUDTju5gAYxuqQt9p4+fTJVnQ3ndUpYJGtO/gCEWGTM4WP4i8sdTgrw+B4tsu9ZyQFr1uYdr6BYqPgD1K/CNV/xUOmtIqmoPI1m6guV5hpXI+Th3814tJub+zThmJBQIusb47qO8Lx7VSJc/gyDY6TQwctfu5Xvs3EN/8g4iuUR+wZzzg2/k8eL+6SuSgrC4W31ZDboFQWs13t3AiD7vsWhiNdeELTHigRZSokHbzbmq191pX7DdmWjYon3Z2G2nu/pdQuc5P2tAgGzhxcIlfN8XS+FCZupuWXM44FpRfYORKCHioE7gcvIAvOPbA5xRVUVOqRKr+Qz/Qq2ItiEwWDbv4DbyElLjmcMfCjioBd9L4BF2DvaZ/9n6DPK7XpHhbfDJHDelm2RV0Li7FNPWRyRFg52gmCKR2DN3f9GQ3xUpM1r9EgjdlauwFBr6e7hC3iZkV4AwEYBBG3k9UR330ZZISE7HFkFMSDJfFoLVj6zWsx3Vylky7WLzj+tvrWtEQTILP6x46WkQjAEz/it3t1z2ECthkdjBFh/1X1VMS16YErN45m6WJcvOg8F6nxQ5YxqWYHqqJXVzRzwCGe35yfAHargvftaVqVJgi1B5pxOjtbgLmoqknwYc9lsSQMkWPfCsjFGXqh1WZnfH1U5srQb64X+eF1bFAY/29VK");
-		authToken.addNamespaceDeclaration("ebl", "urn:ebay:apis:eBLBaseComponents");
+//		SOAPElement authToken = headElement.addChildElement("eBayAuthToken", "ebl");
+//		authToken.addTextNode("AgAAAA**AQAAAA**aAAAAA**0GbQVg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wMk4GnD5GDogSdj6x9nY+seQ**zycDAA**AAMAAA**vuf8mZAWVaWRvLQ3FV/HyJdJ6kfngurBszal33drU7jupoq3YVruEMlZdpeBjxqvkcqyNkMa64UotHZ+2H2Am3yJ7dUDTju5gAYxuqQt9p4+fTJVnQ3ndUpYJGtO/gCEWGTM4WP4i8sdTgrw+B4tsu9ZyQFr1uYdr6BYqPgD1K/CNV/xUOmtIqmoPI1m6guV5hpXI+Th3814tJub+zThmJBQIusb47qO8Lx7VSJc/gyDY6TQwctfu5Xvs3EN/8g4iuUR+wZzzg2/k8eL+6SuSgrC4W31ZDboFQWs13t3AiD7vsWhiNdeELTHigRZSokHbzbmq191pX7DdmWjYon3Z2G2nu/pdQuc5P2tAgGzhxcIlfN8XS+FCZupuWXM44FpRfYORKCHioE7gcvIAvOPbA5xRVUVOqRKr+Qz/Qq2ItiEwWDbv4DbyElLjmcMfCjioBd9L4BF2DvaZ/9n6DPK7XpHhbfDJHDelm2RV0Li7FNPWRyRFg52gmCKR2DN3f9GQ3xUpM1r9EgjdlauwFBr6e7hC3iZkV4AwEYBBG3k9UR330ZZISE7HFkFMSDJfFoLVj6zWsx3Vylky7WLzj+tvrWtEQTILP6x46WkQjAEz/it3t1z2ECthkdjBFh/1X1VMS16YErN45m6WJcvOg8F6nxQ5YxqWYHqqJXVzRzwCGe35yfAHargvftaVqVJgi1B5pxOjtbgLmoqknwYc9lsSQMkWPfCsjFGXqh1WZnfH1U5srQb64X+eF1bFAY/29VK");
+//		authToken.addNamespaceDeclaration("ebl", "urn:ebay:apis:eBLBaseComponents");
+//		
+//		
+//		
+//		QName bodyName = new QName("urn:ebay:apis:eBLBaseComponents","GeteBayOfficialTimeRequest","");
+//		SOAPBodyElement element = messageBody.addBodyElement(bodyName);
+//		
+//		SOAPElement detailLevel = element.addChildElement("DetailLevel");
+//		detailLevel.addTextNode("ReturnAll");
+//		
+//		SOAPElement version = element.addChildElement("Version");
+//		version.addTextNode("423");
 		
 		
-		messageBody.setPrefix("soapenv");
 		
-		QName bodyName = new QName("urn:ebay:apis:eBLBaseComponents","GeteBayOfficialTimeRequest","");
-		SOAPBodyElement element = messageBody.addBodyElement(bodyName);
 		
-		SOAPElement detailLevel = element.addChildElement("DetailLevel");
-		detailLevel.addTextNode("ReturnAll");
-		
-		SOAPElement version = element.addChildElement("Version");
-		version.addTextNode("423");
 		
 		
 		SOAPConnection con = SOAPConnectionFactory.newInstance().createConnection();
-		SOAPMessage response = con.call(message, endPoint);
+		SOAPMessage response = con.call(message, endPointLocal);
 		
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		response.writeTo(out);
