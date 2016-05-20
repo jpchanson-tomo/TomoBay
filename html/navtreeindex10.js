@@ -1,5 +1,8 @@
 var NAVTREEINDEX10 =
 {
+"classtomoBay_1_1presenters_1_1factories_1_1ErrorPresenterFactory.html#aeb879f4061fab0d83b3eb53b3f327b27":[3,0,0,3,3,4,0],
+"classtomoBay_1_1presenters_1_1factories_1_1OrderDetailsPresenterFactory.html":[3,0,0,3,3,5],
+"classtomoBay_1_1presenters_1_1factories_1_1OrderDetailsPresenterFactory.html#a263fa85fbc935ae47b62f5f562486de1":[3,0,0,3,3,5,1],
 "classtomoBay_1_1presenters_1_1factories_1_1OrderDetailsPresenterFactory.html#a69afab1fe3dfe5660d4fba02e26b1266":[3,0,0,3,3,5,0],
 "classtomoBay_1_1presenters_1_1factories_1_1OutOfHoursPresenterFactory.html":[3,0,0,3,3,6],
 "classtomoBay_1_1presenters_1_1factories_1_1OutOfHoursPresenterFactory.html#a263fa85fbc935ae47b62f5f562486de1":[3,0,0,3,3,6,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX10 =
 "classtomoBay_1_1view_1_1views_1_1OutOfHoursView.html":[3,0,0,5,0,6],
 "classtomoBay_1_1view_1_1views_1_1OutOfHoursView.html#a5724666c8c61c4e2ef28d5364c8c13d0":[3,0,0,5,0,6,0],
 "classtomoBay_1_1view_1_1views_1_1OutOfHoursView.html#ac9b3e6217f0b9dac4613adf2e8d5e195":[3,0,0,5,0,6,1],
-"classtomoBay_1_1view_1_1views_1_1RootView.html":[3,0,0,5,0,7],
-"classtomoBay_1_1view_1_1views_1_1RootView.html#a5724666c8c61c4e2ef28d5364c8c13d0":[3,0,0,5,0,7,0],
-"classtomoBay_1_1view_1_1views_1_1SalesHistoryView.html":[3,0,0,5,0,8],
-"classtomoBay_1_1view_1_1views_1_1SalesHistoryView.html#a5724666c8c61c4e2ef28d5364c8c13d0":[3,0,0,5,0,8,0]
+"classtomoBay_1_1view_1_1views_1_1RootView.html":[3,0,0,5,0,7]
 };

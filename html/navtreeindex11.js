@@ -1,5 +1,8 @@
 var NAVTREEINDEX11 =
 {
+"classtomoBay_1_1view_1_1views_1_1RootView.html#a5724666c8c61c4e2ef28d5364c8c13d0":[3,0,0,5,0,7,0],
+"classtomoBay_1_1view_1_1views_1_1SalesHistoryView.html":[3,0,0,5,0,8],
+"classtomoBay_1_1view_1_1views_1_1SalesHistoryView.html#a5724666c8c61c4e2ef28d5364c8c13d0":[3,0,0,5,0,8,0],
 "classtomoBay_1_1view_1_1views_1_1SalesHistoryView.html#ac9b3e6217f0b9dac4613adf2e8d5e195":[3,0,0,5,0,8,1],
 "classtomoBay_1_1view_1_1views_1_1WarehouseOrderView.html":[3,0,0,5,0,9],
 "classtomoBay_1_1view_1_1views_1_1WarehouseOrderView.html#a5724666c8c61c4e2ef28d5364c8c13d0":[3,0,0,5,0,9,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX11 =
 "enumtomoBay_1_1model_1_1services_1_1ServiceFactory_1_1ServiceType.html#a0fe4c1c1d9eddc60c961f2255a560d49":[3,0,0,2,4,14,1,2],
 "enumtomoBay_1_1model_1_1services_1_1ServiceFactory_1_1ServiceType.html#a19ce63ea555c79f3fb893c38e16c12fa":[3,0,0,2,4,14,1,4],
 "enumtomoBay_1_1model_1_1services_1_1ServiceFactory_1_1ServiceType.html#a88aedf96af8122c43df3e915c765a328":[3,0,0,2,4,14,1,1],
-"enumtomoBay_1_1model_1_1services_1_1ServiceFactory_1_1ServiceType.html#ab4361f3a00e89d1985c243c62961f85f":[3,0,0,2,4,14,1,3],
-"enumtomoBay_1_1model_1_1services_1_1ServiceFactory_1_1ServiceType.html#acd92b20cb8a9413587234d1ba55e8b97":[3,0,0,2,4,14,1,0],
-"enumtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsService_1_1emailDataType.html":[3,0,0,2,4,2,3,0],
-"enumtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsService_1_1emailDataType.html#a04c1d7cd203ef496f200ee5a096b5764":[3,0,0,2,4,2,3,0,0]
+"enumtomoBay_1_1model_1_1services_1_1ServiceFactory_1_1ServiceType.html#ab4361f3a00e89d1985c243c62961f85f":[3,0,0,2,4,14,1,3]
 };

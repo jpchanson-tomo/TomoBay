@@ -57,7 +57,7 @@ var searchData=
   ['error_5fsyntax',['ERROR_SYNTAX',['../enumtomoBay_1_1model_1_1winstock_1_1response_1_1ResultCodes.html#a31f1a6540ac4473eaaa52bbe488e69b5',1,'tomoBay::model::winstock::response::ResultCodes']]],
   ['errorlist_5fm',['errorList_M',['../classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1ErrorsList.html#a8a8e3e1ec0bc7e9fb8d7d34df9798373',1,'tomoBay::model::services::emailErrorsService::ErrorsList']]],
   ['errormsg',['ERRORMSG',['../classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Buyer.html#a6581790c6903a7ecded800c6e4ae72bb',1,'tomoBay::model::dataTypes::order::Buyer']]],
-  ['errorpresenter',['errorPresenter',['../classtomoBayTests_1_1view_1_1ViewFactoryTest.html#a8caf00c6bed916219f6e2372ec8140c9',1,'tomoBayTests.view.ViewFactoryTest.errorPresenter()'],['../classtomoBay_1_1presenters_1_1error_1_1ErrorPresenter.html#abe1a99fae8e03632a9fb043a6b6c0460',1,'tomoBay.presenters.error.ErrorPresenter.ErrorPresenter()']]],
+  ['errorpresenter',['ErrorPresenter',['../classtomoBay_1_1presenters_1_1error_1_1ErrorPresenter.html#abe1a99fae8e03632a9fb043a6b6c0460',1,'tomoBay.presenters.error.ErrorPresenter.ErrorPresenter()'],['../classtomoBayTests_1_1view_1_1ViewFactoryTest.html#a8caf00c6bed916219f6e2372ec8140c9',1,'tomoBayTests.view.ViewFactoryTest.errorPresenter()']]],
   ['errorpresenter',['ErrorPresenter',['../classtomoBay_1_1presenters_1_1error_1_1ErrorPresenter.html',1,'tomoBay::presenters::error']]],
   ['errorpresenter_2ejava',['ErrorPresenter.java',['../ErrorPresenter_8java.html',1,'']]],
   ['errorpresenterfactory',['ErrorPresenterFactory',['../classtomoBay_1_1presenters_1_1factories_1_1ErrorPresenterFactory.html',1,'tomoBay::presenters::factories']]],

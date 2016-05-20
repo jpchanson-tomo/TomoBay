@@ -151,7 +151,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailNonce.html" title="This class represents the functionality to generate a nonce (number used once), and to encode it as p...">tomoBay.model.royalMail.RoyalMailNonce</a></dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Jan P.C. Hanson </dd></dl>
 
-<p>Definition at line <a class="el" href="RoyalMailNonceTest_8java_source.html#l00043">43</a> of file <a class="el" href="RoyalMailNonceTest_8java_source.html">RoyalMailNonceTest.java</a>.</p>
+<p>Definition at line <a class="el" href="RoyalMailNonceTest_8java_source.html#l00045">45</a> of file <a class="el" href="RoyalMailNonceTest_8java_source.html">RoyalMailNonceTest.java</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aefecc28d8f87292fa66c3d3e9ad26bf4"></a>
 <div class="memitem">
@@ -176,7 +176,7 @@ Public Member Functions</h2></td></tr>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailNonce.html#ae5454b1fe1036165c7638331a999f743" title="default ctor ">tomoBay.model.royalMail.RoyalMailNonce::RoyalMailNonce()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="RoyalMailNonceTest_8java_source.html#l00058">58</a> of file <a class="el" href="RoyalMailNonceTest_8java_source.html">RoyalMailNonceTest.java</a>.</p>
+<p>Definition at line <a class="el" href="RoyalMailNonceTest_8java_source.html#l00060">60</a> of file <a class="el" href="RoyalMailNonceTest_8java_source.html">RoyalMailNonceTest.java</a>.</p>
 
 </div>
 </div>
@@ -192,18 +192,31 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000012">Test:</a></b></dt><dd>test the get method of the RoyalMailNonce class</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000012">Test:</a></b></dt><dd>test the get method of the RoyalMailNonce class produces an acceptable nonce</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><ul>
 <li>none</li>
 </ul>
 </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd><ul>
-<li></li>
+<li>a non repeating (within at least 10000 iterations) integer nonce is produced</li>
+<li>the nonce is encoded in Base64 encoding.</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailNonce.html#ac5f5202af3bb4156a22175cb76becb91" title="get the nonce ">tomoBay.model.royalMail.RoyalMailNonce::get()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="RoyalMailNonceTest_8java_source.html#l00079">79</a> of file <a class="el" href="RoyalMailNonceTest_8java_source.html">RoyalMailNonceTest.java</a>.</p>
+<p>Definition at line <a class="el" href="RoyalMailNonceTest_8java_source.html#l00085">85</a> of file <a class="el" href="RoyalMailNonceTest_8java_source.html">RoyalMailNonceTest.java</a>.</p>
+
+<p>References <a class="el" href="RoyalMailNonce_8java_source.html#l00048">RoyalMailNonce.get()</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailNonceTest_a6dbd31fe80cf803427e0b344147c794d_cgraph.svg" width="554" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
 
 </div>
 </div>
@@ -216,7 +229,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetomoBayTests.html">tomoBayTests</a></li><li class="navelem"><a class="el" href="namespacetomoBayTests_1_1model.html">model</a></li><li class="navelem"><a class="el" href="namespacetomoBayTests_1_1model_1_1royalMail.html">royalMail</a></li><li class="navelem"><a class="el" href="classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailNonceTest.html">RoyalMailNonceTest</a></li>
-    <li class="footer">Generated on Fri May 20 2016 14:22:32 for TomoBay by
+    <li class="footer">Generated on Fri May 20 2016 15:32:17 for TomoBay by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
