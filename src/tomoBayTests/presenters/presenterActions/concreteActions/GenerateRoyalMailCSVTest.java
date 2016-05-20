@@ -19,9 +19,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import gnu.trove.set.hash.THashSet;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -62,6 +64,12 @@ public class GenerateRoyalMailCSVTest
 	"\"SR1\",\"24\",\"FAO JOHN BARRASS FAST STOP BRAKE CENTRE\",\"UNIT 8 THE PARADE\",\"HENDON\",\"SR2 8NT\",\"SUNDERLAND\",\"GB\",\"F452906\",\"1\",\"33\",\"SF\",\"L\",\n"
 	+"\"SR1\",\"48\",\"Jonathan  Creith\",\"4 seneril road\",\"\",\"BT57 8TR\",\"Bushmills\",\"GB\",\"C178779\",\"1\",\"658\",\"\",\"P\",\n"
 	+"\"SR1\",\"48\",\"David Plimmer\",\"46 birch crescent\",\"\",\"B69 1UE\",\"Tividale\",\"GB\",\"P127060\",\"1\",\"20\",\"SF\",\"L\",\n";
+	
+	private final String invalidPartError = "invalid sales record number or account:";
+	
+	private final String noPartNoError = "you forgot to enter a part number for an entry";
+	
+	private final String noEntryError = "you forgot to enter information for an entry or you have not added an entry";
 	
 	/**
 	 * @test makes sure that the GenerateRoyalMailCSVTest presenterAction can be instantiated
@@ -119,7 +127,7 @@ public class GenerateRoyalMailCSVTest
 		//test that the file created corresponds to the expected value
 		try
 		{
-			String fileContent = FileUtils.getContentsAsString(new File("./views/resources/RoyalMail.CSV"));
+			String fileContent = FileUtils.getContentsAsString(new File("./views/resources/RoyalMail.csv"));
 			assertEquals(fileContent, this.goodDataOutputExpected);
 		} 
 		catch (IOException e)
@@ -128,13 +136,10 @@ public class GenerateRoyalMailCSVTest
 		
 		//test that passing badly formatted data to this method results in a PresenterActionExceptio
 		//being thrown.
-		try
-		{
-			result = csv.execute(this.badDataSet);
-			fail("no PresenterActionException thrown when bad data given");
-		}
 		
-		catch(PresenterActionException pae)
-		{assertTrue(true);}
+		result = csv.execute(this.badDataSet);
+		if(!(result.contains(this.noEntryError)||result.contains(this.noPartNoError)||result.contains(this.invalidPartError)))
+		{fail("could not deal with: "+result);}
+		
 	}
 }

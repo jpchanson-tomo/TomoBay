@@ -8,16 +8,30 @@ echo ""
 echo -n "please provide a build message(if none is provided will not commit): "
 read message
 
-doxygen docs/TomoBay.doxyfile
+if [[ $message = *[!\ ]* ]] && [[ $user = *[!\ ]* ]] && [[ $passwd = *[!\ ]* ]]; then
 
-ant && 
-/opt/launch4j/launch4j exeConf.xml  && 
+	echo "building documentation"
+	doxygen docs/TomoBay.doxyfile
 
-git add . && 
-git commit -m "$message" && 
-git push https://$user:$passwd@github.com/jpchanson/TomoBay.git stopgap &&
+	echo "building TomoBay"
+	ant && 
 
-cd ../../Docs/TomoBay 
-git add . &&
-git commit -m "$message" &&
-git push https://$user:$passwd@github.com/jpchanson/TomoBay.git gh-pages
+	echo "Assembling .exe"
+	/opt/launch4j/launch4j exeConf.xml  && 
+
+	echo "commit and push TomoBay"
+	git add . && 
+	git commit -m "$message" && 
+	git push https://$user:$passwd@github.com/jpchanson/TomoBay.git stopgap &&
+
+	cd ../../Docs/TomoBay
+
+	echo "commit and push docs" 
+	git add . &&
+	git commit -m "$message" &&
+	git push https://$user:$passwd@github.com/jpchanson/TomoBay.git gh-pages
+
+else
+        echo "you did not enter a user/password/build message"
+fi
+

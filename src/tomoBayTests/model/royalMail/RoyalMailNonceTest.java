@@ -1,8 +1,10 @@
 package tomoBayTests.model.royalMail;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
-import org.junit.Before;
+import java.nio.ByteBuffer;
+import java.util.Base64;
+
 import org.junit.Test;
 
 import tomoBay.model.royalMail.RoyalMailNonce;
@@ -58,27 +60,55 @@ public class RoyalMailNonceTest
 	public final void testRoyalMailNonce()
 	{
 		try
-		{RoyalMailNonce testNonce = new RoyalMailNonce();}
+		{
+			@SuppressWarnings("unused")
+			RoyalMailNonce testNonce = new RoyalMailNonce();
+		}
 		catch(Exception e)
 		{fail("RoyalMailNonce could not be instantiated: "+ e.getMessage());}
 	}
 
 	/**
 	 * @test
-	 * test the get method of the RoyalMailNonce class
+	 * test the get method of the RoyalMailNonce class produces an acceptable nonce
 	 * 
 	 * @pre
 	 * - none
 	 * 
 	 * @post
-	 * - 
+	 * - a non repeating (within at least 10000 iterations) integer nonce is produced
+	 * - the nonce is encoded in Base64 encoding.
 	 * 
 	 * @see tomoBay.model.royalMail.RoyalMailNonce#get()
 	 */
 	@Test
 	public final void testGet()
 	{
-		fail("Not yet implemented");
+		RoyalMailNonce testNonce = new RoyalMailNonce();
+		String result = "";
+		for(int i = 0 ; i < 10000 ; ++i)
+		{
+			final String resultCurrent = testNonce.get();
+			if(resultCurrent.equals(result))
+			{
+				//test non repeating encoded value
+				System.out.println(resultCurrent+" : "+result+"------- at iteration "+i);
+				fail("Nonce repitition occured");
+			}
+			else
+			{
+				//test conversion to int
+				byte[] decoded = Base64.getDecoder().decode(resultCurrent);
+				try 
+				{
+					@SuppressWarnings("unused")
+					int decodedInt = ByteBuffer.wrap(decoded).getInt();
+				}
+				catch(Exception e) {fail("decoded value is not an integer");}
+				
+				//replace 'result' for next iteration
+				result = resultCurrent;
+			}
+		}
 	}
-
 }

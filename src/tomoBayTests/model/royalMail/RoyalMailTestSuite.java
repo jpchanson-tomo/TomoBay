@@ -25,7 +25,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses
 ({
-	RoyalMailCSVGeneratorTest.class
+	RoyalMailCSVGeneratorTest.class,
+	RoyalMailNonceTest.class
 })
 public class RoyalMailTestSuite
 {}
