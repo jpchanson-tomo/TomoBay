@@ -3,22 +3,22 @@
 echo -n "please provide a build message: "
 read message
 
-	echo "building documentation"
-	doxygen docs/TomoBay.doxyfile
+echo "building documentation"
+doxygen docs/TomoBay.doxyfile
 
-	echo "building TomoBay"
-	ant && 
+echo "building TomoBay"
+ant && 
 
-	echo "Assembling .exe"
-	/opt/launch4j/launch4j exeConf.xml  && 
+echo "Assembling .exe"
+/opt/launch4j/launch4j exeConf.xml  && 
 
-	echo "commiting TomoBay"
-	git add . && 
-	git commit -m "$message" && 
+echo "commiting TomoBay"
+git add . && 
+git commit -m "$message" && 
 
-	echo "changing Directories to gh-pages"
-	cd ../../Docs/TomoBay 	
+echo "changing Directories to gh-pages"
+cd ../../Docs/TomoBay 	
 
-	echo "committing docs"
-	git add . &&
-	git commit -m "$message" &&
+echo "committing docs"
+git add . &&
+git commit -m "$message"
