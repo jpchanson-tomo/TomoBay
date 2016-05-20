@@ -1,5 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfacetomoBay_1_1model_1_1winstock_1_1commandFactories_1_1AbstractWinstockCommandFactory.html" title="this is the interface that all AbstractWinstockCommand factories must subscribe to. " alt="" coords="5,31,236,57"/>
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1winstock_1_1commandFactories_1_1PrintInvoiceCommandFactory.html" title="PrintInvoiceCommandFactory" alt="" coords="284,5,479,32"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1commandFactories_1_1PutInvoiceCommandFactory.html" title="PutInvoiceCommandFactory" alt="" coords="287,56,475,83"/>
+<area shape="rect" id="node1" href="$interfacetomoBay_1_1view_1_1AbstractView.html" title="this is the interface that all views must subscribe to. " alt="" coords="5,233,105,260"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1view_1_1views_1_1AdminServiceView.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="162,5,294,32"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1view_1_1views_1_1CRMDetailView.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="170,56,286,83"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1view_1_1views_1_1CRMOverviewView.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="159,107,297,133"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1view_1_1views_1_1ErrorView.html" title="ErrorView" alt="" coords="189,157,267,184"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1view_1_1views_1_1OrderView.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="187,208,269,235"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1view_1_1views_1_1OutOfHoursView.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="167,259,289,285"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1view_1_1views_1_1RootView.html" title="RootView" alt="" coords="189,309,267,336"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1view_1_1views_1_1SalesHistoryView.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="165,360,291,387"/>
+<area shape="rect" id="node10" href="$classtomoBay_1_1view_1_1views_1_1salesOrderView_1_1SalesOrderView.html" title="This class is responsible for formatting the data passed to it by the SalesOrderPresenter and providi..." alt="" coords="170,411,286,437"/>
+<area shape="rect" id="node11" href="$classtomoBay_1_1view_1_1views_1_1WarehouseOrderView.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="153,461,303,488"/>
 </map>

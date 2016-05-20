@@ -11,9 +11,9 @@
 <polygon fill="white" stroke="none" points="-4,4 -4,-24 81,-24 81,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<g id="a_node1"><a xlink:href="classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1Buyers__Table.html" target="_top" xlink:title="updates the buyers table of the database with the information gleaned from an ebay api call ...">
+<g id="a_node1"><a xlink:href="classtomoBay_1_1helpers_1_1BrandToCode.html" target="_top" xlink:title="This helper class converts a generic brand string into a brand code specific to the winstock http api...">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-19.5 77,-19.5 77,-0.5 0,-0.5"/>
-<text text-anchor="middle" x="38.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Buyers_Table</text>
+<text text-anchor="middle" x="38.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">BrandToCode</text>
 </a>
 </g>
 </g>

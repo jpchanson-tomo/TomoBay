@@ -32,6 +32,7 @@ var searchData=
   ['retrieveallerroritems',['retrieveAllErrorItems',['../classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsDBActions.html#a8a4bbc75f3e9766f7f1c51141551702a',1,'tomoBay::model::services::reScanErrorsService::ReScanErrorsDBActions']]],
   ['rootpresenter',['RootPresenter',['../classtomoBay_1_1presenters_1_1root_1_1RootPresenter.html#a49beaf4b539165826e3599616bcf1bc7',1,'tomoBay::presenters::root::RootPresenter']]],
   ['rootpresenterfactory',['RootPresenterFactory',['../classtomoBay_1_1presenters_1_1factories_1_1RootPresenterFactory.html#acfc688f6c6fdf6085964b96136f0baf1',1,'tomoBay::presenters::factories::RootPresenterFactory']]],
-  ['royalmailcsv',['RoyalMailCSV',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSV.html#ad8adaae5e3cc3f1e5effea970b85d0aa',1,'tomoBay::model::royalMail::RoyalMailCSV']]],
-  ['royalmailcsvgenerator',['RoyalMailCSVGenerator',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a1cb65b7538dfdc8bf869f5c77421c90b',1,'tomoBay::model::royalMail::RoyalMailCSVGenerator']]]
+  ['royalmailcsvgenerator',['RoyalMailCSVGenerator',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a1cb65b7538dfdc8bf869f5c77421c90b',1,'tomoBay::model::royalMail::RoyalMailCSVGenerator']]],
+  ['royalmailcsvtype',['RoyalMailCSVType',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVType.html#ad41506b046c6ca3aa666fa5421e23499',1,'tomoBay::model::royalMail::RoyalMailCSVType']]],
+  ['royalmailnonce',['RoyalMailNonce',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailNonce.html#ae5454b1fe1036165c7638331a999f743',1,'tomoBay::model::royalMail::RoyalMailNonce']]]
 ];

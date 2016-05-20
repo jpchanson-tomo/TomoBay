@@ -20,9 +20,11 @@ var searchData=
   ['rootpresenter',['RootPresenter',['../classtomoBay_1_1presenters_1_1root_1_1RootPresenter.html',1,'tomoBay::presenters::root']]],
   ['rootpresenterfactory',['RootPresenterFactory',['../classtomoBay_1_1presenters_1_1factories_1_1RootPresenterFactory.html',1,'tomoBay::presenters::factories']]],
   ['rootview',['RootView',['../classtomoBay_1_1view_1_1views_1_1RootView.html',1,'tomoBay::view::views']]],
-  ['royalmailcsv',['RoyalMailCSV',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSV.html',1,'tomoBay::model::royalMail']]],
   ['royalmailcsvgenerator',['RoyalMailCSVGenerator',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html',1,'tomoBay::model::royalMail']]],
   ['royalmailcsvgeneratortest',['RoyalMailCSVGeneratorTest',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html',1,'tomoBayTests::model::royalMail']]],
+  ['royalmailcsvtype',['RoyalMailCSVType',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVType.html',1,'tomoBay::model::royalMail']]],
+  ['royalmailnonce',['RoyalMailNonce',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailNonce.html',1,'tomoBay::model::royalMail']]],
+  ['royalmailnoncetest',['RoyalMailNonceTest',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailNonceTest.html',1,'tomoBayTests::model::royalMail']]],
   ['royalmailtestsuite',['RoyalMailTestSuite',['../classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailTestSuite.html',1,'tomoBayTests::model::royalMail']]],
   ['runlevel',['RunLevel',['../enumtomoBay_1_1model_1_1dataTypes_1_1ServerStatus_1_1RunLevel.html',1,'tomoBay::model::dataTypes::ServerStatus']]]
 ];

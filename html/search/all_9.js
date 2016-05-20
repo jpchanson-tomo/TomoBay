@@ -117,7 +117,7 @@ var searchData=
   ['itemid_2ejava',['ItemID.java',['../ItemID_8java.html',1,'']]],
   ['itemid_5fm',['itemID_M',['../classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ItemSpecifics.html#af918e87076076c9479db8b0c70ca823a',1,'tomoBay::model::services::reScanErrorsService::ItemSpecifics']]],
   ['itemreq_5fm',['itemreq_M',['../classtomoBay_1_1model_1_1eBayAPI_1_1ItemCall.html#a0f79049449a66c91d6a1e10b6c70d2e9',1,'tomoBay::model::eBayAPI::ItemCall']]],
-  ['items',['ITEMS',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSV.html#aa1c2077cd88c738e5be88283d162d8f1',1,'tomoBay::model::royalMail::RoyalMailCSV']]],
+  ['items',['ITEMS',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVType.html#aa1c2077cd88c738e5be88283d162d8f1',1,'tomoBay::model::royalMail::RoyalMailCSVType']]],
   ['itemsandpartstable',['ItemsAndPartsTable',['../classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1ItemsAndPartsTable.html#a2c07fb422af9de0a2194cff119cd1b8d',1,'tomoBay::model::services::basicEbayUpdateService::ItemsAndPartsTable']]],
   ['itemsandpartstable',['ItemsAndPartsTable',['../classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1ItemsAndPartsTable.html',1,'tomoBay::model::services::basicEbayUpdateService']]],
   ['itemsandpartstable_2ejava',['ItemsAndPartsTable.java',['../ItemsAndPartsTable_8java.html',1,'']]],

@@ -2,7 +2,7 @@ var searchData=
 [
   ['wed_5fend',['WED_END',['../enumtomoBay_1_1helpers_1_1Config.html#ac22b4e0059c924b0c84e3276474d1849',1,'tomoBay::helpers::Config']]],
   ['wed_5fst',['WED_ST',['../enumtomoBay_1_1helpers_1_1Config.html#aeebcafab8ecdb2647b604269b151803f',1,'tomoBay::helpers::Config']]],
-  ['weight',['WEIGHT',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSV.html#a67944b56b5cc065fc1e74bfc76d27494',1,'tomoBay::model::royalMail::RoyalMailCSV']]],
+  ['weight',['WEIGHT',['../classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVType.html#a67944b56b5cc065fc1e74bfc76d27494',1,'tomoBay::model::royalMail::RoyalMailCSVType']]],
   ['win_5floc',['WIN_LOC',['../enumtomoBay_1_1helpers_1_1Config.html#ae2ec8458c163689bdecf19e7a6519137',1,'tomoBay::helpers::Config']]],
   ['win_5fport',['WIN_PORT',['../enumtomoBay_1_1helpers_1_1Config.html#ad3fc7d95a9d370b06a992314f77048a7',1,'tomoBay::helpers::Config']]],
   ['win_5furl1',['WIN_URL1',['../enumtomoBay_1_1helpers_1_1Config.html#abd488167b9790a7012737a2984a772d6',1,'tomoBay::helpers::Config']]],
