@@ -23,11 +23,17 @@ import tomoBay.helpers.NoImports;
  * @param <T> the type of nonce that the child class will be.
  */
 @SuppressWarnings("unused")
-public interface AbstractNonce<T>
+public interface AbstractNonce<T, E>
 {
 	/**
 	 * Generate a nonce (number used once) specific to the derived type.
-	 * @return T the nonce
+	 * @return E the nonce
 	 */
-	public abstract T get();
+	public abstract E get();
+	
+	/**
+	 * encode a nonce in a specific form
+	 * @return T the encoded nonce
+	 */
+	public abstract T encode();
 }

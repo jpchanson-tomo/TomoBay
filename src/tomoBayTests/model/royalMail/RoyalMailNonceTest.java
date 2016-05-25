@@ -82,13 +82,13 @@ public class RoyalMailNonceTest
 	 * @see tomoBay.model.royalMail.RoyalMailNonce#get()
 	 */
 	@Test
-	public final void testGet()
+	public final void testEncode()
 	{
 		RoyalMailNonce testNonce = new RoyalMailNonce();
 		String result = "";
 		for(int i = 0 ; i < 10000 ; ++i)
 		{
-			final String resultCurrent = testNonce.get();
+			final String resultCurrent = testNonce.encode();
 			if(resultCurrent.equals(result))
 			{
 				//test non repeating encoded value

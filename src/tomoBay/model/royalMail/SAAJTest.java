@@ -2,25 +2,25 @@ package tomoBay.model.royalMail;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringBufferInputStream;
+import java.io.StringWriter;
 import java.net.URL;
 
 import javax.xml.namespace.QName;
 import javax.xml.soap.MessageFactory;
-import javax.xml.soap.MimeHeaders;
 import javax.xml.soap.SOAPBody;
-import javax.xml.soap.SOAPBodyElement;
 import javax.xml.soap.SOAPConnection;
 import javax.xml.soap.SOAPConnectionFactory;
 import javax.xml.soap.SOAPConstants;
-import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPEnvelope;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPHeader;
 import javax.xml.soap.SOAPHeaderElement;
 import javax.xml.soap.SOAPMessage;
 import javax.xml.soap.SOAPPart;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 /** Copyright(C) 2015 Jan P.C. Hanson & Tomo Motor Parts Limited
  * 
@@ -60,7 +60,7 @@ public final class SAAJTest
 	 */
 	public static void main(String[] args) throws SOAPException, IOException
 	{
-		String url = "https://api.royalmail.net/shipping/v2";
+		String url = "http://api.royalmail.net/shipping/v2";
 		
 		
 		URL endPoint = new URL(url);
@@ -113,14 +113,26 @@ public final class SAAJTest
 		
 		
 		SOAPConnection con = SOAPConnectionFactory.newInstance().createConnection();
-		SOAPMessage response = con.call(message, endPointLocal);
+		SOAPMessage response = con.call(message, endPoint);
+		
+		
+		final StringWriter sw = new StringWriter();
+		try
+		{
+			TransformerFactory.newInstance().newTransformer().transform(new DOMSource(response.getSOAPPart()), new StreamResult(sw));
+		}
+		catch(TransformerException te)
+		{
+			te.printStackTrace();
+		}
+		
 		
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		response.writeTo(out);
-		String strMessage = new String(out.toByteArray());
-		System.out.println(strMessage);
+//		String strMessage = new String(out.toByteArray());
+		System.out.println(sw.toString());
 		
-		con.call(message, endPointLocal);
+//		con.call(message, endPointLocal);
 		con.close();
 		
 		

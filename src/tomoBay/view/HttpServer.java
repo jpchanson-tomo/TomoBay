@@ -89,6 +89,7 @@ public final class HttpServer
 		sslContextFactory.setKeyStorePath("./keystore/keystore.jks");
 		sslContextFactory.setKeyStorePassword("h4l1but3.14159_+-=");
 		sslContextFactory.setKeyManagerPassword("h4l1but3.14159_+-=");
+		sslContextFactory.setCertAlias("tomobay");
 		ServerConnector sslConnector = new ServerConnector(server,
 										new SslConnectionFactory(sslContextFactory, "http/1.1"),
 										new HttpConnectionFactory(https));

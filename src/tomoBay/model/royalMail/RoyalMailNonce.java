@@ -30,7 +30,7 @@ import tomoBay.security.AbstractNonce;
  * @author Jan P.C. Hanson
  *
  */
-public final class RoyalMailNonce implements AbstractNonce<String>
+public final class RoyalMailNonce implements AbstractNonce<String, Integer>
 {
 	private static final int MAXIMUM = 2147483645;
 	/**
@@ -41,24 +41,21 @@ public final class RoyalMailNonce implements AbstractNonce<String>
 
 	/** 
 	 * get the nonce
-	 * @return String Base64 encoded Nonce
+	 * @return Integer nonce
 	 * @see tomoBay.security.AbstractNonce#get()
 	 */
 	@Override
-	public String get()
-	{
-		int nonce = new Random().nextInt(MAXIMUM);
-		return encodeBase64(nonce);
-	}
+	public Integer get()
+	{return new Random().nextInt(MAXIMUM);}
 	
 	/**
 	 * convert the nonce into a Base64 encoded string
 	 * @param nonce random integer between 0 and max possible size of integer
 	 * @return String in Base64 encoding representing the nonce
 	 */
-	private String encodeBase64(int nonce)
+	public String encode()
 	{
-		byte[] nonceInBytes = ByteBuffer.allocate(4).putInt(nonce).array();
+		byte[] nonceInBytes = ByteBuffer.allocate(4).putInt(this.get()).array();
 		return Base64.getEncoder().encodeToString(nonceInBytes);
 	}
 }
