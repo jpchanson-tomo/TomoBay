@@ -24,5 +24,7 @@ var searchData=
   ['royalmailcsvtype_2ejava',['RoyalMailCSVType.java',['../RoyalMailCSVType_8java.html',1,'']]],
   ['royalmailnonce_2ejava',['RoyalMailNonce.java',['../RoyalMailNonce_8java.html',1,'']]],
   ['royalmailnoncetest_2ejava',['RoyalMailNonceTest.java',['../RoyalMailNonceTest_8java.html',1,'']]],
+  ['royalmailpassworddigest_2ejava',['RoyalMailPasswordDigest.java',['../RoyalMailPasswordDigest_8java.html',1,'']]],
+  ['royalmailpassworddigesttest_2ejava',['RoyalMailPasswordDigestTest.java',['../RoyalMailPasswordDigestTest_8java.html',1,'']]],
   ['royalmailtestsuite_2ejava',['RoyalMailTestSuite.java',['../RoyalMailTestSuite_8java.html',1,'']]]
 ];

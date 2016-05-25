@@ -17,7 +17,7 @@
 <text text-anchor="middle" x="60" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <polyline fill="none" stroke="black" points="-7.10543e-15,-30.5 120,-30.5 "/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ testRoyalMailNonce()</text>
-<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ testGet()</text>
+<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ testEncode()</text>
 </g>
 </g>
 </svg>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>TomoBay: AbstractNonce&lt; T &gt; Interface Template Reference</title>
+<title>TomoBay: AbstractNonce&lt; T, E &gt; Interface Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -112,32 +112,37 @@ $(document).ready(function(){initNavTree('interfacetomoBay_1_1security_1_1Abstra
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="interfacetomoBay_1_1security_1_1AbstractNonce-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">AbstractNonce&lt; T &gt; Interface Template Reference</div>  </div>
+<div class="title">AbstractNonce&lt; T, E &gt; Interface Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>This interface provides a common interface for all Nonces.  
  <a href="interfacetomoBay_1_1security_1_1AbstractNonce.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for AbstractNonce&lt; T &gt;:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for AbstractNonce&lt; T, E &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacetomoBay_1_1security_1_1AbstractNonce__inherit__graph.svg" width="187" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacetomoBay_1_1security_1_1AbstractNonce__inherit__graph.svg" width="179" height="272"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for AbstractNonce&lt; T &gt;:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for AbstractNonce&lt; T, E &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacetomoBay_1_1security_1_1AbstractNonce__coll__graph.svg" width="152" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacetomoBay_1_1security_1_1AbstractNonce__coll__graph.svg" width="170" height="103"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac6f5e7048a2f1df49f7c48e8aaa438be"><td class="memItemLeft" align="right" valign="top">abstract T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacetomoBay_1_1security_1_1AbstractNonce.html#ac6f5e7048a2f1df49f7c48e8aaa438be">get</a> ()</td></tr>
-<tr class="memdesc:ac6f5e7048a2f1df49f7c48e8aaa438be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a nonce (number used once) specific to the derived type.  <a href="#ac6f5e7048a2f1df49f7c48e8aaa438be">More...</a><br /></td></tr>
-<tr class="separator:ac6f5e7048a2f1df49f7c48e8aaa438be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f3a8e6b83984d7413ed902f44cddde0"><td class="memItemLeft" align="right" valign="top">abstract E&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacetomoBay_1_1security_1_1AbstractNonce.html#a6f3a8e6b83984d7413ed902f44cddde0">get</a> ()</td></tr>
+<tr class="memdesc:a6f3a8e6b83984d7413ed902f44cddde0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a nonce (number used once) specific to the derived type.  <a href="#a6f3a8e6b83984d7413ed902f44cddde0">More...</a><br /></td></tr>
+<tr class="separator:a6f3a8e6b83984d7413ed902f44cddde0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa5c822ad268062dcc1b7710d64b6d2"><td class="memItemLeft" align="right" valign="top">abstract T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacetomoBay_1_1security_1_1AbstractNonce.html#a2fa5c822ad268062dcc1b7710d64b6d2">encode</a> ()</td></tr>
+<tr class="memdesc:a2fa5c822ad268062dcc1b7710d64b6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">encode a nonce in a specific form  <a href="#a2fa5c822ad268062dcc1b7710d64b6d2">More...</a><br /></td></tr>
+<tr class="separator:a2fa5c822ad268062dcc1b7710d64b6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This interface provides a common interface for all Nonces. </p>
@@ -151,7 +156,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="AbstractNonce_8java_source.html#l00026">26</a> of file <a class="el" href="AbstractNonce_8java_source.html">AbstractNonce.java</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac6f5e7048a2f1df49f7c48e8aaa438be"></a>
+<a class="anchor" id="a6f3a8e6b83984d7413ed902f44cddde0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -159,7 +164,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">abstract T get </td>
+          <td class="memname">abstract E get </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -173,9 +178,37 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generate a nonce (number used once) specific to the derived type. </p>
-<dl class="section return"><dt>Returns</dt><dd>T the nonce </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>E the nonce </dd></dl>
 
-<p>Implemented in <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailNonce.html#ac5f5202af3bb4156a22175cb76becb91">RoyalMailNonce</a>.</p>
+<p>Implemented in <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailNonce.html#ad576c22ba45a910b6e7a0c8ed27ca757">RoyalMailNonce</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2fa5c822ad268062dcc1b7710d64b6d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract T encode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>encode a nonce in a specific form </p>
+<dl class="section return"><dt>Returns</dt><dd>T the encoded nonce </dd></dl>
+
+<p>Implemented in <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailNonce.html#a89362c3a341bd992604135a0a43e4e84">RoyalMailNonce</a>.</p>
 
 </div>
 </div>
@@ -188,7 +221,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetomoBay.html">tomoBay</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1security.html">security</a></li><li class="navelem"><a class="el" href="interfacetomoBay_1_1security_1_1AbstractNonce.html">AbstractNonce</a></li>
-    <li class="footer">Generated on Fri May 20 2016 15:32:17 for TomoBay by
+    <li class="footer">Generated on Wed May 25 2016 11:53:31 for TomoBay by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

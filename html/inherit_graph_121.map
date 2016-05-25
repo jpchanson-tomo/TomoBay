@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVType.html" title="This class just holds references to the column indices for a RoyalMail CSV corresponding to the tomoB..." alt="" coords="5,5,143,32"/>
+<area shape="rect" id="node1" href="$classtomoBay_1_1model_1_1dataTypes_1_1conditionalStatement_1_1Result.html" title="This class defines the Abstract Base class for all derived Result classes. " alt="" coords="5,81,97,108"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1AllPickeableResult.html" title="AllPickeableResult" alt="" coords="157,5,289,32"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1ErrorResult.html" title="ErrorResult" alt="" coords="179,56,267,83"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1PartialPickeableResult.html" title="PartialPickeableResult" alt="" coords="145,107,300,133"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1UnPickeableResult.html" title="UnPickeableResult" alt="" coords="155,157,290,184"/>
 </map>
