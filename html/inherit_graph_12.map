@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfacetomoBay_1_1security_1_1AbstractNonce.html" title="AbstractNonce\&lt; String,\l Integer \&gt;" alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node1" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractLineItem.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="5,56,127,83"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1GSPInvoiceLine.html" title="GSPInvoiceLine" alt="" coords="212,5,328,32"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceLine.html" title="StandardInvoiceLine" alt="" coords="200,56,340,83"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceShippingLine.html" title="StandardInvoiceShippingLine" alt="" coords="175,107,365,133"/>
 </map>

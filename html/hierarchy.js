@@ -84,7 +84,10 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
-    [ "AbstractDigest< T >", "interfacetomoBay_1_1security_1_1AbstractDigest.html", null ],
+    [ "AbstractDigest< T >", "interfacetomoBay_1_1security_1_1AbstractDigest.html", [
+      [ "RoyalMailPasswordDigest", "classtomoBay_1_1model_1_1royalMail_1_1RoyalMailPasswordDigest.html", null ]
+    ] ],
+    [ "AbstractDigest< String >", "interfacetomoBay_1_1security_1_1AbstractDigest.html", null ],
     [ "AbstractEmailBuilder", "classtomoBay_1_1model_1_1net_1_1email_1_1AbstractEmailBuilder.html", [
       [ "GmailBuilder", "classtomoBay_1_1model_1_1net_1_1email_1_1GmailBuilder.html", null ]
     ] ],

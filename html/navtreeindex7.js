@@ -1,5 +1,12 @@
 var NAVTREEINDEX7 =
 {
+"classtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1UpdateOrderStatusService.html#afedc044522908ef89df6b3c9ef1eb8ce":[3,0,0,2,4,10,2,0],
+"classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html":[3,0,0,2,5,3],
+"classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#aa1a152d73103a289ab46a58ab0eda64d":[3,0,0,2,5,3,4],
+"classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#aaa0eb186d4e39ebd10ba73951863660a":[3,0,0,2,5,3,0],
+"classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#abe00cdf87aed55bbe5ef191c248b62b1":[3,0,0,2,5,3,2],
+"classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#acb4caaa28aa13c2be862f4c70e1343b7":[3,0,0,2,5,3,3],
+"classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ad3127f02d7c94f382c86d2ad87307bcb":[3,0,0,2,5,3,1],
 "classtomoBay_1_1model_1_1sql_1_1framework_1_1ModifyQueryInvoker.html":[3,0,0,2,5,0,2],
 "classtomoBay_1_1model_1_1sql_1_1framework_1_1ModifyQueryInvoker.html#a241a67078ea1da4b37aadaf8343f8584":[3,0,0,2,5,0,2,4],
 "classtomoBay_1_1model_1_1sql_1_1framework_1_1ModifyQueryInvoker.html#a628e7bf94a200d98d76627a3fe591fb2":[3,0,0,2,5,0,2,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX7 =
 "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1delete_1_1DeleteOrderFromOrderStatusFactory.html#a29cd4bf9b1906c825b76c047a44dadd4":[3,0,0,2,5,1,1,0,0,0],
 "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1delete_1_1DeleteOrderFromOrderStatusFactory.html#a797da3d1c44116b09383130691445272":[3,0,0,2,5,1,1,0,0,1],
 "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayBuyersFactory.html":[3,0,0,2,5,1,1,1,0],
-"classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayBuyersFactory.html#a44cf0ebb0ebf437cfa21d3f0814bca8d":[3,0,0,2,5,1,1,1,0,0],
-"classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayBuyersFactory.html#a797da3d1c44116b09383130691445272":[3,0,0,2,5,1,1,1,0,1],
-"classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayItemsFactory.html":[3,0,0,2,5,1,1,1,1],
-"classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayItemsFactory.html#a797da3d1c44116b09383130691445272":[3,0,0,2,5,1,1,1,1,1],
-"classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayItemsFactory.html#ae904868fb9dbe928b9928977b834d7ff":[3,0,0,2,5,1,1,1,1,0],
-"classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayOrdersFactory.html":[3,0,0,2,5,1,1,1,2],
-"classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayOrdersFactory.html#a5d169bb1c15fafc345e71c231821a10b":[3,0,0,2,5,1,1,1,2,0],
-"classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayOrdersFactory.html#a797da3d1c44116b09383130691445272":[3,0,0,2,5,1,1,1,2,1]
+"classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayBuyersFactory.html#a44cf0ebb0ebf437cfa21d3f0814bca8d":[3,0,0,2,5,1,1,1,0,0]
 };
