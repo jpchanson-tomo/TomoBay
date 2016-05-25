@@ -50,7 +50,6 @@ public final class RoyalMailNonce implements AbstractNonce<String, Integer>
 	
 	/**
 	 * convert the nonce into a Base64 encoded string
-	 * @param nonce random integer between 0 and max possible size of integer
 	 * @return String in Base64 encoding representing the nonce
 	 */
 	public String encode()
