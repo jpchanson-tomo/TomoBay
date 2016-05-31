@@ -17,17 +17,13 @@ package tomoBayTests.presenters.presenterActions.concreteActions;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import gnu.trove.set.hash.THashSet;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Set;
 
 import org.junit.Test;
 
-import tomoBay.exceptions.PresenterActionException;
 import tomoBay.presenters.presenterActions.concreteActions.GenerateRoyalMailCSV;
 
 import com.mchange.io.FileUtils;

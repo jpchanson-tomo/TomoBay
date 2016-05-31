@@ -86,7 +86,8 @@ public final class SAAJTest
 		QName headerName = new QName("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd","Security","oas");
 		SOAPHeaderElement headElement = messageHeader.addHeaderElement(headerName);
 		headElement.addTextNode(" ");
-
+		headElement.adda
+		
 		//SOAP BODY
 		//CREATE SHIPMENT REQUEST
 		//INTEGRATION HEADER
@@ -113,7 +114,7 @@ public final class SAAJTest
 		
 		
 		SOAPConnection con = SOAPConnectionFactory.newInstance().createConnection();
-		SOAPMessage response = con.call(message, endPoint);
+		SOAPMessage response = con.call(message, endPointLocal);
 		
 		
 		final StringWriter sw = new StringWriter();
