@@ -55,7 +55,8 @@ public class SoapMessage
 		MessageFactory factory = MessageFactory.newInstance(SOAPConstants.DEFAULT_SOAP_PROTOCOL);
 		this.message_M = factory.createMessage();
 		this.envelope_M = this.message_M.getSOAPPart().getEnvelope();
-		this.header_M = (SoapHeader)RoyalMailDIContainer.getFactory(RoyalMailObjType.SOAP_HEADER);
+		//this.header_M = (SoapHeader)RoyalMailDIContainer.getFactory(RoyalMailObjType.SOAP_HEADER);
+		this.header_M = new SoapHeader(this.envelope_M);
 	}
 	
 	/**
@@ -72,12 +73,14 @@ public class SoapMessage
 	
 	
 	/**
+	 * 
 	 * @return
 	 */
 	protected MimeHeaders httpHeaders()
 	{return this.message_M.getMimeHeaders();}
 	
 	/**
+	 * 
 	 * @return
 	 */
 	protected SOAPMessage message()
