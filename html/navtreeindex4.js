@@ -1,5 +1,17 @@
 var NAVTREEINDEX4 =
 {
+"classtomoBay_1_1helpers_1_1BrandToCode.html#a84072526fa5d5ce298cdceffc81f43e7":[3,0,0,1,1,1],
+"classtomoBay_1_1helpers_1_1BrandToCode.html#a9a0ec8ac2f351100c0a68e76f8925fe1":[3,0,0,1,1,6],
+"classtomoBay_1_1helpers_1_1BrandToCode.html#aae51d5e6987137b5e21e54ff2f96db4b":[3,0,0,1,1,5],
+"classtomoBay_1_1helpers_1_1BrandToCode.html#af9b111cb09a6933b540c00896802cac0":[3,0,0,1,1,3],
+"classtomoBay_1_1helpers_1_1BrandToCode.html#afa9bd14e3201b95fc9900767188b4e9e":[3,0,0,1,1,4],
+"classtomoBay_1_1helpers_1_1ClassInfo.html":[3,0,0,1,2],
+"classtomoBay_1_1helpers_1_1ClassInfo.html#a35d90b25f0a70a349c57e11b96d882bc":[3,0,0,1,2,2],
+"classtomoBay_1_1helpers_1_1ClassInfo.html#a384b2c376f0f04cfd388f3489af87781":[3,0,0,1,2,1],
+"classtomoBay_1_1helpers_1_1ClassInfo.html#a73309f69b50eaca593b93c9203a21448":[3,0,0,1,2,0],
+"classtomoBay_1_1helpers_1_1ConfigReader.html":[3,0,0,1,4],
+"classtomoBay_1_1helpers_1_1ConfigReader.html#a310420c6db22982498520c2ad7a2b82f":[3,0,0,1,4,2],
+"classtomoBay_1_1helpers_1_1ConfigReader.html#a4fdc2d8934d35629ffad56417a76329f":[3,0,0,1,4,3],
 "classtomoBay_1_1helpers_1_1ConfigReader.html#a7059b3afa0bba045e7069deaa7460887":[3,0,0,1,4,4],
 "classtomoBay_1_1helpers_1_1ConfigReader.html#a88ee970105e6559fc6a5f872a78a439a":[3,0,0,1,4,0],
 "classtomoBay_1_1helpers_1_1ConfigReader.html#ab69b4a3a0fc6a7c7440362b06ec4b4d3":[3,0,0,1,4,1],
@@ -237,17 +249,5 @@ var NAVTREEINDEX4 =
 "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1factories_1_1StandardInvoiceFactory.html#ab4b1ec3764547f367b1515c5d7b378fb":[3,0,0,2,0,1,0,1,2,1],
 "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1factories_1_1StandardInvoiceWithShippingFactory.html":[3,0,0,2,0,1,0,1,3],
 "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1factories_1_1StandardInvoiceWithShippingFactory.html#a75d431cc555159c5b6feb2b75c13100c":[3,0,0,2,0,1,0,1,3,0],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1factories_1_1StandardInvoiceWithShippingFactory.html#ab4b1ec3764547f367b1515c5d7b378fb":[3,0,0,2,0,1,0,1,3,1],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1AbstractFormat.html":[3,0,0,2,0,1,0,2,0],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1AbstractFormat.html#a18f2d7c9cd4ada120098963cde993a2d":[3,0,0,2,0,1,0,2,0,1],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1AbstractFormat.html#a8f7c380d238881bfb7b09f308a2a8d02":[3,0,0,2,0,1,0,2,0,0],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1WinstockFormat.html":[3,0,0,2,0,1,0,2,1],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1WinstockFormat.html#a4296f8bf641b0b0000a5d43ee8e9ac41":[3,0,0,2,0,1,0,2,1,0],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1WinstockFormat.html#a772368f34e1caa799354123f34253170":[3,0,0,2,0,1,0,2,1,2],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1WinstockFormat.html#accefd62bc10c59d9ba78937d90a5fa8c":[3,0,0,2,0,1,0,2,1,1],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1VAT.html":[3,0,0,2,0,1,3],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1VAT.html#a11474771bcea21ffdd81a9b17b639384":[3,0,0,2,0,1,3,2],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1VAT.html#a474b86127fa8c18a4b701ebba4d4b191":[3,0,0,2,0,1,3,0],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1VAT.html#a5e1b31de520d32143b7b63b7982b7fd4":[3,0,0,2,0,1,3,4],
-"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1VAT.html#a7bcf3530e5a4922be3b84c3cc2490750":[3,0,0,2,0,1,3,1]
+"classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1factories_1_1StandardInvoiceWithShippingFactory.html#ab4b1ec3764547f367b1515c5d7b378fb":[3,0,0,2,0,1,0,1,3,1]
 };

@@ -17,5 +17,11 @@ var searchData=
   ['rm_5fcsv_5fdef',['RM_CSV_DEF',['../enumtomoBay_1_1helpers_1_1Config.html#acbb39e93aa367ee7f55488462637ecf8',1,'tomoBay::helpers::Config']]],
   ['root_5fpresenter',['ROOT_PRESENTER',['../enumtomoBay_1_1presenters_1_1PresenterFactory_1_1PresenterType.html#a820ef04dacee39f2ca5fa24a9f779911',1,'tomoBay::presenters::PresenterFactory::PresenterType']]],
   ['rootpresenter',['rootPresenter',['../classtomoBayTests_1_1view_1_1ViewFactoryTest.html#a767e53e017131342ccbc321b8f33a82f',1,'tomoBayTests::view::ViewFactoryTest']]],
+  ['royal_5fmail_5fapp_5fid',['ROYAL_MAIL_APP_ID',['../enumtomoBay_1_1helpers_1_1Config.html#a19e96ad81bf9e4bba66459e87724ce00',1,'tomoBay::helpers::Config']]],
+  ['royal_5fmail_5fclient_5fid',['ROYAL_MAIL_CLIENT_ID',['../enumtomoBay_1_1helpers_1_1Config.html#a269a2acb5cf6e4323aaa02627ebe22e9',1,'tomoBay::helpers::Config']]],
+  ['royal_5fmail_5fclient_5fsecret',['ROYAL_MAIL_CLIENT_SECRET',['../enumtomoBay_1_1helpers_1_1Config.html#abf185a6eb253229fcce329a43bc665b7',1,'tomoBay::helpers::Config']]],
+  ['royal_5fmail_5fendpoint',['ROYAL_MAIL_ENDPOINT',['../enumtomoBay_1_1helpers_1_1Config.html#a3d86b12af14040e2481c01082dee1db2',1,'tomoBay::helpers::Config']]],
+  ['royal_5fmail_5fpassword',['ROYAL_MAIL_PASSWORD',['../enumtomoBay_1_1helpers_1_1Config.html#a3b7badb1704870b3f93e3ef323db041b',1,'tomoBay::helpers::Config']]],
+  ['royal_5fmail_5fusername',['ROYAL_MAIL_USERNAME',['../enumtomoBay_1_1helpers_1_1Config.html#ac446b4dac0be533b21cc61052119e083',1,'tomoBay::helpers::Config']]],
   ['running',['RUNNING',['../enumtomoBay_1_1model_1_1dataTypes_1_1ServerStatus_1_1RunLevel.html#af1758f1eef22c6a9ab0e6584be015128',1,'tomoBay::model::dataTypes::ServerStatus::RunLevel']]]
 ];

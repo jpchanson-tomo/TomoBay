@@ -1,5 +1,17 @@
 var NAVTREEINDEX3 =
 {
+"SoapHeader_8java.html":[4,0,0,0,2,3,0,4],
+"SoapHeader_8java_source.html":[4,0,0,0,2,3,0,4],
+"SoapMessage_8java.html":[4,0,0,0,2,3,0,5],
+"SoapMessage_8java_source.html":[4,0,0,0,2,3,0,5],
+"SortOrders_8java.html":[4,0,0,0,1,10],
+"SortOrders_8java_source.html":[4,0,0,0,1,10],
+"StackTraceToString_8java.html":[4,0,0,0,1,11],
+"StackTraceToString_8java_source.html":[4,0,0,0,1,11],
+"StandardInvoiceFactory_8java.html":[4,0,0,0,2,0,1,0,1,3],
+"StandardInvoiceFactory_8java_source.html":[4,0,0,0,2,0,1,0,1,3],
+"StandardInvoiceLine_8java.html":[4,0,0,0,2,0,1,0,0,4],
+"StandardInvoiceLine_8java_source.html":[4,0,0,0,2,0,1,0,0,4],
 "StandardInvoiceShippingLine_8java.html":[4,0,0,0,2,0,1,0,0,5],
 "StandardInvoiceShippingLine_8java_source.html":[4,0,0,0,2,0,1,0,0,5],
 "StandardInvoiceWithShippingFactory_8java.html":[4,0,0,0,2,0,1,0,1,4],
@@ -237,17 +249,5 @@ var NAVTREEINDEX3 =
 "classtomoBay_1_1exceptions_1_1WinstockException.html#a3238d314ecdee14d2966760945d00c3b":[3,0,0,0,10,2],
 "classtomoBay_1_1helpers_1_1BrandToCode.html":[3,0,0,1,1],
 "classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8":[3,0,0,1,1,2],
-"classtomoBay_1_1helpers_1_1BrandToCode.html#a21e0027f4ba3dcd8424411c8d38bb1b7":[3,0,0,1,1,0],
-"classtomoBay_1_1helpers_1_1BrandToCode.html#a84072526fa5d5ce298cdceffc81f43e7":[3,0,0,1,1,1],
-"classtomoBay_1_1helpers_1_1BrandToCode.html#a9a0ec8ac2f351100c0a68e76f8925fe1":[3,0,0,1,1,6],
-"classtomoBay_1_1helpers_1_1BrandToCode.html#aae51d5e6987137b5e21e54ff2f96db4b":[3,0,0,1,1,5],
-"classtomoBay_1_1helpers_1_1BrandToCode.html#af9b111cb09a6933b540c00896802cac0":[3,0,0,1,1,3],
-"classtomoBay_1_1helpers_1_1BrandToCode.html#afa9bd14e3201b95fc9900767188b4e9e":[3,0,0,1,1,4],
-"classtomoBay_1_1helpers_1_1ClassInfo.html":[3,0,0,1,2],
-"classtomoBay_1_1helpers_1_1ClassInfo.html#a35d90b25f0a70a349c57e11b96d882bc":[3,0,0,1,2,2],
-"classtomoBay_1_1helpers_1_1ClassInfo.html#a384b2c376f0f04cfd388f3489af87781":[3,0,0,1,2,1],
-"classtomoBay_1_1helpers_1_1ClassInfo.html#a73309f69b50eaca593b93c9203a21448":[3,0,0,1,2,0],
-"classtomoBay_1_1helpers_1_1ConfigReader.html":[3,0,0,1,4],
-"classtomoBay_1_1helpers_1_1ConfigReader.html#a310420c6db22982498520c2ad7a2b82f":[3,0,0,1,4,2],
-"classtomoBay_1_1helpers_1_1ConfigReader.html#a4fdc2d8934d35629ffad56417a76329f":[3,0,0,1,4,3]
+"classtomoBay_1_1helpers_1_1BrandToCode.html#a21e0027f4ba3dcd8424411c8d38bb1b7":[3,0,0,1,1,0]
 };

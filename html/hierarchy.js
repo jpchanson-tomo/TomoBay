@@ -460,7 +460,9 @@ var hierarchy =
     [ "ResultCodes", "enumtomoBay_1_1model_1_1winstock_1_1response_1_1ResultCodes.html", null ],
     [ "RoyalMailCSVGeneratorTest", "classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html", null ],
     [ "RoyalMailCSVType", "classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVType.html", null ],
+    [ "RoyalMailDIContainer", "classtomoBay_1_1model_1_1royalMail_1_1calls_1_1DI_1_1RoyalMailDIContainer.html", null ],
     [ "RoyalMailNonceTest", "classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailNonceTest.html", null ],
+    [ "RoyalMailDIContainer.RoyalMailObjType", "enumtomoBay_1_1model_1_1royalMail_1_1calls_1_1DI_1_1RoyalMailDIContainer_1_1RoyalMailObjType.html", null ],
     [ "RoyalMailTestSuite", "classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailTestSuite.html", null ],
     [ "ServerStatus.RunLevel", "enumtomoBay_1_1model_1_1dataTypes_1_1ServerStatus_1_1RunLevel.html", null ],
     [ "RuntimeException", null, [
@@ -484,6 +486,12 @@ var hierarchy =
     [ "ServiceFactory.ServiceType", "enumtomoBay_1_1model_1_1services_1_1ServiceFactory_1_1ServiceType.html", null ],
     [ "Shipping_Priority", "classtomoBay_1_1helpers_1_1Shipping__Priority.html", null ],
     [ "ShippingPriority", "enumtomoBay_1_1helpers_1_1ShippingPriority.html", null ],
+    [ "SOAPComponent", "interfacetomoBay_1_1model_1_1royalMail_1_1calls_1_1SOAPComponent.html", null ],
+    [ "SoapHeader", "classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapHeader.html", null ],
+    [ "SOAPHeaderFactory", "classtomoBay_1_1model_1_1royalMail_1_1calls_1_1DI_1_1SOAPHeaderFactory.html", null ],
+    [ "SoapMessage", "classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapMessage.html", [
+      [ "AbstractRoyalMailAPICallPrototype", "classtomoBay_1_1model_1_1royalMail_1_1calls_1_1AbstractRoyalMailAPICallPrototype.html", null ]
+    ] ],
     [ "SortOrders", "classtomoBay_1_1helpers_1_1SortOrders.html", null ],
     [ "StackTraceToString", "classtomoBay_1_1helpers_1_1StackTraceToString.html", null ],
     [ "Stock", "classtomoBay_1_1model_1_1winstock_1_1Stock.html", null ],

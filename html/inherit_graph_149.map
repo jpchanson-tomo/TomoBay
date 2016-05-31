@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Transaction.html" title="This class represents an eBay transaction, each transaction contains 1 Listing. " alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node1" href="$classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapMessage.html" title="SoapMessage" alt="" coords="5,13,111,39"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1royalMail_1_1calls_1_1AbstractRoyalMailAPICallPrototype.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="159,5,333,47"/>
 </map>

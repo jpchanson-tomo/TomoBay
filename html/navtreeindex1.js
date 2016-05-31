@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"FileToString_8java.html":[4,0,0,0,1,5],
+"FileToString_8java_source.html":[4,0,0,0,1,5],
 "Friday_8java.html":[4,0,0,0,1,0,2],
 "Friday_8java_source.html":[4,0,0,0,1,0,2],
 "GBP_8java.html":[4,0,0,0,2,0,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "Pickeablity_8java.html":[4,0,0,0,3,4,0,9],
 "Pickeablity_8java_source.html":[4,0,0,0,3,4,0,9],
 "Picking_8java.html":[4,0,0,0,2,5,2,5,3],
-"Picking_8java_source.html":[4,0,0,0,2,5,2,5,3],
-"PostCodeComponentFactory_8java.html":[4,0,0,0,2,6,2,0,15],
-"PostCodeComponentFactory_8java_source.html":[4,0,0,0,2,6,2,0,15]
+"Picking_8java_source.html":[4,0,0,0,2,5,2,5,3]
 };

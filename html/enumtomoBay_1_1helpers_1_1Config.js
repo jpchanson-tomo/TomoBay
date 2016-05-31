@@ -42,5 +42,11 @@ var enumtomoBay_1_1helpers_1_1Config =
     [ "CSV_FIELD", "enumtomoBay_1_1helpers_1_1Config.html#a6ad517b61c6cf9d8428880e2e9f59513", null ],
     [ "CSV_FIELD_NAME", "enumtomoBay_1_1helpers_1_1Config.html#a9bfc9bba749682633121ad038ade9045", null ],
     [ "CSV_FIELD_VALID", "enumtomoBay_1_1helpers_1_1Config.html#a0540f88801a61b06716aeab9e6d01066", null ],
+    [ "ROYAL_MAIL_USERNAME", "enumtomoBay_1_1helpers_1_1Config.html#ac446b4dac0be533b21cc61052119e083", null ],
+    [ "ROYAL_MAIL_PASSWORD", "enumtomoBay_1_1helpers_1_1Config.html#a3b7badb1704870b3f93e3ef323db041b", null ],
+    [ "ROYAL_MAIL_APP_ID", "enumtomoBay_1_1helpers_1_1Config.html#a19e96ad81bf9e4bba66459e87724ce00", null ],
+    [ "ROYAL_MAIL_CLIENT_ID", "enumtomoBay_1_1helpers_1_1Config.html#a269a2acb5cf6e4323aaa02627ebe22e9", null ],
+    [ "ROYAL_MAIL_CLIENT_SECRET", "enumtomoBay_1_1helpers_1_1Config.html#abf185a6eb253229fcce329a43bc665b7", null ],
+    [ "ROYAL_MAIL_ENDPOINT", "enumtomoBay_1_1helpers_1_1Config.html#a3d86b12af14040e2481c01082dee1db2", null ],
     [ "text", "enumtomoBay_1_1helpers_1_1Config.html#a9bbb374607de1480da48d5bf493ff637", null ]
 ];
