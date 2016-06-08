@@ -1,0 +1,9 @@
+<map id="ItemSpecifics" name="ItemSpecifics">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#ae9b99457a79c932468c153115ef964b0" title="retrieve the ebay api key for the account name specified " alt="" coords="156,5,359,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#a263b122a1c598841624ba7d1e4a6c617" title="convert an account ID to a textual name value. " alt="" coords="156,71,359,112"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ItemSpecifics.html#aa0f8769393398a5002b537727db0f751" title="performs the API call and return an ItemType containing the item information requested, or if for some reason the call fails a null pointer is returned. " alt="" coords="203,137,311,163"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ItemSpecifics.html#abe667d05d865afc7324c0f7438f5e2c4" title="this method takes an ItemType as a parameter and uses it to iterate through the NameValueListType[] c..." alt="" coords="209,187,305,214"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#a17d78d1b20882cd5986119af592d4f3d" title="retrieve the ebay server address for the account name specified " alt="" coords="156,239,359,280"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#a137163c03f463ad5d9581aef47a9a3e4" title="retrieve the id for the account name specified " alt="" coords="407,68,609,109"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1eBayAPI_1_1ItemCall.html#a33a93e67cbad2090251fa506ebf4e3d5" title="This method performs a call to the API grabbing a item data for the specified itemID. " alt="" coords="409,133,607,175"/>
+</map>

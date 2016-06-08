@@ -1,0 +1,9 @@
+<map id="buildEmail" name="buildEmail">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1net_1_1email_1_1EmailDirector.html#adf12228c8c87e1262bbaf8b71fb856fc" title="initialises the email and server objects ready to be retrieved by the get methods. " alt="" coords="136,106,328,162"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailClient.html#af9eddf4b6d3506f30b2f282c86c59ed6" title="tomoBay.model.net.email.\lMailClient.send" alt="" coords="411,41,586,83"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsMailActions.html#ac25d519c7ee7b6a51c445abba35389e5" title="default ctor " alt="" coords="376,106,621,162"/>
+<area shape="rect" id="node8" href="$classtomoBayTests_1_1model_1_1net_1_1email_1_1EmailTest.html#a8b260eecbaabcef8473fd87ada040682" title="tomoBayTests.model.net.email.\lEmailTest.main" alt="" coords="395,185,602,227"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailClient.html#a9a353e90e57af1d4968845017c4d6fa8" title="tomoBay.model.net.email.\lMailClient.MailClient" alt="" coords="687,5,862,47"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html#a9c77c827472e4f09aa020d55e7d33b10" title="tomoBay.presenters.presenter\lActions.concreteActions.Invoice\lOrders.emailResults" alt="" coords="669,70,880,126"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="928,70,1139,126"/>
+</map>

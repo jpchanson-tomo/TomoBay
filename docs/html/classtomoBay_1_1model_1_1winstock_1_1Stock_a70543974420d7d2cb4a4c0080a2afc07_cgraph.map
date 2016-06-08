@@ -1,0 +1,6 @@
+<map id="requestLastCost" name="requestLastCost">
+<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1XMLParser.html#a9936151017dd4e908cf37d453b22c8ef" title="parses an XML formatted string looking for the first tag specified in the parameters. " alt="" coords="172,5,397,32"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a42fa652d82ed49749a0ad929a6c798d0" title="remove the header bumpf from the bottom of the response " alt="" coords="210,56,359,83"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a82b5421e7d3a2ba82bdc5d54b09a8069" title="queryWinstockURL" alt="" coords="217,107,353,133"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1net_1_1HttpResponse.html#afb798c825935128953439404fb763997" title="get the Response message " alt="" coords="445,49,691,90"/>
+</map>

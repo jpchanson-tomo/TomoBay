@@ -1,0 +1,11 @@
+<map id="generateMimeMessage" name="generateMimeMessage">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailServerSend.html#ae0ea6b0d6bda14c2c1ea809ca187c4be" title="this method sends the given email using the userID and password provided in the arguments ..." alt="" coords="211,92,261,119"/>
+<area shape="rect" id="node3" href="$classtomoBayTests_1_1model_1_1net_1_1email_1_1EmailTest.html#a8b260eecbaabcef8473fd87ada040682" title="tomoBayTests.model.net.email.\lEmailTest.main" alt="" coords="343,19,549,61"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailClient.html#af9eddf4b6d3506f30b2f282c86c59ed6" title="tomoBay.model.net.email.\lMailClient.send" alt="" coords="359,85,533,126"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsMailActions.html#ae9399f5ec7881c5d18173def8068108e" title="send the email " alt="" coords="309,150,583,191"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html#a9c77c827472e4f09aa020d55e7d33b10" title="tomoBay.presenters.presenter\lActions.concreteActions.Invoice\lOrders.emailResults" alt="" coords="635,5,846,61"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailClient.html#a9a353e90e57af1d4968845017c4d6fa8" title="tomoBay.model.net.email.\lMailClient.MailClient" alt="" coords="653,85,828,126"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="911,5,1121,61"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" title="this method defines what to do in the given derived state " alt="" coords="631,150,851,191"/>
+<area shape="rect" id="node10" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsService.html#ae3b0a282dcba7f2d675ca89b1dd48487" title="tomoBay.model.services.email\lErrorsService.EmailErrorsService.on\lRunning" alt="" coords="899,143,1133,199"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="BuyerTable" name="BuyerTable">
+<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1AbstractTypeSchema.html" title="Derived types of this class represent the schema for a specific database and should only contain publ..." alt="" coords="5,161,153,239"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1buyerTable_1_1Street.html" title="this represents both the street1 and street2 fields of the ebay_buyers table in the database..." alt="" coords="177,147,254,253"/>
+<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1AbstractField.html" title="This interface is the abstract base for all derived AbstractDBField types, and represents a a column ..." alt="" coords="527,5,626,97"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1buyerTable_1_1City.html" title="This represents the city field of the ebay_buyers table in the database. " alt="" coords="278,147,350,253"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1buyerTable_1_1Phone.html" title="the phoneNo field in the ebay_buyers table of the database. " alt="" coords="375,147,453,253"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1buyerTable_1_1BuyerID.html" title="This represents the buyerID field of the ebay_buyers table in the database. " alt="" coords="478,147,569,253"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1buyerTable_1_1Name.html" title="the name field of the ebay_buyers table in the database. " alt="" coords="593,147,670,253"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1buyerTable_1_1Email.html" title="The email field of the ebay_buyers table in the database. " alt="" coords="694,147,769,253"/>
+<area shape="rect" id="node10" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1buyerTable_1_1Postcode.html" title="The postcode field of the ebay_buyers table in the database. " alt="" coords="793,147,891,253"/>
+<area shape="rect" id="node11" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1buyerTable_1_1County.html" title="the county field of the ebay_buyers table in the database. " alt="" coords="915,147,999,253"/>
+</map>

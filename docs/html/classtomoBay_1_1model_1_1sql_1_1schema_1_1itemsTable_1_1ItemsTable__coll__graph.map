@@ -1,0 +1,10 @@
+<map id="ItemsTable" name="ItemsTable">
+<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1AbstractTypeSchema.html" title="Derived types of this class represent the schema for a specific database and should only contain publ..." alt="" coords="5,161,153,239"/>
+<area shape="rect" id="node3" href="$interfacetomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1AbstractField.html" title="This interface is the abstract base for all derived AbstractDBField types, and represents a a column ..." alt="" coords="501,5,599,97"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1PartNo.html" title="This is the partNo field of the ebay_items table in the database. " alt="" coords="306,147,389,253"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Brand.html" title="this is the brand field of the ebay_items table in the database. " alt="" coords="413,147,489,253"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Title.html" title="This is the title field of the ebay_items table in the database. " alt="" coords="514,147,586,253"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Notes.html" title="This is the notes field of the ebay_items table in the database. " alt="" coords="610,147,687,253"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Condition.html" title="this is the condition field of the ebay_items table, this field represents the selling condition of t..." alt="" coords="712,147,809,253"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1ItemID.html" title="this is the itemID field of the ebay_items table, this is the primary key for the ebay_items table an..." alt="" coords="834,147,917,253"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1DualList.html#ac6c5d11a7054f49bb7c9489f5893daeb" title="add a value pair to the DualList " alt="" coords="104,48,287,89"/>
+<area shape="rect" id="node3" href="$classtomoBayTests_1_1model_1_1net_1_1ClientSocketTest.html#a9e05d6ab69028f9da119689d187c95b2" title="test" alt="" coords="173,114,217,141"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1winstock_1_1WinstockCommandInvoker.html#af1434b0b82b0016e3a50a6aaecc770c2" title="This method executes the AbstractWinstockCommand that the user has requested. " alt="" coords="368,5,596,47"/>
+<area shape="rect" id="node5" href="$interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a67118030d9d2e2b70642882a2964794a" title="method used to retrieve the data sent to the socket. " alt="" coords="335,71,629,112"/>
+<area shape="rect" id="node6" href="$interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a08c6f0c352333a33e51f637c8e34551d" title="method used to retrieve the results of the AbstractWinstockCommand associated with this AbstractWinst..." alt="" coords="349,135,615,191"/>
+<area shape="rect" id="node7" href="$interfacetomoBay_1_1model_1_1winstock_1_1response_1_1AbstractWinstockCommandResponse.html#a94c43012f032cf0ad0acc1d6a6047cf6" title="method of descerning whether the AbstractWinstockCommand associated with this AbstractWinstockCommand..." alt="" coords="353,215,611,271"/>
+</map>

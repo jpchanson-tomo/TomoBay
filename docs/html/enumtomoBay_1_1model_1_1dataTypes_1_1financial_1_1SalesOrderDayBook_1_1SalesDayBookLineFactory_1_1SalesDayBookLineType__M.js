@@ -1,0 +1,6 @@
+var enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType__M =
+[
+    [ "STANDARD_INVOICE", "enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType__M.html#a0fd5c6640b7ffdbcb6a2f3f9c028ec28", null ],
+    [ "STANDARD_INVOICE_WITH_SHIPPING", "enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType__M.html#a1e7f2ac866d05e12b9a438980e0af1b7", null ],
+    [ "GSP_INVOICE", "enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType__M.html#a14939c757d35e84f52d31f7587061d6b", null ]
+];

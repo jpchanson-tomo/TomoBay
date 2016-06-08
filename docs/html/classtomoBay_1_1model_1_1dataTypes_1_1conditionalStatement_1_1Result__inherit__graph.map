@@ -1,0 +1,6 @@
+<map id="Result&lt; T &gt;" name="Result&lt; T &gt;">
+<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1AllPickeableResult.html" title="{AllPickeableResult\l\&lt; PickeableStatus \&gt;\n|&#45; itemStatus_M\l&#45; orderNo_M\l&#45; nextHandler_M\l|+ AllPickeableResult()\l+ result()\l+ result()\l}" alt="" coords="5,160,157,311"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1ErrorResult.html" title="{ErrorResult\&lt; PickeableStatus \&gt;\n|&#45; itemStatus_M\l&#45; orderNo_M\l&#45; nextHandler_M\l|+ ErrorResult()\l+ result()\l+ result()\l}" alt="" coords="182,167,389,303"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1PartialPickeableResult.html" title="{PartialPickeableResult\l\&lt; PickeableStatus \&gt;\n||+ PartialPickeableResult()\l+ result()\l+ result()\l}" alt="" coords="413,175,587,296"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1UnPickeableResult.html" title="{UnPickeableResult\&lt;\l PickeableStatus \&gt;\n|&#45; itemStatus_M\l&#45; orderNo_M\l&#45; nextHandler_M\l|+ UnPickeableResult()\l+ result()\l+ result()\l}" alt="" coords="612,160,767,311"/>
+</map>

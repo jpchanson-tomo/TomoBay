@@ -1,0 +1,5 @@
+<map id="getLatestOrderID" name="getLatestOrderID">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1reScanBuyerService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" title="this method defines what to do in the given derived state " alt="" coords="176,13,425,54"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1reScanBuyerService_1_1ReScanBuyerService.html#ae3b0a282dcba7f2d675ca89b1dd48487" title="tomoBay.model.services.re\lScanBuyerService.ReScanBuyerService.on\lRunning" alt="" coords="473,5,751,61"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1reScanBuyerService_1_1ReScanBuyerService.html#afd85cd6baa355d54ab15c19c16c21df9" title="tomoBay.model.services.re\lScanBuyerService.ReScanBuyerService.on\lPaused" alt="" coords="799,5,1076,61"/>
+</map>

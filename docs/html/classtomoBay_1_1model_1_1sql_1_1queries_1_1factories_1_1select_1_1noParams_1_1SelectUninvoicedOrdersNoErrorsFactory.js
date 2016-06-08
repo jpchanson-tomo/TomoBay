@@ -1,0 +1,5 @@
+var classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUninvoicedOrdersNoErrorsFactory =
+[
+    [ "SelectUninvoicedOrdersNoErrorsFactory", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUninvoicedOrdersNoErrorsFactory.html#a022f7044341673c413fb1a4e8ca19bf5", null ],
+    [ "make", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUninvoicedOrdersNoErrorsFactory.html#aa5fc3d87ff023fc86a8f523ce2177a0f", null ]
+];

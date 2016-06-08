@@ -1,0 +1,6 @@
+<map id="currentDay" name="currentDay">
+<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1checkTime_1_1CheckTime.html#af31970b2cae33cc4cccfdae4154a2328" title="tells you whether the current time is within the range specified in the config file. " alt="" coords="159,25,241,52"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1helpers_1_1checkTime_1_1CheckTime.html#a225d1db0a963fb1f5633a532c55cf856" title="if before the start time for today returns yesterdays date otherwise returns todays date..." alt="" coords="140,81,260,108"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1outOfHoursService_1_1OutOfHoursService.html#ae3b0a282dcba7f2d675ca89b1dd48487" title="tomoBay.model.services.out\lOfHoursService.OutOfHoursService.on\lRunning" alt="" coords="308,5,559,61"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1outOfHoursService_1_1OnRunning.html#aab5fa521184a6c2221356e77de439f57" title="tomoBay.model.services.out\lOfHoursService.OnRunning.getDate" alt="" coords="316,85,551,126"/>
+</map>

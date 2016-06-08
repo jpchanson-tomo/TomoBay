@@ -1,0 +1,39 @@
+/**
+\page Manual Manual 
+
+-------------------------------------
+# Branch 1
+
+------------------------------------
+this page contains stuff
+
+## Branch 1 Leaf 1
+
+## Branch 1 Leaf 2
+
+## Branch 1 Leaf 3
+
+
+--------------------------
+# Branch 2
+
+--------------------------
+## Branch 2 Leaf 1
+
+## Branch 2 Leaf 2
+
+
+-------------------------
+# Branch 3
+
+--------------------------
+## Branch 3 Leaf 1
+
+## Branch 3 Leaf 2
+
+--------------------
+\subpage Branch1
+\subpage Branch2
+\subpage Branch3
+**/
+
