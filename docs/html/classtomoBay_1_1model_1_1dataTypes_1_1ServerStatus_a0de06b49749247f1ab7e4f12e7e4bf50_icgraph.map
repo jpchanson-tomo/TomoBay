@@ -1,6 +1,0 @@
-<map id="getStatus" name="getStatus">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1AbstractService.html#a4e220ddae734089d146b78363526057f" title="The individual services equivalent of main. " alt="" coords="148,5,367,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1view_1_1views_1_1salesOrderView_1_1SalesOrderView.html#a79629cb15df56cead861ca956e1855e6" title="defines a set of set of String values that equate to the &#39;invoiced&#39; values grabbed from the database..." alt="" coords="132,71,383,112"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesOrderPresenter.html#aae3ef9e158aa1e975acedd263e47fa3c" title="this method is called when you actually want to present the information to be displayed to the approp..." alt="" coords="162,136,353,177"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1view_1_1views_1_1salesOrderView_1_1SalesOrderView.html#a5724666c8c61c4e2ef28d5364c8c13d0" title="this method is responsible for formatting the data as required for the specific derived view ..." alt="" coords="431,71,653,112"/>
-</map>

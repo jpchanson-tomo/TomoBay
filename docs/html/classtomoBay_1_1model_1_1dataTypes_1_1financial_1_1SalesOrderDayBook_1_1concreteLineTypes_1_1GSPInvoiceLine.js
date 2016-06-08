@@ -1,5 +1,0 @@
-var classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1GSPInvoiceLine =
-[
-    [ "GSPInvoiceLine", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1GSPInvoiceLine.html#a259b9ab7ffb60ea0ac4c5f6f0597ab9c", null ],
-    [ "unitPrice", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1GSPInvoiceLine.html#a1dbab551a07ec1e0c91c3cc7ef4fcd0b", null ]
-];

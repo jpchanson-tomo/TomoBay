@@ -1,6 +1,0 @@
-<map id="AbstractConfiguration&lt; T &gt;" name="AbstractConfiguration&lt; T &gt;">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsConfig.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="5,145,153,267"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1individualItemRefreshService_1_1IndividualItemRefreshConfig.html" title="This class defines an object that is passed to the IndividualItemRefreshService setConfig method..." alt="" coords="178,153,365,259"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1reScanBuyerService_1_1ReScanBuyerServiceConfig.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="389,145,594,267"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1UpdateOrderStatusConfig.html" title="configuration object for the UpdateOrderStatusService, carries OrderStatus (enum) information ..." alt="" coords="619,153,791,259"/>
-</map>

@@ -1,4 +1,0 @@
-var namespacetomoBayTests_1_1model_1_1services_1_1BasicEbayService =
-[
-    [ "BasicEbayServiceTest", "classtomoBayTests_1_1model_1_1services_1_1BasicEbayService_1_1BasicEbayServiceTest.html", "classtomoBayTests_1_1model_1_1services_1_1BasicEbayService_1_1BasicEbayServiceTest" ]
-];

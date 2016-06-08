@@ -1,7 +1,0 @@
-<map id="totalIncVat" name="totalIncVat">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1PriceAdjustment.html#a7114ae819db1434d652d784079e06ed8" title="this method represents a fitness function to be used when calculating the adjustments to the Abstract..." alt="" coords="139,5,423,47"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#a596ba0a251d2f86898d7a0a23b4b1140" title="retrieve the total (excluding VAT) price for this order " alt="" coords="239,71,322,98"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1PriceAdjustment.html#ac2a5cb96c13a986d05bd0457a1971e2f" title="calculate the adjustments necessary and apply them to the AbstractSalesDayBookLine provided as an arg..." alt="" coords="471,5,751,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#a0c8ce8b50d57fa99babc2c2199a39fe3" title="adjustPrices" alt="" coords="799,13,893,39"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#ae9d19609629c59f8df7ddec196fcc30c" title="CONSTRUCTOR, creates a SalesDayBookLine based on the Order passed in as a parameter. " alt="" coords="941,13,1124,39"/>
-</map>

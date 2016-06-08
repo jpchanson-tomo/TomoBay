@@ -1,6 +1,0 @@
-var namespacetomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select =
-[
-    [ "AbstractSelectNoParamsQuery", "classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectNoParamsQuery.html", "classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectNoParamsQuery" ],
-    [ "AbstractSelectParamsQuery", "classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectParamsQuery.html", "classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectParamsQuery" ],
-    [ "AbstractSelectQuery", "classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectQuery.html", "classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectQuery" ]
-];

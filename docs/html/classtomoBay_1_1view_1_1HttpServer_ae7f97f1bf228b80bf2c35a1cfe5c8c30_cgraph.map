@@ -1,5 +1,0 @@
-<map id="start" name="start">
-<area shape="rect" id="node2" href="$classtomoBay_1_1view_1_1HttpServer.html#a0c34b163e64bf808b5834997c2734543" title="do setup for the servlet handler " alt="" coords="101,5,272,32"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1view_1_1HttpServer.html#a65b0b81d4aceba0f463e6fe36596760f" title="do setup for the static resource handler " alt="" coords="125,56,248,83"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1view_1_1HttpServer.html#a6b549ec85bbf44d0d9606964cad26097" title="set up the ssl server connector " alt="" coords="137,107,236,133"/>
-</map>

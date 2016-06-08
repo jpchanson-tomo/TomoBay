@@ -1,5 +1,0 @@
-<map id="SelectAccountsFactory" name="SelectAccountsFactory">
-<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectNoParamsQueryFactory.html" title="{AbstractSelectNoParamsQuery\lFactory\n||+ make()\l}" alt="" coords="5,256,211,348"/>
-<area shape="rect" id="node3" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectQueryFactory.html" title="{AbstractSelectQueryFactory\n||+ make()\l}" alt="" coords="15,131,201,208"/>
-<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractQueryFactory.html" title="all Queries are instantiated using a factory and each of these factories must conform to this interfa..." alt="" coords="33,5,183,83"/>
-</map>

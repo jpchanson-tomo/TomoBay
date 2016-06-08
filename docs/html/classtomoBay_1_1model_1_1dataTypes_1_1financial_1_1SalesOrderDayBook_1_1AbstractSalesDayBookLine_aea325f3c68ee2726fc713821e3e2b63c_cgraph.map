@@ -1,7 +1,0 @@
-<map id="totalIncVat" name="totalIncVat">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1GBP.html#a4869bc1854b4c53820b934c48bc7d868" title="converts the given amount of pound into pennies (rounding down in the process) " alt="" coords="139,5,373,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#abbc5ea6a986dd37b7239d4c859db9f2b" title="retrieve the total price associated with this order, i.e. " alt="" coords="149,71,363,112"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1GBP.html#ab1488ca02aec4338b86ca2ab9691627f" title="converts the given integer to a string representing the number of pennies " alt="" coords="432,5,667,47"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a988363ab964d6dc0ccb8560bef5895b6" title="retrieve the the value of an AbstractField from this HeteroFieldContainer, the field should be of the..." alt="" coords="421,71,677,112"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a9dee3c01eb5ab16203e1c6820a569484" title="performs a type check, assuming that field and type are of the same type then this method returns tru..." alt="" coords="725,63,973,119"/>
-</map>

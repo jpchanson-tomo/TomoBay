@@ -1,7 +1,0 @@
-<map id="evaluate" name="evaluate">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesOrderPresenter.html#a2b6f67a7e537dbe24657a74d1df8a17f" title="this method checks the pickeability of the uninvoiced orders and modifies the invoiced column of the ..." alt="" coords="132,5,375,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1AllPickeableResult.html#a10604e1d3a05544addde64d28eac0ebe" title="tomoBay.presenters.helpers.pickeability.\lAllPickeableResult.result" alt="" coords="124,71,383,112"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1UnPickeableResult.html#a10604e1d3a05544addde64d28eac0ebe" title="tomoBay.presenters.helpers.pickeability.\lUnPickeableResult.result" alt="" coords="124,136,383,177"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1ErrorResult.html#a10604e1d3a05544addde64d28eac0ebe" title="tomoBay.presenters.helpers.pickeability.\lErrorResult.result" alt="" coords="124,201,383,243"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesOrderPresenter.html#aae3ef9e158aa1e975acedd263e47fa3c" title="this method is called when you actually want to present the information to be displayed to the approp..." alt="" coords="431,5,621,47"/>
-</map>

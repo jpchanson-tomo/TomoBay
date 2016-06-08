@@ -1,7 +1,0 @@
-<map id="getPartNumbers" name="getPartNumbers">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1checkErrorsService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" title="this method defines what to do in the given derived state " alt="" coords="171,13,391,54"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsWinstockActions.html#a08319255a892c8a0f21883af69843d6c" title="this method checks to see if a particular item (through the ItemSpecifics passed in as an argument) h..." alt="" coords="172,77,389,133"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1checkErrorsService_1_1CheckErrorsService.html#ae3b0a282dcba7f2d675ca89b1dd48487" title="tomoBay.model.services.check\lErrorsService.CheckErrorsService.on\lRunning" alt="" coords="444,5,684,61"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" title="this method defines what to do in the given derived state " alt="" coords="439,85,689,126"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsService.html#ae3b0a282dcba7f2d675ca89b1dd48487" title="tomoBay.model.services.re\lScanErrorsService.ReScanErrors\lService.onRunning" alt="" coords="737,77,955,133"/>
-</map>

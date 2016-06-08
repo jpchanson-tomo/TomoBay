@@ -1,5 +1,0 @@
-var classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceLine =
-[
-    [ "StandardInvoiceLine", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceLine.html#ac7ecfd7fa5de978d1c5e28ff4183107e", null ],
-    [ "unitPrice", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceLine.html#ad4699f0815895232592f2e0a89f67b39", null ]
-];

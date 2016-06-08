@@ -1,9 +1,0 @@
-<map id="ViewFactoryTest" name="ViewFactoryTest">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1root_1_1RootPresenter.html" title="this is the presenter for the root of the webApp. " alt="" coords="5,198,132,305"/>
-<area shape="rect" id="node3" href="$interfacetomoBay_1_1presenters_1_1AbstractPresenter.html" title="provides an interface that all presenters should subscribe to. " alt="" coords="400,5,527,97"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1warehouse_1_1WarehouseOrderPresenter.html" title="This class is responsible for providing the dynamic information specific to the picking area of the w..." alt="" coords="156,198,352,305"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesHistoryPresenter.html" title="This class represents the History presenter of the Sales area of the WebApp. " alt="" coords="377,198,550,305"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1presenters_1_1sales_1_1SalesOrderPresenter.html" title="This class is responsible for providing the dynamic data to the orders section of the sales &#39;Orders&#39; ..." alt="" coords="574,191,737,312"/>
-<area shape="rect" id="node8" href="$classtomoBay_1_1presenters_1_1error_1_1ErrorPresenter.html" title="This class provides the presenter for the scenario in which the designer of the frontend has supplied..." alt="" coords="761,198,888,305"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1view_1_1ViewFactory.html" title="This class is the visitor in a visitor/double dispatch type setup where the AbstractPresenter concret..." alt="" coords="912,147,1007,356"/>
-</map>

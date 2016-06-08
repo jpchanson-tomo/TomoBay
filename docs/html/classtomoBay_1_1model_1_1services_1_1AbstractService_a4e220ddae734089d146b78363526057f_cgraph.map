@@ -1,8 +1,0 @@
-<map id="call" name="call">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1ServerStatus.html#a0de06b49749247f1ab7e4f12e7e4bf50" title="tomoBay.model.dataTypes.\lServerStatus.getStatus" alt="" coords="96,5,279,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1AbstractService.html#a6998120b76bf43e86944c610c0ba19bc" title="onError" alt="" coords="155,71,219,98"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1AbstractService.html#a9a0f490cc7ec8a655dd5c873992c58e2" title="onPaused" alt="" coords="147,122,227,149"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1AbstractService.html#a08043250ceb48bf8f17d6d3b2f1feb7e" title="onRunning" alt="" coords="145,173,229,199"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1AbstractService.html#ad7cabc8553b412c1036c8e28c6f51017" title="onStopped" alt="" coords="145,223,229,250"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1services_1_1AbstractService.html#a83c9eaae2609c1e6b0a86aca5c9644ea" title="sets the configuration for this service. " alt="" coords="148,274,227,301"/>
-</map>

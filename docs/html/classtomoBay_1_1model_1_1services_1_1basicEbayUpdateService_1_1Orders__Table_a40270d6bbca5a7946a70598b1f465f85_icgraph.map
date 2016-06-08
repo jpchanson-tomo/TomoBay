@@ -1,6 +1,0 @@
-<map id="populateGSP" name="populateGSP">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1Orders__Table.html#abb8f83ca32eba7defe488f4d08be8c74" title="populates the Orders Table in the database with data grabbed from the ebay API " alt="" coords="152,20,223,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" title="this method defines what to do in the given derived state " alt="" coords="271,13,528,54"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1BasicEbayUpdateService.html#ae3b0a282dcba7f2d675ca89b1dd48487" title="tomoBay.model.services.basic\lEbayUpdateService.BasicEbayUpdate\lService.onRunning" alt="" coords="576,5,823,61"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1BasicEbayUpdateService.html#afd85cd6baa355d54ab15c19c16c21df9" title="tomoBay.model.services.basic\lEbayUpdateService.BasicEbayUpdate\lService.onPaused" alt="" coords="871,5,1117,61"/>
-</map>

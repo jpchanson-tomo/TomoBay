@@ -1,8 +1,0 @@
-<map id="present" name="present">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a3ba6289417930238a36bfee0056b6398" title="add an arbitrary value to this Field container with the stipulation that this value is of the same ty..." alt="" coords="119,13,377,54"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1SelectQueryInvoker.html#a594282bcbcc0731a7d234482717422d7" title="execute a requested query " alt="" coords="147,78,349,119"/>
-<area shape="rect" id="node5" href="$interfacetomoBay_1_1view_1_1AbstractView.html#a5724666c8c61c4e2ef28d5364c8c13d0" title="this method is responsible for formatting the data as required for the specific derived view ..." alt="" coords="134,144,362,171"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1sales_1_1OutOfHoursPresenter.html#a802b943fe484579ab3930df39a019430" title="remove orders older than the " alt="" coords="186,195,310,221"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a9dee3c01eb5ab16203e1c6820a569484" title="performs a type check, assuming that field and type are of the same type then this method returns tru..." alt="" coords="425,5,673,61"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1helpers_1_1TimeStampFunctions.html#ae0df31ac021474f703c930ef53c9b09d" title="this method compares the timestamp provided, with the current date to see if it is older than the spe..." alt="" coords="454,187,645,229"/>
-</map>

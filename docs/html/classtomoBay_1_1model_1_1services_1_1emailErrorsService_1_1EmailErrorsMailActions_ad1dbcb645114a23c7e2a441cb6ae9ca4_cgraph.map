@@ -1,8 +1,0 @@
-<map id="loadData" name="loadData">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsMailActions.html#a05337b002b830d253e7580044fbe0419" title="add a message to the email " alt="" coords="129,21,225,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsMailActions.html#a6821a16486f28486b3191bb50a167262" title="add a recipient to the email " alt="" coords="128,78,227,105"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsMailActions.html#a2a8614817e293230d76a7dfab60c7f4f" title="add a subject line to the email " alt="" coords="134,135,221,162"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1net_1_1email_1_1Email.html#acc7b010f914eeee1745a79004eca2481" title="sets the email body " alt="" coords="275,5,449,47"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1net_1_1email_1_1Email.html#a5c78f073f0c4c95dddbb78f7a9eb6cd2" title="set a recipient of the email, valid RecipientType listed in Message.RecipientType : TO/CC/BCC..." alt="" coords="275,71,449,112"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1net_1_1email_1_1Email.html#a39f0298f055f0b78ad2ac781d38f326f" title="set the subject line of the email. " alt="" coords="275,136,449,177"/>
-</map>

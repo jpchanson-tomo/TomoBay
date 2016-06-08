@@ -1,4 +1,0 @@
-<map id="JSONentity_object" name="JSONentity_object">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1json_1_1JSONentity.html" title="This class acts as the abstract base for all derived JSON classes. " alt="" coords="19,365,162,531"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1DualList.html" title="{DualList\&lt; String, String \&gt;\n|&#45; value1_M\l&#45; value2_M\l&#45; size\l|+ size()\l+ DualList()\l+ put()\l+ put()\l+ append()\l+ getValue1()\l+ getValue2()\l+ remove()\l+ remove()\l+ clear()\l+ toString()\l+ toString()\l+ finalize()\l+ iterator()\l}" alt="" coords="5,5,176,303"/>
-</map>

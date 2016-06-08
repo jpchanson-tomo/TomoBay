@@ -1,7 +1,0 @@
-<map id="description" name="description">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Part.html#a464a9940ad720e717c25422b41b7845b" title="retrieve the description of this part " alt="" coords="172,5,387,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Transaction.html#ae22e0c0169b69acfb681cf924aa8f0a8" title="retrieve the listing associated with this transaction " alt="" coords="172,71,387,112"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#afacf6217c7f58a049b532205066da488" title="retrieve the order that this AbstractSalesDayBookLine refers to. " alt="" coords="139,135,420,191"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Listing.html#aeb86e87dbdd13b9820905d09d542e7e4" title="retrieve the part specified in the parameter " alt="" coords="172,215,387,256"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#a39d4b856c1dcba627c763d60c3be86b0" title="An order is made up of transactions, this method retrieves the specified transaction, given the index parameter. " alt="" coords="172,280,387,321"/>
-</map>

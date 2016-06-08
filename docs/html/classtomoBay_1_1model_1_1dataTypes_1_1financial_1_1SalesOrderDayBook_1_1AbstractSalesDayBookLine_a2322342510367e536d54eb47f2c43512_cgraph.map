@@ -1,6 +1,0 @@
-<map id="invoiceNumber" name="invoiceNumber">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#a71ffaf8494f38432864d46ea421343fc" title="retrieve the invoice number from this order(if it has one) " alt="" coords="163,13,377,54"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#afacf6217c7f58a049b532205066da488" title="retrieve the order that this AbstractSalesDayBookLine refers to. " alt="" coords="233,79,307,105"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a988363ab964d6dc0ccb8560bef5895b6" title="retrieve the the value of an AbstractField from this HeteroFieldContainer, the field should be of the..." alt="" coords="425,13,681,54"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a9dee3c01eb5ab16203e1c6820a569484" title="performs a type check, assuming that field and type are of the same type then this method returns tru..." alt="" coords="729,5,977,61"/>
-</map>

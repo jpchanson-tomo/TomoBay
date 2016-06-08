@@ -1,5 +1,0 @@
-var classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceWithShipping =
-[
-    [ "StandardInvoiceWithShipping", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceWithShipping.html#a3bd154aa5b8ce411c63c9947e84c999e", null ],
-    [ "generateLineItems", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceWithShipping.html#a5d6b73ad385b908970bfcc08e1cea23c", null ]
-];

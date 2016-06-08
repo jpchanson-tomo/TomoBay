@@ -1,5 +1,0 @@
-<map id="format" name="format">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectQuery.html#a41fd4e9063a387042418bb18af6fe45b" title="default ctor " alt="" coords="199,5,342,32"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectNoParamsQuery.html#a245567a0f5019436ed4e139909e6ede5" title="executes the query. " alt="" coords="146,56,395,112"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1select_1_1AbstractSelectParamsQuery.html#aad8a92337ab13b4e19d23282e925dcfe" title="executes the query using the parameters passed in to populate the query with the relevant information..." alt="" coords="112,135,429,177"/>
-</map>

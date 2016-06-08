@@ -1,7 +1,0 @@
-<map id="populate" name="populate">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1ModifyQueryInvoker.html#ab8ef0fdf15f6720620e297c77ab25d46" title="tomoBay.model.sql.framework.\lModifyQueryInvoker.execute" alt="" coords="124,5,327,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1Buyers__Table.html#a2635d1876823db285122ff73faeed4b2" title="retrieves the personal address associated with the order passed in as an argument. " alt="" coords="181,71,269,98"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1Buyers__Table.html#a33706837d80ae402889acf879a8e2566" title="retrieves the global shipping program address associated with the order passed in as an argument..." alt="" coords="168,122,283,149"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a3ba6289417930238a36bfee0056b6398" title="add an arbitrary value to this Field container with the stipulation that this value is of the same ty..." alt="" coords="375,89,633,131"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a9dee3c01eb5ab16203e1c6820a569484" title="performs a type check, assuming that field and type are of the same type then this method returns tru..." alt="" coords="681,82,929,138"/>
-</map>

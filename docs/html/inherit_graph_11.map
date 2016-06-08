@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classtomoBay_1_1model_1_1winstock_1_1payloads_1_1AbstractPayload.html" title="This is the abstract base class for all Payload sub types. " alt="" coords="5,31,124,57"/>
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1winstock_1_1payloads_1_1PrintInvoicePayload.html" title="This class converts data into a byte[] payload that can be used passed to a ClientSocket object..." alt="" coords="172,5,311,32"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1payloads_1_1PutInvoicePayload.html" title="PutInvoiceMessage DataType Label Notes &#160;byte[4] Header &quot;WSC0&quot; byte Type 34 byte Company 0=ford..." alt="" coords="176,56,307,83"/>
-</map>

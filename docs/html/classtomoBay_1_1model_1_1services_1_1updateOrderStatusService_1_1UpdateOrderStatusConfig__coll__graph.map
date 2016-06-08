@@ -1,4 +1,0 @@
-<map id="UpdateOrderStatusConfig" name="UpdateOrderStatusConfig">
-<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1services_1_1AbstractConfiguration.html" title="This interface defines the form that every configuration object used to provide information to partic..." alt="" coords="5,42,153,149"/>
-<area shape="rect" id="node3" href="$enumtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1OrderStatus.html" title="This enum defines options for the various state variables in the database orders table, these can be used by the UpdateOrderConfiguration to provide the service with appropriate data. " alt="" coords="178,5,349,185"/>
-</map>

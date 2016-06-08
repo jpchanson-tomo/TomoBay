@@ -1,4 +1,0 @@
-<map id="MailException" name="MailException">
-<area shape="rect" id="node3" href="$classtomoBay_1_1exceptions_1_1NullEmailObjectException.html" title="exception thrown when the user tries to retrieve an email object that has not yet been created..." alt="" coords="5,271,200,363"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1exceptions_1_1NullEmailServerObjectException.html" title="exception thrown when the user tries to retrieve an email object that has not yet been created..." alt="" coords="224,271,456,363"/>
-</map>

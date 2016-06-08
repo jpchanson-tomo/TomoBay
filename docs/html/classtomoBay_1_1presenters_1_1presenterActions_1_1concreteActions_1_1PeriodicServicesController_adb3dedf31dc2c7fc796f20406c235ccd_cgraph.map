@@ -1,5 +1,0 @@
-<map id="execute" name="execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1PeriodicServicesController.html#a201d11e815c2a711053672277546c945" title="executeStatic" alt="" coords="121,46,224,73"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1ServerStatus.html#a5a970a0f69193c7d515425d3ade75334" title="retrieve an instance of this object " alt="" coords="272,5,455,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1ServerStatus.html#ae8ffecb6ba6ddfc3fab85af64f6350f5" title="tomoBay.model.dataTypes.\lServerStatus.setStatus" alt="" coords="272,71,455,112"/>
-</map>

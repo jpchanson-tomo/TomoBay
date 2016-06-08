@@ -1,4 +1,0 @@
-<map id="generateLineItems" name="generateLineItems">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#ae9d19609629c59f8df7ddec196fcc30c" title="CONSTRUCTOR, creates a SalesDayBookLine based on the Order passed in as a parameter. " alt="" coords="183,5,365,32"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#a41fa460ef9e89dc7b069e2d8c54016f8" title="iterator method makes this class iterable i.e. " alt="" coords="243,56,305,83"/>
-</map>

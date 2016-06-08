@@ -1,8 +1,0 @@
-<map id="invoiceNumber" name="invoiceNumber">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1PrintInvoices.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="513,48,808,90"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="209,41,419,97"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1PrintInvoices.html#a3396bf15e4a594abdeb16cb37f076ce2" title="actually send the data to the winstock server to print the invoice " alt="" coords="177,120,451,162"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#a95f980d76c5d92ed97b2aaab0d2d0c21" title="formats the summary information for this Order " alt="" coords="163,186,465,227"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#afeec1aeda079b77245edea1e74b25f33" title="assembles the various parts of the order and outputs it as a fully formed JSON string. " alt="" coords="529,178,792,234"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="856,186,1128,227"/>
-</map>

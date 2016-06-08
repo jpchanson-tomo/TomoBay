@@ -1,6 +1,0 @@
-<map id="getConfs" name="getConfs">
-<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1Shipping__Priority.html#aeaa068d370466a132fa02c3dd61f4111" title="populates the internal map containing the shipping priorities " alt="" coords="147,37,336,79"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a1cb65b7538dfdc8bf869f5c77421c90b" title="ctor, creates an empty CSV of the format: &quot;Service Reference&quot;,&quot;Service&quot;,&quot;Recipient&quot;,&quot;Address Line 1&quot;,&quot;Address Line 2&quot;,&quot;PostCode&quot;,&quot;Post Town&quot;, &quot;Country Code&quot;,&quot;Reference&quot;,&quot;Items&quot;,&quot;Weight&quot;,&quot;Service Enhancement&quot;,&quot;Service Format&quot;, " alt="" coords="128,102,355,158"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1helpers_1_1Shipping__Priority.html#ab2c54f868e5d66f974ab70defd889b5f" title="singleton ctor, ensures that this class is never instantiated " alt="" coords="403,5,577,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1helpers_1_1Shipping__Priority.html#a540b8555f73cab7f8082c2a6a4aad375" title="refreshes the internal representation of the shipping type hierarchy with any changes made to the con..." alt="" coords="403,71,577,112"/>
-</map>

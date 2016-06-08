@@ -1,4 +1,0 @@
-<map id="expression" name="expression">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1conditionalStatement_1_1Condition.html#a02d3fe8523d32185f2088054a30810b4" title="evaluate this condition and provide an AbstractTruth result " alt="" coords="139,20,209,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1conditionalStatement_1_1Conditional.html#acc90d5c562a7bb28b9568ec435cad043" title="evaluate this conditional based on the Condition and Result objects passed as parameters to this meth..." alt="" coords="257,5,516,61"/>
-</map>

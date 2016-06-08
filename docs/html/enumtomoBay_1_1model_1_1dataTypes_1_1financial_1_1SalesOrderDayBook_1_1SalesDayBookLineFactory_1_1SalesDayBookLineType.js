@@ -1,5 +1,0 @@
-var enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType =
-[
-    [ "INVOICE", "enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType.html#a1d7e470c611522589a2db27ad3898dd6", null ],
-    [ "CREDIT", "enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType.html#a8a89cb3ba69b64a52eb3cb70ae2f2569", null ]
-];

@@ -1,5 +1,0 @@
-<map id="getID" name="getID">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsDBActions.html#a686181ed1b6d7f86e1b05653dc98f37e" title="updates the database with corrected information, as provided in the ItemSpecifics passed in as an arg..." alt="" coords="108,5,359,61"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" title="this method defines what to do in the given derived state " alt="" coords="407,13,657,54"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsService.html#ae3b0a282dcba7f2d675ca89b1dd48487" title="tomoBay.model.services.re\lScanErrorsService.ReScanErrors\lService.onRunning" alt="" coords="705,5,923,61"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="send" name="send">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailServerSend.html#ab5988b28fa18ed6b82ed54193ed21ccc" title="creates a mail server session. " alt="" coords="309,5,476,32"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailServerSend.html#ae07411f271807d3f10b7e4db187d4b3c" title="generates a MimeMessage from the Email object " alt="" coords="104,31,261,57"/>
-</map>

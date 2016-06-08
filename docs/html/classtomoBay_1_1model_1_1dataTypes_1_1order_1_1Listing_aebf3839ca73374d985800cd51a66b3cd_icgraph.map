@@ -1,5 +1,0 @@
-<map id="noOfParts" name="noOfParts">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#a703cbb509cdc01530f19b03f573120c9" title="formats the transaction information associated with this order " alt="" coords="135,13,447,54"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#afeec1aeda079b77245edea1e74b25f33" title="assembles the various parts of the order and outputs it as a fully formed JSON string. " alt="" coords="495,5,757,61"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="805,13,1077,54"/>
-</map>

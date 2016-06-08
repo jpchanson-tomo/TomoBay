@@ -1,8 +1,0 @@
-<map id="format" name="format">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#a263b122a1c598841624ba7d1e4a6c617" title="convert an account ID to a textual name value. " alt="" coords="112,9,315,51"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1view_1_1views_1_1salesOrderView_1_1SalesOrderView.html#a79629cb15df56cead861ca956e1855e6" title="defines a set of set of String values that equate to the &#39;invoiced&#39; values grabbed from the database..." alt="" coords="170,78,257,105"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1view_1_1views_1_1salesOrderView_1_1SalesOrderView.html#ac9b3e6217f0b9dac4613adf2e8d5e195" title="replace the last instance of a particular character in a string with another. " alt="" coords="169,129,258,155"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#a137163c03f463ad5d9581aef47a9a3e4" title="retrieve the id for the account name specified " alt="" coords="374,5,577,47"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1ServerStatus.html#a0de06b49749247f1ab7e4f12e7e4bf50" title="tomoBay.model.dataTypes.\lServerStatus.getStatus" alt="" coords="384,71,567,112"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1view_1_1views_1_1salesOrderView_1_1OrderStatusContext.html#ae4943f14d8c16791602f385be909b085" title="tomoBay.view.views.sales\lOrderView.OrderStatusContext.get" alt="" coords="363,136,588,177"/>
-</map>

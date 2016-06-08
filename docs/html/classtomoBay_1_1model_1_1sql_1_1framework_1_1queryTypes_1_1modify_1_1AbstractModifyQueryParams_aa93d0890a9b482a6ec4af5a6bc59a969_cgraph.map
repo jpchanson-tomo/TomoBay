@@ -1,7 +1,0 @@
-<map id="execute" name="execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1modify_1_1AbstractModifyQueryParams.html#ad0667f5c873d31358a0696de71fa030b" title="initialise the connection and statement and set transaction variables. " alt="" coords="137,45,212,71"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1modify_1_1AbstractModifyQueryParams.html#ae8a5c5f1701ee77ef658050c8345d518" title="Used by derived classes to define the Query string to be used in the query. " alt="" coords="131,95,219,122"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1modify_1_1AbstractModifyQueryParams.html#a3543bcecb3f0ed2c164b25b646940ee9" title="Used by derived classes to set the parameters for this particular query. " alt="" coords="121,146,228,173"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#ad3127f02d7c94f382c86d2ad87307bcb" title="instance method returns an instance of the ConnectionManager class " alt="" coords="276,5,480,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1sql_1_1ConnectionManager.html#abe00cdf87aed55bbe5ef191c248b62b1" title="retrieves a database connection from the pool of available connections. " alt="" coords="276,71,480,112"/>
-</map>

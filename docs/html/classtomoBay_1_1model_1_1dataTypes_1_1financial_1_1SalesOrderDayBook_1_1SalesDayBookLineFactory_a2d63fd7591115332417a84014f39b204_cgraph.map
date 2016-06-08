@@ -1,8 +1,0 @@
-<map id="make" name="make">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#a72e31cd12a6fab47d81bc64942d3f25f" title="Retrieve the Buyer that placed this order. " alt="" coords="125,5,339,47"/>
-<area shape="rect" id="node3" href="$interfacetomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1factories_1_1AbstractSalesDayBookLineFactory.html#ab4b1ec3764547f367b1515c5d7b378fb" title="make an AbstractSalesDayBookLine specific to this child class. " alt="" coords="108,70,356,126"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#aa1be772bd50137a618371188bfc5d284" title="tomoBay.model.dataTypes.order.\lOrder.shippingCost" alt="" coords="125,149,339,191"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Buyer.html#a1b6c2d401bf44f453c1b2ed3aaa04638" title="retrieve the second street line of the address of this buyer " alt="" coords="125,215,339,256"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a988363ab964d6dc0ccb8560bef5895b6" title="retrieve the the value of an AbstractField from this HeteroFieldContainer, the field should be of the..." alt="" coords="404,215,660,256"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a9dee3c01eb5ab16203e1c6820a569484" title="performs a type check, assuming that field and type are of the same type then this method returns tru..." alt="" coords="708,207,956,263"/>
-</map>

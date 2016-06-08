@@ -1,9 +1,0 @@
-var namespacetomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert =
-[
-    [ "InsertEbayBuyersFactory", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayBuyersFactory.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayBuyersFactory" ],
-    [ "InsertEbayItemsFactory", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayItemsFactory.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayItemsFactory" ],
-    [ "InsertEbayOrdersFactory", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayOrdersFactory.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayOrdersFactory" ],
-    [ "InsertEbayTransactionsFactory", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayTransactionsFactory.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertEbayTransactionsFactory" ],
-    [ "InsertOrderInOrderStatusFactory", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertOrderInOrderStatusFactory.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertOrderInOrderStatusFactory" ],
-    [ "InsertOutOfHoursFactory", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertOutOfHoursFactory.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1insert_1_1InsertOutOfHoursFactory" ]
-];

@@ -1,4 +1,0 @@
-<map id="AbstractTruth" name="AbstractTruth">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1conditionalStatement_1_1False.html" title="This class represents a False outcome to a Condition object, its dispatch() method calls the appropri..." alt="" coords="5,131,96,223"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1conditionalStatement_1_1True.html" title="This class represents a True outcome to a Condition object, its dispatch() method calls the appropria..." alt="" coords="120,131,211,223"/>
-</map>

@@ -1,4 +1,0 @@
-var interfacetomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1AbstractPresenterActionFactory =
-[
-    [ "make", "interfacetomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1AbstractPresenterActionFactory.html#a2afdc1f41f44794cf96379093a881792", null ]
-];

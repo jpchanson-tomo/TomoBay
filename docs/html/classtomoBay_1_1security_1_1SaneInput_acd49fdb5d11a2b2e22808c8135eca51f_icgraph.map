@@ -1,8 +1,0 @@
-<map id="json" name="json">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1BuyerDetails.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="109,5,403,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1BuyerList.html#a1b9a0fa1ef5b8b60a831e9ebc80e6f97" title="format the results of the query as a JSON string " alt="" coords="124,70,388,126"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#a703cbb509cdc01530f19b03f573120c9" title="formats the transaction information associated with this order " alt="" coords="100,149,412,191"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1BuyerList.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="460,77,733,119"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#afeec1aeda079b77245edea1e74b25f33" title="assembles the various parts of the order and outputs it as a fully formed JSON string. " alt="" coords="465,142,728,198"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="781,149,1053,191"/>
-</map>

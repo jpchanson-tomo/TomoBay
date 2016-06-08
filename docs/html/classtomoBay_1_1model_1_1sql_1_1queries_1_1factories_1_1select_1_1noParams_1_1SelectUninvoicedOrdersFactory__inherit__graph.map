@@ -1,5 +1,0 @@
-<map id="SelectUninvoicedOrdersFactory" name="SelectUninvoicedOrdersFactory">
-<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectNoParamsQueryFactory.html" title="{AbstractSelectNoParamsQuery\lFactory\n||+ make()\l}" alt="" coords="16,256,221,348"/>
-<area shape="rect" id="node3" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectQueryFactory.html" title="{AbstractSelectQueryFactory\n||+ make()\l}" alt="" coords="25,131,212,208"/>
-<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractQueryFactory.html" title="all Queries are instantiated using a factory and each of these factories must conform to this interfa..." alt="" coords="43,5,194,83"/>
-</map>

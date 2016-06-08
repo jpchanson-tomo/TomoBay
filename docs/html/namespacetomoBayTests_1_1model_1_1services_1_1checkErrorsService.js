@@ -1,4 +1,0 @@
-var namespacetomoBayTests_1_1model_1_1services_1_1checkErrorsService =
-[
-    [ "CheckErrorsServiceTest", "classtomoBayTests_1_1model_1_1services_1_1checkErrorsService_1_1CheckErrorsServiceTest.html", "classtomoBayTests_1_1model_1_1services_1_1checkErrorsService_1_1CheckErrorsServiceTest" ]
-];

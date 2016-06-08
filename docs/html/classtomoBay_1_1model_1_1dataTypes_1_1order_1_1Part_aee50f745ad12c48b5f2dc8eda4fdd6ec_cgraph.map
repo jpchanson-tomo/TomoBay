@@ -1,8 +1,0 @@
-<map id="getCost" name="getCost">
-<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#ab3e03f7919360bb577b970dfd18b66ff" title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock..." alt="" coords="123,5,374,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a70543974420d7d2cb4a4c0080a2afc07" title="query winstock for the last cost price of a particular part. " alt="" coords="121,71,376,112"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a82b5421e7d3a2ba82bdc5d54b09a8069" title="tomoBay.model.winstock.Stock.query\lWinstockURL" alt="" coords="424,5,667,47"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a42fa652d82ed49749a0ad929a6c798d0" title="remove the header bumpf from the bottom of the response " alt="" coords="427,71,663,112"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1helpers_1_1XMLParser.html#a9936151017dd4e908cf37d453b22c8ef" title="parses an XML formatted string looking for the first tag specified in the parameters. " alt="" coords="433,137,658,163"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1net_1_1HttpResponse.html#afb798c825935128953439404fb763997" title="get the Response message " alt="" coords="715,71,960,112"/>
-</map>

@@ -1,6 +1,0 @@
-var namespacetomoBay_1_1model_1_1winstock_1_1commandFactories =
-[
-    [ "AbstractWinstockCommandFactory", "interfacetomoBay_1_1model_1_1winstock_1_1commandFactories_1_1AbstractWinstockCommandFactory.html", "interfacetomoBay_1_1model_1_1winstock_1_1commandFactories_1_1AbstractWinstockCommandFactory" ],
-    [ "PrintInvoiceCommandFactory", "classtomoBay_1_1model_1_1winstock_1_1commandFactories_1_1PrintInvoiceCommandFactory.html", "classtomoBay_1_1model_1_1winstock_1_1commandFactories_1_1PrintInvoiceCommandFactory" ],
-    [ "PutInvoiceCommandFactory", "classtomoBay_1_1model_1_1winstock_1_1commandFactories_1_1PutInvoiceCommandFactory.html", "classtomoBay_1_1model_1_1winstock_1_1commandFactories_1_1PutInvoiceCommandFactory" ]
-];

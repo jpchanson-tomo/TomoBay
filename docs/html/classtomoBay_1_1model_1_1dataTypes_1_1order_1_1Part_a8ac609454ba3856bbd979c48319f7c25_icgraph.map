@@ -1,8 +1,0 @@
-<map id="cost" name="cost">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Listing.html#a5b10781389c8325b841e07ce1515deb0" title="retrieve the accumulated base cost of all parts associated with this listing. " alt="" coords="149,67,363,109"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1GSPInvoiceLine.html#a1dbab551a07ec1e0c91c3cc7ef4fcd0b" title="tomoBay.model.dataTypes.financial.\lSalesOrderDayBook.concreteLineTypes.\lGSPInvoiceLine.unitPrice" alt="" coords="462,5,721,61"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceLine.html#ad4699f0815895232592f2e0a89f67b39" title="tomoBay.model.dataTypes.financial.\lSalesOrderDayBook.concreteLineTypes.\lStandardInvoiceLine.unitPrice" alt="" coords="462,89,721,145"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#a703cbb509cdc01530f19b03f573120c9" title="formats the transaction information associated with this order " alt="" coords="100,185,412,226"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#afeec1aeda079b77245edea1e74b25f33" title="assembles the various parts of the order and outputs it as a fully formed JSON string. " alt="" coords="460,177,723,233"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="771,185,1043,226"/>
-</map>

@@ -1,5 +1,0 @@
-var namespacetomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats =
-[
-    [ "AbstractFormat", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1AbstractFormat.html", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1AbstractFormat" ],
-    [ "WinstockFormat", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1WinstockFormat.html", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1WinstockFormat" ]
-];

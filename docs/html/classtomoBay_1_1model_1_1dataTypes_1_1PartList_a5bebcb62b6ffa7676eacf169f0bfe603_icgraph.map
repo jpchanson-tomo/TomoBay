@@ -1,6 +1,0 @@
-<map id="getPartQty" name="getPartQty">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1ItemStockLevel.html#a22844faa947573bb01d9313f7bdb1e56" title="Takes the list of items generated in this.assembleItemsList and checks a PartList associated with eac..." alt="" coords="139,5,403,47"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Listing.html#a08c9dd8979fc599a5710705156ea0b3e" title="constructor, instantiates this listing based on the listingID provided (aka in the database as itemID..." alt="" coords="163,71,378,112"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1ItemStockLevel.html#a1aed814db05c4991e9bc719f39ea62ce" title="tomoBay.presenters.helpers.pickeability.\lItemStockLevel.check" alt="" coords="451,5,709,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1Pickeablity.html#ae05e03af15e33d53f9e0511ec0295a04" title="default ctor " alt="" coords="757,5,1016,47"/>
-</map>

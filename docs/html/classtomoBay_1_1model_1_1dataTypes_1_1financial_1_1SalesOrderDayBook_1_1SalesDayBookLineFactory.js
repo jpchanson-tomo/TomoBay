@@ -1,8 +1,0 @@
-var classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory =
-[
-    [ "SalesDayBookLineType", "enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType.html", "enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType" ],
-    [ "SalesDayBookLineType_M", "enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType__M.html", "enumtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory_1_1SalesDayBookLineType__M" ],
-    [ "SalesDayBookLineFactory", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory.html#aceb2b0fac6b9b6360c670b91515c2f5b", null ],
-    [ "make", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory.html#a2d63fd7591115332417a84014f39b204", null ],
-    [ "lineMap_M", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1SalesDayBookLineFactory.html#a21519490e2be1bddb477cb648d1dc7c8", null ]
-];

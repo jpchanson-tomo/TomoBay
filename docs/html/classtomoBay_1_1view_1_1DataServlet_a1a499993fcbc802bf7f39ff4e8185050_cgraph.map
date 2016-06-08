@@ -1,5 +1,0 @@
-<map id="doGet" name="doGet">
-<area shape="rect" id="node2" href="$interfacetomoBay_1_1presenters_1_1AbstractPresenter.html#ab6cad3241840af93bbe6d447aeacd9a3" title="double dispatch method that allows the presenter to be responsible for creation of its associated vie..." alt="" coords="114,5,306,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1PresenterFactory.html#a7fd9a54d994b1c4c4f09fcaf67c15609" title="creates the presenter specified by one of the enum values defined in PresenterType ..." alt="" coords="111,71,309,112"/>
-<area shape="rect" id="node4" href="$interfacetomoBay_1_1presenters_1_1AbstractPresenter.html#aae3ef9e158aa1e975acedd263e47fa3c" title="this method is called when you actually want to present the information to be displayed to the approp..." alt="" coords="114,136,306,177"/>
-</map>

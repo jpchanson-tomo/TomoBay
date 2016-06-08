@@ -1,4 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interfacetomoBay_1_1model_1_1royalMail_1_1CSVGenerator.html" title="This is the public interface for all CSV generator derived classes and defines the necessary function..." alt="" coords="5,5,112,32"/>
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html" title="This class represents an object that generates CSV files in a format that the Royal Mail Dispatch Man..." alt="" coords="160,5,325,32"/>
-</map>

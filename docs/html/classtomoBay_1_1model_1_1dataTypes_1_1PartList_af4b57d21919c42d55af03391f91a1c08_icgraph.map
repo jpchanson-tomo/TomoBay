@@ -1,7 +1,0 @@
-<map id="size" name="size">
-<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1ItemStockLevel.html#a22844faa947573bb01d9313f7bdb1e56" title="Takes the list of items generated in this.assembleItemsList and checks a PartList associated with eac..." alt="" coords="100,5,364,47"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Listing.html#a08c9dd8979fc599a5710705156ea0b3e" title="constructor, instantiates this listing based on the listingID provided (aka in the database as itemID..." alt="" coords="125,71,339,112"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1dataTypes_1_1PartList.html#a2ad1aa316f278b2e9fa8121504749652" title="remove" alt="" coords="199,137,265,163"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1ItemStockLevel.html#a1aed814db05c4991e9bc719f39ea62ce" title="tomoBay.presenters.helpers.pickeability.\lItemStockLevel.check" alt="" coords="412,5,671,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1Pickeablity.html#ae05e03af15e33d53f9e0511ec0295a04" title="default ctor " alt="" coords="719,5,977,47"/>
-</map>

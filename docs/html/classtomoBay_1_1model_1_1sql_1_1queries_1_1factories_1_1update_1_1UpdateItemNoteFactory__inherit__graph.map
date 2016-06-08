@@ -1,5 +1,0 @@
-<map id="UpdateItemNoteFactory" name="UpdateItemNoteFactory">
-<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractModifyQueryParamsFactory.html" title="{AbstractModifyQueryParams\lFactory\n||+ make()\l}" alt="" coords="5,256,196,348"/>
-<area shape="rect" id="node3" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractModifyQueryFactory.html" title="{AbstractModifyQueryFactory\n||+ make()\l}" alt="" coords="6,131,195,208"/>
-<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractQueryFactory.html" title="all Queries are instantiated using a factory and each of these factories must conform to this interfa..." alt="" coords="25,5,176,83"/>
-</map>

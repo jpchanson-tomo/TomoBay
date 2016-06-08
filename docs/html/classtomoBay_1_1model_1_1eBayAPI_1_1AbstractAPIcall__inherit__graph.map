@@ -1,7 +1,0 @@
-<map id="AbstractAPIcall" name="AbstractAPIcall">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1eBayAPI_1_1GetSessionID.html" title="{GetSessionID\n||+ GetSessionID()\l+ call()\l}" alt="" coords="5,197,129,289"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1eBayAPI_1_1ItemCall.html" title="This class represents an eBay API call requesting Item Data. " alt="" coords="153,189,248,296"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1eBayAPI_1_1ListingsCall.html" title="This represents an eBay API call requesting information about a listing. " alt="" coords="273,197,385,289"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1eBayAPI_1_1OrdersCall.html" title="This represents an eBay API call that requests information about an order. " alt="" coords="409,145,544,340"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1eBayAPI_1_1OrderTransactionsCall.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="568,197,740,289"/>
-</map>

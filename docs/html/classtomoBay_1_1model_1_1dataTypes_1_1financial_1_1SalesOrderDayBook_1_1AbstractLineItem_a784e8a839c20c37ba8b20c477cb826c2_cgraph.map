@@ -1,9 +1,0 @@
-<map id="quantity" name="quantity">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Transaction.html#ae22e0c0169b69acfb681cf924aa8f0a8" title="retrieve the listing associated with this transaction " alt="" coords="155,5,369,47"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#afacf6217c7f58a049b532205066da488" title="retrieve the order that this AbstractSalesDayBookLine refers to. " alt="" coords="121,70,403,126"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Listing.html#a2c8f5d3f860a7215f1fff79890a6cfa1" title="retrieve the qty of the part at this index. " alt="" coords="155,149,369,191"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Transaction.html#a797e1f8fbba4deea93ecb02ed24ea81b" title="retrieve the quantity of this listing purchased " alt="" coords="155,215,369,256"/>
-<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#a39d4b856c1dcba627c763d60c3be86b0" title="An order is made up of transactions, this method retrieves the specified transaction, given the index parameter. " alt="" coords="155,280,369,321"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a988363ab964d6dc0ccb8560bef5895b6" title="retrieve the the value of an AbstractField from this HeteroFieldContainer, the field should be of the..." alt="" coords="451,215,707,256"/>
-<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a9dee3c01eb5ab16203e1c6820a569484" title="performs a type check, assuming that field and type are of the same type then this method returns tru..." alt="" coords="755,207,1003,263"/>
-</map>

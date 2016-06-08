@@ -1,7 +1,0 @@
-<map id="unitPrice" name="unitPrice">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#afacf6217c7f58a049b532205066da488" title="retrieve the order that this AbstractSalesDayBookLine refers to. " alt="" coords="127,5,408,61"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Order.html#aa1be772bd50137a618371188bfc5d284" title="tomoBay.model.dataTypes.order.\lOrder.shippingCost" alt="" coords="160,85,375,126"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1VAT.html#a9dfd34f223ef659c7eaa29ffc0f06b02" title="subtract vat to the value provided as argument " alt="" coords="150,150,385,191"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1GBP.html#a4869bc1854b4c53820b934c48bc7d868" title="converts the given amount of pound into pennies (rounding down in the process) " alt="" coords="150,215,385,257"/>
-<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1GBP.html#ab1488ca02aec4338b86ca2ab9691627f" title="converts the given integer to a string representing the number of pennies " alt="" coords="456,215,691,257"/>
-</map>

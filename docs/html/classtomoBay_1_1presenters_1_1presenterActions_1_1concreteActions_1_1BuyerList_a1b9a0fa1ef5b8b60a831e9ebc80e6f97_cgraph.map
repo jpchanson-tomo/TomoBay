@@ -1,6 +1,0 @@
-<map id="formatResults" name="formatResults">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1json_1_1JSONentity.html#afead82af115042a64d2604ec5f508f45" title="A leaf node is simply a key value pair. " alt="" coords="159,5,370,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1security_1_1SaneInput.html#acd49fdb5d11a2b2e22808c8135eca51f" title="sanitise the string so that it will have no problems on converting to json " alt="" coords="157,71,372,98"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1json_1_1JSONentity.html#a77e2151cf49df9f80a4999e0e9e54d55" title="tomoBay.model.dataTypes.json.\lJSONentity.toString" alt="" coords="159,123,370,164"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1DualList.html#ac6c5d11a7054f49bb7c9489f5893daeb" title="add a value pair to the DualList " alt="" coords="420,5,603,47"/>
-</map>

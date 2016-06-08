@@ -1,6 +1,0 @@
-<map id="execute" name="execute">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1winstock_1_1payloads_1_1AbstractPayload.html#accbe948d47bdcb50d5d6e820df17b53f" title="This method contains the implementiation for the specific command that this payload is applicable to..." alt="" coords="139,5,369,47"/>
-<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1winstock_1_1response_1_1PrintInvoiceResponse.html#a4cf1590708926bf0922aea8577102605" title="used by the AbstractWinstockCommand associated with this response to insert the raw byte values into ..." alt="" coords="121,71,387,112"/>
-<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1winstock_1_1response_1_1PrintInvoiceResponse.html#a512082f1cf5ec9f6633f3e6b086bfc2e" title="used by the AbstractWinswtock command associated with this response to insert the raw byte values tha..." alt="" coords="137,136,371,177"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1payloads_1_1AbstractPayload.html#adcaaf6dd0b7838f6139746922d0dc607" title="reassembles the internal list as a byte[] that can be passed straight to the ClientSockets object..." alt="" coords="435,5,664,47"/>
-</map>

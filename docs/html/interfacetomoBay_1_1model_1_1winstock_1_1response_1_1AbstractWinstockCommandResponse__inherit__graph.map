@@ -1,4 +1,0 @@
-<map id="AbstractWinstockCommandResponse" name="AbstractWinstockCommandResponse">
-<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1winstock_1_1response_1_1PrintInvoiceResponse.html" title="{PrintInvoiceResponse\n|&#45; responseBytes_M\l&#45; sentBytes_M\l|+ PrintInvoiceResponse()\l+ isSuccess()\l+ setSentBytes()\l+ setResponseBytes()\l+ getRecieved()\l+ getSent()\l}" alt="" coords="5,189,176,355"/>
-<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1winstock_1_1response_1_1PutInvoiceResponse.html" title="This class is the AbstractWinstockCommandResponse associated with the PutInvoiceCommand. " alt="" coords="201,197,354,347"/>
-</map>
