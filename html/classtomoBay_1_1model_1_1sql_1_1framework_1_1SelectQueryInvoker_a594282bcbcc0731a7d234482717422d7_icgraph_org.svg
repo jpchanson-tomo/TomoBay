@@ -202,9 +202,9 @@
 <path fill="none" stroke="midnightblue" d="M29.7574,-484.329C35.7356,-454.448 51.2854,-397.746 87,-366 92.2108,-361.368 98.1199,-357.452 104.394,-354.139"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="26.2791,-483.893 27.9128,-494.361 33.1637,-485.159 26.2791,-483.893"/>
 </g>
-<!-- Node29 -->
-<g id="node29" class="node"><title>Node29</title>
-<g id="a_node29"><a xlink:href="classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1ItemsAndPartsTable.html#a0a4965df2e2331547f6b8d56f962b70c" target="_top" xlink:title="populates the Orders Table in the database with data grabbed from the ebay API ">
+<!-- Node33 -->
+<g id="node33" class="node"><title>Node33</title>
+<g id="a_node33"><a xlink:href="classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1ItemsAndPartsTable.html#a0a4965df2e2331547f6b8d56f962b70c" target="_top" xlink:title="populates the Orders Table in the database with data grabbed from the ebay API ">
 <polygon fill="white" stroke="black" points="100.5,-255.5 100.5,-296.5 272.5,-296.5 272.5,-255.5 100.5,-255.5"/>
 <text text-anchor="start" x="108.5" y="-284.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.basic</text>
 <text text-anchor="start" x="108.5" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">EbayUpdateService.ItemsAndParts</text>
@@ -212,70 +212,70 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node29 -->
-<g id="edge29" class="edge"><title>Node1&#45;&gt;Node29</title>
+<!-- Node1&#45;&gt;Node33 -->
+<g id="edge33" class="edge"><title>Node1&#45;&gt;Node33</title>
 <path fill="none" stroke="midnightblue" d="M26.7278,-483.931C28.2884,-444.285 37.4737,-355.482 87,-306 90.9203,-302.083 95.3355,-298.675 100.068,-295.71"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="23.2232,-484.061 26.457,-494.15 30.2207,-484.247 23.2232,-484.061"/>
 </g>
-<!-- Node33 -->
-<g id="node33" class="node"><title>Node33</title>
-<g id="a_node33"><a xlink:href="classtomoBay_1_1presenters_1_1sales_1_1SalesHistoryPresenter.html#aae3ef9e158aa1e975acedd263e47fa3c" target="_top" xlink:title="this method is called when you actually want to present the information to be displayed to the approp...">
+<!-- Node37 -->
+<g id="node37" class="node"><title>Node37</title>
+<g id="a_node37"><a xlink:href="classtomoBay_1_1presenters_1_1sales_1_1SalesHistoryPresenter.html#aae3ef9e158aa1e975acedd263e47fa3c" target="_top" xlink:title="this method is called when you actually want to present the information to be displayed to the approp...">
 <polygon fill="white" stroke="black" points="111.5,-207 111.5,-237 261.5,-237 261.5,-207 111.5,-207"/>
 <text text-anchor="start" x="119.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.presenters.sales.</text>
 <text text-anchor="middle" x="186.5" y="-214" font-family="Helvetica,sans-Serif" font-size="10.00">SalesHistoryPresenter.present</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node33 -->
-<g id="edge33" class="edge"><title>Node1&#45;&gt;Node33</title>
+<!-- Node1&#45;&gt;Node37 -->
+<g id="edge37" class="edge"><title>Node1&#45;&gt;Node37</title>
 <path fill="none" stroke="midnightblue" d="M28.4748,-484.291C34.3089,-430.007 53.2074,-280.087 87,-246 93.8155,-239.125 102.249,-234.097 111.291,-230.438"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="24.9823,-484.038 27.4275,-494.347 31.9447,-484.763 24.9823,-484.038"/>
 </g>
-<!-- Node34 -->
-<g id="node34" class="node"><title>Node34</title>
-<g id="a_node34"><a xlink:href="classtomoBay_1_1presenters_1_1sales_1_1OutOfHoursPresenter.html#aae3ef9e158aa1e975acedd263e47fa3c" target="_top" xlink:title="this method is called when you actually want to present the information to be displayed to the approp...">
+<!-- Node38 -->
+<g id="node38" class="node"><title>Node38</title>
+<g id="a_node38"><a xlink:href="classtomoBay_1_1presenters_1_1sales_1_1OutOfHoursPresenter.html#aae3ef9e158aa1e975acedd263e47fa3c" target="_top" xlink:title="this method is called when you actually want to present the information to be displayed to the approp...">
 <polygon fill="white" stroke="black" points="113.5,-158 113.5,-188 259.5,-188 259.5,-158 113.5,-158"/>
 <text text-anchor="start" x="121.5" y="-176" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.presenters.sales.</text>
 <text text-anchor="middle" x="186.5" y="-165" font-family="Helvetica,sans-Serif" font-size="10.00">OutOfHoursPresenter.present</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node34 -->
-<g id="edge34" class="edge"><title>Node1&#45;&gt;Node34</title>
+<!-- Node1&#45;&gt;Node38 -->
+<g id="edge38" class="edge"><title>Node1&#45;&gt;Node38</title>
 <path fill="none" stroke="midnightblue" d="M27.6746,-484.28C31.7137,-423.203 47.0493,-238.766 87,-197 94.1781,-189.496 103.279,-184.176 113.036,-180.432"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="24.1678,-484.28 27.0309,-494.481 31.1539,-484.721 24.1678,-484.28"/>
 </g>
-<!-- Node35 -->
-<g id="node35" class="node"><title>Node35</title>
-<g id="a_node35"><a xlink:href="classtomoBay_1_1presenters_1_1sales_1_1SalesOrderPresenter.html#aae3ef9e158aa1e975acedd263e47fa3c" target="_top" xlink:title="this method is called when you actually want to present the information to be displayed to the approp...">
+<!-- Node39 -->
+<g id="node39" class="node"><title>Node39</title>
+<g id="a_node39"><a xlink:href="classtomoBay_1_1presenters_1_1sales_1_1SalesOrderPresenter.html#aae3ef9e158aa1e975acedd263e47fa3c" target="_top" xlink:title="this method is called when you actually want to present the information to be displayed to the approp...">
 <polygon fill="white" stroke="black" points="115,-109 115,-139 258,-139 258,-109 115,-109"/>
 <text text-anchor="start" x="123" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.presenters.sales.</text>
 <text text-anchor="middle" x="186.5" y="-116" font-family="Helvetica,sans-Serif" font-size="10.00">SalesOrderPresenter.present</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node35 -->
-<g id="edge35" class="edge"><title>Node1&#45;&gt;Node35</title>
+<!-- Node1&#45;&gt;Node39 -->
+<g id="edge39" class="edge"><title>Node1&#45;&gt;Node39</title>
 <path fill="none" stroke="midnightblue" d="M27.0889,-484.274C29.5053,-416.93 40.8441,-197.538 87,-148 94.559,-139.887 104.363,-134.314 114.849,-130.521"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="23.5875,-484.262 26.7541,-494.373 30.5837,-484.494 23.5875,-484.262"/>
 </g>
-<!-- Node36 -->
-<g id="node36" class="node"><title>Node36</title>
-<g id="a_node36"><a xlink:href="classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#a540b8555f73cab7f8082c2a6a4aad375" target="_top" xlink:title="refresh the account information. ">
+<!-- Node40 -->
+<g id="node40" class="node"><title>Node40</title>
+<g id="a_node40"><a xlink:href="classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#a540b8555f73cab7f8082c2a6a4aad375" target="_top" xlink:title="refresh the account information. ">
 <polygon fill="white" stroke="black" points="110.5,-60 110.5,-90 262.5,-90 262.5,-60 110.5,-60"/>
 <text text-anchor="start" x="118.5" y="-78" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.eBayAPI.Ebay</text>
 <text text-anchor="middle" x="186.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">Accounts.refresh</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node36 -->
-<g id="edge36" class="edge"><title>Node1&#45;&gt;Node36</title>
+<!-- Node1&#45;&gt;Node40 -->
+<g id="edge40" class="edge"><title>Node1&#45;&gt;Node40</title>
 <path fill="none" stroke="midnightblue" d="M26.6451,-483.986C27.5942,-410.422 34.6695,-156.307 87,-99 93.4091,-91.9815 101.497,-86.856 110.27,-83.1373"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="23.1433,-484.148 26.5394,-494.184 30.143,-484.221 23.1433,-484.148"/>
 </g>
-<!-- Node38 -->
-<g id="node38" class="node"><title>Node38</title>
-<g id="a_node38"><a xlink:href="classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsDBActions.html#a8a4bbc75f3e9766f7f1c51141551702a" target="_top" xlink:title="returns a list of items from the database that contain errors in the &#39;notes&#39; field of the ebay_items ...">
+<!-- Node42 -->
+<g id="node42" class="node"><title>Node42</title>
+<g id="a_node42"><a xlink:href="classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsDBActions.html#a8a4bbc75f3e9766f7f1c51141551702a" target="_top" xlink:title="returns a list of items from the database that contain errors in the &#39;notes&#39; field of the ebay_items ...">
 <polygon fill="white" stroke="black" points="105,-0.5 105,-41.5 268,-41.5 268,-0.5 105,-0.5"/>
 <text text-anchor="start" x="113" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.re</text>
 <text text-anchor="start" x="113" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">ScanErrorsService.ReScanErrors</text>
@@ -283,8 +283,8 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node38 -->
-<g id="edge38" class="edge"><title>Node1&#45;&gt;Node38</title>
+<!-- Node1&#45;&gt;Node42 -->
+<g id="edge42" class="edge"><title>Node1&#45;&gt;Node42</title>
 <path fill="none" stroke="midnightblue" d="M26.377,-484.229C26.2906,-405.668 29.919,-116.615 87,-50 91.9877,-44.1793 98.0788,-39.4957 104.762,-35.7316"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="22.8769,-484.254 26.4107,-494.242 29.8769,-484.23 22.8769,-484.254"/>
 </g>
@@ -468,17 +468,17 @@
 <!-- Node26 -->
 <g id="node26" class="node"><title>Node26</title>
 <g id="a_node26"><a xlink:href="classtomoBayTests_1_1presenters_1_1presenterActions_1_1concreteActions_1_1GenerateRoyalMailCSVTest.html#a1b260e6772d2ced79e03e1c8c5acd12b" target="_top" xlink:title="tomoBayTests.presenters.presenter\lActions.concreteActions.GenerateRoyal\lMailCSVTest.testExecute">
-<polygon fill="white" stroke="black" points="586.5,-375.5 586.5,-416.5 777.5,-416.5 777.5,-375.5 586.5,-375.5"/>
-<text text-anchor="start" x="594.5" y="-404.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBayTests.presenters.presenter</text>
-<text text-anchor="start" x="594.5" y="-393.5" font-family="Helvetica,sans-Serif" font-size="10.00">Actions.concreteActions.GenerateRoyal</text>
-<text text-anchor="middle" x="682" y="-382.5" font-family="Helvetica,sans-Serif" font-size="10.00">MailCSVTest.testExecute</text>
+<polygon fill="white" stroke="black" points="586.5,-465.5 586.5,-506.5 777.5,-506.5 777.5,-465.5 586.5,-465.5"/>
+<text text-anchor="start" x="594.5" y="-494.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBayTests.presenters.presenter</text>
+<text text-anchor="start" x="594.5" y="-483.5" font-family="Helvetica,sans-Serif" font-size="10.00">Actions.concreteActions.GenerateRoyal</text>
+<text text-anchor="middle" x="682" y="-472.5" font-family="Helvetica,sans-Serif" font-size="10.00">MailCSVTest.testExecute</text>
 </a>
 </g>
 </g>
 <!-- Node25&#45;&gt;Node26 -->
 <g id="edge26" class="edge"><title>Node25&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M525.473,-396C545.271,-396 566.218,-396 586.106,-396"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="525.236,-392.5 515.236,-396 525.236,-399.5 525.236,-392.5"/>
+<path fill="none" stroke="midnightblue" d="M524.684,-417.076C530.661,-419.458 536.488,-422.092 542,-425 560.675,-434.853 559.442,-445.93 578,-456 584.466,-459.509 591.389,-462.649 598.474,-465.451"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="525.782,-413.751 515.19,-413.537 523.337,-420.31 525.782,-413.751"/>
 </g>
 <!-- Node28 -->
 <g id="node28" class="node"><title>Node28</title>
@@ -495,81 +495,141 @@
 <path fill="none" stroke="midnightblue" d="M278.823,-336C302.153,-336 327.076,-336 349.857,-336"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="278.582,-332.5 268.582,-336 278.582,-339.5 278.582,-332.5"/>
 </g>
-<!-- Node30 -->
-<g id="node30" class="node"><title>Node30</title>
-<g id="a_node30"><a xlink:href="classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" target="_top" xlink:title="this method defines what to do in the given derived state ">
-<polygon fill="white" stroke="black" points="335.5,-261 335.5,-291 528.5,-291 528.5,-261 335.5,-261"/>
-<text text-anchor="start" x="343.5" y="-279" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.basic</text>
-<text text-anchor="middle" x="432" y="-268" font-family="Helvetica,sans-Serif" font-size="10.00">EbayUpdateService.OnRunning.execute</text>
+<!-- Node29 -->
+<g id="node29" class="node"><title>Node29</title>
+<g id="a_node29"><a xlink:href="classtomoBayTests_1_1presenters_1_1presenterActions_1_1concreteActions_1_1StockReOrderAnalysisTest.html#a7dc81a7ba138b011b60a6eae74362a03" target="_top" xlink:title="tomoBayTests.presenters.presenter\lActions.concreteActions.StockReOrder\lAnalysisTest.testExecuteGoodData">
+<polygon fill="white" stroke="black" points="588,-405.5 588,-446.5 776,-446.5 776,-405.5 588,-405.5"/>
+<text text-anchor="start" x="596" y="-434.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBayTests.presenters.presenter</text>
+<text text-anchor="start" x="596" y="-423.5" font-family="Helvetica,sans-Serif" font-size="10.00">Actions.concreteActions.StockReOrder</text>
+<text text-anchor="middle" x="682" y="-412.5" font-family="Helvetica,sans-Serif" font-size="10.00">AnalysisTest.testExecuteGoodData</text>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node30 -->
-<g id="edge30" class="edge"><title>Node29&#45;&gt;Node30</title>
-<path fill="none" stroke="midnightblue" d="M282.764,-276C300.084,-276 318.156,-276 335.483,-276"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="282.665,-272.5 272.664,-276 282.664,-279.5 282.665,-272.5"/>
+<!-- Node28&#45;&gt;Node29 -->
+<g id="edge29" class="edge"><title>Node28&#45;&gt;Node29</title>
+<path fill="none" stroke="midnightblue" d="M523.63,-357.67C529.97,-360.176 536.157,-362.946 542,-366 560.458,-375.648 559.614,-386.215 578,-396 584.577,-399.5 591.613,-402.639 598.804,-405.444"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="524.848,-354.388 514.255,-354.183 522.408,-360.949 524.848,-354.388"/>
+</g>
+<!-- Node30 -->
+<g id="node30" class="node"><title>Node30</title>
+<g id="a_node30"><a xlink:href="classtomoBayTests_1_1presenters_1_1presenterActions_1_1concreteActions_1_1StockReOrderAnalysisTest.html#a07b7831bd5f69df06f9ff2cce3661376" target="_top" xlink:title="tomoBayTests.presenters.presenter\lActions.concreteActions.StockReOrder\lAnalysisTest.testExecuteBadData1">
+<polygon fill="white" stroke="black" points="588,-345.5 588,-386.5 776,-386.5 776,-345.5 588,-345.5"/>
+<text text-anchor="start" x="596" y="-374.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBayTests.presenters.presenter</text>
+<text text-anchor="start" x="596" y="-363.5" font-family="Helvetica,sans-Serif" font-size="10.00">Actions.concreteActions.StockReOrder</text>
+<text text-anchor="middle" x="682" y="-352.5" font-family="Helvetica,sans-Serif" font-size="10.00">AnalysisTest.testExecuteBadData1</text>
+</a>
+</g>
+</g>
+<!-- Node28&#45;&gt;Node30 -->
+<g id="edge30" class="edge"><title>Node28&#45;&gt;Node30</title>
+<path fill="none" stroke="midnightblue" d="M524.285,-347.043C545.06,-349.556 567.153,-352.228 587.998,-354.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="524.552,-343.549 514.204,-345.823 523.712,-350.499 524.552,-343.549"/>
 </g>
 <!-- Node31 -->
 <g id="node31" class="node"><title>Node31</title>
-<g id="a_node31"><a xlink:href="classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1BasicEbayUpdateService.html#ae3b0a282dcba7f2d675ca89b1dd48487" target="_top" xlink:title="tomoBay.model.services.basic\lEbayUpdateService.BasicEbayUpdate\lService.onRunning">
-<polygon fill="white" stroke="black" points="589.5,-255.5 589.5,-296.5 774.5,-296.5 774.5,-255.5 589.5,-255.5"/>
-<text text-anchor="start" x="597.5" y="-284.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.basic</text>
-<text text-anchor="start" x="597.5" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">EbayUpdateService.BasicEbayUpdate</text>
-<text text-anchor="middle" x="682" y="-262.5" font-family="Helvetica,sans-Serif" font-size="10.00">Service.onRunning</text>
+<g id="a_node31"><a xlink:href="classtomoBayTests_1_1presenters_1_1presenterActions_1_1concreteActions_1_1StockReOrderAnalysisTest.html#a9fe5a553cc6d9ead3154faa3121e5bb9" target="_top" xlink:title="tomoBayTests.presenters.presenter\lActions.concreteActions.StockReOrder\lAnalysisTest.testExecuteBadData2">
+<polygon fill="white" stroke="black" points="588,-285.5 588,-326.5 776,-326.5 776,-285.5 588,-285.5"/>
+<text text-anchor="start" x="596" y="-314.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBayTests.presenters.presenter</text>
+<text text-anchor="start" x="596" y="-303.5" font-family="Helvetica,sans-Serif" font-size="10.00">Actions.concreteActions.StockReOrder</text>
+<text text-anchor="middle" x="682" y="-292.5" font-family="Helvetica,sans-Serif" font-size="10.00">AnalysisTest.testExecuteBadData2</text>
 </a>
 </g>
 </g>
-<!-- Node30&#45;&gt;Node31 -->
-<g id="edge31" class="edge"><title>Node30&#45;&gt;Node31</title>
-<path fill="none" stroke="midnightblue" d="M538.881,-276C555.62,-276 572.809,-276 589.192,-276"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="538.529,-272.5 528.529,-276 538.528,-279.5 538.529,-272.5"/>
+<!-- Node28&#45;&gt;Node31 -->
+<g id="edge31" class="edge"><title>Node28&#45;&gt;Node31</title>
+<path fill="none" stroke="midnightblue" d="M524.285,-324.957C545.06,-322.444 567.153,-319.772 587.998,-317.25"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="523.712,-321.501 514.204,-326.177 524.552,-328.451 523.712,-321.501"/>
 </g>
 <!-- Node32 -->
 <g id="node32" class="node"><title>Node32</title>
-<g id="a_node32"><a xlink:href="classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1BasicEbayUpdateService.html#afd85cd6baa355d54ab15c19c16c21df9" target="_top" xlink:title="tomoBay.model.services.basic\lEbayUpdateService.BasicEbayUpdate\lService.onPaused">
-<polygon fill="white" stroke="black" points="833.5,-255.5 833.5,-296.5 1018.5,-296.5 1018.5,-255.5 833.5,-255.5"/>
-<text text-anchor="start" x="841.5" y="-284.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.basic</text>
-<text text-anchor="start" x="841.5" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">EbayUpdateService.BasicEbayUpdate</text>
-<text text-anchor="middle" x="926" y="-262.5" font-family="Helvetica,sans-Serif" font-size="10.00">Service.onPaused</text>
+<g id="a_node32"><a xlink:href="classtomoBayTests_1_1presenters_1_1presenterActions_1_1concreteActions_1_1StockReOrderAnalysisTest.html#a523accba573f6d4c7f68fb358a0563cb" target="_top" xlink:title="tomoBayTests.presenters.presenter\lActions.concreteActions.StockReOrder\lAnalysisTest.testExecuteBadData3">
+<polygon fill="white" stroke="black" points="588,-225.5 588,-266.5 776,-266.5 776,-225.5 588,-225.5"/>
+<text text-anchor="start" x="596" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBayTests.presenters.presenter</text>
+<text text-anchor="start" x="596" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">Actions.concreteActions.StockReOrder</text>
+<text text-anchor="middle" x="682" y="-232.5" font-family="Helvetica,sans-Serif" font-size="10.00">AnalysisTest.testExecuteBadData3</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node32 -->
-<g id="edge32" class="edge"><title>Node31&#45;&gt;Node32</title>
-<path fill="none" stroke="midnightblue" d="M785.23,-276C801.165,-276 817.545,-276 833.228,-276"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="784.835,-272.5 774.835,-276 784.835,-279.5 784.835,-272.5"/>
+<!-- Node28&#45;&gt;Node32 -->
+<g id="edge32" class="edge"><title>Node28&#45;&gt;Node32</title>
+<path fill="none" stroke="midnightblue" d="M488.406,-311.41C515.204,-299.946 547.995,-286.542 578,-276 587.313,-272.728 597.185,-269.525 606.985,-266.502"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="486.994,-308.207 479.192,-315.376 489.761,-314.637 486.994,-308.207"/>
 </g>
-<!-- Node37 -->
-<g id="node37" class="node"><title>Node37</title>
-<g id="a_node37"><a xlink:href="classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#ae1c74869a4f54cb21882960d3ed7cb65" target="_top" xlink:title="register a new account on the system ">
+<!-- Node34 -->
+<g id="node34" class="node"><title>Node34</title>
+<g id="a_node34"><a xlink:href="classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" target="_top" xlink:title="this method defines what to do in the given derived state ">
+<polygon fill="white" stroke="black" points="335.5,-216 335.5,-246 528.5,-246 528.5,-216 335.5,-216"/>
+<text text-anchor="start" x="343.5" y="-234" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.basic</text>
+<text text-anchor="middle" x="432" y="-223" font-family="Helvetica,sans-Serif" font-size="10.00">EbayUpdateService.OnRunning.execute</text>
+</a>
+</g>
+</g>
+<!-- Node33&#45;&gt;Node34 -->
+<g id="edge34" class="edge"><title>Node33&#45;&gt;Node34</title>
+<path fill="none" stroke="midnightblue" d="M282.718,-258.403C304.812,-254.32 328.13,-250.011 349.569,-246.049"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="281.862,-255.002 272.664,-260.261 283.134,-261.886 281.862,-255.002"/>
+</g>
+<!-- Node35 -->
+<g id="node35" class="node"><title>Node35</title>
+<g id="a_node35"><a xlink:href="classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1BasicEbayUpdateService.html#ae3b0a282dcba7f2d675ca89b1dd48487" target="_top" xlink:title="tomoBay.model.services.basic\lEbayUpdateService.BasicEbayUpdate\lService.onRunning">
+<polygon fill="white" stroke="black" points="589.5,-165.5 589.5,-206.5 774.5,-206.5 774.5,-165.5 589.5,-165.5"/>
+<text text-anchor="start" x="597.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.basic</text>
+<text text-anchor="start" x="597.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">EbayUpdateService.BasicEbayUpdate</text>
+<text text-anchor="middle" x="682" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">Service.onRunning</text>
+</a>
+</g>
+</g>
+<!-- Node34&#45;&gt;Node35 -->
+<g id="edge35" class="edge"><title>Node34&#45;&gt;Node35</title>
+<path fill="none" stroke="midnightblue" d="M525.967,-214.131C546.645,-210.379 568.554,-206.403 589.186,-202.66"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="525.14,-210.724 515.925,-215.953 526.389,-217.611 525.14,-210.724"/>
+</g>
+<!-- Node36 -->
+<g id="node36" class="node"><title>Node36</title>
+<g id="a_node36"><a xlink:href="classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1BasicEbayUpdateService.html#afd85cd6baa355d54ab15c19c16c21df9" target="_top" xlink:title="tomoBay.model.services.basic\lEbayUpdateService.BasicEbayUpdate\lService.onPaused">
+<polygon fill="white" stroke="black" points="833.5,-165.5 833.5,-206.5 1018.5,-206.5 1018.5,-165.5 833.5,-165.5"/>
+<text text-anchor="start" x="841.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.basic</text>
+<text text-anchor="start" x="841.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">EbayUpdateService.BasicEbayUpdate</text>
+<text text-anchor="middle" x="926" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">Service.onPaused</text>
+</a>
+</g>
+</g>
+<!-- Node35&#45;&gt;Node36 -->
+<g id="edge36" class="edge"><title>Node35&#45;&gt;Node36</title>
+<path fill="none" stroke="midnightblue" d="M785.23,-186C801.165,-186 817.545,-186 833.228,-186"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="784.835,-182.5 774.835,-186 784.835,-189.5 784.835,-182.5"/>
+</g>
+<!-- Node41 -->
+<g id="node41" class="node"><title>Node41</title>
+<g id="a_node41"><a xlink:href="classtomoBay_1_1model_1_1eBayAPI_1_1EbayAccounts.html#ae1c74869a4f54cb21882960d3ed7cb65" target="_top" xlink:title="register a new account on the system ">
 <polygon fill="white" stroke="black" points="356,-60 356,-90 508,-90 508,-60 356,-60"/>
 <text text-anchor="start" x="364" y="-78" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.eBayAPI.Ebay</text>
 <text text-anchor="middle" x="432" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">Accounts.registerAccount</text>
 </a>
 </g>
 </g>
-<!-- Node36&#45;&gt;Node37 -->
-<g id="edge37" class="edge"><title>Node36&#45;&gt;Node37</title>
+<!-- Node40&#45;&gt;Node41 -->
+<g id="edge41" class="edge"><title>Node40&#45;&gt;Node41</title>
 <path fill="none" stroke="midnightblue" d="M272.767,-75C299.811,-75 329.5,-75 355.784,-75"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="272.545,-71.5001 262.545,-75 272.545,-78.5001 272.545,-71.5001"/>
 </g>
-<!-- Node39 -->
-<g id="node39" class="node"><title>Node39</title>
-<g id="a_node39"><a xlink:href="classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" target="_top" xlink:title="this method defines what to do in the given derived state ">
+<!-- Node43 -->
+<g id="node43" class="node"><title>Node43</title>
+<g id="a_node43"><a xlink:href="classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" target="_top" xlink:title="this method defines what to do in the given derived state ">
 <polygon fill="white" stroke="black" points="338,-6 338,-36 526,-36 526,-6 338,-6"/>
 <text text-anchor="start" x="346" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.re</text>
 <text text-anchor="middle" x="432" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">ScanErrorsService.OnRunning.execute</text>
 </a>
 </g>
 </g>
-<!-- Node38&#45;&gt;Node39 -->
-<g id="edge39" class="edge"><title>Node38&#45;&gt;Node39</title>
+<!-- Node42&#45;&gt;Node43 -->
+<g id="edge43" class="edge"><title>Node42&#45;&gt;Node43</title>
 <path fill="none" stroke="midnightblue" d="M278.295,-21C297.734,-21 318.301,-21 337.828,-21"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="278.244,-17.5001 268.244,-21 278.244,-24.5001 278.244,-17.5001"/>
 </g>
-<!-- Node40 -->
-<g id="node40" class="node"><title>Node40</title>
-<g id="a_node40"><a xlink:href="classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsService.html#ae3b0a282dcba7f2d675ca89b1dd48487" target="_top" xlink:title="tomoBay.model.services.re\lScanErrorsService.ReScanErrors\lService.onRunning">
+<!-- Node44 -->
+<g id="node44" class="node"><title>Node44</title>
+<g id="a_node44"><a xlink:href="classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsService.html#ae3b0a282dcba7f2d675ca89b1dd48487" target="_top" xlink:title="tomoBay.model.services.re\lScanErrorsService.ReScanErrors\lService.onRunning">
 <polygon fill="white" stroke="black" points="600.5,-0.5 600.5,-41.5 763.5,-41.5 763.5,-0.5 600.5,-0.5"/>
 <text text-anchor="start" x="608.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">tomoBay.model.services.re</text>
 <text text-anchor="start" x="608.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">ScanErrorsService.ReScanErrors</text>
@@ -577,8 +637,8 @@
 </a>
 </g>
 </g>
-<!-- Node39&#45;&gt;Node40 -->
-<g id="edge40" class="edge"><title>Node39&#45;&gt;Node40</title>
+<!-- Node43&#45;&gt;Node44 -->
+<g id="edge44" class="edge"><title>Node43&#45;&gt;Node44</title>
 <path fill="none" stroke="midnightblue" d="M536.172,-21C557.63,-21 579.945,-21 600.447,-21"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="536.052,-17.5001 526.052,-21 536.052,-24.5001 536.052,-17.5001"/>
 </g>

@@ -169,7 +169,6 @@ Static Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Unit test case for <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html" title="This class represents an object that generates CSV files in a format that the Royal Mail Dispatch Man...">tomoBay.model.royalMail.RoyalMailCSVGenerator</a>. </p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000001">Test:</a></b></dt><dd>all functionality contained within the RoyalMailCSVGenerator class</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>none</dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd><ul>
 <li>a RoyalMailCSVGenerator object should behave reasonable as defined by the tests carried out.</li>
@@ -192,7 +191,6 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000002">Test:</a></b></dt><dd>instantiation test of the RoyalMailCSVGenerator class, guaruntees that object can be initialised without issue (default constructor).</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>none</dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>fully initialised instance of the RoyalMailCSVGenerator available for use.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a1cb65b7538dfdc8bf869f5c77421c90b" title="ctor, creates an empty CSV of the format: &quot;Service Reference&quot;,&quot;Service&quot;,&quot;Recipient&quot;,&quot;Address Line 1&quot;,&quot;Address Line 2&quot;,&quot;PostCode&quot;,&quot;Post Town&quot;, &quot;Country Code&quot;,&quot;Reference&quot;,&quot;Items&quot;,&quot;Weight&quot;,&quot;Service Enhancement&quot;,&quot;Service Format&quot;, ">tomoBay.model.royalMail.RoyalMailCSVGenerator::RoyalMailCSVGenerator()</a>. </dd></dl>
@@ -213,7 +211,6 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000003">Test:</a></b></dt><dd>guaruntees that the setSeparators method behaves as expected the default quotes and commas are replaced with the chars presented.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>requires that the toString method works as expected.</dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>separators will remain set until this method is called again.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#a5583aa818a0fa00c85f5fd1849149b17" title="This method allows you to set different separators than the default values, it is recommended to leav...">tomoBay.model.royalMail.RoyalMailCSVGenerator::setseparators(char, char)</a>. </dd></dl>
@@ -245,7 +242,6 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000004">Test:</a></b></dt><dd>makes sure that the addRow method will correctly add a row to the csv </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><ul>
 <li>the toString method works as expected.</li>
 <li>the array provided is the same size as the number of CSV_FIELD's in config/tomoBay.conf</li>
@@ -287,7 +283,6 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000005">Test:</a></b></dt><dd>makes sure that the addBatch method allows you to add batches of data in the form of a List&lt;String[]&gt;</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><ul>
 <li>the toString method works as expected:</li>
 <li>the arrays provided in the List&lt;String[]&gt; are the same size as the number of CSV_FIELD's in config/tomoBay.conf</li>
@@ -329,7 +324,6 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000006">Test:</a></b></dt><dd>makes sure that the generate method produces a file, and that it is in the format required.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><ul>
 <li>the addRow method behaves as expected</li>
 <li>valid data is passed into the addRow method</li>
@@ -370,7 +364,6 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000007">Test:</a></b></dt><dd>makes sure that the size method returns an integer equal to the number of columns specified in the config file (tomoBay.conf)</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="classtomoBay_1_1helpers_1_1ConfigReader.html" title="naive config file reader. ">tomoBay.helpers.ConfigReader</a> behaves as expected</dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>testSize returns an integer equal to the number of CSV_FIELD_NAME tag pairs in the config file</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1RoyalMailCSVGenerator.html#af4b57d21919c42d55af03391f91a1c08" title="indicates how many columns are required for each row of this CSV. ">tomoBay.model.royalMail.RoyalMailCSVGenerator::size()</a> </dd></dl>
@@ -402,7 +395,6 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000008">Test:</a></b></dt><dd>makes sure that the toString method behaves appropriately given valid inputs</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd><ul>
 <li>the data provided to the toString method is valid and of the correct size.</li>
 <li>the addRow method behaves as expected.</li>
@@ -443,7 +435,6 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000009">Test:</a></b></dt><dd>makes sure that the toString method behaves appropriately given bad inputs.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>input contains:<ul>
 <li>quotes inside csv entry</li>
 <li>special chars in places where they are not allowed</li>
@@ -638,7 +629,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetomoBayTests.html">tomoBayTests</a></li><li class="navelem"><a class="el" href="namespacetomoBayTests_1_1model.html">model</a></li><li class="navelem"><a class="el" href="namespacetomoBayTests_1_1model_1_1royalMail.html">royalMail</a></li><li class="navelem"><a class="el" href="classtomoBayTests_1_1model_1_1royalMail_1_1RoyalMailCSVGeneratorTest.html">RoyalMailCSVGeneratorTest</a></li>
-    <li class="footer">Generated on Wed Jun 8 2016 11:24:07 for TomoBay by
+    <li class="footer">Generated on Wed Jun 8 2016 14:56:05 for TomoBay by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

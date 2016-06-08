@@ -162,7 +162,7 @@ var searchData=
   ['allpickeableresult',['AllPickeableResult',['../classtomoBay_1_1presenters_1_1helpers_1_1pickeability_1_1AllPickeableResult.html',1,'tomoBay::presenters::helpers::pickeability']]],
   ['allpickeableresult_2ejava',['AllPickeableResult.java',['../AllPickeableResult_8java.html',1,'']]],
   ['api_5fkey',['API_KEY',['../classtomoBay_1_1model_1_1sql_1_1schema_1_1accountsTable_1_1AccountsTable.html#a3439d4970a02e0555c057a91f24adf12',1,'tomoBay::model::sql::schema::accountsTable::AccountsTable']]],
-  ['apicontext',['APIcontext',['../classtomoBay_1_1model_1_1eBayAPI_1_1APIcontext.html#a30b0cc9492fc2f2fd2e1bb8dce3186f5',1,'tomoBay.model.eBayAPI.APIcontext.APIcontext()'],['../classtomoBay_1_1model_1_1eBayAPI_1_1APIcontext.html#a2ffa8b387d0db2f1192c42e5d37386e5',1,'tomoBay.model.eBayAPI.APIcontext.apiContext(String usrToken, String server)']]],
+  ['apicontext',['apiContext',['../classtomoBay_1_1model_1_1eBayAPI_1_1APIcontext.html#a2ffa8b387d0db2f1192c42e5d37386e5',1,'tomoBay.model.eBayAPI.APIcontext.apiContext(String usrToken, String server)'],['../classtomoBay_1_1model_1_1eBayAPI_1_1APIcontext.html#a30b0cc9492fc2f2fd2e1bb8dce3186f5',1,'tomoBay.model.eBayAPI.APIcontext.APIcontext()']]],
   ['apicontext',['APIcontext',['../classtomoBay_1_1model_1_1eBayAPI_1_1APIcontext.html',1,'tomoBay::model::eBayAPI']]],
   ['apicontext_2ejava',['APIcontext.java',['../APIcontext_8java.html',1,'']]],
   ['apikey',['ApiKey',['../classtomoBay_1_1model_1_1sql_1_1schema_1_1accountsTable_1_1ApiKey.html',1,'tomoBay::model::sql::schema::accountsTable']]],
