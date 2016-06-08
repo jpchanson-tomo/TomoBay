@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--###########################################################################################
+# This is the config file for the TomoBay server, it is divided into a variety of sections
+# each covering a specific area of the server. When modifying, make sure that tag nesting
+# and proper XML syntax are preserved or the system will at best not pick up the settings, at 
+# worst the system will crash...... you have been warned.
+############################################################################################-->
+<CONFIG>
+
+<!--###################################################################################DATABASE
+# This section defines the credentials for the database as well as its location: the jdbc
+# query string is of the form "jdbc:database implementation:address.of.DB.at:port/db name"
+# the DB_USER is the user role that the system will be assuming. This user MUST have SELECT
+# UPDATE, INSERT, DELETE privileges. DB_PASSWORD is the password associated with DB_USER.
+############################################################################################-->
+	<DATABASE>
+		<JDBC_QUERY_STRING>  jdbc:mysql://your.db.ip.and:port/DBName  </JDBC_QUERY_STRING>
+		<DB_USER>                       yourDBUserName          </DB_USER>
+		<DB_PASSWORD>                   DBuserPWD   </DB_PASSWORD>
+		<DB_CONNECTION_POOL_MIN_SIZE>          3         </DB_CONNECTION_POOL_MIN_SIZE>
+		<DB_CONNECTION_POOL_MAX_SIZE>          20        </DB_CONNECTION_POOL_MAX_SIZE>
+		<DB_CONNECTION_POOL_AQUIRE_INCREMENT>  5         </DB_CONNECTION_POOL_AQUIRE_INCREMENT>
+		<DB_CONNECTION_POOL_MAX_STATEMENTS>    180       </DB_CONNECTION_POOL_MAX_STATEMENTS>
+	</DATABASE>
+
+
+
+<!--###################################################################################WINSTOCK
+# This section defines the port and address of the server from which the system can access
+# Winstock. i.e. the server on which the DMSService is running......we love winstock
+############################################################################################-->
+	<WINSTOCK>
+		<WINSTOCK_IP>  192.168.0.100  </WINSTOCK_IP>
+		<WINSTOCK_PORT>  5238  </WINSTOCK_PORT>
+		<WINSTOCK_ADDR>http://192.168.0.100:5239/</WINSTOCK_ADDR>
+		
+		<WINSTOCK_URL_PT1>http://192.168.0.100:5239/?type=9&amp;franchise=</WINSTOCK_URL_PT1>
+		<WINSTOCK_URL_PT2>&amp;index=product&amp;find=</WINSTOCK_URL_PT2>
+		
+		<WINSTOCK_WEIGHT_CALL_PT1>http://192.168.0.100:5239/?type=17&amp;invoice=</WINSTOCK_WEIGHT_CALL_PT1>
+		<WINSTOCK_WEIGHT_CALL_PT2>&amp;franchise=</WINSTOCK_WEIGHT_CALL_PT2>
+	</WINSTOCK>
+
+
+
+<!--######################################################################################EMAIL
+# This section defines the credentials for the email account that the system will use to notify
+# certain users of orders invoiced, errors in listings etc. It also contains a list of users
+# to notify of these events.
+############################################################################################-->
+	<EMAIL>
+		<SYSTEM_EMAIL_ADDRESS>  gmailAddress  </SYSTEM_EMAIL_ADDRESS>
+		<SYSTEM_EMAIL_PASSWORD>  gmailPWD  </SYSTEM_EMAIL_PASSWORD>
+		<EMAIL_USER id="system">emailAddr1</EMAIL_USER>
+		<EMAIL_USER id="paul">emailAddr2</EMAIL_USER>
+		<EMAIL_USER id="steve">emailAddr3</EMAIL_USER>
+	</EMAIL>
+
+
+
+<!--###############################################################################WORKING WEEK
+# This section defines the times and days on which the system should invoice orders. The
+# XXXXX_START_TIME is the time at which the system should start invoicing orders on a particular
+# day and the XXXXX_END_TIME is the time the system should stop invoicing orders on a particular
+# day. should you wish the system to not operate on a particular day then set the start and end
+# times to the same time.
+############################################################################################-->
+	<WORKING_WEEK>
+		<MONDAY_START_TIME>     800    </MONDAY_START_TIME>
+		<MONDAY_END_TIME>       1730   </MONDAY_END_TIME>
+		<TUESDAY_START_TIME>    800    </TUESDAY_START_TIME>
+		<TUESDAY_END_TIME>      1730   </TUESDAY_END_TIME>
+		<WEDNESDAY_START_TIME>  800    </WEDNESDAY_START_TIME>
+		<WEDNESDAY_END_TIME>    1730   </WEDNESDAY_END_TIME>
+		<THURSDAY_START_TIME>   800    </THURSDAY_START_TIME>
+		<THURSDAY_END_TIME>     1730   </THURSDAY_END_TIME>
+		<FRIDAY_START_TIME>     800    </FRIDAY_START_TIME>
+		<FRIDAY_END_TIME>       1730   </FRIDAY_END_TIME>
+		<SATURDAY_START_TIME>   800    </SATURDAY_START_TIME>
+		<SATURDAY_END_TIME>     700   </SATURDAY_END_TIME>
+		<SUNDAY_START_TIME>     800    </SUNDAY_START_TIME>
+		<SUNDAY_END_TIME>       700   </SUNDAY_END_TIME>
+	</WORKING_WEEK>
+
+
+
+<!--##########################################################################SHIPPING PRIORITY
+#
+#
+#
+############################################################################################-->
+	<SHIPPING_PRIORITY>
+		<SHIPPING_TYPE>     UK_RoyalMailFirstClassRecorded      </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailTracked                 </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_OtherCourier24                   </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMail24                      </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailFirstClassStandard      </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailSecondClassRecorded     </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_myHermesDoorToDoorService        </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailSecondClassStandard     </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMail48                      </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     ShippingMethodStandard              </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_Parcelforce24                    </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_Parcelforce48                    </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailInternationalSignedFor  </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailAirsureInternational    </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailSurfaceMailInternational</SHIPPING_TYPE>
+		<SHIPPING_TYPE>     InternationalPriorityShippingUK     </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     OTHER                               </SHIPPING_TYPE>
+	</SHIPPING_PRIORITY>
+
+
+
+<!--##############################################################################ROYAL MAIL API
+#
+#
+# 
+ ############################################################################################-->
+	<RoyalMail>
+		<RM_API>
+			<RM_API_USERNAME>Royal Mail API User Name</RM_API_USERNAME>
+			<RM_API_PASSWORD>API password</RM_API_PASSWORD>
+			<RM_API_APP_ID> yourAppID</RM_API_APP_ID>
+			<RM_API_CLIENT_ID>yourClientID</RM_API_CLIENT_ID>
+			<RM_API_CLIENT_SECRET>yourClientSecret</RM_API_CLIENT_SECRET>
+			<RM_API_ENDPOINT>https://api.royalmail.net/shipping/v2</RM_API_ENDPOINT>
+		</RM_API>
+		
+
+
+<!--##############################################################################RoyalMail CSV
+# This section defines the Fields for the creation of a CSV file that can be imported into the Royal
+# Mail DMO. the name of the field is placed in the <CSV_FIELD_NAME> tag pair and the CSV_FIELD_VALIDATION
+# tag pair is used to hold a regular expression that matches as restrictively as possible
+# the values that the field should be able to contain.
+############################################################################################-->
+		<RM_CSV_DEF>
+			<CSV_FIELD><!-- takes only the value SR1 -->
+				<CSV_FIELD_NAME>SERVICE_REFERENCE</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>SR1</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- can take the following values: 24, 48, SD500, SD1000, SD2500 -->
+				<CSV_FIELD_NAME>SERVICE</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>24|48|SD500|SD1000|SD2500</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- the name of the recipient i.e. no numbers or special chars -->
+				<CSV_FIELD_NAME>RECIPIENT</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>\s*[a-zA-Z]+\s*([a-zA-Z]*\s*)*([a-zA-Z]+-[a-zA-Z]+)?</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- numbers and letters and special chars -->
+				<CSV_FIELD_NAME>ADDRESS_LINE_1</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>(.*)</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- numbers and letters and special chars -->
+				<CSV_FIELD_NAME>ADDRESS_LINE_2</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>(.*)</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- numbers and letters no special chars -->
+				<CSV_FIELD_NAME>POSTCODE</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>\s*[a-zA-z0-9]+\s*[a-zA-Z0-9]+\s*</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- letters only -->
+				<CSV_FIELD_NAME>POST_TOWN</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>\s*[a-zA-z0-9]+\s*([-/\:~_])?\s*[a-zA-Z0-9]+\s*</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- takes only the value GB -->
+				<CSV_FIELD_NAME>COUNTRY_CODE</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>GB</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- an A, B or C followed by a six digit number -->
+				<CSV_FIELD_NAME>REFERENCE</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>(A|B|C){1}[0-9]{6}</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- takes only the value 1 -->
+				<CSV_FIELD_NAME>ITEMS</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>1</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- numbers only -->
+				<CSV_FIELD_NAME>WEIGHT</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>[0-9]+</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- takes the optional value SF-->
+				<CSV_FIELD_NAME>SERVICE_ENHANCEMENT</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>(SF)?</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+			<CSV_FIELD><!-- takes the values L or P depending on whether it is a parcel or letter -->
+				<CSV_FIELD_NAME>SERVICE_FORMAT</CSV_FIELD_NAME>
+				<CSV_FIELD_VALIDATION>L|P</CSV_FIELD_VALIDATION>
+			</CSV_FIELD>
+		</RM_CSV_DEF>
+	</RoyalMail>
+</CONFIG>

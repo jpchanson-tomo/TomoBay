@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--###########################################################################################
+# This is the config file for the TomoBay server, it is divided into a variety of sections
+# each covering a specific area of the server. When modifying, make sure that tag nesting
+# and proper XML syntax are preserved or the system will at best not pick up the settings, at 
+# worst the system will crash...... you have been warned.
+############################################################################################-->
+<CONFIG>
+
+<!--###################################################################################DATABASE
+# This section defines the credentials for the database as well as its location: the jdbc
+# query string is of the form "jdbc:database implementation:address.of.DB.at:port/db name"
+# the DB_USER is the user role that the system will be assuming. This user MUST have SELECT
+# UPDATE, INSERT, DELETE privileges. DB_PASSWORD is the password associated with DB_USER.
+############################################################################################-->
+	<DATABASE>
+		<JDBC_QUERY_STRING>  jdbc:mysql://192.168.0.202:3306/ebay_stopgap  </JDBC_QUERY_STRING>
+		<DB_USER>                       openDMS          </DB_USER>
+		<DB_PASSWORD>                   1L0v3Db453_+-=   </DB_PASSWORD>
+		<DB_CONNECTION_POOL_MIN_SIZE>          3         </DB_CONNECTION_POOL_MIN_SIZE>
+		<DB_CONNECTION_POOL_MAX_SIZE>          20        </DB_CONNECTION_POOL_MAX_SIZE>
+		<DB_CONNECTION_POOL_AQUIRE_INCREMENT>  5         </DB_CONNECTION_POOL_AQUIRE_INCREMENT>
+		<DB_CONNECTION_POOL_MAX_STATEMENTS>    180       </DB_CONNECTION_POOL_MAX_STATEMENTS>
+	</DATABASE>
+
+
+
+<!--###################################################################################WINSTOCK
+# This section defines the port and address of the server from which the system can access
+# Winstock. i.e. the server on which the DMSService is running.
+############################################################################################-->
+	<WINSTOCK>
+		<WINSTOCK_IP>  192.168.0.202  </WINSTOCK_IP>
+		<WINSTOCK_PORT>  4997  </WINSTOCK_PORT>
+		<WINSTOCK_URL_PT1>http://192.168.0.100:7979/get?index=product&amp;company=</WINSTOCK_URL_PT1>
+		<WINSTOCK_URL_PT2>&amp;find=</WINSTOCK_URL_PT2>
+	</WINSTOCK>
+
+
+
+<!--#######################################################################################EBAY
+# This section defines eBay API credentials as well as the server addresses for the sandbox
+# and production environments. These details can be found at the eBay developer site:
+# https://developer.ebay.com/base/membership/signin/?mo=true&ReturnUrl=https://developer.ebay.com/my/keys
+############################################################################################-->
+	<EBAY>
+		<EBAY_SANDBOX_SERVER>  https://api.sandbox.ebay.com/wsapi </EBAY_SANDBOX_SERVER>
+		<EBAY_SANDBOX_API_KEY>
+			AgAAAA**AQAAAA**aAAAAA**s6cKVg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4GhDpGFoAidj6x9nY+seQ**MpQDAA**AAMAAA**4Aqt9SemYN6DehoPdEsoWuFqCELKvJyBaHL5q1gdWL40la/sjo+abdJSSvNmW8aGcgrgiEXsXJdO+C8RV4lVLvjLnZM0Sadri0BUqP1EK4OTdZWMh8DqaqAqiCi/RhzB+OvHmUd7g5aztZn+wTAIDdglX1cBsJNWnDo4Y9CmK0Et0tbiEiMabvPyO8zwR/Touug6qWkQK488NxJtdo+ZrNZKQ33XXOIoC+nwj8py85vXzxq029DvF31Wmk6ZZcnAuBnpWu8l6h1V+nEPy5V4f1lCIiJdSs++wKP0Dw8FkIXsiTOO4c4LF67gU35LNlaiE/GunY/yJuDeXQ6AJB0RLoFQck+LaEJ2OGH6ZPyzITTWTkf8qY6PBTRE7tCe8okI/Qnbcc6Y6Rol80uJtDQ27Jf7H1XoHoVOgQtTWcZa0BYP7Vbqo54lGyOsVnAHGZ4so+T9WvhZ/MJOacbou9YUptwPYfZwQsTnl0BvVgd6bt5XPsao54A+9ujPhZM5gk0/l9CnG4g47P+jiUtVyw4Gp4cD4fUzRMGK5hQ2jwm+/zK+kokExZbhpIiJBozA7n+5UPRwlmxh8fg1YBW0J0S7/BXBk4zNmpkYOwVQR4kj56/t5fcI9cYfzonRpnn7VUonD21KE6/1lZVsF0/OKoi8OU+xEJZlc8f1E3gv5MYN/qkcjDIn0lq6Fp+1fx6Yod2x1cUfIIXLsdQhqhcZ82LhdfWY/5QdoYGNN2M30yq+6tp4krIx5xBZvBzE8I1sqaRM
+		</EBAY_SANDBOX_API_KEY>
+
+
+		<EBAY_PRODUCTION_SERVER>  https://api.ebay.com/wsapi  </EBAY_PRODUCTION_SERVER>
+		<EBAY_PRODUCTION_API_KEY>
+			AgAAAA**AQAAAA**aAAAAA**ggWvVg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFkoujC5mDqAqdj6x9nY+seQ**zycDAA**AAMAAA**XKO4KsdGSHPJfVFo72fmHDgd7YtBQUVJ71L8JqSbIdnN5A5N3M/lDcA6NDnv2EDNI12N39e6LpWh1o1Rp68BhiLhuwTstT3nlCZHH9d171le7GKWWFGzTTBO0qzGpTV9P8glGhOcUuubyQdomY4bUv9kAuwjZwnWO9wo9rAAFO+BzVbux5QTPK8QIgK165MwLV0A4xApPtt26nYg6SCv/EPSQ0YGrna90dmnWOlfxtPtPZRsUiT+lPphJwkwh4I2vs9t9l45wzXUkcvXHD3kOi9619YTMiIeiR/2bSmsPZzXahgjhRk7j7/MoIb0mdvBd9mRfPeUfc0xwMT8dVhOYSNUDavfVq/OlnSkG0J95Hk/gjTZGveEN8xd8WKgg6y1oqOigcLmZ8rZEyk7tZiSLdaU2zM7k3dGUT/uUZLqFkeNSj/H91scLryYnr0VmJRbpZC6FeGCWeJ94RJEU6eprGYic6FXK6ZbAD/Zdqc1cLcCLMOptUajbgGf/1j0EP7IRQLyrCR+wdeSBXNRR9DU8FZMkmn6tHY/Z4gOqwf4k1MKx2J7rPSjfB89fTXbGTIG12ffykhB2wPDISWdYWaCDnst+X0CUd5bg+TU6S9vkyojguXSAQCPXmYjAsBlBwF6PVTAXJJe6mLEnUuM0SOQe9wVtggiAEHLKwjWzZX6fvVg8Wh5B4WHveS4PCTsmHIP1Nc6Z/Eix/pnSzUvjY4NhiYgm/xFGJ/89EGpWkji0TAbjoCeNE8GpsU3zXFl0Xha
+		</EBAY_PRODUCTION_API_KEY>
+		
+		<EBAY_LOOKBACK_DAYS> 2 </EBAY_LOOKBACK_DAYS>
+	</EBAY>
+
+
+
+<!--######################################################################################EMAIL
+# This section defines the credentials for the email account that the system will use to notify
+# certain users of orders invoiced, errors in listings etc. It also contains a list of users
+# to notify of these events.
+############################################################################################-->
+	<EMAIL>
+		<SYSTEM_EMAIL_ADDRESS>  tomomotorbay@gmail.com  </SYSTEM_EMAIL_ADDRESS>
+		<SYSTEM_EMAIL_PASSWORD>  1L0v3Eb4y  </SYSTEM_EMAIL_PASSWORD>
+		<EMAIL_USER id="system">tomomotorbay@gmail.com</EMAIL_USER>
+		<EMAIL_USER id="paul">paul@tomoparts.co.uk</EMAIL_USER>
+		<EMAIL_USER id="steve">steve@tomoparts.co.uk</EMAIL_USER>
+	</EMAIL>
+
+
+
+<!--###############################################################################WORKING WEEK
+# This section defines the times and days on which the system should invoice orders. The
+# XXXXX_START_TIME is the time at which the system should start invoicing orders on a particular
+# day and the XXXXX_END_TIME is the time the system should stop invoicing orders on a particular
+# day. should you wish the system to not operate on a particular day then set the start and end
+# times to the same time.
+############################################################################################-->
+	<WORKING_WEEK>
+		<MONDAY_START_TIME>     800    </MONDAY_START_TIME>
+		<MONDAY_END_TIME>       1730   </MONDAY_END_TIME>
+		<TUESDAY_START_TIME>    800    </TUESDAY_START_TIME>
+		<TUESDAY_END_TIME>      1730   </TUESDAY_END_TIME>
+		<WEDNESDAY_START_TIME>  800    </WEDNESDAY_START_TIME>
+		<WEDNESDAY_END_TIME>    1730   </WEDNESDAY_END_TIME>
+		<THURSDAY_START_TIME>   800    </THURSDAY_START_TIME>
+		<THURSDAY_END_TIME>     1730   </THURSDAY_END_TIME>
+		<FRIDAY_START_TIME>     800    </FRIDAY_START_TIME>
+		<FRIDAY_END_TIME>       1730   </FRIDAY_END_TIME>
+		<SATURDAY_START_TIME>   800    </SATURDAY_START_TIME>
+		<SATURDAY_END_TIME>     700   </SATURDAY_END_TIME>
+		<SUNDAY_START_TIME>     800    </SUNDAY_START_TIME>
+		<SUNDAY_END_TIME>       700   </SUNDAY_END_TIME>
+	</WORKING_WEEK>
+
+
+
+<!--##########################################################################SHIPPING PRIORITY
+#
+#
+#
+############################################################################################-->
+	<SHIPPING_PRIORITY>
+		<SHIPPING_TYPE>     UK_RoyalMailFirstClassRecorded      </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailTracked                 </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_OtherCourier24                   </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMail24                      </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailFirstClassStandard      </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailSecondClassRecorded     </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_myHermesDoorToDoorService        </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailSecondClassStandard     </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMail48                      </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     ShippingMethodStandard              </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_Parcelforce24                    </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_Parcelforce48                    </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailInternationalSignedFor  </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailAirsureInternational    </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     UK_RoyalMailSurfaceMailInternational</SHIPPING_TYPE>
+		<SHIPPING_TYPE>     InternationalPriorityShippingUK     </SHIPPING_TYPE>
+		<SHIPPING_TYPE>     OTHER                               </SHIPPING_TYPE>
+		
+	</SHIPPING_PRIORITY>
+
+
+</CONFIG>
