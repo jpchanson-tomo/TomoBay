@@ -1,6 +1,6 @@
 /docs/
 /bin/
-/config/db.cfg
-/config/ebay.cfg
-/config/winstock.conf
+/config/tomoBay.conf
 /logs/*.*
+/target/
+/src/tomoBay/POC.java
