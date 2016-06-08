@@ -1,0 +1,8 @@
+<map id="TransactionsTable" name="TransactionsTable">
+<area shape="rect" id="node2" href="$interfacetomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1AbstractTypeSchema.html" title="Derived types of this class represent the schema for a specific database and should only contain publ..." alt="" coords="5,161,153,239"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1ShippingCost.html" title="This class represents the shippingCost field of the ebay_transactions table in the database..." alt="" coords="309,147,429,253"/>
+<area shape="rect" id="node4" href="$interfacetomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1AbstractField.html" title="This interface is the abstract base for all derived AbstractDBField types, and represents a a column ..." alt="" coords="439,5,538,97"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1Price.html" title="This class represents the price field in the ebay_transactions table of the database. " alt="" coords="453,147,525,253"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1TransactionID.html" title="This class represents the transactionID field of the ebay_transactions table in the database..." alt="" coords="549,147,673,253"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1Quantity.html" title="This class represents the quantity field of the ebay_transactions table in the database. " alt="" coords="698,147,789,253"/>
+</map>

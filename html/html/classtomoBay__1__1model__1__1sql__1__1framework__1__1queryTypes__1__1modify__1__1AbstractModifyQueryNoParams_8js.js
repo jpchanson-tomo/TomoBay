@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1sql__1__1framework__1__1queryTypes__1__1modify__1__1AbstractModifyQueryNoParams_8js =
+[
+    [ "classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1modify_1_1AbstractModifyQueryNoParams", "classtomoBay__1__1model__1__1sql__1__1framework__1__1queryTypes__1__1modify__1__1AbstractModifyQueryNoParams_8js.html#a609aba80659d2efcc7b59cda843f0a8d", null ]
+];

@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1sql__1__1queries__1__1concreteQueries__1__1insert__1__1InsertEbayItems_8js =
+[
+    [ "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1insert_1_1InsertEbayItems", "classtomoBay__1__1model__1__1sql__1__1queries__1__1concreteQueries__1__1insert__1__1InsertEbayItems_8js.html#ad697efc7e1f565a1174be377cf9901c7", null ]
+];

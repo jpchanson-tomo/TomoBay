@@ -1,0 +1,9 @@
+<map id="make" name="make">
+<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1ReScanListing.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="108,5,411,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1ReScanBuyer.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="110,71,409,112"/>
+<area shape="rect" id="node4" href="$classtomoBayTests_1_1model_1_1services_1_1individualItemRefreshService_1_1IndividualItemRefreshServiceTest.html#a8b260eecbaabcef8473fd87ada040682" title="tomoBayTests.model.services.individual\lItemRefreshService.IndividualItemRefresh\lServiceTest.main" alt="" coords="125,135,394,191"/>
+<area shape="rect" id="node5" href="$classtomoBayTests_1_1model_1_1services_1_1checkErrorsService_1_1CheckErrorsServiceTest.html#a8b260eecbaabcef8473fd87ada040682" title="tomoBayTests.model.services.check\lErrorsService.CheckErrorsServiceTest.main" alt="" coords="119,215,399,256"/>
+<area shape="rect" id="node6" href="$classtomoBayTests_1_1model_1_1services_1_1BasicEbayService_1_1BasicEbayServiceTest.html#a8b260eecbaabcef8473fd87ada040682" title="tomoBayTests.model.services.\lBasicEbayService.BasicEbayService\lTest.main" alt="" coords="139,279,379,335"/>
+<area shape="rect" id="node7" href="$classtomoBayTests_1_1model_1_1services_1_1reScanErrorsService_1_1ReScanErrorsServiceTest.html#a8b260eecbaabcef8473fd87ada040682" title="tomoBayTests.model.services.re\lScanErrorsService.ReScanErrorsService\lTest.main" alt="" coords="129,359,390,415"/>
+<area shape="rect" id="node8" href="$classtomoBayTests_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsServiceTest.html#a8b260eecbaabcef8473fd87ada040682" title="tomoBayTests.model.services.email\lErrorsService.EmailErrorsServiceTest.main" alt="" coords="122,439,397,480"/>
+</map>

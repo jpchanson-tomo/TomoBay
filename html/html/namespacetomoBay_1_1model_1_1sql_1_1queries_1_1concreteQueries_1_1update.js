@@ -1,0 +1,9 @@
+var namespacetomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update =
+[
+    [ "UpdateEbayBuyer", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateEbayBuyer.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateEbayBuyer" ],
+    [ "UpdateInvoiceStatus", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateInvoiceStatus.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateInvoiceStatus" ],
+    [ "UpdateInvoiceStatusSRN", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateInvoiceStatusSRN.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateInvoiceStatusSRN" ],
+    [ "UpdateItemBrandAndPartNo", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateItemBrandAndPartNo.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateItemBrandAndPartNo" ],
+    [ "UpdateItemError", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateItemError.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateItemError" ],
+    [ "UpdateItemNote", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateItemNote.html", "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1update_1_1UpdateItemNote" ]
+];

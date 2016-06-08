@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1sql__1__1schema__1__1accountsTable__1__1LookbackDays_8js =
+[
+    [ "classtomoBay_1_1model_1_1sql_1_1schema_1_1accountsTable_1_1LookbackDays", "classtomoBay__1__1model__1__1sql__1__1schema__1__1accountsTable__1__1LookbackDays_8js.html#a0ea7ef6e44f74f8ca162091801fb00a5", null ]
+];

@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 2973;
+var viewWidth = 3108;
 var viewHeight = 193;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,16 +54,16 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>AbstractField</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-189 2968.5,-189 2968.5,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-189 3103.5,-189 3103.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="1393,-116.5 1393,-184.5 1467,-184.5 1467,-116.5 1393,-116.5"/>
-<text text-anchor="middle" x="1430" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractField</text>
-<polyline fill="none" stroke="black" points="1393,-165.5 1467,-165.5 "/>
-<text text-anchor="middle" x="1430" y="-153.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="1393,-146.5 1467,-146.5 "/>
-<text text-anchor="start" x="1401" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1401" y="-123.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<polygon fill="#bfbfbf" stroke="black" points="1432,-116.5 1432,-184.5 1506,-184.5 1506,-116.5 1432,-116.5"/>
+<text text-anchor="middle" x="1469" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractField</text>
+<polyline fill="none" stroke="black" points="1432,-165.5 1506,-165.5 "/>
+<text text-anchor="middle" x="1469" y="-153.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="1432,-146.5 1506,-146.5 "/>
+<text text-anchor="start" x="1440" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1440" y="-123.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
@@ -81,8 +81,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M1382.99,-148.567C1161.3,-143.962 225.982,-122.169 103,-80 100.086,-79.0009 97.1866,-77.8024 94.3283,-76.4554"/>
-<polygon fill="none" stroke="midnightblue" points="1382.93,-152.066 1393,-148.773 1383.07,-145.068 1382.93,-152.066"/>
+<path fill="none" stroke="midnightblue" d="M1421.72,-148.637C1195.57,-144.304 229.826,-123.382 103,-80 100.085,-79.003 97.1852,-77.8063 94.3265,-76.4607"/>
+<polygon fill="none" stroke="midnightblue" points="1421.86,-152.14 1431.93,-148.831 1422,-145.142 1421.86,-152.14"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
@@ -100,8 +100,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M1382.69,-148.785C1168.65,-145.29 296.443,-128.183 185,-80 181.754,-78.5965 178.61,-76.8165 175.603,-74.7936"/>
-<polygon fill="none" stroke="midnightblue" points="1382.91,-152.289 1392.96,-148.95 1383.02,-145.289 1382.91,-152.289"/>
+<path fill="none" stroke="midnightblue" d="M1421.62,-148.87C1203.32,-145.707 300.211,-129.697 185,-80 181.753,-78.5992 178.608,-76.8212 175.601,-74.7997"/>
+<polygon fill="none" stroke="midnightblue" points="1421.74,-152.372 1431.79,-149.015 1421.84,-145.372 1421.74,-152.372"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
@@ -119,8 +119,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1382.7,-148.777C1176.25,-145.341 359.957,-128.757 257,-80 254.002,-78.5802 251.135,-76.7885 248.422,-74.7576"/>
-<polygon fill="none" stroke="midnightblue" points="1382.85,-152.28 1392.9,-148.944 1382.96,-145.281 1382.85,-152.28"/>
+<path fill="none" stroke="midnightblue" d="M1421.84,-148.876C1211.38,-145.81 363.703,-130.407 257,-80 254.001,-78.5831 251.133,-76.7934 248.419,-74.7639"/>
+<polygon fill="none" stroke="midnightblue" points="1421.89,-152.377 1431.94,-149.02 1422,-145.377 1421.89,-152.377"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
@@ -138,8 +138,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M1382.72,-149.639C1203.13,-149.67 563.81,-145.104 373,-80 369.899,-78.942 366.807,-77.6734 363.757,-76.2503"/>
-<polygon fill="none" stroke="midnightblue" points="1382.9,-153.139 1392.9,-149.632 1382.9,-146.139 1382.9,-153.139"/>
+<path fill="none" stroke="midnightblue" d="M1421.8,-149.768C1238.15,-150.31 571.55,-147.487 373,-80 369.898,-78.9457 366.805,-77.6799 363.754,-76.259"/>
+<polygon fill="none" stroke="midnightblue" points="1421.96,-153.267 1431.95,-149.733 1421.93,-146.267 1421.96,-153.267"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
@@ -157,8 +157,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M1382.8,-149.738C1213.82,-150.028 640.059,-146.019 471,-80 467.962,-78.8135 464.963,-77.3695 462.035,-75.7447"/>
-<polygon fill="none" stroke="midnightblue" points="1382.89,-153.238 1392.88,-149.715 1382.87,-146.238 1382.89,-153.238"/>
+<path fill="none" stroke="midnightblue" d="M1421.92,-149.893C1248.69,-150.774 647.678,-148.707 471,-80 467.96,-78.8178 464.96,-77.3771 462.031,-75.7547"/>
+<polygon fill="none" stroke="midnightblue" points="1422.01,-153.392 1431.99,-149.835 1421.97,-146.392 1422.01,-153.392"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
@@ -176,8 +176,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M1382.22,-149.713C1222.26,-149.81 707.237,-144.95 557,-80 553.947,-78.6802 550.967,-77.0526 548.091,-75.2186"/>
-<polygon fill="none" stroke="midnightblue" points="1382.68,-153.213 1392.67,-149.7 1382.67,-146.213 1382.68,-153.213"/>
+<path fill="none" stroke="midnightblue" d="M1421.55,-149.901C1257.37,-150.671 714.803,-147.904 557,-80 553.945,-78.6854 550.963,-77.0617 548.086,-75.2303"/>
+<polygon fill="none" stroke="midnightblue" points="1421.83,-153.399 1431.81,-149.846 1421.79,-146.4 1421.83,-153.399"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
@@ -195,8 +195,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge7" class="edge"><title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M1382.42,-149.814C1231.08,-150.13 762.861,-145.65 629,-80 625.856,-78.4582 622.853,-76.5148 620.017,-74.323"/>
-<polygon fill="none" stroke="midnightblue" points="1382.77,-153.313 1392.76,-149.784 1382.75,-146.313 1382.77,-153.313"/>
+<path fill="none" stroke="midnightblue" d="M1421.74,-150.034C1265.91,-151.114 770.252,-148.924 629,-80 625.853,-78.4645 622.847,-76.5255 620.01,-74.3367"/>
+<polygon fill="none" stroke="midnightblue" points="1421.96,-153.533 1431.93,-149.955 1421.91,-146.533 1421.96,-153.533"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
@@ -214,8 +214,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node9 -->
 <g id="edge8" class="edge"><title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M1382.74,-148.914C1242.59,-146.559 831.473,-135.016 711,-80 707.783,-78.5309 704.66,-76.7037 701.668,-74.6482"/>
-<polygon fill="none" stroke="midnightblue" points="1382.69,-152.414 1392.75,-149.074 1382.81,-145.415 1382.69,-152.414"/>
+<path fill="none" stroke="midnightblue" d="M1421.22,-149.18C1275.46,-147.574 838.678,-137.926 711,-80 707.779,-78.5388 704.654,-76.7173 701.66,-74.6658"/>
+<polygon fill="none" stroke="midnightblue" points="1421.57,-152.683 1431.6,-149.286 1421.64,-145.684 1421.57,-152.683"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
@@ -233,8 +233,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node10 -->
 <g id="edge9" class="edge"><title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M1382.68,-148.593C1252.25,-145.44 890.285,-132.101 785,-80 781.989,-78.5098 779.093,-76.6675 776.339,-74.6016"/>
-<polygon fill="none" stroke="midnightblue" points="1382.68,-152.094 1392.76,-148.827 1382.84,-145.096 1382.68,-152.094"/>
+<path fill="none" stroke="midnightblue" d="M1421.63,-148.927C1285.81,-146.624 897.512,-135.252 785,-80 781.984,-78.519 779.085,-76.6832 776.329,-74.6218"/>
+<polygon fill="none" stroke="midnightblue" points="1421.67,-152.428 1431.73,-149.089 1421.78,-145.428 1421.67,-152.428"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
@@ -252,8 +252,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node11 -->
 <g id="edge10" class="edge"><title>Node1&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M1382.66,-147.738C1263.21,-142.66 952.541,-125.349 861,-80 857.95,-78.4893 855.007,-76.6322 852.2,-74.556"/>
-<polygon fill="none" stroke="midnightblue" points="1382.81,-151.247 1392.95,-148.165 1383.1,-144.253 1382.81,-151.247"/>
+<path fill="none" stroke="midnightblue" d="M1421.87,-148.17C1296.89,-144.008 959.805,-128.474 861,-80 857.945,-78.501 854.997,-76.6524 852.188,-74.5821"/>
+<polygon fill="none" stroke="midnightblue" points="1421.79,-151.669 1431.9,-148.494 1422.02,-144.673 1421.79,-151.669"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
@@ -271,8 +271,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge11" class="edge"><title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M1382.42,-146.69C1274.67,-139.706 1015.34,-119.225 938,-80 935.133,-78.5462 932.358,-76.7906 929.7,-74.8391"/>
-<polygon fill="none" stroke="midnightblue" points="1382.47,-150.2 1392.67,-147.343 1382.92,-143.214 1382.47,-150.2"/>
+<path fill="none" stroke="midnightblue" d="M1421.67,-147.266C1307.95,-141.272 1022.55,-122.338 938,-80 935.126,-78.5608 932.345,-76.816 929.683,-74.8721"/>
+<polygon fill="none" stroke="midnightblue" points="1421.64,-150.769 1431.8,-147.789 1422,-143.778 1421.64,-150.769"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
@@ -290,8 +290,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node13 -->
 <g id="edge12" class="edge"><title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M1382.38,-149.19C1304.89,-146.984 1148.29,-135.347 1030,-80 1026.78,-78.4914 1023.6,-76.6955 1020.51,-74.7154"/>
-<polygon fill="none" stroke="midnightblue" points="1382.69,-152.699 1392.77,-149.442 1382.86,-145.701 1382.69,-152.699"/>
+<path fill="none" stroke="midnightblue" d="M1421.66,-150.206C1338.52,-149.706 1162.5,-140.787 1030,-80 1026.86,-78.5593 1023.76,-76.8419 1020.76,-74.9432"/>
+<polygon fill="none" stroke="midnightblue" points="1421.8,-153.706 1431.81,-150.227 1421.82,-146.706 1421.8,-153.706"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
@@ -309,8 +309,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node14 -->
 <g id="edge13" class="edge"><title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M1382.77,-147.852C1316.9,-143.741 1195.5,-129.457 1106,-80 1103.02,-78.354 1100.13,-76.3996 1097.36,-74.2562"/>
-<polygon fill="none" stroke="midnightblue" points="1382.67,-151.352 1392.85,-148.428 1383.06,-144.363 1382.67,-151.352"/>
+<path fill="none" stroke="midnightblue" d="M1421.66,-149.32C1349.36,-147.163 1208.99,-135.436 1106,-80 1103,-78.387 1100.1,-76.4564 1097.32,-74.3295"/>
+<polygon fill="none" stroke="midnightblue" points="1421.73,-152.823 1431.82,-149.573 1421.91,-145.825 1421.73,-152.823"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
@@ -328,8 +328,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node15 -->
 <g id="edge14" class="edge"><title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M1382.92,-144.01C1330.51,-136.23 1244.8,-118.415 1181,-80 1178.12,-78.2669 1175.32,-76.25 1172.63,-74.0634"/>
-<polygon fill="none" stroke="midnightblue" points="1382.55,-147.493 1392.94,-145.436 1383.53,-140.562 1382.55,-147.493"/>
+<path fill="none" stroke="midnightblue" d="M1421.72,-146.33C1362.03,-140.554 1257.87,-124.448 1181,-80 1178.09,-78.3181 1175.27,-76.3381 1172.57,-74.1769"/>
+<polygon fill="none" stroke="midnightblue" points="1421.7,-149.843 1431.98,-147.263 1422.34,-142.871 1421.7,-149.843"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node"><title>Node16</title>
@@ -347,8 +347,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node16 -->
 <g id="edge15" class="edge"><title>Node1&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M1383.35,-132.918C1351.16,-120.515 1308.02,-101.954 1273,-80 1269.9,-78.0535 1266.78,-75.9102 1263.71,-73.6604"/>
-<polygon fill="none" stroke="midnightblue" points="1382.38,-136.292 1392.97,-136.566 1384.86,-129.747 1382.38,-136.292"/>
+<path fill="none" stroke="midnightblue" d="M1422.14,-138.052C1381.09,-126.844 1320.7,-107.44 1273,-80 1269.82,-78.1728 1266.66,-76.1163 1263.55,-73.9272"/>
+<polygon fill="none" stroke="midnightblue" points="1421.32,-141.455 1431.88,-140.657 1423.13,-134.693 1421.32,-141.455"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node"><title>Node17</title>
@@ -366,8 +366,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node17 -->
 <g id="edge16" class="edge"><title>Node1&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M1385.3,-109.678C1374.64,-100.041 1363.36,-89.7163 1353,-80 1350.17,-77.3456 1347.25,-74.5686 1344.33,-71.772"/>
-<polygon fill="none" stroke="midnightblue" points="1383.15,-112.457 1392.92,-116.555 1387.84,-107.259 1383.15,-112.457"/>
+<path fill="none" stroke="midnightblue" d="M1422.98,-125.211C1401.01,-112.808 1374.82,-96.8077 1353,-80 1350.08,-77.7512 1347.15,-75.3107 1344.27,-72.7849"/>
+<polygon fill="none" stroke="midnightblue" points="1421.35,-128.313 1431.79,-130.125 1424.76,-122.199 1421.35,-128.313"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node"><title>Node18</title>
@@ -385,8 +385,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node18 -->
 <g id="edge17" class="edge"><title>Node1&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M1414.67,-106.847C1411.44,-97.8767 1408.06,-88.4628 1404.89,-79.6493"/>
-<polygon fill="none" stroke="midnightblue" points="1411.41,-108.13 1418.09,-116.357 1418,-105.762 1411.41,-108.13"/>
+<path fill="none" stroke="midnightblue" d="M1439.16,-107.99C1432.47,-98.679 1425.39,-88.8379 1418.78,-79.6493"/>
+<polygon fill="none" stroke="midnightblue" points="1436.49,-110.28 1445.17,-116.357 1442.18,-106.194 1436.49,-110.28"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node"><title>Node19</title>
@@ -404,8 +404,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node19 -->
 <g id="edge18" class="edge"><title>Node1&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M1445.33,-106.847C1448.56,-97.8767 1451.94,-88.4628 1455.11,-79.6493"/>
-<polygon fill="none" stroke="midnightblue" points="1442,-105.762 1441.91,-116.357 1448.59,-108.13 1442,-105.762"/>
+<path fill="none" stroke="midnightblue" d="M1469,-106.274C1469,-97.4764 1469,-88.2753 1469,-79.6493"/>
+<polygon fill="none" stroke="midnightblue" points="1465.5,-106.357 1469,-116.357 1472.5,-106.357 1465.5,-106.357"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node"><title>Node20</title>
@@ -423,18 +423,18 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node20 -->
 <g id="edge19" class="edge"><title>Node1&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M1475,-111.35C1486.31,-101.373 1498.27,-90.4725 1509,-80 1511.9,-77.1676 1514.87,-74.1567 1517.79,-71.1124"/>
-<polygon fill="none" stroke="midnightblue" points="1472.51,-108.873 1467.29,-118.093 1477.12,-114.139 1472.51,-108.873"/>
+<path fill="none" stroke="midnightblue" d="M1498.08,-107.99C1504.6,-98.679 1511.49,-88.8379 1517.93,-79.6493"/>
+<polygon fill="none" stroke="midnightblue" points="1495.09,-106.158 1492.22,-116.357 1500.82,-110.174 1495.09,-106.158"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node"><title>Node21</title>
-<g id="a_node21"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1ResultCode.html" target="_top" xlink:title="This represents a resultcode that comes back from an update or insert query. ">
-<polygon fill="white" stroke="black" points="1590.5,-0.5 1590.5,-79.5 1673.5,-79.5 1673.5,-0.5 1590.5,-0.5"/>
-<text text-anchor="middle" x="1632" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">ResultCode</text>
-<polyline fill="none" stroke="black" points="1590.5,-60.5 1673.5,-60.5 "/>
-<text text-anchor="start" x="1598.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="1590.5,-41.5 1673.5,-41.5 "/>
-<text text-anchor="start" x="1598.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ResultCode()</text>
+<g id="a_node21"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1CustomIntegerField.html" target="_top" xlink:title="This class represents the input or return to/from a custom integer field, i.e. ">
+<polygon fill="white" stroke="black" points="1590.5,-0.5 1590.5,-79.5 1707.5,-79.5 1707.5,-0.5 1590.5,-0.5"/>
+<text text-anchor="middle" x="1649" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">CustomIntegerField</text>
+<polyline fill="none" stroke="black" points="1590.5,-60.5 1707.5,-60.5 "/>
+<text text-anchor="start" x="1598.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SIZE_M</text>
+<polyline fill="none" stroke="black" points="1590.5,-41.5 1707.5,-41.5 "/>
+<text text-anchor="start" x="1598.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CustomIntegerField()</text>
 <text text-anchor="start" x="1598.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
 <text text-anchor="start" x="1598.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
@@ -442,274 +442,293 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node21 -->
 <g id="edge20" class="edge"><title>Node1&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M1476.71,-131.169C1507.25,-118.424 1547.54,-100.153 1581,-80 1584.15,-78.1022 1587.34,-76.0457 1590.5,-73.9028"/>
-<polygon fill="none" stroke="midnightblue" points="1475.06,-128.06 1467.15,-135.108 1477.73,-134.532 1475.06,-128.06"/>
+<path fill="none" stroke="midnightblue" d="M1515.15,-121.684C1538.09,-107.856 1566.06,-90.995 1590.49,-76.269"/>
+<polygon fill="none" stroke="midnightblue" points="1513.05,-118.859 1506.3,-127.019 1516.67,-124.854 1513.05,-118.859"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node"><title>Node22</title>
-<g id="a_node22"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1CreatedTime.html" target="_top" xlink:title="this is the createdTime field of the ebay_orders table in the database. ">
-<polygon fill="white" stroke="black" points="1692,-0.5 1692,-79.5 1780,-79.5 1780,-0.5 1692,-0.5"/>
-<text text-anchor="middle" x="1736" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">CreatedTime</text>
-<polyline fill="none" stroke="black" points="1692,-60.5 1780,-60.5 "/>
-<text text-anchor="start" x="1700" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="1692,-41.5 1780,-41.5 "/>
-<text text-anchor="start" x="1700" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreatedTime()</text>
-<text text-anchor="start" x="1700" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1700" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node22"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1ResultCode.html" target="_top" xlink:title="This represents a resultcode that comes back from an update or insert query. ">
+<polygon fill="white" stroke="black" points="1725.5,-0.5 1725.5,-79.5 1808.5,-79.5 1808.5,-0.5 1725.5,-0.5"/>
+<text text-anchor="middle" x="1767" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">ResultCode</text>
+<polyline fill="none" stroke="black" points="1725.5,-60.5 1808.5,-60.5 "/>
+<text text-anchor="start" x="1733.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="1725.5,-41.5 1808.5,-41.5 "/>
+<text text-anchor="start" x="1733.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ResultCode()</text>
+<text text-anchor="start" x="1733.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1733.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node22 -->
 <g id="edge21" class="edge"><title>Node1&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M1477.09,-141.904C1529.33,-132.283 1615.17,-112.868 1683,-80 1685.98,-78.5553 1688.97,-76.9374 1691.92,-75.2041"/>
-<polygon fill="none" stroke="midnightblue" points="1476.33,-138.484 1467.11,-143.699 1477.57,-145.374 1476.33,-138.484"/>
+<path fill="none" stroke="midnightblue" d="M1516.53,-141.869C1567.99,-132.335 1651.47,-113.107 1717,-80 1719.75,-78.6099 1722.5,-77.0574 1725.21,-75.3946"/>
+<polygon fill="none" stroke="midnightblue" points="1515.59,-138.483 1506.37,-143.703 1516.83,-145.371 1515.59,-138.483"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node"><title>Node23</title>
-<g id="a_node23"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1Invoiced.html" target="_top" xlink:title="this is the invoiced field of the ebay_orders table in the database. ">
-<polygon fill="white" stroke="black" points="1798,-0.5 1798,-79.5 1866,-79.5 1866,-0.5 1798,-0.5"/>
-<text text-anchor="middle" x="1832" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Invoiced</text>
-<polyline fill="none" stroke="black" points="1798,-60.5 1866,-60.5 "/>
-<text text-anchor="start" x="1806" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="1798,-41.5 1866,-41.5 "/>
-<text text-anchor="start" x="1806" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Invoiced()</text>
-<text text-anchor="start" x="1806" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1806" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node23"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1CreatedTime.html" target="_top" xlink:title="this is the createdTime field of the ebay_orders table in the database. ">
+<polygon fill="white" stroke="black" points="1827,-0.5 1827,-79.5 1915,-79.5 1915,-0.5 1827,-0.5"/>
+<text text-anchor="middle" x="1871" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">CreatedTime</text>
+<polyline fill="none" stroke="black" points="1827,-60.5 1915,-60.5 "/>
+<text text-anchor="start" x="1835" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="1827,-41.5 1915,-41.5 "/>
+<text text-anchor="start" x="1835" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreatedTime()</text>
+<text text-anchor="start" x="1835" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1835" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node23 -->
 <g id="edge22" class="edge"><title>Node1&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M1477.25,-148.372C1548.46,-144.954 1685.92,-131.579 1789,-80 1792.06,-78.4666 1795.07,-76.6527 1797.99,-74.6596"/>
-<polygon fill="none" stroke="midnightblue" points="1477.08,-144.876 1467.24,-148.807 1477.38,-151.869 1477.08,-144.876"/>
+<path fill="none" stroke="midnightblue" d="M1516.38,-146.607C1585.38,-140.969 1716.39,-124.828 1818,-80 1820.93,-78.7089 1823.85,-77.2337 1826.73,-75.6301"/>
+<polygon fill="none" stroke="midnightblue" points="1515.95,-143.13 1506.25,-147.395 1516.49,-150.109 1515.95,-143.13"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node"><title>Node24</title>
-<g id="a_node24"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1OrderID.html" target="_top" xlink:title="this is the orderID field of the ebay_orders table in the database, and is the primary key for this t...">
-<polygon fill="white" stroke="black" points="1884,-0.5 1884,-79.5 1950,-79.5 1950,-0.5 1884,-0.5"/>
-<text text-anchor="middle" x="1917" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">OrderID</text>
-<polyline fill="none" stroke="black" points="1884,-60.5 1950,-60.5 "/>
-<text text-anchor="start" x="1892" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="1884,-41.5 1950,-41.5 "/>
-<text text-anchor="start" x="1892" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ OrderID()</text>
-<text text-anchor="start" x="1892" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1892" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node24"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1Invoiced.html" target="_top" xlink:title="this is the invoiced field of the ebay_orders table in the database. ">
+<polygon fill="white" stroke="black" points="1933,-0.5 1933,-79.5 2001,-79.5 2001,-0.5 1933,-0.5"/>
+<text text-anchor="middle" x="1967" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Invoiced</text>
+<polyline fill="none" stroke="black" points="1933,-60.5 2001,-60.5 "/>
+<text text-anchor="start" x="1941" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="1933,-41.5 2001,-41.5 "/>
+<text text-anchor="start" x="1941" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Invoiced()</text>
+<text text-anchor="start" x="1941" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1941" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node24 -->
 <g id="edge23" class="edge"><title>Node1&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M1477.1,-145.648C1576.7,-136.94 1805.27,-113.827 1875,-80 1878.04,-78.5234 1881.02,-76.7511 1883.89,-74.7877"/>
-<polygon fill="none" stroke="midnightblue" points="1476.68,-142.171 1467.02,-146.518 1477.28,-149.145 1476.68,-142.171"/>
+<path fill="none" stroke="midnightblue" d="M1516.38,-145.742C1617.76,-137.144 1852.31,-114.114 1924,-80 1927,-78.571 1929.95,-76.8624 1932.8,-74.9699"/>
+<polygon fill="none" stroke="midnightblue" points="1515.8,-142.278 1506.13,-146.601 1516.39,-149.254 1515.8,-142.278"/>
 </g>
 <!-- Node25 -->
 <g id="node25" class="node"><title>Node25</title>
-<g id="a_node25"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1OrderTotal.html" target="_top" xlink:title="this is the account field of the ebay_orders table in the database. ">
-<polygon fill="white" stroke="black" points="1968.5,-0.5 1968.5,-79.5 2045.5,-79.5 2045.5,-0.5 1968.5,-0.5"/>
-<text text-anchor="middle" x="2007" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">OrderTotal</text>
-<polyline fill="none" stroke="black" points="1968.5,-60.5 2045.5,-60.5 "/>
-<text text-anchor="start" x="1976.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="1968.5,-41.5 2045.5,-41.5 "/>
-<text text-anchor="start" x="1976.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ OrderTotal()</text>
-<text text-anchor="start" x="1976.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1976.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node25"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1OrderID.html" target="_top" xlink:title="this is the orderID field of the ebay_orders table in the database, and is the primary key for this t...">
+<polygon fill="white" stroke="black" points="2019,-0.5 2019,-79.5 2085,-79.5 2085,-0.5 2019,-0.5"/>
+<text text-anchor="middle" x="2052" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">OrderID</text>
+<polyline fill="none" stroke="black" points="2019,-60.5 2085,-60.5 "/>
+<text text-anchor="start" x="2027" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="2019,-41.5 2085,-41.5 "/>
+<text text-anchor="start" x="2027" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ OrderID()</text>
+<text text-anchor="start" x="2027" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2027" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node25 -->
 <g id="edge24" class="edge"><title>Node1&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M1477.27,-146.594C1590.17,-139.127 1872.57,-117.201 1959,-80 1962.16,-78.6415 1965.27,-77.0133 1968.31,-75.204"/>
-<polygon fill="none" stroke="midnightblue" points="1476.95,-143.107 1467.2,-147.251 1477.41,-150.092 1476.95,-143.107"/>
+<path fill="none" stroke="midnightblue" d="M1516.26,-147.123C1631.25,-140.756 1922.58,-120.95 2010,-80 2013.06,-78.5649 2016.05,-76.823 2018.94,-74.8813"/>
+<polygon fill="none" stroke="midnightblue" points="1515.82,-143.642 1506.02,-147.68 1516.2,-150.632 1515.82,-143.642"/>
 </g>
 <!-- Node26 -->
 <g id="node26" class="node"><title>Node26</title>
-<g id="a_node26"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1SalesRecNo.html" target="_top" xlink:title="his is the salesRecNo field of the ebay_orders table in the database, it is a number generated by eba...">
-<polygon fill="white" stroke="black" points="2063.5,-0.5 2063.5,-79.5 2150.5,-79.5 2150.5,-0.5 2063.5,-0.5"/>
-<text text-anchor="middle" x="2107" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SalesRecNo</text>
-<polyline fill="none" stroke="black" points="2063.5,-60.5 2150.5,-60.5 "/>
-<text text-anchor="start" x="2071.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="2063.5,-41.5 2150.5,-41.5 "/>
-<text text-anchor="start" x="2071.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SalesRecNo()</text>
-<text text-anchor="start" x="2071.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2071.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node26"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1OrderTotal.html" target="_top" xlink:title="this is the account field of the ebay_orders table in the database. ">
+<polygon fill="white" stroke="black" points="2103.5,-0.5 2103.5,-79.5 2180.5,-79.5 2180.5,-0.5 2103.5,-0.5"/>
+<text text-anchor="middle" x="2142" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">OrderTotal</text>
+<polyline fill="none" stroke="black" points="2103.5,-60.5 2180.5,-60.5 "/>
+<text text-anchor="start" x="2111.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="2103.5,-41.5 2180.5,-41.5 "/>
+<text text-anchor="start" x="2111.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ OrderTotal()</text>
+<text text-anchor="start" x="2111.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2111.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node26 -->
 <g id="edge25" class="edge"><title>Node1&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M1477.61,-147.446C1604.75,-141.45 1949.73,-121.695 2055,-80 2057.83,-78.878 2060.65,-77.5588 2063.41,-76.0966"/>
-<polygon fill="none" stroke="midnightblue" points="1477.24,-143.959 1467.41,-147.919 1477.56,-150.952 1477.24,-143.959"/>
+<path fill="none" stroke="midnightblue" d="M1516.25,-147.685C1643.25,-142.265 1989.44,-123.781 2094,-80 2097.17,-78.673 2100.3,-77.0683 2103.34,-75.2762"/>
+<polygon fill="none" stroke="midnightblue" points="1515.91,-144.196 1506.07,-148.111 1516.21,-151.19 1515.91,-144.196"/>
 </g>
 <!-- Node27 -->
 <g id="node27" class="node"><title>Node27</title>
-<g id="a_node27"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1ShippingType.html" target="_top" xlink:title="this is the shippingType field of the ebay_orders table of the database and is a textual representati...">
-<polygon fill="white" stroke="black" points="2168.5,-0.5 2168.5,-79.5 2259.5,-79.5 2259.5,-0.5 2168.5,-0.5"/>
-<text text-anchor="middle" x="2214" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">ShippingType</text>
-<polyline fill="none" stroke="black" points="2168.5,-60.5 2259.5,-60.5 "/>
-<text text-anchor="start" x="2176.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="2168.5,-41.5 2259.5,-41.5 "/>
-<text text-anchor="start" x="2176.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShippingType()</text>
-<text text-anchor="start" x="2176.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2176.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node27"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1SalesRecNo.html" target="_top" xlink:title="his is the salesRecNo field of the ebay_orders table in the database, it is a number generated by eba...">
+<polygon fill="white" stroke="black" points="2198.5,-0.5 2198.5,-79.5 2285.5,-79.5 2285.5,-0.5 2198.5,-0.5"/>
+<text text-anchor="middle" x="2242" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SalesRecNo</text>
+<polyline fill="none" stroke="black" points="2198.5,-60.5 2285.5,-60.5 "/>
+<text text-anchor="start" x="2206.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="2198.5,-41.5 2285.5,-41.5 "/>
+<text text-anchor="start" x="2206.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SalesRecNo()</text>
+<text text-anchor="start" x="2206.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2206.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node27 -->
 <g id="edge26" class="edge"><title>Node1&#45;&gt;Node27</title>
-<path fill="none" stroke="midnightblue" d="M1477.17,-148.229C1618.09,-143.928 2034.04,-127.443 2160,-80 2162.81,-78.9402 2165.61,-77.6935 2168.37,-76.3086"/>
-<polygon fill="none" stroke="midnightblue" points="1477,-144.732 1467.11,-148.529 1477.21,-151.729 1477,-144.732"/>
+<path fill="none" stroke="midnightblue" d="M1516.53,-148.258C1656.7,-144.072 2066.3,-127.951 2190,-80 2192.84,-78.8988 2195.66,-77.596 2198.43,-76.1465"/>
+<polygon fill="none" stroke="midnightblue" points="1516.03,-144.771 1506.13,-148.561 1516.23,-151.768 1516.03,-144.771"/>
 </g>
 <!-- Node28 -->
 <g id="node28" class="node"><title>Node28</title>
-<g id="a_node28"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1orderStatusTable_1_1Packing.html" target="_top" xlink:title="this is the packing field of the order_status table in the database. ">
-<polygon fill="white" stroke="black" points="2277.5,-0.5 2277.5,-79.5 2344.5,-79.5 2344.5,-0.5 2277.5,-0.5"/>
-<text text-anchor="middle" x="2311" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Packing</text>
-<polyline fill="none" stroke="black" points="2277.5,-60.5 2344.5,-60.5 "/>
-<text text-anchor="middle" x="2311" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2277.5,-41.5 2344.5,-41.5 "/>
-<text text-anchor="start" x="2285.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Packing()</text>
-<text text-anchor="start" x="2285.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2285.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node28"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1ShippingType.html" target="_top" xlink:title="this is the shippingType field of the ebay_orders table of the database and is a textual representati...">
+<polygon fill="white" stroke="black" points="2303.5,-0.5 2303.5,-79.5 2394.5,-79.5 2394.5,-0.5 2303.5,-0.5"/>
+<text text-anchor="middle" x="2349" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">ShippingType</text>
+<polyline fill="none" stroke="black" points="2303.5,-60.5 2394.5,-60.5 "/>
+<text text-anchor="start" x="2311.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="2303.5,-41.5 2394.5,-41.5 "/>
+<text text-anchor="start" x="2311.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShippingType()</text>
+<text text-anchor="start" x="2311.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2311.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node28 -->
 <g id="edge27" class="edge"><title>Node1&#45;&gt;Node28</title>
-<path fill="none" stroke="midnightblue" d="M1477.54,-149.602C1633.15,-149.312 2125.54,-143.296 2269,-80 2271.91,-78.7147 2274.75,-77.1413 2277.5,-75.372"/>
-<polygon fill="none" stroke="midnightblue" points="1477.35,-146.102 1467.35,-149.613 1477.36,-153.102 1477.35,-146.102"/>
+<path fill="none" stroke="midnightblue" d="M1516.05,-148.833C1668.96,-146.153 2150.38,-133.563 2295,-80 2297.82,-78.9557 2300.62,-77.7212 2303.39,-76.346"/>
+<polygon fill="none" stroke="midnightblue" points="1515.97,-145.333 1506.03,-149.002 1516.09,-152.332 1515.97,-145.333"/>
 </g>
 <!-- Node29 -->
 <g id="node29" class="node"><title>Node29</title>
-<g id="a_node29"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1orderStatusTable_1_1Picking.html" target="_top" xlink:title="Copyright(C) 2015 Jan P.C. ">
-<polygon fill="white" stroke="black" points="2363,-0.5 2363,-79.5 2427,-79.5 2427,-0.5 2363,-0.5"/>
-<text text-anchor="middle" x="2395" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Picking</text>
-<polyline fill="none" stroke="black" points="2363,-60.5 2427,-60.5 "/>
-<text text-anchor="middle" x="2395" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2363,-41.5 2427,-41.5 "/>
-<text text-anchor="start" x="2371" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Picking()</text>
-<text text-anchor="start" x="2371" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2371" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node29"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1orderStatusTable_1_1Packing.html" target="_top" xlink:title="this is the packing field of the order_status table in the database. ">
+<polygon fill="white" stroke="black" points="2412.5,-0.5 2412.5,-79.5 2479.5,-79.5 2479.5,-0.5 2412.5,-0.5"/>
+<text text-anchor="middle" x="2446" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Packing</text>
+<polyline fill="none" stroke="black" points="2412.5,-60.5 2479.5,-60.5 "/>
+<text text-anchor="middle" x="2446" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2412.5,-41.5 2479.5,-41.5 "/>
+<text text-anchor="start" x="2420.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Packing()</text>
+<text text-anchor="start" x="2420.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2420.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node29 -->
 <g id="edge28" class="edge"><title>Node1&#45;&gt;Node29</title>
-<path fill="none" stroke="midnightblue" d="M1477.56,-150.09C1643.42,-151.51 2194.75,-150.687 2354,-80 2357.05,-78.6449 2360.02,-76.9618 2362.87,-75.0618"/>
-<polygon fill="none" stroke="midnightblue" points="1477.24,-146.587 1467.21,-149.994 1477.17,-153.587 1477.24,-146.587"/>
+<path fill="none" stroke="midnightblue" d="M1516.53,-150.071C1683.56,-151.449 2242.22,-150.562 2404,-80 2406.83,-78.7668 2409.59,-77.2604 2412.25,-75.565"/>
+<polygon fill="none" stroke="midnightblue" points="1516.14,-146.568 1506.1,-149.978 1516.07,-153.567 1516.14,-146.568"/>
 </g>
 <!-- Node30 -->
 <g id="node30" class="node"><title>Node30</title>
-<g id="a_node30"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1orderStatusTable_1_1Shipping.html" target="_top" xlink:title="this is the packing field of the order_status table in the database. ">
-<polygon fill="white" stroke="black" points="2445.5,-0.5 2445.5,-79.5 2514.5,-79.5 2514.5,-0.5 2445.5,-0.5"/>
-<text text-anchor="middle" x="2480" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Shipping</text>
-<polyline fill="none" stroke="black" points="2445.5,-60.5 2514.5,-60.5 "/>
-<text text-anchor="middle" x="2480" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2445.5,-41.5 2514.5,-41.5 "/>
-<text text-anchor="start" x="2453.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Shipping()</text>
-<text text-anchor="start" x="2453.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2453.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node30"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1orderStatusTable_1_1Picking.html" target="_top" xlink:title="Copyright(C) 2015 Jan P.C. ">
+<polygon fill="white" stroke="black" points="2498,-0.5 2498,-79.5 2562,-79.5 2562,-0.5 2498,-0.5"/>
+<text text-anchor="middle" x="2530" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Picking</text>
+<polyline fill="none" stroke="black" points="2498,-60.5 2562,-60.5 "/>
+<text text-anchor="middle" x="2530" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2498,-41.5 2562,-41.5 "/>
+<text text-anchor="start" x="2506" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Picking()</text>
+<text text-anchor="start" x="2506" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2506" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node30 -->
 <g id="edge29" class="edge"><title>Node1&#45;&gt;Node30</title>
-<path fill="none" stroke="midnightblue" d="M1477.33,-148.021C1664.49,-141.93 2346.97,-117.337 2436,-80 2439.2,-78.6577 2442.33,-76.9841 2445.34,-75.0908"/>
-<polygon fill="none" stroke="midnightblue" points="1477.14,-144.525 1467.26,-148.347 1477.36,-151.522 1477.14,-144.525"/>
+<path fill="none" stroke="midnightblue" d="M1516.4,-148.158C1705.39,-142.551 2399.3,-119.438 2489,-80 2492.06,-78.6557 2495.03,-76.9805 2497.88,-75.0861"/>
+<polygon fill="none" stroke="midnightblue" points="1516.12,-144.664 1506.23,-148.457 1516.33,-151.661 1516.12,-144.664"/>
 </g>
 <!-- Node31 -->
 <g id="node31" class="node"><title>Node31</title>
-<g id="a_node31"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1outOfHoursTable_1_1Date.html" target="_top" xlink:title="This class represents the date field of the out_of_hours table in the database. ">
-<polygon fill="white" stroke="black" points="2533,-0.5 2533,-79.5 2587,-79.5 2587,-0.5 2533,-0.5"/>
-<text text-anchor="middle" x="2560" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Date</text>
-<polyline fill="none" stroke="black" points="2533,-60.5 2587,-60.5 "/>
-<text text-anchor="start" x="2541" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="2533,-41.5 2587,-41.5 "/>
-<text text-anchor="start" x="2541" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Date()</text>
-<text text-anchor="start" x="2541" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2541" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node31"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1orderStatusTable_1_1Shipping.html" target="_top" xlink:title="this is the packing field of the order_status table in the database. ">
+<polygon fill="white" stroke="black" points="2580.5,-0.5 2580.5,-79.5 2649.5,-79.5 2649.5,-0.5 2580.5,-0.5"/>
+<text text-anchor="middle" x="2615" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Shipping</text>
+<polyline fill="none" stroke="black" points="2580.5,-60.5 2649.5,-60.5 "/>
+<text text-anchor="middle" x="2615" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2580.5,-41.5 2649.5,-41.5 "/>
+<text text-anchor="start" x="2588.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Shipping()</text>
+<text text-anchor="start" x="2588.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2588.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node31 -->
 <g id="edge30" class="edge"><title>Node1&#45;&gt;Node31</title>
-<path fill="none" stroke="midnightblue" d="M1477.32,-148.559C1674.95,-144.353 2428.57,-125.441 2524,-80 2526.99,-78.5738 2529.86,-76.7776 2532.57,-74.7434"/>
-<polygon fill="none" stroke="midnightblue" points="1477.17,-145.062 1467.25,-148.771 1477.32,-152.06 1477.17,-145.062"/>
+<path fill="none" stroke="midnightblue" d="M1516.22,-148.329C1714.32,-143.171 2472.64,-120.903 2571,-80 2574.2,-78.6673 2577.33,-77.0007 2580.35,-75.1124"/>
+<polygon fill="none" stroke="midnightblue" points="1516.04,-144.832 1506.13,-148.589 1516.22,-151.83 1516.04,-144.832"/>
 </g>
 <!-- Node32 -->
 <g id="node32" class="node"><title>Node32</title>
-<g id="a_node32"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1Price.html" target="_top" xlink:title="This class represents the price field in the ebay_transactions table of the database. ">
-<polygon fill="white" stroke="black" points="2605,-0.5 2605,-79.5 2659,-79.5 2659,-0.5 2605,-0.5"/>
-<text text-anchor="middle" x="2632" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Price</text>
-<polyline fill="none" stroke="black" points="2605,-60.5 2659,-60.5 "/>
-<text text-anchor="start" x="2613" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="2605,-41.5 2659,-41.5 "/>
-<text text-anchor="start" x="2613" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Price()</text>
-<text text-anchor="start" x="2613" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2613" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node32"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1outOfHoursTable_1_1Date.html" target="_top" xlink:title="This class represents the date field of the out_of_hours table in the database. ">
+<polygon fill="white" stroke="black" points="2668,-0.5 2668,-79.5 2722,-79.5 2722,-0.5 2668,-0.5"/>
+<text text-anchor="middle" x="2695" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Date</text>
+<polyline fill="none" stroke="black" points="2668,-60.5 2722,-60.5 "/>
+<text text-anchor="start" x="2676" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="2668,-41.5 2722,-41.5 "/>
+<text text-anchor="start" x="2676" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Date()</text>
+<text text-anchor="start" x="2676" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2676" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node32 -->
 <g id="edge31" class="edge"><title>Node1&#45;&gt;Node32</title>
-<path fill="none" stroke="midnightblue" d="M1477.36,-148.758C1683.13,-145.253 2493.72,-128.459 2596,-80 2599,-78.5797 2601.86,-76.7876 2604.58,-74.7564"/>
-<polygon fill="none" stroke="midnightblue" points="1477.12,-145.261 1467.18,-148.929 1477.24,-152.26 1477.12,-145.261"/>
+<path fill="none" stroke="midnightblue" d="M1516.3,-148.82C1724.6,-145.545 2554.42,-129.472 2659,-80 2662,-78.5815 2664.87,-76.7907 2667.58,-74.7604"/>
+<polygon fill="none" stroke="midnightblue" points="1515.95,-145.325 1506.01,-148.979 1516.06,-152.324 1515.95,-145.325"/>
 </g>
 <!-- Node33 -->
 <g id="node33" class="node"><title>Node33</title>
-<g id="a_node33"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1Quantity.html" target="_top" xlink:title="This class represents the quantity field of the ebay_transactions table in the database. ">
-<polygon fill="white" stroke="black" points="2677,-0.5 2677,-79.5 2745,-79.5 2745,-0.5 2677,-0.5"/>
-<text text-anchor="middle" x="2711" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Quantity</text>
-<polyline fill="none" stroke="black" points="2677,-60.5 2745,-60.5 "/>
-<text text-anchor="start" x="2685" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="2677,-41.5 2745,-41.5 "/>
-<text text-anchor="start" x="2685" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Quantity()</text>
-<text text-anchor="start" x="2685" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2685" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node33"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1Price.html" target="_top" xlink:title="This class represents the price field in the ebay_transactions table of the database. ">
+<polygon fill="white" stroke="black" points="2740,-0.5 2740,-79.5 2794,-79.5 2794,-0.5 2740,-0.5"/>
+<text text-anchor="middle" x="2767" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Price</text>
+<polyline fill="none" stroke="black" points="2740,-60.5 2794,-60.5 "/>
+<text text-anchor="start" x="2748" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="2740,-41.5 2794,-41.5 "/>
+<text text-anchor="start" x="2748" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Price()</text>
+<text text-anchor="start" x="2748" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2748" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node33 -->
 <g id="edge32" class="edge"><title>Node1&#45;&gt;Node33</title>
-<path fill="none" stroke="midnightblue" d="M1477.37,-148.706C1690.7,-144.881 2556.69,-126.586 2668,-80 2671.07,-78.716 2674.06,-77.1149 2676.94,-75.2999"/>
-<polygon fill="none" stroke="midnightblue" points="1477.06,-145.211 1467.13,-148.888 1477.19,-152.21 1477.06,-145.211"/>
+<path fill="none" stroke="midnightblue" d="M1516.35,-148.988C1732.47,-146.372 2619.55,-132.495 2731,-80 2734,-78.5865 2736.87,-76.7993 2739.58,-74.7714"/>
+<polygon fill="none" stroke="midnightblue" points="1516.24,-145.489 1506.28,-149.108 1516.32,-152.489 1516.24,-145.489"/>
 </g>
 <!-- Node34 -->
 <g id="node34" class="node"><title>Node34</title>
-<g id="a_node34"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1ShippingCost.html" target="_top" xlink:title="This class represents the shippingCost field of the ebay_transactions table in the database...">
-<polygon fill="white" stroke="black" points="2763,-0.5 2763,-79.5 2853,-79.5 2853,-0.5 2763,-0.5"/>
-<text text-anchor="middle" x="2808" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">ShippingCost</text>
-<polyline fill="none" stroke="black" points="2763,-60.5 2853,-60.5 "/>
-<text text-anchor="start" x="2771" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="2763,-41.5 2853,-41.5 "/>
-<text text-anchor="start" x="2771" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShippingCost()</text>
-<text text-anchor="start" x="2771" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2771" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node34"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1Quantity.html" target="_top" xlink:title="This class represents the quantity field of the ebay_transactions table in the database. ">
+<polygon fill="white" stroke="black" points="2812,-0.5 2812,-79.5 2880,-79.5 2880,-0.5 2812,-0.5"/>
+<text text-anchor="middle" x="2846" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Quantity</text>
+<polyline fill="none" stroke="black" points="2812,-60.5 2880,-60.5 "/>
+<text text-anchor="start" x="2820" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="2812,-41.5 2880,-41.5 "/>
+<text text-anchor="start" x="2820" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Quantity()</text>
+<text text-anchor="start" x="2820" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2820" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node34 -->
 <g id="edge33" class="edge"><title>Node1&#45;&gt;Node34</title>
-<path fill="none" stroke="midnightblue" d="M1477.28,-148.601C1699.2,-144.17 2631.73,-123.109 2754,-80 2756.94,-78.9618 2759.87,-77.7087 2762.74,-76.2977"/>
-<polygon fill="none" stroke="midnightblue" points="1477.19,-145.102 1467.26,-148.8 1477.33,-152.101 1477.19,-145.102"/>
+<path fill="none" stroke="midnightblue" d="M1516.39,-148.911C1739.82,-145.884 2682.34,-130.214 2803,-80 2806.07,-78.7222 2809.06,-77.1257 2811.95,-75.314"/>
+<polygon fill="none" stroke="midnightblue" points="1516.25,-145.413 1506.3,-149.046 1516.34,-152.412 1516.25,-145.413"/>
 </g>
 <!-- Node35 -->
 <g id="node35" class="node"><title>Node35</title>
-<g id="a_node35"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1TransactionID.html" target="_top" xlink:title="This class represents the transactionID field of the ebay_transactions table in the database...">
-<polygon fill="white" stroke="black" points="2871.5,-0.5 2871.5,-79.5 2964.5,-79.5 2964.5,-0.5 2871.5,-0.5"/>
-<text text-anchor="middle" x="2918" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">TransactionID</text>
-<polyline fill="none" stroke="black" points="2871.5,-60.5 2964.5,-60.5 "/>
-<text text-anchor="start" x="2879.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
-<polyline fill="none" stroke="black" points="2871.5,-41.5 2964.5,-41.5 "/>
-<text text-anchor="start" x="2879.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TransactionID()</text>
-<text text-anchor="start" x="2879.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="2879.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<g id="a_node35"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1ShippingCost.html" target="_top" xlink:title="This class represents the shippingCost field of the ebay_transactions table in the database...">
+<polygon fill="white" stroke="black" points="2898,-0.5 2898,-79.5 2988,-79.5 2988,-0.5 2898,-0.5"/>
+<text text-anchor="middle" x="2943" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">ShippingCost</text>
+<polyline fill="none" stroke="black" points="2898,-60.5 2988,-60.5 "/>
+<text text-anchor="start" x="2906" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="2898,-41.5 2988,-41.5 "/>
+<text text-anchor="start" x="2906" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShippingCost()</text>
+<text text-anchor="start" x="2906" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="2906" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node35 -->
 <g id="edge34" class="edge"><title>Node1&#45;&gt;Node35</title>
-<path fill="none" stroke="midnightblue" d="M1477.29,-148.756C1710.1,-144.885 2728.58,-125.463 2862,-80 2865.14,-78.93 2868.26,-77.6276 2871.34,-76.1563"/>
-<polygon fill="none" stroke="midnightblue" points="1477.06,-145.259 1467.12,-148.923 1477.18,-152.258 1477.06,-145.259"/>
+<path fill="none" stroke="midnightblue" d="M1516.29,-148.781C1747.94,-145.045 2757.17,-126.218 2889,-80 2891.95,-78.967 2894.87,-77.7181 2897.75,-76.3102"/>
+<polygon fill="none" stroke="midnightblue" points="1516.11,-145.283 1506.16,-148.943 1516.22,-152.282 1516.11,-145.283"/>
+</g>
+<!-- Node36 -->
+<g id="node36" class="node"><title>Node36</title>
+<g id="a_node36"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1TransactionID.html" target="_top" xlink:title="This class represents the transactionID field of the ebay_transactions table in the database...">
+<polygon fill="white" stroke="black" points="3006.5,-0.5 3006.5,-79.5 3099.5,-79.5 3099.5,-0.5 3006.5,-0.5"/>
+<text text-anchor="middle" x="3053" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">TransactionID</text>
+<polyline fill="none" stroke="black" points="3006.5,-60.5 3099.5,-60.5 "/>
+<text text-anchor="start" x="3014.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; size_M</text>
+<polyline fill="none" stroke="black" points="3006.5,-41.5 3099.5,-41.5 "/>
+<text text-anchor="start" x="3014.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TransactionID()</text>
+<text text-anchor="start" x="3014.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="3014.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node36 -->
+<g id="edge35" class="edge"><title>Node1&#45;&gt;Node36</title>
+<path fill="none" stroke="midnightblue" d="M1516.3,-148.911C1758.5,-145.684 2853.97,-128.495 2997,-80 3000.14,-78.9348 3003.27,-77.6361 3006.34,-76.1676"/>
+<polygon fill="none" stroke="midnightblue" points="1516.02,-145.414 1506.07,-149.045 1516.12,-152.413 1516.02,-145.414"/>
 </g>
 </g>
 </svg>

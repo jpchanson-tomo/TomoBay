@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1sql__1__1queries__1__1concreteQueries__1__1delete__1__1DeleteOrderFromOrderStatus_8js =
+[
+    [ "classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1delete_1_1DeleteOrderFromOrderStatus", "classtomoBay__1__1model__1__1sql__1__1queries__1__1concreteQueries__1__1delete__1__1DeleteOrderFromOrderStatus_8js.html#a15f3b9891b231e1d02193e86173a835f", null ]
+];

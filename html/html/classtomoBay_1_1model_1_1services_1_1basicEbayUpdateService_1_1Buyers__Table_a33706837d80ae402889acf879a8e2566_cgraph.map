@@ -1,0 +1,4 @@
+<map id="getGSPaddress" name="getGSPaddress">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a3ba6289417930238a36bfee0056b6398" title="add an arbitrary value to this Field container with the stipulation that this value is of the same ty..." alt="" coords="168,13,427,54"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a9dee3c01eb5ab16203e1c6820a569484" title="performs a type check, assuming that field and type are of the same type then this method returns tru..." alt="" coords="475,5,723,61"/>
+</map>

@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 4049;
+var viewWidth = 4208;
 var viewHeight = 425;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,15 +54,15 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>AbstractQueryFactory</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-421 4044.5,-421 4044.5,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-421 4203.5,-421 4203.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="2052,-359.5 2052,-416.5 2165,-416.5 2165,-359.5 2052,-359.5"/>
-<text text-anchor="middle" x="2108.5" y="-404.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractQueryFactory</text>
-<polyline fill="none" stroke="black" points="2052,-397.5 2165,-397.5 "/>
-<text text-anchor="middle" x="2108.5" y="-385.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2052,-378.5 2165,-378.5 "/>
-<text text-anchor="start" x="2060" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<polygon fill="#bfbfbf" stroke="black" points="2141,-359.5 2141,-416.5 2254,-416.5 2254,-359.5 2141,-359.5"/>
+<text text-anchor="middle" x="2197.5" y="-404.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractQueryFactory</text>
+<polyline fill="none" stroke="black" points="2141,-397.5 2254,-397.5 "/>
+<text text-anchor="middle" x="2197.5" y="-385.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2141,-378.5 2254,-378.5 "/>
+<text text-anchor="start" x="2149" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
@@ -78,43 +78,43 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M2041.87,-380.866C1852.98,-363.474 1315.1,-313.953 1120.7,-296.055"/>
-<polygon fill="none" stroke="midnightblue" points="2041.66,-384.361 2051.94,-381.792 2042.3,-377.39 2041.66,-384.361"/>
+<path fill="none" stroke="midnightblue" d="M2130.82,-381.337C1929.38,-364.228 1328.2,-313.17 1120.79,-295.555"/>
+<polygon fill="none" stroke="midnightblue" points="2130.7,-384.839 2140.96,-382.198 2131.29,-377.864 2130.7,-384.839"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node"><title>Node18</title>
 <g id="a_node18"><a xlink:href="interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectParamsQueryFactory.html" target="_top" xlink:title="{AbstractSelectParamsQuery\lFactory\n||+ make()\l}">
-<polygon fill="white" stroke="black" points="2038,-254.5 2038,-322.5 2179,-322.5 2179,-254.5 2038,-254.5"/>
-<text text-anchor="start" x="2046" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectParamsQuery</text>
-<text text-anchor="middle" x="2108.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
-<polyline fill="none" stroke="black" points="2038,-292.5 2179,-292.5 "/>
-<text text-anchor="middle" x="2108.5" y="-280.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2038,-273.5 2179,-273.5 "/>
-<text text-anchor="start" x="2046" y="-261.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<polygon fill="white" stroke="black" points="2127,-254.5 2127,-322.5 2268,-322.5 2268,-254.5 2127,-254.5"/>
+<text text-anchor="start" x="2135" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectParamsQuery</text>
+<text text-anchor="middle" x="2197.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
+<polyline fill="none" stroke="black" points="2127,-292.5 2268,-292.5 "/>
+<text text-anchor="middle" x="2197.5" y="-280.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2127,-273.5 2268,-273.5 "/>
+<text text-anchor="start" x="2135" y="-261.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node18 -->
 <g id="edge17" class="edge"><title>Node1&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M2108.5,-349.063C2108.5,-340.393 2108.5,-331.243 2108.5,-322.786"/>
-<polygon fill="none" stroke="midnightblue" points="2105,-349.321 2108.5,-359.321 2112,-349.321 2105,-349.321"/>
+<path fill="none" stroke="midnightblue" d="M2197.5,-349.063C2197.5,-340.393 2197.5,-331.243 2197.5,-322.786"/>
+<polygon fill="none" stroke="midnightblue" points="2194,-349.321 2197.5,-359.321 2201,-349.321 2194,-349.321"/>
 </g>
-<!-- Node30 -->
-<g id="node30" class="node"><title>Node30</title>
-<g id="a_node30"><a xlink:href="interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectQueryFactory.html" target="_top" xlink:title="{AbstractSelectQueryFactory\n||+ make()\l}">
-<polygon fill="white" stroke="black" points="2638.5,-260 2638.5,-317 2778.5,-317 2778.5,-260 2638.5,-260"/>
-<text text-anchor="middle" x="2708.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectQueryFactory</text>
-<polyline fill="none" stroke="black" points="2638.5,-298 2778.5,-298 "/>
-<text text-anchor="middle" x="2708.5" y="-286" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2638.5,-279 2778.5,-279 "/>
-<text text-anchor="start" x="2646.5" y="-267" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<!-- Node31 -->
+<g id="node31" class="node"><title>Node31</title>
+<g id="a_node31"><a xlink:href="interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectQueryFactory.html" target="_top" xlink:title="{AbstractSelectQueryFactory\n||+ make()\l}">
+<polygon fill="white" stroke="black" points="2807.5,-260 2807.5,-317 2947.5,-317 2947.5,-260 2807.5,-260"/>
+<text text-anchor="middle" x="2877.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectQueryFactory</text>
+<polyline fill="none" stroke="black" points="2807.5,-298 2947.5,-298 "/>
+<text text-anchor="middle" x="2877.5" y="-286" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2807.5,-279 2947.5,-279 "/>
+<text text-anchor="start" x="2815.5" y="-267" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node30 -->
-<g id="edge29" class="edge"><title>Node1&#45;&gt;Node30</title>
-<path fill="none" stroke="midnightblue" d="M2175.23,-376.156C2289.45,-357.595 2521.37,-319.908 2638.08,-300.944"/>
-<polygon fill="none" stroke="midnightblue" points="2174.53,-372.725 2165.22,-377.784 2175.65,-379.634 2174.53,-372.725"/>
+<!-- Node1&#45;&gt;Node31 -->
+<g id="edge30" class="edge"><title>Node1&#45;&gt;Node31</title>
+<path fill="none" stroke="midnightblue" d="M2264.15,-377.444C2393.08,-358.957 2675.53,-318.458 2807.26,-299.571"/>
+<polygon fill="none" stroke="midnightblue" points="2263.42,-374.013 2254.02,-378.897 2264.41,-380.942 2263.42,-374.013"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
@@ -405,8 +405,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node18&#45;&gt;Node19 -->
 <g id="edge18" class="edge"><title>Node18&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M2027.72,-284.531C1851.4,-277.403 1437.08,-256.954 1302.5,-218 1292.65,-215.149 1282.61,-211.13 1273.03,-206.661"/>
-<polygon fill="none" stroke="midnightblue" points="2027.58,-288.028 2037.72,-284.931 2027.86,-281.034 2027.58,-288.028"/>
+<path fill="none" stroke="midnightblue" d="M2116.52,-285.329C1926.05,-279.559 1454.28,-261.234 1302.5,-218 1292.48,-215.145 1282.26,-211.062 1272.54,-206.515"/>
+<polygon fill="none" stroke="midnightblue" points="2116.65,-288.834 2126.75,-285.634 2116.86,-281.837 2116.65,-288.834"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node"><title>Node20</title>
@@ -423,8 +423,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node18&#45;&gt;Node20 -->
 <g id="edge19" class="edge"><title>Node18&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M2027.64,-287.878C1905.62,-286.397 1668.31,-275.481 1476.5,-218 1466.75,-215.078 1456.79,-211.081 1447.26,-206.674"/>
-<polygon fill="none" stroke="midnightblue" points="2027.62,-291.378 2037.65,-287.981 2027.69,-284.378 2027.62,-291.378"/>
+<path fill="none" stroke="midnightblue" d="M2116.31,-283.513C1953.94,-274.911 1594.68,-252.553 1476.5,-218 1466.57,-215.096 1456.43,-211.049 1446.75,-206.569"/>
+<polygon fill="none" stroke="midnightblue" points="2116.54,-287.03 2126.71,-284.059 2116.91,-280.039 2116.54,-287.03"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node"><title>Node21</title>
@@ -441,8 +441,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node18&#45;&gt;Node21 -->
 <g id="edge20" class="edge"><title>Node18&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M2027.7,-280.594C1940.43,-271.714 1797.98,-253.073 1679.5,-218 1668.84,-214.845 1657.83,-210.836 1647.17,-206.521"/>
-<polygon fill="none" stroke="midnightblue" points="2027.51,-284.092 2037.8,-281.603 2028.2,-277.126 2027.51,-284.092"/>
+<path fill="none" stroke="midnightblue" d="M2116.66,-283.696C2013.51,-277.251 1830.39,-260.441 1679.5,-218 1668.62,-214.939 1657.39,-210.925 1646.54,-206.56"/>
+<polygon fill="none" stroke="midnightblue" points="2116.5,-287.192 2126.69,-284.305 2116.92,-280.205 2116.5,-287.192"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node"><title>Node22</title>
@@ -458,8 +458,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node18&#45;&gt;Node22 -->
 <g id="edge21" class="edge"><title>Node18&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M2027.85,-274.831C1969.57,-264.016 1889.78,-245.743 1823.5,-218 1812.52,-213.404 1801.28,-207.262 1791.04,-201.012"/>
-<polygon fill="none" stroke="midnightblue" points="2027.27,-278.283 2037.74,-276.633 2028.53,-271.397 2027.27,-278.283"/>
+<path fill="none" stroke="midnightblue" d="M2116.64,-281.151C2039.26,-273.083 1920.34,-255.411 1823.5,-218 1812.26,-213.658 1800.83,-207.531 1790.49,-201.21"/>
+<polygon fill="none" stroke="midnightblue" points="2116.5,-284.655 2126.81,-282.181 2117.21,-277.691 2116.5,-284.655"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node"><title>Node23</title>
@@ -476,8 +476,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node18&#45;&gt;Node23 -->
 <g id="edge22" class="edge"><title>Node18&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M2044.26,-249.161C2021.09,-235.329 1995.15,-219.849 1972.81,-206.512"/>
-<polygon fill="none" stroke="midnightblue" points="2042.62,-252.254 2053,-254.373 2046.21,-246.243 2042.62,-252.254"/>
+<path fill="none" stroke="midnightblue" d="M2117.13,-259.155C2084.15,-247.088 2045.75,-232.474 2011.5,-218 2003.02,-214.415 1994.18,-210.493 1985.48,-206.509"/>
+<polygon fill="none" stroke="midnightblue" points="2116.14,-262.518 2126.73,-262.652 2118.53,-255.94 2116.14,-262.518"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node"><title>Node24</title>
@@ -494,8 +494,8 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node18&#45;&gt;Node24 -->
 <g id="edge23" class="edge"><title>Node18&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M2108.5,-244.06C2108.5,-231.644 2108.5,-218.316 2108.5,-206.624"/>
-<polygon fill="none" stroke="midnightblue" points="2105,-244.22 2108.5,-254.22 2112,-244.22 2105,-244.22"/>
+<path fill="none" stroke="midnightblue" d="M2165.32,-246.285C2155.15,-233.249 2144.04,-219.018 2134.36,-206.624"/>
+<polygon fill="none" stroke="midnightblue" points="2162.61,-248.491 2171.52,-254.22 2168.12,-244.184 2162.61,-248.491"/>
 </g>
 <!-- Node25 -->
 <g id="node25" class="node"><title>Node25</title>
@@ -511,299 +511,317 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node18&#45;&gt;Node25 -->
 <g id="edge24" class="edge"><title>Node18&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M2169.31,-248.772C2193.92,-233.101 2221.76,-215.37 2244.23,-201.055"/>
-<polygon fill="none" stroke="midnightblue" points="2167.31,-245.896 2160.76,-254.22 2171.07,-251.8 2167.31,-245.896"/>
+<path fill="none" stroke="midnightblue" d="M2230.17,-246.117C2241.95,-231.192 2254.96,-214.72 2265.6,-201.242"/>
+<polygon fill="none" stroke="midnightblue" points="2227.22,-244.202 2223.77,-254.22 2232.72,-248.54 2227.22,-244.202"/>
 </g>
 <!-- Node26 -->
 <g id="node26" class="node"><title>Node26</title>
-<g id="a_node26"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1params_1_1SelectEbayTransactionByIDFactory.html" target="_top" xlink:title="{SelectEbayTransactionByIDFactory\n||+ make()\l}">
-<polygon fill="white" stroke="black" points="2379,-144 2379,-201 2552,-201 2552,-144 2379,-144"/>
-<text text-anchor="middle" x="2465.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayTransactionByIDFactory</text>
-<polyline fill="none" stroke="black" points="2379,-182 2552,-182 "/>
-<text text-anchor="middle" x="2465.5" y="-170" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2379,-163 2552,-163 "/>
-<text text-anchor="start" x="2387" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node26"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1params_1_1SelectEbayOrderHistoryLastNDaysFactory.html" target="_top" xlink:title="{SelectEbayOrderHistoryLast\lNDaysFactory\n||+ make()\l}">
+<polygon fill="white" stroke="black" points="2379,-138.5 2379,-206.5 2520,-206.5 2520,-138.5 2379,-138.5"/>
+<text text-anchor="start" x="2387" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayOrderHistoryLast</text>
+<text text-anchor="middle" x="2449.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">NDaysFactory</text>
+<polyline fill="none" stroke="black" points="2379,-176.5 2520,-176.5 "/>
+<text text-anchor="middle" x="2449.5" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2379,-157.5 2520,-157.5 "/>
+<text text-anchor="start" x="2387" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
 <!-- Node18&#45;&gt;Node26 -->
 <g id="edge25" class="edge"><title>Node18&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M2188.9,-269.916C2241.08,-257.573 2310.16,-239.47 2369.5,-218 2382.97,-213.125 2397.15,-207.09 2410.35,-201.054"/>
-<polygon fill="none" stroke="midnightblue" points="2187.97,-266.54 2179.03,-272.23 2189.57,-273.355 2187.97,-266.54"/>
+<path fill="none" stroke="midnightblue" d="M2277.59,-257.52C2306.85,-245.943 2340,-232.098 2369.5,-218 2376.81,-214.505 2384.39,-210.636 2391.83,-206.682"/>
+<polygon fill="none" stroke="midnightblue" points="2276.26,-254.281 2268.23,-261.196 2278.82,-260.796 2276.26,-254.281"/>
 </g>
 <!-- Node27 -->
 <g id="node27" class="node"><title>Node27</title>
-<g id="a_node27"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1params_1_1SelectFullOrderLineFactory.html" target="_top" xlink:title="{SelectFullOrderLineFactory\n||+ SelectFullOrderLineFactory()\l+ make()\l}">
-<polygon fill="white" stroke="black" points="2570.5,-138.5 2570.5,-206.5 2720.5,-206.5 2720.5,-138.5 2570.5,-138.5"/>
-<text text-anchor="middle" x="2645.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectFullOrderLineFactory</text>
-<polyline fill="none" stroke="black" points="2570.5,-187.5 2720.5,-187.5 "/>
-<text text-anchor="middle" x="2645.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2570.5,-168.5 2720.5,-168.5 "/>
-<text text-anchor="start" x="2578.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectFullOrderLineFactory()</text>
-<text text-anchor="start" x="2578.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node27"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1params_1_1SelectEbayTransactionByIDFactory.html" target="_top" xlink:title="{SelectEbayTransactionByIDFactory\n||+ make()\l}">
+<polygon fill="white" stroke="black" points="2538,-144 2538,-201 2711,-201 2711,-144 2538,-144"/>
+<text text-anchor="middle" x="2624.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayTransactionByIDFactory</text>
+<polyline fill="none" stroke="black" points="2538,-182 2711,-182 "/>
+<text text-anchor="middle" x="2624.5" y="-170" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2538,-163 2711,-163 "/>
+<text text-anchor="start" x="2546" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
 <!-- Node18&#45;&gt;Node27 -->
 <g id="edge26" class="edge"><title>Node18&#45;&gt;Node27</title>
-<path fill="none" stroke="midnightblue" d="M2189.15,-283.115C2281.03,-276.3 2434.72,-259.322 2560.5,-218 2569.84,-214.933 2579.38,-210.915 2588.55,-206.549"/>
-<polygon fill="none" stroke="midnightblue" points="2188.8,-279.631 2179.08,-283.84 2189.31,-286.613 2188.8,-279.631"/>
+<path fill="none" stroke="midnightblue" d="M2278.34,-275.798C2346.2,-264.731 2445.15,-245.67 2528.5,-218 2542.45,-213.37 2557.05,-207.288 2570.54,-201.114"/>
+<polygon fill="none" stroke="midnightblue" points="2277.46,-272.395 2268.14,-277.44 2278.57,-279.306 2277.46,-272.395"/>
 </g>
 <!-- Node28 -->
 <g id="node28" class="node"><title>Node28</title>
-<g id="a_node28"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1params_1_1SelectOutOfHoursOrdersFactory.html" target="_top" xlink:title="{SelectOutOfHoursOrdersFactory\n||+ make()\l}">
-<polygon fill="white" stroke="black" points="2738,-144 2738,-201 2897,-201 2897,-144 2738,-144"/>
-<text text-anchor="middle" x="2817.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">SelectOutOfHoursOrdersFactory</text>
-<polyline fill="none" stroke="black" points="2738,-182 2897,-182 "/>
-<text text-anchor="middle" x="2817.5" y="-170" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2738,-163 2897,-163 "/>
-<text text-anchor="start" x="2746" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node28"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1params_1_1SelectFullOrderLineFactory.html" target="_top" xlink:title="{SelectFullOrderLineFactory\n||+ SelectFullOrderLineFactory()\l+ make()\l}">
+<polygon fill="white" stroke="black" points="2729.5,-138.5 2729.5,-206.5 2879.5,-206.5 2879.5,-138.5 2729.5,-138.5"/>
+<text text-anchor="middle" x="2804.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectFullOrderLineFactory</text>
+<polyline fill="none" stroke="black" points="2729.5,-187.5 2879.5,-187.5 "/>
+<text text-anchor="middle" x="2804.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2729.5,-168.5 2879.5,-168.5 "/>
+<text text-anchor="start" x="2737.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectFullOrderLineFactory()</text>
+<text text-anchor="start" x="2737.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
 <!-- Node18&#45;&gt;Node28 -->
 <g id="edge27" class="edge"><title>Node18&#45;&gt;Node28</title>
-<path fill="none" stroke="midnightblue" d="M2189.25,-287.54C2309.5,-285.588 2541.61,-274.032 2729.5,-218 2743.28,-213.89 2757.49,-207.686 2770.37,-201.205"/>
-<polygon fill="none" stroke="midnightblue" points="2188.98,-284.044 2179.03,-287.687 2189.08,-291.043 2188.98,-284.044"/>
+<path fill="none" stroke="midnightblue" d="M2278.14,-285.447C2382.34,-280.846 2568.33,-265.978 2719.5,-218 2728.87,-215.027 2738.43,-211.061 2747.6,-206.717"/>
+<polygon fill="none" stroke="midnightblue" points="2277.85,-281.956 2268,-285.873 2278.14,-288.95 2277.85,-281.956"/>
 </g>
 <!-- Node29 -->
 <g id="node29" class="node"><title>Node29</title>
-<g id="a_node29"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1params_1_1SelectTransactionByOrderIDFactory.html" target="_top" xlink:title="creates a SelectTransactionByOrder query object ">
-<polygon fill="white" stroke="black" points="2915.5,-127.5 2915.5,-217.5 3055.5,-217.5 3055.5,-127.5 2915.5,-127.5"/>
-<text text-anchor="start" x="2923.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectTransactionByOrder</text>
-<text text-anchor="middle" x="2985.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">IDFactory</text>
-<polyline fill="none" stroke="black" points="2915.5,-187.5 3055.5,-187.5 "/>
-<text text-anchor="middle" x="2985.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2915.5,-168.5 3055.5,-168.5 "/>
-<text text-anchor="start" x="2923.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectTransactionByOrder</text>
-<text text-anchor="start" x="2923.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">IDFactory()</text>
-<text text-anchor="start" x="2923.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node29"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1params_1_1SelectOutOfHoursOrdersFactory.html" target="_top" xlink:title="{SelectOutOfHoursOrdersFactory\n||+ make()\l}">
+<polygon fill="white" stroke="black" points="2897,-144 2897,-201 3056,-201 3056,-144 2897,-144"/>
+<text text-anchor="middle" x="2976.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">SelectOutOfHoursOrdersFactory</text>
+<polyline fill="none" stroke="black" points="2897,-182 3056,-182 "/>
+<text text-anchor="middle" x="2976.5" y="-170" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2897,-163 3056,-163 "/>
+<text text-anchor="start" x="2905" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
 <!-- Node18&#45;&gt;Node29 -->
 <g id="edge28" class="edge"><title>Node18&#45;&gt;Node29</title>
-<path fill="none" stroke="midnightblue" d="M2189.16,-282.388C2378.05,-270.142 2838.22,-238.613 2905.5,-218 2908.69,-217.022 2911.9,-215.906 2915.09,-214.679"/>
-<polygon fill="none" stroke="midnightblue" points="2188.76,-278.906 2179.01,-283.044 2189.22,-285.891 2188.76,-278.906"/>
+<path fill="none" stroke="midnightblue" d="M2278.24,-283.101C2435.19,-273.94 2775.89,-250.896 2888.5,-218 2902.47,-213.92 2916.86,-207.643 2929.86,-201.078"/>
+<polygon fill="none" stroke="midnightblue" points="2277.96,-279.612 2268.18,-283.684 2278.36,-286.6 2277.96,-279.612"/>
 </g>
-<!-- Node31 -->
-<g id="node31" class="node"><title>Node31</title>
-<g id="a_node31"><a xlink:href="interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectNoParamsQueryFactory.html" target="_top" xlink:title="{AbstractSelectNoParamsQuery\lFactory\n||+ make()\l}">
-<polygon fill="white" stroke="black" points="3073.5,-138.5 3073.5,-206.5 3227.5,-206.5 3227.5,-138.5 3073.5,-138.5"/>
-<text text-anchor="start" x="3081.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectNoParamsQuery</text>
-<text text-anchor="middle" x="3150.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
-<polyline fill="none" stroke="black" points="3073.5,-176.5 3227.5,-176.5 "/>
-<text text-anchor="middle" x="3150.5" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="3073.5,-157.5 3227.5,-157.5 "/>
-<text text-anchor="start" x="3081.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<!-- Node30 -->
+<g id="node30" class="node"><title>Node30</title>
+<g id="a_node30"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1params_1_1SelectTransactionByOrderIDFactory.html" target="_top" xlink:title="creates a SelectTransactionByOrder query object ">
+<polygon fill="white" stroke="black" points="3074.5,-127.5 3074.5,-217.5 3214.5,-217.5 3214.5,-127.5 3074.5,-127.5"/>
+<text text-anchor="start" x="3082.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectTransactionByOrder</text>
+<text text-anchor="middle" x="3144.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">IDFactory</text>
+<polyline fill="none" stroke="black" points="3074.5,-187.5 3214.5,-187.5 "/>
+<text text-anchor="middle" x="3144.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="3074.5,-168.5 3214.5,-168.5 "/>
+<text text-anchor="start" x="3082.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectTransactionByOrder</text>
+<text text-anchor="start" x="3082.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">IDFactory()</text>
+<text text-anchor="start" x="3082.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node30&#45;&gt;Node31 -->
-<g id="edge30" class="edge"><title>Node30&#45;&gt;Node31</title>
-<path fill="none" stroke="midnightblue" d="M2788.71,-278.476C2862,-268.686 2972.63,-249.997 3064.5,-218 3073.55,-214.848 3082.83,-210.894 3091.8,-206.651"/>
-<polygon fill="none" stroke="midnightblue" points="2788.08,-275.028 2778.62,-279.799 2788.99,-281.969 2788.08,-275.028"/>
+<!-- Node18&#45;&gt;Node30 -->
+<g id="edge29" class="edge"><title>Node18&#45;&gt;Node30</title>
+<path fill="none" stroke="midnightblue" d="M2278.39,-282.982C2479.34,-271.478 2990.45,-240.405 3064.5,-218 3067.69,-217.033 3070.9,-215.926 3074.1,-214.707"/>
+<polygon fill="none" stroke="midnightblue" points="2277.97,-279.5 2268.19,-283.564 2278.37,-286.488 2277.97,-279.5"/>
 </g>
 <!-- Node32 -->
 <g id="node32" class="node"><title>Node32</title>
-<g id="a_node32"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectAccountsFactory.html" target="_top" xlink:title="{SelectAccountsFactory\n||+ SelectAccountsFactory()\l+ make()\l}">
-<polygon fill="white" stroke="black" points="2224.5,-11.5 2224.5,-79.5 2358.5,-79.5 2358.5,-11.5 2224.5,-11.5"/>
-<text text-anchor="middle" x="2291.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectAccountsFactory</text>
-<polyline fill="none" stroke="black" points="2224.5,-60.5 2358.5,-60.5 "/>
-<text text-anchor="middle" x="2291.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2224.5,-41.5 2358.5,-41.5 "/>
-<text text-anchor="start" x="2232.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectAccountsFactory()</text>
-<text text-anchor="start" x="2232.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node32"><a xlink:href="interfacetomoBay_1_1model_1_1sql_1_1framework_1_1queryFactories_1_1AbstractSelectNoParamsQueryFactory.html" target="_top" xlink:title="{AbstractSelectNoParamsQuery\lFactory\n||+ make()\l}">
+<polygon fill="white" stroke="black" points="3232.5,-138.5 3232.5,-206.5 3386.5,-206.5 3386.5,-138.5 3232.5,-138.5"/>
+<text text-anchor="start" x="3240.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">AbstractSelectNoParamsQuery</text>
+<text text-anchor="middle" x="3309.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
+<polyline fill="none" stroke="black" points="3232.5,-176.5 3386.5,-176.5 "/>
+<text text-anchor="middle" x="3309.5" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="3232.5,-157.5 3386.5,-157.5 "/>
+<text text-anchor="start" x="3240.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
 <!-- Node31&#45;&gt;Node32 -->
 <g id="edge31" class="edge"><title>Node31&#45;&gt;Node32</title>
-<path fill="none" stroke="midnightblue" d="M3085.61,-134.333C3078.64,-131.437 3071.53,-128.904 3064.5,-127 2765.1,-45.8918 2664.68,-179.895 2367.5,-91 2358.27,-88.2395 2348.98,-84.1426 2340.22,-79.5344"/>
-<polygon fill="none" stroke="midnightblue" points="3084.43,-137.64 3094.99,-138.481 3087.26,-131.237 3084.43,-137.64"/>
+<path fill="none" stroke="midnightblue" d="M2957.88,-277.84C3029.11,-267.765 3135.21,-249.02 3223.5,-218 3232.54,-214.824 3241.82,-210.856 3250.78,-206.606"/>
+<polygon fill="none" stroke="midnightblue" points="2957.05,-274.421 2947.63,-279.264 2958.01,-281.354 2957.05,-274.421"/>
 </g>
 <!-- Node33 -->
 <g id="node33" class="node"><title>Node33</title>
-<g id="a_node33"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayBuyersFactory.html" target="_top" xlink:title="{SelectEbayBuyersFactory\n||+ SelectEbayBuyersFactory()\l+ make()\l}">
-<polygon fill="white" stroke="black" points="2376.5,-11.5 2376.5,-79.5 2522.5,-79.5 2522.5,-11.5 2376.5,-11.5"/>
-<text text-anchor="middle" x="2449.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayBuyersFactory</text>
-<polyline fill="none" stroke="black" points="2376.5,-60.5 2522.5,-60.5 "/>
-<text text-anchor="middle" x="2449.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2376.5,-41.5 2522.5,-41.5 "/>
-<text text-anchor="start" x="2384.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayBuyersFactory()</text>
-<text text-anchor="start" x="2384.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node33"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectAccountsFactory.html" target="_top" xlink:title="{SelectAccountsFactory\n||+ SelectAccountsFactory()\l+ make()\l}">
+<polygon fill="white" stroke="black" points="2383.5,-11.5 2383.5,-79.5 2517.5,-79.5 2517.5,-11.5 2383.5,-11.5"/>
+<text text-anchor="middle" x="2450.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectAccountsFactory</text>
+<polyline fill="none" stroke="black" points="2383.5,-60.5 2517.5,-60.5 "/>
+<text text-anchor="middle" x="2450.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2383.5,-41.5 2517.5,-41.5 "/>
+<text text-anchor="start" x="2391.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectAccountsFactory()</text>
+<text text-anchor="start" x="2391.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node33 -->
-<g id="edge32" class="edge"><title>Node31&#45;&gt;Node33</title>
-<path fill="none" stroke="midnightblue" d="M3085.24,-134.309C3078.39,-131.448 3071.4,-128.928 3064.5,-127 2835.83,-63.1049 2759.53,-157.145 2531.5,-91 2521.86,-88.2023 2512.07,-84.1496 2502.78,-79.6139"/>
-<polygon fill="none" stroke="midnightblue" points="3083.92,-137.553 3094.48,-138.399 3086.76,-131.151 3083.92,-137.553"/>
+<!-- Node32&#45;&gt;Node33 -->
+<g id="edge32" class="edge"><title>Node32&#45;&gt;Node33</title>
+<path fill="none" stroke="midnightblue" d="M3244.61,-134.333C3237.64,-131.437 3230.53,-128.904 3223.5,-127 2924.1,-45.8918 2823.68,-179.895 2526.5,-91 2517.27,-88.2395 2507.98,-84.1426 2499.22,-79.5344"/>
+<polygon fill="none" stroke="midnightblue" points="3243.43,-137.64 3253.99,-138.481 3246.26,-131.237 3243.43,-137.64"/>
 </g>
 <!-- Node34 -->
 <g id="node34" class="node"><title>Node34</title>
-<g id="a_node34"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayItemsErrorFactory.html" target="_top" xlink:title="{SelectEbayItemsErrorFactory\n||+ SelectEbayItemsErrorFactory()\l+ make()\l}">
-<polygon fill="white" stroke="black" points="2541,-11.5 2541,-79.5 2702,-79.5 2702,-11.5 2541,-11.5"/>
-<text text-anchor="middle" x="2621.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayItemsErrorFactory</text>
-<polyline fill="none" stroke="black" points="2541,-60.5 2702,-60.5 "/>
-<text text-anchor="middle" x="2621.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2541,-41.5 2702,-41.5 "/>
-<text text-anchor="start" x="2549" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayItemsErrorFactory()</text>
-<text text-anchor="start" x="2549" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node34"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayBuyersFactory.html" target="_top" xlink:title="{SelectEbayBuyersFactory\n||+ SelectEbayBuyersFactory()\l+ make()\l}">
+<polygon fill="white" stroke="black" points="2535.5,-11.5 2535.5,-79.5 2681.5,-79.5 2681.5,-11.5 2535.5,-11.5"/>
+<text text-anchor="middle" x="2608.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayBuyersFactory</text>
+<polyline fill="none" stroke="black" points="2535.5,-60.5 2681.5,-60.5 "/>
+<text text-anchor="middle" x="2608.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2535.5,-41.5 2681.5,-41.5 "/>
+<text text-anchor="start" x="2543.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayBuyersFactory()</text>
+<text text-anchor="start" x="2543.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node34 -->
-<g id="edge33" class="edge"><title>Node31&#45;&gt;Node34</title>
-<path fill="none" stroke="midnightblue" d="M3084.38,-134.22C3077.8,-131.445 3071.1,-128.967 3064.5,-127 2913.36,-81.9699 2863.04,-134.645 2711.5,-91 2701.28,-88.0574 2690.82,-83.9905 2680.82,-79.5022"/>
-<polygon fill="none" stroke="midnightblue" points="3083.37,-137.601 3093.93,-138.473 3086.22,-131.206 3083.37,-137.601"/>
+<!-- Node32&#45;&gt;Node34 -->
+<g id="edge33" class="edge"><title>Node32&#45;&gt;Node34</title>
+<path fill="none" stroke="midnightblue" d="M3244.24,-134.309C3237.39,-131.448 3230.4,-128.928 3223.5,-127 2994.83,-63.1049 2918.53,-157.145 2690.5,-91 2680.86,-88.2023 2671.07,-84.1496 2661.78,-79.6139"/>
+<polygon fill="none" stroke="midnightblue" points="3242.92,-137.553 3253.48,-138.399 3245.76,-131.151 3242.92,-137.553"/>
 </g>
 <!-- Node35 -->
 <g id="node35" class="node"><title>Node35</title>
-<g id="a_node35"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayItemsFactory.html" target="_top" xlink:title="creates a SelectEbayItems query object ">
-<polygon fill="white" stroke="black" points="2720.5,-11.5 2720.5,-79.5 2860.5,-79.5 2860.5,-11.5 2720.5,-11.5"/>
-<text text-anchor="middle" x="2790.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayItemsFactory</text>
-<polyline fill="none" stroke="black" points="2720.5,-60.5 2860.5,-60.5 "/>
-<text text-anchor="middle" x="2790.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2720.5,-41.5 2860.5,-41.5 "/>
-<text text-anchor="start" x="2728.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayItemsFactory()</text>
-<text text-anchor="start" x="2728.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node35"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayItemsErrorFactory.html" target="_top" xlink:title="{SelectEbayItemsErrorFactory\n||+ SelectEbayItemsErrorFactory()\l+ make()\l}">
+<polygon fill="white" stroke="black" points="2700,-11.5 2700,-79.5 2861,-79.5 2861,-11.5 2700,-11.5"/>
+<text text-anchor="middle" x="2780.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayItemsErrorFactory</text>
+<polyline fill="none" stroke="black" points="2700,-60.5 2861,-60.5 "/>
+<text text-anchor="middle" x="2780.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2700,-41.5 2861,-41.5 "/>
+<text text-anchor="start" x="2708" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayItemsErrorFactory()</text>
+<text text-anchor="start" x="2708" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node35 -->
-<g id="edge34" class="edge"><title>Node31&#45;&gt;Node35</title>
-<path fill="none" stroke="midnightblue" d="M3082.8,-134.167C3076.71,-131.514 3070.55,-129.074 3064.5,-127 2981.13,-98.4391 2952.36,-121.036 2869.5,-91 2860.92,-87.8884 2852.17,-83.9025 2843.77,-79.5983"/>
-<polygon fill="none" stroke="midnightblue" points="3081.75,-137.533 3092.3,-138.488 3084.64,-131.161 3081.75,-137.533"/>
+<!-- Node32&#45;&gt;Node35 -->
+<g id="edge34" class="edge"><title>Node32&#45;&gt;Node35</title>
+<path fill="none" stroke="midnightblue" d="M3243.38,-134.22C3236.8,-131.445 3230.1,-128.967 3223.5,-127 3072.36,-81.9699 3022.04,-134.645 2870.5,-91 2860.28,-88.0574 2849.82,-83.9905 2839.82,-79.5022"/>
+<polygon fill="none" stroke="midnightblue" points="3242.37,-137.601 3252.93,-138.473 3245.22,-131.206 3242.37,-137.601"/>
 </g>
 <!-- Node36 -->
 <g id="node36" class="node"><title>Node36</title>
-<g id="a_node36"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayItemsNotInTransactionsFactory.html" target="_top" xlink:title="creates a SelectEbayItemsNotInTransactions ">
-<polygon fill="white" stroke="black" points="2879,-0.5 2879,-90.5 3060,-90.5 3060,-0.5 2879,-0.5"/>
-<text text-anchor="start" x="2887" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayItemsNotInTransactions</text>
-<text text-anchor="middle" x="2969.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
-<polyline fill="none" stroke="black" points="2879,-60.5 3060,-60.5 "/>
-<text text-anchor="middle" x="2969.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="2879,-41.5 3060,-41.5 "/>
-<text text-anchor="start" x="2887" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayItemsNotInTransactions</text>
-<text text-anchor="start" x="2887" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory()</text>
-<text text-anchor="start" x="2887" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node36"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayItemsFactory.html" target="_top" xlink:title="creates a SelectEbayItems query object ">
+<polygon fill="white" stroke="black" points="2879.5,-11.5 2879.5,-79.5 3019.5,-79.5 3019.5,-11.5 2879.5,-11.5"/>
+<text text-anchor="middle" x="2949.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayItemsFactory</text>
+<polyline fill="none" stroke="black" points="2879.5,-60.5 3019.5,-60.5 "/>
+<text text-anchor="middle" x="2949.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="2879.5,-41.5 3019.5,-41.5 "/>
+<text text-anchor="start" x="2887.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayItemsFactory()</text>
+<text text-anchor="start" x="2887.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node36 -->
-<g id="edge35" class="edge"><title>Node31&#45;&gt;Node36</title>
-<path fill="none" stroke="midnightblue" d="M3094.1,-132.552C3074.87,-119.269 3053.23,-104.323 3033.44,-90.6596"/>
-<polygon fill="none" stroke="midnightblue" points="3092.25,-135.528 3102.47,-138.33 3096.23,-129.768 3092.25,-135.528"/>
+<!-- Node32&#45;&gt;Node36 -->
+<g id="edge35" class="edge"><title>Node32&#45;&gt;Node36</title>
+<path fill="none" stroke="midnightblue" d="M3241.8,-134.167C3235.71,-131.514 3229.55,-129.074 3223.5,-127 3140.13,-98.4391 3111.36,-121.036 3028.5,-91 3019.92,-87.8884 3011.17,-83.9025 3002.77,-79.5983"/>
+<polygon fill="none" stroke="midnightblue" points="3240.75,-137.533 3251.3,-138.488 3243.64,-131.161 3240.75,-137.533"/>
 </g>
 <!-- Node37 -->
 <g id="node37" class="node"><title>Node37</title>
-<g id="a_node37"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayOrdersFactory.html" target="_top" xlink:title="creates SelectEbayOrders query object ">
-<polygon fill="white" stroke="black" points="3078.5,-11.5 3078.5,-79.5 3222.5,-79.5 3222.5,-11.5 3078.5,-11.5"/>
-<text text-anchor="middle" x="3150.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayOrdersFactory</text>
-<polyline fill="none" stroke="black" points="3078.5,-60.5 3222.5,-60.5 "/>
-<text text-anchor="middle" x="3150.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="3078.5,-41.5 3222.5,-41.5 "/>
-<text text-anchor="start" x="3086.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayOrdersFactory()</text>
-<text text-anchor="start" x="3086.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node37"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayItemsNotInTransactionsFactory.html" target="_top" xlink:title="creates a SelectEbayItemsNotInTransactions ">
+<polygon fill="white" stroke="black" points="3038,-0.5 3038,-90.5 3219,-90.5 3219,-0.5 3038,-0.5"/>
+<text text-anchor="start" x="3046" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayItemsNotInTransactions</text>
+<text text-anchor="middle" x="3128.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
+<polyline fill="none" stroke="black" points="3038,-60.5 3219,-60.5 "/>
+<text text-anchor="middle" x="3128.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="3038,-41.5 3219,-41.5 "/>
+<text text-anchor="start" x="3046" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayItemsNotInTransactions</text>
+<text text-anchor="start" x="3046" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory()</text>
+<text text-anchor="start" x="3046" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node37 -->
-<g id="edge36" class="edge"><title>Node31&#45;&gt;Node37</title>
-<path fill="none" stroke="midnightblue" d="M3150.5,-128.222C3150.5,-112.364 3150.5,-94.6772 3150.5,-79.8245"/>
-<polygon fill="none" stroke="midnightblue" points="3147,-128.33 3150.5,-138.33 3154,-128.331 3147,-128.33"/>
+<!-- Node32&#45;&gt;Node37 -->
+<g id="edge36" class="edge"><title>Node32&#45;&gt;Node37</title>
+<path fill="none" stroke="midnightblue" d="M3253.1,-132.552C3233.87,-119.269 3212.23,-104.323 3192.44,-90.6596"/>
+<polygon fill="none" stroke="midnightblue" points="3251.25,-135.528 3261.47,-138.33 3255.23,-129.768 3251.25,-135.528"/>
 </g>
 <!-- Node38 -->
 <g id="node38" class="node"><title>Node38</title>
-<g id="a_node38"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectInvoicedOrdersFactory.html" target="_top" xlink:title="{SelectInvoicedOrdersFactory\n||+ make()\l}">
-<polygon fill="white" stroke="black" points="3241,-17 3241,-74 3384,-74 3384,-17 3241,-17"/>
-<text text-anchor="middle" x="3312.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">SelectInvoicedOrdersFactory</text>
-<polyline fill="none" stroke="black" points="3241,-55 3384,-55 "/>
-<text text-anchor="middle" x="3312.5" y="-43" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="3241,-36 3384,-36 "/>
-<text text-anchor="start" x="3249" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node38"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectEbayOrdersFactory.html" target="_top" xlink:title="creates SelectEbayOrders query object ">
+<polygon fill="white" stroke="black" points="3237.5,-11.5 3237.5,-79.5 3381.5,-79.5 3381.5,-11.5 3237.5,-11.5"/>
+<text text-anchor="middle" x="3309.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectEbayOrdersFactory</text>
+<polyline fill="none" stroke="black" points="3237.5,-60.5 3381.5,-60.5 "/>
+<text text-anchor="middle" x="3309.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="3237.5,-41.5 3381.5,-41.5 "/>
+<text text-anchor="start" x="3245.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectEbayOrdersFactory()</text>
+<text text-anchor="start" x="3245.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node38 -->
-<g id="edge37" class="edge"><title>Node31&#45;&gt;Node38</title>
-<path fill="none" stroke="midnightblue" d="M3201.59,-132.077C3226.01,-113.235 3254.65,-91.1365 3276.71,-74.1162"/>
-<polygon fill="none" stroke="midnightblue" points="3199.27,-129.451 3193.49,-138.33 3203.54,-134.993 3199.27,-129.451"/>
+<!-- Node32&#45;&gt;Node38 -->
+<g id="edge37" class="edge"><title>Node32&#45;&gt;Node38</title>
+<path fill="none" stroke="midnightblue" d="M3309.5,-128.222C3309.5,-112.364 3309.5,-94.6772 3309.5,-79.8245"/>
+<polygon fill="none" stroke="midnightblue" points="3306,-128.33 3309.5,-138.33 3313,-128.331 3306,-128.33"/>
 </g>
 <!-- Node39 -->
 <g id="node39" class="node"><title>Node39</title>
-<g id="a_node39"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUncalculatedInvoicesFactory.html" target="_top" xlink:title="{SelectUncalculatedInvoices\lFactory\n||+ make()\l}">
-<polygon fill="white" stroke="black" points="3402.5,-11.5 3402.5,-79.5 3540.5,-79.5 3540.5,-11.5 3402.5,-11.5"/>
-<text text-anchor="start" x="3410.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectUncalculatedInvoices</text>
-<text text-anchor="middle" x="3471.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
-<polyline fill="none" stroke="black" points="3402.5,-49.5 3540.5,-49.5 "/>
-<text text-anchor="middle" x="3471.5" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="3402.5,-30.5 3540.5,-30.5 "/>
-<text text-anchor="start" x="3410.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node39"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectInvoicedOrdersFactory.html" target="_top" xlink:title="{SelectInvoicedOrdersFactory\n||+ make()\l}">
+<polygon fill="white" stroke="black" points="3400,-17 3400,-74 3543,-74 3543,-17 3400,-17"/>
+<text text-anchor="middle" x="3471.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">SelectInvoicedOrdersFactory</text>
+<polyline fill="none" stroke="black" points="3400,-55 3543,-55 "/>
+<text text-anchor="middle" x="3471.5" y="-43" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="3400,-36 3543,-36 "/>
+<text text-anchor="start" x="3408" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node39 -->
-<g id="edge38" class="edge"><title>Node31&#45;&gt;Node39</title>
-<path fill="none" stroke="midnightblue" d="M3237.62,-147.231C3284.64,-132.997 3343.19,-113.418 3393.5,-91 3401.05,-87.6369 3408.81,-83.759 3416.38,-79.7236"/>
-<polygon fill="none" stroke="midnightblue" points="3236.34,-143.961 3227.77,-150.187 3238.35,-150.666 3236.34,-143.961"/>
+<!-- Node32&#45;&gt;Node39 -->
+<g id="edge38" class="edge"><title>Node32&#45;&gt;Node39</title>
+<path fill="none" stroke="midnightblue" d="M3360.59,-132.077C3385.01,-113.235 3413.65,-91.1365 3435.71,-74.1162"/>
+<polygon fill="none" stroke="midnightblue" points="3358.27,-129.451 3352.49,-138.33 3362.54,-134.993 3358.27,-129.451"/>
 </g>
 <!-- Node40 -->
 <g id="node40" class="node"><title>Node40</title>
-<g id="a_node40"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUncalculatedOrdersFactory.html" target="_top" xlink:title="{SelectUncalculatedOrders\lFactory\n||+ make()\l}">
-<polygon fill="white" stroke="black" points="3559,-11.5 3559,-79.5 3690,-79.5 3690,-11.5 3559,-11.5"/>
-<text text-anchor="start" x="3567" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectUncalculatedOrders</text>
-<text text-anchor="middle" x="3624.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
-<polyline fill="none" stroke="black" points="3559,-49.5 3690,-49.5 "/>
-<text text-anchor="middle" x="3624.5" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="3559,-30.5 3690,-30.5 "/>
-<text text-anchor="start" x="3567" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node40"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUncalculatedInvoicesFactory.html" target="_top" xlink:title="{SelectUncalculatedInvoices\lFactory\n||+ make()\l}">
+<polygon fill="white" stroke="black" points="3561.5,-11.5 3561.5,-79.5 3699.5,-79.5 3699.5,-11.5 3561.5,-11.5"/>
+<text text-anchor="start" x="3569.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectUncalculatedInvoices</text>
+<text text-anchor="middle" x="3630.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
+<polyline fill="none" stroke="black" points="3561.5,-49.5 3699.5,-49.5 "/>
+<text text-anchor="middle" x="3630.5" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="3561.5,-30.5 3699.5,-30.5 "/>
+<text text-anchor="start" x="3569.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node40 -->
-<g id="edge39" class="edge"><title>Node31&#45;&gt;Node40</title>
-<path fill="none" stroke="midnightblue" d="M3237.74,-162.463C3320.19,-151.948 3446.3,-130.706 3549.5,-91 3557.7,-87.8467 3566.03,-83.838 3574.01,-79.5234"/>
-<polygon fill="none" stroke="midnightblue" points="3237.14,-159.01 3227.65,-163.724 3238.01,-165.956 3237.14,-159.01"/>
+<!-- Node32&#45;&gt;Node40 -->
+<g id="edge39" class="edge"><title>Node32&#45;&gt;Node40</title>
+<path fill="none" stroke="midnightblue" d="M3396.62,-147.231C3443.64,-132.997 3502.19,-113.418 3552.5,-91 3560.05,-87.6369 3567.81,-83.759 3575.38,-79.7236"/>
+<polygon fill="none" stroke="midnightblue" points="3395.34,-143.961 3386.77,-150.187 3397.35,-150.666 3395.34,-143.961"/>
 </g>
 <!-- Node41 -->
 <g id="node41" class="node"><title>Node41</title>
-<g id="a_node41"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUninvoicedOrdersFactory.html" target="_top" xlink:title="creates a SelectUninvoicedOrders query object ">
-<polygon fill="white" stroke="black" points="3708.5,-11.5 3708.5,-79.5 3878.5,-79.5 3878.5,-11.5 3708.5,-11.5"/>
-<text text-anchor="middle" x="3793.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectUninvoicedOrdersFactory</text>
-<polyline fill="none" stroke="black" points="3708.5,-60.5 3878.5,-60.5 "/>
-<text text-anchor="middle" x="3793.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="3708.5,-41.5 3878.5,-41.5 "/>
-<text text-anchor="start" x="3716.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectUninvoicedOrdersFactory()</text>
-<text text-anchor="start" x="3716.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node41"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUncalculatedOrdersFactory.html" target="_top" xlink:title="{SelectUncalculatedOrders\lFactory\n||+ make()\l}">
+<polygon fill="white" stroke="black" points="3718,-11.5 3718,-79.5 3849,-79.5 3849,-11.5 3718,-11.5"/>
+<text text-anchor="start" x="3726" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectUncalculatedOrders</text>
+<text text-anchor="middle" x="3783.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factory</text>
+<polyline fill="none" stroke="black" points="3718,-49.5 3849,-49.5 "/>
+<text text-anchor="middle" x="3783.5" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="3718,-30.5 3849,-30.5 "/>
+<text text-anchor="start" x="3726" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node41 -->
-<g id="edge40" class="edge"><title>Node31&#45;&gt;Node41</title>
-<path fill="none" stroke="midnightblue" d="M3237.57,-166.706C3347.32,-158.864 3540.8,-139.029 3699.5,-91 3709.7,-87.9143 3720.19,-83.8873 3730.29,-79.5167"/>
-<polygon fill="none" stroke="midnightblue" points="3237.27,-163.218 3227.54,-167.405 3237.76,-170.201 3237.27,-163.218"/>
+<!-- Node32&#45;&gt;Node41 -->
+<g id="edge40" class="edge"><title>Node32&#45;&gt;Node41</title>
+<path fill="none" stroke="midnightblue" d="M3396.74,-162.463C3479.19,-151.948 3605.3,-130.706 3708.5,-91 3716.7,-87.8467 3725.03,-83.838 3733.01,-79.5234"/>
+<polygon fill="none" stroke="midnightblue" points="3396.14,-159.01 3386.65,-163.724 3397.01,-165.956 3396.14,-159.01"/>
 </g>
 <!-- Node42 -->
 <g id="node42" class="node"><title>Node42</title>
-<g id="a_node42"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUninvoicedOrdersNoErrorsFactory.html" target="_top" xlink:title="{SelectUninvoicedOrdersNo\lErrorsFactory\n||+ SelectUninvoicedOrdersNo\lErrorsFactory()\l+ make()\l}">
-<polygon fill="white" stroke="black" points="3896.5,-0.5 3896.5,-90.5 4040.5,-90.5 4040.5,-0.5 3896.5,-0.5"/>
-<text text-anchor="start" x="3904.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectUninvoicedOrdersNo</text>
-<text text-anchor="middle" x="3968.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">ErrorsFactory</text>
-<polyline fill="none" stroke="black" points="3896.5,-60.5 4040.5,-60.5 "/>
-<text text-anchor="middle" x="3968.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="3896.5,-41.5 4040.5,-41.5 "/>
-<text text-anchor="start" x="3904.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectUninvoicedOrdersNo</text>
-<text text-anchor="start" x="3904.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">ErrorsFactory()</text>
-<text text-anchor="start" x="3904.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+<g id="a_node42"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUninvoicedOrdersFactory.html" target="_top" xlink:title="creates a SelectUninvoicedOrders query object ">
+<polygon fill="white" stroke="black" points="3867.5,-11.5 3867.5,-79.5 4037.5,-79.5 4037.5,-11.5 3867.5,-11.5"/>
+<text text-anchor="middle" x="3952.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectUninvoicedOrdersFactory</text>
+<polyline fill="none" stroke="black" points="3867.5,-60.5 4037.5,-60.5 "/>
+<text text-anchor="middle" x="3952.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="3867.5,-41.5 4037.5,-41.5 "/>
+<text text-anchor="start" x="3875.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectUninvoicedOrdersFactory()</text>
+<text text-anchor="start" x="3875.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
 </a>
 </g>
 </g>
-<!-- Node31&#45;&gt;Node42 -->
-<g id="edge41" class="edge"><title>Node31&#45;&gt;Node42</title>
-<path fill="none" stroke="midnightblue" d="M3237.56,-166.278C3405.53,-155.501 3768.26,-128.616 3887.5,-91 3890.41,-90.0829 3893.33,-89.0567 3896.25,-87.9428"/>
-<polygon fill="none" stroke="midnightblue" points="3237.28,-162.79 3227.52,-166.919 3237.72,-169.775 3237.28,-162.79"/>
+<!-- Node32&#45;&gt;Node42 -->
+<g id="edge41" class="edge"><title>Node32&#45;&gt;Node42</title>
+<path fill="none" stroke="midnightblue" d="M3396.57,-166.706C3506.32,-158.864 3699.8,-139.029 3858.5,-91 3868.7,-87.9143 3879.19,-83.8873 3889.29,-79.5167"/>
+<polygon fill="none" stroke="midnightblue" points="3396.27,-163.218 3386.54,-167.405 3396.76,-170.201 3396.27,-163.218"/>
+</g>
+<!-- Node43 -->
+<g id="node43" class="node"><title>Node43</title>
+<g id="a_node43"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1select_1_1noParams_1_1SelectUninvoicedOrdersNoErrorsFactory.html" target="_top" xlink:title="{SelectUninvoicedOrdersNo\lErrorsFactory\n||+ SelectUninvoicedOrdersNo\lErrorsFactory()\l+ make()\l}">
+<polygon fill="white" stroke="black" points="4055.5,-0.5 4055.5,-90.5 4199.5,-90.5 4199.5,-0.5 4055.5,-0.5"/>
+<text text-anchor="start" x="4063.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">SelectUninvoicedOrdersNo</text>
+<text text-anchor="middle" x="4127.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">ErrorsFactory</text>
+<polyline fill="none" stroke="black" points="4055.5,-60.5 4199.5,-60.5 "/>
+<text text-anchor="middle" x="4127.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="4055.5,-41.5 4199.5,-41.5 "/>
+<text text-anchor="start" x="4063.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectUninvoicedOrdersNo</text>
+<text text-anchor="start" x="4063.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">ErrorsFactory()</text>
+<text text-anchor="start" x="4063.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ make()</text>
+</a>
+</g>
+</g>
+<!-- Node32&#45;&gt;Node43 -->
+<g id="edge42" class="edge"><title>Node32&#45;&gt;Node43</title>
+<path fill="none" stroke="midnightblue" d="M3396.56,-166.278C3564.53,-155.501 3927.26,-128.616 4046.5,-91 4049.41,-90.0829 4052.33,-89.0567 4055.25,-87.9428"/>
+<polygon fill="none" stroke="midnightblue" points="3396.28,-162.79 3386.52,-166.919 3396.72,-169.775 3396.28,-162.79"/>
 </g>
 </g>
 </svg>

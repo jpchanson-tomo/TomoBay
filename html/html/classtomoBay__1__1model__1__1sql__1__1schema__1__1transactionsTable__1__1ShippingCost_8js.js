@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1sql__1__1schema__1__1transactionsTable__1__1ShippingCost_8js =
+[
+    [ "classtomoBay_1_1model_1_1sql_1_1schema_1_1transactionsTable_1_1ShippingCost", "classtomoBay__1__1model__1__1sql__1__1schema__1__1transactionsTable__1__1ShippingCost_8js.html#acfc558be0e6c3ff7e4247e4f1fa6f465", null ]
+];

@@ -1,0 +1,4 @@
+var classtomoBay__1__1presenters__1__1factories__1__1SalesHistoryPresenterFactory_8js =
+[
+    [ "classtomoBay_1_1presenters_1_1factories_1_1SalesHistoryPresenterFactory", "classtomoBay__1__1presenters__1__1factories__1__1SalesHistoryPresenterFactory_8js.html#a590de6404f4db3052917626a73d0f175", null ]
+];

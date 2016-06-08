@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1services__1__1reScanBuyerService__1__1DBActions_8js =
+[
+    [ "classtomoBay_1_1model_1_1services_1_1reScanBuyerService_1_1DBActions", "classtomoBay__1__1model__1__1services__1__1reScanBuyerService__1__1DBActions_8js.html#a63919af6f79dd2e7e764d1ab1bd60bf5", null ]
+];

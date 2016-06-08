@@ -1,0 +1,4 @@
+var namespacetomoBay__1__1model__1__1services__1__1updateOrderStatusService_8js =
+[
+    [ "namespacetomoBay_1_1model_1_1services_1_1updateOrderStatusService", "namespacetomoBay__1__1model__1__1services__1__1updateOrderStatusService_8js.html#afdad7de26f2025b7bd57eb8d4a01e9d1", null ]
+];

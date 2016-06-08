@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1services__1__1updateOrderStatusService__1__1UpdateOrderStatusService_8js =
+[
+    [ "classtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1UpdateOrderStatusService", "classtomoBay__1__1model__1__1services__1__1updateOrderStatusService__1__1UpdateOrderStatusService_8js.html#a85d0d989700f4c1442612bbe3e610d98", null ]
+];

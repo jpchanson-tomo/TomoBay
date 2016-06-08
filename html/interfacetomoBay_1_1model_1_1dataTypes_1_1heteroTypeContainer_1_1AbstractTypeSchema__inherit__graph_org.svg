@@ -89,20 +89,21 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1NonDBFields.html" target="_top" xlink:title="{NonDBFields\n|+ RESULT_CODE\l+ DATE_COMPARISON\l|&#45; NonDBFields()\l}">
-<polygon fill="white" stroke="black" points="333,-39 333,-107 460,-107 460,-39 333,-39"/>
-<text text-anchor="middle" x="396.5" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">NonDBFields</text>
-<polyline fill="none" stroke="black" points="333,-88 460,-88 "/>
-<text text-anchor="start" x="341" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">+ RESULT_CODE</text>
-<text text-anchor="start" x="341" y="-65" font-family="Helvetica,sans-Serif" font-size="10.00">+ DATE_COMPARISON</text>
-<polyline fill="none" stroke="black" points="333,-58 460,-58 "/>
-<text text-anchor="start" x="341" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; NonDBFields()</text>
+<g id="a_node5"><a xlink:href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1NonDBFields.html" target="_top" xlink:title="{NonDBFields\n|+ RESULT_CODE\l+ DATE_COMPARISON\l+ Custom_INT_FIELD\l|&#45; NonDBFields()\l}">
+<polygon fill="white" stroke="black" points="333,-33.5 333,-112.5 460,-112.5 460,-33.5 333,-33.5"/>
+<text text-anchor="middle" x="396.5" y="-100.5" font-family="Helvetica,sans-Serif" font-size="10.00">NonDBFields</text>
+<polyline fill="none" stroke="black" points="333,-93.5 460,-93.5 "/>
+<text text-anchor="start" x="341" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RESULT_CODE</text>
+<text text-anchor="start" x="341" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DATE_COMPARISON</text>
+<text text-anchor="start" x="341" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Custom_INT_FIELD</text>
+<polyline fill="none" stroke="black" points="333,-52.5 460,-52.5 "/>
+<text text-anchor="start" x="341" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; NonDBFields()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M445.468,-173.398C435.32,-152.798 422.745,-127.273 412.879,-107.248"/>
+<path fill="none" stroke="midnightblue" d="M445.437,-173.335C436.172,-154.529 424.891,-131.63 415.497,-112.56"/>
 <polygon fill="none" stroke="midnightblue" points="442.383,-175.055 449.942,-182.478 448.662,-171.961 442.383,-175.055"/>
 </g>
 <!-- Node6 -->

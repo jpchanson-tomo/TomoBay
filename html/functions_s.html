@@ -231,6 +231,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>SELECT_EBAY_ORDER_BY_ID
 : <a class="el" href="enumtomoBay_1_1model_1_1sql_1_1framework_1_1SelectQueryInvoker_1_1SelectQueryTypeParams.html#a49dfa0d41ad459fbc3f61734e50db6d7">SelectQueryInvoker.SelectQueryTypeParams</a>
 </li>
+<li>SELECT_EBAY_ORDER_HISTORY_LAST_N_DAYS
+: <a class="el" href="enumtomoBay_1_1model_1_1sql_1_1framework_1_1SelectQueryInvoker_1_1SelectQueryTypeParams.html#a498c8d37ab2f926beddf18c74cfcdd8f">SelectQueryInvoker.SelectQueryTypeParams</a>
+</li>
 <li>SELECT_EBAY_ORDERS
 : <a class="el" href="enumtomoBay_1_1model_1_1sql_1_1framework_1_1SelectQueryInvoker_1_1SelectQueryTypeNoParams.html#ad4c0f82f3f7c063e47b12409c500e2dd">SelectQueryInvoker.SelectQueryTypeNoParams</a>
 </li>
@@ -324,6 +327,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>SelectEbayOrderByID()
 : <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByID.html#a35d68838192f14caa0a653d4c1d1b0e4">SelectEbayOrderByID</a>
 </li>
+<li>SelectEbayOrderHistoryLastNDays()
+: <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderHistoryLastNDays.html#a510f9710b3967df96fdc678f13fe8694">SelectEbayOrderHistoryLastNDays</a>
+</li>
 <li>SelectEbayOrders()
 : <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1noParams_1_1SelectEbayOrders.html#af2bd330d6b0f07f4187f7628d6eb52fd">SelectEbayOrders</a>
 </li>
@@ -373,6 +379,7 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 : <a class="el" href="classtomoBay_1_1model_1_1net_1_1ClientSocket.html#adb9470b528c294b6473dd7f24a0aee72">ClientSocket</a>
 , <a class="el" href="classtomoBay_1_1model_1_1net_1_1email_1_1MailClient.html#af9eddf4b6d3506f30b2f282c86c59ed6">MailClient</a>
 , <a class="el" href="classtomoBay_1_1model_1_1net_1_1email_1_1MailServerSend.html#ae0ea6b0d6bda14c2c1ea809ca187c4be">MailServerSend</a>
+, <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1RoyalMailPOST.html#a0fbda4baffcc4acb38054ad2a5167f38">RoyalMailPOST</a>
 , <a class="el" href="classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsMailActions.html#ae9399f5ec7881c5d18173def8068108e">EmailErrorsMailActions</a>
 </li>
 <li>sendConnection
@@ -509,6 +516,7 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayItemSpecific.html#af9020b85517904668d036bc2bf89433c">SelectEbayItemSpecific</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByBuyer.html#af9020b85517904668d036bc2bf89433c">SelectEbayOrderByBuyer</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByID.html#af9020b85517904668d036bc2bf89433c">SelectEbayOrderByID</a>
+, <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderHistoryLastNDays.html#af9020b85517904668d036bc2bf89433c">SelectEbayOrderHistoryLastNDays</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayTransactionByID.html#af9020b85517904668d036bc2bf89433c">SelectEbayTransactionByID</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectFullOrderLine.html#af9020b85517904668d036bc2bf89433c">SelectFullOrderLine</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectOutOfHoursOrders.html#af9020b85517904668d036bc2bf89433c">SelectOutOfHoursOrders</a>
@@ -663,6 +671,7 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Notes.html#af4b57d21919c42d55af03391f91a1c08">Notes</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1PartNo.html#af4b57d21919c42d55af03391f91a1c08">PartNo</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Title.html#af4b57d21919c42d55af03391f91a1c08">Title</a>
+, <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1CustomIntegerField.html#af4b57d21919c42d55af03391f91a1c08">CustomIntegerField</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1ResultCode.html#af4b57d21919c42d55af03391f91a1c08">ResultCode</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1CreatedTime.html#af4b57d21919c42d55af03391f91a1c08">CreatedTime</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1Invoiced.html#af4b57d21919c42d55af03391f91a1c08">Invoiced</a>
@@ -700,7 +709,12 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Notes.html#a5540bf338b2c89f04bdabd2ff07aeea5">Notes</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1PartNo.html#a5540bf338b2c89f04bdabd2ff07aeea5">PartNo</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Title.html#a5540bf338b2c89f04bdabd2ff07aeea5">Title</a>
-, <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1ResultCode.html#a5540bf338b2c89f04bdabd2ff07aeea5">ResultCode</a>
+</li>
+<li>SIZE_M
+: <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1CustomIntegerField.html#a4be6e95d9674c9c8e961edeba0404bcc">CustomIntegerField</a>
+</li>
+<li>size_M
+: <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1ResultCode.html#a5540bf338b2c89f04bdabd2ff07aeea5">ResultCode</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1CreatedTime.html#a5540bf338b2c89f04bdabd2ff07aeea5">CreatedTime</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1Invoiced.html#a5540bf338b2c89f04bdabd2ff07aeea5">Invoiced</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1OrderID.html#a5540bf338b2c89f04bdabd2ff07aeea5">OrderID</a>
@@ -716,20 +730,11 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>smallestQty()
 : <a class="el" href="classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1PriceAdjustment.html#a5d20b1c4f1b7bf1cd99d70ccdc4a00df">PriceAdjustment</a>
 </li>
-<li>SOAP_BODY
-: <a class="el" href="enumtomoBay_1_1model_1_1royalMail_1_1calls_1_1DI_1_1RoyalMailDIContainer_1_1RoyalMailObjType.html#ad9375f31c8afe9ff8e4e29667ba3357e">RoyalMailDIContainer.RoyalMailObjType</a>
-</li>
-<li>SOAP_HEADER
-: <a class="el" href="enumtomoBay_1_1model_1_1royalMail_1_1calls_1_1DI_1_1RoyalMailDIContainer_1_1RoyalMailObjType.html#a72ae4ba8c4f166e60089bff5f298571d">RoyalMailDIContainer.RoyalMailObjType</a>
-</li>
-<li>SOAP_MESSAGE
-: <a class="el" href="enumtomoBay_1_1model_1_1royalMail_1_1calls_1_1DI_1_1RoyalMailDIContainer_1_1RoyalMailObjType.html#ac754e57eba4d037c89a949c649faebe4">RoyalMailDIContainer.RoyalMailObjType</a>
+<li>SoapBody()
+: <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapBody.html#a0fb817b49726bd1d2e87246617f8742e">SoapBody</a>
 </li>
 <li>SoapHeader()
 : <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapHeader.html#aac0bc5adbe7d5aa7913e1b39f948d7ab">SoapHeader</a>
-</li>
-<li>SOAPHeaderFactory()
-: <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1DI_1_1SOAPHeaderFactory.html#a5207a80e19fd3ec9ee2081d7be112820">SOAPHeaderFactory</a>
 </li>
 <li>SoapMessage()
 : <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapMessage.html#ae8645ddbfa537a6bd65ba9f39ca71364">SoapMessage</a>
@@ -830,6 +835,15 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>Stock()
 : <a class="el" href="classtomoBay_1_1model_1_1winstock_1_1Stock.html#ae43cd2a7f1ee1af1ec25fffa0ea60f12">Stock</a>
 </li>
+<li>STOCK_REORDER_ANALYSIS
+: <a class="el" href="enumtomoBay_1_1presenters_1_1presenterActions_1_1PresenterActionFactory_1_1PresenterActions.html#ad95d594beeb614bcc7aeb3f08516afc8">PresenterActionFactory.PresenterActions</a>
+</li>
+<li>StockReOrderAnalysis()
+: <a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1StockReOrderAnalysis.html#a42889bd97f5e5b2e4d98d01646ef620e">StockReOrderAnalysis</a>
+</li>
+<li>StockReOrderAnalysisFactory()
+: <a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1StockReOrderAnalysisFactory.html#a7bc7ae6f63c1321ec6a4189bb1ae3cd6">StockReOrderAnalysisFactory</a>
+</li>
 <li>stop()
 : <a class="el" href="classtomoBay_1_1model_1_1services_1_1ServiceScheduler.html#a8c528baf37154d347366083f0f816846">ServiceScheduler</a>
 </li>
@@ -867,7 +881,7 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 : <a class="el" href="classtomoBay_1_1model_1_1net_1_1email_1_1Email.html#a1e098eb5fa6a4de4097cbc327a4e9616">Email</a>
 </li>
 <li>subtract()
-: <a class="el" href="classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1VAT.html#a9dfd34f223ef659c7eaa29ffc0f06b02">VAT</a>
+: <a class="el" href="classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1VAT.html#a5e1b31de520d32143b7b63b7982b7fd4">VAT</a>
 </li>
 <li>SUCCESS
 : <a class="el" href="enumtomoBay_1_1model_1_1winstock_1_1response_1_1ResultCodes.html#a5b7e5913b5de5e9cc298ee5ff5d38174">ResultCodes</a>
@@ -893,7 +907,7 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue May 31 2016 14:20:38 for TomoBay by
+    <li class="footer">Generated on Wed Jun 8 2016 11:24:12 for TomoBay by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

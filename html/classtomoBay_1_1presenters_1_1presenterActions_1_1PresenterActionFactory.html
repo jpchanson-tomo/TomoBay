@@ -156,7 +156,7 @@ Static Private Attributes</h2></td></tr>
 <div class="textblock"><p>This class provides static functionality for creating AbstractPresenterActions. </p>
 <dl class="section author"><dt>Author</dt><dd>Jan P.C. Hanson </dd></dl>
 
-<p>Definition at line <a class="el" href="PresenterActionFactory_8java_source.html#l00040">40</a> of file <a class="el" href="PresenterActionFactory_8java_source.html">PresenterActionFactory.java</a>.</p>
+<p>Definition at line <a class="el" href="PresenterActionFactory_8java_source.html#l00041">41</a> of file <a class="el" href="PresenterActionFactory_8java_source.html">PresenterActionFactory.java</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af8c96d4656e0dae088f3bb37d117a98c"></a>
 <div class="memitem">
@@ -173,7 +173,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>default ctor </p>
 
-<p>Definition at line <a class="el" href="PresenterActionFactory_8java_source.html#l00090">90</a> of file <a class="el" href="PresenterActionFactory_8java_source.html">PresenterActionFactory.java</a>.</p>
+<p>Definition at line <a class="el" href="PresenterActionFactory_8java_source.html#l00094">94</a> of file <a class="el" href="PresenterActionFactory_8java_source.html">PresenterActionFactory.java</a>.</p>
 
 </div>
 </div>
@@ -209,9 +209,9 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="interfacetomoBay_1_1presenters_1_1presenterActions_1_1AbstractPresenterAction.html" title="Copyright(C) 2015 Jan P.C. ">AbstractPresenterAction</a> requested. </dd></dl>
 
-<p>Definition at line <a class="el" href="PresenterActionFactory_8java_source.html#l00099">99</a> of file <a class="el" href="PresenterActionFactory_8java_source.html">PresenterActionFactory.java</a>.</p>
+<p>Definition at line <a class="el" href="PresenterActionFactory_8java_source.html#l00103">103</a> of file <a class="el" href="PresenterActionFactory_8java_source.html">PresenterActionFactory.java</a>.</p>
 
-<p>References <a class="el" href="PresenterActionFactory_8java_source.html#l00071">PresenterActionFactory.actionMap_M</a>.</p>
+<p>References <a class="el" href="PresenterActionFactory_8java_source.html#l00074">PresenterActionFactory.actionMap_M</a>.</p>
 
 <p>Referenced by <a class="el" href="OrderDetailsPresenter_8java_source.html#l00033">OrderDetailsPresenter.present()</a>, <a class="el" href="AdminPresenter_8java_source.html#l00038">AdminPresenter.present()</a>, <a class="el" href="RootPresenter_8java_source.html#l00041">RootPresenter.present()</a>, <a class="el" href="CRMOverviewPresenter_8java_source.html#l00042">CRMOverviewPresenter.present()</a>, and <a class="el" href="CRMDetailPresenter_8java_source.html#l00042">CRMDetailPresenter.present()</a>.</p>
 
@@ -244,12 +244,12 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> THashMap&lt;PresenterActions, AbstractPresenterActionFactory&gt;()</div><div class="line">                {{</div><div class="line">                    put(PresenterActions.LOG_FILE_VIEWER, <span class="keyword">new</span> LogFileViewerFactory());</div><div class="line">                    put(PresenterActions.MARK_AS_INVOICED, <span class="keyword">new</span> MarkAsInvoicedFactory());</div><div class="line">                    put(PresenterActions.MARK_AS_UNINVOICED, <span class="keyword">new</span> MarkAsUninvoicedFactory());</div><div class="line">                    put(PresenterActions.ORDER_INFO, <span class="keyword">new</span> OrderInfoFactory());</div><div class="line">                    put(PresenterActions.PERIODIC_SERVICES_CONTROLLER, <span class="keyword">new</span> PeriodicServicesControllerFactory());</div><div class="line">                    put(PresenterActions.RE_SCAN_LISTING, <span class="keyword">new</span> ReScanListingFactory());</div><div class="line">                    put(PresenterActions.BUYER_DETAILS, <span class="keyword">new</span> BuyerDetailsFactory());</div><div class="line">                    put(PresenterActions.BUYER_LIST, <span class="keyword">new</span> BuyerListFactory());</div><div class="line">                    put(PresenterActions.RE_SCAN_BUYER, <span class="keyword">new</span> ReScanBuyerFactory());</div><div class="line">                    put(PresenterActions.INVOICE_ORDERS, <span class="keyword">new</span> InvoiceOrdersFactory());</div><div class="line">                    put(PresenterActions.PRINT_INVOICES, <span class="keyword">new</span> PrintInvoicesFactory());</div><div class="line">                    put(PresenterActions.GENERATE_ROYAL_MAIL_CSV, <span class="keyword">new</span> GenerateRoyalMailCSVFactory());</div><div class="line">                }}</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> THashMap&lt;PresenterActions, AbstractPresenterActionFactory&gt;()</div><div class="line">                {{</div><div class="line">                    put(PresenterActions.LOG_FILE_VIEWER, <span class="keyword">new</span> LogFileViewerFactory());</div><div class="line">                    put(PresenterActions.MARK_AS_INVOICED, <span class="keyword">new</span> MarkAsInvoicedFactory());</div><div class="line">                    put(PresenterActions.MARK_AS_UNINVOICED, <span class="keyword">new</span> MarkAsUninvoicedFactory());</div><div class="line">                    put(PresenterActions.ORDER_INFO, <span class="keyword">new</span> OrderInfoFactory());</div><div class="line">                    put(PresenterActions.PERIODIC_SERVICES_CONTROLLER, <span class="keyword">new</span> PeriodicServicesControllerFactory());</div><div class="line">                    put(PresenterActions.RE_SCAN_LISTING, <span class="keyword">new</span> ReScanListingFactory());</div><div class="line">                    put(PresenterActions.BUYER_DETAILS, <span class="keyword">new</span> BuyerDetailsFactory());</div><div class="line">                    put(PresenterActions.BUYER_LIST, <span class="keyword">new</span> BuyerListFactory());</div><div class="line">                    put(PresenterActions.RE_SCAN_BUYER, <span class="keyword">new</span> ReScanBuyerFactory());</div><div class="line">                    put(PresenterActions.INVOICE_ORDERS, <span class="keyword">new</span> InvoiceOrdersFactory());</div><div class="line">                    put(PresenterActions.PRINT_INVOICES, <span class="keyword">new</span> PrintInvoicesFactory());</div><div class="line">                    put(PresenterActions.GENERATE_ROYAL_MAIL_CSV, <span class="keyword">new</span> GenerateRoyalMailCSVFactory());</div><div class="line">                    put(PresenterActions.STOCK_REORDER_ANALYSIS, <span class="keyword">new</span> StockReOrderAnalysisFactory());</div><div class="line">                }}</div></div><!-- fragment -->
 <p>maps the type string to an action </p>
 
-<p>Definition at line <a class="el" href="PresenterActionFactory_8java_source.html#l00071">71</a> of file <a class="el" href="PresenterActionFactory_8java_source.html">PresenterActionFactory.java</a>.</p>
+<p>Definition at line <a class="el" href="PresenterActionFactory_8java_source.html#l00074">74</a> of file <a class="el" href="PresenterActionFactory_8java_source.html">PresenterActionFactory.java</a>.</p>
 
-<p>Referenced by <a class="el" href="PresenterActionFactory_8java_source.html#l00099">PresenterActionFactory.make()</a>.</p>
+<p>Referenced by <a class="el" href="PresenterActionFactory_8java_source.html#l00103">PresenterActionFactory.make()</a>.</p>
 
 </div>
 </div>
@@ -262,7 +262,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetomoBay.html">tomoBay</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters.html">presenters</a></li><li class="navelem"><a class="el" href="namespacetomoBay_1_1presenters_1_1presenterActions.html">presenterActions</a></li><li class="navelem"><a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1PresenterActionFactory.html">PresenterActionFactory</a></li>
-    <li class="footer">Generated on Tue May 31 2016 14:20:36 for TomoBay by
+    <li class="footer">Generated on Wed Jun 8 2016 11:24:02 for TomoBay by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

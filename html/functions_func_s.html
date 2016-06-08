@@ -240,6 +240,9 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>SelectEbayOrderByID()
 : <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByID.html#a35d68838192f14caa0a653d4c1d1b0e4">SelectEbayOrderByID</a>
 </li>
+<li>SelectEbayOrderHistoryLastNDays()
+: <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderHistoryLastNDays.html#a510f9710b3967df96fdc678f13fe8694">SelectEbayOrderHistoryLastNDays</a>
+</li>
 <li>SelectEbayOrders()
 : <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1noParams_1_1SelectEbayOrders.html#af2bd330d6b0f07f4187f7628d6eb52fd">SelectEbayOrders</a>
 </li>
@@ -289,6 +292,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 : <a class="el" href="classtomoBay_1_1model_1_1net_1_1ClientSocket.html#adb9470b528c294b6473dd7f24a0aee72">ClientSocket</a>
 , <a class="el" href="classtomoBay_1_1model_1_1net_1_1email_1_1MailClient.html#af9eddf4b6d3506f30b2f282c86c59ed6">MailClient</a>
 , <a class="el" href="classtomoBay_1_1model_1_1net_1_1email_1_1MailServerSend.html#ae0ea6b0d6bda14c2c1ea809ca187c4be">MailServerSend</a>
+, <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1RoyalMailPOST.html#a0fbda4baffcc4acb38054ad2a5167f38">RoyalMailPOST</a>
 , <a class="el" href="classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsMailActions.html#ae9399f5ec7881c5d18173def8068108e">EmailErrorsMailActions</a>
 </li>
 <li>SendToPicking()
@@ -362,6 +366,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayItemSpecific.html#af9020b85517904668d036bc2bf89433c">SelectEbayItemSpecific</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByBuyer.html#af9020b85517904668d036bc2bf89433c">SelectEbayOrderByBuyer</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderByID.html#af9020b85517904668d036bc2bf89433c">SelectEbayOrderByID</a>
+, <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayOrderHistoryLastNDays.html#af9020b85517904668d036bc2bf89433c">SelectEbayOrderHistoryLastNDays</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectEbayTransactionByID.html#af9020b85517904668d036bc2bf89433c">SelectEbayTransactionByID</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectFullOrderLine.html#af9020b85517904668d036bc2bf89433c">SelectFullOrderLine</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1select_1_1params_1_1SelectOutOfHoursOrders.html#af9020b85517904668d036bc2bf89433c">SelectOutOfHoursOrders</a>
@@ -487,6 +492,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Notes.html#af4b57d21919c42d55af03391f91a1c08">Notes</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1PartNo.html#af4b57d21919c42d55af03391f91a1c08">PartNo</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1itemsTable_1_1Title.html#af4b57d21919c42d55af03391f91a1c08">Title</a>
+, <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1CustomIntegerField.html#af4b57d21919c42d55af03391f91a1c08">CustomIntegerField</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1nonDBFields_1_1ResultCode.html#af4b57d21919c42d55af03391f91a1c08">ResultCode</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1CreatedTime.html#af4b57d21919c42d55af03391f91a1c08">CreatedTime</a>
 , <a class="el" href="classtomoBay_1_1model_1_1sql_1_1schema_1_1ordersTable_1_1Invoiced.html#af4b57d21919c42d55af03391f91a1c08">Invoiced</a>
@@ -507,11 +513,11 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>smallestQty()
 : <a class="el" href="classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1PriceAdjustment.html#a5d20b1c4f1b7bf1cd99d70ccdc4a00df">PriceAdjustment</a>
 </li>
+<li>SoapBody()
+: <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapBody.html#a0fb817b49726bd1d2e87246617f8742e">SoapBody</a>
+</li>
 <li>SoapHeader()
 : <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapHeader.html#aac0bc5adbe7d5aa7913e1b39f948d7ab">SoapHeader</a>
-</li>
-<li>SOAPHeaderFactory()
-: <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1DI_1_1SOAPHeaderFactory.html#a5207a80e19fd3ec9ee2081d7be112820">SOAPHeaderFactory</a>
 </li>
 <li>SoapMessage()
 : <a class="el" href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapMessage.html#ae8645ddbfa537a6bd65ba9f39ca71364">SoapMessage</a>
@@ -588,6 +594,12 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>Stock()
 : <a class="el" href="classtomoBay_1_1model_1_1winstock_1_1Stock.html#ae43cd2a7f1ee1af1ec25fffa0ea60f12">Stock</a>
 </li>
+<li>StockReOrderAnalysis()
+: <a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1StockReOrderAnalysis.html#a42889bd97f5e5b2e4d98d01646ef620e">StockReOrderAnalysis</a>
+</li>
+<li>StockReOrderAnalysisFactory()
+: <a class="el" href="classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1StockReOrderAnalysisFactory.html#a7bc7ae6f63c1321ec6a4189bb1ae3cd6">StockReOrderAnalysisFactory</a>
+</li>
 <li>stop()
 : <a class="el" href="classtomoBay_1_1model_1_1services_1_1ServiceScheduler.html#a8c528baf37154d347366083f0f816846">ServiceScheduler</a>
 </li>
@@ -615,7 +627,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue May 31 2016 14:20:38 for TomoBay by
+    <li class="footer">Generated on Wed Jun 8 2016 11:24:12 for TomoBay by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

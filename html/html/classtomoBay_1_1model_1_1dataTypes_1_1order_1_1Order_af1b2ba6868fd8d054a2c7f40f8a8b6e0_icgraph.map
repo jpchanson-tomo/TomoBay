@@ -1,0 +1,7 @@
+<map id="account" name="account">
+<area shape="rect" id="node2" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html#a589f75735e26f66e44061ac5047d0cf0" title="tomoBay.presenters.presenter\lActions.concreteActions.Invoice\lOrders.formatMailResult" alt="" coords="167,8,378,64"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#a95f980d76c5d92ed97b2aaab0d2d0c21" title="formats the summary information for this Order " alt="" coords="121,89,424,130"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="498,5,709,61"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#afeec1aeda079b77245edea1e74b25f33" title="assembles the various parts of the order and outputs it as a fully formed JSON string. " alt="" coords="472,85,735,141"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1OrderInfo.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="783,93,1055,134"/>
+</map>

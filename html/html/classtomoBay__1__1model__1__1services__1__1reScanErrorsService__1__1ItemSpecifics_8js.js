@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1services__1__1reScanErrorsService__1__1ItemSpecifics_8js =
+[
+    [ "classtomoBay_1_1model_1_1services_1_1reScanErrorsService_1_1ItemSpecifics", "classtomoBay__1__1model__1__1services__1__1reScanErrorsService__1__1ItemSpecifics_8js.html#a5740c1ae9e9108cd316e1c19bb950be3", null ]
+];

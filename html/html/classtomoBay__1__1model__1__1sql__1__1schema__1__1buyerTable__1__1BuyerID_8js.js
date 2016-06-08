@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1sql__1__1schema__1__1buyerTable__1__1BuyerID_8js =
+[
+    [ "classtomoBay_1_1model_1_1sql_1_1schema_1_1buyerTable_1_1BuyerID", "classtomoBay__1__1model__1__1sql__1__1schema__1__1buyerTable__1__1BuyerID_8js.html#a59edd3dec4b368cd0db7685da8f4039f", null ]
+];

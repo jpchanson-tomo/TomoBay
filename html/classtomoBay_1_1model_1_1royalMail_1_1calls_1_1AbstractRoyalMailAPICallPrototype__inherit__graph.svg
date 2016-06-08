@@ -22,18 +22,18 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapMessage.html" target="_top" xlink:title="{SoapMessage\n|&#45; message_M\l&#45; envelope_M\l&#45; header_M\l|+ call()\l# SoapMessage()\l# httpHeaders()\l# message()\l}">
-<polygon fill="white" stroke="black" points="23,-116.5 23,-228.5 116,-228.5 116,-116.5 23,-116.5"/>
+<g id="a_node2"><a xlink:href="classtomoBay_1_1model_1_1royalMail_1_1calls_1_1SoapMessage.html" target="_top" xlink:title="{SoapMessage\n|&#45; message_M\l&#45; envelope_M\l&#45; header_M\l|+ SoapMessage()\l+ call()\l# httpHeaders()\l# message()\l}">
+<polygon fill="white" stroke="black" points="22.5,-116.5 22.5,-228.5 116.5,-228.5 116.5,-116.5 22.5,-116.5"/>
 <text text-anchor="middle" x="69.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">SoapMessage</text>
-<polyline fill="none" stroke="black" points="23,-209.5 116,-209.5 "/>
-<text text-anchor="start" x="31" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; message_M</text>
-<text text-anchor="start" x="31" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; envelope_M</text>
-<text text-anchor="start" x="31" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; header_M</text>
-<polyline fill="none" stroke="black" points="23,-168.5 116,-168.5 "/>
-<text text-anchor="start" x="31" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ call()</text>
-<text text-anchor="start" x="31" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SoapMessage()</text>
-<text text-anchor="start" x="31" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00"># httpHeaders()</text>
-<text text-anchor="start" x="31" y="-123.5" font-family="Helvetica,sans-Serif" font-size="10.00"># message()</text>
+<polyline fill="none" stroke="black" points="22.5,-209.5 116.5,-209.5 "/>
+<text text-anchor="start" x="30.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; message_M</text>
+<text text-anchor="start" x="30.5" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; envelope_M</text>
+<text text-anchor="start" x="30.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; header_M</text>
+<polyline fill="none" stroke="black" points="22.5,-168.5 116.5,-168.5 "/>
+<text text-anchor="start" x="30.5" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SoapMessage()</text>
+<text text-anchor="start" x="30.5" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ call()</text>
+<text text-anchor="start" x="30.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00"># httpHeaders()</text>
+<text text-anchor="start" x="30.5" y="-123.5" font-family="Helvetica,sans-Serif" font-size="10.00"># message()</text>
 </a>
 </g>
 </g>

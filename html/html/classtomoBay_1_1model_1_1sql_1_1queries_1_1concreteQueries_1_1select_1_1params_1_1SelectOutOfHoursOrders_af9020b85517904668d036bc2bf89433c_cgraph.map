@@ -1,0 +1,9 @@
+<map id="setParameters" name="setParameters">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1QueryUtility.html#a202aab30c77e06c32318efd5cf949ca3" title="set an Integer parameter for the query object specified. " alt="" coords="160,71,363,113"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a988363ab964d6dc0ccb8560bef5895b6" title="retrieve the the value of an AbstractField from this HeteroFieldContainer, the field should be of the..." alt="" coords="916,13,1172,54"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1QueryUtility.html#a5677c2440b48e612fb51b57130555e5d" title="set an Integer parameter for the query object specified. " alt="" coords="411,71,617,113"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1AbstractDBQuery.html#a41678b13e84de4335130f10cea7ae562" title="get the statement object associated with this query " alt="" coords="927,130,1161,171"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1heteroTypeContainer_1_1HeteroFieldContainer.html#a9dee3c01eb5ab16203e1c6820a569484" title="performs a type check, assuming that field and type are of the same type then this method returns tru..." alt="" coords="1220,5,1468,61"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1QueryUtility.html#adf8f1fea7b649baadeb0297c41be72f5" title="set an Integer parameter for the query object specified. " alt="" coords="665,71,868,113"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes_1_1AbstractDBQuery.html#ae8a5c5f1701ee77ef658050c8345d518" title="Used by derived classes to define the Query string to be used in the query. " alt="" coords="1227,130,1461,171"/>
+</map>

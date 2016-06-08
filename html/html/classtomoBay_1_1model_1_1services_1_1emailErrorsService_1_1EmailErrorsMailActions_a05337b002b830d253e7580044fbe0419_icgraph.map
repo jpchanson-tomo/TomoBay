@@ -1,0 +1,5 @@
+<map id="addMessage" name="addMessage">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1OnRunning.html#ae4a4f4cadce2787c7e80005639fbd5d9" title="this method defines what to do in the given derived state " alt="" coords="272,13,492,54"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsMailActions.html#ad1dbcb645114a23c7e2a441cb6ae9ca4" title="handle the creation of the Email by passing in a map with the appropriate data inside it..." alt="" coords="149,45,224,72"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1emailErrorsService_1_1EmailErrorsService.html#ae3b0a282dcba7f2d675ca89b1dd48487" title="tomoBay.model.services.email\lErrorsService.EmailErrorsService.on\lRunning" alt="" coords="540,5,775,61"/>
+</map>

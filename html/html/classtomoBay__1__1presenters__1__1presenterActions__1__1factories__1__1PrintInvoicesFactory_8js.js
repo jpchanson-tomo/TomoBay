@@ -1,0 +1,4 @@
+var classtomoBay__1__1presenters__1__1presenterActions__1__1factories__1__1PrintInvoicesFactory_8js =
+[
+    [ "classtomoBay_1_1presenters_1_1presenterActions_1_1factories_1_1PrintInvoicesFactory", "classtomoBay__1__1presenters__1__1presenterActions__1__1factories__1__1PrintInvoicesFactory_8js.html#af87c58f5f1f249869995ee8556645a30", null ]
+];

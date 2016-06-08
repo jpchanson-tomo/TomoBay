@@ -1,0 +1,5 @@
+<map id="sortDefault" name="sortDefault">
+<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1SortOrders.html#a636fab5a9378dd9e3747f06161fd4939" title="sort the list&lt;String&gt; by Invoice status descending (see InvoiceableStatus enum) " alt="" coords="140,5,267,32"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1helpers_1_1SortOrders.html#a991c04b46f8b24ac19bb83c21173e275" title="sort the List&lt;String&gt; by shipping type descending (see ShippingPriority enum) " alt="" coords="148,56,259,83"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1helpers_1_1SortOrders.html#a0b90063741216b57551fe1385847f4df" title="reassemble the categories into one list " alt="" coords="315,31,469,57"/>
+</map>

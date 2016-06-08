@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1services__1__1basicEbayUpdateService__1__1ItemsAndPartsTable_8js =
+[
+    [ "classtomoBay_1_1model_1_1services_1_1basicEbayUpdateService_1_1ItemsAndPartsTable", "classtomoBay__1__1model__1__1services__1__1basicEbayUpdateService__1__1ItemsAndPartsTable_8js.html#af701bf7e27178546930c2dd4418f13de", null ]
+];

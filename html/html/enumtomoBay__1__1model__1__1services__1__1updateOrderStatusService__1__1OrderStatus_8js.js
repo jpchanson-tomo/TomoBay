@@ -1,0 +1,4 @@
+var enumtomoBay__1__1model__1__1services__1__1updateOrderStatusService__1__1OrderStatus_8js =
+[
+    [ "enumtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1OrderStatus", "enumtomoBay__1__1model__1__1services__1__1updateOrderStatusService__1__1OrderStatus_8js.html#a62627b37770c84fedb3e964c14feb5cb", null ]
+];

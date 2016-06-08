@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1winstock__1__1payloads__1__1components__1__1InStockComponent_8js =
+[
+    [ "classtomoBay_1_1model_1_1winstock_1_1payloads_1_1components_1_1InStockComponent", "classtomoBay__1__1model__1__1winstock__1__1payloads__1__1components__1__1InStockComponent_8js.html#a66da24c0b1b0dc01270e84fee72c7a3c", null ]
+];

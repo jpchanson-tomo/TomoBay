@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfacetomoBay_1_1model_1_1services_1_1factories_1_1AbstractServiceFactory.html" title="This interface is the construct that all the Service factories must conform to. " alt="" coords="5,195,164,221"/>
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1BasicEbayServiceFactory.html" title="This factory creates a BasicEbayUpdateService. " alt="" coords="222,5,395,32"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1CheckErrorsFactory.html" title="CheckErrorsFactory" alt="" coords="239,56,378,83"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1EmailErrorsServiceFactory.html" title="EmailErrorsServiceFactory" alt="" coords="219,107,398,133"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1IndividualItemRefreshServiceFactory.html" title="This factory creates an IndividualItemRefreshService. " alt="" coords="212,158,405,199"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1OutOfHoursServiceFactory.html" title="Copyright(C) 2015 Jan P.C. " alt="" coords="219,224,399,251"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1ReScanBuyerServiceFactory.html" title="ReScanBuyerServiceFactory" alt="" coords="213,275,404,301"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1ReScanErrorsServiceFactory.html" title="ReScanErrorsServiceFactory" alt="" coords="213,325,405,352"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1model_1_1services_1_1factories_1_1TestServiceFactory.html" title="This factory creates a test service. " alt="" coords="241,376,377,403"/>
+</map>

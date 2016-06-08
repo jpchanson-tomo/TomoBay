@@ -1,0 +1,4 @@
+var namespacetomoBay__1__1model__1__1sql__1__1framework__1__1queryTypes_8js =
+[
+    [ "namespacetomoBay_1_1model_1_1sql_1_1framework_1_1queryTypes", "namespacetomoBay__1__1model__1__1sql__1__1framework__1__1queryTypes_8js.html#aa6d347955dd77a6536e1ac3c3d56b025", null ]
+];

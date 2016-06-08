@@ -1,0 +1,8 @@
+var classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceShippingLine =
+[
+    [ "StandardInvoiceShippingLine", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceShippingLine.html#a75a3e6908b547a4f813428b2a9a4cce6", null ],
+    [ "quantity", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceShippingLine.html#a1ab43ffef4a62f7143c7be275b030d5a", null ],
+    [ "description", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceShippingLine.html#a55c90a042d1eac57df42ae9ca5e50970", null ],
+    [ "partNo", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceShippingLine.html#abfd825a5be1d3f96c4bab4504b05e341", null ],
+    [ "unitPrice", "classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1concreteLineTypes_1_1StandardInvoiceShippingLine.html#ad4699f0815895232592f2e0a89f67b39", null ]
+];

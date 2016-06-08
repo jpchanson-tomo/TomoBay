@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1services__1__1individualItemRefreshService__1__1IndividualItemRefreshConfig_8js =
+[
+    [ "classtomoBay_1_1model_1_1services_1_1individualItemRefreshService_1_1IndividualItemRefreshConfig", "classtomoBay__1__1model__1__1services__1__1individualItemRefreshService__1__1IndividualItemRefreshConfig_8js.html#aac0433232f0d387b61ddc2495bf886b2", null ]
+];

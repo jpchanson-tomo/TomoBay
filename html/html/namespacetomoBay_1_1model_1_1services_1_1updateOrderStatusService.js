@@ -1,0 +1,6 @@
+var namespacetomoBay_1_1model_1_1services_1_1updateOrderStatusService =
+[
+    [ "OrderStatus", "enumtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1OrderStatus.html", "enumtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1OrderStatus" ],
+    [ "UpdateOrderStatusConfig", "classtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1UpdateOrderStatusConfig.html", "classtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1UpdateOrderStatusConfig" ],
+    [ "UpdateOrderStatusService", "classtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1UpdateOrderStatusService.html", "classtomoBay_1_1model_1_1services_1_1updateOrderStatusService_1_1UpdateOrderStatusService" ]
+];

@@ -1,0 +1,5 @@
+<map id="getDate" name="getDate">
+<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1checkTime_1_1CheckTime.html#a225d1db0a963fb1f5633a532c55cf856" title="if before the start time for today returns yesterdays date otherwise returns todays date..." alt="" coords="121,39,313,80"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1helpers_1_1checkTime_1_1CheckTime.html#af394562cb305633b3bbf2c09a3fb1fc6" title="queries the current day " alt="" coords="361,5,553,47"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1helpers_1_1checkTime_1_1CheckTime.html#a7f5f1b75867f0102f330c328973abad9" title="queries the current time " alt="" coords="361,71,553,112"/>
+</map>

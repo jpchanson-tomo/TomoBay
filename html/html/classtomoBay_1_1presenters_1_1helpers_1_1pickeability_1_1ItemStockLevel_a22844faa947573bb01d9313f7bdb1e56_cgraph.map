@@ -1,0 +1,11 @@
+<map id="checkStockLevelOfItems" name="checkStockLevelOfItems">
+<area shape="rect" id="node2" href="$classtomoBay_1_1helpers_1_1BrandToCode.html#a10207714bd294d73dd98b80fd94a2ab8" title="converts converts a string like &quot;citroen&quot; or &quot;fOrd&quot; to a brandcode integer specific to winstock..." alt="" coords="225,5,475,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1PartList.html#ab743beefffd4d159c3b91639caee92da" title="get the part number at position i in the list " alt="" coords="259,71,441,112"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1PartList.html#a5bebcb62b6ffa7676eacf169f0bfe603" title="get the quantity of the part number at position i in the list " alt="" coords="259,136,441,177"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a06d21b6ad2b8a746c52fadb5d4711778" title="query winstock for the stock level of a particular part. " alt="" coords="223,201,477,243"/>
+<area shape="rect" id="node10" href="$classtomoBay_1_1model_1_1dataTypes_1_1PartList.html#af4b57d21919c42d55af03391f91a1c08" title="the size of the part list. " alt="" coords="259,267,441,308"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1helpers_1_1XMLParser.html#a9936151017dd4e908cf37d453b22c8ef" title="parses an XML formatted string looking for the first tag specified in the parameters. " alt="" coords="534,150,759,177"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a42fa652d82ed49749a0ad929a6c798d0" title="remove the header bumpf from the bottom of the response " alt="" coords="529,201,765,243"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1model_1_1winstock_1_1Stock.html#a82b5421e7d3a2ba82bdc5d54b09a8069" title="tomoBay.model.winstock.Stock.query\lWinstockURL" alt="" coords="525,267,768,308"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1net_1_1HttpResponse.html#afb798c825935128953439404fb763997" title="get the Response message " alt="" coords="816,201,1061,243"/>
+</map>

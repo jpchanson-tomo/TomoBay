@@ -1,0 +1,6 @@
+<map id="format" name="format">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1formats_1_1AbstractFormat.html#a8f7c380d238881bfb7b09f308a2a8d02" title="default ctor " alt="" coords="197,5,309,32"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#af96a91ec2459da583de299a3a6b716e5" title="converts this invoice into the format requested " alt="" coords="112,56,393,112"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html#a78298d20dc15b33bf695c69785741a68" title="formats the AbstractSalesDayBookLine into a format that can be passed to the WinstockCommandInvoker. " alt="" coords="441,56,652,112"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1presenters_1_1presenterActions_1_1concreteActions_1_1InvoiceOrders.html#adb3dedf31dc2c7fc796f20406c235ccd" title="performs the action specified " alt="" coords="700,56,911,112"/>
+</map>

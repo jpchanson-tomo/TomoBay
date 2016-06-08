@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1sql__1__1queries__1__1factories__1__1update__1__1UpdateItemErrorFactory_8js =
+[
+    [ "classtomoBay_1_1model_1_1sql_1_1queries_1_1factories_1_1update_1_1UpdateItemErrorFactory", "classtomoBay__1__1model__1__1sql__1__1queries__1__1factories__1__1update__1__1UpdateItemErrorFactory_8js.html#a87b38df401cbb78717bb6255a82507d2", null ]
+];

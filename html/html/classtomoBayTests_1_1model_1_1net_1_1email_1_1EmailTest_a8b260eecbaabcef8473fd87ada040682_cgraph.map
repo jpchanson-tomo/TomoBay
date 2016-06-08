@@ -1,0 +1,13 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1net_1_1email_1_1EmailDirector.html#adf12228c8c87e1262bbaf8b71fb856fc" title="initialises the email and server objects ready to be retrieved by the get methods. " alt="" coords="115,34,307,90"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1net_1_1email_1_1EmailDirector.html#a3d3dfac26428314d44bcb6d860c2edc8" title="tomoBay.model.net.email.\lEmailDirector.getEmail" alt="" coords="124,113,299,155"/>
+<area shape="rect" id="node6" href="$classtomoBay_1_1model_1_1net_1_1email_1_1EmailDirector.html#a37f3f83a029e5330f47fbf564e17ebb3" title="tomoBay.model.net.email.\lEmailDirector.getMailSendServer" alt="" coords="104,179,319,220"/>
+<area shape="rect" id="node7" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailServerSend.html#ae0ea6b0d6bda14c2c1ea809ca187c4be" title="this method sends the given email using the userID and password provided in the arguments ..." alt="" coords="124,244,299,285"/>
+<area shape="rect" id="node10" href="$classtomoBay_1_1model_1_1net_1_1email_1_1Email.html#acc7b010f914eeee1745a79004eca2481" title="sets the email body " alt="" coords="124,309,299,351"/>
+<area shape="rect" id="node11" href="$classtomoBay_1_1model_1_1net_1_1email_1_1Email.html#a5c78f073f0c4c95dddbb78f7a9eb6cd2" title="set a recipient of the email, valid RecipientType listed in Message.RecipientType : TO/CC/BCC..." alt="" coords="124,375,299,416"/>
+<area shape="rect" id="node12" href="$classtomoBay_1_1model_1_1net_1_1email_1_1Email.html#a39f0298f055f0b78ad2ac781d38f326f" title="set the subject line of the email. " alt="" coords="124,440,299,481"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1net_1_1email_1_1AbstractEmailBuilder.html#a4f128fdcd61c6889df2df17738e083fe" title="builds the Email object " alt="" coords="389,5,597,47"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1net_1_1email_1_1AbstractEmailBuilder.html#a639a9a43711a6d861c0215cfd21a618e" title="populates the MailServerSend object with a specific configuration " alt="" coords="394,70,593,126"/>
+<area shape="rect" id="node8" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailServerSend.html#ab5988b28fa18ed6b82ed54193ed21ccc" title="creates a mail server session. " alt="" coords="668,237,884,293"/>
+<area shape="rect" id="node9" href="$classtomoBay_1_1model_1_1net_1_1email_1_1MailServerSend.html#ae07411f271807d3f10b7e4db187d4b3c" title="generates a MimeMessage from the Email object " alt="" coords="367,273,620,315"/>
+</map>

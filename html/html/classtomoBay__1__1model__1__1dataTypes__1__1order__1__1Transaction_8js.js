@@ -1,0 +1,4 @@
+var classtomoBay__1__1model__1__1dataTypes__1__1order__1__1Transaction_8js =
+[
+    [ "classtomoBay_1_1model_1_1dataTypes_1_1order_1_1Transaction", "classtomoBay__1__1model__1__1dataTypes__1__1order__1__1Transaction_8js.html#a47234cf28981e570c79ee6f893d1d3f9", null ]
+];

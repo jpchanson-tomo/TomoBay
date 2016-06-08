@@ -1,0 +1,6 @@
+<map id="performAdjustement" name="performAdjustement">
+<area shape="rect" id="node2" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractLineItem.html#ab0170f53be617ec2ea8746f9f5c7c596" title="add or subtract the given amount of pennies from this line item " alt="" coords="192,5,505,47"/>
+<area shape="rect" id="node3" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractSalesDayBookLine.html#a1b2142782be2899c8c3c19c5b3e05247" title="retrieve a particular AbstractLineItem from the list of items that make up this AbstractSalesDayBookL..." alt="" coords="208,70,489,126"/>
+<area shape="rect" id="node4" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractLineItem.html#a906729ff4a7b3a1638da9e1b47e8ada2" title="retrieve the price of the quantity of parts invoiced (EX VAT) " alt="" coords="211,149,487,191"/>
+<area shape="rect" id="node5" href="$classtomoBay_1_1model_1_1dataTypes_1_1financial_1_1SalesOrderDayBook_1_1AbstractLineItem.html#a9384ad6463e803ada82c6c35d708939a" title="implementation specific code used to work out the unit price for a specific line item ..." alt="" coords="553,149,852,191"/>
+</map>

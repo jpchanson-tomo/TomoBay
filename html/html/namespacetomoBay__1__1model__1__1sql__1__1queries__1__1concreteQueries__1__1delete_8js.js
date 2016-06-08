@@ -1,0 +1,4 @@
+var namespacetomoBay__1__1model__1__1sql__1__1queries__1__1concreteQueries__1__1delete_8js =
+[
+    [ "namespacetomoBay_1_1model_1_1sql_1_1queries_1_1concreteQueries_1_1delete", "namespacetomoBay__1__1model__1__1sql__1__1queries__1__1concreteQueries__1__1delete_8js.html#af3456fe51a4cb29ac016a079ffecffc0", null ]
+];

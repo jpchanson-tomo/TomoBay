@@ -1,0 +1,4 @@
+var namespacetomoBay__1__1model__1__1services__1__1individualItemRefreshService_8js =
+[
+    [ "namespacetomoBay_1_1model_1_1services_1_1individualItemRefreshService", "namespacetomoBay__1__1model__1__1services__1__1individualItemRefreshService_8js.html#a1ef215cba63eecf668cb3d9e49e2793b", null ]
+];
