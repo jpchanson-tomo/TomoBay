@@ -1,6 +1,7 @@
 /docs/html/
 /bin/
 /config/tomoBay.conf
+/config/tomoBay.conf.bak	
 /logs/*.*
 /target/
 /src/tomoBay/POC.java
