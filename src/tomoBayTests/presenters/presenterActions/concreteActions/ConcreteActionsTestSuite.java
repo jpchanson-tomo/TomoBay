@@ -14,7 +14,6 @@ package tomoBayTests.presenters.presenterActions.concreteActions;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 /**
@@ -25,7 +24,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses
 ({
-	GenerateRoyalMailCSVTest.class
+	GenerateRoyalMailCSVTest.class,
+	StockReOrderAnalysisTest.class
 })
 public final class ConcreteActionsTestSuite
 {}

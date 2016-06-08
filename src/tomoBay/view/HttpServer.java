@@ -15,6 +15,7 @@ package tomoBay.view;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import java.net.MalformedURLException;
+import java.util.Properties;
 
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Handler;
@@ -56,6 +57,7 @@ public final class HttpServer
 	public void start(int port) throws MalformedURLException
     {
 		Server server = new Server();
+		
 		//set up context handlers
 		ContextHandler dataServlet = setUpDataServletHandler();
 		ContextHandler guiHandler = setUpGuiHandler();

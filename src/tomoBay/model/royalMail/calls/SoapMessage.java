@@ -19,17 +19,13 @@ import java.net.URL;
 
 import javax.xml.soap.MessageFactory;
 import javax.xml.soap.MimeHeaders;
-import javax.xml.soap.SOAPBody;
 import javax.xml.soap.SOAPConnection;
 import javax.xml.soap.SOAPConnectionFactory;
 import javax.xml.soap.SOAPConstants;
 import javax.xml.soap.SOAPEnvelope;
 import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPHeader;
 import javax.xml.soap.SOAPMessage;
 
-import tomoBay.model.royalMail.calls.DI.RoyalMailDIContainer;
-import tomoBay.model.royalMail.calls.DI.RoyalMailDIContainer.RoyalMailObjType;
 /**
  *
  * @author Jan P.C. Hanson
@@ -49,13 +45,12 @@ public class SoapMessage
 	 * @throws SOAPException 
 	 * 
 	 */
-	protected SoapMessage() throws SOAPException
+	public SoapMessage() throws SOAPException
 	{
 		super();
 		MessageFactory factory = MessageFactory.newInstance(SOAPConstants.DEFAULT_SOAP_PROTOCOL);
 		this.message_M = factory.createMessage();
 		this.envelope_M = this.message_M.getSOAPPart().getEnvelope();
-		//this.header_M = (SoapHeader)RoyalMailDIContainer.getFactory(RoyalMailObjType.SOAP_HEADER);
 		this.header_M = new SoapHeader(this.envelope_M);
 	}
 	

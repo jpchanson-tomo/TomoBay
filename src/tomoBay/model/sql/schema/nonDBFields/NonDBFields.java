@@ -40,6 +40,14 @@ public class NonDBFields implements AbstractTypeSchema
 	public static final Date DATE_COMPARISON = new Date();
 
 	/**
+	 * this is an input or return to/from a custom integer field, i.e. one defined in a 
+	 * query but is not directly a database field.
+	 * - INTEGER
+	 * - NON DB FIELD
+	 */
+	public static final CustomIntegerField Custom_INT_FIELD = new CustomIntegerField();
+	
+	/**
 	 * ensures that this class is NEVER INSTANTIATED
 	 */
 	private NonDBFields()

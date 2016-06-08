@@ -31,6 +31,7 @@ import tomoBay.presenters.presenterActions.factories.PeriodicServicesControllerF
 import tomoBay.presenters.presenterActions.factories.PrintInvoicesFactory;
 import tomoBay.presenters.presenterActions.factories.ReScanBuyerFactory;
 import tomoBay.presenters.presenterActions.factories.ReScanListingFactory;
+import tomoBay.presenters.presenterActions.factories.StockReOrderAnalysisFactory;
 
 /**
  * This class provides static functionality for creating AbstractPresenterActions
@@ -63,7 +64,9 @@ public final class PresenterActionFactory
 					
 					PRINT_INVOICES,
 					
-					GENERATE_ROYAL_MAIL_CSV
+					GENERATE_ROYAL_MAIL_CSV,
+					
+					STOCK_REORDER_ANALYSIS
 				}
 	
 	/**maps the type string to an action**/
@@ -82,6 +85,7 @@ public final class PresenterActionFactory
 					put(PresenterActions.INVOICE_ORDERS, new InvoiceOrdersFactory());
 					put(PresenterActions.PRINT_INVOICES, new PrintInvoicesFactory());
 					put(PresenterActions.GENERATE_ROYAL_MAIL_CSV, new GenerateRoyalMailCSVFactory());
+					put(PresenterActions.STOCK_REORDER_ANALYSIS, new StockReOrderAnalysisFactory());
 				}};
 
 	/**

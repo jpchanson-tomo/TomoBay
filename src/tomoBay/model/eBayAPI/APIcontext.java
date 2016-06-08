@@ -52,7 +52,7 @@ public final class APIcontext
 	public ApiContext apiContext(String usrToken, String server)
 	{
 		ApiContext apiContext = new ApiContext();
-
+		
 		//set Api Token to access eBay Api Server
 		ApiCredential cred = apiContext.getApiCredential();
 		cred.seteBayToken(usrToken);

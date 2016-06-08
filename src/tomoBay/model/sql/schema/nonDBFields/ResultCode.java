@@ -28,9 +28,10 @@ import tomoBay.model.dataTypes.heteroTypeContainer.TypeDef;
  */
 public final class ResultCode implements AbstractField
 {
+	/**the reprasentative size of this field.......maybe**/
 	private static final int size_M = 1;
 	/**
-	 * 
+	 * default ctor
 	 */
 	public ResultCode()
 	{super();}

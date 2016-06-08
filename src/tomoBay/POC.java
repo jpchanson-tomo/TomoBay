@@ -51,8 +51,8 @@ public class POC {
 	        GetOrdersCall order = new GetOrdersCall(apiContext);
 	        GetOrdersRequestType ordreq = new GetOrdersRequestType();
 	        
-	        GetItemRequestType itreq = new GetItemRequestType();
-	        GetItemCall item = new GetItemCall(apiContext);
+//	        GetItemRequestType itreq = new GetItemRequestType();
+//	        GetItemCall item = new GetItemCall(apiContext);
 	        
 	        
 	        
@@ -68,32 +68,32 @@ public class POC {
 //	        System.out.println("End of call eBay API, show call result ...");
 	        
 	        
-	        DetailLevelCodeType[] detail = {DetailLevelCodeType.RETURN_ALL};
-	        itreq.setItemID(trans[0].getItem().getItemID());
-	        itreq.setIncludeItemSpecifics(true);
-	        itreq.setDetailLevel(detail);
-	        item.executeByApiName("GetItem", itreq);
-	        item.setItemID(trans[0].getItem().getItemID());
-	        item.setIncludeItemSpecifics(true);
-	        item.setDetailLevel(detail);
+//	        DetailLevelCodeType[] detail = {DetailLevelCodeType.RETURN_ALL};
+//	        itreq.setItemID(trans[0].getItem().getItemID());
+//	        itreq.setIncludeItemSpecifics(true);
+//	        itreq.setDetailLevel(detail);
+//	        item.executeByApiName("GetItem", itreq);
+//	        item.setItemID(trans[0].getItem().getItemID());
+//	        item.setIncludeItemSpecifics(true);
+//	        item.setDetailLevel(detail);
 //	        String resp = item.getResponseXml();
 	        
 	        
 	        
 	        // [Setp 3] Handle the result returned
- 	        NameValueListType[] tmp = item.getItem().getItemSpecifics().getNameValueList();
-	        String result="";
-	        for(int i = 0; i < tmp.length; ++i)
-	        {
-	        	result += tmp[i].getName() + " : ";
-	        	result += Arrays.deepToString(tmp[i].getValue());
-	        }
+// 	        NameValueListType[] tmp = item.getItem().getItemSpecifics().getNameValueList();
+//	        String result="";
+//	        for(int i = 0; i < tmp.length; ++i)
+//	        {
+//	        	result += tmp[i].getName() + " : ";
+//	        	result += Arrays.deepToString(tmp[i].getValue());
+//	        }
 	       
 	        
 	        System.out.println(ord[0].getOrderID());
 	        System.out.println(order.getReturnedHasMoreOrders());
 //	        System.out.println(ord[0].get);
-	        System.out.println(result);
+//	        System.out.println(result);
 	        
 	    }
 	    catch(Exception e) {
@@ -108,7 +108,7 @@ public class POC {
 	   * @return ApiContext object
 	   */
 	  private static ApiContext getApiContext() throws IOException {
-		  String userToken = "AgAAAA**AQAAAA**aAAAAA**s6cKVg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4GhDpGFoAidj6x9nY+seQ**MpQDAA**AAMAAA**4Aqt9SemYN6DehoPdEsoWuFqCELKvJyBaHL5q1gdWL40la/sjo+abdJSSvNmW8aGcgrgiEXsXJdO+C8RV4lVLvjLnZM0Sadri0BUqP1EK4OTdZWMh8DqaqAqiCi/RhzB+OvHmUd7g5aztZn+wTAIDdglX1cBsJNWnDo4Y9CmK0Et0tbiEiMabvPyO8zwR/Touug6qWkQK488NxJtdo+ZrNZKQ33XXOIoC+nwj8py85vXzxq029DvF31Wmk6ZZcnAuBnpWu8l6h1V+nEPy5V4f1lCIiJdSs++wKP0Dw8FkIXsiTOO4c4LF67gU35LNlaiE/GunY/yJuDeXQ6AJB0RLoFQck+LaEJ2OGH6ZPyzITTWTkf8qY6PBTRE7tCe8okI/Qnbcc6Y6Rol80uJtDQ27Jf7H1XoHoVOgQtTWcZa0BYP7Vbqo54lGyOsVnAHGZ4so+T9WvhZ/MJOacbou9YUptwPYfZwQsTnl0BvVgd6bt5XPsao54A+9ujPhZM5gk0/l9CnG4g47P+jiUtVyw4Gp4cD4fUzRMGK5hQ2jwm+/zK+kokExZbhpIiJBozA7n+5UPRwlmxh8fg1YBW0J0S7/BXBk4zNmpkYOwVQR4kj56/t5fcI9cYfzonRpnn7VUonD21KE6/1lZVsF0/OKoi8OU+xEJZlc8f1E3gv5MYN/qkcjDIn0lq6Fp+1fx6Yod2x1cUfIIXLsdQhqhcZ82LhdfWY/5QdoYGNN2M30yq+6tp4krIx5xBZvBzE8I1sqaRM";
+		  String userToken = "AgAAAA**AQAAAA**aAAAAA**0GbQVg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wMk4GnD5GDogSdj6x9nY+seQ**zycDAA**AAMAAA**vuf8mZAWVaWRvLQ3FV/HyJdJ6kfngurBszal33drU7jupoq3YVruEMlZdpeBjxqvkcqyNkMa64UotHZ+2H2Am3yJ7dUDTju5gAYxuqQt9p4+fTJVnQ3ndUpYJGtO/gCEWGTM4WP4i8sdTgrw+B4tsu9ZyQFr1uYdr6BYqPgD1K/CNV/xUOmtIqmoPI1m6guV5hpXI+Th3814tJub+zThmJBQIusb47qO8Lx7VSJc/gyDY6TQwctfu5Xvs3EN/8g4iuUR+wZzzg2/k8eL+6SuSgrC4W31ZDboFQWs13t3AiD7vsWhiNdeELTHigRZSokHbzbmq191pX7DdmWjYon3Z2G2nu/pdQuc5P2tAgGzhxcIlfN8XS+FCZupuWXM44FpRfYORKCHioE7gcvIAvOPbA5xRVUVOqRKr+Qz/Qq2ItiEwWDbv4DbyElLjmcMfCjioBd9L4BF2DvaZ/9n6DPK7XpHhbfDJHDelm2RV0Li7FNPWRyRFg52gmCKR2DN3f9GQ3xUpM1r9EgjdlauwFBr6e7hC3iZkV4AwEYBBG3k9UR330ZZISE7HFkFMSDJfFoLVj6zWsx3Vylky7WLzj+tvrWtEQTILP6x46WkQjAEz/it3t1z2ECthkdjBFh/1X1VMS16YErN45m6WJcvOg8F6nxQ5YxqWYHqqJXVzRzwCGe35yfAHargvftaVqVJgi1B5pxOjtbgLmoqknwYc9lsSQMkWPfCsjFGXqh1WZnfH1U5srQb64X+eF1bFAY/29VK";
 //	      String input;
 	      ApiContext apiContext = new ApiContext();
 	      
@@ -117,7 +117,7 @@ public class POC {
 	      cred.seteBayToken(userToken);
 	     
 	      //set Api Server Url
-	      apiContext.setApiServerUrl("https://api.sandbox.ebay.com/wsapi");
+	      apiContext.setApiServerUrl("https://api.ebay.com/wsapi");
 	      
 	      return apiContext;
 	  }

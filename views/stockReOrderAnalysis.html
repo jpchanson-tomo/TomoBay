@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>TomoBay - StockReorderAnalysis</title>
+		<link rel="shortcut icon" href="images/logo.png" />
+		<meta charset="utf-8">
+ 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="js/modules/addCommonContent.js"></script>
+		<script src="js/stockReOrderAnalysis.js"></script>
+	</head>
+	
+	<body>
+		<div class="navibar"></div>
+		
+		<div class="container-fluid">
+			<div class="panel panel-default panel-primary">
+				<div class="panel-heading">
+					<h2 class="" >Stock Re-Order Analysis</h2>
+					<p>
+						A list of parts that should probably be re-ordered soon as they are below a 
+						threshold level
+					</p>
+				</div>
+				
+				<div class="panel-body">
+					results go here
+				</div>
+				
+				<div class="panel-footer panel-primary">
+					<p>
+						The system decides what parts are low by working out how much stock is needed
+						for a weeks operation by looking at the sales over the past month. Once the 
+						stock for a particular part dips below a pre-set threshold (currently 2 days)
+						the system will advise you to order a particular amount of stock for a part
+						in order to bring the stock level back up to one weeks supply.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>var test = new StockReOrderAnalysis("",28,2)</script>
+</html>

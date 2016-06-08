@@ -41,6 +41,7 @@ import tomoBay.model.sql.queries.factories.select.params.SelectEbayBuyerFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectEbayItemSpecificFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectEbayOrderByBuyerFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectEbayOrderByIDFactory;
+import tomoBay.model.sql.queries.factories.select.params.SelectEbayOrderHistoryLastNDaysFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectEbayTransactionByIDFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectFullOrderLineFactory;
 import tomoBay.model.sql.queries.factories.select.params.SelectOutOfHoursOrdersFactory;
@@ -108,7 +109,9 @@ public final class SelectQueryInvoker
 		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectBrandAndPartNoByOrderID**/
 		SELECT_BRAND_AND_PARTNO_BY_ORDERID,
 		/**@see tomoBay.model.sql.queries.concreteQueries.select.SelectBuyerByAccAndSRN**/
-		SELECT_EBAY_BUYER_BY_ACCOUNT_AND_SRN
+		SELECT_EBAY_BUYER_BY_ACCOUNT_AND_SRN,
+		
+		SELECT_EBAY_ORDER_HISTORY_LAST_N_DAYS
 	}
 	/**internal map holds factory objects created static final to make threadsafe**/
 	private static final Map<SelectQueryTypeNoParams, AbstractSelectNoParamsQueryFactory> noParamsMap_M
@@ -141,6 +144,7 @@ public final class SelectQueryInvoker
 			put(SelectQueryTypeParams.SELECT_BRAND_BY_INV_NO, new SelectBrandByInvNoFactory());
 			put(SelectQueryTypeParams.SELECT_BRAND_AND_PARTNO_BY_ORDERID, new SelectBrandAndPartNoByOrderIDFactory());
 			put(SelectQueryTypeParams.SELECT_EBAY_BUYER_BY_ACCOUNT_AND_SRN, new SelectBuyerByAccAndSRNFactory());
+			put(SelectQueryTypeParams.SELECT_EBAY_ORDER_HISTORY_LAST_N_DAYS, new SelectEbayOrderHistoryLastNDaysFactory());
 		}};
 	
 	/**
