@@ -43,6 +43,16 @@ import tomoBay.presenters.presenterActions.concreteActions.StockReOrderAnalysis;
 public class StockReOrderAnalysisTest
 {
 
+	private final String goodData = "{lookback:28,threshold:2}";
+	
+	private final String badData1 = "{lookback:'28' threshold:'2'}";
+	
+	private final String badData2 = "{lookback:'28 ,threshold:'2'}";
+	
+	private final String badData3 = "{lookback:'28',threshold:'29'}";
+	
+	private final String validResult ="";
+	
 	/**
 	 * @test initialisation of the StockReOrderAnalysis class
 	 * 
@@ -65,6 +75,7 @@ public class StockReOrderAnalysisTest
 	 * @test
 	 *	
 	 * @pre
+	 * 	- correctly formatted JSON string, containing the 'lookback' and 'threshold' properties.
 	 * * 	- database containing the tables referenced in 
 	 * tomoBay.model.sql.queries.concreteQueries.select.params.SelectEbayOrderHistoryLastNDays exists.
 	 * 	- tomoBay.model.sql.queries.concreteQueries.select.params.SelectEbayOrderHistoryLastNDays
@@ -77,10 +88,55 @@ public class StockReOrderAnalysisTest
 	 * Test method for tomoBay.presenters.presenterActions.concreteActions.StockReOrderAnalysis#execute(java.lang.String)
 	 */
 	@Test
-	public final void testExecute()
+	public final void testExecuteGoodData()
 	{
-		
-		fail("Not yet implemented");
+		StockReOrderAnalysis test = new StockReOrderAnalysis();
+		String result = test.execute(goodData);
+		System.out.println(result);
+		boolean pass = result.matches(validResult);
+		assertTrue(pass);
+	}
+	
+	/**
+	 * @test
+	 *	
+	 * @pre
+	 * 	- correctly formatted JSON string, containing the 'lookback' and 'threshold' properties.
+	 * * 	- database containing the tables referenced in 
+	 * tomoBay.model.sql.queries.concreteQueries.select.params.SelectEbayOrderHistoryLastNDays exists.
+	 * 	- tomoBay.model.sql.queries.concreteQueries.select.params.SelectEbayOrderHistoryLastNDays
+	 * works as expected.
+	 * 	- input to the execute method is a well formed JSON string containing the 'lookback' and
+	 * 'threshold' properties. 
+	 * @post
+	 * 	- A well formatted JSON string result
+	 * 	- result contains array of objects of the form [{partNo:"abc123", quantity:123},....]
+	 * Test method for tomoBay.presenters.presenterActions.concreteActions.StockReOrderAnalysis#execute(java.lang.String)
+	 */
+	@Test
+	public final void testExecuteBadData1()
+	{
+		StockReOrderAnalysis test = new StockReOrderAnalysis();
+		String result = test.execute(badData1);
+		boolean pass = result.matches(validResult);
+		assertFalse(pass);
 	}
 
+	@Test
+	public final void testExecuteBadData2()
+	{
+		StockReOrderAnalysis test = new StockReOrderAnalysis();
+		String result = test.execute(badData2);
+		boolean pass = result.matches(validResult);
+		assertFalse(pass);
+	}
+	
+	@Test
+	public final void testExecuteBadData3()
+	{
+		StockReOrderAnalysis test = new StockReOrderAnalysis();
+		String result = test.execute(badData3);
+		boolean pass = result.matches(validResult);
+		assertFalse(pass);
+	}
 }

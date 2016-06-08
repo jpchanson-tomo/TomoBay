@@ -14,9 +14,12 @@ package tomoBay.presenters.presenterActions.concreteActions;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import tomoBay.model.dataTypes.PartList;
+import tomoBay.model.dataTypes.heteroTypeContainer.ClassRef;
 import tomoBay.model.dataTypes.heteroTypeContainer.HeteroFieldContainer;
 import tomoBay.model.sql.framework.SelectQueryInvoker;
 import tomoBay.model.sql.framework.SelectQueryInvoker.SelectQueryTypeParams;
+import tomoBay.model.sql.schema.itemsTable.ItemsTable;
 import tomoBay.model.sql.schema.nonDBFields.NonDBFields;
 import tomoBay.presenters.presenterActions.AbstractPresenterAction;
 
@@ -25,6 +28,7 @@ import javax.json.JsonReader;
 import javax.json.Json;
 
 import java.io.StringReader;
+import java.util.ArrayList;
 import java.util.List;
 /**
  * This class represents functionality to 
@@ -50,11 +54,15 @@ public final class StockReOrderAnalysis implements AbstractPresenterAction
 	@Override
 	public String execute(String data)
 	{
-		JsonObject json = this.convertToJSon(data);
-		List<HeteroFieldContainer> listingHistory = this.grabDBdata(json.getInt(LOOKBACK_PROPERTY));
-		List<String[]> processedResults = this.processDBdata(listingHistory);
-		List<String[]> suggestions = this.createSuggestedOrders(processedResults, json.getInt(THRESHOLD_PROPERTY));
-		return this.formatResultAsJSON(suggestions);
+		try
+		{
+			final JsonObject json = this.convertToJSon(data);
+			final List<HeteroFieldContainer> listingHistory = this.grabDBdata(json.getInt(LOOKBACK_PROPERTY));
+			final List<String[]> processedResults = this.processDBdata(listingHistory);
+			final List<String[]> suggestions = this.createSuggestedOrders(processedResults, json.getInt(THRESHOLD_PROPERTY));
+			return this.formatResultAsJSON(suggestions);
+		}
+		catch (Exception e) {e.printStackTrace(); return "{Error:'data probably not valid'}";}
 	}
 
 	/**
@@ -64,8 +72,8 @@ public final class StockReOrderAnalysis implements AbstractPresenterAction
 	 */
 	private JsonObject convertToJSon(String data)
 	{
-		JsonReader reader = Json.createReader(new StringReader(data));
-		JsonObject jsonObj = reader.readObject();
+		final JsonReader reader = Json.createReader(new StringReader(data));
+		final JsonObject jsonObj = reader.readObject();
 		reader.close();
 		return jsonObj;
 	}
@@ -78,7 +86,7 @@ public final class StockReOrderAnalysis implements AbstractPresenterAction
 	 */
 	private List<HeteroFieldContainer> grabDBdata(int lookback)
 	{
-		HeteroFieldContainer params = new HeteroFieldContainer();
+		final HeteroFieldContainer params = new HeteroFieldContainer();
 		params.add(NonDBFields.Custom_INT_FIELD, lookback);
 		return SelectQueryInvoker.execute(
 													SelectQueryTypeParams.SELECT_EBAY_ORDER_HISTORY_LAST_N_DAYS, 
@@ -96,7 +104,21 @@ public final class StockReOrderAnalysis implements AbstractPresenterAction
 	 */
 	private List<String[]> processDBdata(List<HeteroFieldContainer> dbData)
 	{
-		return null;
+		final List<String[]> result = new ArrayList<String[]>();
+		for(int i = 0 ; i < dbData.size() ; ++i)
+		{
+			final PartList listing = new PartList(dbData.get(i).get(ItemsTable.PART_NO, ClassRef.STRING));
+			final int listingQty = dbData.get(i).get(NonDBFields.Custom_INT_FIELD, ClassRef.INTEGER);
+			
+			for (int j = 0 ; j < listing.size() ; ++j)
+			{
+				final String partNo = listing.getPartNumber(i);
+				final int partQty = listing.getPartQty(i);
+				result.add(new String[] {partNo, partQty*listingQty+""});
+				System.out.println(partNo+" : "+ partQty*listingQty+"");
+			}
+		}
+		return result;
 	}
 	
 	/**
